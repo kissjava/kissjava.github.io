@@ -185,12 +185,12 @@ ssl 去掉了，ip 被误伤了吧.
     
     
         <item>
-        <title>C# 测试代码的运行时间</title>
-        <link>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+        <title>C sharp 测试代码的运行时间</title>
+        <link>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
         <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
         
-        <guid>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ -&lt;p&gt;计算C#代码运行的耗时，方便测试出效率。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ -&lt;p&gt;计算C#代码运行的耗时，方便测试出效率。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
 watch.Start();  //开始监视代码运行时间
@@ -201,7 +201,7 @@ TimeSpan timespan = watch.Elapsed;  //获取当前实例测量得出的总时间
 System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds)); 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;TimeSpan&lt;/code&gt; 还可以计算出&lt;code&gt;TotalHours&lt;/code&gt;，&lt;code&gt;TotalMinutes&lt;/code&gt;， &lt;code&gt;TotalSeconds&lt;/code&gt;。&lt;/p&gt;
-- https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ - kissjava.cn</description>
+- https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ - kissjava.cn</description>
         </item>
     
     

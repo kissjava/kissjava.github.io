@@ -32,21 +32,21 @@
     </item>
     
     <item>
-      <title>C# 测试代码的运行时间</title>
-      <link>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+      <title>C sharp 测试代码的运行时间</title>
+      <link>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
       <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
       
-      <guid>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+      <guid>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
       <description>计算C#代码运行的耗时，方便测试出效率。
 System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();watch.Start(); //开始监视代码运行时间// 添加需要测试的代码// ...watch.Stop(); //停止TimeSpan timespan = watch.Elapsed; //获取当前实例测量得出的总时间System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds));  TimeSpan 还可以计算出TotalHours，TotalMinutes， TotalSeconds。</description>
     </item>
     
     <item>
       <title>Visual C# 中的事件及委托</title>
-      <link>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
+      <link>https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
       <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
       
-      <guid>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
+      <guid>https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
       <description>在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
 委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
 C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。
@@ -59,10 +59,10 @@ timer.Elapsed += delegate(object sender, System.</description>
     
     <item>
       <title>Visual C# 禁止应用多次启动</title>
-      <link>https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
+      <link>https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
       
-      <guid>https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
+      <guid>https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
       <description>废话少说，上代码：
 System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName(&amp;quot;AppProcessName&amp;quot;);if (myProcesses.Length &amp;gt; 1) {MessageBox.Show(&amp;quot;The application has already started ！&amp;quot;);Close();} 以上是 WPF 适用的。 如果是 winform 就把 Close() 改为 Application.Exit();。 end.</description>
     </item>

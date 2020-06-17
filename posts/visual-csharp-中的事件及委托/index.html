@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>时间</title>
+<title>Visual C# 中的事件及委托</title>
 
 
 
@@ -16,19 +16,34 @@
 
 
 
-<meta property="og:title" content="时间" />
-<meta property="og:description" content="清风徐来 Michael&#39;s Blog." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://kissjava.cn/tags/%E6%97%B6%E9%97%B4/" />
-<meta property="og:updated_time" content="2017-09-20T17:27:00+00:00" /><meta property="og:site_name" content="清风徐来" />
+<meta property="og:title" content="Visual C# 中的事件及委托" />
+<meta property="og:description" content="在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
+委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
+C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。
+namespace WpfApplication1{/// &lt;summary&gt;/// Interaction logic for MainWindow.xaml/// &lt;/summary&gt;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();var timer = new System.Timers.Timer(1000);timer.Start();timer.Elapsed &#43;= new System.Timers.ElapsedEventHandler(TimerElapsedHandler);}void TimerElapsedHandler(object sender, EventArgs e){MessageBox.Show(&quot;Timer has Elapsed&quot;);}}} 第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。
+其实委托关联可以简写为timer.Elapsed &#43;= TimerElapsedHandler;，取消事件订阅timer.Elapsed -= TimerElapsedHandler;
+匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。
+2017年09月11日 更新一下匿名的两张写法：
+timer.Elapsed &#43;= delegate(object sender, System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/" />
+<meta property="article:published_time" content="2017-09-09T15:53:00+00:00" />
+<meta property="article:modified_time" content="2017-09-09T15:53:00+00:00" /><meta property="og:site_name" content="清风徐来" />
 
 
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="时间"/>
-<meta name="twitter:description" content="清风徐来 Michael&#39;s Blog."/>
+<meta name="twitter:title" content="Visual C# 中的事件及委托"/>
+<meta name="twitter:description" content="在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
+委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
+C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。
+namespace WpfApplication1{/// &lt;summary&gt;/// Interaction logic for MainWindow.xaml/// &lt;/summary&gt;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();var timer = new System.Timers.Timer(1000);timer.Start();timer.Elapsed &#43;= new System.Timers.ElapsedEventHandler(TimerElapsedHandler);}void TimerElapsedHandler(object sender, EventArgs e){MessageBox.Show(&quot;Timer has Elapsed&quot;);}}} 第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。
+其实委托关联可以简写为timer.Elapsed &#43;= TimerElapsedHandler;，取消事件订阅timer.Elapsed -= TimerElapsedHandler;
+匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。
+2017年09月11日 更新一下匿名的两张写法：
+timer.Elapsed &#43;= delegate(object sender, System."/>
 
 
 
@@ -63,11 +78,17 @@
 
 
 
+  
+    <script src="https://kissjava.cn/js/toc-collapse.js"></script>
+  
 
 
 
 
 
+
+
+<script src='https://unpkg.com/valine@1.4.14/dist/Valine.min.js'></script>
 
 
 
@@ -93,9 +114,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/posts">
+            
+            <a class="a-block nav-link-item active" href="/posts">
                 归档
             </a>
             
@@ -113,11 +136,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/tags">
+            <a class="a-block nav-link-item false" href="/tags">
                 标签
             </a>
             
@@ -163,6 +184,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -180,8 +206,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         </a>
         
         
-        
-        
     </div>
 </div><div class="single-column-drawer-container" ref="drawer"
      v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
@@ -193,9 +217,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/posts">
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
                     归档
                 </a>
                 
@@ -213,11 +239,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/tags">
+                <a class="a-block drawer-menu-item false" href="/tags">
                     标签
                 </a>
                 
@@ -242,6 +266,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+</div>
             
         </div>
     </div>
@@ -285,41 +314,136 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <div class="post-item-wrapper post-item-wrapper-no-hover">
-            <div class="post-item post-item-no-gaps">
-                <div class="post-item-info-wrapper">
-                    <div class="post-item-title  post-item-title-small">
-                        <a href="https://kissjava.cn/">清风徐来</a> / 时间
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Visual C# 中的事件及委托
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-09-09 15:53
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Other]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/c">C#</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%A7%94%E6%89%98">委托</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E4%BA%8B%E4%BB%B6">事件</a>
+                                &nbsp;
+                            
+                        
+                        
                     </div>
                 </div>
             </div>
-        </div><a href="/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            C sharp 测试代码的运行时间
-                        </div>
-                        <div class="post-item-meta">
-    2017-09-20
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p><img src="https://kissjava.cn/usr/uploads/2017/09/2865825617.png" alt="visual-studio-logo-800x450.png"></p>
+<p>在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。</p>
+<p>委托类别定义一个方法签名，可将相容签名的方法与委托相关联。</p>
+<p>C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。</p>
+<pre><code>namespace WpfApplication1
+{
+    /// &lt;summary&gt;
+    /// Interaction logic for MainWindow.xaml
+    /// &lt;/summary&gt;
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
 
-                    </div>
+            var timer = new System.Timers.Timer(1000);
+            timer.Start();
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(TimerElapsedHandler);
+
+        }
+
+        void TimerElapsedHandler(object sender, EventArgs e)
+        {
+            MessageBox.Show(&quot;Timer has Elapsed&quot;);
+        }
+    }
+}
+</code></pre>
+<p>第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。</p>
+<p>其实委托关联可以简写为<code>timer.Elapsed += TimerElapsedHandler;</code>，取消事件订阅<code>timer.Elapsed -= TimerElapsedHandler;</code></p>
+<p>匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。</p>
+<p>2017年09月11日 更新一下匿名的两张写法：</p>
+<pre><code>timer.Elapsed += delegate(object sender, System.Timers.ElapsedEventArgs e)
+{
+    MessageBox.Show(&quot;Timer has Elapsed&quot;);
+};
+</code></pre>
+<p>或是直接次采用剪头语法来写</p>
+<pre><code>timer.Elapsed += (object sender, System.Timers.ElapsedEventArgs e) =&gt;
+{
+    MessageBox.Show(&quot;Timer has Elapsed.&quot;);
+};
+</code></pre>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2017-09-09</p>
+                    
                 </div>
             </div>
-        </a></div>
-</div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/">
+			下回<br>PyQt5自定义改变窗口大小信号
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://kissjava.cn/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+			上回<br>Jupyter Notebook 在 CentOS7 下的安装配置
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+<div id="vcomments"></div>
+
+
+
+
 
             </div>
+        </div>
+    </div>
+</div>
 
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
@@ -422,6 +546,15 @@ app = new Vue({
         this.handleResize();
         this.mounted = true;
 
+        
+            new Valine({
+                el: '#vcomments',
+                appId: "DWYhDPKrCXEQNTjjgs8ajjnI-gzGzoHsz",
+                appKey: "SUOmHvwzUQw1nIqK4UucwkS0",
+                requiredFields: ['nick','mail'],
+                enableQQ: true,
+                recordIP: true,
+            })
         
     },
     destroyed() {

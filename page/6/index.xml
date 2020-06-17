@@ -14,11 +14,11 @@
     
         <item>
         <title>Visual C# 中的事件及委托</title>
-        <link>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
+        <link>https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
         <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
         
-        <guid>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;visual-studio-logo-800x450.png&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;visual-studio-logo-800x450.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。&lt;/p&gt;
 &lt;p&gt;委托类别定义一个方法签名，可将相容签名的方法与委托相关联。&lt;/p&gt;
 &lt;p&gt;C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。&lt;/p&gt;
@@ -61,7 +61,7 @@
     MessageBox.Show(&amp;quot;Timer has Elapsed.&amp;quot;);
 };
 &lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ - kissjava.cn</description>
+- https://kissjava.cn/posts/visual-csharp-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ - kissjava.cn</description>
         </item>
     
     
@@ -620,11 +620,11 @@ ACCEPT     udp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW
     
         <item>
         <title>Visual C# 禁止应用多次启动</title>
-        <link>https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
+        <link>https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
         <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
         
-        <guid>https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;废话少说，上代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName(&amp;quot;AppProcessName&amp;quot;);
             if (myProcesses.Length &amp;gt; 1) 
@@ -636,7 +636,7 @@ ACCEPT     udp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW
 &lt;p&gt;以上是 WPF 适用的。
 如果是 winform 就把 &lt;code&gt;Close()&lt;/code&gt; 改为 &lt;code&gt;Application.Exit();&lt;/code&gt;。
 end.&lt;/p&gt;
-- https://kissjava.cn/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/visual-csharp-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ - kissjava.cn</description>
         </item>
     
     

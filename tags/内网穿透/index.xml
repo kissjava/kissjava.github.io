@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>内网穿透 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+    <link>https://kissjava.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
     <description>Recent content in 内网穿透 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 12 Aug 2019 15:50:22 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>frp使用小结</title>
-      <link>https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+      <link>https://kissjava.cn/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+      <guid>https://kissjava.cn/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
       <description>frp有服务器端（frps）和客户端（frpc）之分，在Linux和Windows上都可使用，下载地址
 ##Linux服务器端安装
 wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz #下载frptar -zxvf frp_0.13.0_linux_amd64.tar.gz #解压cd frp_0.13.0_linux_amd64 #进入目录rm -rf frpc_full.ini frpc frpc.ini #删除frpc相关的文件，frpc属于客户端vi frps.ini #编辑frps配置文件./frps -c ./frps.ini #启动frpsfrps.ini

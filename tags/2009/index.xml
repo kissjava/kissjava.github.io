@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2009 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/2009/</link>
+    <link>https://kissjava.cn/tags/2009/</link>
     <description>Recent content in 2009 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 06 Jan 2010 09:49:30 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/2009/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/2009/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>淡水的2009</title>
-      <link>https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
+      <link>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
       <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
+      <guid>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
       <description>终于肯花一点点时间，做个小小的回望了。 淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip; robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip; 2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。</description>
     </item>
     

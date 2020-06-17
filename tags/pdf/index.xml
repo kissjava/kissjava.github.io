@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pdf on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/pdf/</link>
+    <link>https://kissjava.cn/tags/pdf/</link>
     <description>Recent content in pdf on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sun, 18 Aug 2019 20:09:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part17 输出Pdf</title>
-      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</link>
+      <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</link>
       <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</guid>
+      <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</guid>
       <description>输出PDF也是很容易遇到的要求。
 我们用gopdf实现，先安装go get -u github.com/jung-kurt/gofpdf 用到中文需要注意，设置utf8字体。
 package mainimport (&amp;quot;log&amp;quot;&amp;quot;github.com/jung-kurt/gofpdf&amp;quot;)func main() {//参数说明//文档方向，纵向（P）还是横向（L）//度量单位，mm表示毫米//文档的大小，即将选择A4//字体路径文件，用不到pdf := gofpdf.New(&amp;quot;P&amp;quot;, &amp;quot;mm&amp;quot;, &amp;quot;A4&amp;quot;, &amp;quot;&amp;quot;)//创建新页面pdf.AddPage()//中文字体设置pdf.AddUTF8Font(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;./NotoSansSC-Regular.ttf&amp;quot;)//配置字体pdf.SetFont(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, 16)//左起5mm，上起10mm写字pdf.Text(5, 10, &amp;quot;你好, 世界&amp;quot;)//左侧5mm，距顶部20mm，贴图；//第四个参数是图像宽度。如果大于0的值，则将根据编号按比例调整图像大小pdf.Image(&amp;quot;./assets/terminal.png&amp;quot;, 5, 20, 200, 0, false, &amp;quot;&amp;quot;, 0, &amp;quot;&amp;quot;)err := pdf.OutputFileAndClose(&amp;quot;./file.pdf&amp;quot;)if err != nil {log.Println(&amp;quot;ERROR&amp;quot;, err.Error())}}效果 字体文件下载：NotoSansSC-Regular.ttf.zip</description>

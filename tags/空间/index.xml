@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>空间 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4/</link>
+    <link>https://kissjava.cn/tags/%E7%A9%BA%E9%97%B4/</link>
     <description>Recent content in 空间 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 10 Sep 2008 10:48:37 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E7%A9%BA%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>数据丢失，从零开始</title>
-      <link>https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</link>
+      <link>https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Wed, 10 Sep 2008 10:48:37 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</guid>
+      <guid>https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</guid>
       <description>最近QQ上线时间比较少，今天上线后，艾玛童鞋问我博客怎么了，我打开一看，原来空间过期了，忘记续费鸟。
 本来数据可以找回的，但是比较麻烦，所以干脆重新搞个独立IP的空间好了，不贵才100块RMB.200M的web空间+50M的mysql。软件环境： Apache 2.2.3 ＋ PHP 5.2.4 + MySQL 5.0.22 架构 ，支持 PHP 5.2.4 / PHP4(文件名须为*.php4或开通共享IP主机) / SHTML / HTML。试试看PHP5到底爽不爽XD.
 链接丢失了，希望看到的童鞋联系一下淡水&amp;gt;_&amp;lt;</description>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sublime text2 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/sublime-text2/</link>
+    <link>https://kissjava.cn/tags/sublime-text2/</link>
     <description>Recent content in sublime text2 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 23 Apr 2014 10:39:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/sublime-text2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/sublime-text2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sublime text 3059 for MAC</title>
-      <link>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</link>
+      <link>https://kissjava.cn/posts/sublime-text-3059-for-mac/</link>
       <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</guid>
+      <guid>https://kissjava.cn/posts/sublime-text-3059-for-mac/</guid>
       <description>1、去Sublime 官网下载最新的3059并安装。
 2、执行并退出Sublime主程序。
 3、下载本文附件，并解压。
@@ -30,10 +30,10 @@ End
     
     <item>
       <title>[转]sublime text 3 插件：package control</title>
-      <link>https://kissjava.github.io/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
+      <link>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
       <pubDate>Thu, 10 Oct 2013 15:03:12 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
+      <guid>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
       <description>来源：http://qianduanblog.com/1900.html和sublime text 2不同的是，sublime text 3无法使用命令直接来安装package control，一直不明白，这么一个很好的工具，为什么不直接集成在软件里呢，还要这么麻烦的安装呢？相比sublime text 2来说，sublime text 3的安装过程相对要麻烦很多。
 在搜索引擎中搜索后，有很多的安装方法，权衡各种方法，这里描述的方法应该是最简单的了。
 打开页面，右下角，点击下载：
@@ -44,20 +44,20 @@ C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;
     
     <item>
       <title>How to run a wxPython GUI app in Sublime Text 2</title>
-      <link>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
+      <link>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
       <pubDate>Tue, 27 Aug 2013 10:35:55 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
+      <guid>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
       <description>Step 1:Preference-&amp;gt;Browse Packages-&amp;gt;python，编辑Python.sublime-build文件，在字典里添加path item，value为python路径，淡水的如下： { &amp;ldquo;cmd&amp;rdquo;:[&amp;ldquo;python.exe&amp;rdquo;, &amp;ldquo;-u&amp;rdquo;, &amp;ldquo;$file&amp;rdquo;], &amp;ldquo;path&amp;rdquo;:&amp;ldquo;C:/Python27&amp;rdquo;, &amp;ldquo;file_regex&amp;rdquo;: &amp;ldquo;^[ ]File &amp;ldquo;(&amp;hellip;?)&amp;rdquo;, line ([0-9]*)&amp;rdquo;, &amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.python&amp;rdquo; } 这就解决了python的ctrl+b的build（python里算是运行）问题；但是如果使用了wxpython它还是不能跑起来。
 Step 2:Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31行左右注释掉一行代码，淡水的如下（从代码来看适用windows系统）： if os.name == &amp;ldquo;nt&amp;rdquo;: startupinfo = subprocess.STARTUPINFO() # startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW 应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。</description>
     </item>
     
     <item>
       <title>安装sublime text 2后的几件事</title>
-      <link>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
       <description>1，安装 Package Control 的方法：
 打开 Sublime Text 2，按下 Control + ` 调出 Console 将以下代码粘贴进命令行中并回车：
 重启sublime Text 2

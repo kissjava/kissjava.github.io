@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>subversion on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/subversion/</link>
+    <link>https://kissjava.cn/tags/subversion/</link>
     <description>Recent content in subversion on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 13 May 2009 10:15:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/subversion/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/subversion/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>windows下基于apache的subversion（svn）的安装</title>
-      <link>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <link>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
       <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
       <description>上午折腾了一下，可以写个详细步骤出来了。 预期目标：搭建一个apache下的svn服务，服务地址 http://localhost/svn
 本地环境：已经装有xampplite集成环境。 svn的服务目录为D:svnroot 已经安装好了小乌龟（TortoiseSVN）
 安装步骤：1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi 这里注意要和apache的版本对应，我是apache2.2的。 双击安装它，这个没说头。 2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中 有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so （淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下） 3，配置apache的httpd.conf文件 这个是个容易出差错的地方 把下两行的注释去掉：

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>grub on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/grub/</link>
+    <link>https://kissjava.cn/tags/grub/</link>
     <description>Recent content in grub on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 12 Jan 2011 00:15:12 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/grub/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/grub/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>win7，ubuntu10.10双系统，修复grub</title>
-      <link>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
+      <link>https://kissjava.cn/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
       <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
+      <guid>https://kissjava.cn/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
       <description>为什么要修复？因为啃黑苹果失败鸟。
 为什么要记录？网上大都不成功。
 我的跟分区在sda9，boot独立分区在sda10；可以用fdisk -l 看。

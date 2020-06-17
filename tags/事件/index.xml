@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>事件 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E4%BA%8B%E4%BB%B6/</link>
+    <link>https://kissjava.cn/tags/%E4%BA%8B%E4%BB%B6/</link>
     <description>Recent content in 事件 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 09 Sep 2017 15:53:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Visual C# 中的事件及委托</title>
-      <link>https://kissjava.github.io/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
+      <link>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
       <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
+      <guid>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
       <description>在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
 委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
 C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。

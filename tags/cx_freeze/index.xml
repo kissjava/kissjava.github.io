@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cx_freeze on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/cx_freeze/</link>
+    <link>https://kissjava.cn/tags/cx_freeze/</link>
     <description>Recent content in cx_freeze on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 29 Oct 2015 16:34:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/cx_freeze/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/cx_freeze/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>cx_Freeze setup.py</title>
-      <link>https://kissjava.github.io/posts/cx_freeze-setup.py/</link>
+      <link>https://kissjava.cn/posts/cx_freeze-setup.py/</link>
       <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/cx_freeze-setup.py/</guid>
+      <guid>https://kissjava.cn/posts/cx_freeze-setup.py/</guid>
       <description>from cx_Freeze import setup, Executable# http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspxshortcut_table = [(&amp;quot;DesktopShortcut&amp;quot;, # Shortcut&amp;quot;DesktopFolder&amp;quot;, # Directory_&amp;quot;YourAppDetailName&amp;quot;, # App Name&amp;quot;TARGETDIR&amp;quot;, # Component_&amp;quot;[TARGETDIR]AppName.exe&amp;quot;, # TargetNone, # ArgumentsNone, # DescriptionNone, # HotkeyNone, # IconNone, # IconIndexNone, # ShowCmd&#39;TARGETDIR&#39; # WkDir)]# Now create the table dictionarymsi_data = {&amp;quot;Shortcut&amp;quot;: shortcut_table}# Change some default MSI options and specify the use of the above defined tablesbdist_msi_options = {&#39;data&#39;: msi_data}# Dependencies are automatically detected, but it might need# fine tuning.</description>
     </item>
     

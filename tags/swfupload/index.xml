@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>swfupload on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/swfupload/</link>
+    <link>https://kissjava.cn/tags/swfupload/</link>
     <description>Recent content in swfupload on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 15 Jun 2011 12:48:30 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/swfupload/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/swfupload/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>swfupload在codeigniter中的应用</title>
-      <link>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。
 第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：
 $this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里

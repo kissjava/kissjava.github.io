@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>一些曾经用过的文字</title>
-        <link>https://kissjava.github.io/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</link>
+        <link>https://kissjava.cn/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</link>
         <pubDate>Wed, 10 Sep 2008 16:10:07 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/ -&lt;p&gt;这个春天就要结束了,我们一点也不自知,没有任何痕迹。觉得自己就要消失了,模糊得像今天的雾,脆弱而凌乱。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/ -&lt;p&gt;这个春天就要结束了,我们一点也不自知,没有任何痕迹。觉得自己就要消失了,模糊得像今天的雾,脆弱而凌乱。&lt;/p&gt;
 &lt;p&gt;手指寂寞，需要你的抚摩&lt;/p&gt;
 &lt;p&gt;一切都在，除了爱情。&lt;/p&gt;
 &lt;p&gt;不想日子过得太有规律，不想热情走得太快。就让时光的棱角磨平那些不尽人意，就让暴雨洗净那瞬逃亡的勇气。莫非，生活的状态只有两种？或者简单，或者华美&lt;/p&gt;
@@ -31,18 +31,18 @@
 生活中有一种美丽叫哀伤
 生活中有一种痛苦叫错过&lt;/p&gt;
 &lt;p&gt;后来，乱乱的采石场，找到了可以相依偎的石头，却再也找不到依偎在身边的她。那晚，她的眼泪砸在我的肩膀，很痛。那时，夜色正浓，她的泪水让我的心痛无法散发。渐渐的爆发了，我狠狠地用小石子砸向石堆。擦出火花，想在每一束火花中遥望到我们曾相爱的影子。现在的我只能用这样落的火花遥望，瞬间即逝。&lt;/p&gt;
-- https://kissjava.github.io/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>jQuery获取表单项目以及AJAX应用</title>
-        <link>https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</link>
+        <link>https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</link>
         <pubDate>Wed, 10 Sep 2008 16:06:55 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/ -&lt;p&gt;1.假如我们有如下页面
+        <guid>https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/ -&lt;p&gt;1.假如我们有如下页面
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -50,18 +50,18 @@
 &lt;p&gt;Xhtml文件如下：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter中框架的使用</title>
-        <link>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <link>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Wed, 10 Sep 2008 15:56:22 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;控制器代码：
+        <guid>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;控制器代码：
 &lt;!-- raw HTML omitted --&gt;
 class Admin extents Control
 {
@@ -88,32 +88,32 @@ views文件夹下有个专门的admin文件夹，里面都是管理页面（inde
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>对初学者很友好的PHP上传实例</title>
-        <link>https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</link>
+        <link>https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</link>
         <pubDate>Wed, 10 Sep 2008 15:45:57 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/ -&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>最后的祭奠</title>
-        <link>https://kissjava.github.io/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</link>
+        <link>https://kissjava.cn/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</link>
         <pubDate>Wed, 10 Sep 2008 15:33:56 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/ -&lt;p&gt;重装系统已经很久,到现在才想到要装一个office,什么时候开始慢慢不写字了的呢?怎么也想不起来,看见曾经为着彼此的文字而惺惺相惜的朋友们.那些认识或者不认识的人们,都还在自己的那一小块地方勤奋地书写着,文思泉涌地。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/ -&lt;p&gt;重装系统已经很久,到现在才想到要装一个office,什么时候开始慢慢不写字了的呢?怎么也想不起来,看见曾经为着彼此的文字而惺惺相惜的朋友们.那些认识或者不认识的人们,都还在自己的那一小块地方勤奋地书写着,文思泉涌地。&lt;/p&gt;
 &lt;p&gt;看见这些辛勤写字的孩子的时候，（姑且还是称我们为孩子吧，虽然这个词已经被我们用得恶俗，但是我暂时找不到别的词汇来描述我们这样尴尬的一群）我心里会有一种罪恶感，一种堕落了的罪恶感。曾经我也是和他们一样的孩子，善良而倔强，会为着自己所喜爱的文字，音乐，电影，人，事等等等等那些可以触动到心里某块柔软地方的事物所执着，所感动。&lt;/p&gt;
 &lt;p&gt;在过去的几年里我一直是坚持并且坚决地进行着我的书写的，那是一段美好的时光，何况我装得一手好逼。笑。因为那个时候我总是努力地把自己打扮成一个忧伤的诗人，落漠而狂妄的诗人，并且书写，用我觉得最忧伤并且最美丽的姿态书写。写出看了能够让人心痛的文字。&lt;/p&gt;
 &lt;p&gt;笑。甚至是现在读起那些小文字的时候我心里某个地方也是会突然一下子柔软起来的，所以我一直相信我是个有潜力的孩子，并且终有一天我会追逐到我一直在追逐的。可笑的是，问题在于，我那个时候并不很清楚我想要追逐什么。梦想一直是个很模糊的概念，那时候是，现在也许也是。所以人们说这是一个懵懂的年纪，不知道该为什么所忧伤，于是便忧伤起来了。忧伤，这也是一个早已经被使用得恶俗了的词汇，在几乎所有故作矫情的年轻人的文字里都可以找到。我们八十年生的这一代，没有兄妹的这一代，到了这个成长的年龄，忧郁成了一个被追捧得已经失去了本原意义的流行方式。父辈们是幸运的，动荡的年代成就了他们年轻时动荡的灵魂，于是他们的躁动得以在世界的躁动中冲撞，发泄。而我们不，我们在这个和平的年代里，热血是要有代价的。于是压抑下来，转化成笔下一节节忧伤的字句。并且在这样的情绪里，我们长大。&lt;/p&gt;
@@ -151,50 +151,50 @@ views文件夹下有个专门的admin文件夹，里面都是管理页面（inde
 &lt;p&gt;我这样想。&lt;/p&gt;
 &lt;p&gt;毕竟，我真的不是一个诗人。&lt;/p&gt;
 &lt;p&gt;再见，我故作忧愁的年代，再见，我忧伤的字句们
-这篇文章淡水很喜欢，所以还是从百度的cache里把他抓回来了，纪念淡水也曾经过的年少轻狂&lt;/p&gt;- https://kissjava.github.io/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/ - kissjava.cn</description>
+这篇文章淡水很喜欢，所以还是从百度的cache里把他抓回来了，纪念淡水也曾经过的年少轻狂&lt;/p&gt;- https://kissjava.cn/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP演示最简单的MVC模式</title>
-        <link>https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</link>
+        <link>https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</link>
         <pubDate>Wed, 10 Sep 2008 14:31:36 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/ -&lt;p&gt;为了更好的演示MVC的工作方式,我们使用了一个简单的新闻文章发布系统作为例子.分为使用MVC和不使用MVC两种方式.
+        <guid>https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/ -&lt;p&gt;为了更好的演示MVC的工作方式,我们使用了一个简单的新闻文章发布系统作为例子.分为使用MVC和不使用MVC两种方式.
 我们只作一个基本的演示,从数据库里读出一些文章列表,并在页面上显示。一般的流程就是,连接数据库,查询数据库,循环输出html结果。下面的代码就是如此做的。（淡水感觉怪怪的，语言组织得不好。好在代码比较容易理解）&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;model:
 &lt;!-- raw HTML omitted --&gt;      &lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;- https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/ - kissjava.cn</description>
+&lt;!-- raw HTML omitted --&gt;- https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>数据丢失，从零开始</title>
-        <link>https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</link>
+        <link>https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</link>
         <pubDate>Wed, 10 Sep 2008 10:48:37 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/ -&lt;p&gt;最近QQ上线时间比较少，今天上线后，&lt;!-- raw HTML omitted --&gt;艾玛&lt;!-- raw HTML omitted --&gt;童鞋问我博客怎么了，我打开一看，原来空间过期了，忘记续费鸟。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/ -&lt;p&gt;最近QQ上线时间比较少，今天上线后，&lt;!-- raw HTML omitted --&gt;艾玛&lt;!-- raw HTML omitted --&gt;童鞋问我博客怎么了，我打开一看，原来空间过期了，忘记续费鸟。&lt;/p&gt;
 &lt;p&gt;本来数据可以找回的，但是比较麻烦，所以干脆重新搞个独立IP的空间好了，不贵才100块RMB.200M的web空间+50M的mysql。软件环境： Apache  2.2.3  ＋ PHP  5.2.4  + MySQL  5.0.22  架构 ，支持  PHP 5.2.4  / PHP4(文件名须为*.php4或开通共享IP主机) / SHTML / HTML。试试看PHP5到底爽不爽XD.&lt;/p&gt;
 &lt;p&gt;链接丢失了，希望看到的童鞋联系一下淡水&amp;gt;_&amp;lt;&lt;/p&gt;
-- https://kissjava.github.io/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter MongoDB Library</title>
-        <link>https://kissjava.github.io/posts/codeigniter-mongodb-library/</link>
+        <link>https://kissjava.cn/posts/codeigniter-mongodb-library/</link>
         <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter-mongodb-library/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter-mongodb-library/ -&lt;p&gt;它能使你的应用在操作MongoDB时保证和active record一致的风格。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/codeigniter-mongodb-library/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-mongodb-library/ -&lt;p&gt;它能使你的应用在操作MongoDB时保证和active record一致的风格。&lt;/p&gt;
 &lt;p&gt;1，添加Mongo_db.php 到你的 /application/libraries 文件夹
 2，添加mongodb.php 到你的 /application/config 文件夹
 3，更你的配置文件&lt;/p&gt;
@@ -213,18 +213,18 @@ views文件夹下有个专门的admin文件夹，里面都是管理页面（inde
 &lt;p&gt;order_by Order the results&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;limit Limit the number of returned results&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/codeigniter-mongodb-library/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter-mongodb-library/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter 带简单权限控制的登录实例</title>
-        <link>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
+        <link>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
         <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ -&lt;!-- raw HTML omitted --&gt;
 &lt;pre&gt;&lt;code&gt;function __construct()
 {
     parent::__construct();
@@ -278,7 +278,7 @@ function isPermitted()
 &lt;p&gt;}
 ?&amp;gt;
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ - kissjava.cn</description>
         </item>
     
     

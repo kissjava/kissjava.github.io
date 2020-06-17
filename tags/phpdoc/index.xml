@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>phpdoc on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/phpdoc/</link>
+    <link>https://kissjava.cn/tags/phpdoc/</link>
     <description>Recent content in phpdoc on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 29 May 2012 12:04:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/phpdoc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/phpdoc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>xampp下安装 PhpDocumenter</title>
-      <link>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
+      <link>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
       <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
+      <guid>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
       <description>没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。 淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。 下载PhpDocumentor-1.4.4.tgz 解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径） 然后修改该目录里的 phpdoc.bat 这个批处理文件，将16行 “SET phpCli=”修改成你的PHP路径： SET phpCli=D:xamppphpphp.exe 集成到eclipse PDT里（zend studio for eclipse里已经自带了，pdt要自己动手）：参数说明：快小半年没更新了，这里都快荒废了，有木有！</description>
     </item>
     

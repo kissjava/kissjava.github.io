@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>smtp on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/smtp/</link>
+    <link>https://kissjava.cn/tags/smtp/</link>
     <description>Recent content in smtp on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 03 Nov 2011 10:41:27 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Postmark的邮件代发服务</title>
-      <link>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
       <description>以往都是找可以开通smtp的免费邮箱来做的。 但是限制较多，一般是发送要延时，每天限制50或100封。容易被屏蔽等等。对外贸用途的就更不行了，大都是被当成垃圾邮件处理了。 有了Postmark就不一样了。下面淡水就介绍一下。
 Postmark是国外服务。可用于web线上发送mail。简单的API，简单的操作，零维护，比较方便。
 问Postmark官方网站：http://postmarkapp.com

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>背景 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E8%83%8C%E6%99%AF/</link>
+    <link>https://kissjava.cn/tags/%E8%83%8C%E6%99%AF/</link>
     <description>Recent content in 背景 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Mar 2014 22:30:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E8%83%8C%E6%99%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E8%83%8C%E6%99%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>wxpython设置背景</title>
-      <link>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+      <link>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
       <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
       <description>用wxformbuilder+一点代码来实现。
 首先用wxformbuilder来做出界面，并生成代码。运行结果：
 使其有背景图片效果： 实现代码如下：

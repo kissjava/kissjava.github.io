@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>macos on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/macos/</link>
+    <link>https://kissjava.cn/tags/macos/</link>
     <description>Recent content in macos on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>macOS安装Ngnix php MySQL</title>
-      <link>https://kissjava.github.io/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
+      <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
       <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
+      <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
       <description>Nginx 虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。
 Installation 安装和启动Nginx，我们使用
 brew install nginxsudo brew services start nginx虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx

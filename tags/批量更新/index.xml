@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>批量更新 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</link>
+    <link>https://kissjava.cn/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</link>
     <description>Recent content in 批量更新 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 16 Sep 2009 18:00:07 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP数据记录批量更新代码</title>
-      <link>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Wed, 16 Sep 2009 18:00:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
       <description>需要用到，简单是思路，记录一下。不过用到的应该不多。。。 一般会循环列出表记录到表单里 </description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>py2exe on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/py2exe/</link>
+    <link>https://kissjava.cn/tags/py2exe/</link>
     <description>Recent content in py2exe on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 16 Oct 2013 17:26:21 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/py2exe/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/py2exe/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pyinstaller安装及使用</title>
-      <link>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       <description>也可以用py2exe,但是总要写个xxx.py的文件来配置,不是很乐意.
 chinaunix上有朋友推荐用pyinstaller,说更容易使用.那就用用看吧.
 第一步:安装 easy_install pyinstaller(淡水在win8.1下需要用管理员权限安装)

@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>python虚拟环境virtualenv</title>
-        <link>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+        <link>https://kissjava.cn/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
         <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ -&lt;p&gt;昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ -&lt;p&gt;昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.&lt;/p&gt;
 &lt;p&gt;virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.&lt;/p&gt;
 &lt;p&gt;这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.&lt;/p&gt;
 &lt;p&gt;比如,我可以为公司的项目搞个环境叫comDjango;还可以自己偷偷搞个myDjango.&lt;/p&gt;
@@ -40,18 +40,18 @@ $Scriptsactivate.bat
 &lt;p&gt;此时,去pip install xxx就会安装到comDjango里了,和其他环境不相干了.&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;#最后,退出这个虚拟环境
 $deactivate&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ - kissjava.cn</description>
+- https://kissjava.cn/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>python 安装二三事</title>
-        <link>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+        <link>https://kissjava.cn/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
         <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ -&lt;p&gt;恰好,下载文件夹里有个python2.7.5.mis&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ -&lt;p&gt;恰好,下载文件夹里有个python2.7.5.mis&lt;/p&gt;
 &lt;p&gt;双击,一路next,安装完成.&lt;/p&gt;
 &lt;p&gt;在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.&lt;/p&gt;
 &lt;p&gt;系统-&amp;gt;高级属性设置-&amp;gt;环境变量:&lt;/p&gt;
@@ -62,18 +62,18 @@ $deactivate&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;命令行下安装:cd 下载目录;&lt;!-- raw HTML omitted --&gt;python ez_setup.py&lt;!-- raw HTML omitted --&gt; 只要连网了,一般都能安装成功,要么就是人品问题了.&lt;/p&gt;
 &lt;p&gt;好吧,这下就可以在命令行下,简单的安装python第三方的包了.比如 &lt;!-- raw HTML omitted --&gt;easy_install virtualenv&lt;!-- raw HTML omitted --&gt;还有 &lt;!-- raw HTML omitted --&gt;easy_install MySQL-python&lt;!-- raw HTML omitted --&gt;&amp;hellip;&lt;/p&gt;
 &lt;p&gt;好像比php方便些呢.其实好久没更新blog了,随意写写,凑数来了. 注意是随意,不是随便.&lt;/p&gt;
-- https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>安装sublime text 2后的几件事</title>
-        <link>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+        <link>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
         <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ -&lt;p&gt;1，安装 Package Control 的方法：&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ -&lt;p&gt;1，安装 Package Control 的方法：&lt;/p&gt;
 &lt;p&gt;打开 Sublime Text 2，按下 Control + ` 调出 Console
 将以下代码粘贴进命令行中并回车：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -113,18 +113,18 @@ ctrl+shift+/ 块注释&lt;/p&gt;
 &lt;p&gt;ctrl+shift+P -&amp;gt; install package -&amp;gt; IMESupport
 安装 支持中文输入法光标跟随
 日本人开发的.官网https://github.com/chikatoike/IMESupport&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>清理.SVN文件夹及右键菜单</title>
-        <link>https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+        <link>https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
         <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ -&lt;p&gt;无废话，不博客-_-!
+        <guid>https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ -&lt;p&gt;无废话，不博客-_-!
 先说清理.svn文件夹吧，不知道为什么好好的svn的export不用，搞得文件夹下都有.svn文件夹。微软上有个批处理，导入到注册表后就有个右键菜单“Delete SVN Folders”。如下，保存为.reg后缀后双击导入注册表即可使用。
 &lt;!-- raw HTML omitted --&gt;
 Windows Registry Editor Version 5.00&lt;/p&gt;
@@ -135,34 +135,34 @@ Windows Registry Editor Version 5.00&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;说到右键菜单，我就发现，右键的发送到下面有个115备份。这个我早就删除了，注册表也搜索后删除了，但是还在。嗯，很顽强。下载右键管家，终于搞定。右键管家的下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.xiazaiba.com/html/5887.html&#34;&gt;http://www.xiazaiba.com/html/5887.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 ps：win8 64位管家依旧给力支持&lt;/p&gt;
-- https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>又要回头搞微软么</title>
-        <link>https://kissjava.github.io/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</link>
+        <link>https://kissjava.cn/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</link>
         <pubDate>Mon, 19 Nov 2012 12:36:07 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ -&lt;p&gt;标题党 -_-!
+        <guid>https://kissjava.cn/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ -&lt;p&gt;标题党 -_-!
 写着php，却喜欢python。但是搞java貌似比有市场，满大街的Andriod呀。
 要不，先搞搞比较容易上手的C#？
 MS的IDE实在是给力。又是选择题，悲催。
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Simple Test 中文参考</title>
-        <link>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+        <link>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
         <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ -&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ -&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
 &lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
 我们用以下代码来创建一个测试脚本放在tests/log_test.php里．
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -433,18 +433,18 @@ public function testAssertNoPattern() {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;}&lt;/p&gt;
 &lt;p&gt;$test = new DbTest();
-$test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ - kissjava.cn</description>
+$test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>xampp下安装 PhpDocumenter</title>
-        <link>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
+        <link>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
         <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ -&lt;p&gt;没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。
+        <guid>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ -&lt;p&gt;没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。
 淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。
 下载PhpDocumentor-1.4.4.tgz 
 解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径）
@@ -455,18 +455,18 @@ $test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;-
 &lt;!-- raw HTML omitted --&gt;参数说明：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;快小半年没更新了，这里都快荒废了，有木有！&lt;/p&gt;
-- https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
+- https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Lazy Load Plugin for jQuery</title>
-        <link>https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/</link>
+        <link>https://kissjava.cn/posts/lazy-load-plugin-for-jquery/</link>
         <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/ -&lt;p&gt;lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/lazy-load-plugin-for-jquery/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/lazy-load-plugin-for-jquery/ -&lt;p&gt;lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。&lt;/p&gt;
 &lt;p&gt;这个插件，就是浏览器还没有浏览到的图片，都不加载；等滚动条下拉，下面的页面显示了，原来下面页面包含的图片才会被触发加载。&lt;/p&gt;
 &lt;p&gt;已经有些站用这样的技术了。淡水一直不致力于前端研究，正好晃荡到这个插件的站点。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.appelsiini.net/projects/lazyload&#34;&gt;http://www.appelsiini.net/projects/lazyload&lt;/a&gt;&lt;/p&gt;
@@ -478,18 +478,18 @@ $test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;-
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;其他还有一些乱七八糟的用法就不多说了。上边的代码足矣。&lt;/p&gt;
-- https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/ - kissjava.cn</description>
+- https://kissjava.cn/posts/lazy-load-plugin-for-jquery/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>MongoDB快速上手PHP篇</title>
-        <link>https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</link>
+        <link>https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</link>
         <pubDate>Thu, 02 Feb 2012 15:37:20 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;1，简介&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;1，简介&lt;!-- raw HTML omitted --&gt;
 mongoDB（http://www.mongodb.org）是一种 NoSQL 的文档型的数据库管理系统。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似 json的bjson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。
 　　Mongo主要解决的是海量数据的访问效率问题，根据官方的文档，当数据量达到50GB以上的时候，Mongo的数据库访问速度是MySQL的 10倍以上。Mongo的并发读写效率不是特别出色，根据官方提供的性能测试表明，大约每秒可以处理0.5万－1.5次读写请求。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;2，安装（windows only）&lt;!-- raw HTML omitted --&gt;
@@ -511,22 +511,22 @@ d:mongodbbin&amp;gt;mongod.exe -dbpath d:mongodbdata
 以下是淡水的修改版：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ - kissjava.cn</description>
+- https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>web.py尝鲜时遭遇no module named MySQLdb</title>
-        <link>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+        <link>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
         <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ -&lt;p&gt;python看了好一阵了，一直没有突破。挤了点时间折腾web.py。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ -&lt;p&gt;python看了好一阵了，一直没有突破。挤了点时间折腾web.py。&lt;/p&gt;
 &lt;p&gt;下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。&lt;/p&gt;
 &lt;p&gt;google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。&lt;/p&gt;
 &lt;p&gt;这里有下。http://www.lfd.uci.edu/~gohlke/pythonlibs/ 里面还有好多的。&lt;/p&gt;
-- https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ - kissjava.cn</description>
+- https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ - kissjava.cn</description>
         </item>
     
     

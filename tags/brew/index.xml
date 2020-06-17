@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>brew on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/brew/</link>
+    <link>https://kissjava.cn/tags/brew/</link>
     <description>Recent content in brew on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 13 Aug 2014 14:35:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/brew/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/brew/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用Homebrew搞定MySQL-python</title>
-      <link>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
+      <link>https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
+      <guid>https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
       <description>写php时，因为懒惰，所以在mac上用了mamp。 后来，写python。MySQLdb一直无法安装，后来是单独安装了mysql-5.1.73-osx10.6-x86_64 。 然后配置.bash_profile :
 # Setting PATH for MySQLdbPATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/bin:${PATH}&amp;quot;export PATHexport DYLD_LIBRARY_PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/lib&amp;quot;export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes再使用pip安装既可：
 sudo pip install MySQL-python比较繁琐。后来发现不用在使用mamp还要再安装一个mysql就可以安装上MySQL-python的方法。用brew两行代码搞定：

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>json on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/json/</link>
+    <link>https://kissjava.cn/tags/json/</link>
     <description>Recent content in json on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 08:49:10 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go解析JSON文件</title>
-      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。 我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。
 JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！
 ##Encoding/Json Package

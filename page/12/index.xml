@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Git安装使用手记</title>
-        <link>https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+        <link>https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
         <pubDate>Fri, 03 Jun 2011 14:27:28 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;这篇主要是记录我在 &lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;平台安装 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的过程&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的简单使用&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
 &lt;p&gt;先描述一下安装的需求：&lt;/p&gt;
 &lt;p&gt;· 用户端和服务器端的操作系统都是 &lt;!-- raw HTML omitted --&gt;Windows&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -141,18 +141,18 @@ $ git init MyProject&lt;/p&gt;
 &lt;p&gt;以上大概就是最简单、最基础的 &lt;!-- raw HTML omitted --&gt;git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;作业流程。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;原文：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://huan-lin.blogspot.com/2011/05/install-git-server-and-apache-on.html&#34;&gt;http://huan-lin.blogspot.com/2011/05/install-git-server-and-apache-on.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ - kissjava.cn</description>
+- https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>为何改用Git</title>
-        <link>https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
+        <link>https://kissjava.cn/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
         <pubDate>Fri, 03 Jun 2011 13:44:31 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ -&lt;p&gt;Subversion &lt;!-- raw HTML omitted --&gt;用得好好的，为什么要改用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;呢？&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ -&lt;p&gt;Subversion &lt;!-- raw HTML omitted --&gt;用得好好的，为什么要改用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;呢？&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;记得刚开始用 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;时，它在 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;平台上的工具也还不是那么方便，光是安装就要手动设定一堆东西。现在，&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务已经几乎是点下一步、下一步的方式就能安装完成了，非常方便。而且，现有的软件项目、写作等工作，也都在是用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;来管理版本。在已经投资不少学习成本、且用得很习惯的情况下，要换另外一套版本管理系统总是会有一些阻力。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;更顺畅的工作流程&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;其实我 &lt;!-- raw HTML omitted --&gt;lag &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;很久了。没有改用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，主要就是因为习惯问题，以及考虑到已经付出的学习成本，和没有一个让我觉得非换不可的理由。但是最近由于经常使用&lt;!-- raw HTML omitted --&gt;笔记本电脑，而且网络经常碰到无法连线的状态（有时候是笔电所在的环境无法连网，有时候是服务器离线），以至于有些本机的修改成果无法立即 &lt;!-- raw HTML omitted --&gt;commit &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;成一个修订版次。这个时候，如果我还要继续修改别的东西（例如&lt;!-- raw HTML omitted --&gt;，修正另一个  &lt;!-- raw HTML omitted --&gt;bug&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;），往往就会跟刚才的修改混在一起 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，而且是要等到可连上网络时才能 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。这样的时间差，很容易造成一些遗漏或混乱，无形中就增加了成本和风险。我希望就算无法连接服务器，还是能够依目前的进度先 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，并且继续做后续的修改，这样我就不用在那里空等，也不用担心自己等到网络可连线时，已经忘记那些档案的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;先后次序。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;可以做到这点。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -168,18 +168,18 @@ $ git init MyProject&lt;/p&gt;
 &lt;p&gt;当我从远端 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务器 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;checkout &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;一个版本库到本机时，在本机的工作目录下，每一层子目录都会有一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.svn &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的资料夹，作为版本控制之用。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;不是这样。当我从远端服务器 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;clone &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库到本机时，就只有该版本库复本的根目录底下会有一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;目录，其他子目录则很「干净」。此外，它&lt;!-- raw HTML omitted --&gt;的档案忽略清单只要由 &lt;!-- raw HTML omitted --&gt;.git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;目录下的一个名为 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.gitignore &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的档案就能完全控制。虽然是不太起眼的差异，我却觉得蛮好的。大概是有点洁癖的缘故吧 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;XD&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;原文需要翻墙，哎&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://huan-lin.blogspot.com/2011/05/why-git.html&#34;&gt;http://huan-lin.blogspot.com/2011/05/why-git.html&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>eclipse pdt 注释快捷键失效的解决方法</title>
-        <link>https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+        <link>https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
         <pubDate>Fri, 13 May 2011 15:31:28 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ -&lt;p&gt;重装win7 64位系统后，下了64为的java jre和64位的eclipse pdt。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ -&lt;p&gt;重装win7 64位系统后，下了64为的java jre和64位的eclipse pdt。&lt;/p&gt;
 &lt;p&gt;淡水突然发现写代码时，无法注释了。还以为是64位的谷歌输入法搞的鬼。卸载输入法后还是不行。&lt;/p&gt;
 &lt;p&gt;google之。原来是新版eclipse的bug。&lt;/p&gt;
 &lt;p&gt;到 &lt;a href=&#34;http://sourceforge.jp/projects/pdt-tools/releases/51060&#34;&gt;http://sourceforge.jp/projects/pdt-tools/releases/51060&lt;/a&gt;&lt;/p&gt;
@@ -187,34 +187,34 @@ $ git init MyProject&lt;/p&gt;
 &lt;p&gt;复制到你的eclipse的plugins目录。&lt;/p&gt;
 &lt;p&gt;eclipse.exe -clean 运行就可以了。&lt;/p&gt;
 &lt;p&gt;浪费了不少时间。记录下来，希望遇到同意问题的朋友可以看到。&lt;/p&gt;
-- https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>五一快到了，唠叨两句</title>
-        <link>https://kissjava.github.io/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</link>
+        <link>https://kissjava.cn/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</link>
         <pubDate>Fri, 29 Apr 2011 10:19:40 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ -&lt;p&gt;去苏州的太湖牛仔度假村玩乐两天。折腾得够呛。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ -&lt;p&gt;去苏州的太湖牛仔度假村玩乐两天。折腾得够呛。&lt;/p&gt;
 &lt;p&gt;ubuntu11.04出了，嗯安装更加简单来，win7+ubuntu11.04，ubuntu会帮你update-grub，直接搞定双系统的启动菜单。&lt;/p&gt;
 &lt;p&gt;ci2也用得比较舒服，配置一下在eclipse里代码提示还是不错的。&lt;/p&gt;
 &lt;p&gt;手头两个案子都接近尾声。andirod开发还算没怎么看，python也还是没有进度。这样的学习进度，你伤不起啊伤不起。&lt;/p&gt;
 &lt;p&gt;最后祝大家五一玩得开心。&lt;/p&gt;
-- https://kissjava.github.io/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Jquery UI dialog 详解 (中文)转</title>
-        <link>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <link>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
         <pubDate>Wed, 06 Apr 2011 15:02:44 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;1.11 autoOpen  ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&amp;ldquo;open&amp;rdquo;)的时候才弹出dialog窗口。默认为：true。&lt;/p&gt;
 &lt;p&gt;1.12 初始化例：请注意，$(&#39;.selector&amp;rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。&lt;/p&gt;
 &lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ autoOpen: false });&lt;/p&gt;
@@ -320,56 +320,56 @@ $ git init MyProject&lt;/p&gt;
 &lt;p&gt;3.7 moveToTop ,将dialog移到最上层，例如：.dialog( &amp;lsquo;moveToTop&amp;rsquo; )&lt;/p&gt;
 &lt;p&gt;来源：http://www.cnblogs.com/bestfc/archive/2009/06/08/1498742.html&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+- https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>jquery ui according详解(中文)转</title>
-        <link>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <link>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
         <pubDate>Wed, 06 Apr 2011 15:02:27 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        <guid>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>jquery ui tabs详解(中文)转</title>
-        <link>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <link>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
         <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        <guid>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter2 Model 支持单例</title>
-        <link>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
+        <link>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
         <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ -&lt;p&gt;CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ -&lt;p&gt;CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter Reactor&#39;s Caching Drivers</title>
-        <link>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</link>
+        <link>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</link>
         <pubDate>Sat, 02 Apr 2011 17:18:51 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/ -&lt;p&gt;Before &lt;!-- raw HTML omitted --&gt;Reactor&lt;!-- raw HTML omitted --&gt; dropped, I snuck in some &lt;!-- raw HTML omitted --&gt;caching drivers&lt;!-- raw HTML omitted --&gt; (&lt;!-- raw HTML omitted --&gt;Docs Link&lt;!-- raw HTML omitted --&gt;) that &lt;!-- raw HTML omitted --&gt;Pascal&lt;!-- raw HTML omitted --&gt; had been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/ -&lt;p&gt;Before &lt;!-- raw HTML omitted --&gt;Reactor&lt;!-- raw HTML omitted --&gt; dropped, I snuck in some &lt;!-- raw HTML omitted --&gt;caching drivers&lt;!-- raw HTML omitted --&gt; (&lt;!-- raw HTML omitted --&gt;Docs Link&lt;!-- raw HTML omitted --&gt;) that &lt;!-- raw HTML omitted --&gt;Pascal&lt;!-- raw HTML omitted --&gt; had been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.&lt;/p&gt;
 &lt;p&gt;At this time, there are drivers available for &lt;!-- raw HTML omitted --&gt;APC&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Memcached&lt;!-- raw HTML omitted --&gt;, file-based caching, and a dummy cache. If you haven&amp;rsquo;t already, head over to &lt;!-- raw HTML omitted --&gt;BitBucket&lt;!-- raw HTML omitted --&gt; and get cloning or forking.&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -530,18 +530,18 @@ Shortest transaction:           0.05
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;So we&amp;rsquo;ve increased our output from 3 hits to 432 in 10 seconds. Not a bad boost, if I do say so myself. In a &amp;lsquo;real&amp;rsquo; application, my query calls would be in the model, but we can also avoid loading the models unless the cache is stale, which saves on an&lt;!-- raw HTML omitted --&gt;include()&lt;!-- raw HTML omitted --&gt;, and helps to keep CI breezing along even faster!&lt;/p&gt;
 &lt;p&gt;Have you checked out the new cached drivers in CI Reactor? If so, how do you find them stacking up with your applications needs?&lt;/p&gt;
-- https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>FirePHP,给力的调试工具</title>
-        <link>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+        <link>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ -&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
+        <guid>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ -&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
 这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;FirePHPCore的lib包里有四个文件，后缀为php4的明显是适用php4的。&lt;/p&gt;
@@ -594,7 +594,7 @@ $this-&amp;gt;fb-&amp;gt;groupEnd();
 &lt;!-- raw HTML omitted --&gt;
 效果：
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-完了，就是贴图太麻烦了:(&lt;/p&gt;- https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ - kissjava.cn</description>
+完了，就是贴图太麻烦了:(&lt;/p&gt;- https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ - kissjava.cn</description>
         </item>
     
     

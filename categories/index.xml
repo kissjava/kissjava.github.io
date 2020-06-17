@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 清风徐来</title>
-    <link>https://kissjava.github.io/categories/</link>
+    <link>https://kissjava.cn/categories/</link>
     <description>Recent content in Categories on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP</title>
-      <link>https://kissjava.github.io/categories/php/</link>
+      <link>https://kissjava.cn/categories/php/</link>
       <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/categories/php/</guid>
+      <guid>https://kissjava.cn/categories/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://kissjava.github.io/categories/go/</link>
+      <link>https://kissjava.cn/categories/go/</link>
       <pubDate>Tue, 03 Sep 2019 15:56:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/categories/go/</guid>
+      <guid>https://kissjava.cn/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Other</title>
-      <link>https://kissjava.github.io/categories/other/</link>
+      <link>https://kissjava.cn/categories/other/</link>
       <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/categories/other/</guid>
+      <guid>https://kissjava.cn/categories/other/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>https://kissjava.github.io/categories/work/</link>
+      <link>https://kissjava.cn/categories/work/</link>
       <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/categories/work/</guid>
+      <guid>https://kissjava.cn/categories/work/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://kissjava.github.io/categories/python/</link>
+      <link>https://kissjava.cn/categories/python/</link>
       <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/categories/python/</guid>
+      <guid>https://kissjava.cn/categories/python/</guid>
       <description></description>
     </item>
     

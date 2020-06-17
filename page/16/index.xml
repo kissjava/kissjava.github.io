@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>php的文档句法(heredoc)</title>
-        <link>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
+        <link>https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
         <pubDate>Fri, 12 Feb 2010 21:54:46 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ -&lt;p&gt;不是新文章，以前写的。但是上次空间到期后数据都没了。网上有看到它，就把它弄回来了。
+        <guid>https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ -&lt;p&gt;不是新文章，以前写的。但是上次空间到期后数据都没了。网上有看到它，就把它弄回来了。
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -82,18 +82,18 @@ explode类似于C#里的Split函数。例如
 &lt;p&gt;查找字符串的位置可以使用strpos()以及strrpos().&lt;/p&gt;
 &lt;p&gt;替换的话，调用str_replace()以及substr_replace().&lt;/p&gt;
 &lt;p&gt;以上介绍都是最常用的，如果想得到更多字符串的函数以及函数的信息，参考PHP的函数文档。&lt;/p&gt;
-- https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP备忘</title>
-        <link>https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/</link>
+        <link>https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/</link>
         <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/ -&lt;p&gt;1，stdClass
+        <guid>https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/ -&lt;p&gt;1，stdClass
 他是php内置的一个类，提供给我们直接实例化使用。
 &lt;!-- raw HTML omitted --&gt;
 $obj = new stdClass();
@@ -151,18 +151,18 @@ echo &amp;lsquo;Go on&amp;hellip;&#39;;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>TinyMVC中文手册</title>
-        <link>https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+        <link>https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
         <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;pre&gt;&lt;code&gt;照例，先罗嗦几句。
+        <guid>https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;pre&gt;&lt;code&gt;照例，先罗嗦几句。
 一直想把codeigniter的代码通读一遍，虽然codeigniter是比较轻量级的php框架，但是里面的东西还是很多的，所以一直没有实现。顺便也一直在寻找适合的代替品。其间，大致看了&amp;lt;a href=&amp;quot;http://www.skiyo.cn/punny/&amp;quot;&amp;gt;punny&amp;lt;/a&amp;gt;，还有很自由的&amp;lt;a href=&amp;quot;http://code.google.com/p/lotusphp/&amp;quot;&amp;gt;lotusphp&amp;lt;/a&amp;gt;。lotusphp 这个不像是框架了，倒像是个php的几个常用功能封装起来的组件，很牛13的，好多都可以作为插件放到tinymvc里去。。。
 最后还是选中了tinymvc。理由，它确实很小，但是我要的东西他基本都有了：
 &lt;/code&gt;&lt;/pre&gt;
@@ -181,36 +181,36 @@ echo &amp;lsquo;Go on&amp;hellip;&#39;;
 &lt;pre&gt;&lt;code&gt;于是，淡水抱恙（身体和心理都有病）花费了一天的时间，通读了一般它的代码，翻译了它的文档，也就是这个《TinyMVC中文手册》了。如果想研究一下Php的框架，可以从这个入手。没有很多的分岔干扰，比较干净。如果你有什么建议或是插件需要分享的，可以留言。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;TinyMVC中文手册&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
+- https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>CodeIgniter 和 Doctrine 从零开始 1-8章翻译打包下载</title>
-        <link>https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</link>
+        <link>https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</link>
         <pubDate>Tue, 26 Jan 2010 09:19:53 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ -&lt;p&gt;简介一下：
+        <guid>https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ -&lt;p&gt;简介一下：
 CodeIgniter 和 Doctrine 从零开始 是ci配合一个php的orm类库结合开发一个论坛的例子。
 这一系列文章，写的不错，&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;一直在跟着翻译。本想当作新春贺礼的，但是看到有人已经开始重复劳动了，还是先放出下载吧。
 暂时只有八章，第九章还在翻译中，原作者写到了第十章了。
 原作者地址：
 &lt;a href=&#34;http://www.phpandstuff.com/&#34;&gt;http://www.phpandstuff.com/&lt;/a&gt;
 &lt;!-- raw HTML omitted --&gt;CodeIgniter 和 Doctrine 从零开始 1-8&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>基于PHP的cURL快速入门[译][转]</title>
-        <link>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</link>
+        <link>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</link>
         <pubDate>Tue, 19 Jan 2010 15:41:26 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ -&lt;p&gt;本来想要翻译的，不想在蓝色上已经有人译好了。直接yy然后p吧（linux下vi的复制粘贴指令，最近捣鼓linux比较多些）。
+        <guid>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ -&lt;p&gt;本来想要翻译的，不想在蓝色上已经有人译好了。直接yy然后p吧（linux下vi的复制粘贴指令，最近捣鼓linux比较多些）。
 原文地址：http://net.tutsplus.com/tutorials/php/techniques-and-resources-for-mastering-curl/
 译文地址：http://bbs.blueidea.com/viewthread.php?tid=2966700&amp;amp;extra=page%3D1%26amp%3Bfilter%3Dtype%26amp%3Btypeid%3D20&lt;/p&gt;
 &lt;p&gt;cURL 是一个利用URL语法规定来传输文件和数据的工具，支持很多协议，如HTTP、FTP、TELNET等。最爽的是，PHP也支持 cURL 库。本文将介绍 cURL 的一些高级特性，以及在PHP中如何运用它。&lt;/p&gt;
@@ -641,18 +641,18 @@ return strlen($str);
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;小结&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;今天我们一起学习了cURL库的强大功能和灵活的扩展性。希望你喜欢。下一次要发起URL请求时，考虑下cURL吧！&lt;/p&gt;
 &lt;p&gt;谢谢！&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>mysql数据库的备份和恢复</title>
-        <link>https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+        <link>https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
         <pubDate>Tue, 12 Jan 2010 14:20:47 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ -&lt;p&gt;利用了mysql自带的工具，效率高，也不怕文件过大。
+        <guid>https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ -&lt;p&gt;利用了mysql自带的工具，效率高，也不怕文件过大。
 先说备份
 &lt;!-- raw HTML omitted --&gt;mysqldump -u数据库用户名 -p密码 dbname &amp;gt; 备份路径/导出名.sql&lt;!-- raw HTML omitted --&gt;
 就是把dbname数据库，导出到 备份路径/导出名.sql&lt;/p&gt;
@@ -671,51 +671,51 @@ rm -rf $B/$X.sql&lt;!-- raw HTML omitted --&gt;
 tar 打包压缩后，rm 删除原sql文件
 然后添加到计划任务，每天3点05分自动执行：
 &lt;!-- raw HTML omitted --&gt;#echo &amp;ldquo;05 3 * * * root /usr/back/shell/mysqlback.sh &amp;amp;&amp;gt;/dev/null&amp;rdquo; &amp;raquo;/etc/crontab&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ - kissjava.cn</description>
+- https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>vi/vim 中文乱码</title>
-        <link>https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+        <link>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
         <pubDate>Tue, 12 Jan 2010 10:43:46 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ -&lt;p&gt;linux下，用vi、vim编辑文件时，可能会碰到中文乱码。
+        <guid>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ -&lt;p&gt;linux下，用vi、vim编辑文件时，可能会碰到中文乱码。
 由于在windows下默认是gb编码，而vim默认是utf-8（gedit默认也是utf-8），所以打开会成乱码。修改了一下配置文件，使vi、vim支持gb编码就好了。
 $vi ~/.vimrc&lt;/p&gt;
 &lt;p&gt;let &amp;amp;termencoding=&amp;amp;encoding
 set fileencodings=utf-8,gbk&lt;/p&gt;
 &lt;p&gt;$:wq
 再次打开vi、vim，中文显示就正常了。&lt;/p&gt;
-- https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
+- https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>淡水的2009</title>
-        <link>https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
+        <link>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
         <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ -&lt;p&gt;终于肯花一点点时间，做个小小的回望了。
+        <guid>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ -&lt;p&gt;终于肯花一点点时间，做个小小的回望了。
 淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip;
 robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip;
 2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。&lt;/p&gt;
-- https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>mysql的几个函数</title>
-        <link>https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+        <link>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
         <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ -&lt;p&gt;缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ -&lt;p&gt;缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;先说简单点的方法：&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)   where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;;
@@ -735,24 +735,24 @@ SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysq
 SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysql.com&lt;/a&gt;&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com
 解释一下，如果count是负数，就从右边开始计数和截取。
 substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。&lt;/p&gt;
-- https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+- https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP数据记录批量更新代码</title>
-        <link>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
+        <link>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Wed, 16 Sep 2009 18:00:07 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ -&lt;p&gt;需要用到，简单是思路，记录一下。不过用到的应该不多。。。
+        <guid>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ -&lt;p&gt;需要用到，简单是思路，记录一下。不过用到的应该不多。。。
 一般会循环列出表记录到表单里
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
         </item>
     
     

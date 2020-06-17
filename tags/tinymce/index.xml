@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tinyMCE on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/tinymce/</link>
+    <link>https://kissjava.cn/tags/tinymce/</link>
     <description>Recent content in tinyMCE on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 28 Nov 2008 16:14:07 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/tinymce/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/tinymce/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP利用iframe上传文件并返回值到父框架</title>
-      <link>https://kissjava.github.io/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
+      <link>https://kissjava.cn/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://kissjava.cn/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
       <description>哈哈，淡水其实也是采用这样的做发法的。正好看到有童鞋博客上有这样写。就顺手贴过来了。 if($result) { echo &amp;ldquo;上传成功!文件路径为：&amp;rdquo;.$file2; echo &amp;lsquo;&amp;rsquo;; echo&#39;parent.document.form1.img.value=document.getElementById(&amp;ldquo;img&amp;rdquo;).value;&amp;rsquo;; } 文件上传成功后，把文件路径写入一个隐藏的域中（img），然后用DOM原理把隐藏域中的VALUE发送到父框架的表单form1的img文本框中：ok，再来看看淡水的。 淡水编辑器用了tinyMCE，所以有一点点不一样。 我的form页： </description>
     </item>
     
     <item>
       <title>tinyMCE和CodeIgniter1.7.0</title>
-      <link>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+      <link>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+      <guid>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
       <description>tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。 下载tinyMCE并解压到网站目录，淡水是放到根目录的。 在CodeIgniter的View里调用： </description>
     </item>
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>

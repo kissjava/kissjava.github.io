@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>font on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/font/</link>
+    <link>https://kissjava.cn/tags/font/</link>
     <description>Recent content in font on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Nov 2008 09:33:41 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/font/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/font/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>适合Programmer的字体Monaco</title>
-      <link>https://kissjava.github.io/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
+      <link>https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
       <pubDate>Thu, 13 Nov 2008 09:33:41 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
+      <guid>https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
       <description>以前都是用ms自带的Consolas。 看到CodeIgniter视频上Textmate里的字体蛮好看的，于是就开始了寻宝之旅。现在终于找到了，她就是Monaco。 贴两个效果图看看 字体下载：monaco</description>
     </item>
     

@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Go的接口</title>
-        <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+        <link>https://kissjava.cn/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
         <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ -&lt;p&gt;在本教程中，我们将看看Go编程语言中的接口。
+        <guid>https://kissjava.cn/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ -&lt;p&gt;在本教程中，我们将看看Go编程语言中的接口。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go的接口&#34;&gt;&lt;/p&gt;
 &lt;p&gt;本节包括2个主题：&lt;/p&gt;
 &lt;ul&gt;
@@ -163,18 +163,18 @@ func main() {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#小结
 go的接口可以模拟oop，需要多花点时间练习。&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go的方法</title>
-        <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+        <link>https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
         <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ -&lt;p&gt;在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。
+        <guid>https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ -&lt;p&gt;在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go的方法&#34;&gt;&lt;/p&gt;
 &lt;p&gt;##一个简单实例
 我们将创建一个非常简单的员工管理系统，允许您更新员工姓名并打印出该名称。不是最令人兴奋的示例项目，但它将作为演示还可以。&lt;/p&gt;
@@ -221,18 +221,18 @@ UpdatePlayer(player, params)
 myPlayer.Update(params)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##小结
 在本教程中，我们了解了方法以及它们与函数有何不同。一般我们都是先声明一个结构体，然后给它声明一些方法。和其它语言中的类的概念相似。&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go的函数</title>
-        <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+        <link>https://kissjava.cn/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
         <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ -&lt;p&gt;在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。
+        <guid>https://kissjava.cn/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ -&lt;p&gt;在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 我们将在本教程中介绍以下主题：&lt;/p&gt;
 &lt;ul&gt;
@@ -350,18 +350,18 @@ func main() {
 &lt;p&gt;##小结
 在本文中，我们学习了在go编程语言中的函数及匿名函数。希望你发现这很有用！
 关于匿名函数不是很了解没关系，先记着，后面慢慢就回理解。&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go的复合数据类型</title>
-        <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+        <link>https://kissjava.cn/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;上节我们学过来基本数据类型，本节说说go的复合数据类型。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;上节我们学过来基本数据类型，本节说说go的复合数据类型。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;##数组 Arrays
 让我们首先声明一周中所有天的数组。&lt;/p&gt;
@@ -443,18 +443,18 @@ func main() {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##小结
 希望本教程对你有用，它让你深入了解如何在自己的Go程序中使用更高级的数据类型，来编写更有趣的应用。&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go的基本数据类型</title>
-        <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+        <link>https://kissjava.cn/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Mon, 29 Jul 2019 15:47:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;在本教程中，我们将学习Go语言中可用的所有基本数据类型。在本教程结束时，您应该熟悉该语言中提供的各种不同类型，并希望了解如何在您自己的Go程序中使用这些类型。
+        <guid>https://kissjava.cn/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;在本教程中，我们将学习Go语言中可用的所有基本数据类型。在本教程结束时，您应该熟悉该语言中提供的各种不同类型，并希望了解如何在您自己的Go程序中使用这些类型。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;Go的基本数据类型&#34;&gt;&lt;/p&gt;
 &lt;p&gt;ps：本节课程很无聊，但是不可或缺。&lt;/p&gt;
 &lt;p&gt;##数据类型
@@ -572,18 +572,18 @@ myName = &amp;quot;Michael Yang&amp;quot;
 &lt;code&gt;const meaningOfLife = 32&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;##小结
 本节把基本数据类型过了一边，不能再简单了，要不就说不清了。&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go入门</title>
-        <link>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</link>
+        <link>https://kissjava.cn/posts/go%E5%85%A5%E9%97%A8/</link>
         <pubDate>Mon, 29 Jul 2019 14:58:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/ -&lt;p&gt;希望是无废话的go语言教程。
+        <guid>https://kissjava.cn/posts/go%E5%85%A5%E9%97%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E5%85%A5%E9%97%A8/ -&lt;p&gt;希望是无废话的go语言教程。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go.png&#34;&gt;
 Go是一种绝对令人难以置信的语言，可以构建各种不同的应用程序。从命令行界面到分布式微系统甚至云平台，它的简单性和并发性使其成为许多开发团队的强大语言选择。&lt;/p&gt;
 &lt;p&gt;在本教程中，我将着手帮助您启动并运行该语言，以便您可以开始构建更加出色的应用程序并推动技术的发展。&lt;/p&gt;
@@ -628,32 +628,32 @@ $ ./main
 &lt;p&gt;##小结&lt;/p&gt;
 &lt;p&gt;在这个简单的教程中，我们成功地进入Go开发的旅程。&lt;/p&gt;
 &lt;p&gt;如果您有兴趣进一步了解Go，下一站我们学习Go语言中提供的基本类型&lt;/p&gt;
-- https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/go%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>双十一黑五接连而来还是 bwh 的 CN2 GIA 稳定</title>
-        <link>https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
+        <link>https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
         <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ -&lt;p&gt;都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。
+        <guid>https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ -&lt;p&gt;都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。
 如果，只是建个小博客，测试点代码，个人爬墙 bwh 的 CN2 GIA 还是比较推荐的，够用且稳定。
 推荐一下：&lt;a href=&#34;https://bwh8.net/aff.php?aff=15657&amp;amp;pid=83&#34;&gt;直达链接&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Debian9 快速开启 TCP BBR </title>
-        <link>https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+        <link>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
         <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/10/2233004097.png&#34; alt=&#34;1100px-Comic_strips_Linux_BBR.svg.png&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/10/2233004097.png&#34; alt=&#34;1100px-Comic_strips_Linux_BBR.svg.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。&lt;/p&gt;
 &lt;p&gt;干货如下
 1,修改系统变量&lt;/p&gt;
@@ -677,18 +677,18 @@ net.ipv4.tcp_available_congestion_control = bbr cubic reno
 &lt;p&gt;回显&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;tcp_bbr                20480  1  
 &lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ - kissjava.cn</description>
+- https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Mac OS X 设置英文为默认输入法</title>
-        <link>https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+        <link>https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
         <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ -&lt;p&gt;为了方便开发,一般都是把系统语言改成英文.
+        <guid>https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ -&lt;p&gt;为了方便开发,一般都是把系统语言改成英文.
 但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好.
 每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说.
 上干货,方便像 &lt;a href=&#34;https://kissjava.cn&#34;&gt;Mike&lt;/a&gt; 一样的 coder.适用High Sierra ~ Mojave.&lt;/p&gt;
@@ -698,18 +698,18 @@ net.ipv4.tcp_available_congestion_control = bbr cubic reno
 4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)&lt;/p&gt;
 &lt;p&gt;看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/09/2395988471.png&#34; alt=&#34;setDefaultInputSource.png&#34;&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Nginx 反向代理并替换内容的Demo</title>
-        <link>https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
+        <link>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
         <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ -&lt;p&gt;我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。
+        <guid>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ -&lt;p&gt;我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。
 server                                                                                                                    &lt;br&gt;
 {                                                                                                                     &lt;br&gt;
 listen 80;                                                                                                        &lt;br&gt;
@@ -740,7 +740,7 @@ root  /home/wwwroot/mikeyang.me;&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;ok，尝试一下吧。&lt;a href=&#34;http://mikeyang.me&#34;&gt;mikeyang.me&lt;/a&gt;
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/08/1465588119.png&#34; alt=&#34;nginx-proxy-demo.png&#34;&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ - kissjava.cn</description>
+- https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ - kissjava.cn</description>
         </item>
     
     

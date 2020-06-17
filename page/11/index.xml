@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>将小型、现代的产品主页由psd转换成XHTML/CSS模板 </title>
-        <link>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
+        <link>https://kissjava.cn/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
         <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;如果你想跳过第一部分，你可以直接在第一部分中下载源文件，下面将会需要它才能继续。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;2 在portfolio目录下面继续创建&lt;!-- raw HTML omitted --&gt;images&lt;!-- raw HTML omitted --&gt;目录用于存放图片。&lt;/p&gt;
@@ -318,18 +318,18 @@ text-align: center;
 &lt;!-- raw HTML omitted --&gt;代码段18的解释&lt;!-- raw HTML omitted --&gt;
 我们将#footer层的background-image属性设置为footer.png；向左浮动；通过no-repeat保证背景图的不重复。#footer宽度高度大小和footer.png相等。然后在顶部通过margin给出一定空间。&lt;/p&gt;
 &lt;p&gt;完成！最终效果的链接如下：
-&lt;a href=&#34;http://sixrevisions.com/demo/minimal_modern_layout/index.html&#34;&gt;http://sixrevisions.com/demo/minimal_modern_layout/index.html&lt;/a&gt;&lt;/p&gt;- https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ - kissjava.cn</description>
+&lt;a href=&#34;http://sixrevisions.com/demo/minimal_modern_layout/index.html&#34;&gt;http://sixrevisions.com/demo/minimal_modern_layout/index.html&lt;/a&gt;&lt;/p&gt;- https://kissjava.cn/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>用Photoshop设计一个小型、现代的产品主页</title>
-        <link>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+        <link>https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
         <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ -&lt;p&gt;这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ -&lt;p&gt;这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -414,18 +414,18 @@ text-align: center;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;原文：http://sixrevisions.com/tutorials/photoshop-tutorials/design-a-minimal-and-modern-portfolio-layout-with-photoshop/&lt;/p&gt;
-- https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>[转载] 用实例详细讲解将PSD转成HTML&amp;amp;CSS</title>
-        <link>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
+        <link>https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
         <pubDate>Thu, 17 Nov 2011 11:41:04 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ -&lt;p&gt;将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ -&lt;p&gt;将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。&lt;/p&gt;
 &lt;p&gt;我们将设计页面分成基本的5个部分，每一个部分都有自己的容器wrapper和内容。基本的流程是先编写Html代码，然后通过编写CSS来还原psd设计稿。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;如下图，我们只需要从这个psd文件得到4个非常基本的东西。推荐内容(featured)的背景、底部背景、欢迎文字（Welcome）、推荐图片的框（少女面部图的白色透明边框）。其余的部分我们只需要通过CSS生成或者在html里嵌入相应图片。&lt;/p&gt;
@@ -1157,18 +1157,18 @@ font-weight:bold;
 &lt;p&gt;原文地址：http://www.tuttoaster.com/how-to-convert-a-slick-psd-design-to-xhtmlcss/
 &lt;!-- raw HTML omitted --&gt;PSD&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;sliced&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Postmark的邮件代发服务</title>
-        <link>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
+        <link>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
         <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ -&lt;p&gt;以往都是找可以开通smtp的免费邮箱来做的。
+        <guid>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ -&lt;p&gt;以往都是找可以开通smtp的免费邮箱来做的。
 但是限制较多，一般是发送要延时，每天限制50或100封。容易被屏蔽等等。对外贸用途的就更不行了，大都是被当成垃圾邮件处理了。
 有了Postmark就不一样了。下面淡水就介绍一下。&lt;/p&gt;
 &lt;p&gt;Postmark是国外服务。可用于web线上发送mail。简单的API，简单的操作，零维护，比较方便。&lt;/p&gt;
@@ -1206,18 +1206,18 @@ Reply to email： //回复地址&lt;/p&gt;
 &lt;p&gt;淡水使用php来发送，但是postmark支持各种语言，神马python，java，ruby。。。都不在话下。都不用自己去看api了，直接下载对应语言的demo。就php来讲就支持好多的framewrok。简单来测试看看：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ - kissjava.cn</description>
+- https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>codeigniter2中使用simpletest做单元测试</title>
-        <link>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <link>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。&lt;/p&gt;
 &lt;p&gt;由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。
 但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。&lt;/p&gt;
 &lt;p&gt;最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。&lt;/p&gt;
@@ -1262,34 +1262,34 @@ $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;users/users_model&amp;rsquo;);
 $this-&amp;gt;rand = rand(500,15000);
 }&lt;/p&gt;
 &lt;p&gt;5,另外还增加了test_homepage.php的demo，来演示如何测试界面。&lt;/p&gt;
-- https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Codeigniter里的单元测试</title>
-        <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;测试驱动开发已经提出好久了。在web领域估计国内采用的不多。
+        <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;测试驱动开发已经提出好久了。在web领域估计国内采用的不多。
 其实单元测试也是很好用的东西，确实可以提高开发人员的效率。
 淡水用codeigniter举例说明一下。
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>textmate 常用快捷键</title>
-        <link>https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+        <link>https://kissjava.cn/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
         <pubDate>Thu, 13 Oct 2011 16:36:19 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;ctrl + cmd + ^        整行上移
 ctrl + cmd + v        整行下移
 ctrl + shift + k    整行删除
@@ -1300,18 +1300,18 @@ alt + &amp;lt;                光标左移一个单词&lt;/p&gt;
 &lt;p&gt;esc                    自动补全&lt;/p&gt;
 &lt;p&gt;F1                    开关当前方法块&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ - kissjava.cn</description>
+- https://kissjava.cn/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Codeigniter里的无刷新上传</title>
-        <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
+        <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
         <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ -&lt;p&gt;好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD
+        <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ -&lt;p&gt;好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD
 Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。&lt;/p&gt;
 &lt;p&gt;先建个表
 &lt;!-- raw HTML omitted --&gt;
@@ -1610,18 +1610,18 @@ public function get_file($file_id)
 }
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;嗯，简单的应用。没有涉及的权限、上传的进度条等。&lt;/p&gt;
-- https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ - kissjava.cn</description>
+- https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Mysql的随机读取</title>
-        <link>https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
+        <link>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
         <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ -&lt;p&gt;随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ -&lt;p&gt;随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。&lt;/p&gt;
 &lt;p&gt;随机查询5条记录：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;在数十万记录的表里，这样的查询要好几秒的时间。下面采用JOIN的方式改进一下：&lt;/p&gt;
@@ -1638,18 +1638,18 @@ public function get_file($file_id)
 update table_name set sortbyrand=FLOOR(RAND()*10000);
 &lt;!-- raw HTML omitted --&gt;
 抓取只需要order by sortbyrand就可以了，其实这个是最不耗脑子的。&lt;/p&gt;
-- https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ - kissjava.cn</description>
+- https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>swfupload在codeigniter中的应用</title>
-        <link>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+        <link>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
         <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ -&lt;p&gt;应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ -&lt;p&gt;应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。&lt;/p&gt;
 &lt;p&gt;第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里&lt;/p&gt;
@@ -1681,7 +1681,7 @@ class client_photo extends MY_Controller {
 }
 &amp;lt;/code&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     

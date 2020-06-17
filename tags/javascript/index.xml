@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/javascript/</link>
+    <link>https://kissjava.cn/tags/javascript/</link>
     <description>Recent content in javascript on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 07 Dec 2011 09:46:58 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jQuery ajax方式加载页面后，被加载页面的js不能执行的问题</title>
-      <link>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>在回调函数里注册一下事件就可以了，要么就各个函数写在被加载的页面里。 $(document).ready(function() { $(&amp;lsquo;content_div&amp;rsquo;).hide();
 $(&#39;#list_user&#39;).click(function(event){ event.preventDefault(); load_user(); });  });
 function load_user(){ //load page $(&amp;quot;#content_div&amp;rdquo;).load(&amp;lsquo;your page url&amp;rsquo;,function(){ //回调函数，在这里注册被加载页面需要的事件 $(&amp;quot;.deleteItem&amp;rdquo;).click(delItem); $(&amp;quot;.editItem&amp;rdquo;).click(editItem); });

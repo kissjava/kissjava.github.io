@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>flash on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/flash/</link>
+    <link>https://kissjava.cn/tags/flash/</link>
     <description>Recent content in flash on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 01 Mar 2010 09:35:34 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/flash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/flash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>flash,css hack,等等。。</title>
-      <link>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
+      <link>https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
+      <guid>https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
       <description>1，插入flash，不追求web标准，可以这样简短： 2，同一选择器针对不同浏览器的css hack select { background-color: black;/* firefox, opera, ie8 */ [;background-color: green;]/* safari, chrome */ *background-color: blue;/* ie7 */ _background-color: red;/* ie6 */ } html*~/**/body select { border: 5px solid red;/* ie8 */ }以上只是一个例子说明混合写法.以下是对例子的补充 1.IE都能识别*;标准浏览器(如FF)不能识别*; 2.IE7,FF能识别!important,IE6不能. 3.只有IE6能识别_ 4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。 5.对于ie8 chrome hack的请 GOOGLE or BAIDU …</description>
     </item>
     

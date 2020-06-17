@@ -23,7 +23,7 @@
 底下是安装步骤：
 Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msysgit (Git for Windows)，我安装的版本是 v1.7.4。装好之后，程序集里面会多出一个选单：Git，里面有两个程序：Git GUI 和 Git Bash。前者是图形操作界面，后者是命令列视窗。Git 的预设安装目录是 c:Program FilesGit。由于我要让用户端可透过 HTTP 协定来存取版本库，因此还要把 Git 安装目录下的 binlibiconv2.dll 复制到安装目录下的 libexecgit-core 底下。少了这个动作，将来透过 HTTP 存取版本库时，就会出现 HTTP 500 Internal Server Error 的讯息。如下图所示：Step 2: 安装 Apache HTTP Server欲提供 HTTP 的存取方式，可以利用Apache Http Server。我安装的版本是 Apache 2.2.19（包含 OpenSSL）。安装好 Apache 之后，修改 httpd.conf，令它使用 8080 port，以免和 IIS 抢 80 port。接下来，一样是修改 httpd." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/" />
+<meta property="og:url" content="https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/" />
 <meta property="article:published_time" content="2011-06-03T14:27:28+00:00" />
 <meta property="article:modified_time" content="2011-06-03T14:27:28+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -57,14 +57,14 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
 
 
 
-<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.cn/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.cn/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="https://kissjava.github.io/js/loadCSS.js"></script>
+<script src="https://kissjava.cn/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -73,7 +73,7 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
 
 
   
-    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
+    <script src="https://kissjava.cn/js/toc-collapse.js"></script>
   
 
 
@@ -106,7 +106,7 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="https://kissjava.github.io">
+    <a class="a-block nav-head false" href="https://kissjava.cn">
     
         <div class="nav-title">
             清风徐来
@@ -276,7 +276,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.cn">
             清风徐来
         </a>
         
@@ -293,7 +293,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://kissjava.github.io">
+    <a href="https://kissjava.cn">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -473,13 +473,13 @@ $ git init MyProject</p>
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
+                <a class="newer-posts" href="https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
 			下回<br>swfupload在codeigniter中的应用
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/">
+                <a class="older-posts" href="https://kissjava.cn/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/">
 			上回<br>为何改用Git
                 </a>
                 
@@ -612,6 +612,6 @@ app = new Vue({
 });
 </script>
 
-<script src="https://kissjava.github.io/js/journal.js"></script>
+<script src="https://kissjava.cn/js/journal.js"></script>
     </body>
 </html>

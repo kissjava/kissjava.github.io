@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>右键 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E5%8F%B3%E9%94%AE/</link>
+    <link>https://kissjava.cn/tags/%E5%8F%B3%E9%94%AE/</link>
     <description>Recent content in 右键 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 30 Nov 2012 13:02:20 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E5%8F%B3%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E5%8F%B3%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>清理.SVN文件夹及右键菜单</title>
-      <link>https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+      <link>https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
       <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+      <guid>https://kissjava.cn/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
       <description>无废话，不博客-_-! 先说清理.svn文件夹吧，不知道为什么好好的svn的export不用，搞得文件夹下都有.svn文件夹。微软上有个批处理，导入到注册表后就有个右键菜单“Delete SVN Folders”。如下，保存为.reg后缀后双击导入注册表即可使用。 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVN] @=&amp;quot;Delete SVN Folders&amp;rdquo;
 [HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVNcommand] @=&amp;quot;cmd.exe /c &amp;ldquo;TITLE Removing SVN Folders in %1 &amp;amp;&amp;amp; COLOR 9A &amp;amp;&amp;amp; FOR /r &amp;ldquo;%1&amp;rdquo; %%f IN (.svn) DO RD /s /q &amp;ldquo;%%f&amp;rdquo; &amp;quot;&amp;rdquo; 说到右键菜单，我就发现，右键的发送到下面有个115备份。这个我早就删除了，注册表也搜索后删除了，但是还在。嗯，很顽强。下载右键管家，终于搞定。右键管家的下载地址：http://www.xiazaiba.com/html/5887.htmlps：win8 64位管家依旧给力支持</description>

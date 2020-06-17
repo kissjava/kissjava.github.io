@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CORS on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/cors/</link>
+    <link>https://kissjava.cn/tags/cors/</link>
     <description>Recent content in CORS on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 20:39:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/cors/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/cors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part12 CORS 跨域资源共享和Request 预检</title>
-      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
+      <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
       <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
+      <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
       <description>CORS机制，它使用额外的 HTTP 头来告诉浏览器 让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。 以下是可用于CORS配置的标头列表
 Access-Control-Allow-OriginAccess-Control-Allow-MethodsAccess-Control-Allow-HeadersAccess-Control-Allow-CredentialsAccess-Control-Max-AgeCORS配置位于目标Web应用程序的服务器端。 例如：我们的应用程序在本地从google.com中提取数据，然后CORS配置位于google.com;如果我们收到CORS错误，则无法完成任何其他操作，因为CORS应用程序目标由google.com上的人员控制。
 练习时间： 创建一个新项目。这个简单的应用程序将在http//localhost:9000/上运行，然后我们将尝试从其他域访问它.

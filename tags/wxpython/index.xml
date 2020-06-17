@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wxpython on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/wxpython/</link>
+    <link>https://kissjava.cn/tags/wxpython/</link>
     <description>Recent content in wxpython on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Mar 2014 22:30:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/wxpython/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/wxpython/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>wxpython设置背景</title>
-      <link>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+      <link>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
       <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
       <description>用wxformbuilder+一点代码来实现。
 首先用wxformbuilder来做出界面，并生成代码。运行结果：
 使其有背景图片效果： 实现代码如下：
@@ -26,10 +26,10 @@
     
     <item>
       <title>wxPython跨线程调用[转]</title>
-      <link>https://kissjava.github.io/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
       <pubDate>Sat, 21 Dec 2013 12:44:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</guid>
       <description>&lt;p&gt;出处：http://guangboo.org/2013/08/23/wxpython-non-gui-thread-call-gui-method
 之前有介绍了《wxPython多线程支持》，包含了wx.CallAfter, wx.PostEvent, wxCallLater的用法，本文将wx.CallAfter封装成decorator，使得UI线程中的方法可以在非UI线程中调用。&lt;/p&gt;
 &lt;p&gt;本文将wx.CallAfter方法进行了封装，代码如下：&lt;/p&gt;
@@ -45,10 +45,10 @@ def call_after(func):
     
     <item>
       <title>wxPython多线程支持[转]</title>
-      <link>https://kissjava.github.io/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</link>
       <pubDate>Thu, 19 Dec 2013 09:23:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</guid>
       <description>&lt;p&gt;出处：&lt;a href=&#34;http://guangboo.org/2013/03/04/wxpython-threading&#34;&gt;http://guangboo.org/2013/03/04/wxpython-threading&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;wxpython线程安全方法&lt;/strong&gt;&lt;/p&gt;
@@ -59,20 +59,20 @@ def call_after(func):
     
     <item>
       <title>How to run a wxPython GUI app in Sublime Text 2</title>
-      <link>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
+      <link>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
       <pubDate>Tue, 27 Aug 2013 10:35:55 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
+      <guid>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
       <description>Step 1:Preference-&amp;gt;Browse Packages-&amp;gt;python，编辑Python.sublime-build文件，在字典里添加path item，value为python路径，淡水的如下： { &amp;ldquo;cmd&amp;rdquo;:[&amp;ldquo;python.exe&amp;rdquo;, &amp;ldquo;-u&amp;rdquo;, &amp;ldquo;$file&amp;rdquo;], &amp;ldquo;path&amp;rdquo;:&amp;ldquo;C:/Python27&amp;rdquo;, &amp;ldquo;file_regex&amp;rdquo;: &amp;ldquo;^[ ]File &amp;ldquo;(&amp;hellip;?)&amp;rdquo;, line ([0-9]*)&amp;rdquo;, &amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.python&amp;rdquo; } 这就解决了python的ctrl+b的build（python里算是运行）问题；但是如果使用了wxpython它还是不能跑起来。
 Step 2:Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31行左右注释掉一行代码，淡水的如下（从代码来看适用windows系统）： if os.name == &amp;ldquo;nt&amp;rdquo;: startupinfo = subprocess.STARTUPINFO() # startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW 应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。</description>
     </item>
     
     <item>
       <title>完成第一个基于python的GUI程序</title>
-      <link>https://kissjava.github.io/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
       <description>上图先
 采用wxpython。涉及到多线程，socket。
 耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。

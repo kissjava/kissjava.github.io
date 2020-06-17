@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>用Homebrew搞定MySQL-python</title>
-        <link>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
+        <link>https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
         <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ -&lt;p&gt;写php时，因为懒惰，所以在mac上用了mamp。
+        <guid>https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ -&lt;p&gt;写php时，因为懒惰，所以在mac上用了mamp。
 后来，写python。MySQLdb一直无法安装，后来是单独安装了mysql-5.1.73-osx10.6-x86_64 。
 然后配置.bash_profile :&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# Setting PATH for MySQLdb
@@ -36,18 +36,18 @@ sudo pip install MySQL-python
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;爽翻天了。&lt;/p&gt;
 &lt;p&gt;另，安装 Homebrew:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Flight 中文手册</title>
-        <link>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+        <link>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
         <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;h1 id=&#34;flight-是什么&#34;&gt;Flight 是什么?&lt;/h1&gt;
+        <guid>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;h1 id=&#34;flight-是什么&#34;&gt;Flight 是什么?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;http://flightphp.com&#34;&gt;Flight&lt;/a&gt;是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
 中文手册由&lt;a href=&#34;http://kissjava.cn&#34;&gt;kissjava.cn&lt;/a&gt;翻译。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;require &amp;#39;flight/Flight.php&amp;#39;;
@@ -552,18 +552,18 @@ $app-&amp;gt;route(&amp;#39;/&amp;#39;, function(){
 });
 
 $app-&amp;gt;start();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，你就可以调用与引擎对象同名的实例方法，而不是调用静态方法。&lt;/p&gt;- https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，你就可以调用与引擎对象同名的实例方法，而不是调用静态方法。&lt;/p&gt;- https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PhpStorm 7.1.3 for Mac</title>
-        <link>https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/</link>
+        <link>https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/</link>
         <pubDate>Tue, 06 May 2014 23:13:25 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/ -&lt;p&gt;EMBRACE&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/ -&lt;p&gt;EMBRACE&lt;/p&gt;
 &lt;p&gt;===== LICENSE BEGIN =====
 43136-12042010
 00002UsvSON704l&amp;quot;dILe1PVx3y4&amp;quot;B3
@@ -571,18 +571,18 @@ $app-&amp;gt;start();
 gd1BebYc5U&amp;quot;6OxDbVsALB4Eb10PW8&amp;rdquo;
 ===== LICENSE END =====&lt;/p&gt;
 &lt;p&gt;作为dscxy，你懂的。&lt;/p&gt;
-- https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/ - kissjava.cn</description>
+- https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>pycharm 3.1.3 for mac</title>
-        <link>https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/</link>
+        <link>https://kissjava.cn/posts/pycharm-3.1.3-for-mac/</link>
         <pubDate>Wed, 30 Apr 2014 23:55:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/ -&lt;p&gt;确实比较好用，下面你懂得。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/pycharm-3.1.3-for-mac/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/pycharm-3.1.3-for-mac/ -&lt;p&gt;确实比较好用，下面你懂得。&lt;/p&gt;
 &lt;p&gt;yueting3527&lt;/p&gt;
 &lt;p&gt;===== LICENSE BEGIN =====
 93347-12042010
@@ -590,33 +590,33 @@ gd1BebYc5U&amp;quot;6OxDbVsALB4Eb10PW8&amp;rdquo;
 2!nV2I6kSO48hgGLa9JNgjQ5oKz1Us
 FFR8k&amp;quot;nGzJHzjQT6IBG!1fbQZn9!Vi
 ===== LICENSE END =====&lt;/p&gt;
-- https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/ - kissjava.cn</description>
+- https://kissjava.cn/posts/pycharm-3.1.3-for-mac/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>准备申请SAE中级开发者（已通过）</title>
-        <link>https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</link>
+        <link>https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</link>
         <pubDate>Sun, 27 Apr 2014 10:57:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ -&lt;p&gt;为了每月免费补充至1万云豆，打算申请sina云的中级开发者认证，应用需要各位的独立IP，希望路过的多点支持，进去看看谢谢。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ -&lt;p&gt;为了每月免费补充至1万云豆，打算申请sina云的中级开发者认证，应用需要各位的独立IP，希望路过的多点支持，进去看看谢谢。&lt;/p&gt;
 &lt;p&gt;是一个进销存的web应用，前段用J-UI，php采用了Codeigniter框架。测试账号demo/demo。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://minimis.sinaapp.com&#34;&gt;http://minimis.sinaapp.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2014-05-04 update:已经通过，谢谢各位。&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>搞定在 Mac 安装 MySQLdb（MySQL-python）</title>
-        <link>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
+        <link>https://kissjava.cn/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
         <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ -&lt;h2 id=&#34;重新安装easy_installsetuptools&#34;&gt;重新安装easy_install（setuptools）&lt;/h2&gt;
+        <guid>https://kissjava.cn/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ -&lt;h2 id=&#34;重新安装easy_installsetuptools&#34;&gt;重新安装easy_install（setuptools）&lt;/h2&gt;
 &lt;p&gt;1，去下载 &lt;a href=&#34;https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg&#34;&gt;setuptools&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2，到终端执行 sudo sh setuptools-0.6c11-py2.7.egg&lt;/p&gt;
 &lt;p&gt;3，清除下载的setuptools-0.6c11-py2.7.egg&lt;/p&gt;
@@ -656,18 +656,18 @@ export VERSIONER_PYTHON_PREFER_64_BIT=no
 export VERSIONER_PYTHON_PREFER_32_BIT=yes
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;安装MySQL-python（sudo easy_install MySQL-python）&lt;/p&gt;
-- https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Sublime text 3059 for MAC</title>
-        <link>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</link>
+        <link>https://kissjava.cn/posts/sublime-text-3059-for-mac/</link>
         <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/sublime-text-3059-for-mac/ -&lt;p&gt;1、去Sublime 官网下载最新的3059并安装。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/sublime-text-3059-for-mac/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/sublime-text-3059-for-mac/ -&lt;p&gt;1、去Sublime 官网下载最新的3059并安装。&lt;/p&gt;
 &lt;p&gt;2、执行并退出Sublime主程序。&lt;/p&gt;
 &lt;p&gt;3、下载本文附件，并解压。&lt;/p&gt;
 &lt;p&gt;4、Finder 打开 Applications 目录， 找到Sublime，右键“显示包内容”，找到 macOS 目录，把上一步解压出来的文件，拷贝到这里来，会提示“你是否要替换该文件”，选择替换。&lt;/p&gt;
@@ -678,18 +678,18 @@ sudo chmod +x Sublime\ Text
 &lt;p&gt;6、运行Sublime，“关于 Sublime Text”，已经注册了。&lt;/p&gt;
 &lt;p&gt;End&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1sjjQGY5&#34;&gt;你懂得附件&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
+- https://kissjava.cn/posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>wxpython设置背景</title>
-        <link>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+        <link>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
         <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ -&lt;p&gt;用wxformbuilder+一点代码来实现。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ -&lt;p&gt;用wxformbuilder+一点代码来实现。&lt;/p&gt;
 &lt;p&gt;首先用wxformbuilder来做出界面，并生成代码。运行结果：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/1144182459.bmp&#34; alt=&#34;默认效果图&#34;&gt;&lt;/p&gt;
 &lt;p&gt;使其有背景图片效果：
@@ -728,18 +728,18 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     app = Main()
     app.MainLoop()
 &lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
+- https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PyInstaller无法easy_install或pip安装</title>
-        <link>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
+        <link>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ -&lt;p&gt;应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。
+        <guid>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ -&lt;p&gt;应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。
 只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。
 也就一步，就是解压。淡水解压到d盘根目录
 使用也很简单：&lt;/p&gt;
@@ -749,18 +749,18 @@ PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.i
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;和easy_install安装后的使用方法几乎一样。
 嗯，没多少干货。2014了，随便写点，证明一下还在喘气。&lt;/p&gt;
-- https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+- https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Python MySQLdb模块的使用</title>
-        <link>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <link>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;pre&gt;&lt;code&gt;#-*- encoding: utf-8 -*-
+        <guid>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;pre&gt;&lt;code&gt;#-*- encoding: utf-8 -*-
 
 import os, sys, string
 import MySQLdb
@@ -831,7 +831,7 @@ conn.commit()#提交，否则可能不会提交到db生效
 cursor.close()
 
 conn.close()&lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     

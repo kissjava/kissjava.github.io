@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>windows7下面搭建 Xampplite&#43;Eclipse PDT&#43;XDebug的PHP开发环境</title>
-        <link>https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+        <link>https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
         <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ -&lt;p&gt;淡水是用xampplite1.7.1，它的php版本是5.2.9。最新版的xampp搭载的是php5.3，淡水的程序跑起来好像有些问题-_-!!&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ -&lt;p&gt;淡水是用xampplite1.7.1，它的php版本是5.2.9。最新版的xampp搭载的是php5.3，淡水的程序跑起来好像有些问题-_-!!&lt;/p&gt;
 &lt;p&gt;1，下载PDT(PHP Development Tools)，地址：http://www.eclipse.org/pdt/downloads/
 我下的版本是PDT 2.1 All In Ones，解压后如果不能运行，请安装JRE安装，因为Eclipse需要JRE才能运行。地址 ：http://www.java.com/zh_CN/download/manual.jsp&lt;/p&gt;
 &lt;p&gt;2，下载XAMPPlite1.7.1这个集成的PHP+MySql运行环境，如果是EXE安装包，就双击安装，如果是ZIP包，就解压运行。地址：http://www.apachefriends.org/en/xampp-windows.html&lt;/p&gt;
@@ -41,30 +41,30 @@ xdebug.profiler_output_dir=&amp;quot;xampplitetmp&amp;rdquo;&lt;/p&gt;
 配置Debug，如图
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 这样就搞定了,可以不用盗版的zend studio for Eclipse鸟。。。最后，说windows7下搭建。。其实只是个噱头;)&lt;/p&gt;
-- https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ - kissjava.cn</description>
+- https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>兼容ie的鼠标经过表格变色</title>
-        <link>https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
+        <link>https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
         <pubDate>Fri, 11 Sep 2009 13:37:53 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ - kissjava.cn</description>
+        <guid>https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>EditPlus配置phpCB,格式化php代码</title>
-        <link>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
+        <link>https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ -&lt;p&gt;自从&lt;!-- raw HTML omitted --&gt;七月十五&lt;!-- raw HTML omitted --&gt;搞了个EditPlus4php，淡水就一直用它做一些简单的修改工作。如果不在自己的电脑上，也方便做一些演示，他集成了◦xampplite1.7.1
+        <guid>https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ -&lt;p&gt;自从&lt;!-- raw HTML omitted --&gt;七月十五&lt;!-- raw HTML omitted --&gt;搞了个EditPlus4php，淡水就一直用它做一些简单的修改工作。如果不在自己的电脑上，也方便做一些演示，他集成了◦xampplite1.7.1
 ◦Zend Code Analyzer 1.2.3
 ◦LeapFTP2.7.6
 今天发现居然还有phpCB,只是默认没有配置。。。
@@ -75,50 +75,50 @@ xdebug.profiler_output_dir=&amp;quot;xampplitetmp&amp;rdquo;&lt;/p&gt;
 参数：&amp;ndash;space-after-if &amp;ndash;optimize-eol &amp;ndash;space-after-switch &amp;ndash;space-after-while &amp;ndash;space-before-start-angle-bracket &amp;ndash;space-after-end-angle-bracket &amp;ndash;extra-padding-for-case-statement &amp;ndash;glue-amperscore &amp;ndash;change-shell-comment-to-double-slashes-comment &amp;ndash;indent-with-tab &amp;ndash;force-large-php-code-tag &amp;ndash;force-true-false-null-contant-lowercase &amp;ndash;comment-rendering-style PEAR &amp;ndash;equal-align-position 50 &amp;ndash;padding-char-count 1 &amp;ldquo;$(FilePath)&amp;rdquo;
 勾选“以文本筛选器运行”选择“替换”
 搞定。。。&lt;/p&gt;
-- https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
+- https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP创建数据库并导入sql文件到MySQL</title>
-        <link>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
+        <link>https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
         <pubDate>Fri, 07 Aug 2009 11:01:17 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ -&lt;p&gt;项目需要自动建库功能，于是就有了本文。搜索引擎好东西啊，就是从其中找到真正有用的太难了。贴代码：
+        <guid>https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ -&lt;p&gt;项目需要自动建库功能，于是就有了本文。搜索引擎好东西啊，就是从其中找到真正有用的太难了。贴代码：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>VMware 里的虚拟系统调整为宽屏分辨率</title>
-        <link>https://kissjava.github.io/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</link>
+        <link>https://kissjava.cn/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</link>
         <pubDate>Thu, 06 Aug 2009 15:25:38 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ -&lt;p&gt;测试成功了，做个备忘。
+        <guid>https://kissjava.cn/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ -&lt;p&gt;测试成功了，做个备忘。
 在虚拟机的配置文件example.vmx
 的末尾加上：
 svga.vramSize = 20971520（大于等于1366&lt;em&gt;768&lt;/em&gt;4就可以了）
 svga.maxWidth = 1366
 svga.maxHeight = 768
 要在虚拟机关闭时，修改这个文件才能生效。&lt;/p&gt;
-- https://kissjava.github.io/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ - kissjava.cn</description>
+- https://kissjava.cn/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP中把Exception写入到日志</title>
-        <link>https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</link>
+        <link>https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</link>
         <pubDate>Sun, 26 Jul 2009 10:12:49 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ -&lt;p&gt;PHP5中把Exception写入到日志，是比较好的方法，开发时可以随时查看，部署后也不用担心在页面上打印出一对信息造成不友好的体验和安全隐患。代码：
+        <guid>https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ -&lt;p&gt;PHP5中把Exception写入到日志，是比较好的方法，开发时可以随时查看，部署后也不用担心在页面上打印出一对信息造成不友好的体验和安全隐患。代码：
 &lt;!-- raw HTML omitted --&gt;&amp;lt;?php&lt;/p&gt;
 &lt;p&gt;error_reporting(E_ALL);&lt;/p&gt;
 &lt;p&gt;function exceptionLogger($exception) {
@@ -135,18 +135,18 @@ echo &amp;ldquo;Sorry!I&amp;rsquo;m Sick&amp;hellip;&amp;quot;;
 &lt;p&gt;}&lt;/p&gt;
 &lt;p&gt;connectToDatabase();
 ?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
-        <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
+        <link>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
         <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ -&lt;p&gt;公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ -&lt;p&gt;公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。&lt;/p&gt;
 &lt;p&gt;原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.&lt;/p&gt;
 &lt;p&gt;nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.&lt;/p&gt;
 &lt;p&gt;下面就来说说.&lt;/p&gt;
@@ -174,18 +174,18 @@ http://username:password@domain/test/service.php?wsdl
 必须要这两步都做了才能请求被htaccess保护起来的service地址, 缺一不可.&lt;/p&gt;
 &lt;p&gt;好了,我遇到的问题就这些了, 希望能对各位也用nusoap的朋友有点帮助, 如果还有不清楚的, 请留言提问, 谢谢 ;)&lt;/p&gt;
 &lt;p&gt;from：http://blog.csdn.net/mynamesucks/archive/2006/05/26/756480.aspx&lt;/p&gt;
-- https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP中使用位运算实现简单的权限管理</title>
-        <link>https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+        <link>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
         <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ -&lt;!-- raw HTML omitted --&gt;
 &lt;pre&gt;&lt;code&gt;//所有的权限    
 $final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE  
              | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; 
@@ -210,18 +210,18 @@ echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_al
 &lt;p&gt;管理者拥有的全部权限：1111111
 仅无法搜索文章的权限：1101111
 非编辑人员所有的权限：1110010&lt;/p&gt;
-- https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>忘记了zend studio for eclipse 怎么调试了</title>
-        <link>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
+        <link>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
         <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ -&lt;p&gt;老是在netbeans和zend studio for eclipse跳来跳去的。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ -&lt;p&gt;老是在netbeans和zend studio for eclipse跳来跳去的。&lt;/p&gt;
 &lt;p&gt;今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!&lt;/p&gt;
 &lt;p&gt;这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;的&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“&lt;!-- raw HTML omitted --&gt;服务器调试——Zend Debugger 的安装教程&lt;!-- raw HTML omitted --&gt;”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;在&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。&lt;/p&gt;
 &lt;p&gt;说说怎样安装Zend Debugger吧，比较简单的。Gently的教程里都有写了。这里淡水给自己加深一下印象。&lt;/p&gt;
@@ -235,18 +235,18 @@ zend_debugger.allow_hosts=127.0.0.1/10
 zend_debugger.expose_remotely=always
 ;以上配置中的127.0.0.1/10代表127.0.0.1到127.0.0.10的地址段允许调试 &lt;/p&gt;
 &lt;p&gt;以上橙色部分，淡水没有去做，这也不影响zend studio for eclipse的正常调试。&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
-        <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+        <link>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
         <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ -&lt;p&gt;最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《&lt;!-- raw HTML omitted --&gt;Learn Apache mod_rewrite: 13 Real-world Examples&lt;!-- raw HTML omitted --&gt;》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ -&lt;p&gt;最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《&lt;!-- raw HTML omitted --&gt;Learn Apache mod_rewrite: 13 Real-world Examples&lt;!-- raw HTML omitted --&gt;》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。&lt;/p&gt;
 &lt;p&gt;＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝&lt;/p&gt;
 &lt;p&gt;原文地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.sitepoint.com/article/apache-mod_rewrite-examples/&#34;&gt;http://www.sitepoint.com/article/apache-mod_rewrite-examples/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;原文作者：DK Lynn（DK Lynn is a former instructor pilot and &amp;ldquo;rocket scientist&amp;rdquo; now living in New Zealand where he operates a &lt;!-- raw HTML omitted --&gt;small business developing and hosting web sites&lt;!-- raw HTML omitted --&gt;. ）&lt;/p&gt;
@@ -408,7 +408,7 @@ Cheat sheet: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://regexlib.com/
 A regex-capable text editor: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.editpadpro.com&#34;&gt;http://www.editpadpro.com&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
 Regex Coach: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://weitz.de/regex-coach/&#34;&gt;http://weitz.de/regex-coach/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ - kissjava.cn</description>
         </item>
     
     

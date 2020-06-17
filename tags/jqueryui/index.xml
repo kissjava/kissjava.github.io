@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jqueryui on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/jqueryui/</link>
+    <link>https://kissjava.cn/tags/jqueryui/</link>
     <description>Recent content in jqueryui on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 09 Jan 2012 14:18:30 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/jqueryui/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/jqueryui/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jQuery Mobile Framework 便捷指南</title>
-      <link>https://kissjava.github.io/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
+      <link>https://kissjava.cn/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
       <pubDate>Mon, 09 Jan 2012 14:18:30 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://kissjava.cn/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
       <description>Jquery mobile framework 可以帮助你开发基于web的富移动应用程序。在这篇教程里，我们将解释一些基本的事情，比如theme selection （主题选择），library usage（库的使用），design pages（页面设计），page links（页面链接）和transition animations （过渡动画）。代码轻便，简单，灵活。它支持流行的智能手机和嵌入平台。使用它可以让你的移动应用更充实。
 包含jQuery Mobile库第一步就是在你的web page头部引入jQuery Mobile的样式表和javascript库文件。
 设计你的web pagejQuery Mobile可以在普通的html标签或html5标签中工作，但是你必须添加一些data属性（data-role，data-theme等等）在html标签中。 自定义列表项你可以自定义你的文章行，添加一些描述和评论数码。看看如下代码：
@@ -27,10 +27,10 @@
     
     <item>
       <title>Jquery UI dialog 详解 (中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:02:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description>1.11 autoOpen ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&amp;ldquo;open&amp;rdquo;)的时候才弹出dialog窗口。默认为：true。
 1.12 初始化例：请注意，$(&#39;.selector&amp;rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。
 $(&#39;.selector&amp;rsquo;).dialog({ autoOpen: false });
@@ -47,19 +47,19 @@ $(&#39;.selector&amp;rsquo;).dialog({ bgiframe: true });</description>
     
     <item>
       <title>jquery ui according详解(中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:02:27 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquery ui tabs详解(中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description></description>
     </item>
     

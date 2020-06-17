@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web service on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/web-service/</link>
+    <link>https://kissjava.cn/tags/web-service/</link>
     <description>Recent content in web service on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 24 Jul 2009 21:55:45 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
-      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
+      <link>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
       <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
+      <guid>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
       <description>公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。
 原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.
 nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.
@@ -30,10 +30,10 @@ nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始
     
     <item>
       <title>PHP5的SOAP扩展</title>
-      <link>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+      <link>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
       <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+      <guid>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
       <description>简介PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。
 PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。
 SOAP扩展支持以下规范。
@@ -59,10 +59,10 @@ SOAP扩展与Hello World这一节介绍如何使用WSDL模式和non-WSDL模式�
     
     <item>
       <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
-      <link>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+      <link>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
       <description>嗯，又找到一些好玩的东西，web service。 有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。 先恶补一下相关知识。 先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。 方法： SoapClient-&amp;gt;__soapCall() 说明： class SoapClient { mixed __soapCall ( string function_name, array arguments [, array options [, mixed input_headers [, array &amp;amp;output_headers]]]) } In WSDL mode, you can simply call SOAP functions as SoapClient methods. This method useful in non-WSDL mode when soapaction is unknown, uri differs from the default or when sending and/or receiving SOAP Headers 返回值： 一个简单类型的返回值，或是一个关联数组 例子： SOAP发送的协议：
 POST /servicepath/service.</description>
     </item>

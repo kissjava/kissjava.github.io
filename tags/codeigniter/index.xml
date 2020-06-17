@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CodeIgniter on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/codeigniter/</link>
+    <link>https://kissjava.cn/tags/codeigniter/</link>
     <description>Recent content in CodeIgniter on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 28 Nov 2011 23:30:41 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/codeigniter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/codeigniter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CodeIgniter Ajax Request</title>
-      <link>https://kissjava.github.io/posts/codeigniter-ajax-request/</link>
+      <link>https://kissjava.cn/posts/codeigniter-ajax-request/</link>
       <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-ajax-request/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-ajax-request/</guid>
       <description>先添加一行简单的代码，在ci里定义ajax的请求。
 在application/config/constants.php 添加如下： // Define Ajax Request define(&amp;lsquo;IS_AJAX&amp;rsquo;, isset($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) &amp;amp;&amp;amp; strtolower($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) == &amp;lsquo;xmlhttprequest&amp;rsquo;); 在控制器里就可以判断是否是Ajax的请求，从而决定是否load view。 public function test(){ if(IS_AJAX){ $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;ajax_test&amp;rsquo;); }else{ echo &amp;lsquo;Direct access not allowed!&#39;; // or load other view file. //$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;test&amp;rsquo;); } } Codeigniter里在登录后使用Ajax的简单方式.如果没有登录，发送401。 public function secure(){ if(! $this-&amp;gt;session-&amp;gt;userdata(&amp;lsquo;logged_in&amp;rsquo;)){ header(&amp;lsquo;HTTP/1.1 401 Unauthorized); }
 //other code...  } 再在js做判断跳转： $().ajaxError(function(xhr,status,err){ if(status.status == 401){ window.location.href=&amp;rsquo;/login&amp;rsquo;; } }); </description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>codeigniter2中使用simpletest做单元测试</title>
-      <link>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。
 由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。 但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。
 最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。
@@ -42,19 +42,19 @@
     
     <item>
       <title>Codeigniter里的单元测试</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试驱动开发已经提出好久了。在web领域估计国内采用的不多。 其实单元测试也是很好用的东西，确实可以提高开发人员的效率。 淡水用codeigniter举例说明一下。 </description>
     </item>
     
     <item>
       <title>Codeigniter里的无刷新上传</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
       <description>好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。
 先建个表 CREATE TABLE files ( id int NOT NULL AUTO_INCREMENT PRIMARY KEY, filename varchar(255) NOT NULL, title varchar(100) NOT NULL ); 文件的目录结构如下：
 第一步，建立表单看上去就一个title文本字段，一个文件框，一个提交按钮，还有一个files的div。 控制器部分 首先，我们要建一个上传的表单和一个upload的Controller。在index方法里渲出upload的视图。如下： class Upload extends CI_Controller { public function __construct() { parent::__construct(); $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;files_model&amp;rsquo;); $this-&amp;gt;load-&amp;gt;database(); $this-&amp;gt;load-&amp;gt;helper(&amp;lsquo;url&amp;rsquo;); } public function index() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;upload&amp;rsquo;); } } 我们已经在构造里加载了files_model，所以可以使用files_model里的方法。
@@ -64,10 +64,10 @@
     
     <item>
       <title>swfupload在codeigniter中的应用</title>
-      <link>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。
 第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：
 $this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里
@@ -83,29 +83,29 @@ ci中的状态：一般情况下，因为诸如uploadify,swfupload采用的都�
     
     <item>
       <title>CodeIgniter2 Model 支持单例</title>
-      <link>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
+      <link>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
       <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
       <description>CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：</description>
     </item>
     
     <item>
       <title>CodeIgniter Reactor&#39;s Caching Drivers</title>
-      <link>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</link>
+      <link>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</link>
       <pubDate>Sat, 02 Apr 2011 17:18:51 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</guid>
       <description>Before Reactordropped, I snuck in some caching drivers(Docs Link) that Pascalhad been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.
 At this time, there are drivers available for APC, Memcached, file-based caching, and a dummy cache. If you haven&amp;rsquo;t already, head over to BitBucketand get cloning or forking.</description>
     </item>
     
     <item>
       <title>FirePHP,给力的调试工具</title>
-      <link>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <link>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
 这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -114,10 +114,10 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>关于ci和zend framework的一些牢骚</title>
-      <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
+      <link>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
       <pubDate>Fri, 11 Jun 2010 10:32:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
+      <guid>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
       <description>首先说明，这是淡水的牢骚，看不惯不要看。
 老华仔歌里唱的应景“总逃不开工作表，做完了又来了，怎样也甩不掉……”。淡水手头的项目还没有完全结束，新的项目又要上马。于是前期就框架选择开大会，开小会。
 有.net高手就开始在网上搜索合适框架。结果他得出的结论是Zend Framework，理由：官方。 不推荐Codeigniter是因为，一家小公司做的，后期支持跟不上。而且ci是轻量级的，功能不强。 php本身就是草根出身，如果看公司大小，那么为什么不用.net? ci是轻量级的，但是php能做的，他都能做，没有内置的功能，可以自己加阿？非得一定要和zend framework一样，几乎把所有能想到用到的功能都整合进去变成皇家内裤（类库）？ 窃以为，做大型应用时应用框架快速开发是可取的，但是要考虑到代码的执行效率，和开发的灵活度。 zend framework能做到的， ci扩展一下也能做到，麻烦一点了。但是zend framwork有ci灵活么，ci2天可以掌握，zend framework可以么（太NB的天才不算）。 这些主流框架的评比本身没有太大的意义。框架只是工具，各有其特点（Yii高效；ci上手容易，代码优雅；thinkphp代码全中文注释，文档齐全；qee……），人才是重点。
@@ -129,29 +129,29 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>Codeigniter ACL library</title>
-      <link>https://kissjava.github.io/posts/codeigniter-acl-library/</link>
+      <link>https://kissjava.cn/posts/codeigniter-acl-library/</link>
       <pubDate>Mon, 08 Mar 2010 09:58:45 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-acl-library/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-acl-library/</guid>
       <description>public function __construct() { $this-&amp;gt;load-&amp;gt;helper(&#39;url&#39;); $this-&amp;gt;load-&amp;gt;library(&#39;session&#39;); $this-&amp;gt;load-&amp;gt;config(&#39;mx_acl&#39;, TRUE); $this-&amp;gt;_config = $this-&amp;gt;config-&amp;gt;item(&#39;mx_acl&#39;); $this-&amp;gt;_cache_path = $this-&amp;gt;config-&amp;gt;item(&#39;cache_path&#39;); /* previous flashdata is available to views */ $this-&amp;gt;load-&amp;gt;vars($this-&amp;gt;_config[&#39;error_var&#39;], $this-&amp;gt;session-&amp;gt;flashdata($this-&amp;gt;_config[&#39;error_var&#39;])); /* run the access control check now */ ($this-&amp;gt;_config[&#39;check_uri&#39;]) AND $this-&amp;gt;check_uri(); } /** * Check the current uri and user privileges against the cached ACL array * Redirect if access is denied * * @return void */ public function check_uri() { /* Load the cached access control list or show error */ (is_file($cached_acl = $this-&amp;gt;_cache_path.</description>
     </item>
     
     <item>
       <title>Codeigniter里实现get_object_or_404</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
       <description>在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。
 我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。 </description>
     </item>
     
     <item>
       <title>kohana版企业站范例进行中</title>
-      <link>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
+      <link>https://kissjava.cn/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
       <pubDate>Sat, 02 May 2009 06:51:31 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
+      <guid>https://kissjava.cn/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
       <description>以前是用codeigniter做的，但是为了更敏捷的开发，提高生产效率（其实是要偷懒），所以开始摸索kohana，并为之着迷（主要是ORM）。
 为了尽快上手kohana，所以把以前公布的企业站又用kohana改写一番。 现在前端已经完成。
 kohana版，为了简化代码，使用了ORM Codeigniter版，采用了他提供的AR
@@ -164,47 +164,47 @@ Codeigniter版http://tsingfeng.sinaapp.com/ci一般结果：Page rendered in 0.0
     
     <item>
       <title>ci中文转拼音的library</title>
-      <link>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
+      <link>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
       <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
+      <guid>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
       <description>拼装了一个codeigniter的中文转拼音的library。 使用方法： $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;utf8pinyin&amp;rsquo;,&#39;&amp;rsquo;,&amp;lsquo;py&amp;rsquo;); $data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;lsquo;昆山风神贸易有限公司成立于2007年&amp;rsquo;); //KunShanFengShenMaoYiYouXianGongSiChengLiYu2007Nian str2py($str,$boolquanpin=true,$booldaxie=true)$str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。 utf8pinyin</description>
     </item>
     
     <item>
       <title>Simple flexible Caching of parts of code - MP_Cache</title>
-      <link>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
+      <link>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
       <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
+      <guid>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
       <description>如标题所言，确实是简单灵活。看来想要摆脱Codeigniter越来越难了。 看看怎样使用吧 首先，在config.php中设置一下缓存目录，这个目录要存在且可写入 $config[&amp;lsquo;mp_cache_dir&amp;rsquo;] = &amp;lsquo;application/mp_cache/&#39;; 好了，现在看看代码 /加载library，可以放在构造函数中/ $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;MP_Cache&amp;rsquo;); /抓取名为listNews的缓存/ $listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;listNews&amp;rsquo;); if($listNews===false){ //没有缓存数据，则查询数据库 $listNews = $this-&amp;gt;News_model-&amp;gt;getNewslist(&amp;lsquo;guest&amp;rsquo;)-&amp;gt;result(); //创建缓存，命名为listNews。在mp_cache目录下就生成了listNews.cache文件，内容是序列化的数据 $this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;listNews&amp;rsquo;); } $data[&amp;lsquo;listNews&amp;rsquo;]= $listNews; $this-&amp;gt;layout-&amp;gt;view(&amp;lsquo;news&amp;rsquo;, $data); 两个注意点：1，缓存数据，必须是data，而不是resource id。如，在使用AR后用result(),result_array()等返回的数据 2，缓存名不要重复。可以使用子文件夹分隔。如，$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;news/listNews&amp;rsquo;);同样创建缓存数据片段用$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;news/listNews&amp;rsquo;);（php5下news文件夹会自动创建） 其他方法： $this-&amp;gt;mp_cache-&amp;gt;delete($filename) 删除名为$filename的cache.</description>
     </item>
     
     <item>
       <title>改进layout library，方便自定义layout</title>
-      <link>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
+      <link>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
       <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
+      <guid>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
       <description>CodeIgniter使用 layout library 简化视图布局中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。 library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。 所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。 function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data); }  function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; # 下面就是使用自定义的对象名 mytemp $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data); }  </description>
     </item>
     
     <item>
       <title>Extended Model for CodeIgniter 1.7.x</title>
-      <link>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</link>
+      <link>https://kissjava.cn/posts/extended-model-for-codeigniter-1.7.x/</link>
       <pubDate>Wed, 25 Feb 2009 14:11:01 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</guid>
+      <guid>https://kissjava.cn/posts/extended-model-for-codeigniter-1.7.x/</guid>
       <description>不需要hacking CI的核心代码
  下载文件 2. 放入 application/libraries 文件夹 在model 里,使用: class Product extends MY_Model 其他的使用和旧版一样  my_model</description>
     </item>
     
     <item>
       <title>codeigniter的数据库操作</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
       <description>用codeigniter也有一段时间了，一直没有做什么总结。 昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。  链接数据库 $this-&amp;gt;load-&amp;gt;database();//手动连接数据库 //连接多数据库 $DB1 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_one&amp;rsquo;, TRUE); $DB2 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_two&amp;rsquo;, TRUE); 查询 //参数绑定形式 $sql = &amp;ldquo;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&amp;quot;; $this-&amp;gt;db-&amp;gt;query($sql, array(3, &amp;lsquo;live&amp;rsquo;, &amp;lsquo;Rick&amp;rsquo;));
 //多结果标准查询 $query = $this-&amp;gt;db-&amp;gt;query($sql); //自定义 $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;); //便捷形式，相当于:SELECT * FROM tablename $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;, 10, 20); // 相当于: SELECT * FROM tablename LIMIT 20, 10
 $query-&amp;gt;result() //对象形式 $query-&amp;gt;result_array() //数组形式 /* foreach ($query-&amp;gt;result() as $row) { echo $row-&amp;gt;title; echo $row-&amp;gt;name; echo $row-&amp;gt;email; } */ $query-&amp;gt;num_rows() //总条数 $query-&amp;gt;num_fields() //字段数</description>
@@ -212,10 +212,10 @@ $query-&amp;gt;result() //对象形式 $query-&amp;gt;result_array() //数组形
     
     <item>
       <title>适合Codeingiter1.7.0的authentication library</title>
-      <link>https://kissjava.github.io/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
+      <link>https://kissjava.cn/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
       <pubDate>Wed, 24 Dec 2008 21:09:59 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
+      <guid>https://kissjava.cn/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
       <description>适合Codeingiter1.7.0的authentication library地址：
 http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看看。时间都被我荒废到哪里去了呢？
 今天对于很多人来说，是个特殊的日子，虽然对我来说只是再平常不过的一天了。嗯，Merry Christmas！</description>
@@ -223,28 +223,28 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>tinyMCE和CodeIgniter1.7.0</title>
-      <link>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+      <link>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+      <guid>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
       <description>tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。 下载tinyMCE并解压到网站目录，淡水是放到根目录的。 在CodeIgniter的View里调用： </description>
     </item>
     
     <item>
       <title>CodeIgniter 1.6.3 to 1.7.0</title>
-      <link>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</link>
+      <link>https://kissjava.cn/posts/codeigniter-1.6.3-to-1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 14:20:43 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-1.6.3-to-1.7.0/</guid>
       <description>今日升级后，发行有些读取数据库的页面有错误。提示：“SQL logic error or missing database”。咋回事呢？淡水不废话了,看代码,原来1.6.3是这样写的 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;from(&amp;lsquo;news&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 现在1.7.0要这样 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 说白了，就是1.7.0比较严格一些，from后不能再get里还有table name否则会出错，其实还是我在1.6.3里写的不够严谨XD</description>
     </item>
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>
@@ -252,10 +252,10 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>CodeIgniter 1.7.0 版发布了，有料</title>
-      <link>https://kissjava.github.io/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</link>
+      <link>https://kissjava.cn/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</link>
       <pubDate>Sat, 25 Oct 2008 19:12:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</guid>
       <description>修正了一堆bug。
 更新了session table，嗯session保存的database的才有关系，多了一个user_data字段。
 新增了form_validation.旧的validation还是可以用的，不过推荐使用新的form_validation。语法比较简洁明了。
@@ -264,10 +264,10 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>CodeIgniter使用 layout library 简化视图布局</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</link>
       <pubDate>Wed, 22 Oct 2008 21:17:50 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</guid>
       <description>一般在网站的开发过程中，都会有个 template 或是叫 layout 的，它包含了整个网站的外观和布局，一般分为header，content，footer 有的甚至还包括 menu。其中的 content 部分则会随着不同的页面和功能而变化。这样就可以保证网站风格的一致性，也可以减少不少工作量。虽然便捷的 Codeigniter没有提供内置的处理方式，但是我们还是自己扩展的。
 首先，把下面的代码保存到 application/libraries/Layout.php 在相关的控制器里载入它
 往下就可以输出页面
@@ -279,39 +279,39 @@ $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;templ
     
     <item>
       <title>Simple FlashNotice helper for CodeIgniter</title>
-      <link>https://kissjava.github.io/posts/simple-flashnotice-helper-for-codeigniter/</link>
+      <link>https://kissjava.cn/posts/simple-flashnotice-helper-for-codeigniter/</link>
       <pubDate>Wed, 22 Oct 2008 10:07:52 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-flashnotice-helper-for-codeigniter/</guid>
+      <guid>https://kissjava.cn/posts/simple-flashnotice-helper-for-codeigniter/</guid>
       <description>这是一个容易使用的简单的FlashNotice helper。 它会在你进行一些操作之后帮助你显示错误或提示信息。 信息显示一次后就会被自动删除。 1，保持以下代码到“flash_helper.php” application/helpers 目录 2，加载它 $this-&amp;gt;load-&amp;gt;helper(&amp;ldquo;flash&amp;rdquo;);
 你可以在第二个参数上设置其他的通知类型，它会反映在你的提示div块的class名称上。 #flash 样式你可以自己定义。 </description>
     </item>
     
     <item>
       <title>扩展 CodeIgniter 1.6.3 的 Model </title>
-      <link>https://kissjava.github.io/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
+      <link>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
       <pubDate>Tue, 21 Oct 2008 15:16:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
+      <guid>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
       <description>第一步，用下载的文件替换system/libraries/Model.php 第二步，对于你的每个数据表，都要在system/application/models 下建立一个模型 第三步，建立一个“products”表，如下所示： CREATE TABLE products ( id int(11) NOT NULL auto_increment, title varchar(50) NOT NULL, description text NOT NULL, color varchar(20) NOT NULL, price float NOT NULL, category_id int(11) NOT NULL, featured char(1) NOT NULL, enabled char(1) NOT NULL, visits int(1) NOT NULL, created int(11) NOT NULL, modified int(11) NOT NULL, PRIMARY KEY (id) ) ENGINE=MyISAM; 第四步，建立一个模型 system/application/models/product.php </description>
     </item>
     
     <item>
       <title>优化CodeIgniter性能</title>
-      <link>https://kissjava.github.io/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
+      <link>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
       <pubDate>Sun, 19 Oct 2008 10:15:20 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
+      <guid>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
       <description>原文《Optimizing and Scaling your CodeIgniter Application - with Benchmarks!》淡水这里只是用中文整理一下。 首先，是个控制器，一般的标准的写法如下： function index() { $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);
 $links = &#39;&#39;; if ( $query-&amp;gt;num_rows &amp;gt; 0) { foreach ($query-&amp;gt;result_array() as $page): $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;; $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;; endforeach; $data[&#39;links&#39;] = $links; } for ($i=0; $i &amp;lt; 10; $i++) { $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;); $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1); if ( $query-&amp;gt;num_rows == 1 ) { $row = $query-&amp;gt;row_array(); $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]); $data[&#39;body&#39;] = $row[&#39;body&#39;]; } } $this-&amp;gt;load-&amp;gt;view(&#39;welcome2&#39;, $data);  } 视图文件类似以下： 把循环结果赋给变量foreach ($query-&amp;gt;result_array() as $page): 修改为: $pages = $query-&amp;gt;result_array(); foreach ($pages as $page): Requests per second: 46.</description>
     </item>
     
     <item>
       <title>基于Codeigniter1.6.3的华领GPS车管系统网站</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
       <pubDate>Wed, 08 Oct 2008 20:09:32 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
       <description>&lt;p&gt;华领GPS车管系统网站(&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;)
 名称：华领GPS车辆管理系统
 地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;http://www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
@@ -321,20 +321,20 @@ CodeIgniter版本：1.6.3
     
     <item>
       <title>怎样透过Codeigniter的SMTP类发mail</title>
-      <link>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</link>
+      <link>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</link>
       <pubDate>Wed, 08 Oct 2008 10:08:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</guid>
+      <guid>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</guid>
       <description>其实手册上已经讲得比较好了。但是有些不太对味，排版不太符合国人的习惯。闲话不说了，淡水喜欢直奔主题。 以Gmail为例，其他的更加简单（smtp_host和port改一下就行了，而且一般的smtp都无需ssl的）。要发信，先要配置。 配置有两种方式，方式一直接写在发送mail代码的前面，如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;;
 $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文件config/email.php，内容如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; ok,现在可以发信了。 $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;email&amp;rsquo;); $this-&amp;gt;email-&amp;gt;from(&amp;lsquo;username@gmail.com&amp;rsquo;, &amp;lsquo;your_name&amp;rsquo;); $this-&amp;gt;email-&amp;gt;to(&amp;lsquo;your_friend@xxx.com&amp;rsquo;); $this-&amp;gt;email-&amp;gt;subject(&amp;lsquo;subject&amp;rsquo;); $this-&amp;gt;email-&amp;gt;message(&amp;lsquo;this is the mail content&amp;rsquo;); $this-&amp;gt;email-&amp;gt;send(); 啰嗦一下，用Gmail发信，不太容易被当作垃圾邮件，但是主机要支持ssl才可以，否则是发不出的。其他免费的stmp也有不错的，而且不用ssl支持。比如tom和qq了。</description>
     </item>
     
     <item>
       <title>CodeIgniter 入门-快速简单地创建 MVC 应用程序</title>
-      <link>https://kissjava.github.io/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://kissjava.cn/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Sat, 04 Oct 2008 12:06:05 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid>
       <description>&lt;p&gt;淡水现在用的框架就是Codeigniter。嗯，学习曲线较低，上手很快。本来想写些东西和大家分享的，只是时间不允，而且人懒。现在放上IBM developerWorks中国上的文章。淡水再啰嗦一下，官方的视频很直白也建议看看&lt;/p&gt;
 &lt;p&gt;级别： 中级Thomas Myer, 作者、顾问和 Web 开发人员, Triple Dog Dare Media
 2008 年 9 月 16 日&lt;/p&gt;</description>
@@ -342,10 +342,10 @@ $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文
     
     <item>
       <title>E-TextEditor试用手记</title>
-      <link>https://kissjava.github.io/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+      <link>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
       <pubDate>Tue, 30 Sep 2008 14:14:53 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+      <guid>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
       <description>嗯，这里快长草了。
 淡水以前看ci的视频，看到mac下的textmate，哈喇子飞流直下-_-。以后的一段日子总是在寻求在windows下类似的编辑器。向google大神请教，给了我两个答案一个是intype，另一个还是intype，玩笑了（想起鲁迅了）。还有一个就是本文的猪脚“E-TextEditor”。但是当时淡水试用以后很是失望，intype没有project manage功能，E-texteditor安装时候就一堆的错误。无法只能用editplus凑合，没几日就无法忍受editplus简陋的目录管理了，换成了Ultraedit。只是他们都没有bundles，用来小修小改还好，用它们做项目，太累了。总会有些笔误产生。
 故事到了这里，貌似该猪脚出场了。等等，还没到，实际情况是这样的。intype的最新Unstable版,支持project manage了。用了两天，发现BUG太多了。无奈放弃。这个时候猪脚上场了。但是这次淡水不是用的官方的版本，而是所谓的绿色特别版。下载地址：http://www.xdowns.com/soft/38/39/2008/Soft_40447.html试用一下不错。没有问题，又下了一份E-TextEditor Codeigniter 1.6.3 Bundle。嗯，测试一下，很好。淡水的系统是vista，没有任何问题，在虚拟机的xp上跑也正常。晒个图Codeigniter bundles 下载地址：http://www.</description>
@@ -353,20 +353,20 @@ $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文
     
     <item>
       <title>CodeIgniter中框架的使用</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Sep 2008 15:56:22 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>控制器代码： class Admin extents Control { function index() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/index&amp;rsquo;); } function top() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/top&amp;rsquo;); } function menu() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/menu&amp;rsquo;); } function main() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/main&amp;rsquo;); } function bottom() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/bottom&amp;rsquo;); } } views文件夹下有个专门的admin文件夹，里面都是管理页面（index.php , top.php , menu.php , main.php , bottom.php）
 index.php内容如下： </description>
     </item>
     
     <item>
       <title>CodeIgniter 带简单权限控制的登录实例</title>
-      <link>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
+      <link>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
       <description>function __construct() { parent::__construct(); @session_start(); } function login() { unset($_SESSION[&#39;user&#39;]); $email = $this-&amp;gt;input-&amp;gt;post(&#39;email&#39;); $password = md5($this-&amp;gt;input-&amp;gt;post(&#39;password&#39;)); $this-&amp;gt;db-&amp;gt;where(&#39;email&#39;,$email); $this-&amp;gt;db-&amp;gt;where(&#39;password&#39;,$password); $this-&amp;gt;db-&amp;gt;where(&#39;status &amp;lt;&amp;gt;&#39;,0); $query = $this-&amp;gt;db-&amp;gt;get(&#39;users&#39;); if(!$query-&amp;gt;num_rows()!=0) return false; $row = $query-&amp;gt;row_array(); $_SESSION[&#39;user&#39;][&#39;id&#39;] = $row[&#39;id&#39;]; $_SESSION[&#39;user&#39;][&#39;name&#39;] = $row[&#39;name&#39;]; $_SESSION[&#39;user&#39;][&#39;type&#39;] = $row[&#39;type&#39;]; return true; } function logout() { unset($_SESSION[&#39;user&#39;]); } function isPermitted() { $_SESSION[&#39;return&#39;] = $this-&amp;gt;uri-&amp;gt;uri_string(); if(isset($_SESSION[&#39;user&#39;][&#39;type&#39;])) { $uri = substr($this-&amp;gt;uri-&amp;gt;uri_string(), 1); $permitted = $this-&amp;gt;permitted; $indice = $permitted[$_SESSION[&#39;user&#39;][&#39;type&#39;]][&#39;url&#39;]; foreach($indice as $i){ if(eregi(&#39;(&#39;. $i .&#39;)&#39;, $uri)){ unset($_SESSION[&#39;voltar&#39;]); return true; } } return false; } else { redirect(&#39;access/login&#39;,&#39;refresh&#39;); } }  } ?</description>
     </item>
     

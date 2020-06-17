@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php5 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/php5/</link>
+    <link>https://kissjava.cn/tags/php5/</link>
     <description>Recent content in php5 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 13 Feb 2010 16:31:57 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/php5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/php5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP5.3的新特新</title>
-      <link>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
+      <link>https://kissjava.cn/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
       <pubDate>Sat, 13 Feb 2010 16:31:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
+      <guid>https://kissjava.cn/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
       <description>本文主要说说PHP V5.3 的以下特性：
 延迟静态绑定PHP V5.3 扩展了 static 关键词的使用。现在，无需实例化类便可访问静态类方法和属性。当类不存在对象，或者不需要对象时，这个特性就比较方便。下面就是展示了延迟静态绑定的一个例子。 代码中使用 CLASS 也许有点勉强，但确实可以说明 PHP V5.3.0 有一个小小的问题。显然，对于这个例子，这不是多大的问题，但是对于有数千行 PHP 代码的网站来说，就没那么简单了。重复代码通常意味着重复劳动。名称空间（也有叫命名空间的）PHP V5.3 提供名称空间功能，以增强该语言的封装能力。名称空间在现代语言中非常常见，例如 C# 和 XML。名称空间的主要优点是，通过它可以为代码符号（类、函数和常量）定义独立的容器，这听起来有点复杂，其实不然。以下代码显示了使用 PHP 名称空间定义本地和全局字符串常量的一个例子。 有了名称空间功能，和之前相比，代码之间的界限更加清晰。而这一点又有助于团队环境中的代码整合。换句话说，不同的团队可以分配他们自己的名称空间，当所有团队成员都遵循这个惯例时，名称冲突的情况应该会降为零。这也是 5.3.0 版对 PHP 语言在面向对象方面的一个增强。
 类方法重载在 PHP 中，术语重载（overloading） 与通常的面向对象上下文稍有不同。在 Java 语言或 C# 中，“重载” 方法是指为不同参数列表提供相同代码的方法。例如，如果有一个名为 draw(String str) 的方法，那么重载的方法可以有以下形式：draw(String str, int i)。这种方法符号名称被称作方法签名，为了便于重载，返回类型被省略。

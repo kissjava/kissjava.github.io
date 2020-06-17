@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BBR on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/bbr/</link>
+    <link>https://kissjava.cn/tags/bbr/</link>
     <description>Recent content in BBR on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 08 Oct 2018 11:14:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/bbr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/bbr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Debian9 快速开启 TCP BBR </title>
-      <link>https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+      <link>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
       <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+      <guid>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
       <description>Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。
 干货如下 1,修改系统变量
 echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.confecho &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf 保存修改的配置使之生效

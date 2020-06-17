@@ -1,70 +1,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>https://kissjava.github.io/</link>
+    <link>https://kissjava.cn/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>天很热但是也很蓝</title>
-        <link>https://kissjava.github.io/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</link>
+        <link>https://kissjava.cn/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</link>
         <pubDate>Wed, 15 Jul 2009 20:39:41 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ -&lt;p&gt; &lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ -&lt;p&gt; &lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;人穷，只好用Lg ks20 拍两张意思一下 -_-&lt;/p&gt;
 &lt;p&gt;地点：MP现代广场&lt;/p&gt;
 &lt;p&gt;时间：上午8时&lt;/p&gt;
-- https://kissjava.github.io/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Kohana:敏捷的 PHP 框架</title>
-        <link>https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</link>
+        <link>https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</link>
         <pubDate>Tue, 14 Jul 2009 09:45:34 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ -&lt;p&gt;其实是Kohana v2.3.4入门教程。通过一个简单的项目说明了kohana的mvc架构和数据库类和kohana助手（helper）的用法。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ -&lt;p&gt;其实是Kohana v2.3.4入门教程。通过一个简单的项目说明了kohana的mvc架构和数据库类和kohana助手（helper）的用法。&lt;/p&gt;
 &lt;p&gt;原文：&lt;!-- raw HTML omitted --&gt;Kohana: The Swift PHP Framework&lt;!-- raw HTML omitted --&gt; 作者：Cristian Gilè 中文翻译：&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;因为实在是太长了，所以做成PDF了。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;Kohana the swift PHP framework&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ - kissjava.cn</description>
+- https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>input、select等表单元素与相邻文字对齐</title>
-        <link>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
+        <link>https://kissjava.cn/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
         <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ -&lt;p&gt;以前都是把多选框放到一个单独的表格单元格。
+        <guid>https://kissjava.cn/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ -&lt;p&gt;以前都是把多选框放到一个单独的表格单元格。
 现在才知道，用css更简单：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ - kissjava.cn</description>
+- https://kissjava.cn/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>系统时间不准确造成 IE 下 Kohana 的 Captcha 库验证失败</title>
-        <link>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
+        <link>https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
         <pubDate>Tue, 16 Jun 2009 10:08:25 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ -&lt;p&gt;淡水碰到了，记下来备忘。&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ -&lt;p&gt;淡水碰到了，记下来备忘。&lt;/p&gt;
 &lt;p&gt;作者：Hily 原始链接：http://hily.me/blog/2009/04/system-time-kohana-captcha-fail/
 版权声明：可以转载，转载时务必以超链接形式标明文章原始出处和作者信息及版权声明&lt;/p&gt;
 &lt;p&gt;好糗……&lt;/p&gt;
@@ -119,18 +119,18 @@ echo form::close();&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;因为我的 Kohana 是放在虚拟机里跑的，而我的虚拟机长年都是 suspend 而不是 poweroff，所以时间自然要比当前时间慢 = =&lt;/p&gt;
 &lt;p&gt;这类诡异的问题在 QQ 群上问是几乎不可能找到答案的，所以关键时刻还是得靠自己解决啊。&lt;/p&gt;
 &lt;p&gt;– EOF –&lt;/p&gt;
-- https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>一点代码，体验严谨</title>
-        <link>https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</link>
+        <link>https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</link>
         <pubDate>Thu, 04 Jun 2009 15:59:46 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ -&lt;!-- raw HTML omitted --&gt;
 &lt;pre&gt;&lt;code&gt;    $type = $this-&amp;gt;input-&amp;gt;post(&amp;quot;type&amp;quot;);
     $keyword = $this-&amp;gt;input-&amp;gt;post(&amp;quot;keyword&amp;quot;);
 
@@ -184,35 +184,35 @@ echo form::close();&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Netbeans 的自选代码折叠（Code Folding）</title>
-        <link>https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</link>
+        <link>https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</link>
         <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ -&lt;p&gt;-_-!!!这里长草了，来除草了。最近试用netbeans for php，感觉不错。里面的代码折叠比较好看，也好用。
+        <guid>https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ -&lt;p&gt;-_-!!!这里长草了，来除草了。最近试用netbeans for php，感觉不错。里面的代码折叠比较好看，也好用。
 不过自选代码的折叠，还是要深挖一下才出来的。eclipse 系列的 php IDE，的自选代码折叠怎么搞呢？不晓得。也许&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;知道,自己问去吧XD&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;//&lt;!-- raw HTML omitted --&gt;&lt;br&gt;
 &lt;!-- raw HTML omitted --&gt;
 嗯，netbeans4php越来越好用了。&lt;/p&gt;
-- https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ - kissjava.cn</description>
+- https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>学习php中的soap</title>
-        <link>https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
+        <link>https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
         <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ -&lt;p&gt;淡水摸索了一阵子。
+        <guid>https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ -&lt;p&gt;淡水摸索了一阵子。
 说说吧，先说说wsdl文件的建立。
 用zend studio for eclipse 或是 easyeclipse for php都可以建立。但是zse方便一些。例如提供一个简单的加法服务：
 &lt;!-- raw HTML omitted --&gt;
@@ -220,18 +220,18 @@ sum.php&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ - kissjava.cn</description>
+- https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>windows下基于apache的subversion（svn）的安装</title>
-        <link>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <link>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
         <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ -&lt;p&gt;上午折腾了一下，可以写个详细步骤出来了。
+        <guid>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ -&lt;p&gt;上午折腾了一下，可以写个详细步骤出来了。
 &lt;!-- raw HTML omitted --&gt;预期目标：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;搭建一个apache下的svn服务，服务地址 http://localhost/svn&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;本地环境：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -297,18 +297,18 @@ svn的服务目录为D:svnroot
 &lt;!-- raw HTML omitted --&gt;注意点：&lt;!-- raw HTML omitted --&gt;
 先不要启用权限控制。用tortoiseSVN登录进入以后，创建文件夹后，再启用权限控制。
 如果想要把地址改成http://localhost/kisssvn，两步：apache的httpd.conf 里 改为&amp;lt;Location /kisssvn&amp;gt;，再把权限文档里的[svn:/]等改成[kisssvn:/]。ok&lt;/p&gt;
-- https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+- https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP5的SOAP扩展</title>
-        <link>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+        <link>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
         <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;简介&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+        <guid>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;简介&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。&lt;/p&gt;
 &lt;p&gt;PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。&lt;/p&gt;
 &lt;p&gt;SOAP扩展支持以下规范。&lt;/p&gt;
@@ -405,18 +405,18 @@ $server-&amp;gt;handle();
 &lt;p&gt;non-WSDL模式客户端&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;在non-WSDL模式中，因为没有使用WSDL，传递了一个包含服务所在位置和服务URI的参数数组作为参数。然后象WSDL模式中一样调用__soapCall()方法，但是使用了SoapParam类用指定格式打包参数。返回的结果将获取greet中的响应。&lt;/p&gt;
-- https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
-        <link>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+        <link>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
         <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
         
-        <guid>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
-        <description>清风徐来 https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ -&lt;p&gt;嗯，又找到一些好玩的东西，web service。
+        <guid>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ -&lt;p&gt;嗯，又找到一些好玩的东西，web service。
 有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。
 先恶补一下相关知识。
 先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。
@@ -466,7 +466,7 @@ Content-Length: 1297&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ - kissjava.cn</description>
+- https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ - kissjava.cn</description>
         </item>
     
     

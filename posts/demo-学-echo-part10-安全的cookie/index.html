@@ -21,7 +21,7 @@
 代码中生成随机字符串是通过使用gubrak的第三方库完成的。
 package mainimport (&quot;net/http&quot;&quot;time&quot;&quot;github.com/gorilla/securecookie&quot;&quot;github.com/labstack/echo&quot;&quot;github.com/novalagung/gubrak&quot;)type M map[string]interface{}var sc = securecookie.New([]byte(&quot;very-secret&quot;), []byte(&quot;a-lot-secret-yay&quot;))func setCookie(c echo.Context, name string, data M) error {encoded, err := sc.Encode(name, data)if err != nil {return err}cookie := &amp;http.Cookie{Name: name,Value: encoded,Path: &quot;/&quot;,Secure: false,HttpOnly: true,Expires: time.Now().Add(1 * time.Hour),}http.SetCookie(c.Response(), cookie)return nil}func getCookie(c echo." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/" />
+<meta property="og:url" content="https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/" />
 <meta property="article:published_time" content="2019-08-17T19:38:14+00:00" />
 <meta property="article:modified_time" content="2019-08-17T19:38:14+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -53,14 +53,14 @@ package mainimport (&quot;net/http&quot;&quot;time&quot;&quot;github.com/gor
 
 
 
-<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.cn/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.cn/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="https://kissjava.github.io/js/loadCSS.js"></script>
+<script src="https://kissjava.cn/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -69,7 +69,7 @@ package mainimport (&quot;net/http&quot;&quot;time&quot;&quot;github.com/gor
 
 
   
-    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
+    <script src="https://kissjava.cn/js/toc-collapse.js"></script>
   
 
 
@@ -102,7 +102,7 @@ package mainimport (&quot;net/http&quot;&quot;time&quot;&quot;github.com/gor
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="https://kissjava.github.io">
+    <a class="a-block nav-head false" href="https://kissjava.cn">
     
         <div class="nav-title">
             清风徐来
@@ -272,7 +272,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.cn">
             清风徐来
         </a>
         
@@ -289,7 +289,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://kissjava.github.io">
+    <a href="https://kissjava.cn">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -455,13 +455,13 @@ func main() {
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/">
+                <a class="newer-posts" href="https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/">
 			下回<br>Demo 学 Echo Part11 Gorilla Session
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                <a class="older-posts" href="https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
 			上回<br>Demo 学 Echo Part9 配置文件
                 </a>
                 
@@ -594,6 +594,6 @@ app = new Vue({
 });
 </script>
 
-<script src="https://kissjava.github.io/js/journal.js"></script>
+<script src="https://kissjava.cn/js/journal.js"></script>
     </body>
 </html>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>时间 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E6%97%B6%E9%97%B4/</link>
+    <link>https://kissjava.cn/tags/%E6%97%B6%E9%97%B4/</link>
     <description>Recent content in 时间 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 20 Sep 2017 17:27:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E6%97%B6%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E6%97%B6%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C# 测试代码的运行时间</title>
-      <link>https://kissjava.github.io/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+      <link>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
       <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+      <guid>https://kissjava.cn/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
       <description>计算C#代码运行的耗时，方便测试出效率。
 System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();watch.Start(); //开始监视代码运行时间// 添加需要测试的代码// ...watch.Stop(); //停止TimeSpan timespan = watch.Elapsed; //获取当前实例测量得出的总时间System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds));  TimeSpan 还可以计算出TotalHours，TotalMinutes， TotalSeconds。</description>
     </item>

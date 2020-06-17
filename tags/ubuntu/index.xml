@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/ubuntu/</link>
+    <link>https://kissjava.cn/tags/ubuntu/</link>
     <description>Recent content in ubuntu on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 23 Aug 2017 15:16:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>阿里云 ubuntu 的防火墙操作</title>
-      <link>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
+      <link>https://kissjava.cn/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://kissjava.cn/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
       <description>阿里云服务器，没有 web 面板权限，只有 root 用户。
 重新安装了服务器的 web 环境，需要开发相关端口。
 检查防火墙  $whereis iptables iptables: /sbin/iptables /etc/iptables.rules /usr/share/iptables /usr/share/man/man8/iptables.8.gz 说明防火墙开了
@@ -28,10 +28,10 @@
     
     <item>
       <title>win7，ubuntu10.10双系统，修复grub</title>
-      <link>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
+      <link>https://kissjava.cn/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
       <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
+      <guid>https://kissjava.cn/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
       <description>为什么要修复？因为啃黑苹果失败鸟。
 为什么要记录？网上大都不成功。
 我的跟分区在sda9，boot独立分区在sda10；可以用fdisk -l 看。
@@ -46,10 +46,10 @@ mount /dev/sda9 /home/ubuntu/mnt  解释：mount指令是挂载分区，后面�
     
     <item>
       <title>Ubuntu10.10安装NVIDIA显卡驱动</title>
-      <link>https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <link>https://kissjava.cn/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
       <pubDate>Thu, 16 Dec 2010 20:53:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <guid>https://kissjava.cn/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
       <description>去官方驱动下载页面：http://www.nvidia.cn/Download/index.aspx?lang=cn然后找到你自己的显卡型号，留意一下版本号，版本号只要在256版以上就不用安装编译环境了
 使用右键另存为下载，放到主文件下。
 打开终端：
@@ -69,19 +69,19 @@ sudo sh NVIDIA-Linux.260.xxx.run
     
     <item>
       <title>Install ‘xdebug’ PHP extension for XAMPP on Ubuntu10.04</title>
-      <link>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
+      <link>https://kissjava.cn/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
       <pubDate>Wed, 23 Jun 2010 16:38:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
+      <guid>https://kissjava.cn/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>恢复Ubuntu的默认面板</title>
-      <link>https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
+      <link>https://kissjava.cn/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
       <pubDate>Thu, 10 Jun 2010 08:10:35 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
+      <guid>https://kissjava.cn/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
       <description>如果不小心将ubuntu的面板弄得一团糟，又不想慢慢找回来。有没有什么方法一键恢复默认状态呢？ 答案是：“能恢复是肯定的，但是没有一键！“。
 首先重置面板设置
 如果悲剧到没有办法进入终端，那么建个文件。往里面写入这三条命令，再保存为.sh文件。给执行权限，运行即可。

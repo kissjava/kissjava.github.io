@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on 清风徐来</title>
-    <link>https://kissjava.github.io/categories/php/</link>
+    <link>https://kissjava.cn/categories/php/</link>
     <description>Recent content in PHP on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>macOS安装Ngnix php MySQL</title>
-      <link>https://kissjava.github.io/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
+      <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
       <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
+      <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
       <description>Nginx 虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。
 Installation 安装和启动Nginx，我们使用
 brew install nginxsudo brew services start nginx虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx
@@ -34,20 +34,20 @@ location ~ \.php {fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_n
     
     <item>
       <title>Nginx 反向代理并替换内容的Demo</title>
-      <link>https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
+      <link>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
       <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
+      <guid>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
       <description>我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。 server { listen 80; #listen [::]:80; server_name mikeyang.me ; index index.html index.htm index.php default.html default.htm default.php; root /home/wwwroot/mikeyang.me;
  include rewrite/none.conf; #error_page 404 /404.html; # Deny access to PHP files in specific directory #location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ { deny all; } # 以下开始是反向代理配置location / { proxy_pass https://kissjava.cn/about.html; proxy_redirect off; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; # 以下是替换内容，可以继续增加条目，也支持正则，可以看官方文档 sub_filter &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt; kissjava.cn &amp;lt;/a&amp;gt;&#39; &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;mikeyang.me&amp;lt;/a&amp;gt;&#39;;# 以下说明只替换一次 sub_filter_once on; } #.</description>
     </item>
     
     <item>
       <title>Flight 中文手册</title>
-      <link>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+      <link>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
       <description>&lt;h1 id=&#34;flight-是什么&#34;&gt;Flight 是什么?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;http://flightphp.com&#34;&gt;Flight&lt;/a&gt;是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
 中文手册由&lt;a href=&#34;http://kissjava.cn&#34;&gt;kissjava.cn&lt;/a&gt;翻译。&lt;/p&gt;
@@ -63,10 +63,10 @@ Flight::start();
     
     <item>
       <title>PhpStorm 7.1.3 for Mac</title>
-      <link>https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/</link>
+      <link>https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/</link>
       <pubDate>Tue, 06 May 2014 23:13:25 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/phpstorm-7.1.3-for-mac/</guid>
+      <guid>https://kissjava.cn/posts/phpstorm-7.1.3-for-mac/</guid>
       <description>EMBRACE
 ===== LICENSE BEGIN ===== 43136-12042010 00002UsvSON704l&amp;quot;dILe1PVx3y4&amp;quot;B3 49AU6oSDJrsjE8nMOQh&amp;quot;8HTDJHIUUh gd1BebYc5U&amp;quot;6OxDbVsALB4Eb10PW8&amp;rdquo; ===== LICENSE END =====
 作为dscxy，你懂的。</description>
@@ -74,10 +74,10 @@ Flight::start();
     
     <item>
       <title>准备申请SAE中级开发者（已通过）</title>
-      <link>https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</link>
+      <link>https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</link>
       <pubDate>Sun, 27 Apr 2014 10:57:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</guid>
+      <guid>https://kissjava.cn/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</guid>
       <description>为了每月免费补充至1万云豆，打算申请sina云的中级开发者认证，应用需要各位的独立IP，希望路过的多点支持，进去看看谢谢。
 是一个进销存的web应用，前段用J-UI，php采用了Codeigniter框架。测试账号demo/demo。
 http://minimis.sinaapp.com
@@ -86,19 +86,19 @@ http://minimis.sinaapp.com
     
     <item>
       <title>新玩具</title>
-      <link>https://kissjava.github.io/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</link>
+      <link>https://kissjava.cn/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</link>
       <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</guid>
+      <guid>https://kissjava.cn/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</guid>
       <description>先上图App? 其实是jquerymobile写的html5. 感谢jquerymobile，感谢LazyPHP(真的很好用)。 都是刚刚上手，耗时大约48个小时完成。 用到html5的localStorage和eventSource特性。 遗憾没有真正的push，其实eventSource和使用定时ajax轮询效果相当，都是定时发送查询。 eventSource可以少写些代码，ajax轮询可以自己定制多些。 最后，玩一把美图秀秀&amp;hellip; </description>
     </item>
     
     <item>
       <title>安装sublime text 2后的几件事</title>
-      <link>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://kissjava.cn/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
       <description>1，安装 Package Control 的方法：
 打开 Sublime Text 2，按下 Control + ` 调出 Console 将以下代码粘贴进命令行中并回车：
 重启sublime Text 2
@@ -116,10 +116,10 @@ ctrl+alt+上下方向键 可以在多行同时出现光标,进行多行编辑 �
     
     <item>
       <title>Simple Test 中文参考</title>
-      <link>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+      <link>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
       <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+      <guid>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
       <description>&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
 &lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
 我们用以下代码来创建一个测试脚本放在tests/log_test.php里．
@@ -169,19 +169,19 @@ function Log($file_path) {
     
     <item>
       <title>xampp下安装 PhpDocumenter</title>
-      <link>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
+      <link>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
       <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
+      <guid>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
       <description>没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。 淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。 下载PhpDocumentor-1.4.4.tgz 解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径） 然后修改该目录里的 phpdoc.bat 这个批处理文件，将16行 “SET phpCli=”修改成你的PHP路径： SET phpCli=D:xamppphpphp.exe 集成到eclipse PDT里（zend studio for eclipse里已经自带了，pdt要自己动手）：参数说明：快小半年没更新了，这里都快荒废了，有木有！</description>
     </item>
     
     <item>
       <title>MongoDB快速上手PHP篇</title>
-      <link>https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</link>
+      <link>https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</link>
       <pubDate>Thu, 02 Feb 2012 15:37:20 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</guid>
+      <guid>https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</guid>
       <description>1，简介mongoDB（http://www.mongodb.org）是一种 NoSQL 的文档型的数据库管理系统。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似 json的bjson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。 Mongo主要解决的是海量数据的访问效率问题，根据官方的文档，当数据量达到50GB以上的时候，Mongo的数据库访问速度是MySQL的 10倍以上。Mongo的并发读写效率不是特别出色，根据官方提供的性能测试表明，大约每秒可以处理0.5万－1.5次读写请求。
 2，安装（windows only）到官网下载对应的包 解压到d:mongodb 创建d:mongodbdata放置数据文件
 3,运行mongodbd:mongodbbin下有一些可执行文件，其中mongod.exe是服务器端，mongo.exe是客户端。 运行cmd，输入 d:mongodbbin&amp;gt;mongod.exe -dbpath d:mongodbdata 服务器成功启动
@@ -191,29 +191,29 @@ function Log($file_path) {
     
     <item>
       <title>怎样使用php编辑以文件形式存储的配置文件</title>
-      <link>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>文件形式存储配置文件比较方便，一些不常变动的部分就无需写到数据库中，这样就无需每次都要读取数据库，可以降低数据库的负担，还可以提高响应速度。但是修改貌似没那么方便，如果可以在线上修改php配置文件那就好了。比如改改广告链接啊，变动部分css等等都可以的。
 淡水的意思其实就是不要滥用数据库，文件的读写也是可以帮助我们完成许多工作的。</description>
     </item>
     
     <item>
       <title>贴点权限系统的部分代码</title>
-      <link>https://kissjava.github.io/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.cn/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Sat, 24 Dec 2011 12:04:21 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.cn/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</guid>
       <description>好久未更了，凑数:( </description>
     </item>
     
     <item>
       <title>jQuery ajax方式加载页面后，被加载页面的js不能执行的问题</title>
-      <link>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>在回调函数里注册一下事件就可以了，要么就各个函数写在被加载的页面里。 $(document).ready(function() { $(&amp;lsquo;content_div&amp;rsquo;).hide();
 $(&#39;#list_user&#39;).click(function(event){ event.preventDefault(); load_user(); });  });
 function load_user(){ //load page $(&amp;quot;#content_div&amp;rdquo;).load(&amp;lsquo;your page url&amp;rsquo;,function(){ //回调函数，在这里注册被加载页面需要的事件 $(&amp;quot;.deleteItem&amp;rdquo;).click(delItem); $(&amp;quot;.editItem&amp;rdquo;).click(editItem); });
@@ -222,19 +222,19 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>MAMP环境下，在zend studio 9 里使用xdebug调试</title>
-      <link>https://kissjava.github.io/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
+      <link>https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
       <pubDate>Sat, 03 Dec 2011 08:40:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
       <description>没有技术含量。 MAMP下面有两个版本（MAMP/bin/php），他们都有各自的php.ini 在其文件最后，都提供了xdebug块，仅有一行，“；zend_extension=&amp;hellip;”貌似去掉zend_extension前的注释就能使用了。 实际上还需要添加一些配置才能进行断点调试的。否则只是在页面上var_dump变量提供更详情的信息而已。</description>
     </item>
     
     <item>
       <title>CodeIgniter Ajax Request</title>
-      <link>https://kissjava.github.io/posts/codeigniter-ajax-request/</link>
+      <link>https://kissjava.cn/posts/codeigniter-ajax-request/</link>
       <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-ajax-request/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-ajax-request/</guid>
       <description>先添加一行简单的代码，在ci里定义ajax的请求。
 在application/config/constants.php 添加如下： // Define Ajax Request define(&amp;lsquo;IS_AJAX&amp;rsquo;, isset($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) &amp;amp;&amp;amp; strtolower($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) == &amp;lsquo;xmlhttprequest&amp;rsquo;); 在控制器里就可以判断是否是Ajax的请求，从而决定是否load view。 public function test(){ if(IS_AJAX){ $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;ajax_test&amp;rsquo;); }else{ echo &amp;lsquo;Direct access not allowed!&#39;; // or load other view file. //$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;test&amp;rsquo;); } } Codeigniter里在登录后使用Ajax的简单方式.如果没有登录，发送401。 public function secure(){ if(! $this-&amp;gt;session-&amp;gt;userdata(&amp;lsquo;logged_in&amp;rsquo;)){ header(&amp;lsquo;HTTP/1.1 401 Unauthorized); }
 //other code...  } 再在js做判断跳转： $().ajaxError(function(xhr,status,err){ if(status.status == 401){ window.location.href=&amp;rsquo;/login&amp;rsquo;; } }); </description>
@@ -242,10 +242,10 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>Postmark的邮件代发服务</title>
-      <link>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://kissjava.cn/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
       <description>以往都是找可以开通smtp的免费邮箱来做的。 但是限制较多，一般是发送要延时，每天限制50或100封。容易被屏蔽等等。对外贸用途的就更不行了，大都是被当成垃圾邮件处理了。 有了Postmark就不一样了。下面淡水就介绍一下。
 Postmark是国外服务。可用于web线上发送mail。简单的API，简单的操作，零维护，比较方便。
 问Postmark官方网站：http://postmarkapp.com
@@ -263,10 +263,10 @@ Full Name ： //这里填入你的全名。 Email ： //你的电子邮件 Passw
     
     <item>
       <title>codeigniter2中使用simpletest做单元测试</title>
-      <link>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。
 由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。 但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。
 最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。
@@ -280,19 +280,19 @@ Full Name ： //这里填入你的全名。 Email ： //你的电子邮件 Passw
     
     <item>
       <title>Codeigniter里的单元测试</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试驱动开发已经提出好久了。在web领域估计国内采用的不多。 其实单元测试也是很好用的东西，确实可以提高开发人员的效率。 淡水用codeigniter举例说明一下。 </description>
     </item>
     
     <item>
       <title>Codeigniter里的无刷新上传</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
       <description>好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。
 先建个表 CREATE TABLE files ( id int NOT NULL AUTO_INCREMENT PRIMARY KEY, filename varchar(255) NOT NULL, title varchar(100) NOT NULL ); 文件的目录结构如下：
 第一步，建立表单看上去就一个title文本字段，一个文件框，一个提交按钮，还有一个files的div。 控制器部分 首先，我们要建一个上传的表单和一个upload的Controller。在index方法里渲出upload的视图。如下： class Upload extends CI_Controller { public function __construct() { parent::__construct(); $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;files_model&amp;rsquo;); $this-&amp;gt;load-&amp;gt;database(); $this-&amp;gt;load-&amp;gt;helper(&amp;lsquo;url&amp;rsquo;); } public function index() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;upload&amp;rsquo;); } } 我们已经在构造里加载了files_model，所以可以使用files_model里的方法。
@@ -302,10 +302,10 @@ Full Name ： //这里填入你的全名。 Email ： //你的电子邮件 Passw
     
     <item>
       <title>Mysql的随机读取</title>
-      <link>https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
+      <link>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
       <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
+      <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
       <description>随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。
 随机查询5条记录：
 在数十万记录的表里，这样的查询要好几秒的时间。下面采用JOIN的方式改进一下：
@@ -320,10 +320,10 @@ update：2011年8月24日 15:03:26
     
     <item>
       <title>swfupload在codeigniter中的应用</title>
-      <link>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。
 第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：
 $this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里
@@ -339,10 +339,10 @@ ci中的状态：一般情况下，因为诸如uploadify,swfupload采用的都�
     
     <item>
       <title>eclipse pdt 注释快捷键失效的解决方法</title>
-      <link>https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
       <pubDate>Fri, 13 May 2011 15:31:28 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.cn/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>重装win7 64位系统后，下了64为的java jre和64位的eclipse pdt。
 淡水突然发现写代码时，无法注释了。还以为是64位的谷歌输入法搞的鬼。卸载输入法后还是不行。
 google之。原来是新版eclipse的bug。
@@ -355,10 +355,10 @@ eclipse.exe -clean 运行就可以了。
     
     <item>
       <title>Jquery UI dialog 详解 (中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:02:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description>1.11 autoOpen ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&amp;ldquo;open&amp;rdquo;)的时候才弹出dialog窗口。默认为：true。
 1.12 初始化例：请注意，$(&#39;.selector&amp;rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。
 $(&#39;.selector&amp;rsquo;).dialog({ autoOpen: false });
@@ -375,47 +375,47 @@ $(&#39;.selector&amp;rsquo;).dialog({ bgiframe: true });</description>
     
     <item>
       <title>jquery ui according详解(中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:02:27 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquery ui tabs详解(中文)转</title>
-      <link>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CodeIgniter2 Model 支持单例</title>
-      <link>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
+      <link>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
       <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
       <description>CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：</description>
     </item>
     
     <item>
       <title>CodeIgniter Reactor&#39;s Caching Drivers</title>
-      <link>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</link>
+      <link>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</link>
       <pubDate>Sat, 02 Apr 2011 17:18:51 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-reactors-caching-drivers/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</guid>
       <description>Before Reactordropped, I snuck in some caching drivers(Docs Link) that Pascalhad been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.
 At this time, there are drivers available for APC, Memcached, file-based caching, and a dummy cache. If you haven&amp;rsquo;t already, head over to BitBucketand get cloning or forking.</description>
     </item>
     
     <item>
       <title>FirePHP,给力的调试工具</title>
-      <link>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <link>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
       <description>&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
 这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -424,10 +424,10 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>Zend Framework安裝</title>
-      <link>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
+      <link>https://kissjava.cn/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
       <pubDate>Thu, 13 Jan 2011 22:59:27 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
+      <guid>https://kissjava.cn/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
       <description>台湾同胞的入门笔记写得太好了，忍不住再贴一个。 这个是Zend Framework 1.0.1但是还是有很大的参考价值的。 環境： Windows XP Professional(SP2) Appserv(Apache 2.2.4, PHP/5.2.3, MySQL 5.0.45) Zend Framework 1.0.1(2007-07-30)
 =========== 一、基本設定：   設定mod_rewrite 編輯httpd.conf #LoadModule rewrite_module modules/mod_rewrite.so 如果前面的”#”字在的話，就把它拿掉吧 (mod_rewrite的詳細資料，可參考apache網站)
   設定include_path 設定include path之目的，是為了方便在include類別時，省去輸入長長一串位置的時間 a) 可直接修改php.ini之設定 b) 或是於程式中動態加入set_include_path 參考網址：http://tw2.php.net/set_include_path
@@ -438,10 +438,10 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>Doctrine, the PHP ORM Framework</title>
-      <link>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</link>
+      <link>https://kissjava.cn/posts/doctrine-the-php-orm-framework/</link>
       <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</guid>
+      <guid>https://kissjava.cn/posts/doctrine-the-php-orm-framework/</guid>
       <description>Doctrine是 一個在PHP上的資料庫ORM(Object Relational Mapper)，最近手邊的幾個小案子透過Doctrine來實作。ORM的確是讓開發者少寫不少的SQL查詢，但相對的效能一定是比簡單的SQL要來得 差，我想魚跟熊掌要兼得並不容易，便利跟效能之間總有個天平讓開發者來自已調整，所以ORM好不好用就見人見志囉。
 一、前置作業：
   系統需求 依官網上面提到的，Doctrine需要PHP 5.2.3以上的版本，除此之外就不用再另外安裝其它的套件或函式庫即可運作，不過如果要使用PDO(PHP Data Object)的話，則可能會需要另外安裝PDO驅動程式。
@@ -457,47 +457,47 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>Lazy initialization 延迟加载</title>
-      <link>https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
+      <link>https://kissjava.cn/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
       <pubDate>Mon, 27 Dec 2010 14:06:45 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
+      <guid>https://kissjava.cn/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
       <description>先贴代码，再做说明 </description>
     </item>
     
     <item>
       <title>Access Control Library for Codeigniter</title>
-      <link>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</link>
+      <link>https://kissjava.cn/posts/access-control-library-for-codeigniter/</link>
       <pubDate>Thu, 19 Aug 2010 20:21:54 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</guid>
+      <guid>https://kissjava.cn/posts/access-control-library-for-codeigniter/</guid>
       <description>先检讨。比较浮躁，先前帖的Codeigniter ACL library有较大的bug。配置和使用方法也没有说太多。今天正好用到，调试了一下。重新发布。嗯，这个也是淡水在ci在官网论坛上挖到的。还有个autoacl的，也是基于这个修改的。不过淡水觉得太耦合了，而且繁琐了。还是没有采用。
 先来library： </description>
     </item>
     
     <item>
       <title>mysql查询今天、昨天、7天、近30天、本月、上一月 数据</title>
-      <link>https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</link>
+      <link>https://kissjava.cn/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Sat, 26 Jun 2010 19:24:40 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://kissjava.cn/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Install ‘xdebug’ PHP extension for XAMPP on Ubuntu10.04</title>
-      <link>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
+      <link>https://kissjava.cn/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
       <pubDate>Wed, 23 Jun 2010 16:38:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
+      <guid>https://kissjava.cn/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
       <description></description>
     </item>
     
     <item>
       <title>关于ci和zend framework的一些牢骚</title>
-      <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
+      <link>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
       <pubDate>Fri, 11 Jun 2010 10:32:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
+      <guid>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
       <description>首先说明，这是淡水的牢骚，看不惯不要看。
 老华仔歌里唱的应景“总逃不开工作表，做完了又来了，怎样也甩不掉……”。淡水手头的项目还没有完全结束，新的项目又要上马。于是前期就框架选择开大会，开小会。
 有.net高手就开始在网上搜索合适框架。结果他得出的结论是Zend Framework，理由：官方。 不推荐Codeigniter是因为，一家小公司做的，后期支持跟不上。而且ci是轻量级的，功能不强。 php本身就是草根出身，如果看公司大小，那么为什么不用.net? ci是轻量级的，但是php能做的，他都能做，没有内置的功能，可以自己加阿？非得一定要和zend framework一样，几乎把所有能想到用到的功能都整合进去变成皇家内裤（类库）？ 窃以为，做大型应用时应用框架快速开发是可取的，但是要考虑到代码的执行效率，和开发的灵活度。 zend framework能做到的， ci扩展一下也能做到，麻烦一点了。但是zend framwork有ci灵活么，ci2天可以掌握，zend framework可以么（太NB的天才不算）。 这些主流框架的评比本身没有太大的意义。框架只是工具，各有其特点（Yii高效；ci上手容易，代码优雅；thinkphp代码全中文注释，文档齐全；qee……），人才是重点。
@@ -509,10 +509,10 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>SVN小记</title>
-      <link>https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://kissjava.cn/posts/svn%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Fri, 16 Apr 2010 17:30:51 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://kissjava.cn/posts/svn%E5%B0%8F%E8%AE%B0/</guid>
       <description>名词解释：修订版（revision）：可以认为是某个文件在其生命周期内各个保存的快照，每个快照和一个时间区间对应。 版本库（Repository）：存放修订版的数据库 本地工作拷贝（Local working copy）：修订版在本地的副本 版本的检入（Check in）：本地副本提交到服务器的版本库 检出（Check out）：从服务器的版本库中取出修订版成为本地副本 版本号的来源：有两种策略，基于文件的计数和基于仓库的计数，subversion使用后者 标签（Tags）：为版本加一个名字，便于检出 分支（Branches）：修订版打分支，以后可以平行修改，互不干扰 合并（Merging）：将分支的修订版合并为一个新的修订版 锁（Locking）：为修订版枷锁 冲突（Conflict）：并发版本控制时防止修订版混乱的错误机制
 创建版本库创建服务器端版本库 命令行： svnadmin create file_path/repo_name
 初始导入（import）通过命令行导入： svn import -m &amp;ldquo;init import&amp;rdquo; http://10.0.0.6/svn/teaching/ 该命令可将当前路径下文件导入到版本库中。
@@ -525,29 +525,29 @@ At this time, there are drivers available for APC, Memcached, file-based cachi
     
     <item>
       <title>php5.3废弃函数</title>
-      <link>https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
       <pubDate>Sun, 14 Mar 2010 19:58:36 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
       <description>php5.3被放弃的函数有:
 ereg();//直接用mb_ereg代替，或是preg_match代替，但是匹配规则需要用/包括起来 eregi();//preg_match代替，在规则后加上i，如：preg_match(&amp;quot;/^(style|style_)(.*)*/i&amp;rdquo;, $file); ereg_replace(); set_magic_quotes_runtime(); split(); mysql_close(); // 将不支持全部关闭, 需要改为:mysql_close($link);</description>
     </item>
     
     <item>
       <title>继续收拾残局，php和asp.net的md5差别</title>
-      <link>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
+      <link>https://kissjava.cn/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
       <pubDate>Tue, 09 Mar 2010 16:17:19 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
+      <guid>https://kissjava.cn/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
       <description>asp.net的md5加密貌似是16位的 而php的md5加密是32位的 这样解决 echo substr(md5(&amp;ldquo;admin&amp;rdquo;),8,16); // 16位MD5加密效果等同于asp.net的md5 echo &amp;ldquo;&amp;rdquo;; echo md5(&amp;ldquo;admin&amp;rdquo;); // 32位MD5加密 另：php的md5函数，按官方的说法，第二个参数设为true，可以生成16位的，但是淡水测试下来是乱码。淡水没空深究了，有心人可以找找缘由。</description>
     </item>
     
     <item>
       <title>收拾残局，过滤部分字段重复的数据</title>
-      <link>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+      <link>https://kissjava.cn/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://kissjava.cn/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
       <description>select distinct可以去掉重复记录。 disctinct将重复的记录忽略，但它忽略的是完全一致的重复记录，而不是其中某个字段重复的记录，或者说，distinct查询一个字段时好使，多个字段就不好使。
 所以用聚合函数和group by实现 注意：group by只能跟聚合函数搭配使用例表
 查询username和password组合起来的条件不能重复的查询结果（这个都能重复，不能不说这是个烂摊子）
@@ -559,28 +559,28 @@ select * from mytable where ID in(select min(ID) from mytable a group by usernam
     
     <item>
       <title>Codeigniter ACL library</title>
-      <link>https://kissjava.github.io/posts/codeigniter-acl-library/</link>
+      <link>https://kissjava.cn/posts/codeigniter-acl-library/</link>
       <pubDate>Mon, 08 Mar 2010 09:58:45 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-acl-library/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-acl-library/</guid>
       <description>public function __construct() { $this-&amp;gt;load-&amp;gt;helper(&#39;url&#39;); $this-&amp;gt;load-&amp;gt;library(&#39;session&#39;); $this-&amp;gt;load-&amp;gt;config(&#39;mx_acl&#39;, TRUE); $this-&amp;gt;_config = $this-&amp;gt;config-&amp;gt;item(&#39;mx_acl&#39;); $this-&amp;gt;_cache_path = $this-&amp;gt;config-&amp;gt;item(&#39;cache_path&#39;); /* previous flashdata is available to views */ $this-&amp;gt;load-&amp;gt;vars($this-&amp;gt;_config[&#39;error_var&#39;], $this-&amp;gt;session-&amp;gt;flashdata($this-&amp;gt;_config[&#39;error_var&#39;])); /* run the access control check now */ ($this-&amp;gt;_config[&#39;check_uri&#39;]) AND $this-&amp;gt;check_uri(); } /** * Check the current uri and user privileges against the cached ACL array * Redirect if access is denied * * @return void */ public function check_uri() { /* Load the cached access control list or show error */ (is_file($cached_acl = $this-&amp;gt;_cache_path.</description>
     </item>
     
     <item>
       <title>apache下ab网站压力测试命令的参数、输出结果的中文注解</title>
-      <link>https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
+      <link>https://kissjava.cn/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
       <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
+      <guid>https://kissjava.cn/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
       <description>有用，记录一下。from：http://txm3217.blog.163.com/blog/static/21986987200762131027970/ 以前安装好APACHE总是不知道该如何测试APACHE的性能，现在总算找到一个测试工具了。就是APACHE自带的测试工具AB(apache benchmark).在APACHE的bin目录下。 格式： ./ab [options] [http://]hostname[:port]/path 参数： -n requests Number of requests to perform //在测试会话中所执行的请求个数。默认时，仅执行一个请求 -c concurrency Number of multiple requests to make //一次产生的请求个数。默认是一次一个。 -t timelimit Seconds to max. wait for responses //测试所进行的最大秒数。其内部隐含值是-n 50000。它可以使对服务器的测试限制在一个固定的总时间以内。默认时，没有时间限制。 -p postfile File containing data to POST //包含了需要POST的数据的文件. -T content-type Content-type header for POSTing //POST数据所使用的Content-type头信息。 -v verbosity How much troubleshooting info to print //设置显示信息的详细程度 - 4或更大值会显示头信息， 3或更大值可以显示响应代码(404, 200等), 2或更大值可以显示警告和其他信息。 -V 显示版本号并退出。 -w Print out results in HTML tables //以HTML表的格式输出结果。默认时，它是白色背景的两列宽度的一张表。 -i Use HEAD instead of GET // 执行HEAD请求，而不是GET。 -x attributes String to insert as table attributes // -y attributes String to insert as tr attributes // -z attributes String to insert as td or th attributes // -C attribute Add cookie, eg.</description>
     </item>
     
     <item>
       <title>vim记录</title>
-      <link>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</link>
+      <link>https://kissjava.cn/posts/vim%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 07 Mar 2010 13:13:54 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://kissjava.cn/posts/vim%E8%AE%B0%E5%BD%95/</guid>
       <description>1，vim中复制带有行号的内容到剪切板 进入normal模式，按查找键盘（/），然后然后用鼠标选择需要的内容，选取会自动选择行号，菜单栏编辑-复制（右键也行）即可。 2，删除引用符号中的内容，并进入到插入模式 ci[ 删除一对 [] 中的所有字符并进入插入模式 ci( 删除一对 () 中的所有字符并进入插入模式 ci&amp;lt; 删除一对 &amp;lt;&amp;gt; 中的所有字符并进入插入模式 ci{ 删除一对 {} 中的所有字符并进入插入模式 cit 删除一对 HTML/XML 的标签内部的所有字符并进入插入模式 ci&amp;rdquo; ci&amp;rsquo; ci删除一对引号字符 (&amp;quot;或 &#39; 或) 中所有字符并进入插入模式 3，除了，hjkl外的更微妙的光标移动 w：光标往下移动一个词。 b：光标往回移动一个词。 0：移动光标到当前行首。 ^：移动光标到当前行的第一个字母位置。 $：移动光标到行尾。 )：移动光标到下一个句子。 ( ：移动光标到上一个句子。
 ：向下移动一屏。 ：向上移动一屏。 G：到文件尾 numG：移动光标到指定的行（num）。（比如 10G 就是到第 10 行） gg：到文件首 H：移动光标到屏幕上面 M：移动光标到屏幕中间 L：移动光标到屏幕下面
   ：缩进所有选择的代码 &amp;laquo;：和上面类似，但是反缩进
@@ -589,29 +589,29 @@ select * from mytable where ID in(select min(ID) from mytable a group by usernam
     
     <item>
       <title>使用jQuery和flash的多文件上传组件</title>
-      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
+      <link>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sun, 07 Mar 2010 12:02:53 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
       <description>标题党了。 这是一个使用jQuery和flash的多文件上传组件： http://www.uploadify.com/demo/</description>
     </item>
     
     <item>
       <title>Codeigniter里实现get_object_or_404</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
       <description>在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。
 我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。 </description>
     </item>
     
     <item>
       <title>PHP5.3的新特新</title>
-      <link>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
+      <link>https://kissjava.cn/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
       <pubDate>Sat, 13 Feb 2010 16:31:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
+      <guid>https://kissjava.cn/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
       <description>本文主要说说PHP V5.3 的以下特性：
 延迟静态绑定PHP V5.3 扩展了 static 关键词的使用。现在，无需实例化类便可访问静态类方法和属性。当类不存在对象，或者不需要对象时，这个特性就比较方便。下面就是展示了延迟静态绑定的一个例子。 代码中使用 CLASS 也许有点勉强，但确实可以说明 PHP V5.3.0 有一个小小的问题。显然，对于这个例子，这不是多大的问题，但是对于有数千行 PHP 代码的网站来说，就没那么简单了。重复代码通常意味着重复劳动。名称空间（也有叫命名空间的）PHP V5.3 提供名称空间功能，以增强该语言的封装能力。名称空间在现代语言中非常常见，例如 C# 和 XML。名称空间的主要优点是，通过它可以为代码符号（类、函数和常量）定义独立的容器，这听起来有点复杂，其实不然。以下代码显示了使用 PHP 名称空间定义本地和全局字符串常量的一个例子。 有了名称空间功能，和之前相比，代码之间的界限更加清晰。而这一点又有助于团队环境中的代码整合。换句话说，不同的团队可以分配他们自己的名称空间，当所有团队成员都遵循这个惯例时，名称冲突的情况应该会降为零。这也是 5.3.0 版对 PHP 语言在面向对象方面的一个增强。
 类方法重载在 PHP 中，术语重载（overloading） 与通常的面向对象上下文稍有不同。在 Java 语言或 C# 中，“重载” 方法是指为不同参数列表提供相同代码的方法。例如，如果有一个名为 draw(String str) 的方法，那么重载的方法可以有以下形式：draw(String str, int i)。这种方法符号名称被称作方法签名，为了便于重载，返回类型被省略。
@@ -623,10 +623,10 @@ select * from mytable where ID in(select min(ID) from mytable a group by usernam
     
     <item>
       <title>php的文档句法(heredoc)</title>
-      <link>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
+      <link>https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
       <pubDate>Fri, 12 Feb 2010 21:54:46 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
+      <guid>https://kissjava.cn/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
       <description>不是新文章，以前写的。但是上次空间到期后数据都没了。网上有看到它，就把它弄回来了。 &amp;lt;li&amp;gt;双引号&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;定界符（heredoc syntax）&amp;lt;/li&amp;gt;  看见了吧，单引号居然可以用来表示字符串。那么如果我想表示单引号怎么办？和大多数语言一样，使用转义符号吧。即反斜线&amp;rdquo;&amp;quot;.那么使用单引号和双引号有什么区别呢？我的观点是没有多大区别。唯一的区别就是双引号可以应用更多的转义符。 让我们定界符吧。它的语法是&amp;quot;&amp;laquo;&amp;lt;&amp;rdquo;。用法是在其后提供一个标识符，然后在标识符后提供字符串，再在字符串后提供此标识符来结尾。例如： 2. 字符串的特别之处 从一个例子开始。 假设里你有很长的一段字符串，比如一段话。几个月后，你发现你的需求改变，需要在这段话的某个位置插入一个变量。这个时候如果重新用字符串符肯定是相当复杂的。那么有没有其他的方法呢？请放心，PHP已经考虑到这一点了。那就是花括号的应用。 对于PHP，它一般会按照如下规则解析： 如果遇到美元符号（$），解析器会尽可能多地取得后面的字符以组成一个合法的变量名。如果想明示指定名字的结束，用花括号把变量名括起来。例如 3，字符串的常用操作。我想这是令我们异常激动的一个话题，并且也是非常实用的。 字符串的函数比较多，我们还是介绍一部分函数吧。
 字符串的整理函数 chop(),其实就是rtrim().当然rtrim()还是可以用的 ltrim(),去掉字符串左边的多于空格。 trim(),这个比较比较简单，就是把字符串左右2边的空格都给删除。 字符串的格式化输出 实用HTML格式化的。nl2br().即在字符串的新一行前插入. echo nl2br(&amp;ldquo;foo isn&amp;quot;tn bar&amp;rdquo;); 上面的字符串会分2行显示，如果把此函数去掉，就只在一行上显示了。 打印输出的格式化PHP支持print()函数，它和echo一样，唯一的差别就是print()返回一个整型值，一直为1。除了print(),还有printf()和 sprintf(). 写到这里，你肯定会想，怎么和C一样呢。它们的工作方式一样，差别是printf()将结果输出到浏览器，而sprintf()这是输出到变量。
 看看它们的定义吧。 int printf ( string format [, mixed args [, mixed ]] ) string sprintf ( string format [, mixed args [, mixed ]] )
@@ -637,38 +637,38 @@ select * from mytable where ID in(select min(ID) from mytable a group by usernam
     
     <item>
       <title>PHP备忘</title>
-      <link>https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/</link>
+      <link>https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E5%A4%87%E5%BF%98/</guid>
+      <guid>https://kissjava.cn/posts/php%E5%A4%87%E5%BF%98/</guid>
       <description>1，stdClass 他是php内置的一个类，提供给我们直接实例化使用。 $obj = new stdClass(); $obj-&amp;gt;prop = &amp;lsquo;hello world&amp;rsquo;; echo $obj-&amp;gt;prop; 我们可以看看他的内部结构 Reflection::export(new ReflectionClass(&amp;lsquo;stdClass&amp;rsquo;)); /* 输出结果 Class [ class stdClass ] {
  Constants [0] { } Static properties [0] { } Static methods [0] { } Properties [0] { } Methods [0] { } } */ 2，php的exception和error处理 他们各自的发生： exception可以通过php5 的try{}抛出，然后通过catch{}被捕获。 php内置函数执行时发生问题，是通过trigger_error显示error。 使用异常：   // set_error_handler()函数用于让用户自定义错误处理函数 // set_error_handler(error_function, error_type) // error_function 必须, 制定发生错误时运行的函数 // error_type 可选, 规定不同的错误级别提示的不同信息, 默认是&amp;quot;E_ALL&amp;rdquo; set_error_handler(&amp;lsquo;ErrorHandler&amp;rsquo;);</description>
     </item>
     
     <item>
       <title>TinyMVC中文手册</title>
-      <link>https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+      <link>https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
       <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://kissjava.cn/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
       <description>照例，先罗嗦几句。 一直想把codeigniter的代码通读一遍，虽然codeigniter是比较轻量级的php框架，但是里面的东西还是很多的，所以一直没有实现。顺便也一直在寻找适合的代替品。其间，大致看了&amp;lt;a href=&amp;quot;http://www.skiyo.cn/punny/&amp;quot;&amp;gt;punny&amp;lt;/a&amp;gt;，还有很自由的&amp;lt;a href=&amp;quot;http://code.google.com/p/lotusphp/&amp;quot;&amp;gt;lotusphp&amp;lt;/a&amp;gt;。lotusphp 这个不像是框架了，倒像是个php的几个常用功能封装起来的组件，很牛13的，好多都可以作为插件放到tinymvc里去。。。 最后还是选中了tinymvc。理由，它确实很小，但是我要的东西他基本都有了：  &amp;lt;li&amp;gt;url路由&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;pdo封装&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;自由的插件机制&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;php5 only&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;最关键的是和codeigniter非常相似的结构和语法&amp;lt;/li&amp;gt;  于是，淡水抱恙（身体和心理都有病）花费了一天的时间，通读了一般它的代码，翻译了它的文档，也就是这个《TinyMVC中文手册》了。如果想研究一下Php的框架，可以从这个入手。没有很多的分岔干扰，比较干净。如果你有什么建议或是插件需要分享的，可以留言。  TinyMVC中文手册</description>
     </item>
     
     <item>
       <title>CodeIgniter 和 Doctrine 从零开始 1-8章翻译打包下载</title>
-      <link>https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Tue, 26 Jan 2010 09:19:53 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</guid>
       <description>简介一下： CodeIgniter 和 Doctrine 从零开始 是ci配合一个php的orm类库结合开发一个论坛的例子。 这一系列文章，写的不错，淡水一直在跟着翻译。本想当作新春贺礼的，但是看到有人已经开始重复劳动了，还是先放出下载吧。 暂时只有八章，第九章还在翻译中，原作者写到了第十章了。 原作者地址： http://www.phpandstuff.com/ CodeIgniter 和 Doctrine 从零开始 1-8</description>
     </item>
     
     <item>
       <title>基于PHP的cURL快速入门[译][转]</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</link>
       <pubDate>Tue, 19 Jan 2010 15:41:26 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</guid>
       <description>本来想要翻译的，不想在蓝色上已经有人译好了。直接yy然后p吧（linux下vi的复制粘贴指令，最近捣鼓linux比较多些）。 原文地址：http://net.tutsplus.com/tutorials/php/techniques-and-resources-for-mastering-curl/ 译文地址：http://bbs.blueidea.com/viewthread.php?tid=2966700&amp;amp;extra=page%3D1%26amp%3Bfilter%3Dtype%26amp%3Btypeid%3D20
 cURL 是一个利用URL语法规定来传输文件和数据的工具，支持很多协议，如HTTP、FTP、TELNET等。最爽的是，PHP也支持 cURL 库。本文将介绍 cURL 的一些高级特性，以及在PHP中如何运用它。
 为什么要用 cURL?是的，我们可以通过其他办法获取网页内容。大多数时候，我因为想偷懒，都直接用简单的PHP函数： $content = file_get_contents(&amp;ldquo;http://www.nettuts.com&amp;rdquo;); // or $lines = file(&amp;ldquo;http://www.nettuts.com&amp;rdquo;); // or readfile(http://www.nettuts.com);不过，这种做法缺乏灵活性和有效的错误处理。而且，你也不能用它完成一些高难度任务——比如处理coockies、验证、表单提交、文件上传等等。
@@ -679,10 +679,10 @@ cURL 是一个利用URL语法规定来传输文件和数据的工具，支持很
     
     <item>
       <title>mysql数据库的备份和恢复</title>
-      <link>https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+      <link>https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
       <pubDate>Tue, 12 Jan 2010 14:20:47 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+      <guid>https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
       <description>利用了mysql自带的工具，效率高，也不怕文件过大。 先说备份 mysqldump -u数据库用户名 -p密码 dbname &amp;gt; 备份路径/导出名.sql就是把dbname数据库，导出到 备份路径/导出名.sql
 恢复 mysql -u数据库用户名 -p密码 dbname &amp;lt; 备份路径/数据库名.sqlmysql命令说完了，下面该shell了，用shell来实现mysql的自动备份。
 建立shell mysqlback.sh 内容如下： #!/bin/bash X=date +%Y%m%d	;获取当天时间，命名用 M=/usr/local/mysql/bin	;mysql程序的路径 B= /usr/back/mysql	;mysql备份的路径
@@ -691,28 +691,28 @@ $M/mysqldump -uroot -proot test &amp;gt; $B/$X.sql tar -zcvf $B/$X.tar.gz $B/$X.
     
     <item>
       <title>mysql的几个函数</title>
-      <link>https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
       <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
       <description>缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：先说简单点的方法：UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 细说一下： REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)，是替换空格 REGEXP ，是mysql里的正则 &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。 再来一个另类的：UPDATE customer_copy set fax= concat(substring_index(fax,&amp;rsquo; &amp;lsquo;,1), substring_index(fax,&amp;rsquo; &amp;lsquo;,-1)) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 这里用到了两个函数:concat(),substring_index() concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3 substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串. SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com 解释一下，如果count是负数，就从右边开始计数和截取。 substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。</description>
     </item>
     
     <item>
       <title>PHP数据记录批量更新代码</title>
-      <link>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Wed, 16 Sep 2009 18:00:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.cn/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
       <description>需要用到，简单是思路，记录一下。不过用到的应该不多。。。 一般会循环列出表记录到表单里 </description>
     </item>
     
     <item>
       <title>windows7下面搭建 Xampplite&#43;Eclipse PDT&#43;XDebug的PHP开发环境</title>
-      <link>https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <link>https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://kissjava.cn/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description>淡水是用xampplite1.7.1，它的php版本是5.2.9。最新版的xampp搭载的是php5.3，淡水的程序跑起来好像有些问题-_-!!
 1，下载PDT(PHP Development Tools)，地址：http://www.eclipse.org/pdt/downloads/ 我下的版本是PDT 2.1 All In Ones，解压后如果不能运行，请安装JRE安装，因为Eclipse需要JRE才能运行。地址 ：http://www.java.com/zh_CN/download/manual.jsp
 2，下载XAMPPlite1.7.1这个集成的PHP+MySql运行环境，如果是EXE安装包，就双击安装，如果是ZIP包，就解压运行。地址：http://www.apachefriends.org/en/xampp-windows.html
@@ -724,37 +724,37 @@ $M/mysqldump -uroot -proot test &amp;gt; $B/$X.sql tar -zcvf $B/$X.tar.gz $B/$X.
     
     <item>
       <title>兼容ie的鼠标经过表格变色</title>
-      <link>https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
+      <link>https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
       <pubDate>Fri, 11 Sep 2009 13:37:53 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
+      <guid>https://kissjava.cn/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EditPlus配置phpCB,格式化php代码</title>
-      <link>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.cn/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
       <description>自从七月十五搞了个EditPlus4php，淡水就一直用它做一些简单的修改工作。如果不在自己的电脑上，也方便做一些演示，他集成了◦xampplite1.7.1 ◦Zend Code Analyzer 1.2.3 ◦LeapFTP2.7.6 今天发现居然还有phpCB,只是默认没有配置。。。 配置一下吧，这样拷贝过来的代码，格式一下会看着顺眼些。 工具》配置用户工具。。。》添加工具》程序（p） 菜单文本：格式化 命令：找到EditPlus4php的phpCB.exe 参数：&amp;ndash;space-after-if &amp;ndash;optimize-eol &amp;ndash;space-after-switch &amp;ndash;space-after-while &amp;ndash;space-before-start-angle-bracket &amp;ndash;space-after-end-angle-bracket &amp;ndash;extra-padding-for-case-statement &amp;ndash;glue-amperscore &amp;ndash;change-shell-comment-to-double-slashes-comment &amp;ndash;indent-with-tab &amp;ndash;force-large-php-code-tag &amp;ndash;force-true-false-null-contant-lowercase &amp;ndash;comment-rendering-style PEAR &amp;ndash;equal-align-position 50 &amp;ndash;padding-char-count 1 &amp;ldquo;$(FilePath)&amp;rdquo; 勾选“以文本筛选器运行”选择“替换” 搞定。。。</description>
     </item>
     
     <item>
       <title>PHP创建数据库并导入sql文件到MySQL</title>
-      <link>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
+      <link>https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
       <pubDate>Fri, 07 Aug 2009 11:01:17 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
+      <guid>https://kissjava.cn/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
       <description>项目需要自动建库功能，于是就有了本文。搜索引擎好东西啊，就是从其中找到真正有用的太难了。贴代码： </description>
     </item>
     
     <item>
       <title>PHP中把Exception写入到日志</title>
-      <link>https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</link>
+      <link>https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</link>
       <pubDate>Sun, 26 Jul 2009 10:12:49 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</guid>
       <description>PHP5中把Exception写入到日志，是比较好的方法，开发时可以随时查看，部署后也不用担心在页面上打印出一对信息造成不友好的体验和安全隐患。代码： &amp;lt;?php
 error_reporting(E_ALL);
 function exceptionLogger($exception) { $file = &amp;lsquo;exceptionLog.log&amp;rsquo;; file_put_contents($file,$exception-&amp;gt;__toString(),FILE_APPEND); echo &amp;ldquo;Sorry!I&amp;rsquo;m Sick&amp;hellip;&amp;quot;; }
@@ -766,10 +766,10 @@ connectToDatabase(); ?</description>
     
     <item>
       <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
-      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
+      <link>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
       <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
+      <guid>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
       <description>公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。
 原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.
 nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.
@@ -782,20 +782,20 @@ nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始
     
     <item>
       <title>PHP中使用位运算实现简单的权限管理</title>
-      <link>https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+      <link>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
       <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
       <description>//所有的权限 $final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; //增加权限使用 | echo &amp;quot;管理者拥有的全部权限：&amp;quot; .decbin($final_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; $no_shearch_allow = $final_allow ^ SHARCH_ARTICLE; //删除权限使用 ^ 或 &amp;amp; ~ echo &amp;quot;仅无法搜索文章的权限：&amp;quot; .decbin($no_shearch_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; //编辑人员独有的权限 $editor_allow = PUBLIC_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE; $no_editor_allow = $final_allow &amp;amp; ~$editor_allow; echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; //判断权限使用 &amp;amp; ( 是, 返回非0; 不是, 返回0)  ?&amp;gt; 输出为：
 管理者拥有的全部权限：1111111 仅无法搜索文章的权限：1101111 非编辑人员所有的权限：1110010</description>
     </item>
     
     <item>
       <title>忘记了zend studio for eclipse 怎么调试了</title>
-      <link>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
+      <link>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
       <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
+      <guid>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
       <description>老是在netbeans和zend studio for eclipse跳来跳去的。
 今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!
 这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻Gently的Zend Studio For Eclipse 6.1 视频教程-调试php程序。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“服务器调试——Zend Debugger 的安装教程”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。Gently在Zend Studio For Eclipse 6.1 视频教程-调试php程序中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。
@@ -806,10 +806,10 @@ nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始
     
     <item>
       <title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
-      <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+      <link>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
       <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://kissjava.cn/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
       <description>最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《Learn Apache mod_rewrite: 13 Real-world Examples》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 原文地址：http://www.sitepoint.com/article/apache-mod_rewrite-examples/原文作者：DK Lynn（DK Lynn is a former instructor pilot and &amp;ldquo;rocket scientist&amp;rdquo; now living in New Zealand where he operates a small business developing and hosting web sites. ）
@@ -819,10 +819,10 @@ nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始
     
     <item>
       <title>Kohana:敏捷的 PHP 框架</title>
-      <link>https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</link>
+      <link>https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Tue, 14 Jul 2009 09:45:34 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://kissjava.cn/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</guid>
       <description>其实是Kohana v2.3.4入门教程。通过一个简单的项目说明了kohana的mvc架构和数据库类和kohana助手（helper）的用法。
 原文：Kohana: The Swift PHP Framework作者：Cristian Gilè 中文翻译：淡水因为实在是太长了，所以做成PDF了。
 Kohana the swift PHP framework</description>
@@ -830,10 +830,10 @@ Kohana the swift PHP framework</description>
     
     <item>
       <title>系统时间不准确造成 IE 下 Kohana 的 Captcha 库验证失败</title>
-      <link>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
+      <link>https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Tue, 16 Jun 2009 10:08:25 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>https://kissjava.cn/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
       <description>淡水碰到了，记下来备忘。
 作者：Hily 原始链接：http://hily.me/blog/2009/04/system-time-kohana-captcha-fail/ 版权声明：可以转载，转载时务必以超链接形式标明文章原始出处和作者信息及版权声明
 好糗……
@@ -845,38 +845,38 @@ Kohana the swift PHP framework</description>
     
     <item>
       <title>一点代码，体验严谨</title>
-      <link>https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</link>
+      <link>https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</link>
       <pubDate>Thu, 04 Jun 2009 15:59:46 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</guid>
+      <guid>https://kissjava.cn/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</guid>
       <description> $type = $this-&amp;gt;input-&amp;gt;post(&amp;quot;type&amp;quot;); $keyword = $this-&amp;gt;input-&amp;gt;post(&amp;quot;keyword&amp;quot;); if(empty($keyword)){ echo &#39;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&#39;; echo &amp;quot;alert(&#39;搜索的关键词，不能为空！&#39;);&amp;quot;; echo &amp;quot;&amp;lt;/script&amp;gt;&amp;quot;; $this-&amp;gt;listnews(); }else{ if($type==&amp;quot;title&amp;quot;){ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;title&amp;quot;,$keyword)-&amp;gt;find_all(); }elseif($type==&amp;quot;content&amp;quot;){ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;content&amp;quot;,$keyword)-&amp;gt;find_all(); }else{ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;orlike(array(&amp;quot;title&amp;quot;=&amp;gt;$keyword,&amp;quot;content&amp;quot;=&amp;gt;$keyword))-&amp;gt;find_all(); } $news = new View(&#39;admin/searchNews&#39;); $news-&amp;gt;newslist = $newslist; $this-&amp;gt;template-&amp;gt;content = $news; } }   $type = $this-&amp;gt;input-&amp;gt;post(&amp;quot;type&amp;quot;); $keyword = $this-&amp;gt;input-&amp;gt;post(&amp;quot;keyword&amp;quot;); if(empty($keyword)){ echo &#39;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&#39;; echo &amp;quot;alert(&#39;搜索的关键词，不能为空！&#39;);&amp;quot;; echo &amp;quot;&amp;lt;/script&amp;gt;&amp;quot;; $this-&amp;gt;listnews(); } if($type==&amp;quot;title&amp;quot;){ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;title&amp;quot;,$keyword)-&amp;gt;find_all(); }elseif($type==&amp;quot;content&amp;quot;){ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;content&amp;quot;,$keyword)-&amp;gt;find_all(); }else{ $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;orlike(array(&amp;quot;title&amp;quot;=&amp;gt;$keyword,&amp;quot;content&amp;quot;=&amp;gt;$keyword))-&amp;gt;find_all(); } $news = new View(&#39;admin/searchNews&#39;); $news-&amp;gt;newslist = $newslist; $this-&amp;gt;template-&amp;gt;content = $news; }  </description>
     </item>
     
     <item>
       <title>Netbeans 的自选代码折叠（Code Folding）</title>
-      <link>https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</link>
+      <link>https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</link>
       <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</guid>
+      <guid>https://kissjava.cn/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</guid>
       <description>-_-!!!这里长草了，来除草了。最近试用netbeans for php，感觉不错。里面的代码折叠比较好看，也好用。 不过自选代码的折叠，还是要深挖一下才出来的。eclipse 系列的 php IDE，的自选代码折叠怎么搞呢？不晓得。也许徐徐知道,自己问去吧XD
 //嗯，netbeans4php越来越好用了。</description>
     </item>
     
     <item>
       <title>学习php中的soap</title>
-      <link>https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
+      <link>https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
       <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
+      <guid>https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
       <description>淡水摸索了一阵子。 说说吧，先说说wsdl文件的建立。 用zend studio for eclipse 或是 easyeclipse for php都可以建立。但是zse方便一些。例如提供一个简单的加法服务： sum.php</description>
     </item>
     
     <item>
       <title>PHP5的SOAP扩展</title>
-      <link>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+      <link>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
       <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+      <guid>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
       <description>简介PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。
 PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。
 SOAP扩展支持以下规范。
@@ -902,20 +902,20 @@ SOAP扩展与Hello World这一节介绍如何使用WSDL模式和non-WSDL模式�
     
     <item>
       <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
-      <link>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+      <link>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
       <description>嗯，又找到一些好玩的东西，web service。 有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。 先恶补一下相关知识。 先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。 方法： SoapClient-&amp;gt;__soapCall() 说明： class SoapClient { mixed __soapCall ( string function_name, array arguments [, array options [, mixed input_headers [, array &amp;amp;output_headers]]]) } In WSDL mode, you can simply call SOAP functions as SoapClient methods. This method useful in non-WSDL mode when soapaction is unknown, uri differs from the default or when sending and/or receiving SOAP Headers 返回值： 一个简单类型的返回值，或是一个关联数组 例子： SOAP发送的协议：
 POST /servicepath/service.</description>
     </item>
     
     <item>
       <title>kohana版企业站范例进行中</title>
-      <link>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
+      <link>https://kissjava.cn/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
       <pubDate>Sat, 02 May 2009 06:51:31 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
+      <guid>https://kissjava.cn/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
       <description>以前是用codeigniter做的，但是为了更敏捷的开发，提高生产效率（其实是要偷懒），所以开始摸索kohana，并为之着迷（主要是ORM）。
 为了尽快上手kohana，所以把以前公布的企业站又用kohana改写一番。 现在前端已经完成。
 kohana版，为了简化代码，使用了ORM Codeigniter版，采用了他提供的AR
@@ -928,10 +928,10 @@ Codeigniter版http://tsingfeng.sinaapp.com/ci一般结果：Page rendered in 0.0
     
     <item>
       <title>Kohana 与JQUERY实现连动</title>
-      <link>https://kissjava.github.io/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
+      <link>https://kissjava.cn/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
       <pubDate>Thu, 23 Apr 2009 16:10:25 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
+      <guid>https://kissjava.cn/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
       <description>控制器 /**
  ajax加载城市分类   */ public function load_cities($id) { $id = (int) $id; if (!$id) { exit(&amp;quot;{result:0,msg:&amp;lsquo;错误的城市编号&amp;rsquo;}&amp;quot;); } $cities = ORM::factory(&amp;lsquo;city&amp;rsquo;); $cats = $cities-&amp;gt;where(&amp;lsquo;province_id&amp;rsquo;,$id)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); if (!count($cats)) { $cats = array(); } ksort($cats); exit(&amp;quot;{result:1,msg:&amp;quot;.json_encode($cats).&amp;quot;}&amp;quot;); }
 public function index() { //生成省市下拉列表 $provinces = ORM::factory(&amp;lsquo;province&amp;rsquo;)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); $provinces[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($provinces); $this-&amp;gt;template-&amp;gt;provinces = $provinces; if ($data[&amp;lsquo;province_id&amp;rsquo;]) { $cities = ORM::factory(’city’)-&amp;gt;where(’province_id’,$data[&amp;lsquo;province_id&amp;rsquo;])-&amp;gt;select_list(’id’,&amp;lsquo;name&amp;rsquo;); } $cities[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($cities); $this-&amp;gt;template-&amp;gt;cities = $cities; $this-&amp;gt;add_script(&amp;lsquo;home/js/company/add.js?3&amp;rsquo;); } view }); </description>
@@ -939,10 +939,10 @@ public function index() { //生成省市下拉列表 $provinces = ORM::factory(&
     
     <item>
       <title>kohana一个工程下面建立多个项目app</title>
-      <link>https://kissjava.github.io/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</link>
+      <link>https://kissjava.cn/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</link>
       <pubDate>Thu, 23 Apr 2009 16:00:35 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</guid>
+      <guid>https://kissjava.cn/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</guid>
       <description>其实核心的意思就是使用多个application文件夹，而共享一个system和module
 请参考文章：http://learn.kohanaphp.com/2008/08/15/initial-setup-of-a-kohana-project-revisited/ 具体办法就是建立类似的文件夹结构：
 app_admin // administration application app_sales // sales application app_public // public website modules system webroot 然后注意写配置文件就OK了
@@ -953,10 +953,10 @@ app_public/config/config.php: $config[&amp;lsquo;site_domain&amp;rsquo;] = ‘lo
     
     <item>
       <title>Kohana的Events和Hooks研究</title>
-      <link>https://kissjava.github.io/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</link>
+      <link>https://kissjava.cn/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</link>
       <pubDate>Thu, 23 Apr 2009 15:59:38 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</guid>
+      <guid>https://kissjava.cn/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</guid>
       <description>Kohana是一个使用PHP5的面向对象的MVC框架，是从CodeIgniter衍生出来，研究了几天，感觉还不错，就是它的文档实在太简陋了，在看到它的Events机制和Hooks机制时，确实有点不明白，文档上说的实在太简单了，后来我在Google上搜索了一下，找到两篇文章《Events and hooks in Kohana》和《Practical Kohana Hooks example: PHPIDS》，上面讲了一下Kohana的Events和Hooks，并举了例子，我也开始慢慢理解了它的含义。
 在Kohana的Events中，默认定义了很多的Events（例如system.ready、system.pre_controller等等），中文理解就是事件，也就是触发点，在程序在运行到某个位置时，会被触发，具体就是调用Event::run方法，我们在Kohana.php里可以看到在不同的位置执行了不同的Event::run方法，那么Hooks的意义在于当一个事件被触发之前，可以通过已加载的Hooks来修改事件的回调，有点绕口，说白了就是在事件发生之前，做点事情，举个例子，你安排了今天的日程，下午3点要开会，那么在3点开会就是一个Event（事件），那么到3点的时刻，你希望提醒你一下，你在你的手机里定了一个闹钟，在3点的时候会响，这就是一个Hook，可以看出Hook是基于Event的。
 我们可以创建自己的Hook程序，并加载如默认的Events里，但是默认的Events不一定能满足我们的需要，比如我们在Web应用中经常使用的权限校验，判断这个用户是否登陆过，我们虽然可以使用默认Events里的system.pre_controller，但是这个Event是针对所有的Controller的，有些Controller是不需要校验用户的，还好Kohana允许自己定义Event，下面我们还是举例说明吧。
@@ -973,10 +973,10 @@ check session …First - index</description>
     
     <item>
       <title>Kohana的Cache</title>
-      <link>https://kissjava.github.io/posts/kohana%E7%9A%84cache/</link>
+      <link>https://kissjava.cn/posts/kohana%E7%9A%84cache/</link>
       <pubDate>Thu, 23 Apr 2009 15:59:13 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana%E7%9A%84cache/</guid>
+      <guid>https://kissjava.cn/posts/kohana%E7%9A%84cache/</guid>
       <description>Kohana里有个Cache Library，我今天就测试了一下。
 首先要配置，将system/config下的cache.php复制到application/config下，打开cache.php文件，我们看一下内容
 在应用中，可能需要不止一个缓存，所以可以配置多个缓存，增加$config数组即可，还有在file方式下可以为每个缓存设置单独文件路径，但前提是文件路径要存在，例如我们增加一个
@@ -990,74 +990,74 @@ from：http://i.laoer.com/</description>
     
     <item>
       <title>ci中文转拼音的library</title>
-      <link>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
+      <link>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
       <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
+      <guid>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
       <description>拼装了一个codeigniter的中文转拼音的library。 使用方法： $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;utf8pinyin&amp;rsquo;,&#39;&amp;rsquo;,&amp;lsquo;py&amp;rsquo;); $data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;lsquo;昆山风神贸易有限公司成立于2007年&amp;rsquo;); //KunShanFengShenMaoYiYouXianGongSiChengLiYu2007Nian str2py($str,$boolquanpin=true,$booldaxie=true)$str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。 utf8pinyin</description>
     </item>
     
     <item>
       <title>Simple flexible Caching of parts of code - MP_Cache</title>
-      <link>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
+      <link>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
       <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
+      <guid>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
       <description>如标题所言，确实是简单灵活。看来想要摆脱Codeigniter越来越难了。 看看怎样使用吧 首先，在config.php中设置一下缓存目录，这个目录要存在且可写入 $config[&amp;lsquo;mp_cache_dir&amp;rsquo;] = &amp;lsquo;application/mp_cache/&#39;; 好了，现在看看代码 /加载library，可以放在构造函数中/ $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;MP_Cache&amp;rsquo;); /抓取名为listNews的缓存/ $listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;listNews&amp;rsquo;); if($listNews===false){ //没有缓存数据，则查询数据库 $listNews = $this-&amp;gt;News_model-&amp;gt;getNewslist(&amp;lsquo;guest&amp;rsquo;)-&amp;gt;result(); //创建缓存，命名为listNews。在mp_cache目录下就生成了listNews.cache文件，内容是序列化的数据 $this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;listNews&amp;rsquo;); } $data[&amp;lsquo;listNews&amp;rsquo;]= $listNews; $this-&amp;gt;layout-&amp;gt;view(&amp;lsquo;news&amp;rsquo;, $data); 两个注意点：1，缓存数据，必须是data，而不是resource id。如，在使用AR后用result(),result_array()等返回的数据 2，缓存名不要重复。可以使用子文件夹分隔。如，$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;news/listNews&amp;rsquo;);同样创建缓存数据片段用$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;news/listNews&amp;rsquo;);（php5下news文件夹会自动创建） 其他方法： $this-&amp;gt;mp_cache-&amp;gt;delete($filename) 删除名为$filename的cache.</description>
     </item>
     
     <item>
       <title>徐徐的Zend studio For Eclipse 教程</title>
-      <link>https://kissjava.github.io/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 23 Mar 2009 10:01:58 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</guid>
       <description>如题，好东西啊 不说废话，给出地址 zend studio 6.1中文视频教程-快速入门http://www.zendstudio.net/zend_studio-6_1-getting-start/ 感谢徐徐的工作，好淫啊 :)</description>
     </item>
     
     <item>
       <title>改进layout library，方便自定义layout</title>
-      <link>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
+      <link>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
       <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
+      <guid>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
       <description>CodeIgniter使用 layout library 简化视图布局中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。 library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。 所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。 function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data); }  function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; # 下面就是使用自定义的对象名 mytemp $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data); }  </description>
     </item>
     
     <item>
       <title>ADODB的简单使用</title>
-      <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;最近要用到它吧，于是淡水就整理了一下&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>PHP5的重载</title>
-      <link>https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</link>
+      <link>https://kissjava.cn/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</link>
       <pubDate>Sun, 08 Mar 2009 17:54:12 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</guid>
+      <guid>https://kissjava.cn/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</guid>
       <description>老样子,看代码. </description>
     </item>
     
     <item>
       <title>PHP5的克隆方法</title>
-      <link>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.cn/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 08 Mar 2009 17:52:18 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.cn/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
       <description>不多说了，代码注释里都有。 </description>
     </item>
     
     <item>
       <title>ADOdb的错误处理和异常处理</title>
-      <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <link>https://kissjava.cn/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 05 Mar 2009 15:14:48 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <guid>https://kissjava.cn/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
       <description>迷上那些mvc的框架后，就很少去关注到ADOdb了。
 回头看看，ADOdb真的改进不少。淡水关心的是only php5的版本。
 不仅支持了AR(ADOdb-Active-Record),也支持Exceptions了。淡水测试了一下它。 淡水也顺便试了一下它的错误处理，如下： </description>
@@ -1065,10 +1065,10 @@ from：http://i.laoer.com/</description>
     
     <item>
       <title>ADOdb有更新了</title>
-      <link>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
+      <link>https://kissjava.cn/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
       <pubDate>Thu, 05 Mar 2009 09:28:06 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
+      <guid>https://kissjava.cn/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
       <description>支持AR了,想偷懒的同学有福了.
 相对于Zend Framework,Adodb在实现上有以下几点不同： 对PHP4和PHP5，Adodb提供一致的方法。 ADOdb_Active_Record可以同时连接到多个数据库。而Zend只能连接到默认的一个数据库。 支持ADODB_ASSOC_CASE。字段名大小写由ADODB_ASSOC_CASE项设置。
 adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_active_record尝试提出PHP中的最合适的ActiveRecord。 ADOdb_Active_Record把一个数据库表映射为一个PHP类，每个实例都代表表的一行数据。也可以定义表之间的关系，ADOdb_Active_Record对象支持嵌套。
@@ -1077,10 +1077,10 @@ adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_a
     
     <item>
       <title>Kohana 起步了</title>
-      <link>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
+      <link>https://kissjava.cn/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
       <pubDate>Tue, 03 Mar 2009 22:06:05 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
+      <guid>https://kissjava.cn/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
       <description>开始琢磨Kohana。先看了一下Kohana 101，出现了一些问题。
 当做到 http://localhost/kohana/index.php/test/bye 时，出现了问题。并没有期望的视图出现，而是
 但是文档并没有提到是何原因。还好有Codeigniter打底。原来是淡水在class中写了一个空的__contruct()，而101并没有用它。 把它去掉，或是在里面调用一下父类的构造函数就ok了。
@@ -1093,29 +1093,29 @@ adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_a
     
     <item>
       <title>jQuery AJAX方法提交数据</title>
-      <link>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
+      <link>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Sat, 28 Feb 2009 20:23:04 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Extended Model for CodeIgniter 1.7.x</title>
-      <link>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</link>
+      <link>https://kissjava.cn/posts/extended-model-for-codeigniter-1.7.x/</link>
       <pubDate>Wed, 25 Feb 2009 14:11:01 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</guid>
+      <guid>https://kissjava.cn/posts/extended-model-for-codeigniter-1.7.x/</guid>
       <description>不需要hacking CI的核心代码
  下载文件 2. 放入 application/libraries 文件夹 在model 里,使用: class Product extends MY_Model 其他的使用和旧版一样  my_model</description>
     </item>
     
     <item>
       <title>codeigniter的数据库操作</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
       <description>用codeigniter也有一段时间了，一直没有做什么总结。 昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。  链接数据库 $this-&amp;gt;load-&amp;gt;database();//手动连接数据库 //连接多数据库 $DB1 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_one&amp;rsquo;, TRUE); $DB2 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_two&amp;rsquo;, TRUE); 查询 //参数绑定形式 $sql = &amp;ldquo;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&amp;quot;; $this-&amp;gt;db-&amp;gt;query($sql, array(3, &amp;lsquo;live&amp;rsquo;, &amp;lsquo;Rick&amp;rsquo;));
 //多结果标准查询 $query = $this-&amp;gt;db-&amp;gt;query($sql); //自定义 $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;); //便捷形式，相当于:SELECT * FROM tablename $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;, 10, 20); // 相当于: SELECT * FROM tablename LIMIT 20, 10
 $query-&amp;gt;result() //对象形式 $query-&amp;gt;result_array() //数组形式 /* foreach ($query-&amp;gt;result() as $row) { echo $row-&amp;gt;title; echo $row-&amp;gt;name; echo $row-&amp;gt;email; } */ $query-&amp;gt;num_rows() //总条数 $query-&amp;gt;num_fields() //字段数</description>
@@ -1123,10 +1123,10 @@ $query-&amp;gt;result() //对象形式 $query-&amp;gt;result_array() //数组形
     
     <item>
       <title>适合Codeingiter1.7.0的authentication library</title>
-      <link>https://kissjava.github.io/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
+      <link>https://kissjava.cn/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
       <pubDate>Wed, 24 Dec 2008 21:09:59 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
+      <guid>https://kissjava.cn/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
       <description>适合Codeingiter1.7.0的authentication library地址：
 http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看看。时间都被我荒废到哪里去了呢？
 今天对于很多人来说，是个特殊的日子，虽然对我来说只是再平常不过的一天了。嗯，Merry Christmas！</description>
@@ -1134,19 +1134,19 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>PHP利用iframe上传文件并返回值到父框架</title>
-      <link>https://kissjava.github.io/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
+      <link>https://kissjava.cn/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://kissjava.cn/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
       <description>哈哈，淡水其实也是采用这样的做发法的。正好看到有童鞋博客上有这样写。就顺手贴过来了。 if($result) { echo &amp;ldquo;上传成功!文件路径为：&amp;rdquo;.$file2; echo &amp;lsquo;&amp;rsquo;; echo&#39;parent.document.form1.img.value=document.getElementById(&amp;ldquo;img&amp;rdquo;).value;&amp;rsquo;; } 文件上传成功后，把文件路径写入一个隐藏的域中（img），然后用DOM原理把隐藏域中的VALUE发送到父框架的表单form1的img文本框中：ok，再来看看淡水的。 淡水编辑器用了tinyMCE，所以有一点点不一样。 我的form页： </description>
     </item>
     
     <item>
       <title>还是phpDocumentor的安装和使用</title>
-      <link>https://kissjava.github.io/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 23 Nov 2008 12:51:18 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;写文件是一个程序设计师最最痛苦的事情之一，尤其是写了一堆程序后有人要你把 Function ，Class 等等等等，写成一份文件。&lt;/p&gt;
 &lt;p&gt;这事情不管你是写 c/c++ , perl , ruby , php 都不例外。&lt;/p&gt;
 &lt;p&gt;phpDocumentor 是我们的救星! 只要在写程序的时候，乖乖的写一点注解，写一点范例，多一点说明，注意一下格式，等到程序完工后，只要一个指令，就可以立刻把全部程序的说明文件产生出来，而且还有多种样式可以选择，甚至可以作成  PDF , CHM 喔&amp;hellip;&lt;/p&gt;</description>
@@ -1154,55 +1154,55 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>(转载)phpDocumentor筆記</title>
-      <link>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</link>
+      <link>https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 20 Nov 2008 12:25:04 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://kissjava.cn/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</guid>
       <description>&lt;p&gt;phpDocumentor很好的php工具。&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;这里转载的台湾同胞的学习笔记，方便查询。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>解决phpDesigner 2008 6.1.1中文语言包假死问题</title>
-      <link>https://kissjava.github.io/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
+      <link>https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 13 Nov 2008 12:39:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
       <description>其实要从php视频教程说起。 淡水以前也出过php的视频教学误人前程，前些日子看到php100有出php视频教学。去逛了好几圈，嗯，人气不错。站长很用心。还搞了一些工具方便php新人，比如easyclipse中文化，还有phpDesigner的中语言包。淡水试了phpDesigner2008的中文语言包，有些问题，一旦切换到中文就会假死。本来淡水并不用它，但是并不否认她是个杰出的编辑器。 淡水在试了N多种方法后，终于有了办法。 新建一个project，再切换语言。不行就打开新建的project，再切换到中文。搞定。 哈哈，可以换着用用看了。 没有project用其他语言就会假死，这个可能是程序的bug。 语言包：chinese-zh</description>
     </item>
     
     <item>
       <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
-      <link>https://kissjava.github.io/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
+      <link>https://kissjava.cn/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
       <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
+      <guid>https://kissjava.cn/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
       <description>大多都涉及到JS，但是淡水这块儿比较薄弱。于是用jQuery，搞定。 帖一张图，对jQuery的说明很不错 [caption id=&amp;quot;attachment_139&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;jQuery&amp;rdquo;][/caption] 站还没更新，嗯，下周更新吧</description>
     </item>
     
     <item>
       <title>tinyMCE和CodeIgniter1.7.0</title>
-      <link>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+      <link>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+      <guid>https://kissjava.cn/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
       <description>tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。 下载tinyMCE并解压到网站目录，淡水是放到根目录的。 在CodeIgniter的View里调用： </description>
     </item>
     
     <item>
       <title>CodeIgniter 1.6.3 to 1.7.0</title>
-      <link>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</link>
+      <link>https://kissjava.cn/posts/codeigniter-1.6.3-to-1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 14:20:43 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-1.6.3-to-1.7.0/</guid>
       <description>今日升级后，发行有些读取数据库的页面有错误。提示：“SQL logic error or missing database”。咋回事呢？淡水不废话了,看代码,原来1.6.3是这样写的 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;from(&amp;lsquo;news&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 现在1.7.0要这样 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 说白了，就是1.7.0比较严格一些，from后不能再get里还有table name否则会出错，其实还是我在1.6.3里写的不够严谨XD</description>
     </item>
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>
@@ -1210,10 +1210,10 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>CodeIgniter 1.7.0 版发布了，有料</title>
-      <link>https://kissjava.github.io/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</link>
+      <link>https://kissjava.cn/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</link>
       <pubDate>Sat, 25 Oct 2008 19:12:44 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</guid>
       <description>修正了一堆bug。
 更新了session table，嗯session保存的database的才有关系，多了一个user_data字段。
 新增了form_validation.旧的validation还是可以用的，不过推荐使用新的form_validation。语法比较简洁明了。
@@ -1222,10 +1222,10 @@ http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看
     
     <item>
       <title>CodeIgniter使用 layout library 简化视图布局</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</link>
       <pubDate>Wed, 22 Oct 2008 21:17:50 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</guid>
       <description>一般在网站的开发过程中，都会有个 template 或是叫 layout 的，它包含了整个网站的外观和布局，一般分为header，content，footer 有的甚至还包括 menu。其中的 content 部分则会随着不同的页面和功能而变化。这样就可以保证网站风格的一致性，也可以减少不少工作量。虽然便捷的 Codeigniter没有提供内置的处理方式，但是我们还是自己扩展的。
 首先，把下面的代码保存到 application/libraries/Layout.php 在相关的控制器里载入它
 往下就可以输出页面
@@ -1237,39 +1237,39 @@ $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;templ
     
     <item>
       <title>Simple FlashNotice helper for CodeIgniter</title>
-      <link>https://kissjava.github.io/posts/simple-flashnotice-helper-for-codeigniter/</link>
+      <link>https://kissjava.cn/posts/simple-flashnotice-helper-for-codeigniter/</link>
       <pubDate>Wed, 22 Oct 2008 10:07:52 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-flashnotice-helper-for-codeigniter/</guid>
+      <guid>https://kissjava.cn/posts/simple-flashnotice-helper-for-codeigniter/</guid>
       <description>这是一个容易使用的简单的FlashNotice helper。 它会在你进行一些操作之后帮助你显示错误或提示信息。 信息显示一次后就会被自动删除。 1，保持以下代码到“flash_helper.php” application/helpers 目录 2，加载它 $this-&amp;gt;load-&amp;gt;helper(&amp;ldquo;flash&amp;rdquo;);
 你可以在第二个参数上设置其他的通知类型，它会反映在你的提示div块的class名称上。 #flash 样式你可以自己定义。 </description>
     </item>
     
     <item>
       <title>扩展 CodeIgniter 1.6.3 的 Model </title>
-      <link>https://kissjava.github.io/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
+      <link>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
       <pubDate>Tue, 21 Oct 2008 15:16:09 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
+      <guid>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
       <description>第一步，用下载的文件替换system/libraries/Model.php 第二步，对于你的每个数据表，都要在system/application/models 下建立一个模型 第三步，建立一个“products”表，如下所示： CREATE TABLE products ( id int(11) NOT NULL auto_increment, title varchar(50) NOT NULL, description text NOT NULL, color varchar(20) NOT NULL, price float NOT NULL, category_id int(11) NOT NULL, featured char(1) NOT NULL, enabled char(1) NOT NULL, visits int(1) NOT NULL, created int(11) NOT NULL, modified int(11) NOT NULL, PRIMARY KEY (id) ) ENGINE=MyISAM; 第四步，建立一个模型 system/application/models/product.php </description>
     </item>
     
     <item>
       <title>优化CodeIgniter性能</title>
-      <link>https://kissjava.github.io/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
+      <link>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
       <pubDate>Sun, 19 Oct 2008 10:15:20 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
+      <guid>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
       <description>原文《Optimizing and Scaling your CodeIgniter Application - with Benchmarks!》淡水这里只是用中文整理一下。 首先，是个控制器，一般的标准的写法如下： function index() { $query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);
 $links = &#39;&#39;; if ( $query-&amp;gt;num_rows &amp;gt; 0) { foreach ($query-&amp;gt;result_array() as $page): $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;; $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;; endforeach; $data[&#39;links&#39;] = $links; } for ($i=0; $i &amp;lt; 10; $i++) { $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;); $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1); if ( $query-&amp;gt;num_rows == 1 ) { $row = $query-&amp;gt;row_array(); $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]); $data[&#39;body&#39;] = $row[&#39;body&#39;]; } } $this-&amp;gt;load-&amp;gt;view(&#39;welcome2&#39;, $data);  } 视图文件类似以下： 把循环结果赋给变量foreach ($query-&amp;gt;result_array() as $page): 修改为: $pages = $query-&amp;gt;result_array(); foreach ($pages as $page): Requests per second: 46.</description>
     </item>
     
     <item>
       <title>基于Codeigniter1.6.3的华领GPS车管系统网站</title>
-      <link>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
+      <link>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
       <pubDate>Wed, 08 Oct 2008 20:09:32 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://kissjava.cn/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
       <description>&lt;p&gt;华领GPS车管系统网站(&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;)
 名称：华领GPS车辆管理系统
 地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;http://www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
@@ -1279,20 +1279,20 @@ CodeIgniter版本：1.6.3
     
     <item>
       <title>怎样透过Codeigniter的SMTP类发mail</title>
-      <link>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</link>
+      <link>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</link>
       <pubDate>Wed, 08 Oct 2008 10:08:42 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</guid>
+      <guid>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</guid>
       <description>其实手册上已经讲得比较好了。但是有些不太对味，排版不太符合国人的习惯。闲话不说了，淡水喜欢直奔主题。 以Gmail为例，其他的更加简单（smtp_host和port改一下就行了，而且一般的smtp都无需ssl的）。要发信，先要配置。 配置有两种方式，方式一直接写在发送mail代码的前面，如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;;
 $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文件config/email.php，内容如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; ok,现在可以发信了。 $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;email&amp;rsquo;); $this-&amp;gt;email-&amp;gt;from(&amp;lsquo;username@gmail.com&amp;rsquo;, &amp;lsquo;your_name&amp;rsquo;); $this-&amp;gt;email-&amp;gt;to(&amp;lsquo;your_friend@xxx.com&amp;rsquo;); $this-&amp;gt;email-&amp;gt;subject(&amp;lsquo;subject&amp;rsquo;); $this-&amp;gt;email-&amp;gt;message(&amp;lsquo;this is the mail content&amp;rsquo;); $this-&amp;gt;email-&amp;gt;send(); 啰嗦一下，用Gmail发信，不太容易被当作垃圾邮件，但是主机要支持ssl才可以，否则是发不出的。其他免费的stmp也有不错的，而且不用ssl支持。比如tom和qq了。</description>
     </item>
     
     <item>
       <title>CodeIgniter 入门-快速简单地创建 MVC 应用程序</title>
-      <link>https://kissjava.github.io/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://kissjava.cn/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Sat, 04 Oct 2008 12:06:05 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/</guid>
       <description>&lt;p&gt;淡水现在用的框架就是Codeigniter。嗯，学习曲线较低，上手很快。本来想写些东西和大家分享的，只是时间不允，而且人懒。现在放上IBM developerWorks中国上的文章。淡水再啰嗦一下，官方的视频很直白也建议看看&lt;/p&gt;
 &lt;p&gt;级别： 中级Thomas Myer, 作者、顾问和 Web 开发人员, Triple Dog Dare Media
 2008 年 9 月 16 日&lt;/p&gt;</description>
@@ -1300,10 +1300,10 @@ $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文
     
     <item>
       <title>E-TextEditor试用手记</title>
-      <link>https://kissjava.github.io/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+      <link>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
       <pubDate>Tue, 30 Sep 2008 14:14:53 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+      <guid>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
       <description>嗯，这里快长草了。
 淡水以前看ci的视频，看到mac下的textmate，哈喇子飞流直下-_-。以后的一段日子总是在寻求在windows下类似的编辑器。向google大神请教，给了我两个答案一个是intype，另一个还是intype，玩笑了（想起鲁迅了）。还有一个就是本文的猪脚“E-TextEditor”。但是当时淡水试用以后很是失望，intype没有project manage功能，E-texteditor安装时候就一堆的错误。无法只能用editplus凑合，没几日就无法忍受editplus简陋的目录管理了，换成了Ultraedit。只是他们都没有bundles，用来小修小改还好，用它们做项目，太累了。总会有些笔误产生。
 故事到了这里，貌似该猪脚出场了。等等，还没到，实际情况是这样的。intype的最新Unstable版,支持project manage了。用了两天，发现BUG太多了。无奈放弃。这个时候猪脚上场了。但是这次淡水不是用的官方的版本，而是所谓的绿色特别版。下载地址：http://www.xdowns.com/soft/38/39/2008/Soft_40447.html试用一下不错。没有问题，又下了一份E-TextEditor Codeigniter 1.6.3 Bundle。嗯，测试一下，很好。淡水的系统是vista，没有任何问题，在虚拟机的xp上跑也正常。晒个图Codeigniter bundles 下载地址：http://www.</description>
@@ -1311,48 +1311,48 @@ $this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文
     
     <item>
       <title>jQuery获取表单项目以及AJAX应用</title>
-      <link>https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 10 Sep 2008 16:06:55 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</guid>
       <description>1.假如我们有如下页面 Xhtml文件如下： </description>
     </item>
     
     <item>
       <title>CodeIgniter中框架的使用</title>
-      <link>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Sep 2008 15:56:22 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter%E4%B8%AD%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>控制器代码： class Admin extents Control { function index() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/index&amp;rsquo;); } function top() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/top&amp;rsquo;); } function menu() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/menu&amp;rsquo;); } function main() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/main&amp;rsquo;); } function bottom() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;admin/bottom&amp;rsquo;); } } views文件夹下有个专门的admin文件夹，里面都是管理页面（index.php , top.php , menu.php , main.php , bottom.php）
 index.php内容如下： </description>
     </item>
     
     <item>
       <title>对初学者很友好的PHP上传实例</title>
-      <link>https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</link>
+      <link>https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Wed, 10 Sep 2008 15:45:57 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</guid>
+      <guid>https://kissjava.cn/posts/%E5%AF%B9%E5%88%9D%E5%AD%A6%E8%80%85%E5%BE%88%E5%8F%8B%E5%A5%BD%E7%9A%84php%E4%B8%8A%E4%BC%A0%E5%AE%9E%E4%BE%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP演示最简单的MVC模式</title>
-      <link>https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 10 Sep 2008 14:31:36 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://kissjava.cn/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</guid>
       <description>&lt;p&gt;为了更好的演示MVC的工作方式,我们使用了一个简单的新闻文章发布系统作为例子.分为使用MVC和不使用MVC两种方式.
 我们只作一个基本的演示,从数据库里读出一些文章列表,并在页面上显示。一般的流程就是,连接数据库,查询数据库,循环输出html结果。下面的代码就是如此做的。（淡水感觉怪怪的，语言组织得不好。好在代码比较容易理解）&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CodeIgniter 带简单权限控制的登录实例</title>
-      <link>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
+      <link>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
+      <guid>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
       <description>function __construct() { parent::__construct(); @session_start(); } function login() { unset($_SESSION[&#39;user&#39;]); $email = $this-&amp;gt;input-&amp;gt;post(&#39;email&#39;); $password = md5($this-&amp;gt;input-&amp;gt;post(&#39;password&#39;)); $this-&amp;gt;db-&amp;gt;where(&#39;email&#39;,$email); $this-&amp;gt;db-&amp;gt;where(&#39;password&#39;,$password); $this-&amp;gt;db-&amp;gt;where(&#39;status &amp;lt;&amp;gt;&#39;,0); $query = $this-&amp;gt;db-&amp;gt;get(&#39;users&#39;); if(!$query-&amp;gt;num_rows()!=0) return false; $row = $query-&amp;gt;row_array(); $_SESSION[&#39;user&#39;][&#39;id&#39;] = $row[&#39;id&#39;]; $_SESSION[&#39;user&#39;][&#39;name&#39;] = $row[&#39;name&#39;]; $_SESSION[&#39;user&#39;][&#39;type&#39;] = $row[&#39;type&#39;]; return true; } function logout() { unset($_SESSION[&#39;user&#39;]); } function isPermitted() { $_SESSION[&#39;return&#39;] = $this-&amp;gt;uri-&amp;gt;uri_string(); if(isset($_SESSION[&#39;user&#39;][&#39;type&#39;])) { $uri = substr($this-&amp;gt;uri-&amp;gt;uri_string(), 1); $permitted = $this-&amp;gt;permitted; $indice = $permitted[$_SESSION[&#39;user&#39;][&#39;type&#39;]][&#39;url&#39;]; foreach($indice as $i){ if(eregi(&#39;(&#39;. $i .&#39;)&#39;, $uri)){ unset($_SESSION[&#39;voltar&#39;]); return true; } } return false; } else { redirect(&#39;access/login&#39;,&#39;refresh&#39;); } }  } ?</description>
     </item>
     

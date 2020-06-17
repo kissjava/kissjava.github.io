@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vps on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/vps/</link>
+    <link>https://kissjava.cn/tags/vps/</link>
     <description>Recent content in vps on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 02 Sep 2017 13:33:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Somagu NAT 小鸡的挂载过程</title>
-      <link>https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
+      <link>https://kissjava.cn/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
+      <guid>https://kissjava.cn/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
       <description>Somagu 提供了免费的 kvm 技术的 vps（免费到2017年9月底），虽然是 NAT 的（共享公网 IP），但是线路不错还是可玩的。 Somagu 小鸡根据你选择的 OS 模板，默认只有2.2G 或是8G 的硬盘空间。但是它提供了20G 的 Disk，但是需要我们自己去挂载。官网的说明
  If you created a VPS based on OS template, your extra disk space is at /dev/vdb device. Please mount, format and use it.
  好吧，下面记录一下挂载过程，Linux 挂载基本都是这个套路了。
@@ -26,10 +26,10 @@
     
     <item>
       <title>转战阿里国际</title>
-      <link>https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
+      <link>https://kissjava.cn/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
       <pubDate>Mon, 07 Aug 2017 16:11:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
+      <guid>https://kissjava.cn/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
       <description>转战阿里国际，顺便更新个皮肤。
 原本黑五的新加坡小鸡速度不错，就是最近频繁的宕机。
 正好阿里云国际版出4.5刀/月的新加坡。配置良心，1024m 内存，40G SSD云盘，30m 带宽，1T 流量。于是又搬家了。
@@ -39,10 +39,10 @@
     
     <item>
       <title>搬出搬瓦工了</title>
-      <link>https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+      <link>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
       <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+      <guid>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
       <description>剁了个新加坡vps，于是乎搬出搬瓦工。 搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。 还是说明了，世界加钱可达！ 当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。 推荐年付19$搬瓦工KVM直连VPS，传输机在此！ 忽然发现，这2016年的第一篇博文。 今年还有半个月就完了！估计很可能也是今年的最后一篇吧。</description>
     </item>
     

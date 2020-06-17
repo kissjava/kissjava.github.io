@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>disctinct on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/disctinct/</link>
+    <link>https://kissjava.cn/tags/disctinct/</link>
     <description>Recent content in disctinct on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 08 Mar 2010 16:54:03 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/disctinct/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/disctinct/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>收拾残局，过滤部分字段重复的数据</title>
-      <link>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+      <link>https://kissjava.cn/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://kissjava.cn/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
       <description>select distinct可以去掉重复记录。 disctinct将重复的记录忽略，但它忽略的是完全一致的重复记录，而不是其中某个字段重复的记录，或者说，distinct查询一个字段时好使，多个字段就不好使。
 所以用聚合函数和group by实现 注意：group by只能跟聚合函数搭配使用例表
 查询username和password组合起来的条件不能重复的查询结果（这个都能重复，不能不说这是个烂摊子）

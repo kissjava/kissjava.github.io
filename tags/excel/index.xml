@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>excel on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/excel/</link>
+    <link>https://kissjava.cn/tags/excel/</link>
     <description>Recent content in excel on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sun, 18 Aug 2019 18:52:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part16 读写Excel XLSX文件（Excelize）</title>
-      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</link>
+      <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</link>
       <pubDate>Sun, 18 Aug 2019 18:52:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</guid>
+      <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</guid>
       <description>Web应用中免不了用到Excel。当然现在都是用XLSX格式了。 先安装go get github.com/360EntSecGroup-Skylar/excelize
 ##建立Excel文件
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;log&amp;quot;&amp;quot;github.com/360EntSecGroup-Skylar/excelize&amp;quot;)type M map[string]interface{}var data = []M{M{&amp;quot;Name&amp;quot;: &amp;quot;Noval&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 18},M{&amp;quot;Name&amp;quot;: &amp;quot;Nabila&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;female&amp;quot;, &amp;quot;Age&amp;quot;: 12},M{&amp;quot;Name&amp;quot;: &amp;quot;Yasa&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 11},}func main() {xlsx := excelize.NewFile()sheet1Name := &amp;quot;Sheet One&amp;quot;xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)xlsx.SetCellValue(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;Name&amp;quot;)xlsx.SetCellValue(sheet1Name, &amp;quot;B1&amp;quot;, &amp;quot;Gender&amp;quot;)xlsx.SetCellValue(sheet1Name, &amp;quot;C1&amp;quot;, &amp;quot;Age&amp;quot;)err := xlsx.AutoFilter(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;C1&amp;quot;, &amp;quot;&amp;quot;)if err != nil {log.</description>
@@ -25,10 +25,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;log&amp;quot;&amp;quot;
     
     <item>
       <title>破解被保护的Excel文档</title>
-      <link>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
+      <link>https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
       <pubDate>Wed, 01 Dec 2010 20:23:02 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
+      <guid>https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
       <description></description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/vim/</link>
+    <link>https://kissjava.cn/tags/vim/</link>
     <description>Recent content in vim on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sun, 07 Mar 2010 13:13:54 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vim记录</title>
-      <link>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</link>
+      <link>https://kissjava.cn/posts/vim%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 07 Mar 2010 13:13:54 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://kissjava.cn/posts/vim%E8%AE%B0%E5%BD%95/</guid>
       <description>1，vim中复制带有行号的内容到剪切板 进入normal模式，按查找键盘（/），然后然后用鼠标选择需要的内容，选取会自动选择行号，菜单栏编辑-复制（右键也行）即可。 2，删除引用符号中的内容，并进入到插入模式 ci[ 删除一对 [] 中的所有字符并进入插入模式 ci( 删除一对 () 中的所有字符并进入插入模式 ci&amp;lt; 删除一对 &amp;lt;&amp;gt; 中的所有字符并进入插入模式 ci{ 删除一对 {} 中的所有字符并进入插入模式 cit 删除一对 HTML/XML 的标签内部的所有字符并进入插入模式 ci&amp;rdquo; ci&amp;rsquo; ci删除一对引号字符 (&amp;quot;或 &#39; 或) 中所有字符并进入插入模式 3，除了，hjkl外的更微妙的光标移动 w：光标往下移动一个词。 b：光标往回移动一个词。 0：移动光标到当前行首。 ^：移动光标到当前行的第一个字母位置。 $：移动光标到行尾。 )：移动光标到下一个句子。 ( ：移动光标到上一个句子。
 ：向下移动一屏。 ：向上移动一屏。 G：到文件尾 numG：移动光标到指定的行（num）。（比如 10G 就是到第 10 行） gg：到文件首 H：移动光标到屏幕上面 M：移动光标到屏幕中间 L：移动光标到屏幕下面
   ：缩进所有选择的代码 &amp;laquo;：和上面类似，但是反缩进

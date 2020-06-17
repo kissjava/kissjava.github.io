@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clone on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/clone/</link>
+    <link>https://kissjava.cn/tags/clone/</link>
     <description>Recent content in clone on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sun, 08 Mar 2009 17:52:18 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/clone/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/clone/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP5的克隆方法</title>
-      <link>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.cn/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 08 Mar 2009 17:52:18 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.cn/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
       <description>不多说了，代码注释里都有。 </description>
     </item>
     

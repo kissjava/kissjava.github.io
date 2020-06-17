@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>simple test on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/simple-test/</link>
+    <link>https://kissjava.cn/tags/simple-test/</link>
     <description>Recent content in simple test on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 25 Jun 2012 15:14:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/simple-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/simple-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple Test 中文参考</title>
-      <link>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+      <link>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
       <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+      <guid>https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
       <description>&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
 &lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
 我们用以下代码来创建一个测试脚本放在tests/log_test.php里．

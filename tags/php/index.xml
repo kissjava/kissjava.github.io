@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/php/</link>
+    <link>https://kissjava.cn/tags/php/</link>
     <description>Recent content in php on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 12 Jun 2014 10:42:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flight 中文手册</title>
-      <link>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+      <link>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://kissjava.cn/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
       <description>&lt;h1 id=&#34;flight-是什么&#34;&gt;Flight 是什么?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;http://flightphp.com&#34;&gt;Flight&lt;/a&gt;是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
 中文手册由&lt;a href=&#34;http://kissjava.cn&#34;&gt;kissjava.cn&lt;/a&gt;翻译。&lt;/p&gt;

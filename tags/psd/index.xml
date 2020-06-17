@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PSD on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/psd/</link>
+    <link>https://kissjava.cn/tags/psd/</link>
     <description>Recent content in PSD on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 29 Nov 2011 17:18:46 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/psd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/psd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Photoshop教程：一款清新高雅的网页布局</title>
-      <link>https://kissjava.github.io/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+      <link>https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
       <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
       <description>&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>用Photoshop设计一个小型、现代的产品主页</title>
-      <link>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+      <link>https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
       <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+      <guid>https://kissjava.cn/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
       <description>这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。
 3 使用油漆桶工具（G）用任意颜色填充头部刚才选定区域。点开图层样式对话框，用以下设置来增加一个渐变叠加效果。
 完了，应该出现以下效果：

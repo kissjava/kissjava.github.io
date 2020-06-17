@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>方法 on 清风徐来</title>
-    <link>https://kissjava.github.io/tags/%E6%96%B9%E6%B3%95/</link>
+    <link>https://kissjava.cn/tags/%E6%96%B9%E6%B3%95/</link>
     <description>Recent content in 方法 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 18:52:00 +0000</lastBuildDate>
     
-	<atom:link href="https://kissjava.github.io/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.cn/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go的方法</title>
-      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
       
-      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.cn/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。 ##一个简单实例 我们将创建一个非常简单的员工管理系统，允许您更新员工姓名并打印出该名称。不是最令人兴奋的示例项目，但它将作为演示还可以。
 我们首先创建一个Employee类型的结构，它包含一个字符串字段Name
 接下来，我们将声明一个UpdateName()和一个PrintName()方法，它允许我们更新和打印我们创建的员工的姓名。

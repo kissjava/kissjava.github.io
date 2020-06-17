@@ -13,6 +13,67 @@
     
     
         <item>
+        <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
+        <link>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+        <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ -&lt;p&gt;嗯，又找到一些好玩的东西，web service。
+有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。
+先恶补一下相关知识。
+先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。
+方法：
+SoapClient-&amp;gt;__soapCall()
+说明：
+class SoapClient {
+mixed __soapCall ( string function_name, array arguments [, array options [, mixed input_headers [, array &amp;amp;output_headers]]])
+}
+In WSDL mode, you can simply call SOAP functions as SoapClient methods. This method useful in non-WSDL mode when soapaction is unknown, uri differs from the default or when sending and/or receiving SOAP Headers
+返回值：
+一个简单类型的返回值，或是一个关联数组
+例子：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SOAP发送的协议：&lt;/p&gt;
+&lt;p&gt;POST /servicepath/service.asmx HTTP/1.1
+Host: 211.186.1.4
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: &amp;ldquo;http://211.186.5.15/Service/ServiceMethod&amp;rdquo;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;调用方法：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SOAP发送协议：&lt;/p&gt;
+&lt;p&gt;POST /services/SoapMethod?WSDL HTTP/1.1
+Host: 220.211.1.12:8088
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.2.5
+Content-Type: text/xml; charset=utf-8
+SOAPAction: &amp;ldquo;urn:SoapMethod#ServiceMethod&amp;rdquo;
+Content-Length: 1297&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;调用方法：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;name
+参数名
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>kohana版企业站范例进行中</title>
         <link>https://kissjava.cn/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
         <pubDate>Sat, 02 May 2009 06:51:31 +0000</pubDate>
@@ -308,37 +369,6 @@ $this-&amp;gt;mp_cache-&amp;gt;delete($filename)
 &lt;a href=&#34;http://www.zendstudio.net/zend_studio-6_1-getting-start/&#34;&gt;http://www.zendstudio.net/zend_studio-6_1-getting-start/&lt;/a&gt;
 感谢&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;的工作，好淫啊 :)&lt;/p&gt;
 - https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>改进layout library，方便自定义layout</title>
-        <link>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
-        <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;CodeIgniter使用 layout library 简化视图布局&lt;!-- raw HTML omitted --&gt; 中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。
-library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。
-所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;function index() {
-    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
-    $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;function index() {
-    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
-    # 下面就是使用自定义的对象名 mytemp
-    $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ - kissjava.cn</description>
         </item>
     
     

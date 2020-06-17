@@ -13,6 +13,49 @@
     
     
         <item>
+        <title>swfupload在codeigniter中的应用</title>
+        <link>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+        <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ -&lt;p&gt;应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。&lt;/p&gt;
+&lt;p&gt;第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;搞定。&lt;/p&gt;
+&lt;p&gt;后来又碰到了第二个问题，在ie6下，上传后无法保存，一刷新才知道被踢出了，登录失效了。google百度之，在sina的一个blog里找到了方法，而且第一个问题他也碰到了。&lt;/p&gt;
+&lt;p&gt;这个问题，他的原文如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;问题2：带有session验证的后台，会导致上传后退出登陆的状况&lt;!-- raw HTML omitted --&gt;
+回答：
+一般方法1:swfuplaod在上传时，会新开一个进程，和原来的进程不一致，要解决这个问题，需要指定session_id，然后在登录页面判断，如果有post过来的session_id，那么就用函数session_id( $_POST[&amp;lsquo;PHP_SESSIONID&amp;rsquo;])指定一下。上传页的JS里面，可以获取当前的SESSION_ID的。（淡水注：适合普通的使用php自带session存储登录状态的情况；codeigniter不一样的。）&lt;/p&gt;
+&lt;p&gt;ci中的状态：一般情况下，因为诸如uploadify,swfupload采用的都是flash客户端，这样它们产生的useragent与用户使用浏览器的user-agent必然不同。所以，虽然用户登录了你的系统产生了一个session，但是当触发上传程序时会产生另一个session（在上述useragent选项开启的情况下）。&lt;/p&gt;
+&lt;p&gt;所以，不是session丢失了，而是当你上传文件时，CI为uploadify另外创建了一个session。&lt;/p&gt;
+&lt;p&gt;解决方法1：将$config[&amp;lsquo;sess_match_useragent&amp;rsquo;]设置成FALSE，重试。
+解决方法2（推荐）：为了安全起见，不建议使用第1条解决方案，而是使用另外的验证方法，比如在每次上传时，在url中附加一个token与服务器端的token比对（比如这个token可以是用户名的hash值）。具体实现方法请参考stblog的上传验证实现（使用的是swfupload）。~~~~~~我尝试了这个方法，重点在于，&lt;!-- raw HTML omitted --&gt;如果你的session类是放在autoload里自动加载的，那么，这样肯定是失败的，解决办法是，新建一个类，例如MY_Controller继承于CI_Controller,用于后台登陆，需要权限判断后台处理，讲upload类继承于CI_Controller这样的话，就不经过session类的验证了，当然上传还是得验证，不过可以用post_params传值进行验证&lt;!-- raw HTML omitted --&gt;：&lt;/p&gt;
+&lt;p&gt;示例:
+&lt;!-- raw HTML omitted --&gt;
+class Upload extends CI_Controller {
+//code&amp;hellip;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;code lang=&#39;php&#39;&amp;gt;
+class client_photo extends MY_Controller {
+    function __construct() {
+        parent::__construct();
+    }
+ function index() {
+    //code...
+ }
+}
+&amp;lt;/code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>Git安装使用手记</title>
         <link>https://kissjava.cn/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
         <pubDate>Fri, 03 Jun 2011 14:27:28 +0000</pubDate>
@@ -531,70 +574,6 @@ Shortest transaction:           0.05
 &lt;p&gt;So we&amp;rsquo;ve increased our output from 3 hits to 432 in 10 seconds. Not a bad boost, if I do say so myself. In a &amp;lsquo;real&amp;rsquo; application, my query calls would be in the model, but we can also avoid loading the models unless the cache is stale, which saves on an&lt;!-- raw HTML omitted --&gt;include()&lt;!-- raw HTML omitted --&gt;, and helps to keep CI breezing along even faster!&lt;/p&gt;
 &lt;p&gt;Have you checked out the new cached drivers in CI Reactor? If so, how do you find them stacking up with your applications needs?&lt;/p&gt;
 - https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>FirePHP,给力的调试工具</title>
-        <link>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
-        <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ -&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
-这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;FirePHPCore的lib包里有四个文件，后缀为php4的明显是适用php4的。&lt;/p&gt;
-&lt;p&gt;简单应用：
-&lt;!-- raw HTML omitted --&gt;
-require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
-//以下按照类型进行信息记录
-FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
-FB::info(&amp;lsquo;Info Message&amp;rsquo;);
-FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
-FB::error(&amp;lsquo;Error Message&amp;rsquo;);
-&lt;!-- raw HTML omitted --&gt;
-分组应用：
-&lt;!-- raw HTML omitted --&gt;
-require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
-FB::group(&amp;lsquo;Group A&amp;rsquo;); // 分组&lt;br&gt;
-//以下按照类型进行信息记录
-FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
-FB::info(&amp;lsquo;Info Message&amp;rsquo;);
-FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
-FB::error(&amp;lsquo;Error Message&amp;rsquo;);
-FB::groupEnd();&lt;/p&gt;
-&lt;p&gt;FB::group(&amp;lsquo;Group B&amp;rsquo;); // 分组&lt;br&gt;
-//以下按照类型进行信息记录
-FB::log(&amp;lsquo;Plain Message B&amp;rsquo;);
-FB::info(&amp;lsquo;Info Message B&amp;rsquo;);
-FB::warn(&amp;lsquo;Warn Message B&amp;rsquo;);
-FB::error(&amp;lsquo;Error Message B&amp;rsquo;);
-FB::groupEnd();
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;按table应用：
-&lt;!-- raw HTML omitted --&gt;
-require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
-$table[] = array(&amp;lsquo;1&amp;rsquo;, &amp;lsquo;2&amp;rsquo;, &amp;lsquo;3&amp;rsquo;);
-$table[] = array(&amp;lsquo;11&amp;rsquo;, &amp;lsquo;22&amp;rsquo;, &amp;lsquo;33&amp;rsquo;);
-$table[] = array(&amp;lsquo;111&amp;rsquo;, &amp;lsquo;222&amp;rsquo;, &amp;lsquo;333&amp;rsquo;);&lt;/p&gt;
-&lt;p&gt;FB:table(&amp;lsquo;The table&amp;rsquo;, $table);
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;好的，现在再说说如何与CodeIgniter结合使用。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;$this-&amp;gt;fb-&amp;gt;group(&#39;Group B&#39;); // 分组  
-//以下按照类型进行信息记录
-$this-&amp;gt;fb-&amp;gt;log(&#39;Plain Message B&#39;);
-$this-&amp;gt;fb-&amp;gt;info(&#39;Info Message B&#39;);
-$this-&amp;gt;fb-&amp;gt;warn(&#39;Warn Message B&#39;);
-$this-&amp;gt;fb-&amp;gt;error(&#39;Error Message B&#39;);
-$this-&amp;gt;fb-&amp;gt;groupEnd();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}
-&lt;!-- raw HTML omitted --&gt;
-效果：
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-完了，就是贴图太麻烦了:(&lt;/p&gt;- https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ - kissjava.cn</description>
         </item>
     
     

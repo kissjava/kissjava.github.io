@@ -13,6 +13,36 @@
     
     
         <item>
+        <title>关于我·关于站</title>
+        <link>https://kissjava.cn/about/</link>
+        <pubDate>Wed, 17 Jun 2020 15:18:01 +0800</pubDate>
+        
+        <guid>https://kissjava.cn/about/</guid>
+        <description>清风徐来 https://kissjava.cn/about/ -&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;
+&lt;p&gt;我叫 Michael.&lt;/p&gt;
+&lt;p&gt;总是乐此不疲或许是无法自拔的写代码&lt;/p&gt;
+&lt;h2 id=&#34;关于站&#34;&gt;关于站&lt;/h2&gt;
+&lt;p&gt;主要是一些编程类的博文&lt;/p&gt;
+&lt;p&gt;学习某个新技能时更新得勤快些&lt;/p&gt;
+&lt;p&gt;其他时间比较懒&lt;/p&gt;
+&lt;p&gt;目前主要是写&lt;code&gt;Golang&lt;/code&gt;,&lt;code&gt;Python&lt;/code&gt;以前是&lt;code&gt;php&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;原本安置在阿里国际的新手套餐&lt;/p&gt;
+&lt;p&gt;速度不错，价格适中&lt;/p&gt;
+&lt;p&gt;但是&lt;code&gt;2020/06/30&lt;/code&gt;新手套餐结束&lt;/p&gt;
+&lt;p&gt;于是&lt;/p&gt;
+&lt;p&gt;搬家到Github&lt;/p&gt;
+&lt;p&gt;顺便从Typecho转到Hugo&lt;/p&gt;
+&lt;h2 id=&#34;打赏&#34;&gt;打赏&lt;/h2&gt;
+&lt;p&gt;如果您愿意&lt;/p&gt;
+&lt;p&gt;如果您方便&lt;/p&gt;
+&lt;p&gt;可以请我喝杯可乐&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/images/wechatpay.jpg&#34; alt=&#34;微信打赏&#34;&gt;&lt;/p&gt;
+- https://kissjava.cn/about/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>macOS安装Ngnix php MySQL</title>
         <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
         <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
@@ -2665,86 +2695,6 @@ func main() {
 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定。&lt;/p&gt;
 - https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part11 Gorilla Session</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
-        <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;前面用了Gorilla的Cookie，Session也可以用他写的。
-首次访问get时，session没有村数据，显示empty result
-访问set时，会写入hello 和 world，然后再307临时重定向到get，会显示 hello world
-访问delete，会删除session，再307到get显示empty result。&lt;/p&gt;
-&lt;p&gt;demo 采用cookie来存储session数据，也支持其他多种方式存储。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/gorilla/sessions&amp;quot;
-	&amp;quot;github.com/labstack/echo&amp;quot;
-)
-
-const SESSION_ID = &amp;quot;id&amp;quot;
-
-func newCookieStore() *sessions.CookieStore {
-	authKey := []byte(&amp;quot;my-auth-key-very-secret&amp;quot;)
-	encryptionKey := []byte(&amp;quot;my-encryption-key-very-secret123&amp;quot;)
-
-	store := sessions.NewCookieStore(authKey, encryptionKey)
-	store.Options.Path = &amp;quot;/&amp;quot;
-	store.Options.MaxAge = 86400 * 7
-	store.Options.HttpOnly = true
-
-	return store
-}
-
-var store = newCookieStore()
-
-func main() {
-	e := echo.New()
-
-	e.GET(&amp;quot;/get&amp;quot;, func(c echo.Context) error {
-		session, _ := store.Get(c.Request(), SESSION_ID)
-
-		if len(session.Values) == 0 {
-			return c.String(http.StatusOK, &amp;quot;empty result&amp;quot;)
-		}
-
-		return c.String(http.StatusOK, fmt.Sprintf(
-			&amp;quot;%s %s&amp;quot;,
-			session.Values[&amp;quot;message1&amp;quot;],
-			session.Values[&amp;quot;message2&amp;quot;],
-		))
-	})
-
-	e.GET(&amp;quot;/set&amp;quot;, func(c echo.Context) error {
-		session, _ := store.Get(c.Request(), SESSION_ID)
-		session.Values[&amp;quot;message1&amp;quot;] = &amp;quot;hello&amp;quot;
-		session.Values[&amp;quot;message2&amp;quot;] = &amp;quot;world&amp;quot;
-		session.Save(c.Request(), c.Response())
-
-		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
-	})
-
-	e.GET(&amp;quot;/delete&amp;quot;, func(c echo.Context) error {
-		session, _ := store.Get(c.Request(), SESSION_ID)
-		session.Options.MaxAge = -1
-		session.Save(c.Request(), c.Response())
-
-		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
-	})
-
-	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
-}
-
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ - kissjava.cn</description>
         </item>
     
     

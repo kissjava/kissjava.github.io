@@ -13,6 +13,48 @@
     
     
         <item>
+        <title>Nginx 反向代理并替换内容的Demo</title>
+        <link>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
+        <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ -&lt;p&gt;我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。
+server                                                                                                                    &lt;br&gt;
+{                                                                                                                     &lt;br&gt;
+listen 80;                                                                                                        &lt;br&gt;
+#listen [::]:80;                                                                                                  &lt;br&gt;
+server_name mikeyang.me ;                                                                                         &lt;br&gt;
+index index.html index.htm index.php default.html default.htm default.php;                                        &lt;br&gt;
+root  /home/wwwroot/mikeyang.me;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    include rewrite/none.conf;                                                                                           
+    #error_page   404   /404.html;                                                                                       
+                                                                                                                         
+    # Deny access to PHP files in specific directory                                                                     
+    #location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ { deny all; }                                          
+                                                                                                                         
+    # 以下开始是反向代理配置
+    location / {                                                                                                         
+            proxy_pass      https://kissjava.cn/about.html;                                                              
+            proxy_redirect  off;                                                                                         
+            proxy_set_header        X-Real-IP       $remote_addr;                                                        
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;                                          
+            # 以下是替换内容，可以继续增加条目，也支持正则，可以看官方文档                                                              
+            sub_filter &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;                                              
+                    kissjava.cn                    &amp;lt;/a&amp;gt;&#39; &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;mikeyang.me&amp;lt;/a&amp;gt;&#39;;
+            # 以下说明只替换一次                                                                                    
+            sub_filter_once on;                                                                                         
+    }  
+    #...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ok，尝试一下吧。&lt;a href=&#34;http://mikeyang.me&#34;&gt;mikeyang.me&lt;/a&gt;
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/08/1465588119.png&#34; alt=&#34;nginx-proxy-demo.png&#34;&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>SSL去掉了，又加上了</title>
         <link>https://kissjava.cn/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</link>
         <pubDate>Mon, 20 Aug 2018 16:05:00 +0000</pubDate>
@@ -640,60 +682,6 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     sys.exit(app.exec_())
 &lt;/code&gt;&lt;/pre&gt;
 - https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Visual C# 中的事件及委托</title>
-        <link>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
-        <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;visual-studio-logo-800x450.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。&lt;/p&gt;
-&lt;p&gt;委托类别定义一个方法签名，可将相容签名的方法与委托相关联。&lt;/p&gt;
-&lt;p&gt;C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;namespace WpfApplication1
-{
-    /// &amp;lt;summary&amp;gt;
-    /// Interaction logic for MainWindow.xaml
-    /// &amp;lt;/summary&amp;gt;
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            var timer = new System.Timers.Timer(1000);
-            timer.Start();
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(TimerElapsedHandler);
-
-        }
-
-        void TimerElapsedHandler(object sender, EventArgs e)
-        {
-            MessageBox.Show(&amp;quot;Timer has Elapsed&amp;quot;);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。&lt;/p&gt;
-&lt;p&gt;其实委托关联可以简写为&lt;code&gt;timer.Elapsed += TimerElapsedHandler;&lt;/code&gt;，取消事件订阅&lt;code&gt;timer.Elapsed -= TimerElapsedHandler;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。&lt;/p&gt;
-&lt;p&gt;2017年09月11日 更新一下匿名的两张写法：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;timer.Elapsed += delegate(object sender, System.Timers.ElapsedEventArgs e)
-{
-    MessageBox.Show(&amp;quot;Timer has Elapsed&amp;quot;);
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;或是直接次采用剪头语法来写&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;timer.Elapsed += (object sender, System.Timers.ElapsedEventArgs e) =&amp;gt;
-{
-    MessageBox.Show(&amp;quot;Timer has Elapsed.&amp;quot;);
-};
-&lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.cn/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/ - kissjava.cn</description>
         </item>
     
     

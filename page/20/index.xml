@@ -13,6 +13,37 @@
     
     
         <item>
+        <title>改进layout library，方便自定义layout</title>
+        <link>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
+        <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;CodeIgniter使用 layout library 简化视图布局&lt;!-- raw HTML omitted --&gt; 中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。
+library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。
+所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;function index() {
+    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
+    $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;function index() {
+    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
+    # 下面就是使用自定义的对象名 mytemp
+    $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>ADODB的简单使用</title>
         <link>https://kissjava.cn/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
@@ -320,50 +351,6 @@ $this-&amp;gt;db-&amp;gt;where($array);
 &lt;!-- raw HTML omitted --&gt;
 出处：http://www.linvo2008.cn/blog/?p=437&lt;/p&gt;
 - https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>家</title>
-        <link>https://kissjava.cn/posts/%E5%AE%B6/</link>
-        <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%AE%B6/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%B6/ -&lt;p&gt;嗯,163拨号上来,不是一般的慢阿.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼东北房间&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼东北房间壁柜&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼过道&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼客厅&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼客厅&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼主卫&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;2楼主卧&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;小餐厅&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;仓库(1楼东北房间)&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;厨房&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;灯笼&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;楼梯&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;书房&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;一楼过道&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;一楼客厅&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%AE%B6/ - kissjava.cn</description>
         </item>
     
     

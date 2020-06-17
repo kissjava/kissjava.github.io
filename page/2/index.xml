@@ -13,6 +13,86 @@
     
     
         <item>
+        <title>Demo 学 Echo Part11 Gorilla Session</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
+        <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;前面用了Gorilla的Cookie，Session也可以用他写的。
+首次访问get时，session没有村数据，显示empty result
+访问set时，会写入hello 和 world，然后再307临时重定向到get，会显示 hello world
+访问delete，会删除session，再307到get显示empty result。&lt;/p&gt;
+&lt;p&gt;demo 采用cookie来存储session数据，也支持其他多种方式存储。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/gorilla/sessions&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+const SESSION_ID = &amp;quot;id&amp;quot;
+
+func newCookieStore() *sessions.CookieStore {
+	authKey := []byte(&amp;quot;my-auth-key-very-secret&amp;quot;)
+	encryptionKey := []byte(&amp;quot;my-encryption-key-very-secret123&amp;quot;)
+
+	store := sessions.NewCookieStore(authKey, encryptionKey)
+	store.Options.Path = &amp;quot;/&amp;quot;
+	store.Options.MaxAge = 86400 * 7
+	store.Options.HttpOnly = true
+
+	return store
+}
+
+var store = newCookieStore()
+
+func main() {
+	e := echo.New()
+
+	e.GET(&amp;quot;/get&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+
+		if len(session.Values) == 0 {
+			return c.String(http.StatusOK, &amp;quot;empty result&amp;quot;)
+		}
+
+		return c.String(http.StatusOK, fmt.Sprintf(
+			&amp;quot;%s %s&amp;quot;,
+			session.Values[&amp;quot;message1&amp;quot;],
+			session.Values[&amp;quot;message2&amp;quot;],
+		))
+	})
+
+	e.GET(&amp;quot;/set&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+		session.Values[&amp;quot;message1&amp;quot;] = &amp;quot;hello&amp;quot;
+		session.Values[&amp;quot;message2&amp;quot;] = &amp;quot;world&amp;quot;
+		session.Save(c.Request(), c.Response())
+
+		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
+	})
+
+	e.GET(&amp;quot;/delete&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+		session.Options.MaxAge = -1
+		session.Save(c.Request(), c.Response())
+
+		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>Demo 学 Echo Part10 安全的Cookie</title>
         <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
         <pubDate>Sat, 17 Aug 2019 19:38:14 +0000</pubDate>
@@ -1019,96 +1099,6 @@ func main() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part1 Routing</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
-        <pubDate>Sat, 17 Aug 2019 09:53:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;terminal.png&#34;&gt;
-echo的路由&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;net/http&amp;quot;
-	&amp;quot;strings&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-)
-
-type M map[string]interface{}
-
-func main() {
-	r := echo.New()
-
-	r.GET(&amp;quot;/&amp;quot;, func(ctx echo.Context) error {
-		data := &amp;quot;Hello from /index&amp;quot;
-		return ctx.String(http.StatusOK, data)
-	})
-
-	r.GET(&amp;quot;/html&amp;quot;, func(ctx echo.Context) error {
-		data := &amp;quot;Hello from /html&amp;quot;
-		return ctx.HTML(http.StatusOK, data)
-	})
-
-	r.GET(&amp;quot;/index&amp;quot;, func(ctx echo.Context) error {
-		return ctx.Redirect(http.StatusTemporaryRedirect, &amp;quot;/&amp;quot;)
-	})
-
-	r.GET(&amp;quot;/json&amp;quot;, func(ctx echo.Context) error {
-		data := M{&amp;quot;Message&amp;quot;: &amp;quot;Hello&amp;quot;, &amp;quot;Counter&amp;quot;: 2}
-		return ctx.JSON(http.StatusOK, data)
-	})
-
-	// http://localhost:9000/page1?name=jayce
-	r.GET(&amp;quot;/page1&amp;quot;, func(ctx echo.Context) error {
-		name := ctx.QueryParam(&amp;quot;name&amp;quot;)
-		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
-
-		return ctx.String(http.StatusOK, data)
-	})
-
-	// http://localhost:9000/page2/jack
-	r.GET(&amp;quot;/page2/:name&amp;quot;, func(ctx echo.Context) error {
-		name := ctx.Param(&amp;quot;name&amp;quot;)
-		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
-
-		return ctx.String(http.StatusOK, data)
-	})
-
-	// http://localhost:9000/page3/tim/need/some/sleep
-	r.GET(&amp;quot;/page3/:name/*&amp;quot;, func(ctx echo.Context) error {
-		name := ctx.Param(&amp;quot;name&amp;quot;)
-		message := ctx.Param(&amp;quot;*&amp;quot;)
-
-		data := fmt.Sprintf(&amp;quot;Hello %s, I have message for you: %s&amp;quot;, name, message)
-
-		return ctx.String(http.StatusOK, data)
-	})
-
-	//curl -X POST -F name=damian -F message=angry http://localhost:9000/page4
-	r.POST(&amp;quot;/page4&amp;quot;, func(ctx echo.Context) error {
-		name := ctx.FormValue(&amp;quot;name&amp;quot;)
-		message := ctx.FormValue(&amp;quot;message&amp;quot;)
-
-		data := fmt.Sprintf(
-			&amp;quot;Hello %s, I have message for you: %s&amp;quot;,
-			name,
-			strings.Replace(message, &amp;quot;/&amp;quot;, &amp;quot;&amp;quot;, 1),
-		)
-
-		return ctx.String(http.StatusOK, data)
-	})
-
-	r.Start(&amp;quot;:9000&amp;quot;)
-}
-
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/ - kissjava.cn</description>
         </item>
     
     

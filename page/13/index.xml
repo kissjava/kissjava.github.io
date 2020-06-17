@@ -13,6 +13,70 @@
     
     
         <item>
+        <title>FirePHP,给力的调试工具</title>
+        <link>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ -&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
+这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;FirePHPCore的lib包里有四个文件，后缀为php4的明显是适用php4的。&lt;/p&gt;
+&lt;p&gt;简单应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message&amp;rsquo;);
+&lt;!-- raw HTML omitted --&gt;
+分组应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+FB::group(&amp;lsquo;Group A&amp;rsquo;); // 分组&lt;br&gt;
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message&amp;rsquo;);
+FB::groupEnd();&lt;/p&gt;
+&lt;p&gt;FB::group(&amp;lsquo;Group B&amp;rsquo;); // 分组&lt;br&gt;
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message B&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message B&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message B&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message B&amp;rsquo;);
+FB::groupEnd();
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;按table应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+$table[] = array(&amp;lsquo;1&amp;rsquo;, &amp;lsquo;2&amp;rsquo;, &amp;lsquo;3&amp;rsquo;);
+$table[] = array(&amp;lsquo;11&amp;rsquo;, &amp;lsquo;22&amp;rsquo;, &amp;lsquo;33&amp;rsquo;);
+$table[] = array(&amp;lsquo;111&amp;rsquo;, &amp;lsquo;222&amp;rsquo;, &amp;lsquo;333&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;FB:table(&amp;lsquo;The table&amp;rsquo;, $table);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;好的，现在再说说如何与CodeIgniter结合使用。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;$this-&amp;gt;fb-&amp;gt;group(&#39;Group B&#39;); // 分组  
+//以下按照类型进行信息记录
+$this-&amp;gt;fb-&amp;gt;log(&#39;Plain Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;info(&#39;Info Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;warn(&#39;Warn Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;error(&#39;Error Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;groupEnd();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+效果：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+完了，就是贴图太麻烦了:(&lt;/p&gt;- https://kissjava.cn/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>Zend Framework安裝</title>
         <link>https://kissjava.cn/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
         <pubDate>Thu, 13 Jan 2011 22:59:27 +0000</pubDate>
@@ -264,21 +328,6 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;去除安装文件夹下的 avgfree_zh.mht , avgmwdef_zh.mht , avgresf.dll;这样就更好用了，其他非中文系统，注意选择自己对应的语言版本。嗯，不解释。&lt;/p&gt;
 - https://kissjava.cn/posts/avg-free-edition-2011/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Access Control Library for Codeigniter</title>
-        <link>https://kissjava.cn/posts/access-control-library-for-codeigniter/</link>
-        <pubDate>Thu, 19 Aug 2010 20:21:54 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/access-control-library-for-codeigniter/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/access-control-library-for-codeigniter/ -&lt;p&gt;先检讨。比较浮躁，先前帖的&lt;!-- raw HTML omitted --&gt;Codeigniter ACL library&lt;!-- raw HTML omitted --&gt; 有较大的bug。配置和使用方法也没有说太多。今天正好用到，调试了一下。重新发布。嗯，这个也是淡水在ci在官网论坛上挖到的。还有个autoacl的，也是基于这个修改的。不过淡水觉得太耦合了，而且繁琐了。还是没有采用。&lt;/p&gt;
-&lt;p&gt;先来library：
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/access-control-library-for-codeigniter/ - kissjava.cn</description>
         </item>
     
     

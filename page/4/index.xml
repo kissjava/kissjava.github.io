@@ -13,6 +13,124 @@
     
     
         <item>
+        <title>在Go中读取和写入文件</title>
+        <link>https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;在Go中读取和写入文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。&lt;/p&gt;
+&lt;p&gt;##读取文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;main.go&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+// 导入我们需要的2个模块
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+)
+
+func main() {
+    // 读取文件 localfile.data 的内容
+    data, err := ioutil.ReadFile(&amp;quot;localfile.data&amp;quot;)
+    // 如果我们的程序无法读取该文件
+    // 打印出它不能读取的原因
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    // 如果读取成功，将内容打印为字符串
+    fmt.Print(string(data))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##将文件写入新文件
+我们已经介绍了Go中的文件读取，现在是时候看看创建和写入我们自己的文件了！
+代码说话：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+)
+
+func main() {
+
+    mydata := []byte(&amp;quot;All the data I wish to write to a file&amp;quot;)
+
+    // 如果不成功，WriteFile方法返回错误
+    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
+    // 处理错误，打印出来
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很简单，先定义来字节数组；写入到myfile.data，再去读取它并打印输出。&lt;/p&gt;
+&lt;p&gt;##写入已有文件
+写入信息到现有文件，会发生什么？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+
+    mydata := []byte(&amp;quot;All the data I wish to write to a file\n&amp;quot;)
+
+    // 如果不成功，WriteFile方法返回错误
+    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+    f, err := os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)
+    if err != nil {
+        panic(err)
+    }
+    defer f.Close()
+
+    if _, err = f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;); err != nil {
+        panic(err)
+    }
+
+    data, err = ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行看看。
+&lt;code&gt;ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)&lt;/code&gt;会清空已有内容，并写入新的内容；
+&lt;code&gt;os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)&lt;/code&gt;和&lt;code&gt;f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;)&lt;/code&gt;会以追加的方式打开文件，并在文件末尾追加内容。&lt;/p&gt;
+&lt;p&gt;##文件权限
+在操作文件时，文件权限是比较重要的，特别是写入和追加内容时。&lt;/p&gt;
+&lt;p&gt;##小结
+就是文件的读取和写入，比较简单。&lt;/p&gt;
+- https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>Go的接口</title>
         <link>https://kissjava.cn/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
         <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
@@ -699,48 +817,6 @@ net.ipv4.tcp_available_congestion_control = bbr cubic reno
 &lt;p&gt;看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/09/2395988471.png&#34; alt=&#34;setDefaultInputSource.png&#34;&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Nginx 反向代理并替换内容的Demo</title>
-        <link>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
-        <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ -&lt;p&gt;我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。
-server                                                                                                                    &lt;br&gt;
-{                                                                                                                     &lt;br&gt;
-listen 80;                                                                                                        &lt;br&gt;
-#listen [::]:80;                                                                                                  &lt;br&gt;
-server_name mikeyang.me ;                                                                                         &lt;br&gt;
-index index.html index.htm index.php default.html default.htm default.php;                                        &lt;br&gt;
-root  /home/wwwroot/mikeyang.me;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    include rewrite/none.conf;                                                                                           
-    #error_page   404   /404.html;                                                                                       
-                                                                                                                         
-    # Deny access to PHP files in specific directory                                                                     
-    #location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ { deny all; }                                          
-                                                                                                                         
-    # 以下开始是反向代理配置
-    location / {                                                                                                         
-            proxy_pass      https://kissjava.cn/about.html;                                                              
-            proxy_redirect  off;                                                                                         
-            proxy_set_header        X-Real-IP       $remote_addr;                                                        
-            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;                                          
-            # 以下是替换内容，可以继续增加条目，也支持正则，可以看官方文档                                                              
-            sub_filter &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;                                              
-                    kissjava.cn                    &amp;lt;/a&amp;gt;&#39; &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;mikeyang.me&amp;lt;/a&amp;gt;&#39;;
-            # 以下说明只替换一次                                                                                    
-            sub_filter_once on;                                                                                         
-    }  
-    #...
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ok，尝试一下吧。&lt;a href=&#34;http://mikeyang.me&#34;&gt;mikeyang.me&lt;/a&gt;
-&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/08/1465588119.png&#34; alt=&#34;nginx-proxy-demo.png&#34;&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ - kissjava.cn</description>
         </item>
     
     

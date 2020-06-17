@@ -13,6 +13,23 @@
     
     
         <item>
+        <title>完成第一个基于python的GUI程序</title>
+        <link>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
+        <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ -&lt;p&gt;上图先&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;采用wxpython。涉及到多线程，socket。&lt;/p&gt;
+&lt;p&gt;耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。&lt;/p&gt;
+&lt;p&gt;程序写得一般，原因是没有重复利用python的一些语法特色，应可以写得更加pythonic&lt;/p&gt;
+&lt;p&gt;开始用php写，但是无法解决多线程同时监控，弃之。&lt;/p&gt;
+- https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>python虚拟环境virtualenv</title>
         <link>https://kissjava.cn/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
         <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
@@ -512,21 +529,6 @@ d:mongodbbin&amp;gt;mongod.exe -dbpath d:mongodbdata
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>web.py尝鲜时遭遇no module named MySQLdb</title>
-        <link>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
-        <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ -&lt;p&gt;python看了好一阵了，一直没有突破。挤了点时间折腾web.py。&lt;/p&gt;
-&lt;p&gt;下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。&lt;/p&gt;
-&lt;p&gt;google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。&lt;/p&gt;
-&lt;p&gt;这里有下。http://www.lfd.uci.edu/~gohlke/pythonlibs/ 里面还有好多的。&lt;/p&gt;
-- https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ - kissjava.cn</description>
         </item>
     
     

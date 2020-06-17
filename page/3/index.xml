@@ -13,6 +13,96 @@
     
     
         <item>
+        <title>Demo 学 Echo Part1 Routing</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
+        <pubDate>Sat, 17 Aug 2019 09:53:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;terminal.png&#34;&gt;
+echo的路由&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;strings&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+type M map[string]interface{}
+
+func main() {
+	r := echo.New()
+
+	r.GET(&amp;quot;/&amp;quot;, func(ctx echo.Context) error {
+		data := &amp;quot;Hello from /index&amp;quot;
+		return ctx.String(http.StatusOK, data)
+	})
+
+	r.GET(&amp;quot;/html&amp;quot;, func(ctx echo.Context) error {
+		data := &amp;quot;Hello from /html&amp;quot;
+		return ctx.HTML(http.StatusOK, data)
+	})
+
+	r.GET(&amp;quot;/index&amp;quot;, func(ctx echo.Context) error {
+		return ctx.Redirect(http.StatusTemporaryRedirect, &amp;quot;/&amp;quot;)
+	})
+
+	r.GET(&amp;quot;/json&amp;quot;, func(ctx echo.Context) error {
+		data := M{&amp;quot;Message&amp;quot;: &amp;quot;Hello&amp;quot;, &amp;quot;Counter&amp;quot;: 2}
+		return ctx.JSON(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page1?name=jayce
+	r.GET(&amp;quot;/page1&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.QueryParam(&amp;quot;name&amp;quot;)
+		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page2/jack
+	r.GET(&amp;quot;/page2/:name&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.Param(&amp;quot;name&amp;quot;)
+		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page3/tim/need/some/sleep
+	r.GET(&amp;quot;/page3/:name/*&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.Param(&amp;quot;name&amp;quot;)
+		message := ctx.Param(&amp;quot;*&amp;quot;)
+
+		data := fmt.Sprintf(&amp;quot;Hello %s, I have message for you: %s&amp;quot;, name, message)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	//curl -X POST -F name=damian -F message=angry http://localhost:9000/page4
+	r.POST(&amp;quot;/page4&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.FormValue(&amp;quot;name&amp;quot;)
+		message := ctx.FormValue(&amp;quot;message&amp;quot;)
+
+		data := fmt.Sprintf(
+			&amp;quot;Hello %s, I have message for you: %s&amp;quot;,
+			name,
+			strings.Replace(message, &amp;quot;/&amp;quot;, &amp;quot;&amp;quot;, 1),
+		)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	r.Start(&amp;quot;:9000&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part1-routing/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>golang echo 入门</title>
         <link>https://kissjava.cn/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
         <pubDate>Thu, 15 Aug 2019 14:30:27 +0000</pubDate>
@@ -1006,124 +1096,6 @@ func main() {
 &lt;p&gt;##小结
 学习来bufio的一些用法，还穿插了一些流程控制语句，if，for，switch。&lt;/p&gt;
 - https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>在Go中读取和写入文件</title>
-        <link>https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
-        <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;在Go中读取和写入文件&#34;&gt;&lt;/p&gt;
-&lt;p&gt;我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。&lt;/p&gt;
-&lt;p&gt;##读取文件&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;main.go&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-// 导入我们需要的2个模块
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;io/ioutil&amp;quot;
-)
-
-func main() {
-    // 读取文件 localfile.data 的内容
-    data, err := ioutil.ReadFile(&amp;quot;localfile.data&amp;quot;)
-    // 如果我们的程序无法读取该文件
-    // 打印出它不能读取的原因
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    // 如果读取成功，将内容打印为字符串
-    fmt.Print(string(data))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##将文件写入新文件
-我们已经介绍了Go中的文件读取，现在是时候看看创建和写入我们自己的文件了！
-代码说话：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;io/ioutil&amp;quot;
-)
-
-func main() {
-
-    mydata := []byte(&amp;quot;All the data I wish to write to a file&amp;quot;)
-
-    // 如果不成功，WriteFile方法返回错误
-    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
-    // 处理错误，打印出来
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    fmt.Print(string(data))
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很简单，先定义来字节数组；写入到myfile.data，再去读取它并打印输出。&lt;/p&gt;
-&lt;p&gt;##写入已有文件
-写入信息到现有文件，会发生什么？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;io/ioutil&amp;quot;
-    &amp;quot;os&amp;quot;
-)
-
-func main() {
-
-    mydata := []byte(&amp;quot;All the data I wish to write to a file\n&amp;quot;)
-
-    // 如果不成功，WriteFile方法返回错误
-    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    fmt.Print(string(data))
-
-    f, err := os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)
-    if err != nil {
-        panic(err)
-    }
-    defer f.Close()
-
-    if _, err = f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;); err != nil {
-        panic(err)
-    }
-
-    data, err = ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    fmt.Print(string(data))
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行看看。
-&lt;code&gt;ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)&lt;/code&gt;会清空已有内容，并写入新的内容；
-&lt;code&gt;os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)&lt;/code&gt;和&lt;code&gt;f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;)&lt;/code&gt;会以追加的方式打开文件，并在文件末尾追加内容。&lt;/p&gt;
-&lt;p&gt;##文件权限
-在操作文件时，文件权限是比较重要的，特别是写入和追加内容时。&lt;/p&gt;
-&lt;p&gt;##小结
-就是文件的读取和写入，比较简单。&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     

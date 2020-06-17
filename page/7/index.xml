@@ -13,6 +13,54 @@
     
     
         <item>
+        <title>spec demo</title>
+        <link>https://kissjava.cn/posts/spec-demo/</link>
+        <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/spec-demo/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/spec-demo/ -&lt;pre&gt;&lt;code&gt;# -*- mode: python -*-
+a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],
+             pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],
+             hiddenimports=[],
+             hookspath=None,
+             runtime_hooks=None)
+pyz = PYZ(a.pure)
+exe = EXE(pyz,
+          a.scripts,
+          exclude_binaries=True,
+          name=&#39;dbTools.exe&#39;,
+          debug=False,
+          strip=None,
+          upx=True,
+          console=False , version=&#39;d:\\Work\\dbTools\\v.txt&#39;, icon=&#39;d:\\Work\\dbTools\\dbTools.ico&#39;)
+dict_tree = Tree(&#39;d:\\Work\\dbTools\\backup&#39;, prefix = &#39;backup&#39;)
+dict_tree += Tree(&#39;d:\\Work\\dbTools\\test&#39;, prefix = &#39;test&#39;)
+dict_tree += [
+                (&#39;dbTools.ico&#39;, &#39;d:\\Work\\dbTools\\dbTools.ico&#39;, &#39;DATA&#39;),
+                (&#39;appcfg.dll&#39;,&#39;d:\\Work\\dbTools\\appcfg.dll&#39;,&#39;DATA&#39;),
+                (&#39;backup.dll&#39;,&#39;d:\\Work\\dbTools\\backup.dll&#39;,&#39;DATA&#39;),
+                (&#39;mysqlr.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlr.exe&#39;,&#39;DATA&#39;),
+                (&#39;mysqlb.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlb.exe&#39;,&#39;DATA&#39;)
+               ]
+coll = COLLECT(exe,
+               a.binaries,
+               dict_tree,
+               a.zipfiles,
+               a.datas,
+               strip=None,
+               upx=True,
+               name=&#39;dbTools&#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cmd&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。&lt;/p&gt;
+&lt;p&gt;2015年10月23日11:22:11 update：
+pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择&lt;/p&gt;
+- https://kissjava.cn/posts/spec-demo/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>用Homebrew搞定MySQL-python</title>
         <link>https://kissjava.cn/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
         <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
@@ -750,88 +798,6 @@ PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.i
 &lt;p&gt;和easy_install安装后的使用方法几乎一样。
 嗯，没多少干货。2014了，随便写点，证明一下还在喘气。&lt;/p&gt;
 - https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Python MySQLdb模块的使用</title>
-        <link>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;pre&gt;&lt;code&gt;#-*- encoding: utf-8 -*-
-
-import os, sys, string
-import MySQLdb
-
-# 连接数据库　
-try:
-    conn = MySQLdb.connect(host=&#39;localhost&#39;,user=&#39;root&#39;,passwd=&#39;xxxx&#39;,db=&#39;test1&#39;)
-except Exception, e:
-    print e
-    sys.exit()
-
-# 获取cursor对象来进行操作
-
-cursor = conn.cursor()# 查询时返回元组
-#cursor = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)# 查询时返回字典
-
-# 创建表
-sql = &amp;quot;create table if not exists test1(name varchar(128) primary key, age int(4))&amp;quot;
-cursor.execute(sql)
-# 插入数据
-sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;zhaowei&amp;quot;, 23)
-try:
-    cursor.execute(sql)
-except Exception, e:
-    print e
-
-sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;张三&amp;quot;, 21)
-try:
-    cursor.execute(sql)
-except Exception, e:
-    print e
-# 插入多条
-
-sql = &amp;quot;insert into test1(name, age) values (%s, %s)&amp;quot; 
-val = ((&amp;quot;李四&amp;quot;, 24), (&amp;quot;王五&amp;quot;, 25), (&amp;quot;洪六&amp;quot;, 26))
-try:
-    cursor.executemany(sql, val)
-except Exception, e:
-    print e
-
-#查询出数据
-sql = &amp;quot;select * from test1&amp;quot;
-cursor.execute(sql)
-alldata = cursor.fetchall()
-# 如果有数据返回，就循环输出, alldata是有个二维的列表
-if alldata:
-    for rec in alldata:
-        print rec[0], rec[1]
-
-#更新    
-sql = &amp;quot;update test1 set name=%s where age=23&amp;quot;   
-param = (&amp;quot;赵薇&amp;quot;)
-try:
-    cursor.execute(sql,param)    
-except Exception, e:
-    print e  
-   
-#删除    
-sql = &amp;quot;delete from test1 where name=%s&amp;quot;   
-param =(&amp;quot;赵薇&amp;quot;)  
-try:
-    cursor.execute(sql,param)    
-except Exception, e:
-    print e  
-
-conn.commit()#提交，否则可能不会提交到db生效
-
-cursor.close()
-
-conn.close()&lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     

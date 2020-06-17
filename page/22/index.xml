@@ -13,6 +13,23 @@
     
     
         <item>
+        <title>适合Programmer的字体Monaco</title>
+        <link>https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
+        <pubDate>Thu, 13 Nov 2008 09:33:41 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/ -&lt;p&gt;以前都是用ms自带的Consolas。
+看到CodeIgniter视频上Textmate里的字体蛮好看的，于是就开始了寻宝之旅。现在终于找到了，她就是Monaco。
+贴两个效果图看看
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+字体下载：&lt;!-- raw HTML omitted --&gt;monaco&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
         <link>https://kissjava.cn/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
         <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
@@ -248,126 +265,6 @@ PRIMARY KEY  (&lt;code&gt;id&lt;/code&gt;)
 &lt;p&gt;算了，也只是唠叨一下，也无力去改变什么。日子还是一样的过，只能自己牢记自己炎黄根吧。&lt;/p&gt;
 &lt;p&gt;有个网友说得好，一群盗墓贼，可笑。&lt;/p&gt;
 - https://kissjava.cn/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>优化CodeIgniter性能</title>
-        <link>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
-        <pubDate>Sun, 19 Oct 2008 10:15:20 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/ -&lt;p&gt;原文《Optimizing and Scaling your CodeIgniter Application - with Benchmarks!》淡水这里只是用中文整理一下。
-首先，是个控制器，一般的标准的写法如下：
-&lt;!-- raw HTML omitted --&gt;
-function index()
-{
-$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$links = &#39;&#39;;
-
-if ( $query-&amp;gt;num_rows &amp;gt; 0)
-{
-    foreach ($query-&amp;gt;result_array() as $page):
-	
-        $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;;
-        $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;;
-	
-    endforeach;
-	
-    $data[&#39;links&#39;] = $links;
-}
-
-for ($i=0; $i &amp;lt; 10; $i++)
-{
-    $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;);
-    $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1);
-	
-    if ( $query-&amp;gt;num_rows == 1 )
-    {
-        $row = $query-&amp;gt;row_array();
-        $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]);
-		
-        $data[&#39;body&#39;] = $row[&#39;body&#39;];
-    }
-}
-
-$this-&amp;gt;load-&amp;gt;view(&#39;welcome2&#39;, $data);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}
-&lt;!-- raw HTML omitted --&gt;
-视图文件类似以下：
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;把循环结果赋给变量&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-foreach ($query-&amp;gt;result_array() as $page):
-&lt;!-- raw HTML omitted --&gt;
-修改为:
-&lt;!-- raw HTML omitted --&gt;
-$pages = $query-&amp;gt;result_array();
-foreach ($pages as $page):
-&lt;!-- raw HTML omitted --&gt;
-Requests per second:    46.75 [#/sec] (mean)
-不错，有了小小的进步。快了1.7请求每秒。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;使用Memcache&lt;!-- raw HTML omitted --&gt;
-用缓存对象的王者，Memcache。我们需要修改一下控制器的代码。
-&lt;!-- raw HTML omitted --&gt;
-$memcache = new Memcache;
-$memcache-&amp;gt;connect(&amp;lsquo;localhost&amp;rsquo;, 11211) or die (&amp;ldquo;Could not connect&amp;rdquo;);
-$data = $memcache-&amp;gt;get(&amp;lsquo;view_data&amp;rsquo;);&lt;/p&gt;
-&lt;p&gt;if ( !$data )
-{
-$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$links = &#39;&#39;;
-
-if ( $query-&amp;gt;num_rows &amp;gt; 0)
-{
-    $pages = $query-&amp;gt;result_array();
-
-    foreach ($pages as $page):
-
-        $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;;
-        $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;;
-
-    endforeach;
-
-    $data[&#39;links&#39;] = $links;
-}
-
-for ($i=0; $i &amp;lt; 10; $i++)
-{
-    $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;);
-    $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1);
-
-    if ( $query-&amp;gt;num_rows == 1 )
-    {
-        $row = $query-&amp;gt;row_array();
-        $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]);
-		
-        $data[&#39;body&#39;] = $row[&#39;body&#39;];
-    }
-}
-
-$memcache-&amp;gt;set(&#39;view_data&#39;, $data, false, 3600) or die (&amp;quot;Failed to save data at the server&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;welcome2&amp;rsquo;, $data);
-&lt;!-- raw HTML omitted --&gt;
-速度更快了，但是还是进步不是太多。怎样才能更快呢？
-&lt;!-- raw HTML omitted --&gt;eAccelerator&lt;!-- raw HTML omitted --&gt;
-添加eAccelerator扩展，确实好很多。还有吗？
-&lt;!-- raw HTML omitted --&gt;CodeIgniter Output Cachining&lt;!-- raw HTML omitted --&gt;
-CI的output cache使用比较容易
-&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;output-&amp;gt;cache(3600);&lt;!-- raw HTML omitted --&gt;
-160.73 requests per second，已经有了很好的改善，但是我不会停止：）
-&lt;!-- raw HTML omitted --&gt;Output Caching + eAccelerator&lt;!-- raw HTML omitted --&gt;
-当她们同时启用时，Requests per second:    389.84 [#/sec] (mean)。
-下图是这次测试的统计
-[caption id=&amp;quot;attachment_93&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;codeigniter_benchmark_results&amp;rdquo;]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[/caption]&lt;/p&gt;
-- https://kissjava.cn/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/ - kissjava.cn</description>
         </item>
     
     

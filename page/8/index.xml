@@ -13,6 +13,88 @@
     
     
         <item>
+        <title>Python MySQLdb模块的使用</title>
+        <link>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;pre&gt;&lt;code&gt;#-*- encoding: utf-8 -*-
+
+import os, sys, string
+import MySQLdb
+
+# 连接数据库　
+try:
+    conn = MySQLdb.connect(host=&#39;localhost&#39;,user=&#39;root&#39;,passwd=&#39;xxxx&#39;,db=&#39;test1&#39;)
+except Exception, e:
+    print e
+    sys.exit()
+
+# 获取cursor对象来进行操作
+
+cursor = conn.cursor()# 查询时返回元组
+#cursor = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)# 查询时返回字典
+
+# 创建表
+sql = &amp;quot;create table if not exists test1(name varchar(128) primary key, age int(4))&amp;quot;
+cursor.execute(sql)
+# 插入数据
+sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;zhaowei&amp;quot;, 23)
+try:
+    cursor.execute(sql)
+except Exception, e:
+    print e
+
+sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;张三&amp;quot;, 21)
+try:
+    cursor.execute(sql)
+except Exception, e:
+    print e
+# 插入多条
+
+sql = &amp;quot;insert into test1(name, age) values (%s, %s)&amp;quot; 
+val = ((&amp;quot;李四&amp;quot;, 24), (&amp;quot;王五&amp;quot;, 25), (&amp;quot;洪六&amp;quot;, 26))
+try:
+    cursor.executemany(sql, val)
+except Exception, e:
+    print e
+
+#查询出数据
+sql = &amp;quot;select * from test1&amp;quot;
+cursor.execute(sql)
+alldata = cursor.fetchall()
+# 如果有数据返回，就循环输出, alldata是有个二维的列表
+if alldata:
+    for rec in alldata:
+        print rec[0], rec[1]
+
+#更新    
+sql = &amp;quot;update test1 set name=%s where age=23&amp;quot;   
+param = (&amp;quot;赵薇&amp;quot;)
+try:
+    cursor.execute(sql,param)    
+except Exception, e:
+    print e  
+   
+#删除    
+sql = &amp;quot;delete from test1 where name=%s&amp;quot;   
+param =(&amp;quot;赵薇&amp;quot;)  
+try:
+    cursor.execute(sql,param)    
+except Exception, e:
+    print e  
+
+conn.commit()#提交，否则可能不会提交到db生效
+
+cursor.close()
+
+conn.close()&lt;/code&gt;&lt;/pre&gt;
+- https://kissjava.cn/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>wxPython跨线程调用[转]</title>
         <link>https://kissjava.cn/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
         <pubDate>Sat, 21 Dec 2013 12:44:00 +0000</pubDate>
@@ -811,23 +893,6 @@ startupinfo = subprocess.STARTUPINFO()
 &lt;!-- raw HTML omitted --&gt;
 应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。&lt;/p&gt;
 - https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>完成第一个基于python的GUI程序</title>
-        <link>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
-        <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ -&lt;p&gt;上图先&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;采用wxpython。涉及到多线程，socket。&lt;/p&gt;
-&lt;p&gt;耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。&lt;/p&gt;
-&lt;p&gt;程序写得一般，原因是没有重复利用python的一些语法特色，应可以写得更加pythonic&lt;/p&gt;
-&lt;p&gt;开始用php写，但是无法解决多线程同时监控，弃之。&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ - kissjava.cn</description>
         </item>
     
     

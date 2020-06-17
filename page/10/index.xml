@@ -13,6 +13,21 @@
     
     
         <item>
+        <title>web.py尝鲜时遭遇no module named MySQLdb</title>
+        <link>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+        <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ -&lt;p&gt;python看了好一阵了，一直没有突破。挤了点时间折腾web.py。&lt;/p&gt;
+&lt;p&gt;下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。&lt;/p&gt;
+&lt;p&gt;google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。&lt;/p&gt;
+&lt;p&gt;这里有下。http://www.lfd.uci.edu/~gohlke/pythonlibs/ 里面还有好多的。&lt;/p&gt;
+- https://kissjava.cn/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
         <title>怎样使用php编辑以文件形式存储的配置文件</title>
         <link>https://kissjava.cn/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
         <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
@@ -347,25 +362,6 @@ window.location.href=&amp;rsquo;/login&amp;rsquo;;
 });
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/codeigniter-ajax-request/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>到当当买东西，太傻太天真</title>
-        <link>https://kissjava.cn/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</link>
-        <pubDate>Tue, 22 Nov 2011 13:20:31 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/ -&lt;p&gt;买了当当两本书。
-现在被他们搞得心情郁闷。
-付款后，足足等了9天才拿到书，9天啊！还有比这个更慢的么？我在苏州，又不是新疆等边远，交通不便的地方。
-当时有活动，满100返200。结果，返券需要再买至少200元的图书才能抵用。
-他大爷的，也过了退货期了，换货还要自己邮过去。
-算了，希望其他朋友接受我的教训，不要再它那边浪费时间了。
-其价钱不是最实惠的，送货的效率也是最差的，还有欺骗消费的行为。。
-可恶！&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/ - kissjava.cn</description>
         </item>
     
     

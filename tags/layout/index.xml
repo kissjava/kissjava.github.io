@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>layout on 清风徐来</title>
-    <link>/tags/layout/</link>
+    <link>https://kissjava.github.io/tags/layout/</link>
     <description>Recent content in layout on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 18 Mar 2009 22:58:44 +0000</lastBuildDate>
     
-	<atom:link href="/tags/layout/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/layout/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>改进layout library，方便自定义layout</title>
-      <link>/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
+      <link>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
       <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
       
-      <guid>/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
       <description>CodeIgniter使用 layout library 简化视图布局中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。 library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。 所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。 function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data); }  function index() { $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;; # 下面就是使用自定义的对象名 mytemp $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data); }  </description>
     </item>
     

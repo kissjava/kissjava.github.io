@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zend framework on 清风徐来</title>
-    <link>/tags/zend-framework/</link>
+    <link>https://kissjava.github.io/tags/zend-framework/</link>
     <description>Recent content in zend framework on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Jan 2011 22:59:27 +0000</lastBuildDate>
     
-	<atom:link href="/tags/zend-framework/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/zend-framework/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Zend Framework安裝</title>
-      <link>/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
+      <link>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
       <pubDate>Thu, 13 Jan 2011 22:59:27 +0000</pubDate>
       
-      <guid>/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
+      <guid>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
       <description>台湾同胞的入门笔记写得太好了，忍不住再贴一个。 这个是Zend Framework 1.0.1但是还是有很大的参考价值的。 環境： Windows XP Professional(SP2) Appserv(Apache 2.2.4, PHP/5.2.3, MySQL 5.0.45) Zend Framework 1.0.1(2007-07-30)
 =========== 一、基本設定：   設定mod_rewrite 編輯httpd.conf #LoadModule rewrite_module modules/mod_rewrite.so 如果前面的”#”字在的話，就把它拿掉吧 (mod_rewrite的詳細資料，可參考apache網站)
   設定include_path 設定include path之目的，是為了方便在include類別時，省去輸入長長一串位置的時間 a) 可直接修改php.ini之設定 b) 或是於程式中動態加入set_include_path 參考網址：http://tw2.php.net/set_include_path

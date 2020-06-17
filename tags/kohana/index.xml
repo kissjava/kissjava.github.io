@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kohana on 清风徐来</title>
-    <link>/tags/kohana/</link>
+    <link>https://kissjava.github.io/tags/kohana/</link>
     <description>Recent content in kohana on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 16 Jun 2009 10:08:25 +0000</lastBuildDate>
     
-	<atom:link href="/tags/kohana/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/kohana/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>系统时间不准确造成 IE 下 Kohana 的 Captcha 库验证失败</title>
-      <link>/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
+      <link>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Tue, 16 Jun 2009 10:08:25 +0000</pubDate>
       
-      <guid>/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
       <description>淡水碰到了，记下来备忘。
 作者：Hily 原始链接：http://hily.me/blog/2009/04/system-time-kohana-captcha-fail/ 版权声明：可以转载，转载时务必以超链接形式标明文章原始出处和作者信息及版权声明
 好糗……
@@ -29,10 +29,10 @@
     
     <item>
       <title>kohana版企业站范例进行中</title>
-      <link>/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
+      <link>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
       <pubDate>Sat, 02 May 2009 06:51:31 +0000</pubDate>
       
-      <guid>/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
+      <guid>https://kissjava.github.io/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
       <description>以前是用codeigniter做的，但是为了更敏捷的开发，提高生产效率（其实是要偷懒），所以开始摸索kohana，并为之着迷（主要是ORM）。
 为了尽快上手kohana，所以把以前公布的企业站又用kohana改写一番。 现在前端已经完成。
 kohana版，为了简化代码，使用了ORM Codeigniter版，采用了他提供的AR
@@ -45,10 +45,10 @@ Codeigniter版http://tsingfeng.sinaapp.com/ci一般结果：Page rendered in 0.0
     
     <item>
       <title>Kohana 与JQUERY实现连动</title>
-      <link>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
+      <link>https://kissjava.github.io/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
       <pubDate>Thu, 23 Apr 2009 16:10:25 +0000</pubDate>
       
-      <guid>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
+      <guid>https://kissjava.github.io/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
       <description>控制器 /**
  ajax加载城市分类   */ public function load_cities($id) { $id = (int) $id; if (!$id) { exit(&amp;quot;{result:0,msg:&amp;lsquo;错误的城市编号&amp;rsquo;}&amp;quot;); } $cities = ORM::factory(&amp;lsquo;city&amp;rsquo;); $cats = $cities-&amp;gt;where(&amp;lsquo;province_id&amp;rsquo;,$id)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); if (!count($cats)) { $cats = array(); } ksort($cats); exit(&amp;quot;{result:1,msg:&amp;quot;.json_encode($cats).&amp;quot;}&amp;quot;); }
 public function index() { //生成省市下拉列表 $provinces = ORM::factory(&amp;lsquo;province&amp;rsquo;)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); $provinces[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($provinces); $this-&amp;gt;template-&amp;gt;provinces = $provinces; if ($data[&amp;lsquo;province_id&amp;rsquo;]) { $cities = ORM::factory(’city’)-&amp;gt;where(’province_id’,$data[&amp;lsquo;province_id&amp;rsquo;])-&amp;gt;select_list(’id’,&amp;lsquo;name&amp;rsquo;); } $cities[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($cities); $this-&amp;gt;template-&amp;gt;cities = $cities; $this-&amp;gt;add_script(&amp;lsquo;home/js/company/add.js?3&amp;rsquo;); } view }); </description>
@@ -56,10 +56,10 @@ public function index() { //生成省市下拉列表 $provinces = ORM::factory(&
     
     <item>
       <title>kohana一个工程下面建立多个项目app</title>
-      <link>/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</link>
+      <link>https://kissjava.github.io/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</link>
       <pubDate>Thu, 23 Apr 2009 16:00:35 +0000</pubDate>
       
-      <guid>/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</guid>
+      <guid>https://kissjava.github.io/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</guid>
       <description>其实核心的意思就是使用多个application文件夹，而共享一个system和module
 请参考文章：http://learn.kohanaphp.com/2008/08/15/initial-setup-of-a-kohana-project-revisited/ 具体办法就是建立类似的文件夹结构：
 app_admin // administration application app_sales // sales application app_public // public website modules system webroot 然后注意写配置文件就OK了
@@ -70,10 +70,10 @@ app_public/config/config.php: $config[&amp;lsquo;site_domain&amp;rsquo;] = ‘lo
     
     <item>
       <title>Kohana的Events和Hooks研究</title>
-      <link>/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</link>
+      <link>https://kissjava.github.io/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</link>
       <pubDate>Thu, 23 Apr 2009 15:59:38 +0000</pubDate>
       
-      <guid>/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</guid>
+      <guid>https://kissjava.github.io/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</guid>
       <description>Kohana是一个使用PHP5的面向对象的MVC框架，是从CodeIgniter衍生出来，研究了几天，感觉还不错，就是它的文档实在太简陋了，在看到它的Events机制和Hooks机制时，确实有点不明白，文档上说的实在太简单了，后来我在Google上搜索了一下，找到两篇文章《Events and hooks in Kohana》和《Practical Kohana Hooks example: PHPIDS》，上面讲了一下Kohana的Events和Hooks，并举了例子，我也开始慢慢理解了它的含义。
 在Kohana的Events中，默认定义了很多的Events（例如system.ready、system.pre_controller等等），中文理解就是事件，也就是触发点，在程序在运行到某个位置时，会被触发，具体就是调用Event::run方法，我们在Kohana.php里可以看到在不同的位置执行了不同的Event::run方法，那么Hooks的意义在于当一个事件被触发之前，可以通过已加载的Hooks来修改事件的回调，有点绕口，说白了就是在事件发生之前，做点事情，举个例子，你安排了今天的日程，下午3点要开会，那么在3点开会就是一个Event（事件），那么到3点的时刻，你希望提醒你一下，你在你的手机里定了一个闹钟，在3点的时候会响，这就是一个Hook，可以看出Hook是基于Event的。
 我们可以创建自己的Hook程序，并加载如默认的Events里，但是默认的Events不一定能满足我们的需要，比如我们在Web应用中经常使用的权限校验，判断这个用户是否登陆过，我们虽然可以使用默认Events里的system.pre_controller，但是这个Event是针对所有的Controller的，有些Controller是不需要校验用户的，还好Kohana允许自己定义Event，下面我们还是举例说明吧。
@@ -90,10 +90,10 @@ check session …First - index</description>
     
     <item>
       <title>Kohana的Cache</title>
-      <link>/posts/kohana%E7%9A%84cache/</link>
+      <link>https://kissjava.github.io/posts/kohana%E7%9A%84cache/</link>
       <pubDate>Thu, 23 Apr 2009 15:59:13 +0000</pubDate>
       
-      <guid>/posts/kohana%E7%9A%84cache/</guid>
+      <guid>https://kissjava.github.io/posts/kohana%E7%9A%84cache/</guid>
       <description>Kohana里有个Cache Library，我今天就测试了一下。
 首先要配置，将system/config下的cache.php复制到application/config下，打开cache.php文件，我们看一下内容
 在应用中，可能需要不止一个缓存，所以可以配置多个缓存，增加$config数组即可，还有在file方式下可以为每个缓存设置单独文件路径，但前提是文件路径要存在，例如我们增加一个
@@ -107,10 +107,10 @@ from：http://i.laoer.com/</description>
     
     <item>
       <title>Kohana 起步了</title>
-      <link>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
+      <link>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
       <pubDate>Tue, 03 Mar 2009 22:06:05 +0000</pubDate>
       
-      <guid>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
+      <guid>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
       <description>开始琢磨Kohana。先看了一下Kohana 101，出现了一些问题。
 当做到 http://localhost/kohana/index.php/test/bye 时，出现了问题。并没有期望的视图出现，而是
 但是文档并没有提到是何原因。还好有Codeigniter打底。原来是淡水在class中写了一个空的__contruct()，而101并没有用它。 把它去掉，或是在里面调用一下父类的构造函数就ok了。

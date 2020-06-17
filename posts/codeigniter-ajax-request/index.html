@@ -21,7 +21,7 @@
 在application/config/constants.php 添加如下： // Define Ajax Request define(&lsquo;IS_AJAX&rsquo;, isset($_SERVER[&lsquo;HTTP_X_REQUESTED_WITH&rsquo;]) &amp;&amp; strtolower($_SERVER[&lsquo;HTTP_X_REQUESTED_WITH&rsquo;]) == &lsquo;xmlhttprequest&rsquo;); 在控制器里就可以判断是否是Ajax的请求，从而决定是否load view。 public function test(){ if(IS_AJAX){ $this-&gt;load-&gt;view(&lsquo;ajax_test&rsquo;); }else{ echo &lsquo;Direct access not allowed!&#39;; // or load other view file. //$this-&gt;load-&gt;view(&lsquo;test&rsquo;); } } Codeigniter里在登录后使用Ajax的简单方式.如果没有登录，发送401。 public function secure(){ if(! $this-&gt;session-&gt;userdata(&lsquo;logged_in&rsquo;)){ header(&lsquo;HTTP/1.1 401 Unauthorized); }
 //other code...  } 再在js做判断跳转： $().ajaxError(function(xhr,status,err){ if(status.status == 401){ window.location.href=&rsquo;/login&rsquo;; } }); " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/codeigniter-ajax-request/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/codeigniter-ajax-request/" />
 <meta property="article:published_time" content="2011-11-28T23:30:41+00:00" />
 <meta property="article:modified_time" content="2011-11-28T23:30:41+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -53,14 +53,14 @@
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -69,7 +69,7 @@
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -102,7 +102,7 @@
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -272,7 +272,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -289,7 +289,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -391,13 +391,13 @@ window.location.href=&rsquo;/login&rsquo;;
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/">
 			下回<br>Photoshop教程：一款清新高雅的网页布局
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/">
 			上回<br>到当当买东西，太傻太天真
                 </a>
                 
@@ -530,6 +530,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

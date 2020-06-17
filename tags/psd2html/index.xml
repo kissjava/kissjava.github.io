@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>psd2html on 清风徐来</title>
-    <link>/tags/psd2html/</link>
+    <link>https://kissjava.github.io/tags/psd2html/</link>
     <description>Recent content in psd2html on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 19 Nov 2011 15:31:29 +0000</lastBuildDate>
     
-	<atom:link href="/tags/psd2html/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/psd2html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>将小型、现代的产品主页由psd转换成XHTML/CSS模板 </title>
-      <link>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
+      <link>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
       <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
       
-      <guid>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;如果你想跳过第一部分，你可以直接在第一部分中下载源文件，下面将会需要它才能继续。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>[转载] 用实例详细讲解将PSD转成HTML&amp;amp;CSS</title>
-      <link>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
+      <link>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
       <pubDate>Thu, 17 Nov 2011 11:41:04 +0000</pubDate>
       
-      <guid>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
       <description>将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。
 我们将设计页面分成基本的5个部分，每一个部分都有自己的容器wrapper和内容。基本的流程是先编写Html代码，然后通过编写CSS来还原psd设计稿。
 如下图，我们只需要从这个psd文件得到4个非常基本的东西。推荐内容(featured)的背景、底部背景、欢迎文字（Welcome）、推荐图片的框（少女面部图的白色透明边框）。其余的部分我们只需要通过CSS生成或者在html里嵌入相应图片。

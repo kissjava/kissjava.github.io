@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mikeyang on 清风徐来</title>
-    <link>/tags/mikeyang/</link>
+    <link>https://kissjava.github.io/tags/mikeyang/</link>
     <description>Recent content in mikeyang on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 26 Nov 2018 10:44:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/mikeyang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/mikeyang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>双十一黑五接连而来还是 bwh 的 CN2 GIA 稳定</title>
-      <link>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
+      <link>https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
       <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
       
-      <guid>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
       <description>都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。 如果，只是建个小博客，测试点代码，个人爬墙 bwh 的 CN2 GIA 还是比较推荐的，够用且稳定。 推荐一下：直达链接</description>
     </item>
     

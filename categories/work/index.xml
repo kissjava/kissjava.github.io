@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Work on 清风徐来</title>
-    <link>/categories/work/</link>
+    <link>https://kissjava.github.io/categories/work/</link>
     <description>Recent content in Work on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 18 Sep 2018 15:09:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/work/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/categories/work/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac OS X 设置英文为默认输入法</title>
-      <link>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <link>https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
       <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
       
-      <guid>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <guid>https://kissjava.github.io/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
       <description>为了方便开发,一般都是把系统语言改成英文. 但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好. 每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说. 上干货,方便像 Mike 一样的 coder.适用High Sierra ~ Mojave.
 1, System Preferences 2, Language &amp;amp; region 3, 把 Englis 拖到列表顶部,设为 Primary 4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)
 看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>怎样用外部触点信号控制fanuc数控系统的启动停止</title>
-      <link>/posts/%E6%80%8E%E6%A0%B7%E7%94%A8%E5%A4%96%E9%83%A8%E8%A7%A6%E7%82%B9%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6fanuc%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2/</link>
+      <link>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E7%94%A8%E5%A4%96%E9%83%A8%E8%A7%A6%E7%82%B9%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6fanuc%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2/</link>
       <pubDate>Thu, 09 Aug 2018 07:49:00 +0000</pubDate>
       
-      <guid>/posts/%E6%80%8E%E6%A0%B7%E7%94%A8%E5%A4%96%E9%83%A8%E8%A7%A6%E7%82%B9%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6fanuc%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E7%94%A8%E5%A4%96%E9%83%A8%E8%A7%A6%E7%82%B9%E4%BF%A1%E5%8F%B7%E6%8E%A7%E5%88%B6fanuc%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2/</guid>
       <description>资料收集，待测
  首先，你需要初步掌握FANUC系统PMC编程知识；
 然后，编辑PMC梯形图程序，使用外部触点信号（通常为一个按钮，X地址），在梯形图中将G7.2在MEM、RMT或MDI模式下接通32ms以上并重新置为0，即可启动数控系统运行；在自动运行状态下，将G8.5从1置为0，系统停止运行。
@@ -37,10 +37,10 @@
     
     <item>
       <title>阿里云 ubuntu 的防火墙操作</title>
-      <link>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
+      <link>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
       
-      <guid>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
       <description>阿里云服务器，没有 web 面板权限，只有 root 用户。
 重新安装了服务器的 web 环境，需要开发相关端口。
 检查防火墙  $whereis iptables iptables: /sbin/iptables /etc/iptables.rules /usr/share/iptables /usr/share/man/man8/iptables.8.gz 说明防火墙开了
@@ -51,10 +51,10 @@
     
     <item>
       <title>Sublime text 3059 for MAC</title>
-      <link>/posts/sublime-text-3059-for-mac/</link>
+      <link>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</link>
       <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
       
-      <guid>/posts/sublime-text-3059-for-mac/</guid>
+      <guid>https://kissjava.github.io/posts/sublime-text-3059-for-mac/</guid>
       <description>1、去Sublime 官网下载最新的3059并安装。
 2、执行并退出Sublime主程序。
 3、下载本文附件，并解压。
@@ -67,19 +67,19 @@ End
     
     <item>
       <title>新玩具</title>
-      <link>/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</link>
+      <link>https://kissjava.github.io/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</link>
       <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
       
-      <guid>/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</guid>
       <description>先上图App? 其实是jquerymobile写的html5. 感谢jquerymobile，感谢LazyPHP(真的很好用)。 都是刚刚上手，耗时大约48个小时完成。 用到html5的localStorage和eventSource特性。 遗憾没有真正的push，其实eventSource和使用定时ajax轮询效果相当，都是定时发送查询。 eventSource可以少写些代码，ajax轮询可以自己定制多些。 最后，玩一把美图秀秀&amp;hellip; </description>
     </item>
     
     <item>
       <title>安装sublime text 2后的几件事</title>
-      <link>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
       
-      <guid>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
       <description>1，安装 Package Control 的方法：
 打开 Sublime Text 2，按下 Control + ` 调出 Console 将以下代码粘贴进命令行中并回车：
 重启sublime Text 2
@@ -97,10 +97,10 @@ ctrl+alt+上下方向键 可以在多行同时出现光标,进行多行编辑 �
     
     <item>
       <title>Lazy Load Plugin for jQuery</title>
-      <link>/posts/lazy-load-plugin-for-jquery/</link>
+      <link>https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/</link>
       <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
       
-      <guid>/posts/lazy-load-plugin-for-jquery/</guid>
+      <guid>https://kissjava.github.io/posts/lazy-load-plugin-for-jquery/</guid>
       <description>lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。
 这个插件，就是浏览器还没有浏览到的图片，都不加载；等滚动条下拉，下面的页面显示了，原来下面页面包含的图片才会被触发加载。
 已经有些站用这样的技术了。淡水一直不致力于前端研究，正好晃荡到这个插件的站点。
@@ -111,10 +111,10 @@ http://www.appelsiini.net/projects/lazyload
     
     <item>
       <title>meta标签简明教程</title>
-      <link>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 30 Jan 2012 02:13:46 +0000</pubDate>
       
-      <guid>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid>
       <description>又是简明教程，嗯，好为人师啊。
 其实这应该是基本功，只是有些只注意速成的web设计师没有留心到。
 meta的存放位置meta标签放置在head标签之间。 关键字关键字须用英文逗号(,)隔开,不要有空白。 网站描述页面如果没有给出网站描述时，搜寻引擎通常会自动抓网页的前25字做为网页内容摘要，呈现在搜寻结果上。但有时网页的前25字可能未必能表达文章的宗旨。 网页隐私用来告知搜寻引擎该网页是否可被搜寻，并且有几个参数可作设定: noindex：不要检索。 nofollow：只检索该页，不检索该页里的链结。 noindex, nofollow：搜寻引擎的小蜘蛛到这里时，就会停止，不作任何的检索。 作者版权说明网页编码强烈建议编码设为utf-8（这个都统一用它比较方便，避免乱码等问题）。 关闭图片菜单关闭鼠标移到图片上方，出现储存图片的相关菜单。 </description>
@@ -122,20 +122,20 @@ meta的存放位置meta标签放置在head标签之间。 关键字关键字须�
     
     <item>
       <title>Jquery Notification Plugin</title>
-      <link>/posts/jquery-notification-plugin/</link>
+      <link>https://kissjava.github.io/posts/jquery-notification-plugin/</link>
       <pubDate>Mon, 09 Jan 2012 14:41:24 +0000</pubDate>
       
-      <guid>/posts/jquery-notification-plugin/</guid>
+      <guid>https://kissjava.github.io/posts/jquery-notification-plugin/</guid>
       <description>一款简单易用的jquery通知插件。会在页面顶部show出成功，失败，警告，和信息提示框。
 基本设置1，引入jquery和本插件（notification libraries） 插件下载：jquery_notification</description>
     </item>
     
     <item>
       <title>jQuery Mobile Framework 便捷指南</title>
-      <link>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
+      <link>https://kissjava.github.io/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
       <pubDate>Mon, 09 Jan 2012 14:18:30 +0000</pubDate>
       
-      <guid>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://kissjava.github.io/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
       <description>Jquery mobile framework 可以帮助你开发基于web的富移动应用程序。在这篇教程里，我们将解释一些基本的事情，比如theme selection （主题选择），library usage（库的使用），design pages（页面设计），page links（页面链接）和transition animations （过渡动画）。代码轻便，简单，灵活。它支持流行的智能手机和嵌入平台。使用它可以让你的移动应用更充实。
 包含jQuery Mobile库第一步就是在你的web page头部引入jQuery Mobile的样式表和javascript库文件。
 设计你的web pagejQuery Mobile可以在普通的html标签或html5标签中工作，但是你必须添加一些data属性（data-role，data-theme等等）在html标签中。 自定义列表项你可以自定义你的文章行，添加一些描述和评论数码。看看如下代码：
@@ -145,19 +145,19 @@ meta的存放位置meta标签放置在head标签之间。 关键字关键字须�
     
     <item>
       <title>贴点权限系统的部分代码</title>
-      <link>/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.github.io/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Sat, 24 Dec 2011 12:04:21 +0000</pubDate>
       
-      <guid>/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</guid>
       <description>好久未更了，凑数:( </description>
     </item>
     
     <item>
       <title>jQuery ajax方式加载页面后，被加载页面的js不能执行的问题</title>
-      <link>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
       
-      <guid>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>在回调函数里注册一下事件就可以了，要么就各个函数写在被加载的页面里。 $(document).ready(function() { $(&amp;lsquo;content_div&amp;rsquo;).hide();
 $(&#39;#list_user&#39;).click(function(event){ event.preventDefault(); load_user(); });  });
 function load_user(){ //load page $(&amp;quot;#content_div&amp;rdquo;).load(&amp;lsquo;your page url&amp;rsquo;,function(){ //回调函数，在这里注册被加载页面需要的事件 $(&amp;quot;.deleteItem&amp;rdquo;).click(delItem); $(&amp;quot;.editItem&amp;rdquo;).click(editItem); });
@@ -166,29 +166,29 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>MAMP环境下，在zend studio 9 里使用xdebug调试</title>
-      <link>/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
       <pubDate>Sat, 03 Dec 2011 08:40:07 +0000</pubDate>
       
-      <guid>/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
       <description>没有技术含量。 MAMP下面有两个版本（MAMP/bin/php），他们都有各自的php.ini 在其文件最后，都提供了xdebug块，仅有一行，“；zend_extension=&amp;hellip;”貌似去掉zend_extension前的注释就能使用了。 实际上还需要添加一些配置才能进行断点调试的。否则只是在页面上var_dump变量提供更详情的信息而已。</description>
     </item>
     
     <item>
       <title>Photoshop教程：一款清新高雅的网页布局</title>
-      <link>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+      <link>https://kissjava.github.io/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
       <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
       
-      <guid>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+      <guid>https://kissjava.github.io/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
       <description>&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>将小型、现代的产品主页由psd转换成XHTML/CSS模板 </title>
-      <link>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
+      <link>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
       <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
       
-      <guid>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;如果你想跳过第一部分，你可以直接在第一部分中下载源文件，下面将会需要它才能继续。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -199,10 +199,10 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>用Photoshop设计一个小型、现代的产品主页</title>
-      <link>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+      <link>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
       <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
       
-      <guid>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
       <description>这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。
 3 使用油漆桶工具（G）用任意颜色填充头部刚才选定区域。点开图层样式对话框，用以下设置来增加一个渐变叠加效果。
 完了，应该出现以下效果：
@@ -236,10 +236,10 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>[转载] 用实例详细讲解将PSD转成HTML&amp;amp;CSS</title>
-      <link>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
+      <link>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
       <pubDate>Thu, 17 Nov 2011 11:41:04 +0000</pubDate>
       
-      <guid>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
       <description>将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。
 我们将设计页面分成基本的5个部分，每一个部分都有自己的容器wrapper和内容。基本的流程是先编写Html代码，然后通过编写CSS来还原psd设计稿。
 如下图，我们只需要从这个psd文件得到4个非常基本的东西。推荐内容(featured)的背景、底部背景、欢迎文字（Welcome）、推荐图片的框（少女面部图的白色透明边框）。其余的部分我们只需要通过CSS生成或者在html里嵌入相应图片。
@@ -255,10 +255,10 @@ function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your u
     
     <item>
       <title>Git安装使用手记</title>
-      <link>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+      <link>https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
       <pubDate>Fri, 03 Jun 2011 14:27:28 +0000</pubDate>
       
-      <guid>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+      <guid>https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
       <description>这篇主要是记录我在 Windows 平台安装 Git 的过程和git的简单使用。
 先描述一下安装的需求：
 · 用户端和服务器端的操作系统都是 Windows。· 用户端要能透过 HTTP 的方式存取版本库。· 无论是取出档案还是送交档案，都需要验证身分（输入账号密码）。
@@ -268,37 +268,37 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
     
     <item>
       <title>为何改用Git</title>
-      <link>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
+      <link>https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
       <pubDate>Fri, 03 Jun 2011 13:44:31 +0000</pubDate>
       
-      <guid>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
+      <guid>https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
       <description>Subversion 用得好好的，为什么要改用 Git 呢？记得刚开始用 Subversion 时，它在 Windows 平台上的工具也还不是那么方便，光是安装就要手动设定一堆东西。现在，Subversion 服务已经几乎是点下一步、下一步的方式就能安装完成了，非常方便。而且，现有的软件项目、写作等工作，也都在是用 Subversion 来管理版本。在已经投资不少学习成本、且用得很习惯的情况下，要换另外一套版本管理系统总是会有一些阻力。更顺畅的工作流程其实我 lag 很久了。没有改用 Git，主要就是因为习惯问题，以及考虑到已经付出的学习成本，和没有一个让我觉得非换不可的理由。但是最近由于经常使用笔记本电脑，而且网络经常碰到无法连线的状态（有时候是笔电所在的环境无法连网，有时候是服务器离线），以至于有些本机的修改成果无法立即 commit 成一个修订版次。这个时候，如果我还要继续修改别的东西（例如，修正另一个 bug），往往就会跟刚才的修改混在一起 commit，而且是要等到可连上网络时才能 commit。这样的时间差，很容易造成一些遗漏或混乱，无形中就增加了成本和风险。我希望就算无法连接服务器，还是能够依目前的进度先 commit，并且继续做后续的修改，这样我就不用在那里空等，也不用担心自己等到网络可连线时，已经忘记那些档案的 commit 先后次序。Git 可以做到这点。快速Git 之所以反应迅速，主要是因为分散式架构的缘故。在此架构下，版本库的完整历史全都在本机上。因此，就算要进行历史版本比对，也都是在本机进行，速度当然比需要实时连线的 VCS 来得快。版本库毁损的风险较低同样是基于分散式架构的缘故，Git 的版本库会在各用户端机器上存在多个完整的复本，因此就算服务器上的版本库损坏了，还是可以利用其他用户端机器的复本轻易复原，大幅降低版本库备份的成本和档案遗失的风险。弹性的本地分支在使用 Subversion 时，分支其实就是把档案复制到另一个文件夹，然后在不同的分支（文件夹）之间切换。在试过 Subversion 的分支之后，我还是有怕怕的感觉，因而倾向尽量少用。因为我觉得自己有一天一定会不小心把分支和主线给弄混了，以至于出现版本错乱的情形。我还没有实验 Git 的分支功能，但从现有的一些技术文件看来，Git 分支的一个主要优点，就是它可以完全在本机进行。比如说，你可以在本机建立几个实验性质的分支，等到你觉得时机成熟了，便可以将特定分支推送至主机，分享给别人。或者，有些实验失败的分支，也可以直接在本机砍掉，而其他开发人员根本不知道曾经有这些分支。其他优点个人是觉得 Git 还有一个小地方比 Subversion 好：它的版本库目录结构。当我从远端 Subversion 服务器 checkout 一个版本库到本机时，在本机的工作目录下，每一层子目录都会有一个 .svn 的资料夹，作为版本控制之用。Git 不是这样。当我从远端服务器 clone 一个 Git 版本库到本机时，就只有该版本库复本的根目录底下会有一个 .git 目录，其他子目录则很「干净」。此外，它的档案忽略清单只要由 .git 目录下的一个名为 .gitignore 的档案就能完全控制。虽然是不太起眼的差异，我却觉得蛮好的。大概是有点洁癖的缘故吧 XD原文需要翻墙，哎http://huan-lin.blogspot.com/2011/05/why-git.html</description>
     </item>
     
     <item>
       <title>jquery ui tabs详解(中文)转</title>
-      <link>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <link>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
       <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
       
-      <guid>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <guid>https://kissjava.github.io/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>破解被保护的Excel文档</title>
-      <link>/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
+      <link>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
       <pubDate>Wed, 01 Dec 2010 20:23:02 +0000</pubDate>
       
-      <guid>/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>li水平居中css实现</title>
-      <link>/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Thu, 05 Aug 2010 20:26:42 +0000</pubDate>
       
-      <guid>/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</guid>
       <description>其实这个是凑数来的。只是好久没动博客了，实在是说不过去了，丫的太懒了。其实是淡水没有时间（好假的借口）。
 闲话不多说了。现在一般都是用li做菜单了，淡水也就从了。li的float:left,可以了变成横向的菜单了。但是它们怎么跑到区域里居中显示呢（一般是页脚的链接是居中的）？li的display:inline;就可以了，float：left都不要了，自己跑一行去了。
 #main_footer{ list-style:none; text-align:center; } #main_footer li{ display:inline; }
@@ -309,10 +309,10 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
     
     <item>
       <title>关于ci和zend framework的一些牢骚</title>
-      <link>/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
+      <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
       <pubDate>Fri, 11 Jun 2010 10:32:57 +0000</pubDate>
       
-      <guid>/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
       <description>首先说明，这是淡水的牢骚，看不惯不要看。
 老华仔歌里唱的应景“总逃不开工作表，做完了又来了，怎样也甩不掉……”。淡水手头的项目还没有完全结束，新的项目又要上马。于是前期就框架选择开大会，开小会。
 有.net高手就开始在网上搜索合适框架。结果他得出的结论是Zend Framework，理由：官方。 不推荐Codeigniter是因为，一家小公司做的，后期支持跟不上。而且ci是轻量级的，功能不强。 php本身就是草根出身，如果看公司大小，那么为什么不用.net? ci是轻量级的，但是php能做的，他都能做，没有内置的功能，可以自己加阿？非得一定要和zend framework一样，几乎把所有能想到用到的功能都整合进去变成皇家内裤（类库）？ 窃以为，做大型应用时应用框架快速开发是可取的，但是要考虑到代码的执行效率，和开发的灵活度。 zend framework能做到的， ci扩展一下也能做到，麻烦一点了。但是zend framwork有ci灵活么，ci2天可以掌握，zend framework可以么（太NB的天才不算）。 这些主流框架的评比本身没有太大的意义。框架只是工具，各有其特点（Yii高效；ci上手容易，代码优雅；thinkphp代码全中文注释，文档齐全；qee……），人才是重点。
@@ -324,37 +324,37 @@ Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msys
     
     <item>
       <title>投入ubuntu，体验中</title>
-      <link>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</link>
+      <link>https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</link>
       <pubDate>Wed, 09 Jun 2010 10:26:24 +0000</pubDate>
       
-      <guid>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</guid>
       <description>嗯，体验还不错。推荐。。。 不过wine下ie6太耗资源了，能跑死机器。 两天了，基本上手 开发用XAMPP+PDT，PDT在linux下比windows下的速度快些，但是边框太粗，难看。 :p</description>
     </item>
     
     <item>
       <title>socks5 proxy 折腾记</title>
-      <link>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
+      <link>https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
       <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
       
-      <guid>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
+      <guid>https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
       <description>需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。 google之。 找到了socks5-v1.0r11编译报错:( 再google之。。。 又转找到ss5-3.6.4-3, 编译,又报错:( 时间有限，精力有限，关键是能力有限。。 最后google之。。。。。。 找到Antinat。看似很方便的样子。官网：http://antinat.sourceforge.net/ 下载： antinat-0.90-1.i386.rpm antinat-libs-0.90-1.i386.rpm 先rpm -ivh antinat-libs-0.90-1.i386.rpm 再rpm -ivh antinat-0.90-1.i386.rpm 搞定。 也可以下载：antinat-0.90.tar.bz2 编译安装。 tar jvxf antinat-0.90.tar.bz2 cd antinat-0.90 ./configure make install cp etc/antinat.xml.allopen /usr/local/etc/antinat.xml 配置端口：  &amp;lt;port value=&#39;1080&#39;/&amp;gt;  </description>
     </item>
     
     <item>
       <title>继续收拾残局，php和asp.net的md5差别</title>
-      <link>/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
+      <link>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
       <pubDate>Tue, 09 Mar 2010 16:17:19 +0000</pubDate>
       
-      <guid>/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
       <description>asp.net的md5加密貌似是16位的 而php的md5加密是32位的 这样解决 echo substr(md5(&amp;ldquo;admin&amp;rdquo;),8,16); // 16位MD5加密效果等同于asp.net的md5 echo &amp;ldquo;&amp;rdquo;; echo md5(&amp;ldquo;admin&amp;rdquo;); // 32位MD5加密 另：php的md5函数，按官方的说法，第二个参数设为true，可以生成16位的，但是淡水测试下来是乱码。淡水没空深究了，有心人可以找找缘由。</description>
     </item>
     
     <item>
       <title>收拾残局，过滤部分字段重复的数据</title>
-      <link>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+      <link>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
       
-      <guid>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
       <description>select distinct可以去掉重复记录。 disctinct将重复的记录忽略，但它忽略的是完全一致的重复记录，而不是其中某个字段重复的记录，或者说，distinct查询一个字段时好使，多个字段就不好使。
 所以用聚合函数和group by实现 注意：group by只能跟聚合函数搭配使用例表
 查询username和password组合起来的条件不能重复的查询结果（这个都能重复，不能不说这是个烂摊子）
@@ -366,48 +366,48 @@ select * from mytable where ID in(select min(ID) from mytable a group by usernam
     
     <item>
       <title>使用jQuery和flash的多文件上传组件</title>
-      <link>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
       <pubDate>Sun, 07 Mar 2010 12:02:53 +0000</pubDate>
       
-      <guid>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
       <description>标题党了。 这是一个使用jQuery和flash的多文件上传组件： http://www.uploadify.com/demo/</description>
     </item>
     
     <item>
       <title>flash,css hack,等等。。</title>
-      <link>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
+      <link>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
       
-      <guid>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
+      <guid>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
       <description>1，插入flash，不追求web标准，可以这样简短： 2，同一选择器针对不同浏览器的css hack select { background-color: black;/* firefox, opera, ie8 */ [;background-color: green;]/* safari, chrome */ *background-color: blue;/* ie7 */ _background-color: red;/* ie6 */ } html*~/**/body select { border: 5px solid red;/* ie8 */ }以上只是一个例子说明混合写法.以下是对例子的补充 1.IE都能识别*;标准浏览器(如FF)不能识别*; 2.IE7,FF能识别!important,IE6不能. 3.只有IE6能识别_ 4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。 5.对于ie8 chrome hack的请 GOOGLE or BAIDU …</description>
     </item>
     
     <item>
       <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
-      <link>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
+      <link>https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
       
-      <guid>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
       <description>实现原理：
 （1）指定宽度：width:300px; （2）overflow:hidden; 将超出内容隐藏 （3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;) （4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。</description>
     </item>
     
     <item>
       <title>Codeigniter里实现get_object_or_404</title>
-      <link>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
+      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
       
-      <guid>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
       <description>在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。
 我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。 </description>
     </item>
     
     <item>
       <title>vi/vim 中文乱码</title>
-      <link>/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+      <link>https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
       <pubDate>Tue, 12 Jan 2010 10:43:46 +0000</pubDate>
       
-      <guid>/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+      <guid>https://kissjava.github.io/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
       <description>linux下，用vi、vim编辑文件时，可能会碰到中文乱码。 由于在windows下默认是gb编码，而vim默认是utf-8（gedit默认也是utf-8），所以打开会成乱码。修改了一下配置文件，使vi、vim支持gb编码就好了。 $vi ~/.vimrc
 let &amp;amp;termencoding=&amp;amp;encoding set fileencodings=utf-8,gbk
 $:wq 再次打开vi、vim，中文显示就正常了。</description>
@@ -415,19 +415,19 @@ $:wq 再次打开vi、vim，中文显示就正常了。</description>
     
     <item>
       <title>input、select等表单元素与相邻文字对齐</title>
-      <link>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
+      <link>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
       <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
       
-      <guid>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
+      <guid>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
       <description>以前都是把多选框放到一个单独的表格单元格。 现在才知道，用css更简单：</description>
     </item>
     
     <item>
       <title>windows下基于apache的subversion（svn）的安装</title>
-      <link>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <link>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
       <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
       
-      <guid>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
       <description>上午折腾了一下，可以写个详细步骤出来了。 预期目标：搭建一个apache下的svn服务，服务地址 http://localhost/svn
 本地环境：已经装有xampplite集成环境。 svn的服务目录为D:svnroot 已经安装好了小乌龟（TortoiseSVN）
 安装步骤：1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi 这里注意要和apache的版本对应，我是apache2.2的。 双击安装它，这个没说头。 2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中 有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so （淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下） 3，配置apache的httpd.conf文件 这个是个容易出差错的地方 把下两行的注释去掉：
@@ -443,46 +443,46 @@ $:wq 再次打开vi、vim，中文显示就正常了。</description>
     
     <item>
       <title>适合Programmer的字体Monaco</title>
-      <link>/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
+      <link>https://kissjava.github.io/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
       <pubDate>Thu, 13 Nov 2008 09:33:41 +0000</pubDate>
       
-      <guid>/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
+      <guid>https://kissjava.github.io/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
       <description>以前都是用ms自带的Consolas。 看到CodeIgniter视频上Textmate里的字体蛮好看的，于是就开始了寻宝之旅。现在终于找到了，她就是Monaco。 贴两个效果图看看 字体下载：monaco</description>
     </item>
     
     <item>
       <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
-      <link>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
+      <link>https://kissjava.github.io/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
       <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
       
-      <guid>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
       <description>大多都涉及到JS，但是淡水这块儿比较薄弱。于是用jQuery，搞定。 帖一张图，对jQuery的说明很不错 [caption id=&amp;quot;attachment_139&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;jQuery&amp;rdquo;][/caption] 站还没更新，嗯，下周更新吧</description>
     </item>
     
     <item>
       <title>tinyMCE和CodeIgniter1.7.0</title>
-      <link>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+      <link>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
       
-      <guid>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+      <guid>https://kissjava.github.io/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
       <description>tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。 下载tinyMCE并解压到网站目录，淡水是放到根目录的。 在CodeIgniter的View里调用： </description>
     </item>
     
     <item>
       <title>CodeIgniter 1.6.3 to 1.7.0</title>
-      <link>/posts/codeigniter-1.6.3-to-1.7.0/</link>
+      <link>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</link>
       <pubDate>Thu, 06 Nov 2008 14:20:43 +0000</pubDate>
       
-      <guid>/posts/codeigniter-1.6.3-to-1.7.0/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter-1.6.3-to-1.7.0/</guid>
       <description>今日升级后，发行有些读取数据库的页面有错误。提示：“SQL logic error or missing database”。咋回事呢？淡水不废话了,看代码,原来1.6.3是这样写的 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;from(&amp;lsquo;news&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 现在1.7.0要这样 $this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;); $this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;); $query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3)); 说白了，就是1.7.0比较严格一些，from后不能再get里还有table name否则会出错，其实还是我在1.6.3里写的不够严谨XD</description>
     </item>
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>
@@ -490,10 +490,10 @@ $:wq 再次打开vi、vim，中文显示就正常了。</description>
     
     <item>
       <title>基于Codeigniter1.6.3的华领GPS车管系统网站</title>
-      <link>/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
+      <link>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
       <pubDate>Wed, 08 Oct 2008 20:09:32 +0000</pubDate>
       
-      <guid>/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
       <description>&lt;p&gt;华领GPS车管系统网站(&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;)
 名称：华领GPS车辆管理系统
 地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;http://www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
@@ -503,10 +503,10 @@ CodeIgniter版本：1.6.3
     
     <item>
       <title>CodeIgniter MongoDB Library</title>
-      <link>/posts/codeigniter-mongodb-library/</link>
+      <link>https://kissjava.github.io/posts/codeigniter-mongodb-library/</link>
       <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
       
-      <guid>/posts/codeigniter-mongodb-library/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter-mongodb-library/</guid>
       <description>它能使你的应用在操作MongoDB时保证和active record一致的风格。
 1，添加Mongo_db.php 到你的 /application/libraries 文件夹 2，添加mongodb.php 到你的 /application/config 文件夹 3，更你的配置文件
 你可以把它设置为autoload，也可以在你的控制器里加载它。

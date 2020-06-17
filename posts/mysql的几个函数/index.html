@@ -19,7 +19,7 @@
 <meta property="og:title" content="mysql的几个函数" />
 <meta property="og:description" content="缘由是数据库里的fax是由“区号&#43;空格&#43;号码”组成的，但是现在需要去掉空格。下图：先说简单点的方法：UPDATE customer_copy set fax=REPLACE(fax,&rsquo; &lsquo;,&#39;&#39;) where fax REGEXP &lsquo;^[0-9]&#43;[[:space:]][0-9]&#43;&rsquo;; 细说一下： REPLACE(fax,&rsquo; &lsquo;,&#39;&#39;)，是替换空格 REGEXP ，是mysql里的正则 &lsquo;^[0-9]&#43;[[:space:]][0-9]&#43;&rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。 再来一个另类的：UPDATE customer_copy set fax= concat(substring_index(fax,&rsquo; &lsquo;,1), substring_index(fax,&rsquo; &lsquo;,-1)) where fax REGEXP &lsquo;^[0-9]&#43;[[:space:]][0-9]&#43;&rsquo;; 这里用到了两个函数:concat(),substring_index() concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3 substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串. SUBSTRING_INDEX(&lsquo;www.mysql.com&rsquo;, &lsquo;.&rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql SUBSTRING_INDEX(&lsquo;www.mysql.com&rsquo;, &lsquo;.&rsquo;, -2); 返回mysql.com 解释一下，如果count是负数，就从右边开始计数和截取。 substring_index(fax,&rsquo; &lsquo;,1), 返回区号部分，substring_index(fax,&rsquo; &lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/" />
 <meta property="article:published_time" content="2009-10-15T10:45:42+00:00" />
 <meta property="article:modified_time" content="2009-10-15T10:45:42+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -49,14 +49,14 @@
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -65,7 +65,7 @@
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -98,7 +98,7 @@
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -268,7 +268,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -285,7 +285,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -371,13 +371,13 @@ substring_index(fax,&rsquo; &lsquo;,1), 返回区号部分，substring_index(fax
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/">
 			下回<br>淡水的2009
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/">
 			上回<br>PHP数据记录批量更新代码
                 </a>
                 
@@ -510,6 +510,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

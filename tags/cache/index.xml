@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cache on 清风徐来</title>
-    <link>/tags/cache/</link>
+    <link>https://kissjava.github.io/tags/cache/</link>
     <description>Recent content in cache on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 28 Mar 2009 23:30:48 +0000</lastBuildDate>
     
-	<atom:link href="/tags/cache/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/cache/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Simple flexible Caching of parts of code - MP_Cache</title>
-      <link>/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
+      <link>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
       <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
       
-      <guid>/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
+      <guid>https://kissjava.github.io/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
       <description>如标题所言，确实是简单灵活。看来想要摆脱Codeigniter越来越难了。 看看怎样使用吧 首先，在config.php中设置一下缓存目录，这个目录要存在且可写入 $config[&amp;lsquo;mp_cache_dir&amp;rsquo;] = &amp;lsquo;application/mp_cache/&#39;; 好了，现在看看代码 /加载library，可以放在构造函数中/ $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;MP_Cache&amp;rsquo;); /抓取名为listNews的缓存/ $listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;listNews&amp;rsquo;); if($listNews===false){ //没有缓存数据，则查询数据库 $listNews = $this-&amp;gt;News_model-&amp;gt;getNewslist(&amp;lsquo;guest&amp;rsquo;)-&amp;gt;result(); //创建缓存，命名为listNews。在mp_cache目录下就生成了listNews.cache文件，内容是序列化的数据 $this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;listNews&amp;rsquo;); } $data[&amp;lsquo;listNews&amp;rsquo;]= $listNews; $this-&amp;gt;layout-&amp;gt;view(&amp;lsquo;news&amp;rsquo;, $data); 两个注意点：1，缓存数据，必须是data，而不是resource id。如，在使用AR后用result(),result_array()等返回的数据 2，缓存名不要重复。可以使用子文件夹分隔。如，$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;news/listNews&amp;rsquo;);同样创建缓存数据片段用$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;news/listNews&amp;rsquo;);（php5下news文件夹会自动创建） 其他方法： $this-&amp;gt;mp_cache-&amp;gt;delete($filename) 删除名为$filename的cache.</description>
     </item>
     

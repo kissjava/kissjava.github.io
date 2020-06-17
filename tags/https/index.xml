@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>https on 清风徐来</title>
-    <link>/tags/https/</link>
+    <link>https://kissjava.github.io/tags/https/</link>
     <description>Recent content in https on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 20 Aug 2018 16:05:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/https/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/https/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SSL去掉了，又加上了</title>
-      <link>/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</link>
+      <link>https://kissjava.github.io/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</link>
       <pubDate>Mon, 20 Aug 2018 16:05:00 +0000</pubDate>
       
-      <guid>/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</guid>
+      <guid>https://kissjava.github.io/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</guid>
       <description>终究还是搬家，然后又加上了。 顺便说一下，阿里国际ECS，很容易被封443。 ====以上2018/08/31更新====
 没时间写东西. ssl 去掉了，ip 被误伤了吧. 443端口联通和电信都无法访问了，没有办法，只好去掉了:(</description>
     </item>

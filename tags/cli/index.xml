@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CLI on 清风徐来</title>
-    <link>/tags/cli/</link>
+    <link>https://kissjava.github.io/tags/cli/</link>
     <description>Recent content in CLI on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 16:25:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part8 命令行解析</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
       <description>启动服务是可以指定app name和port。
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;gopkg.in/alecthomas/kingpin.v2&amp;quot;)var (argAppName = kingpin.Arg(&amp;quot;name&amp;quot;, &amp;quot;Application name&amp;quot;).Required().String()argPort = kingpin.Arg(&amp;quot;port&amp;quot;, &amp;quot;Web server port&amp;quot;).Default(&amp;quot;9000&amp;quot;).Int())func main() {kingpin.Parse()appName := *argAppNameport := fmt.Sprintf(&amp;quot;:%d&amp;quot;, *argPort)fmt.Printf(&amp;quot;Starting %s at %s&amp;quot;, appName, port)e := echo.New()e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {return c.JSON(http.StatusOK, true)})e.Logger.Fatal(e.Start(port))}编译后执行
  ./main &amp;quot;Echo Demo part 8&amp;quot; 3000 Starting Echo Demo part 8 at :3000____ __/ __/___/ / ___/ _// __/ _ \/ _ \/___/\__/_//_/\___/ v4.</description>

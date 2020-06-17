@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>模板 on 清风徐来</title>
-    <link>/tags/%E6%A8%A1%E6%9D%BF/</link>
+    <link>https://kissjava.github.io/tags/%E6%A8%A1%E6%9D%BF/</link>
     <description>Recent content in 模板 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 15:17:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part6 模板渲染</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
       <pubDate>Sat, 17 Aug 2019 15:17:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
       <description>echo解析和呈现模板的过程不是由自身处理，而是由html/template包处理。因此，echo中的模板渲染方式与使用普通golang应用程序相同.
 package mainimport (&amp;quot;html/template&amp;quot;&amp;quot;io&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)type M map[string]interface{}type Info struct {Affiliation stringAddress string}func (t Info) GetAffiliationDetailInfo() string {return &amp;quot;have 31 divisions&amp;quot;}type Person struct {Name stringGender stringHobbies []stringInfo Info}//.template属性负责解析和呈现模板//.location属性指向模板文件所在的文件夹路径。// debug 如果为false，则模板解析仅在应用程序启动时执行一次。此模式适合在生产阶段激活type Renderer struct {template *template.Templatedebug boollocation string}//创建NewRenderer（）函数，以便更容易初始化渲染器对象func NewRenderer(location string, debug bool) *Renderer {tpl := new(Renderer)tpl.</description>
     </item>

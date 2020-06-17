@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>avg on 清风徐来</title>
-    <link>/tags/avg/</link>
+    <link>https://kissjava.github.io/tags/avg/</link>
     <description>Recent content in avg on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 14 Oct 2010 09:45:37 +0000</lastBuildDate>
     
-	<atom:link href="/tags/avg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/avg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AVG free edition 2011</title>
-      <link>/posts/avg-free-edition-2011/</link>
+      <link>https://kissjava.github.io/posts/avg-free-edition-2011/</link>
       <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
       
-      <guid>/posts/avg-free-edition-2011/</guid>
+      <guid>https://kissjava.github.io/posts/avg-free-edition-2011/</guid>
       <description>装上了AVG free edition 2011，好些比9漂亮了一些。上图：
 去除安装文件夹下的 avgfree_zh.mht , avgmwdef_zh.mht , avgresf.dll;这样就更好用了，其他非中文系统，注意选择自己对应的语言版本。嗯，不解释。</description>
     </item>

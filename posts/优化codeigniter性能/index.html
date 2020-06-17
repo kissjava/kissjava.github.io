@@ -20,7 +20,7 @@
 <meta property="og:description" content="原文《Optimizing and Scaling your CodeIgniter Application - with Benchmarks!》淡水这里只是用中文整理一下。 首先，是个控制器，一般的标准的写法如下： function index() { $query = $this-&gt;db-&gt;get(&lsquo;module_pages&rsquo;);
 $links = &#39;&#39;; if ( $query-&gt;num_rows &gt; 0) { foreach ($query-&gt;result_array() as $page): $links .= &#39;&lt;a href=&quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&quot;&gt;&#39;; $links .= ucwords($page[&#39;title&#39;]).&#39;&lt;/a&gt;&lt;br /&gt;&#39;; endforeach; $data[&#39;links&#39;] = $links; } for ($i=0; $i &lt; 10; $i&#43;&#43;) { $this-&gt;db-&gt;like(&#39;title&#39;, &#39;London&#39;); $query = $this-&gt;db-&gt;get(&#39;module_pages&#39;, 1); if ( $query-&gt;num_rows == 1 ) { $row = $query-&gt;row_array(); $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]); $data[&#39;body&#39;] = $row[&#39;body&#39;]; } } $this-&gt;load-&gt;view(&#39;welcome2&#39;, $data);  } 视图文件类似以下： 把循环结果赋给变量foreach ($query-&gt;result_array() as $page): 修改为: $pages = $query-&gt;result_array(); foreach ($pages as $page): Requests per second: 46." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/" />
 <meta property="article:published_time" content="2008-10-19T10:15:20+00:00" />
 <meta property="article:modified_time" content="2008-10-19T10:15:20+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -51,14 +51,14 @@ $links = &#39;&#39;; if ( $query-&gt;num_rows &gt; 0) { foreach ($query-&gt;resu
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -67,7 +67,7 @@ $links = &#39;&#39;; if ( $query-&gt;num_rows &gt; 0) { foreach ($query-&gt;resu
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -100,7 +100,7 @@ $links = &#39;&#39;; if ( $query-&gt;num_rows &gt; 0) { foreach ($query-&gt;resu
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -270,7 +270,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -287,7 +287,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -459,13 +459,13 @@ CI的output cache使用比较容易
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/">
 			下回<br>郁闷的木乃伊3龙帝之墓
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB%E5%89%8D%E9%BC%BB%E9%9F%B3%E5%92%8C%E5%90%8E%E9%BC%BB%E9%9F%B3/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB%E5%89%8D%E9%BC%BB%E9%9F%B3%E5%92%8C%E5%90%8E%E9%BC%BB%E9%9F%B3/">
 			上回<br>如何区别前鼻音和后鼻音？
                 </a>
                 
@@ -598,6 +598,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

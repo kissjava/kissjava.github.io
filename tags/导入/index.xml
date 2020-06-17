@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>导入 on 清风徐来</title>
-    <link>/tags/%E5%AF%BC%E5%85%A5/</link>
+    <link>https://kissjava.github.io/tags/%E5%AF%BC%E5%85%A5/</link>
     <description>Recent content in 导入 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 07 Aug 2009 11:01:17 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%AF%BC%E5%85%A5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E5%AF%BC%E5%85%A5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PHP创建数据库并导入sql文件到MySQL</title>
-      <link>/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
+      <link>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
       <pubDate>Fri, 07 Aug 2009 11:01:17 +0000</pubDate>
       
-      <guid>/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
+      <guid>https://kissjava.github.io/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
       <description>项目需要自动建库功能，于是就有了本文。搜索引擎好东西啊，就是从其中找到真正有用的太难了。贴代码： </description>
     </item>
     

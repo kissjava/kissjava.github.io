@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>textmate on 清风徐来</title>
-    <link>/tags/textmate/</link>
+    <link>https://kissjava.github.io/tags/textmate/</link>
     <description>Recent content in textmate on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Oct 2011 16:36:19 +0000</lastBuildDate>
     
-	<atom:link href="/tags/textmate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/textmate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>textmate 常用快捷键</title>
-      <link>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Thu, 13 Oct 2011 16:36:19 +0000</pubDate>
       
-      <guid>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://kissjava.github.io/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>ctrl + cmd + ^ 整行上移 ctrl + cmd + v 整行下移 ctrl + shift + k 整行删除 ctrl + shift + d 复制所在整行 ctrl + shift + t 查看TODO
 alt + &amp;gt; 光标右移一个单词 alt + &amp;lt; 光标左移一个单词
 esc 自动补全

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>隔行变色 on 清风徐来</title>
-    <link>/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</link>
+    <link>https://kissjava.github.io/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</link>
     <description>Recent content in 隔行变色 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sun, 21 Jun 2009 12:30:38 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>input、select等表单元素与相邻文字对齐</title>
-      <link>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
+      <link>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
       <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
       
-      <guid>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
+      <guid>https://kissjava.github.io/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
       <description>以前都是把多选框放到一个单独的表格单元格。 现在才知道，用css更简单：</description>
     </item>
     

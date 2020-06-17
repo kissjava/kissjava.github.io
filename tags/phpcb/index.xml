@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>phpCB on 清风徐来</title>
-    <link>/tags/phpcb/</link>
+    <link>https://kissjava.github.io/tags/phpcb/</link>
     <description>Recent content in phpCB on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 07 Aug 2009 11:30:54 +0000</lastBuildDate>
     
-	<atom:link href="/tags/phpcb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/phpcb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EditPlus配置phpCB,格式化php代码</title>
-      <link>/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
+      <link>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
       
-      <guid>/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://kissjava.github.io/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
       <description>自从七月十五搞了个EditPlus4php，淡水就一直用它做一些简单的修改工作。如果不在自己的电脑上，也方便做一些演示，他集成了◦xampplite1.7.1 ◦Zend Code Analyzer 1.2.3 ◦LeapFTP2.7.6 今天发现居然还有phpCB,只是默认没有配置。。。 配置一下吧，这样拷贝过来的代码，格式一下会看着顺眼些。 工具》配置用户工具。。。》添加工具》程序（p） 菜单文本：格式化 命令：找到EditPlus4php的phpCB.exe 参数：&amp;ndash;space-after-if &amp;ndash;optimize-eol &amp;ndash;space-after-switch &amp;ndash;space-after-while &amp;ndash;space-before-start-angle-bracket &amp;ndash;space-after-end-angle-bracket &amp;ndash;extra-padding-for-case-statement &amp;ndash;glue-amperscore &amp;ndash;change-shell-comment-to-double-slashes-comment &amp;ndash;indent-with-tab &amp;ndash;force-large-php-code-tag &amp;ndash;force-true-false-null-contant-lowercase &amp;ndash;comment-rendering-style PEAR &amp;ndash;equal-align-position 50 &amp;ndash;padding-char-count 1 &amp;ldquo;$(FilePath)&amp;rdquo; 勾选“以文本筛选器运行”选择“替换” 搞定。。。</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apache on 清风徐来</title>
-    <link>/tags/apache/</link>
+    <link>https://kissjava.github.io/tags/apache/</link>
     <description>Recent content in apache on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 16 Jul 2009 13:22:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
-      <link>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+      <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
       <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
       
-      <guid>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
       <description>最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《Learn Apache mod_rewrite: 13 Real-world Examples》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 原文地址：http://www.sitepoint.com/article/apache-mod_rewrite-examples/原文作者：DK Lynn（DK Lynn is a former instructor pilot and &amp;ldquo;rocket scientist&amp;rdquo; now living in New Zealand where he operates a small business developing and hosting web sites. ）
@@ -27,10 +27,10 @@
     
     <item>
       <title>windows下基于apache的subversion（svn）的安装</title>
-      <link>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <link>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
       <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
       
-      <guid>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://kissjava.github.io/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
       <description>上午折腾了一下，可以写个详细步骤出来了。 预期目标：搭建一个apache下的svn服务，服务地址 http://localhost/svn
 本地环境：已经装有xampplite集成环境。 svn的服务目录为D:svnroot 已经安装好了小乌龟（TortoiseSVN）
 安装步骤：1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi 这里注意要和apache的版本对应，我是apache2.2的。 双击安装它，这个没说头。 2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中 有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so （淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下） 3，配置apache的httpd.conf文件 这个是个容易出差错的地方 把下两行的注释去掉：

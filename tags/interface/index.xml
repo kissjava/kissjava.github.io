@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>interface on 清风徐来</title>
-    <link>/tags/interface/</link>
+    <link>https://kissjava.github.io/tags/interface/</link>
     <description>Recent content in interface on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 19:33:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/interface/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/interface/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go的接口</title>
-      <link>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
       <description>在本教程中，我们将看看Go编程语言中的接口。 本节包括2个主题：
  接口的基本知识 定义我们自己的接口  ##简单案例
 如果您看到一个需要空接口的函数或方法，那么您通常可以将任何内容传递给此函数/方法。

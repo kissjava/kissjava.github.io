@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unit test on 清风徐来</title>
-    <link>/tags/unit-test/</link>
+    <link>https://kissjava.github.io/tags/unit-test/</link>
     <description>Recent content in unit test on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 29 Oct 2011 12:26:11 +0000</lastBuildDate>
     
-	<atom:link href="/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>codeigniter2中使用simpletest做单元测试</title>
-      <link>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
       
-      <guid>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。
 由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。 但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。
 最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。
@@ -31,10 +31,10 @@
     
     <item>
       <title>Codeigniter里的单元测试</title>
-      <link>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
       
-      <guid>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试驱动开发已经提出好久了。在web领域估计国内采用的不多。 其实单元测试也是很好用的东西，确实可以提高开发人员的效率。 淡水用codeigniter举例说明一下。 </description>
     </item>
     

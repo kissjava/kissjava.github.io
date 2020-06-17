@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>phpDesigner2008 on 清风徐来</title>
-    <link>/tags/phpdesigner2008/</link>
+    <link>https://kissjava.github.io/tags/phpdesigner2008/</link>
     <description>Recent content in phpDesigner2008 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 20 Nov 2008 12:25:04 +0000</lastBuildDate>
     
-	<atom:link href="/tags/phpdesigner2008/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/phpdesigner2008/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>(转载)phpDocumentor筆記</title>
-      <link>/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</link>
+      <link>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</link>
       <pubDate>Thu, 20 Nov 2008 12:25:04 +0000</pubDate>
       
-      <guid>/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</guid>
       <description>&lt;p&gt;phpDocumentor很好的php工具。&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;这里转载的台湾同胞的学习笔记，方便查询。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>解决phpDesigner 2008 6.1.1中文语言包假死问题</title>
-      <link>/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
+      <link>https://kissjava.github.io/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 13 Nov 2008 12:39:09 +0000</pubDate>
       
-      <guid>/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
       <description>其实要从php视频教程说起。 淡水以前也出过php的视频教学误人前程，前些日子看到php100有出php视频教学。去逛了好几圈，嗯，人气不错。站长很用心。还搞了一些工具方便php新人，比如easyclipse中文化，还有phpDesigner的中语言包。淡水试了phpDesigner2008的中文语言包，有些问题，一旦切换到中文就会假死。本来淡水并不用它，但是并不否认她是个杰出的编辑器。 淡水在试了N多种方法后，终于有了办法。 新建一个project，再切换语言。不行就打开新建的project，再切换到中文。搞定。 哈哈，可以换着用用看了。 没有project用其他语言就会假死，这个可能是程序的bug。 语言包：chinese-zh</description>
     </item>
     

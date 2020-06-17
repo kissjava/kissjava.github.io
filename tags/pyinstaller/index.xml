@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pyinstaller on 清风徐来</title>
-    <link>/tags/pyinstaller/</link>
+    <link>https://kissjava.github.io/tags/pyinstaller/</link>
     <description>Recent content in pyinstaller on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 05 Sep 2014 14:15:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/pyinstaller/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/pyinstaller/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>spec demo</title>
-      <link>/posts/spec-demo/</link>
+      <link>https://kissjava.github.io/posts/spec-demo/</link>
       <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
       
-      <guid>/posts/spec-demo/</guid>
+      <guid>https://kissjava.github.io/posts/spec-demo/</guid>
       <description># -*- mode: python -*-a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],hiddenimports=[],hookspath=None,runtime_hooks=None)pyz = PYZ(a.pure)exe = EXE(pyz,a.scripts,exclude_binaries=True,name=&#39;dbTools.exe&#39;,debug=False,strip=None,upx=True,console=False , version=&#39;d:\\Work\\dbTools\\v.txt&#39;, icon=&#39;d:\\Work\\dbTools\\dbTools.ico&#39;)dict_tree = Tree(&#39;d:\\Work\\dbTools\\backup&#39;, prefix = &#39;backup&#39;)dict_tree += Tree(&#39;d:\\Work\\dbTools\\test&#39;, prefix = &#39;test&#39;)dict_tree += [(&#39;dbTools.ico&#39;, &#39;d:\\Work\\dbTools\\dbTools.ico&#39;, &#39;DATA&#39;),(&#39;appcfg.dll&#39;,&#39;d:\\Work\\dbTools\\appcfg.dll&#39;,&#39;DATA&#39;),(&#39;backup.dll&#39;,&#39;d:\\Work\\dbTools\\backup.dll&#39;,&#39;DATA&#39;),(&#39;mysqlr.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlr.exe&#39;,&#39;DATA&#39;),(&#39;mysqlb.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlb.exe&#39;,&#39;DATA&#39;)]coll = COLLECT(exe,a.binaries,dict_tree,a.zipfiles,a.datas,strip=None,upx=True,name=&#39;dbTools&#39;)cmd
 pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。
 2015年10月23日11:22:11 update： pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择</description>
@@ -25,20 +25,20 @@ pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec资源文件也拷
     
     <item>
       <title>PyInstaller无法easy_install或pip安装</title>
-      <link>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
+      <link>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
       
-      <guid>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
       <description>应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。 只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。 也就一步，就是解压。淡水解压到d盘根目录 使用也很简单：
 PS C:\Users\Frank&amp;gt; d:PS D:\&amp;gt; cd .\PyInstaller-2.1PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.ico D:\wms\julinWms.py 和easy_install安装后的使用方法几乎一样。 嗯，没多少干货。2014了，随便写点，证明一下还在喘气。</description>
     </item>
     
     <item>
       <title>Pyinstaller安装及使用</title>
-      <link>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
       
-      <guid>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       <description>也可以用py2exe,但是总要写个xxx.py的文件来配置,不是很乐意.
 chinaunix上有朋友推荐用pyinstaller,说更容易使用.那就用用看吧.
 第一步:安装 easy_install pyinstaller(淡水在win8.1下需要用管理员权限安装)

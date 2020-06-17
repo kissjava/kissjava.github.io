@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Zend Framework安裝</title>
-        <link>/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
+        <link>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</link>
         <pubDate>Thu, 13 Jan 2011 22:59:27 +0000</pubDate>
         
-        <guid>/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
-        <description>清风徐来 /posts/zend-framework%E5%AE%89%E8%A3%9D/ -&lt;p&gt;台湾同胞的入门笔记写得太好了，忍不住再贴一个。
+        <guid>https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/ -&lt;p&gt;台湾同胞的入门笔记写得太好了，忍不住再贴一个。
 这个是Zend Framework 1.0.1但是还是有很大的参考价值的。
 環境：
 Windows XP Professional(SP2)
@@ -72,18 +72,18 @@ b) 或是於程式中動態加入set_include_path
 a)index.php(bootstrap file)，可視各別情況修改
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/zend-framework%E5%AE%89%E8%A3%9D/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/zend-framework%E5%AE%89%E8%A3%9D/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Doctrine, the PHP ORM Framework</title>
-        <link>/posts/doctrine-the-php-orm-framework/</link>
+        <link>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</link>
         <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
         
-        <guid>/posts/doctrine-the-php-orm-framework/</guid>
-        <description>清风徐来 /posts/doctrine-the-php-orm-framework/ -&lt;p&gt;Doctrine是 一個在PHP上的資料庫ORM(Object Relational Mapper)，最近手邊的幾個小案子透過Doctrine來實作。ORM的確是讓開發者少寫不少的SQL查詢，但相對的效能一定是比簡單的SQL要來得 差，我想魚跟熊掌要兼得並不容易，便利跟效能之間總有個天平讓開發者來自已調整，所以ORM好不好用就見人見志囉。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/doctrine-the-php-orm-framework/ -&lt;p&gt;Doctrine是 一個在PHP上的資料庫ORM(Object Relational Mapper)，最近手邊的幾個小案子透過Doctrine來實作。ORM的確是讓開發者少寫不少的SQL查詢，但相對的效能一定是比簡單的SQL要來得 差，我想魚跟熊掌要兼得並不容易，便利跟效能之間總有個天平讓開發者來自已調整，所以ORM好不好用就見人見志囉。&lt;/p&gt;
 &lt;p&gt;一、前置作業：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -115,18 +115,18 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 &lt;p&gt;檔案：models/Member.php
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/doctrine-the-php-orm-framework/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/doctrine-the-php-orm-framework/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>班扎古鲁白玛的沉默</title>
-        <link>/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</link>
+        <link>https://kissjava.github.io/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</link>
         <pubDate>Wed, 12 Jan 2011 19:25:53 +0000</pubDate>
         
-        <guid>/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</guid>
-        <description>清风徐来 /posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/ -&lt;p&gt;班扎古鲁白玛的沉默&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/ -&lt;p&gt;班扎古鲁白玛的沉默&lt;/p&gt;
 &lt;p&gt;——扎西拉姆·多多&lt;/p&gt;
 &lt;p&gt;你见，或者不见我
 我就在那里
@@ -147,18 +147,18 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 寂静 欢喜&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_53cd30c90100l2k5.html&#34;&gt;http://blog.sina.com.cn/s/blog_53cd30c90100l2k5.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;“班扎古鲁白玛”其实是梵文的音译，班扎，就是Vadjra，是“金刚”的意思；古鲁，就是：Guru，是“上师”；白玛，就是pema,是“莲花”的意思。“班扎古鲁白玛”：金刚上师白莲花，也就是莲花生大师（第一个将佛法传入西藏的人，被认为是第二佛陀）。&lt;/p&gt;
-- /posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>win7，ubuntu10.10双系统，修复grub</title>
-        <link>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
+        <link>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
         <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
         
-        <guid>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
-        <description>清风徐来 /posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/ -&lt;p&gt;为什么要修复？因为啃黑苹果失败鸟。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/ -&lt;p&gt;为什么要修复？因为啃黑苹果失败鸟。&lt;/p&gt;
 &lt;p&gt;为什么要记录？网上大都不成功。&lt;/p&gt;
 &lt;p&gt;我的跟分区在sda9，boot独立分区在sda10；可以用fdisk -l 看。&lt;/p&gt;
 &lt;ol&gt;
@@ -182,32 +182,32 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 &lt;p&gt;重启.grub回来了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-- /posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Lazy initialization 延迟加载</title>
-        <link>/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
+        <link>https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
         <pubDate>Mon, 27 Dec 2010 14:06:45 +0000</pubDate>
         
-        <guid>/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
-        <description>清风徐来 /posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/ -&lt;p&gt;先贴代码，再做说明
+        <guid>https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/ -&lt;p&gt;先贴代码，再做说明
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/lazy-initialization-%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Ubuntu10.10安装NVIDIA显卡驱动</title>
-        <link>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+        <link>https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
         <pubDate>Thu, 16 Dec 2010 20:53:09 +0000</pubDate>
         
-        <guid>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
-        <description>清风徐来 /posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;去官方驱动下载页面：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.nvidia.cn/Download/index.aspx?lang=cn&#34;&gt;http://www.nvidia.cn/Download/index.aspx?lang=cn&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;然后找到你自己的显卡型号，留意一下版本号，版本号只要在256版以上就不用安装编译环境了&lt;/p&gt;
 &lt;p&gt;使用右键另存为下载，放到主文件下。&lt;/p&gt;
@@ -225,60 +225,60 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 &lt;p&gt;接下来可能会出现，预安装脚本安装失败，是否继续安装?或是已经安装过了，是否重新安装等等。。&lt;/p&gt;
 &lt;p&gt;点Yes继续,这时会出现进度条。100%后会询问：是否更新X配置文件，选择更新，或手动编辑X配置文件以采用NVIDIA X驱动程序，或者运行 nvidia-xconfig&lt;/p&gt;
 &lt;p&gt;这里推荐点Yes，不然需要自己编辑配置文件，到这里安装就完成。startx或是按Ctrl+Alt+Del重启电脑就可以了。&lt;/p&gt;
-- /posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>破解被保护的Excel文档</title>
-        <link>/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
+        <link>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
         <pubDate>Wed, 01 Dec 2010 20:23:02 +0000</pubDate>
         
-        <guid>/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
-        <description>清风徐来 /posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ -&lt;!-- raw HTML omitted --&gt;
-- /posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.github.io/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>宁海，浙东大峡谷2日游</title>
-        <link>/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</link>
+        <link>https://kissjava.github.io/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</link>
         <pubDate>Wed, 27 Oct 2010 09:55:00 +0000</pubDate>
         
-        <guid>/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
-        <description>清风徐来 /posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ -&lt;!-- raw HTML omitted --&gt;
-- /posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.github.io/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>AVG free edition 2011</title>
-        <link>/posts/avg-free-edition-2011/</link>
+        <link>https://kissjava.github.io/posts/avg-free-edition-2011/</link>
         <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
         
-        <guid>/posts/avg-free-edition-2011/</guid>
-        <description>清风徐来 /posts/avg-free-edition-2011/ -&lt;p&gt;装上了AVG free edition 2011，好些比9漂亮了一些。上图：&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/avg-free-edition-2011/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/avg-free-edition-2011/ -&lt;p&gt;装上了AVG free edition 2011，好些比9漂亮了一些。上图：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;去除安装文件夹下的 avgfree_zh.mht , avgmwdef_zh.mht , avgresf.dll;这样就更好用了，其他非中文系统，注意选择自己对应的语言版本。嗯，不解释。&lt;/p&gt;
-- /posts/avg-free-edition-2011/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/avg-free-edition-2011/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Access Control Library for Codeigniter</title>
-        <link>/posts/access-control-library-for-codeigniter/</link>
+        <link>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</link>
         <pubDate>Thu, 19 Aug 2010 20:21:54 +0000</pubDate>
         
-        <guid>/posts/access-control-library-for-codeigniter/</guid>
-        <description>清风徐来 /posts/access-control-library-for-codeigniter/ -&lt;p&gt;先检讨。比较浮躁，先前帖的&lt;!-- raw HTML omitted --&gt;Codeigniter ACL library&lt;!-- raw HTML omitted --&gt; 有较大的bug。配置和使用方法也没有说太多。今天正好用到，调试了一下。重新发布。嗯，这个也是淡水在ci在官网论坛上挖到的。还有个autoacl的，也是基于这个修改的。不过淡水觉得太耦合了，而且繁琐了。还是没有采用。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/access-control-library-for-codeigniter/ -&lt;p&gt;先检讨。比较浮躁，先前帖的&lt;!-- raw HTML omitted --&gt;Codeigniter ACL library&lt;!-- raw HTML omitted --&gt; 有较大的bug。配置和使用方法也没有说太多。今天正好用到，调试了一下。重新发布。嗯，这个也是淡水在ci在官网论坛上挖到的。还有个autoacl的，也是基于这个修改的。不过淡水觉得太耦合了，而且繁琐了。还是没有采用。&lt;/p&gt;
 &lt;p&gt;先来library：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/access-control-library-for-codeigniter/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/access-control-library-for-codeigniter/ - kissjava.cn</description>
         </item>
     
     

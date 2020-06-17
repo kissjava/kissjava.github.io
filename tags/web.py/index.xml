@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web.py on 清风徐来</title>
-    <link>/tags/web.py/</link>
+    <link>https://kissjava.github.io/tags/web.py/</link>
     <description>Recent content in web.py on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 31 Jan 2012 17:09:34 +0000</lastBuildDate>
     
-	<atom:link href="/tags/web.py/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/web.py/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>web.py尝鲜时遭遇no module named MySQLdb</title>
-      <link>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+      <link>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
       <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
       
-      <guid>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+      <guid>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
       <description>python看了好一阵了，一直没有突破。挤了点时间折腾web.py。
 下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。
 google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。

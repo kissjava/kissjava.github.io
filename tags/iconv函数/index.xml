@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iconv函数 on 清风徐来</title>
-    <link>/tags/iconv%E5%87%BD%E6%95%B0/</link>
+    <link>https://kissjava.github.io/tags/iconv%E5%87%BD%E6%95%B0/</link>
     <description>Recent content in iconv函数 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 03 Nov 2008 17:17:28 +0000</lastBuildDate>
     
-	<atom:link href="/tags/iconv%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/iconv%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>

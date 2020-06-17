@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>单元测试 on 清风徐来</title>
-    <link>/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+    <link>https://kissjava.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 单元测试 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 22:06:59 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>高级Go测试教程</title>
-      <link>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
       <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
       
-      <guid>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
       <description>本教程中，我们将介绍Go语言更高级测试实践。</description>
     </item>
     
     <item>
       <title>Go的单元测试</title>
-      <link>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 30 Jul 2019 19:00:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试在所有软件中都非常重要。 能够确保代码的正确性并确保您所做的任何更改最终都不会破坏代码库中任何其他部分的内容，这非常重要。
 ##目标
 在本教程结束时，您将掌握使用标准testing包，测试Go中的基本函数和方法。
@@ -43,10 +43,10 @@ package mainimport (&amp;quot;testing&amp;quot;)func TestCalculate(t *testin
     
     <item>
       <title>Simple Test 中文参考</title>
-      <link>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+      <link>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
       <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
       
-      <guid>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+      <guid>https://kissjava.github.io/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
       <description>&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
 &lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
 我们用以下代码来创建一个测试脚本放在tests/log_test.php里．
@@ -96,10 +96,10 @@ function Log($file_path) {
     
     <item>
       <title>codeigniter2中使用simpletest做单元测试</title>
-      <link>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
       
-      <guid>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。
 由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。 但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。
 最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。
@@ -113,10 +113,10 @@ function Log($file_path) {
     
     <item>
       <title>Codeigniter里的单元测试</title>
-      <link>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
       
-      <guid>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试驱动开发已经提出好久了。在web领域估计国内采用的不多。 其实单元测试也是很好用的东西，确实可以提高开发人员的效率。 淡水用codeigniter举例说明一下。 </description>
     </item>
     

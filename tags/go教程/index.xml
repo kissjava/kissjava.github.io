@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go教程 on 清风徐来</title>
-    <link>/tags/go%E6%95%99%E7%A8%8B/</link>
+    <link>https://kissjava.github.io/tags/go%E6%95%99%E7%A8%8B/</link>
     <description>Recent content in Go教程 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 22:06:59 +0000</lastBuildDate>
     
-	<atom:link href="/tags/go%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/go%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>高级Go测试教程</title>
-      <link>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
       <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
       
-      <guid>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
       <description>本教程中，我们将介绍Go语言更高级测试实践。</description>
     </item>
     
     <item>
       <title>Go的单元测试</title>
-      <link>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 30 Jul 2019 19:00:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试在所有软件中都非常重要。 能够确保代码的正确性并确保您所做的任何更改最终都不会破坏代码库中任何其他部分的内容，这非常重要。
 ##目标
 在本教程结束时，您将掌握使用标准testing包，测试Go中的基本函数和方法。
@@ -43,10 +43,10 @@ package mainimport (&amp;quot;testing&amp;quot;)func TestCalculate(t *testin
     
     <item>
       <title>Go解析XML文件</title>
-      <link>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
       
-      <guid>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将介绍如何有效读取XML文件，使用Go的encoding / xml包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端
 ##XML示例文件
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;users&amp;gt;&amp;lt;user type=&amp;quot;admin&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Elliot&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;user type=&amp;quot;reader&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Fraser&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;/users&amp;gt;##完成代码部分
@@ -55,10 +55,10 @@ package mainimport (&amp;quot;encoding/xml&amp;quot;&amp;quot;fmt&amp;quot;&
     
     <item>
       <title>Go解析JSON文件</title>
-      <link>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
       
-      <guid>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。 我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。
 JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！
 ##Encoding/Json Package
@@ -72,10 +72,10 @@ jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)if err != nil {fmt.Pri
     
     <item>
       <title>使用Golang执行系统命令</title>
-      <link>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
+      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
       
-      <guid>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
       <description>在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。 ##条件
 您需要安装Go 1.11+版本
 ##兼容性问题
@@ -87,10 +87,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;os/exec&amp;quot;&amp;q
     
     <item>
       <title>Go从Console读取输入</title>
-      <link>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+      <link>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+      <guid>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
       <description>##一个简单的shell 一个示例的shell，没啥用：
 package mainimport (&amp;quot;bufio&amp;quot;&amp;quot;fmt&amp;quot;&amp;quot;os&amp;quot;&amp;quot;strings&amp;quot;)func main() {reader := bufio.NewReader(os.Stdin)fmt.Println(&amp;quot;Simple Shell&amp;quot;)fmt.Println(&amp;quot;---------------------&amp;quot;)for {fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)text, _ := reader.ReadString(&#39;\n&#39;)// 将CRLF转换为LFtext = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)// 如果windows，要用下面的// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {fmt.Println(&amp;quot;hello, Yourself&amp;quot;)}if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {fmt.Println(&amp;quot;Bye.&amp;quot;)break}}}输入hi，它会打个招呼；输入bye，退出shell。
 ##读取单个UTF-8编码的Unicode字符
@@ -99,10 +99,10 @@ package mainimport (&amp;quot;bufio&amp;quot;&amp;quot;fmt&amp;quot;&amp;quo
     
     <item>
       <title>在Go中读取和写入文件</title>
-      <link>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
       
-      <guid>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。
 我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。
 ##读取文件
@@ -113,10 +113,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;io/ioutil&amp;quot;)fu
     
     <item>
       <title>Go的接口</title>
-      <link>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
       <description>在本教程中，我们将看看Go编程语言中的接口。 本节包括2个主题：
  接口的基本知识 定义我们自己的接口  ##简单案例
 如果您看到一个需要空接口的函数或方法，那么您通常可以将任何内容传递给此函数/方法。
@@ -130,10 +130,10 @@ package mainimport &amp;quot;fmt&amp;quot;type Guitarist interface {PlayGuita
     
     <item>
       <title>Go的方法</title>
-      <link>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。 ##一个简单实例 我们将创建一个非常简单的员工管理系统，允许您更新员工姓名并打印出该名称。不是最令人兴奋的示例项目，但它将作为演示还可以。
 我们首先创建一个Employee类型的结构，它包含一个字符串字段Name
 接下来，我们将声明一个UpdateName()和一个PrintName()方法，它允许我们更新和打印我们创建的员工的姓名。
@@ -147,10 +147,10 @@ func (g *Player) Update(params ParamsStruct) {fmt.</description>
     
     <item>
       <title>Go的函数</title>
-      <link>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
       <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
       <description>在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。 我们将在本教程中介绍以下主题：
  函数声明的基础知识 使用多个返回值  ##函数的声明 Go中的所有函数都以func关键字开始，然后是函数名称。在名称之后，我们打开括号并定义我们的参数列表，后跟一个非常相似的返回结果列表：
 func name(parameter-list) (result-list) {// 函数体} 访问权限！如果您希望在其他包中访问您的函数，那么您必须将函数名称的第一个字母设为大写！
@@ -162,10 +162,10 @@ package mainimport (&amp;quot;fmt&amp;quot;)func myfunction(firstName string
     
     <item>
       <title>Go的复合数据类型</title>
-      <link>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>上节我们学过来基本数据类型，本节说说go的复合数据类型。
 ##数组 Arrays 让我们首先声明一周中所有天的数组。
 // 声明一个空数组的字符串var days []string// 声明一个包含元素的数组days := [...]string{&amp;quot;monday&amp;quot;, &amp;quot;tuesday&amp;quot;, &amp;quot;wednesday&amp;quot;, &amp;quot;thursday&amp;quot;, &amp;quot;friday&amp;quot;, &amp;quot;saturday&amp;quot;, &amp;quot;sunday&amp;quot;}如果我们想查询数组中的第一个元素或特定元素，我们可以以与其他语言非常相似的方式查询：
@@ -177,10 +177,10 @@ youtubeSubscribers := map[string]int{&amp;quot;TutorialEdge&amp;quot;: 2240,&a
     
     <item>
       <title>Go的基本数据类型</title>
-      <link>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 15:47:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>在本教程中，我们将学习Go语言中可用的所有基本数据类型。在本教程结束时，您应该熟悉该语言中提供的各种不同类型，并希望了解如何在您自己的Go程序中使用这些类型。 ps：本节课程很无聊，但是不可或缺。
 ##数据类型 Go编程语言中有4种不同类型的类型
  基本类型 我们将在本教程中介绍的内容 聚合类型 数组和结构 引用类型 指针和切片 接口类型 标准接口  ##整型
@@ -191,10 +191,10 @@ package mainimport (&amp;quot;fmt&amp;quot;)func main() {fmt.</description>
     
     <item>
       <title>Go入门</title>
-      <link>/posts/go%E5%85%A5%E9%97%A8/</link>
+      <link>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</link>
       <pubDate>Mon, 29 Jul 2019 14:58:00 +0000</pubDate>
       
-      <guid>/posts/go%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</guid>
       <description>希望是无废话的go语言教程。 Go是一种绝对令人难以置信的语言，可以构建各种不同的应用程序。从命令行界面到分布式微系统甚至云平台，它的简单性和并发性使其成为许多开发团队的强大语言选择。
 在本教程中，我将着手帮助您启动并运行该语言，以便您可以开始构建更加出色的应用程序并推动技术的发展。
 我们将专注于启动和运行一个非常简单的Hello World风格的应用程序。一旦你掌握了一切正常的工作，我们就可以开始学习语言中更复杂的方面，比如函数，方法，以及最终的并发和反射等方面。

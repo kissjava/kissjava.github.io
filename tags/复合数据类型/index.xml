@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>复合数据类型 on 清风徐来</title>
-    <link>/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+    <link>https://kissjava.github.io/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
     <description>Recent content in 复合数据类型 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 17:13:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go的复合数据类型</title>
-      <link>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>上节我们学过来基本数据类型，本节说说go的复合数据类型。
 ##数组 Arrays 让我们首先声明一周中所有天的数组。
 // 声明一个空数组的字符串var days []string// 声明一个包含元素的数组days := [...]string{&amp;quot;monday&amp;quot;, &amp;quot;tuesday&amp;quot;, &amp;quot;wednesday&amp;quot;, &amp;quot;thursday&amp;quot;, &amp;quot;friday&amp;quot;, &amp;quot;saturday&amp;quot;, &amp;quot;sunday&amp;quot;}如果我们想查询数组中的第一个元素或特定元素，我们可以以与其他语言非常相似的方式查询：

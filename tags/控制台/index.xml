@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>控制台 on 清风徐来</title>
-    <link>/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</link>
+    <link>https://kissjava.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</link>
     <description>Recent content in 控制台 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 29 Jul 2019 22:24:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go从Console读取输入</title>
-      <link>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+      <link>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+      <guid>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
       <description>##一个简单的shell 一个示例的shell，没啥用：
 package mainimport (&amp;quot;bufio&amp;quot;&amp;quot;fmt&amp;quot;&amp;quot;os&amp;quot;&amp;quot;strings&amp;quot;)func main() {reader := bufio.NewReader(os.Stdin)fmt.Println(&amp;quot;Simple Shell&amp;quot;)fmt.Println(&amp;quot;---------------------&amp;quot;)for {fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)text, _ := reader.ReadString(&#39;\n&#39;)// 将CRLF转换为LFtext = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)// 如果windows，要用下面的// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {fmt.Println(&amp;quot;hello, Yourself&amp;quot;)}if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {fmt.Println(&amp;quot;Bye.&amp;quot;)break}}}输入hi，它会打个招呼；输入bye，退出shell。
 ##读取单个UTF-8编码的Unicode字符

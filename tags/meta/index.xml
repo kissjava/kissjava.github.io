@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>meta on 清风徐来</title>
-    <link>/tags/meta/</link>
+    <link>https://kissjava.github.io/tags/meta/</link>
     <description>Recent content in meta on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 30 Jan 2012 02:13:46 +0000</lastBuildDate>
     
-	<atom:link href="/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/meta/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>meta标签简明教程</title>
-      <link>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 30 Jan 2012 02:13:46 +0000</pubDate>
       
-      <guid>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid>
       <description>又是简明教程，嗯，好为人师啊。
 其实这应该是基本功，只是有些只注意速成的web设计师没有留心到。
 meta的存放位置meta标签放置在head标签之间。 关键字关键字须用英文逗号(,)隔开,不要有空白。 网站描述页面如果没有给出网站描述时，搜寻引擎通常会自动抓网页的前25字做为网页内容摘要，呈现在搜寻结果上。但有时网页的前25字可能未必能表达文章的宗旨。 网页隐私用来告知搜寻引擎该网页是否可被搜寻，并且有几个参数可作设定: noindex：不要检索。 nofollow：只检索该页，不检索该页里的链结。 noindex, nofollow：搜寻引擎的小蜘蛛到这里时，就会停止，不作任何的检索。 作者版权说明网页编码强烈建议编码设为utf-8（这个都统一用它比较方便，避免乱码等问题）。 关闭图片菜单关闭鼠标移到图片上方，出现储存图片的相关菜单。 </description>

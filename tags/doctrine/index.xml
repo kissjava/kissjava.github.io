@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>doctrine on 清风徐来</title>
-    <link>/tags/doctrine/</link>
+    <link>https://kissjava.github.io/tags/doctrine/</link>
     <description>Recent content in doctrine on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 13 Jan 2011 22:38:33 +0000</lastBuildDate>
     
-	<atom:link href="/tags/doctrine/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/doctrine/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Doctrine, the PHP ORM Framework</title>
-      <link>/posts/doctrine-the-php-orm-framework/</link>
+      <link>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</link>
       <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
       
-      <guid>/posts/doctrine-the-php-orm-framework/</guid>
+      <guid>https://kissjava.github.io/posts/doctrine-the-php-orm-framework/</guid>
       <description>Doctrine是 一個在PHP上的資料庫ORM(Object Relational Mapper)，最近手邊的幾個小案子透過Doctrine來實作。ORM的確是讓開發者少寫不少的SQL查詢，但相對的效能一定是比簡單的SQL要來得 差，我想魚跟熊掌要兼得並不容易，便利跟效能之間總有個天平讓開發者來自已調整，所以ORM好不好用就見人見志囉。
 一、前置作業：
   系統需求 依官網上面提到的，Doctrine需要PHP 5.2.3以上的版本，除此之外就不用再另外安裝其它的套件或函式庫即可運作，不過如果要使用PDO(PHP Data Object)的話，則可能會需要另外安裝PDO驅動程式。

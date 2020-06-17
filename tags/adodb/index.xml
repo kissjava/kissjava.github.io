@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ADODB on 清风徐来</title>
-    <link>/tags/adodb/</link>
+    <link>https://kissjava.github.io/tags/adodb/</link>
     <description>Recent content in ADODB on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 18 Mar 2009 12:48:44 +0000</lastBuildDate>
     
-	<atom:link href="/tags/adodb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/adodb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ADODB的简单使用</title>
-      <link>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
       
-      <guid>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;最近要用到它吧，于是淡水就整理了一下&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
       <title>ADOdb的错误处理和异常处理</title>
-      <link>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
       <pubDate>Thu, 05 Mar 2009 15:14:48 +0000</pubDate>
       
-      <guid>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
       <description>迷上那些mvc的框架后，就很少去关注到ADOdb了。
 回头看看，ADOdb真的改进不少。淡水关心的是only php5的版本。
 不仅支持了AR(ADOdb-Active-Record),也支持Exceptions了。淡水测试了一下它。 淡水也顺便试了一下它的错误处理，如下： </description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>ADOdb有更新了</title>
-      <link>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
+      <link>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
       <pubDate>Thu, 05 Mar 2009 09:28:06 +0000</pubDate>
       
-      <guid>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
+      <guid>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
       <description>支持AR了,想偷懒的同学有福了.
 相对于Zend Framework,Adodb在实现上有以下几点不同： 对PHP4和PHP5，Adodb提供一致的方法。 ADOdb_Active_Record可以同时连接到多个数据库。而Zend只能连接到默认的一个数据库。 支持ADODB_ASSOC_CASE。字段名大小写由ADODB_ASSOC_CASE项设置。
 adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_active_record尝试提出PHP中的最合适的ActiveRecord。 ADOdb_Active_Record把一个数据库表映射为一个PHP类，每个实例都代表表的一行数据。也可以定义表之间的关系，ADOdb_Active_Record对象支持嵌套。

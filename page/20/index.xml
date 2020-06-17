@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>ADODB的简单使用</title>
-        <link>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
+        <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
         
-        <guid>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
-        <description>清风徐来 /posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ -&lt;p&gt;最近要用到它吧，于是淡水就整理了一下&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ -&lt;p&gt;最近要用到它吧，于是淡水就整理了一下&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;最简单的使用方式：
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -97,50 +97,50 @@ $record[&amp;quot;lastname&amp;quot;] = &amp;quot;Smith&amp;quot;;
 $insertSQL = $conn-&amp;gt;AutoExecute($yourtable, $record, &#39;UPDATE&#39;, &#39;id = 1&#39;); 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;?&amp;gt;
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- /posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- https://kissjava.github.io/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP5的重载</title>
-        <link>/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</link>
+        <link>https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</link>
         <pubDate>Sun, 08 Mar 2009 17:54:12 +0000</pubDate>
         
-        <guid>/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</guid>
-        <description>清风徐来 /posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ -&lt;p&gt;老样子,看代码.
+        <guid>https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ -&lt;p&gt;老样子,看代码.
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP5的克隆方法</title>
-        <link>/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
+        <link>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
         <pubDate>Sun, 08 Mar 2009 17:52:18 +0000</pubDate>
         
-        <guid>/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
-        <description>清风徐来 /posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ -&lt;p&gt;不多说了，代码注释里都有。
+        <guid>https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ -&lt;p&gt;不多说了，代码注释里都有。
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>ADOdb的错误处理和异常处理</title>
-        <link>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+        <link>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
         <pubDate>Thu, 05 Mar 2009 15:14:48 +0000</pubDate>
         
-        <guid>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
-        <description>清风徐来 /posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ -&lt;p&gt;迷上那些mvc的框架后，就很少去关注到ADOdb了。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ -&lt;p&gt;迷上那些mvc的框架后，就很少去关注到ADOdb了。&lt;/p&gt;
 &lt;p&gt;回头看看，ADOdb真的改进不少。淡水关心的是only php5的版本。&lt;/p&gt;
 &lt;p&gt;不仅支持了AR(ADOdb-Active-Record),也支持Exceptions了。淡水测试了一下它。
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -152,18 +152,18 @@ $insertSQL = $conn-&amp;gt;AutoExecute($yourtable, $record, &#39;UPDATE&#39;, &#
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>ADOdb有更新了</title>
-        <link>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
+        <link>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
         <pubDate>Thu, 05 Mar 2009 09:28:06 +0000</pubDate>
         
-        <guid>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
-        <description>清风徐来 /posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ -&lt;p&gt;支持AR了,想偷懒的同学有福了.&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ -&lt;p&gt;支持AR了,想偷懒的同学有福了.&lt;/p&gt;
 &lt;p&gt;相对于Zend Framework,Adodb在实现上有以下几点不同：
 对PHP4和PHP5，Adodb提供一致的方法。
 ADOdb_Active_Record可以同时连接到多个数据库。而Zend只能连接到默认的一个数据库。
@@ -172,18 +172,18 @@ ADOdb_Active_Record可以同时连接到多个数据库。而Zend只能连接到
 &lt;p&gt;adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_active_record尝试提出PHP中的最合适的ActiveRecord。
 ADOdb_Active_Record把一个数据库表映射为一个PHP类，每个实例都代表表的一行数据。也可以定义表之间的关系，ADOdb_Active_Record对象支持嵌套。&lt;/p&gt;
 &lt;p&gt;给个详细介绍：http://phplens.com/lens/adodb/docs-active-record.htm&lt;/p&gt;
-- /posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Kohana 起步了</title>
-        <link>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
+        <link>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
         <pubDate>Tue, 03 Mar 2009 22:06:05 +0000</pubDate>
         
-        <guid>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
-        <description>清风徐来 /posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ -&lt;p&gt;开始琢磨Kohana。先看了一下Kohana 101，出现了一些问题。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ -&lt;p&gt;开始琢磨Kohana。先看了一下Kohana 101，出现了一些问题。&lt;/p&gt;
 &lt;p&gt;当做到 http://localhost/kohana/index.php/test/bye 时，出现了问题。并没有期望的视图出现，而是&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;但是文档并没有提到是何原因。还好有Codeigniter打底。原来是淡水在class中写了一个空的__contruct()，而101并没有用它。
@@ -201,30 +201,30 @@ $query = $this-&amp;gt;db-&amp;gt;select()
 &lt;p&gt;2）在26页里，&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;貌似发送mail时需要PEAR，否则出错:(,怀念Codeigniter的email类了。&lt;/p&gt;
-- /posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>jQuery AJAX方法提交数据</title>
-        <link>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
+        <link>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
         <pubDate>Sat, 28 Feb 2009 20:23:04 +0000</pubDate>
         
-        <guid>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
-        <description>清风徐来 /posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
-- /posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.github.io/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Extended Model for CodeIgniter 1.7.x</title>
-        <link>/posts/extended-model-for-codeigniter-1.7.x/</link>
+        <link>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</link>
         <pubDate>Wed, 25 Feb 2009 14:11:01 +0000</pubDate>
         
-        <guid>/posts/extended-model-for-codeigniter-1.7.x/</guid>
-        <description>清风徐来 /posts/extended-model-for-codeigniter-1.7.x/ -&lt;p&gt;不需要hacking CI的核心代码&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/ -&lt;p&gt;不需要hacking CI的核心代码&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;下载文件
 2. 放入 application/libraries 文件夹&lt;/li&gt;
@@ -232,18 +232,18 @@ $query = $this-&amp;gt;db-&amp;gt;select()
 &lt;li&gt;其他的使用和&lt;!-- raw HTML omitted --&gt;旧版&lt;!-- raw HTML omitted --&gt;一样&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;my_model&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- /posts/extended-model-for-codeigniter-1.7.x/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/extended-model-for-codeigniter-1.7.x/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>codeigniter的数据库操作</title>
-        <link>/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+        <link>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
         
-        <guid>/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
-        <description>清风徐来 /posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ -&lt;h2 id=&#34;code-langphp&#34;&gt;用codeigniter也有一段时间了，一直没有做什么总结。
+        <guid>https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ -&lt;h2 id=&#34;code-langphp&#34;&gt;用codeigniter也有一段时间了，一直没有做什么总结。
 昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。
 &lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;链接数据库&#34;&gt;链接数据库&lt;/h2&gt;
@@ -319,18 +319,18 @@ $this-&amp;gt;db-&amp;gt;where($array);
 &lt;p&gt;$query-&amp;gt;free_result() //释放资源
 &lt;!-- raw HTML omitted --&gt;
 出处：http://www.linvo2008.cn/blog/?p=437&lt;/p&gt;
-- /posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>家</title>
-        <link>/posts/%E5%AE%B6/</link>
+        <link>https://kissjava.github.io/posts/%E5%AE%B6/</link>
         <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
         
-        <guid>/posts/%E5%AE%B6/</guid>
-        <description>清风徐来 /posts/%E5%AE%B6/ -&lt;p&gt;嗯,163拨号上来,不是一般的慢阿.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E5%AE%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E5%AE%B6/ -&lt;p&gt;嗯,163拨号上来,不是一般的慢阿.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;2楼东北房间&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;2楼东北房间壁柜&lt;/p&gt;
@@ -363,7 +363,7 @@ $this-&amp;gt;db-&amp;gt;where($array);
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;一楼客厅&lt;/p&gt;
-- /posts/%E5%AE%B6/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E5%AE%B6/ - kissjava.cn</description>
         </item>
     
     

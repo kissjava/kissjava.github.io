@@ -21,7 +21,7 @@
 对于那些经常写golang的人来说，这可能很无聊。
 目录结构 ➜ crud tree.├── handler│ ├── create.go│ ├── delete.go│ ├── list.go│ └── update.go├── model│ └── user.go└── router.gorouter.go package mainimport (&quot;./handler&quot;&quot;github.com/labstack/echo&quot;&quot;github.com/labstack/echo/middleware&quot;)func main() {e := echo.New()//middlewaree.Use(middleware.Logger())e.Use(middleware.Recover())//routese.GET(&quot;/users&quot;, handler.ListUser)e.GET(&quot;/users/:id&quot;, handler.GetUser)e.POST(&quot;/users&quot;, handler.CreateUser)e.PUT(&quot;/users/:id&quot;, handler.UpdateUser)e.DELETE(&quot;/users/:id&quot;, handler.DeleteUser)//start servere.Logger.Fatal(e.Start(&quot;:8000&quot;))}model/user.go package modeltype (User struct {ID int `json:&quot;id&quot;`Name string `json:&quot;name&quot;`})//这是一个持久层，基本上被DB取代的区域var (Users = map[int]*User{}Seq = 1)handler目录 用于存储业务逻辑的区域，使用Service可能更好" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/" />
 <meta property="article:published_time" content="2019-09-03T15:56:00+00:00" />
 <meta property="article:modified_time" content="2019-09-03T15:56:00+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -53,14 +53,14 @@
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -69,7 +69,7 @@
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -102,7 +102,7 @@
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -658,7 +658,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -675,7 +675,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -892,13 +892,13 @@ func DeleteUser(c echo.Context) (err error) {
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/">
 			下回<br>macOS安装Ngnix php MySQL
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/">
 			上回<br>Go 非零基础一文入门
                 </a>
                 
@@ -1031,6 +1031,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

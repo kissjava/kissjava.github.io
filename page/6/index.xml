@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
-        <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+        <link>https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
         
-        <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
-        <description>清风徐来 /posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ -&lt;p&gt;使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧
+        <guid>https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ -&lt;p&gt;使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/1907126928.png&#34; alt=&#34;jupyter.png&#34;&gt;
 如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。&lt;/p&gt;
 &lt;p&gt;好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 &lt;a href=&#34;https://repo.continuum.io/archive/&#34;&gt;https://repo.continuum.io/archive/&lt;/a&gt;，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。&lt;/p&gt;
@@ -334,18 +334,18 @@ $ reboot
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;重启，打开你的 ip:8080,登录密码就是你用 python 时输入的那个。
 end.&lt;/p&gt;
-- /posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Somagu NAT 小鸡的挂载过程</title>
-        <link>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
+        <link>https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
         <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
         
-        <guid>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
-        <description>清风徐来 /posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ -&lt;p&gt;Somagu 提供了免费的 kvm 技术的 vps（免费到2017年9月底），虽然是 NAT 的（共享公网 IP），但是线路不错还是可玩的。
+        <guid>https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ -&lt;p&gt;Somagu 提供了免费的 kvm 技术的 vps（免费到2017年9月底），虽然是 NAT 的（共享公网 IP），但是线路不错还是可玩的。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2257569525.png&#34; alt=&#34;SomaguVps.png&#34;&gt;
 Somagu 小鸡根据你选择的 OS 模板，默认只有2.2G 或是8G 的硬盘空间。但是它提供了20G 的 Disk，但是需要我们自己去挂载。官网的说明&lt;/p&gt;
 &lt;blockquote&gt;
@@ -513,18 +513,18 @@ tmpfs            49M     0   49M   0% /run/user/1000
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果运行通过则说明文件正常，刚刚创建的文件系统会在下次启动时自动安装.
 end.&lt;/p&gt;
-- /posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>阿里云 ubuntu 的防火墙操作</title>
-        <link>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
+        <link>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
         
-        <guid>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
-        <description>清风徐来 /posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ -&lt;p&gt;阿里云服务器，没有 web 面板权限，只有 root 用户。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ -&lt;p&gt;阿里云服务器，没有 web 面板权限，只有 root 用户。&lt;/p&gt;
 &lt;p&gt;重新安装了服务器的 web 环境，需要开发相关端口。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/4243143150.png&#34; alt=&#34;Linux-IP-Tables-678x381.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;检查防火墙-&#34;&gt;检查防火墙&lt;/h2&gt;
@@ -559,18 +559,18 @@ ACCEPT     udp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW
 看到了我们放行的端口&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;end.&lt;/p&gt;
-- /posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Visual C# 禁止应用多次启动</title>
-        <link>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
+        <link>https://kissjava.github.io/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
         <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
         
-        <guid>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
-        <description>清风徐来 /posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;废话少说，上代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName(&amp;quot;AppProcessName&amp;quot;);
             if (myProcesses.Length &amp;gt; 1) 
@@ -582,47 +582,47 @@ ACCEPT     udp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW
 &lt;p&gt;以上是 WPF 适用的。
 如果是 winform 就把 &lt;code&gt;Close()&lt;/code&gt; 改为 &lt;code&gt;Application.Exit();&lt;/code&gt;。
 end.&lt;/p&gt;
-- /posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>AlibabaCloudPricing</title>
-        <link>/posts/alibabacloudpricing/</link>
+        <link>https://kissjava.github.io/posts/alibabacloudpricing/</link>
         <pubDate>Tue, 08 Aug 2017 08:17:51 +0000</pubDate>
         
-        <guid>/posts/alibabacloudpricing/</guid>
-        <description>清风徐来 /posts/alibabacloudpricing/ -&lt;p&gt;a:8:{s:4:&amp;ldquo;name&amp;rdquo;;s:23:&amp;ldquo;alibabaCloudPricing.png&amp;rdquo;;s:4:&amp;ldquo;path&amp;rdquo;;s:35:&amp;quot;/usr/uploads/2017/08/4072597731.png&amp;rdquo;;s:4:&amp;ldquo;size&amp;rdquo;;i:789109;s:4:&amp;ldquo;type&amp;rdquo;;s:3:&amp;ldquo;png&amp;rdquo;;s:4:&amp;ldquo;mime&amp;rdquo;;s:9:&amp;ldquo;image/png&amp;rdquo;;s:7:&amp;ldquo;isImage&amp;rdquo;;b:1;s:3:&amp;ldquo;url&amp;rdquo;;s:54:&amp;ldquo;&lt;a href=&#34;http://kissjava.cn/usr/uploads/2017/08/4072597731.png%22;s:11:%22description%22;N;%7D&#34;&gt;http://kissjava.cn/usr/uploads/2017/08/4072597731.png&amp;quot;;s:11:&amp;quot;description&amp;quot;;N;}&lt;/a&gt;&lt;/p&gt;
-- /posts/alibabacloudpricing/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/alibabacloudpricing/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/alibabacloudpricing/ -&lt;p&gt;a:8:{s:4:&amp;ldquo;name&amp;rdquo;;s:23:&amp;ldquo;alibabaCloudPricing.png&amp;rdquo;;s:4:&amp;ldquo;path&amp;rdquo;;s:35:&amp;quot;/usr/uploads/2017/08/4072597731.png&amp;rdquo;;s:4:&amp;ldquo;size&amp;rdquo;;i:789109;s:4:&amp;ldquo;type&amp;rdquo;;s:3:&amp;ldquo;png&amp;rdquo;;s:4:&amp;ldquo;mime&amp;rdquo;;s:9:&amp;ldquo;image/png&amp;rdquo;;s:7:&amp;ldquo;isImage&amp;rdquo;;b:1;s:3:&amp;ldquo;url&amp;rdquo;;s:54:&amp;ldquo;&lt;a href=&#34;http://kissjava.cn/usr/uploads/2017/08/4072597731.png%22;s:11:%22description%22;N;%7D&#34;&gt;http://kissjava.cn/usr/uploads/2017/08/4072597731.png&amp;quot;;s:11:&amp;quot;description&amp;quot;;N;}&lt;/a&gt;&lt;/p&gt;
+- https://kissjava.github.io/posts/alibabacloudpricing/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>转战阿里国际</title>
-        <link>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
+        <link>https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
         <pubDate>Mon, 07 Aug 2017 16:11:00 +0000</pubDate>
         
-        <guid>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
-        <description>清风徐来 /posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ -&lt;p&gt;转战阿里国际，顺便更新个皮肤。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ -&lt;p&gt;转战阿里国际，顺便更新个皮肤。&lt;/p&gt;
 &lt;p&gt;原本黑五的新加坡小鸡速度不错，就是最近频繁的宕机。&lt;/p&gt;
 &lt;p&gt;正好阿里云国际版出4.5刀/月的新加坡。配置良心，1024m 内存，40G SSD云盘，30m 带宽，1T 流量。于是又搬家了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/4072597731.png&#34; alt=&#34;alibabaCloudPricing.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;博主亲身体验，阿里云国际真心不错。绝对是目前的&lt;strong&gt;首选推荐&lt;/strong&gt;。&lt;a href=&#34;https://account-intl.aliyun.com/register/intl_register.htm?biz_params=%7B%22intl%22%3A%22%7B%5C%22referralCode%5C%22%3A%5C%221kkkrt%5C%22%7D%22%7D&#34;&gt;地址传送&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;如果要更加便宜还要靠谱的 vps，建议搬瓦工，8机房任你切换。其中两个 LA 机房都是亚洲直连，速度还行。&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;年付19$搬瓦工直连VPS传送&lt;/a&gt;。&lt;/p&gt;
-- /posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>搬出搬瓦工了</title>
-        <link>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+        <link>https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
         <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
         
-        <guid>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
-        <description>清风徐来 /posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ -&lt;p&gt;剁了个新加坡vps，于是乎搬出搬瓦工。
+        <guid>https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ -&lt;p&gt;剁了个新加坡vps，于是乎搬出搬瓦工。
 搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。
 还是说明了，世界加钱可达！
 当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。
@@ -630,35 +630,35 @@ end.&lt;/p&gt;
 推荐年付19$搬瓦工KVM直连VPS，&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;传输机在此&lt;/a&gt;！
 忽然发现，这2016年的第一篇博文。
 今年还有半个月就完了！估计很可能也是今年的最后一篇吧。&lt;/p&gt;
-- /posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>ipython tab键无法提示补全</title>
-        <link>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
+        <link>https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
         <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
         
-        <guid>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
-        <description>清风徐来 /posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ -&lt;p&gt;python3.4下pip安装了ipython&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ -&lt;p&gt;python3.4下pip安装了ipython&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;pip install ipython
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cmd运行ipython貌似正常，但是无法tab补全、提示
 需要pip 安装 pyreadline&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;pip install pyreadline
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上在win8.1下32位python3.4通过&lt;/p&gt;
-- /posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>cx_Freeze setup.py</title>
-        <link>/posts/cx_freeze-setup.py/</link>
+        <link>https://kissjava.github.io/posts/cx_freeze-setup.py/</link>
         <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
         
-        <guid>/posts/cx_freeze-setup.py/</guid>
-        <description>清风徐来 /posts/cx_freeze-setup.py/ -&lt;pre&gt;&lt;code&gt;from cx_Freeze import setup, Executable
+        <guid>https://kissjava.github.io/posts/cx_freeze-setup.py/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/cx_freeze-setup.py/ -&lt;pre&gt;&lt;code&gt;from cx_Freeze import setup, Executable
 
 # http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspx
 shortcut_table = [
@@ -713,18 +713,18 @@ setup(name=&#39;PowerService&#39;,#Setup Path
       options = {&amp;quot;build_exe&amp;quot;:buildOptions,&amp;quot;bdist_msi&amp;quot;:bdist_msi_options},
       executables = executables)
 &lt;/code&gt;&lt;/pre&gt;
-- /posts/cx_freeze-setup.py/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/cx_freeze-setup.py/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>spec demo</title>
-        <link>/posts/spec-demo/</link>
+        <link>https://kissjava.github.io/posts/spec-demo/</link>
         <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
         
-        <guid>/posts/spec-demo/</guid>
-        <description>清风徐来 /posts/spec-demo/ -&lt;pre&gt;&lt;code&gt;# -*- mode: python -*-
+        <guid>https://kissjava.github.io/posts/spec-demo/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/spec-demo/ -&lt;pre&gt;&lt;code&gt;# -*- mode: python -*-
 a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],
              pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],
              hiddenimports=[],
@@ -761,7 +761,7 @@ coll = COLLECT(exe,
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。&lt;/p&gt;
 &lt;p&gt;2015年10月23日11:22:11 update：
 pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择&lt;/p&gt;
-- /posts/spec-demo/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/spec-demo/ - kissjava.cn</description>
         </item>
     
     

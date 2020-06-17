@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fopen on 清风徐来</title>
-    <link>/tags/fopen/</link>
+    <link>https://kissjava.github.io/tags/fopen/</link>
     <description>Recent content in fopen on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Mon, 30 Jan 2012 20:08:20 +0000</lastBuildDate>
     
-	<atom:link href="/tags/fopen/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/fopen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>怎样使用php编辑以文件形式存储的配置文件</title>
-      <link>/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
       
-      <guid>/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>文件形式存储配置文件比较方便，一些不常变动的部分就无需写到数据库中，这样就无需每次都要读取数据库，可以降低数据库的负担，还可以提高响应速度。但是修改貌似没那么方便，如果可以在线上修改php配置文件那就好了。比如改改广告链接啊，变动部分css等等都可以的。
 淡水的意思其实就是不要滥用数据库，文件的读写也是可以帮助我们完成许多工作的。</description>
     </item>

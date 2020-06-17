@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQLdb on 清风徐来</title>
-    <link>/tags/mysqldb/</link>
+    <link>https://kissjava.github.io/tags/mysqldb/</link>
     <description>Recent content in MySQLdb on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 13 Aug 2014 14:35:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/mysqldb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/mysqldb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用Homebrew搞定MySQL-python</title>
-      <link>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
+      <link>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
       <description>写php时，因为懒惰，所以在mac上用了mamp。 后来，写python。MySQLdb一直无法安装，后来是单独安装了mysql-5.1.73-osx10.6-x86_64 。 然后配置.bash_profile :
 # Setting PATH for MySQLdbPATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/bin:${PATH}&amp;quot;export PATHexport DYLD_LIBRARY_PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/lib&amp;quot;export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes再使用pip安装既可：
 sudo pip install MySQL-python比较繁琐。后来发现不用在使用mamp还要再安装一个mysql就可以安装上MySQL-python的方法。用brew两行代码搞定：
@@ -28,10 +28,10 @@ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/insta
     
     <item>
       <title>搞定在 Mac 安装 MySQLdb（MySQL-python）</title>
-      <link>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
+      <link>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
       <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
       
-      <guid>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
       <description>重新安装easy_install（setuptools） 1，去下载 setuptools
 2，到终端执行 sudo sh setuptools-0.6c11-py2.7.egg
 3，清除下载的setuptools-0.6c11-py2.7.egg
@@ -42,10 +42,10 @@ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/insta
     
     <item>
       <title>Python MySQLdb模块的使用</title>
-      <link>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
       
-      <guid>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>#-*- encoding: utf-8 -*-import os, sys, stringimport MySQLdb# 连接数据库　try:conn = MySQLdb.connect(host=&#39;localhost&#39;,user=&#39;root&#39;,passwd=&#39;xxxx&#39;,db=&#39;test1&#39;)except Exception, e:print esys.exit()# 获取cursor对象来进行操作cursor = conn.cursor()# 查询时返回元组#cursor = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)# 查询时返回字典# 创建表sql = &amp;quot;create table if not exists test1(name varchar(128) primary key, age int(4))&amp;quot;cursor.execute(sql)# 插入数据sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;zhaowei&amp;quot;, 23)try:cursor.execute(sql)except Exception, e:print esql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;张三&amp;quot;, 21)try:cursor.</description>
     </item>
     

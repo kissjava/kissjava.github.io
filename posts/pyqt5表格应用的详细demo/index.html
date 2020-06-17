@@ -20,7 +20,7 @@
 <meta property="og:description" content="PyQt5实现的一个表格应用的 demo。涉及的知识点：tableWidget 的基本使用，cell 内放置 widget，设置 cell 模式，分页，获取选中项目。 首先是 QtDesigner 设计, 一个 tablewidget，4个 pushbuttno：
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ui version=&quot;4.0&quot;&gt;&lt;class&gt;MainWindow&lt;/class&gt;&lt;widget class=&quot;QMainWindow&quot; name=&quot;MainWindow&quot;&gt;&lt;property name=&quot;geometry&quot;&gt;&lt;rect&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;800&lt;/width&gt;&lt;height&gt;600&lt;/height&gt;&lt;/rect&gt;&lt;/property&gt;&lt;property name=&quot;windowTitle&quot;&gt;&lt;string&gt;MainWindow&lt;/string&gt;&lt;/property&gt;&lt;widget class=&quot;QWidget&quot; name=&quot;centralwidget&quot;&gt;&lt;widget class=&quot;QTableWidget&quot; name=&quot;tableWidget&quot;&gt;&lt;property name=&quot;geometry&quot;&gt;&lt;rect&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;801&lt;/width&gt;&lt;height&gt;541&lt;/height&gt;&lt;/rect&gt;&lt;/property&gt;&lt;property name=&quot;rowCount&quot;&gt;&lt;number&gt;5&lt;/number&gt;&lt;/property&gt;&lt;property name=&quot;columnCount&quot;&gt;&lt;number&gt;11&lt;/number&gt;&lt;/property&gt;&lt;row/&gt;&lt;row/&gt;&lt;row/&gt;&lt;row/&gt;&lt;row/&gt;&lt;column/&gt;&lt;column/&gt;&lt;column/&gt;&lt;column/&gt;&lt;column/&gt;&lt;column/&gt;&lt;column/&gt;&lt;/widget&gt;&lt;widget class=&quot;QWidget&quot; name=&quot;horizontalLayoutWidget&quot;&gt;&lt;property name=&quot;geometry&quot;&gt;&lt;rect&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;540&lt;/y&gt;&lt;width&gt;801&lt;/width&gt;&lt;height&gt;31&lt;/height&gt;&lt;/rect&gt;&lt;/property&gt;&lt;layout class=&quot;QHBoxLayout&quot; name=&quot;horizontalLayout&quot;&gt;&lt;item&gt;&lt;widget class=&quot;QPushButton&quot; name=&quot;btnLoad&quot;&gt;&lt;property name=&quot;text&quot;&gt;&lt;string&gt;Load&lt;/string&gt;&lt;/property&gt;&lt;/widget&gt;&lt;/item&gt;&lt;item&gt;&lt;widget class=&quot;QPushButton&quot; name=&quot;btnPre&quot;&gt;&lt;property name=&quot;text&quot;&gt;&lt;string&gt;《Pre&lt;/string&gt;&lt;/property&gt;&lt;/widget&gt;&lt;/item&gt;&lt;item&gt;&lt;widget class=&quot;QPushButton&quot; name=&quot;btnNext&quot;&gt;&lt;property name=&quot;text&quot;&gt;&lt;string&gt;Next》&lt;/string&gt;&lt;/property&gt;&lt;/widget&gt;&lt;/item&gt;&lt;item&gt;&lt;widget class=&quot;QPushButton&quot; name=&quot;btnDetail&quot;&gt;&lt;property name=&quot;text&quot;&gt;&lt;string&gt;Detail&lt;/string&gt;&lt;/property&gt;&lt;/widget&gt;&lt;/item&gt;&lt;/layout&gt;&lt;/widget&gt;&lt;/widget&gt;&lt;widget class=&quot;QStatusBar&quot; name=&quot;statusbar&quot;/&gt;&lt;/widget&gt;&lt;resources/&gt;&lt;connections/&gt;&lt;/ui&gt; 生成的 ui 代码 tableWidgetDemo." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/" />
 <meta property="article:published_time" content="2017-09-13T14:38:00+00:00" />
 <meta property="article:modified_time" content="2017-09-13T14:38:00+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -51,14 +51,14 @@
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -67,7 +67,7 @@
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -100,7 +100,7 @@
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -270,7 +270,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -287,7 +287,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -617,13 +617,13 @@ if __name__ == &quot;__main__&quot;:
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/">
 			下回<br>C# 测试代码的运行时间
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/">
 			上回<br>PyQt5自定义改变窗口大小信号
                 </a>
                 
@@ -756,6 +756,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

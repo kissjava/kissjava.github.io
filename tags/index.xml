@@ -2,2101 +2,2101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 清风徐来</title>
-    <link>/tags/</link>
+    <link>https://kissjava.github.io/tags/</link>
     <description>Recent content in Tags on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>macos</title>
-      <link>/tags/macos/</link>
+      <link>https://kissjava.github.io/tags/macos/</link>
       <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
       
-      <guid>/tags/macos/</guid>
+      <guid>https://kissjava.github.io/tags/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>echo</title>
-      <link>/tags/echo/</link>
+      <link>https://kissjava.github.io/tags/echo/</link>
       <pubDate>Tue, 03 Sep 2019 15:56:00 +0000</pubDate>
       
-      <guid>/tags/echo/</guid>
+      <guid>https://kissjava.github.io/tags/echo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>/tags/go/</link>
+      <link>https://kissjava.github.io/tags/go/</link>
       <pubDate>Tue, 03 Sep 2019 15:56:00 +0000</pubDate>
       
-      <guid>/tags/go/</guid>
+      <guid>https://kissjava.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>demo</title>
-      <link>/tags/demo/</link>
+      <link>https://kissjava.github.io/tags/demo/</link>
       <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
       
-      <guid>/tags/demo/</guid>
+      <guid>https://kissjava.github.io/tags/demo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gopdf</title>
-      <link>/tags/gopdf/</link>
+      <link>https://kissjava.github.io/tags/gopdf/</link>
       <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
       
-      <guid>/tags/gopdf/</guid>
+      <guid>https://kissjava.github.io/tags/gopdf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pdf</title>
-      <link>/tags/pdf/</link>
+      <link>https://kissjava.github.io/tags/pdf/</link>
       <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
       
-      <guid>/tags/pdf/</guid>
+      <guid>https://kissjava.github.io/tags/pdf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>excel</title>
-      <link>/tags/excel/</link>
+      <link>https://kissjava.github.io/tags/excel/</link>
       <pubDate>Sun, 18 Aug 2019 18:52:00 +0000</pubDate>
       
-      <guid>/tags/excel/</guid>
+      <guid>https://kissjava.github.io/tags/excel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xlsx</title>
-      <link>/tags/xlsx/</link>
+      <link>https://kissjava.github.io/tags/xlsx/</link>
       <pubDate>Sun, 18 Aug 2019 18:52:00 +0000</pubDate>
       
-      <guid>/tags/xlsx/</guid>
+      <guid>https://kissjava.github.io/tags/xlsx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sendmail</title>
-      <link>/tags/sendmail/</link>
+      <link>https://kissjava.github.io/tags/sendmail/</link>
       <pubDate>Sun, 18 Aug 2019 10:25:48 +0000</pubDate>
       
-      <guid>/tags/sendmail/</guid>
+      <guid>https://kissjava.github.io/tags/sendmail/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gzip</title>
-      <link>/tags/gzip/</link>
+      <link>https://kissjava.github.io/tags/gzip/</link>
       <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
       
-      <guid>/tags/gzip/</guid>
+      <guid>https://kissjava.github.io/tags/gzip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSRF</title>
-      <link>/tags/csrf/</link>
+      <link>https://kissjava.github.io/tags/csrf/</link>
       <pubDate>Sat, 17 Aug 2019 21:33:00 +0000</pubDate>
       
-      <guid>/tags/csrf/</guid>
+      <guid>https://kissjava.github.io/tags/csrf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CORS</title>
-      <link>/tags/cors/</link>
+      <link>https://kissjava.github.io/tags/cors/</link>
       <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
       
-      <guid>/tags/cors/</guid>
+      <guid>https://kissjava.github.io/tags/cors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sessions</title>
-      <link>/tags/sessions/</link>
+      <link>https://kissjava.github.io/tags/sessions/</link>
       <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
       
-      <guid>/tags/sessions/</guid>
+      <guid>https://kissjava.github.io/tags/sessions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CLI</title>
-      <link>/tags/cli/</link>
+      <link>https://kissjava.github.io/tags/cli/</link>
       <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
       
-      <guid>/tags/cli/</guid>
+      <guid>https://kissjava.github.io/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>命令行</title>
-      <link>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+      <link>https://kissjava.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
       <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
       
-      <guid>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
       <description></description>
     </item>
     
     <item>
       <title>模板</title>
-      <link>/tags/%E6%A8%A1%E6%9D%BF/</link>
+      <link>https://kissjava.github.io/tags/%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Sat, 17 Aug 2019 15:17:00 +0000</pubDate>
       
-      <guid>/tags/%E6%A8%A1%E6%9D%BF/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%A8%A1%E6%9D%BF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>frp</title>
-      <link>/tags/frp/</link>
+      <link>https://kissjava.github.io/tags/frp/</link>
       <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
       
-      <guid>/tags/frp/</guid>
+      <guid>https://kissjava.github.io/tags/frp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>内网穿透</title>
-      <link>/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <link>https://kissjava.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
       <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
       
-      <guid>/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>小内存</title>
-      <link>/tags/%E5%B0%8F%E5%86%85%E5%AD%98/</link>
+      <link>https://kissjava.github.io/tags/%E5%B0%8F%E5%86%85%E5%AD%98/</link>
       <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
       
-      <guid>/tags/%E5%B0%8F%E5%86%85%E5%AD%98/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%B0%8F%E5%86%85%E5%AD%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>空间不足</title>
-      <link>/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
+      <link>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
       <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
       
-      <guid>/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go教程</title>
-      <link>/tags/go%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/tags/go%E6%95%99%E7%A8%8B/</link>
       <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
       
-      <guid>/tags/go%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/tags/go%E6%95%99%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>单元测试</title>
-      <link>/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
       
-      <guid>/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>解析xml</title>
-      <link>/tags/%E8%A7%A3%E6%9E%90xml/</link>
+      <link>https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90xml/</link>
       <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
       
-      <guid>/tags/%E8%A7%A3%E6%9E%90xml/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90xml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>/tags/json/</link>
+      <link>https://kissjava.github.io/tags/json/</link>
       <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
       
-      <guid>/tags/json/</guid>
+      <guid>https://kissjava.github.io/tags/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>解析JSON</title>
-      <link>/tags/%E8%A7%A3%E6%9E%90json/</link>
+      <link>https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90json/</link>
       <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
       
-      <guid>/tags/%E8%A7%A3%E6%9E%90json/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>执行命令</title>
-      <link>/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
+      <link>https://kissjava.github.io/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
       
-      <guid>/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bufio</title>
-      <link>/tags/bufio/</link>
+      <link>https://kissjava.github.io/tags/bufio/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/tags/bufio/</guid>
+      <guid>https://kissjava.github.io/tags/bufio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Console</title>
-      <link>/tags/console/</link>
+      <link>https://kissjava.github.io/tags/console/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/tags/console/</guid>
+      <guid>https://kissjava.github.io/tags/console/</guid>
       <description></description>
     </item>
     
     <item>
       <title>控制台</title>
-      <link>/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</link>
+      <link>https://kissjava.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>读写文件</title>
-      <link>/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
       
-      <guid>/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>interface</title>
-      <link>/tags/interface/</link>
+      <link>https://kissjava.github.io/tags/interface/</link>
       <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
       
-      <guid>/tags/interface/</guid>
+      <guid>https://kissjava.github.io/tags/interface/</guid>
       <description></description>
     </item>
     
     <item>
       <title>接口</title>
-      <link>/tags/%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://kissjava.github.io/tags/%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
       
-      <guid>/tags/%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%8E%A5%E5%8F%A3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>方法</title>
-      <link>/tags/%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.github.io/tags/%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
       
-      <guid>/tags/%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%96%B9%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>函数</title>
-      <link>/tags/%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/tags/%E5%87%BD%E6%95%B0/</link>
       <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
       
-      <guid>/tags/%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%87%BD%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>复合数据类型</title>
-      <link>/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
       
-      <guid>/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>基本数据类型</title>
-      <link>/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 15:47:00 +0000</pubDate>
       
-      <guid>/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mikeyang</title>
-      <link>/tags/mikeyang/</link>
+      <link>https://kissjava.github.io/tags/mikeyang/</link>
       <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
       
-      <guid>/tags/mikeyang/</guid>
+      <guid>https://kissjava.github.io/tags/mikeyang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BBR</title>
-      <link>/tags/bbr/</link>
+      <link>https://kissjava.github.io/tags/bbr/</link>
       <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
       
-      <guid>/tags/bbr/</guid>
+      <guid>https://kissjava.github.io/tags/bbr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Debian9</title>
-      <link>/tags/debian9/</link>
+      <link>https://kissjava.github.io/tags/debian9/</link>
       <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
       
-      <guid>/tags/debian9/</guid>
+      <guid>https://kissjava.github.io/tags/debian9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mojave</title>
-      <link>/tags/mojave/</link>
+      <link>https://kissjava.github.io/tags/mojave/</link>
       <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
       
-      <guid>/tags/mojave/</guid>
+      <guid>https://kissjava.github.io/tags/mojave/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>/tags/nginx/</link>
+      <link>https://kissjava.github.io/tags/nginx/</link>
       <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
       
-      <guid>/tags/nginx/</guid>
+      <guid>https://kissjava.github.io/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>反向代理</title>
-      <link>/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <link>https://kissjava.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
       <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
       
-      <guid>/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>https</title>
-      <link>/tags/https/</link>
+      <link>https://kissjava.github.io/tags/https/</link>
       <pubDate>Mon, 20 Aug 2018 16:05:00 +0000</pubDate>
       
-      <guid>/tags/https/</guid>
+      <guid>https://kissjava.github.io/tags/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssl</title>
-      <link>/tags/ssl/</link>
+      <link>https://kissjava.github.io/tags/ssl/</link>
       <pubDate>Mon, 20 Aug 2018 16:05:00 +0000</pubDate>
       
-      <guid>/tags/ssl/</guid>
+      <guid>https://kissjava.github.io/tags/ssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FANUC</title>
-      <link>/tags/fanuc/</link>
+      <link>https://kissjava.github.io/tags/fanuc/</link>
       <pubDate>Thu, 09 Aug 2018 07:49:00 +0000</pubDate>
       
-      <guid>/tags/fanuc/</guid>
+      <guid>https://kissjava.github.io/tags/fanuc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kissjava</title>
-      <link>/tags/kissjava/</link>
+      <link>https://kissjava.github.io/tags/kissjava/</link>
       <pubDate>Wed, 29 Nov 2017 17:23:00 +0000</pubDate>
       
-      <guid>/tags/kissjava/</guid>
+      <guid>https://kissjava.github.io/tags/kissjava/</guid>
       <description></description>
     </item>
     
     <item>
       <title>圆通</title>
-      <link>/tags/%E5%9C%86%E9%80%9A/</link>
+      <link>https://kissjava.github.io/tags/%E5%9C%86%E9%80%9A/</link>
       <pubDate>Fri, 29 Sep 2017 15:34:00 +0000</pubDate>
       
-      <guid>/tags/%E5%9C%86%E9%80%9A/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%9C%86%E9%80%9A/</guid>
       <description></description>
     </item>
     
     <item>
       <title>快递</title>
-      <link>/tags/%E5%BF%AB%E9%80%92/</link>
+      <link>https://kissjava.github.io/tags/%E5%BF%AB%E9%80%92/</link>
       <pubDate>Fri, 29 Sep 2017 15:34:00 +0000</pubDate>
       
-      <guid>/tags/%E5%BF%AB%E9%80%92/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%BF%AB%E9%80%92/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C#</title>
-      <link>/tags/c#/</link>
+      <link>https://kissjava.github.io/tags/c#/</link>
       <pubDate>Sat, 23 Sep 2017 13:28:00 +0000</pubDate>
       
-      <guid>/tags/c#/</guid>
+      <guid>https://kissjava.github.io/tags/c#/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WPF</title>
-      <link>/tags/wpf/</link>
+      <link>https://kissjava.github.io/tags/wpf/</link>
       <pubDate>Sat, 23 Sep 2017 13:28:00 +0000</pubDate>
       
-      <guid>/tags/wpf/</guid>
+      <guid>https://kissjava.github.io/tags/wpf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>状态栏</title>
-      <link>/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</link>
+      <link>https://kissjava.github.io/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</link>
       <pubDate>Sat, 23 Sep 2017 13:28:00 +0000</pubDate>
       
-      <guid>/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scrollbar</title>
-      <link>/tags/scrollbar/</link>
+      <link>https://kissjava.github.io/tags/scrollbar/</link>
       <pubDate>Fri, 22 Sep 2017 10:01:00 +0000</pubDate>
       
-      <guid>/tags/scrollbar/</guid>
+      <guid>https://kissjava.github.io/tags/scrollbar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>滚动条</title>
-      <link>/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/</link>
+      <link>https://kissjava.github.io/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/</link>
       <pubDate>Fri, 22 Sep 2017 10:01:00 +0000</pubDate>
       
-      <guid>/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%BB%9A%E5%8A%A8%E6%9D%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>时间</title>
-      <link>/tags/%E6%97%B6%E9%97%B4/</link>
+      <link>https://kissjava.github.io/tags/%E6%97%B6%E9%97%B4/</link>
       <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
       
-      <guid>/tags/%E6%97%B6%E9%97%B4/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%97%B6%E9%97%B4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>测试</title>
-      <link>/tags/%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
       
-      <guid>/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PyQt5</title>
-      <link>/tags/pyqt5/</link>
+      <link>https://kissjava.github.io/tags/pyqt5/</link>
       <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>/tags/pyqt5/</guid>
+      <guid>https://kissjava.github.io/tags/pyqt5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tableWidget</title>
-      <link>/tags/tablewidget/</link>
+      <link>https://kissjava.github.io/tags/tablewidget/</link>
       <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>/tags/tablewidget/</guid>
+      <guid>https://kissjava.github.io/tags/tablewidget/</guid>
       <description></description>
     </item>
     
     <item>
       <title>resize</title>
-      <link>/tags/resize/</link>
+      <link>https://kissjava.github.io/tags/resize/</link>
       <pubDate>Tue, 12 Sep 2017 11:13:00 +0000</pubDate>
       
-      <guid>/tags/resize/</guid>
+      <guid>https://kissjava.github.io/tags/resize/</guid>
       <description></description>
     </item>
     
     <item>
       <title>事件</title>
-      <link>/tags/%E4%BA%8B%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/tags/%E4%BA%8B%E4%BB%B6/</link>
       <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
       
-      <guid>/tags/%E4%BA%8B%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%BA%8B%E4%BB%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>委托</title>
-      <link>/tags/%E5%A7%94%E6%89%98/</link>
+      <link>https://kissjava.github.io/tags/%E5%A7%94%E6%89%98/</link>
       <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
       
-      <guid>/tags/%E5%A7%94%E6%89%98/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%A7%94%E6%89%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>centos</title>
-      <link>/tags/centos/</link>
+      <link>https://kissjava.github.io/tags/centos/</link>
       <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
       
-      <guid>/tags/centos/</guid>
+      <guid>https://kissjava.github.io/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jupyter</title>
-      <link>/tags/jupyter/</link>
+      <link>https://kissjava.github.io/tags/jupyter/</link>
       <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
       
-      <guid>/tags/jupyter/</guid>
+      <guid>https://kissjava.github.io/tags/jupyter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>/tags/python/</link>
+      <link>https://kissjava.github.io/tags/python/</link>
       <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>https://kissjava.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>自启</title>
-      <link>/tags/%E8%87%AA%E5%90%AF/</link>
+      <link>https://kissjava.github.io/tags/%E8%87%AA%E5%90%AF/</link>
       <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
       
-      <guid>/tags/%E8%87%AA%E5%90%AF/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%87%AA%E5%90%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mount</title>
-      <link>/tags/mount/</link>
+      <link>https://kissjava.github.io/tags/mount/</link>
       <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
       
-      <guid>/tags/mount/</guid>
+      <guid>https://kissjava.github.io/tags/mount/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vps</title>
-      <link>/tags/vps/</link>
+      <link>https://kissjava.github.io/tags/vps/</link>
       <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
       
-      <guid>/tags/vps/</guid>
+      <guid>https://kissjava.github.io/tags/vps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>挂载</title>
-      <link>/tags/%E6%8C%82%E8%BD%BD/</link>
+      <link>https://kissjava.github.io/tags/%E6%8C%82%E8%BD%BD/</link>
       <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
       
-      <guid>/tags/%E6%8C%82%E8%BD%BD/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%8C%82%E8%BD%BD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iptables</title>
-      <link>/tags/iptables/</link>
+      <link>https://kissjava.github.io/tags/iptables/</link>
       <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
       
-      <guid>/tags/iptables/</guid>
+      <guid>https://kissjava.github.io/tags/iptables/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>/tags/ubuntu/</link>
+      <link>https://kissjava.github.io/tags/ubuntu/</link>
       <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
       
-      <guid>/tags/ubuntu/</guid>
+      <guid>https://kissjava.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>阿里云</title>
-      <link>/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
+      <link>https://kissjava.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
       <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
       
-      <guid>/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>重复启动</title>
-      <link>/tags/%E9%87%8D%E5%A4%8D%E5%90%AF%E5%8A%A8/</link>
+      <link>https://kissjava.github.io/tags/%E9%87%8D%E5%A4%8D%E5%90%AF%E5%8A%A8/</link>
       <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
       
-      <guid>/tags/%E9%87%8D%E5%A4%8D%E5%90%AF%E5%8A%A8/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%87%8D%E5%A4%8D%E5%90%AF%E5%8A%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>搬瓦工</title>
-      <link>/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</link>
+      <link>https://kissjava.github.io/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</link>
       <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
       
-      <guid>/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ipython</title>
-      <link>/tags/ipython/</link>
+      <link>https://kissjava.github.io/tags/ipython/</link>
       <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
       
-      <guid>/tags/ipython/</guid>
+      <guid>https://kissjava.github.io/tags/ipython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cx_freeze</title>
-      <link>/tags/cx_freeze/</link>
+      <link>https://kissjava.github.io/tags/cx_freeze/</link>
       <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
       
-      <guid>/tags/cx_freeze/</guid>
+      <guid>https://kissjava.github.io/tags/cx_freeze/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pyinstaller</title>
-      <link>/tags/pyinstaller/</link>
+      <link>https://kissjava.github.io/tags/pyinstaller/</link>
       <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
       
-      <guid>/tags/pyinstaller/</guid>
+      <guid>https://kissjava.github.io/tags/pyinstaller/</guid>
       <description></description>
     </item>
     
     <item>
       <title>brew</title>
-      <link>/tags/brew/</link>
+      <link>https://kissjava.github.io/tags/brew/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>/tags/brew/</guid>
+      <guid>https://kissjava.github.io/tags/brew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>homebrew</title>
-      <link>/tags/homebrew/</link>
+      <link>https://kissjava.github.io/tags/homebrew/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>/tags/homebrew/</guid>
+      <guid>https://kissjava.github.io/tags/homebrew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQLdb</title>
-      <link>/tags/mysqldb/</link>
+      <link>https://kissjava.github.io/tags/mysqldb/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>/tags/mysqldb/</guid>
+      <guid>https://kissjava.github.io/tags/mysqldb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>flight</title>
-      <link>/tags/flight/</link>
+      <link>https://kissjava.github.io/tags/flight/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>/tags/flight/</guid>
+      <guid>https://kissjava.github.io/tags/flight/</guid>
       <description></description>
     </item>
     
     <item>
       <title>framework</title>
-      <link>/tags/framework/</link>
+      <link>https://kissjava.github.io/tags/framework/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>/tags/framework/</guid>
+      <guid>https://kissjava.github.io/tags/framework/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>/tags/php/</link>
+      <link>https://kissjava.github.io/tags/php/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>/tags/php/</guid>
+      <guid>https://kissjava.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>中文手册</title>
-      <link>/tags/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+      <link>https://kissjava.github.io/tags/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>/tags/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
       <description></description>
     </item>
     
     <item>
       <title>翻译</title>
-      <link>/tags/%E7%BF%BB%E8%AF%91/</link>
+      <link>https://kissjava.github.io/tags/%E7%BF%BB%E8%AF%91/</link>
       <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
       
-      <guid>/tags/%E7%BF%BB%E8%AF%91/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%BF%BB%E8%AF%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpstorm</title>
-      <link>/tags/phpstorm/</link>
+      <link>https://kissjava.github.io/tags/phpstorm/</link>
       <pubDate>Tue, 06 May 2014 23:13:25 +0000</pubDate>
       
-      <guid>/tags/phpstorm/</guid>
+      <guid>https://kissjava.github.io/tags/phpstorm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mac</title>
-      <link>/tags/mac/</link>
+      <link>https://kissjava.github.io/tags/mac/</link>
       <pubDate>Wed, 30 Apr 2014 23:55:00 +0000</pubDate>
       
-      <guid>/tags/mac/</guid>
+      <guid>https://kissjava.github.io/tags/mac/</guid>
       <description></description>
     </item>
     
     <item>
       <title>easy_install</title>
-      <link>/tags/easy_install/</link>
+      <link>https://kissjava.github.io/tags/easy_install/</link>
       <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
       
-      <guid>/tags/easy_install/</guid>
+      <guid>https://kissjava.github.io/tags/easy_install/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MAMP</title>
-      <link>/tags/mamp/</link>
+      <link>https://kissjava.github.io/tags/mamp/</link>
       <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
       
-      <guid>/tags/mamp/</guid>
+      <guid>https://kissjava.github.io/tags/mamp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sublime text2</title>
-      <link>/tags/sublime-text2/</link>
+      <link>https://kissjava.github.io/tags/sublime-text2/</link>
       <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
       
-      <guid>/tags/sublime-text2/</guid>
+      <guid>https://kissjava.github.io/tags/sublime-text2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wxpython</title>
-      <link>/tags/wxpython/</link>
+      <link>https://kissjava.github.io/tags/wxpython/</link>
       <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
       
-      <guid>/tags/wxpython/</guid>
+      <guid>https://kissjava.github.io/tags/wxpython/</guid>
       <description></description>
     </item>
     
     <item>
       <title>背景</title>
-      <link>/tags/%E8%83%8C%E6%99%AF/</link>
+      <link>https://kissjava.github.io/tags/%E8%83%8C%E6%99%AF/</link>
       <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
       
-      <guid>/tags/%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%83%8C%E6%99%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>threading</title>
-      <link>/tags/threading/</link>
+      <link>https://kissjava.github.io/tags/threading/</link>
       <pubDate>Sat, 21 Dec 2013 12:44:00 +0000</pubDate>
       
-      <guid>/tags/threading/</guid>
+      <guid>https://kissjava.github.io/tags/threading/</guid>
       <description></description>
     </item>
     
     <item>
       <title>多线程</title>
-      <link>/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
       <pubDate>Thu, 19 Dec 2013 09:23:00 +0000</pubDate>
       
-      <guid>/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>app</title>
-      <link>/tags/app/</link>
+      <link>https://kissjava.github.io/tags/app/</link>
       <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
       
-      <guid>/tags/app/</guid>
+      <guid>https://kissjava.github.io/tags/app/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquerymobile</title>
-      <link>/tags/jquerymobile/</link>
+      <link>https://kissjava.github.io/tags/jquerymobile/</link>
       <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
       
-      <guid>/tags/jquerymobile/</guid>
+      <guid>https://kissjava.github.io/tags/jquerymobile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LazyPHP</title>
-      <link>/tags/lazyphp/</link>
+      <link>https://kissjava.github.io/tags/lazyphp/</link>
       <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
       
-      <guid>/tags/lazyphp/</guid>
+      <guid>https://kissjava.github.io/tags/lazyphp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>py2exe</title>
-      <link>/tags/py2exe/</link>
+      <link>https://kissjava.github.io/tags/py2exe/</link>
       <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
       
-      <guid>/tags/py2exe/</guid>
+      <guid>https://kissjava.github.io/tags/py2exe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gui</title>
-      <link>/tags/gui/</link>
+      <link>https://kissjava.github.io/tags/gui/</link>
       <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
       
-      <guid>/tags/gui/</guid>
+      <guid>https://kissjava.github.io/tags/gui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualenv</title>
-      <link>/tags/virtualenv/</link>
+      <link>https://kissjava.github.io/tags/virtualenv/</link>
       <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
       
-      <guid>/tags/virtualenv/</guid>
+      <guid>https://kissjava.github.io/tags/virtualenv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>setuptools</title>
-      <link>/tags/setuptools/</link>
+      <link>https://kissjava.github.io/tags/setuptools/</link>
       <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
       
-      <guid>/tags/setuptools/</guid>
+      <guid>https://kissjava.github.io/tags/setuptools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>svn</title>
-      <link>/tags/svn/</link>
+      <link>https://kissjava.github.io/tags/svn/</link>
       <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
       
-      <guid>/tags/svn/</guid>
+      <guid>https://kissjava.github.io/tags/svn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>右键</title>
-      <link>/tags/%E5%8F%B3%E9%94%AE/</link>
+      <link>https://kissjava.github.io/tags/%E5%8F%B3%E9%94%AE/</link>
       <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
       
-      <guid>/tags/%E5%8F%B3%E9%94%AE/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%8F%B3%E9%94%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>simple test</title>
-      <link>/tags/simple-test/</link>
+      <link>https://kissjava.github.io/tags/simple-test/</link>
       <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
       
-      <guid>/tags/simple-test/</guid>
+      <guid>https://kissjava.github.io/tags/simple-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>测试驱动开发</title>
-      <link>/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+      <link>https://kissjava.github.io/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
       <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
       
-      <guid>/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpdoc</title>
-      <link>/tags/phpdoc/</link>
+      <link>https://kissjava.github.io/tags/phpdoc/</link>
       <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
       
-      <guid>/tags/phpdoc/</guid>
+      <guid>https://kissjava.github.io/tags/phpdoc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpDocumentor</title>
-      <link>/tags/phpdocumentor/</link>
+      <link>https://kissjava.github.io/tags/phpdocumentor/</link>
       <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
       
-      <guid>/tags/phpdocumentor/</guid>
+      <guid>https://kissjava.github.io/tags/phpdocumentor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jQuery</title>
-      <link>/tags/jquery/</link>
+      <link>https://kissjava.github.io/tags/jquery/</link>
       <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
       
-      <guid>/tags/jquery/</guid>
+      <guid>https://kissjava.github.io/tags/jquery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mongodb</title>
-      <link>/tags/mongodb/</link>
+      <link>https://kissjava.github.io/tags/mongodb/</link>
       <pubDate>Thu, 02 Feb 2012 15:37:20 +0000</pubDate>
       
-      <guid>/tags/mongodb/</guid>
+      <guid>https://kissjava.github.io/tags/mongodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web.py</title>
-      <link>/tags/web.py/</link>
+      <link>https://kissjava.github.io/tags/web.py/</link>
       <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
       
-      <guid>/tags/web.py/</guid>
+      <guid>https://kissjava.github.io/tags/web.py/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fopen</title>
-      <link>/tags/fopen/</link>
+      <link>https://kissjava.github.io/tags/fopen/</link>
       <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
       
-      <guid>/tags/fopen/</guid>
+      <guid>https://kissjava.github.io/tags/fopen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>htmlspecialchars</title>
-      <link>/tags/htmlspecialchars/</link>
+      <link>https://kissjava.github.io/tags/htmlspecialchars/</link>
       <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
       
-      <guid>/tags/htmlspecialchars/</guid>
+      <guid>https://kissjava.github.io/tags/htmlspecialchars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stripslashes</title>
-      <link>/tags/stripslashes/</link>
+      <link>https://kissjava.github.io/tags/stripslashes/</link>
       <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
       
-      <guid>/tags/stripslashes/</guid>
+      <guid>https://kissjava.github.io/tags/stripslashes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>meta</title>
-      <link>/tags/meta/</link>
+      <link>https://kissjava.github.io/tags/meta/</link>
       <pubDate>Mon, 30 Jan 2012 02:13:46 +0000</pubDate>
       
-      <guid>/tags/meta/</guid>
+      <guid>https://kissjava.github.io/tags/meta/</guid>
       <description></description>
     </item>
     
     <item>
       <title>seo</title>
-      <link>/tags/seo/</link>
+      <link>https://kissjava.github.io/tags/seo/</link>
       <pubDate>Mon, 30 Jan 2012 02:13:46 +0000</pubDate>
       
-      <guid>/tags/seo/</guid>
+      <guid>https://kissjava.github.io/tags/seo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jqueryui</title>
-      <link>/tags/jqueryui/</link>
+      <link>https://kissjava.github.io/tags/jqueryui/</link>
       <pubDate>Mon, 09 Jan 2012 14:18:30 +0000</pubDate>
       
-      <guid>/tags/jqueryui/</guid>
+      <guid>https://kissjava.github.io/tags/jqueryui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>/tags/javascript/</link>
+      <link>https://kissjava.github.io/tags/javascript/</link>
       <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
       
-      <guid>/tags/javascript/</guid>
+      <guid>https://kissjava.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xdebug</title>
-      <link>/tags/xdebug/</link>
+      <link>https://kissjava.github.io/tags/xdebug/</link>
       <pubDate>Sat, 03 Dec 2011 08:40:07 +0000</pubDate>
       
-      <guid>/tags/xdebug/</guid>
+      <guid>https://kissjava.github.io/tags/xdebug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PSD</title>
-      <link>/tags/psd/</link>
+      <link>https://kissjava.github.io/tags/psd/</link>
       <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
       
-      <guid>/tags/psd/</guid>
+      <guid>https://kissjava.github.io/tags/psd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AJAX</title>
-      <link>/tags/ajax/</link>
+      <link>https://kissjava.github.io/tags/ajax/</link>
       <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
       
-      <guid>/tags/ajax/</guid>
+      <guid>https://kissjava.github.io/tags/ajax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CodeIgniter</title>
-      <link>/tags/codeigniter/</link>
+      <link>https://kissjava.github.io/tags/codeigniter/</link>
       <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
       
-      <guid>/tags/codeigniter/</guid>
+      <guid>https://kissjava.github.io/tags/codeigniter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psd2html</title>
-      <link>/tags/psd2html/</link>
+      <link>https://kissjava.github.io/tags/psd2html/</link>
       <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
       
-      <guid>/tags/psd2html/</guid>
+      <guid>https://kissjava.github.io/tags/psd2html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mail</title>
-      <link>/tags/mail/</link>
+      <link>https://kissjava.github.io/tags/mail/</link>
       <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
       
-      <guid>/tags/mail/</guid>
+      <guid>https://kissjava.github.io/tags/mail/</guid>
       <description></description>
     </item>
     
     <item>
       <title>smtp</title>
-      <link>/tags/smtp/</link>
+      <link>https://kissjava.github.io/tags/smtp/</link>
       <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
       
-      <guid>/tags/smtp/</guid>
+      <guid>https://kissjava.github.io/tags/smtp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unit test</title>
-      <link>/tags/unit-test/</link>
+      <link>https://kissjava.github.io/tags/unit-test/</link>
       <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
       
-      <guid>/tags/unit-test/</guid>
+      <guid>https://kissjava.github.io/tags/unit-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>textmate</title>
-      <link>/tags/textmate/</link>
+      <link>https://kissjava.github.io/tags/textmate/</link>
       <pubDate>Thu, 13 Oct 2011 16:36:19 +0000</pubDate>
       
-      <guid>/tags/textmate/</guid>
+      <guid>https://kissjava.github.io/tags/textmate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AjaxFileUpload</title>
-      <link>/tags/ajaxfileupload/</link>
+      <link>https://kissjava.github.io/tags/ajaxfileupload/</link>
       <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
       
-      <guid>/tags/ajaxfileupload/</guid>
+      <guid>https://kissjava.github.io/tags/ajaxfileupload/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mysql</title>
-      <link>/tags/mysql/</link>
+      <link>https://kissjava.github.io/tags/mysql/</link>
       <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
       
-      <guid>/tags/mysql/</guid>
+      <guid>https://kissjava.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RAND</title>
-      <link>/tags/rand/</link>
+      <link>https://kissjava.github.io/tags/rand/</link>
       <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
       
-      <guid>/tags/rand/</guid>
+      <guid>https://kissjava.github.io/tags/rand/</guid>
       <description></description>
     </item>
     
     <item>
       <title>随机</title>
-      <link>/tags/%E9%9A%8F%E6%9C%BA/</link>
+      <link>https://kissjava.github.io/tags/%E9%9A%8F%E6%9C%BA/</link>
       <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
       
-      <guid>/tags/%E9%9A%8F%E6%9C%BA/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%9A%8F%E6%9C%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>swfupload</title>
-      <link>/tags/swfupload/</link>
+      <link>https://kissjava.github.io/tags/swfupload/</link>
       <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
       
-      <guid>/tags/swfupload/</guid>
+      <guid>https://kissjava.github.io/tags/swfupload/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eclipse</title>
-      <link>/tags/eclipse/</link>
+      <link>https://kissjava.github.io/tags/eclipse/</link>
       <pubDate>Fri, 13 May 2011 15:31:28 +0000</pubDate>
       
-      <guid>/tags/eclipse/</guid>
+      <guid>https://kissjava.github.io/tags/eclipse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>五一</title>
-      <link>/tags/%E4%BA%94%E4%B8%80/</link>
+      <link>https://kissjava.github.io/tags/%E4%BA%94%E4%B8%80/</link>
       <pubDate>Fri, 29 Apr 2011 10:19:40 +0000</pubDate>
       
-      <guid>/tags/%E4%BA%94%E4%B8%80/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%BA%94%E4%B8%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>单例模式</title>
-      <link>/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://kissjava.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
       
-      <guid>/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firebug</title>
-      <link>/tags/firebug/</link>
+      <link>https://kissjava.github.io/tags/firebug/</link>
       <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
       
-      <guid>/tags/firebug/</guid>
+      <guid>https://kissjava.github.io/tags/firebug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firephp</title>
-      <link>/tags/firephp/</link>
+      <link>https://kissjava.github.io/tags/firephp/</link>
       <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
       
-      <guid>/tags/firephp/</guid>
+      <guid>https://kissjava.github.io/tags/firephp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zend framework</title>
-      <link>/tags/zend-framework/</link>
+      <link>https://kissjava.github.io/tags/zend-framework/</link>
       <pubDate>Thu, 13 Jan 2011 22:59:27 +0000</pubDate>
       
-      <guid>/tags/zend-framework/</guid>
+      <guid>https://kissjava.github.io/tags/zend-framework/</guid>
       <description></description>
     </item>
     
     <item>
       <title>doctrine</title>
-      <link>/tags/doctrine/</link>
+      <link>https://kissjava.github.io/tags/doctrine/</link>
       <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
       
-      <guid>/tags/doctrine/</guid>
+      <guid>https://kissjava.github.io/tags/doctrine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>orm</title>
-      <link>/tags/orm/</link>
+      <link>https://kissjava.github.io/tags/orm/</link>
       <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
       
-      <guid>/tags/orm/</guid>
+      <guid>https://kissjava.github.io/tags/orm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>grub</title>
-      <link>/tags/grub/</link>
+      <link>https://kissjava.github.io/tags/grub/</link>
       <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
       
-      <guid>/tags/grub/</guid>
+      <guid>https://kissjava.github.io/tags/grub/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lazy initialization</title>
-      <link>/tags/lazy-initialization/</link>
+      <link>https://kissjava.github.io/tags/lazy-initialization/</link>
       <pubDate>Mon, 27 Dec 2010 14:06:45 +0000</pubDate>
       
-      <guid>/tags/lazy-initialization/</guid>
+      <guid>https://kissjava.github.io/tags/lazy-initialization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>延迟加载</title>
-      <link>/tags/%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
+      <link>https://kissjava.github.io/tags/%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</link>
       <pubDate>Mon, 27 Dec 2010 14:06:45 +0000</pubDate>
       
-      <guid>/tags/%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>破解</title>
-      <link>/tags/%E7%A0%B4%E8%A7%A3/</link>
+      <link>https://kissjava.github.io/tags/%E7%A0%B4%E8%A7%A3/</link>
       <pubDate>Wed, 01 Dec 2010 20:23:02 +0000</pubDate>
       
-      <guid>/tags/%E7%A0%B4%E8%A7%A3/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%A0%B4%E8%A7%A3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>avg</title>
-      <link>/tags/avg/</link>
+      <link>https://kissjava.github.io/tags/avg/</link>
       <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
       
-      <guid>/tags/avg/</guid>
+      <guid>https://kissjava.github.io/tags/avg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>免费杀软</title>
-      <link>/tags/%E5%85%8D%E8%B4%B9%E6%9D%80%E8%BD%AF/</link>
+      <link>https://kissjava.github.io/tags/%E5%85%8D%E8%B4%B9%E6%9D%80%E8%BD%AF/</link>
       <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
       
-      <guid>/tags/%E5%85%8D%E8%B4%B9%E6%9D%80%E8%BD%AF/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%85%8D%E8%B4%B9%E6%9D%80%E8%BD%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>acl</title>
-      <link>/tags/acl/</link>
+      <link>https://kissjava.github.io/tags/acl/</link>
       <pubDate>Thu, 19 Aug 2010 20:21:54 +0000</pubDate>
       
-      <guid>/tags/acl/</guid>
+      <guid>https://kissjava.github.io/tags/acl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>/tags/css/</link>
+      <link>https://kissjava.github.io/tags/css/</link>
       <pubDate>Thu, 05 Aug 2010 20:26:42 +0000</pubDate>
       
-      <guid>/tags/css/</guid>
+      <guid>https://kissjava.github.io/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xampp</title>
-      <link>/tags/xampp/</link>
+      <link>https://kissjava.github.io/tags/xampp/</link>
       <pubDate>Wed, 23 Jun 2010 16:38:09 +0000</pubDate>
       
-      <guid>/tags/xampp/</guid>
+      <guid>https://kissjava.github.io/tags/xampp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>antinat</title>
-      <link>/tags/antinat/</link>
+      <link>https://kissjava.github.io/tags/antinat/</link>
       <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
       
-      <guid>/tags/antinat/</guid>
+      <guid>https://kissjava.github.io/tags/antinat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>proxy</title>
-      <link>/tags/proxy/</link>
+      <link>https://kissjava.github.io/tags/proxy/</link>
       <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
       
-      <guid>/tags/proxy/</guid>
+      <guid>https://kissjava.github.io/tags/proxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>socks5</title>
-      <link>/tags/socks5/</link>
+      <link>https://kissjava.github.io/tags/socks5/</link>
       <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
       
-      <guid>/tags/socks5/</guid>
+      <guid>https://kissjava.github.io/tags/socks5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>废弃函数</title>
-      <link>/tags/%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/tags/%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
       <pubDate>Sun, 14 Mar 2010 19:58:36 +0000</pubDate>
       
-      <guid>/tags/%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>md5</title>
-      <link>/tags/md5/</link>
+      <link>https://kissjava.github.io/tags/md5/</link>
       <pubDate>Tue, 09 Mar 2010 16:17:19 +0000</pubDate>
       
-      <guid>/tags/md5/</guid>
+      <guid>https://kissjava.github.io/tags/md5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>disctinct</title>
-      <link>/tags/disctinct/</link>
+      <link>https://kissjava.github.io/tags/disctinct/</link>
       <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
       
-      <guid>/tags/disctinct/</guid>
+      <guid>https://kissjava.github.io/tags/disctinct/</guid>
       <description></description>
     </item>
     
     <item>
       <title>过滤重复</title>
-      <link>/tags/%E8%BF%87%E6%BB%A4%E9%87%8D%E5%A4%8D/</link>
+      <link>https://kissjava.github.io/tags/%E8%BF%87%E6%BB%A4%E9%87%8D%E5%A4%8D/</link>
       <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
       
-      <guid>/tags/%E8%BF%87%E6%BB%A4%E9%87%8D%E5%A4%8D/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%BF%87%E6%BB%A4%E9%87%8D%E5%A4%8D/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ab</title>
-      <link>/tags/ab/</link>
+      <link>https://kissjava.github.io/tags/ab/</link>
       <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
       
-      <guid>/tags/ab/</guid>
+      <guid>https://kissjava.github.io/tags/ab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>abapce</title>
-      <link>/tags/abapce/</link>
+      <link>https://kissjava.github.io/tags/abapce/</link>
       <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
       
-      <guid>/tags/abapce/</guid>
+      <guid>https://kissjava.github.io/tags/abapce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>压力测试</title>
-      <link>/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
       
-      <guid>/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>/tags/vim/</link>
+      <link>https://kissjava.github.io/tags/vim/</link>
       <pubDate>Sun, 07 Mar 2010 13:13:54 +0000</pubDate>
       
-      <guid>/tags/vim/</guid>
+      <guid>https://kissjava.github.io/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>flash</title>
-      <link>/tags/flash/</link>
+      <link>https://kissjava.github.io/tags/flash/</link>
       <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
       
-      <guid>/tags/flash/</guid>
+      <guid>https://kissjava.github.io/tags/flash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php5</title>
-      <link>/tags/php5/</link>
+      <link>https://kissjava.github.io/tags/php5/</link>
       <pubDate>Sat, 13 Feb 2010 16:31:57 +0000</pubDate>
       
-      <guid>/tags/php5/</guid>
+      <guid>https://kissjava.github.io/tags/php5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>substr函数</title>
-      <link>/tags/substr%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/tags/substr%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 12 Feb 2010 21:54:46 +0000</pubDate>
       
-      <guid>/tags/substr%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/tags/substr%E5%87%BD%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AND</title>
-      <link>/tags/and/</link>
+      <link>https://kissjava.github.io/tags/and/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/and/</guid>
+      <guid>https://kissjava.github.io/tags/and/</guid>
       <description></description>
     </item>
     
     <item>
       <title>error</title>
-      <link>/tags/error/</link>
+      <link>https://kissjava.github.io/tags/error/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/error/</guid>
+      <guid>https://kissjava.github.io/tags/error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>exception</title>
-      <link>/tags/exception/</link>
+      <link>https://kissjava.github.io/tags/exception/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/exception/</guid>
+      <guid>https://kissjava.github.io/tags/exception/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OR</title>
-      <link>/tags/or/</link>
+      <link>https://kissjava.github.io/tags/or/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/or/</guid>
+      <guid>https://kissjava.github.io/tags/or/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stdClass</title>
-      <link>/tags/stdclass/</link>
+      <link>https://kissjava.github.io/tags/stdclass/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/stdclass/</guid>
+      <guid>https://kissjava.github.io/tags/stdclass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tip</title>
-      <link>/tags/tip/</link>
+      <link>https://kissjava.github.io/tags/tip/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/tip/</guid>
+      <guid>https://kissjava.github.io/tags/tip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>异常</title>
-      <link>/tags/%E5%BC%82%E5%B8%B8/</link>
+      <link>https://kissjava.github.io/tags/%E5%BC%82%E5%B8%B8/</link>
       <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
       
-      <guid>/tags/%E5%BC%82%E5%B8%B8/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%BC%82%E5%B8%B8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MVC</title>
-      <link>/tags/mvc/</link>
+      <link>https://kissjava.github.io/tags/mvc/</link>
       <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
       
-      <guid>/tags/mvc/</guid>
+      <guid>https://kissjava.github.io/tags/mvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tinymvc</title>
-      <link>/tags/tinymvc/</link>
+      <link>https://kissjava.github.io/tags/tinymvc/</link>
       <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
       
-      <guid>/tags/tinymvc/</guid>
+      <guid>https://kissjava.github.io/tags/tinymvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>2009</title>
-      <link>/tags/2009/</link>
+      <link>https://kissjava.github.io/tags/2009/</link>
       <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
       
-      <guid>/tags/2009/</guid>
+      <guid>https://kissjava.github.io/tags/2009/</guid>
       <description></description>
     </item>
     
     <item>
       <title>substring</title>
-      <link>/tags/substring/</link>
+      <link>https://kissjava.github.io/tags/substring/</link>
       <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
       
-      <guid>/tags/substring/</guid>
+      <guid>https://kissjava.github.io/tags/substring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>批量更新</title>
-      <link>/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</link>
+      <link>https://kissjava.github.io/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</link>
       <pubDate>Wed, 16 Sep 2009 18:00:07 +0000</pubDate>
       
-      <guid>/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PDT</title>
-      <link>/tags/pdt/</link>
+      <link>https://kissjava.github.io/tags/pdt/</link>
       <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
       
-      <guid>/tags/pdt/</guid>
+      <guid>https://kissjava.github.io/tags/pdt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xampplite</title>
-      <link>/tags/xampplite/</link>
+      <link>https://kissjava.github.io/tags/xampplite/</link>
       <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
       
-      <guid>/tags/xampplite/</guid>
+      <guid>https://kissjava.github.io/tags/xampplite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>表格变色</title>
-      <link>/tags/%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
+      <link>https://kissjava.github.io/tags/%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
       <pubDate>Fri, 11 Sep 2009 13:37:53 +0000</pubDate>
       
-      <guid>/tags/%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EditPlus</title>
-      <link>/tags/editplus/</link>
+      <link>https://kissjava.github.io/tags/editplus/</link>
       <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
       
-      <guid>/tags/editplus/</guid>
+      <guid>https://kissjava.github.io/tags/editplus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpCB</title>
-      <link>/tags/phpcb/</link>
+      <link>https://kissjava.github.io/tags/phpcb/</link>
       <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
       
-      <guid>/tags/phpcb/</guid>
+      <guid>https://kissjava.github.io/tags/phpcb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>导入</title>
-      <link>/tags/%E5%AF%BC%E5%85%A5/</link>
+      <link>https://kissjava.github.io/tags/%E5%AF%BC%E5%85%A5/</link>
       <pubDate>Fri, 07 Aug 2009 11:01:17 +0000</pubDate>
       
-      <guid>/tags/%E5%AF%BC%E5%85%A5/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%AF%BC%E5%85%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VMware</title>
-      <link>/tags/vmware/</link>
+      <link>https://kissjava.github.io/tags/vmware/</link>
       <pubDate>Thu, 06 Aug 2009 15:25:38 +0000</pubDate>
       
-      <guid>/tags/vmware/</guid>
+      <guid>https://kissjava.github.io/tags/vmware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>日志</title>
-      <link>/tags/%E6%97%A5%E5%BF%97/</link>
+      <link>https://kissjava.github.io/tags/%E6%97%A5%E5%BF%97/</link>
       <pubDate>Sun, 26 Jul 2009 10:12:49 +0000</pubDate>
       
-      <guid>/tags/%E6%97%A5%E5%BF%97/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%97%A5%E5%BF%97/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nusoap</title>
-      <link>/tags/nusoap/</link>
+      <link>https://kissjava.github.io/tags/nusoap/</link>
       <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
       
-      <guid>/tags/nusoap/</guid>
+      <guid>https://kissjava.github.io/tags/nusoap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>soap</title>
-      <link>/tags/soap/</link>
+      <link>https://kissjava.github.io/tags/soap/</link>
       <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
       
-      <guid>/tags/soap/</guid>
+      <guid>https://kissjava.github.io/tags/soap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web service</title>
-      <link>/tags/web-service/</link>
+      <link>https://kissjava.github.io/tags/web-service/</link>
       <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
       
-      <guid>/tags/web-service/</guid>
+      <guid>https://kissjava.github.io/tags/web-service/</guid>
       <description></description>
     </item>
     
     <item>
       <title>权限</title>
-      <link>/tags/%E6%9D%83%E9%99%90/</link>
+      <link>https://kissjava.github.io/tags/%E6%9D%83%E9%99%90/</link>
       <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
       
-      <guid>/tags/%E6%9D%83%E9%99%90/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%9D%83%E9%99%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>debug</title>
-      <link>/tags/debug/</link>
+      <link>https://kissjava.github.io/tags/debug/</link>
       <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
       
-      <guid>/tags/debug/</guid>
+      <guid>https://kissjava.github.io/tags/debug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zendstudio</title>
-      <link>/tags/zendstudio/</link>
+      <link>https://kissjava.github.io/tags/zendstudio/</link>
       <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
       
-      <guid>/tags/zendstudio/</guid>
+      <guid>https://kissjava.github.io/tags/zendstudio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>调试</title>
-      <link>/tags/%E8%B0%83%E8%AF%95/</link>
+      <link>https://kissjava.github.io/tags/%E8%B0%83%E8%AF%95/</link>
       <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
       
-      <guid>/tags/%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/tags/%E8%B0%83%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apache</title>
-      <link>/tags/apache/</link>
+      <link>https://kissjava.github.io/tags/apache/</link>
       <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
       
-      <guid>/tags/apache/</guid>
+      <guid>https://kissjava.github.io/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mod_rewrite</title>
-      <link>/tags/mod_rewrite/</link>
+      <link>https://kissjava.github.io/tags/mod_rewrite/</link>
       <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
       
-      <guid>/tags/mod_rewrite/</guid>
+      <guid>https://kissjava.github.io/tags/mod_rewrite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>/tags/js/</link>
+      <link>https://kissjava.github.io/tags/js/</link>
       <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
       
-      <guid>/tags/js/</guid>
+      <guid>https://kissjava.github.io/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>隔行变色</title>
-      <link>/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</link>
+      <link>https://kissjava.github.io/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</link>
       <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
       
-      <guid>/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%9A%94%E8%A1%8C%E5%8F%98%E8%89%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kohana</title>
-      <link>/tags/kohana/</link>
+      <link>https://kissjava.github.io/tags/kohana/</link>
       <pubDate>Tue, 16 Jun 2009 10:08:25 +0000</pubDate>
       
-      <guid>/tags/kohana/</guid>
+      <guid>https://kissjava.github.io/tags/kohana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code folding</title>
-      <link>/tags/code-folding/</link>
+      <link>https://kissjava.github.io/tags/code-folding/</link>
       <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
       
-      <guid>/tags/code-folding/</guid>
+      <guid>https://kissjava.github.io/tags/code-folding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>netbeans</title>
-      <link>/tags/netbeans/</link>
+      <link>https://kissjava.github.io/tags/netbeans/</link>
       <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
       
-      <guid>/tags/netbeans/</guid>
+      <guid>https://kissjava.github.io/tags/netbeans/</guid>
       <description></description>
     </item>
     
     <item>
       <title>代码折叠</title>
-      <link>/tags/%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0/</link>
+      <link>https://kissjava.github.io/tags/%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0/</link>
       <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
       
-      <guid>/tags/%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>wsdl</title>
-      <link>/tags/wsdl/</link>
+      <link>https://kissjava.github.io/tags/wsdl/</link>
       <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
       
-      <guid>/tags/wsdl/</guid>
+      <guid>https://kissjava.github.io/tags/wsdl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zse</title>
-      <link>/tags/zse/</link>
+      <link>https://kissjava.github.io/tags/zse/</link>
       <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
       
-      <guid>/tags/zse/</guid>
+      <guid>https://kissjava.github.io/tags/zse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>subversion</title>
-      <link>/tags/subversion/</link>
+      <link>https://kissjava.github.io/tags/subversion/</link>
       <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
       
-      <guid>/tags/subversion/</guid>
+      <guid>https://kissjava.github.io/tags/subversion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>小阳春</title>
-      <link>/tags/%E5%B0%8F%E9%98%B3%E6%98%A5/</link>
+      <link>https://kissjava.github.io/tags/%E5%B0%8F%E9%98%B3%E6%98%A5/</link>
       <pubDate>Sun, 12 Apr 2009 11:44:35 +0000</pubDate>
       
-      <guid>/tags/%E5%B0%8F%E9%98%B3%E6%98%A5/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%B0%8F%E9%98%B3%E6%98%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>library</title>
-      <link>/tags/library/</link>
+      <link>https://kissjava.github.io/tags/library/</link>
       <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
       
-      <guid>/tags/library/</guid>
+      <guid>https://kissjava.github.io/tags/library/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cache</title>
-      <link>/tags/cache/</link>
+      <link>https://kissjava.github.io/tags/cache/</link>
       <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
       
-      <guid>/tags/cache/</guid>
+      <guid>https://kissjava.github.io/tags/cache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>layout</title>
-      <link>/tags/layout/</link>
+      <link>https://kissjava.github.io/tags/layout/</link>
       <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
       
-      <guid>/tags/layout/</guid>
+      <guid>https://kissjava.github.io/tags/layout/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ADODB</title>
-      <link>/tags/adodb/</link>
+      <link>https://kissjava.github.io/tags/adodb/</link>
       <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
       
-      <guid>/tags/adodb/</guid>
+      <guid>https://kissjava.github.io/tags/adodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OOP</title>
-      <link>/tags/oop/</link>
+      <link>https://kissjava.github.io/tags/oop/</link>
       <pubDate>Sun, 08 Mar 2009 17:54:12 +0000</pubDate>
       
-      <guid>/tags/oop/</guid>
+      <guid>https://kissjava.github.io/tags/oop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>overloading</title>
-      <link>/tags/overloading/</link>
+      <link>https://kissjava.github.io/tags/overloading/</link>
       <pubDate>Sun, 08 Mar 2009 17:54:12 +0000</pubDate>
       
-      <guid>/tags/overloading/</guid>
+      <guid>https://kissjava.github.io/tags/overloading/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clone</title>
-      <link>/tags/clone/</link>
+      <link>https://kissjava.github.io/tags/clone/</link>
       <pubDate>Sun, 08 Mar 2009 17:52:18 +0000</pubDate>
       
-      <guid>/tags/clone/</guid>
+      <guid>https://kissjava.github.io/tags/clone/</guid>
       <description></description>
     </item>
     
     <item>
       <title>home</title>
-      <link>/tags/home/</link>
+      <link>https://kissjava.github.io/tags/home/</link>
       <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
       
-      <guid>/tags/home/</guid>
+      <guid>https://kissjava.github.io/tags/home/</guid>
       <description></description>
     </item>
     
     <item>
       <title>家</title>
-      <link>/tags/%E5%AE%B6/</link>
+      <link>https://kissjava.github.io/tags/%E5%AE%B6/</link>
       <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
       
-      <guid>/tags/%E5%AE%B6/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%AE%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>户口</title>
-      <link>/tags/%E6%88%B7%E5%8F%A3/</link>
+      <link>https://kissjava.github.io/tags/%E6%88%B7%E5%8F%A3/</link>
       <pubDate>Wed, 24 Dec 2008 21:08:43 +0000</pubDate>
       
-      <guid>/tags/%E6%88%B7%E5%8F%A3/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%88%B7%E5%8F%A3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>父爱</title>
-      <link>/tags/%E7%88%B6%E7%88%B1/</link>
+      <link>https://kissjava.github.io/tags/%E7%88%B6%E7%88%B1/</link>
       <pubDate>Wed, 24 Dec 2008 21:08:43 +0000</pubDate>
       
-      <guid>/tags/%E7%88%B6%E7%88%B1/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%88%B6%E7%88%B1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>黑户</title>
-      <link>/tags/%E9%BB%91%E6%88%B7/</link>
+      <link>https://kissjava.github.io/tags/%E9%BB%91%E6%88%B7/</link>
       <pubDate>Wed, 24 Dec 2008 21:08:43 +0000</pubDate>
       
-      <guid>/tags/%E9%BB%91%E6%88%B7/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%BB%91%E6%88%B7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>en</title>
-      <link>/tags/en/</link>
+      <link>https://kissjava.github.io/tags/en/</link>
       <pubDate>Mon, 15 Dec 2008 12:38:01 +0000</pubDate>
       
-      <guid>/tags/en/</guid>
+      <guid>https://kissjava.github.io/tags/en/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eng</title>
-      <link>/tags/eng/</link>
+      <link>https://kissjava.github.io/tags/eng/</link>
       <pubDate>Mon, 15 Dec 2008 12:38:01 +0000</pubDate>
       
-      <guid>/tags/eng/</guid>
+      <guid>https://kissjava.github.io/tags/eng/</guid>
       <description></description>
     </item>
     
     <item>
       <title>普通话</title>
-      <link>/tags/%E6%99%AE%E9%80%9A%E8%AF%9D/</link>
+      <link>https://kissjava.github.io/tags/%E6%99%AE%E9%80%9A%E8%AF%9D/</link>
       <pubDate>Mon, 15 Dec 2008 12:38:01 +0000</pubDate>
       
-      <guid>/tags/%E6%99%AE%E9%80%9A%E8%AF%9D/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%99%AE%E9%80%9A%E8%AF%9D/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iframe</title>
-      <link>/tags/iframe/</link>
+      <link>https://kissjava.github.io/tags/iframe/</link>
       <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
       
-      <guid>/tags/iframe/</guid>
+      <guid>https://kissjava.github.io/tags/iframe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tinyMCE</title>
-      <link>/tags/tinymce/</link>
+      <link>https://kissjava.github.io/tags/tinymce/</link>
       <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
       
-      <guid>/tags/tinymce/</guid>
+      <guid>https://kissjava.github.io/tags/tinymce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>phpDesigner2008</title>
-      <link>/tags/phpdesigner2008/</link>
+      <link>https://kissjava.github.io/tags/phpdesigner2008/</link>
       <pubDate>Thu, 20 Nov 2008 12:25:04 +0000</pubDate>
       
-      <guid>/tags/phpdesigner2008/</guid>
+      <guid>https://kissjava.github.io/tags/phpdesigner2008/</guid>
       <description></description>
     </item>
     
     <item>
       <title>男人</title>
-      <link>/tags/%E7%94%B7%E4%BA%BA/</link>
+      <link>https://kissjava.github.io/tags/%E7%94%B7%E4%BA%BA/</link>
       <pubDate>Mon, 17 Nov 2008 13:52:58 +0000</pubDate>
       
-      <guid>/tags/%E7%94%B7%E4%BA%BA/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%94%B7%E4%BA%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>font</title>
-      <link>/tags/font/</link>
+      <link>https://kissjava.github.io/tags/font/</link>
       <pubDate>Thu, 13 Nov 2008 09:33:41 +0000</pubDate>
       
-      <guid>/tags/font/</guid>
+      <guid>https://kissjava.github.io/tags/font/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iconv函数</title>
-      <link>/tags/iconv%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/tags/iconv%E5%87%BD%E6%95%B0/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>/tags/iconv%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/tags/iconv%E5%87%BD%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Movie</title>
-      <link>/tags/movie/</link>
+      <link>https://kissjava.github.io/tags/movie/</link>
       <pubDate>Sun, 19 Oct 2008 13:24:07 +0000</pubDate>
       
-      <guid>/tags/movie/</guid>
+      <guid>https://kissjava.github.io/tags/movie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>鼻音</title>
-      <link>/tags/%E9%BC%BB%E9%9F%B3/</link>
+      <link>https://kissjava.github.io/tags/%E9%BC%BB%E9%9F%B3/</link>
       <pubDate>Fri, 17 Oct 2008 10:59:09 +0000</pubDate>
       
-      <guid>/tags/%E9%BC%BB%E9%9F%B3/</guid>
+      <guid>https://kissjava.github.io/tags/%E9%BC%BB%E9%9F%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>源码下载</title>
-      <link>/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://kissjava.github.io/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Wed, 08 Oct 2008 20:09:32 +0000</pubDate>
       
-      <guid>/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://kissjava.github.io/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aia</title>
-      <link>/tags/aia/</link>
+      <link>https://kissjava.github.io/tags/aia/</link>
       <pubDate>Wed, 08 Oct 2008 13:57:09 +0000</pubDate>
       
-      <guid>/tags/aia/</guid>
+      <guid>https://kissjava.github.io/tags/aia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>保险</title>
-      <link>/tags/%E4%BF%9D%E9%99%A9/</link>
+      <link>https://kissjava.github.io/tags/%E4%BF%9D%E9%99%A9/</link>
       <pubDate>Wed, 08 Oct 2008 13:57:09 +0000</pubDate>
       
-      <guid>/tags/%E4%BF%9D%E9%99%A9/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%BF%9D%E9%99%A9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gmail</title>
-      <link>/tags/gmail/</link>
+      <link>https://kissjava.github.io/tags/gmail/</link>
       <pubDate>Wed, 08 Oct 2008 10:08:42 +0000</pubDate>
       
-      <guid>/tags/gmail/</guid>
+      <guid>https://kissjava.github.io/tags/gmail/</guid>
       <description></description>
     </item>
     
     <item>
       <title>国庆</title>
-      <link>/tags/%E5%9B%BD%E5%BA%86/</link>
+      <link>https://kissjava.github.io/tags/%E5%9B%BD%E5%BA%86/</link>
       <pubDate>Fri, 03 Oct 2008 15:40:12 +0000</pubDate>
       
-      <guid>/tags/%E5%9B%BD%E5%BA%86/</guid>
+      <guid>https://kissjava.github.io/tags/%E5%9B%BD%E5%BA%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>结婚</title>
-      <link>/tags/%E7%BB%93%E5%A9%9A/</link>
+      <link>https://kissjava.github.io/tags/%E7%BB%93%E5%A9%9A/</link>
       <pubDate>Fri, 03 Oct 2008 15:40:12 +0000</pubDate>
       
-      <guid>/tags/%E7%BB%93%E5%A9%9A/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%BB%93%E5%A9%9A/</guid>
       <description></description>
     </item>
     
     <item>
       <title>birthday</title>
-      <link>/tags/birthday/</link>
+      <link>https://kissjava.github.io/tags/birthday/</link>
       <pubDate>Sun, 28 Sep 2008 14:14:24 +0000</pubDate>
       
-      <guid>/tags/birthday/</guid>
+      <guid>https://kissjava.github.io/tags/birthday/</guid>
       <description></description>
     </item>
     
     <item>
       <title>生日</title>
-      <link>/tags/%E7%94%9F%E6%97%A5/</link>
+      <link>https://kissjava.github.io/tags/%E7%94%9F%E6%97%A5/</link>
       <pubDate>Sun, 28 Sep 2008 14:14:24 +0000</pubDate>
       
-      <guid>/tags/%E7%94%9F%E6%97%A5/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%94%9F%E6%97%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>上传</title>
-      <link>/tags/%E4%B8%8A%E4%BC%A0/</link>
+      <link>https://kissjava.github.io/tags/%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Wed, 10 Sep 2008 15:45:57 +0000</pubDate>
       
-      <guid>/tags/%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>https://kissjava.github.io/tags/%E4%B8%8A%E4%BC%A0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>空间</title>
-      <link>/tags/%E7%A9%BA%E9%97%B4/</link>
+      <link>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Wed, 10 Sep 2008 10:48:37 +0000</pubDate>
       
-      <guid>/tags/%E7%A9%BA%E9%97%B4/</guid>
+      <guid>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4/</guid>
       <description></description>
     </item>
     

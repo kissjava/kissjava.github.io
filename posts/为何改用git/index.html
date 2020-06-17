@@ -19,7 +19,7 @@
 <meta property="og:title" content="为何改用Git" />
 <meta property="og:description" content="Subversion 用得好好的，为什么要改用 Git 呢？记得刚开始用 Subversion 时，它在 Windows 平台上的工具也还不是那么方便，光是安装就要手动设定一堆东西。现在，Subversion 服务已经几乎是点下一步、下一步的方式就能安装完成了，非常方便。而且，现有的软件项目、写作等工作，也都在是用 Subversion 来管理版本。在已经投资不少学习成本、且用得很习惯的情况下，要换另外一套版本管理系统总是会有一些阻力。更顺畅的工作流程其实我 lag 很久了。没有改用 Git，主要就是因为习惯问题，以及考虑到已经付出的学习成本，和没有一个让我觉得非换不可的理由。但是最近由于经常使用笔记本电脑，而且网络经常碰到无法连线的状态（有时候是笔电所在的环境无法连网，有时候是服务器离线），以至于有些本机的修改成果无法立即 commit 成一个修订版次。这个时候，如果我还要继续修改别的东西（例如，修正另一个 bug），往往就会跟刚才的修改混在一起 commit，而且是要等到可连上网络时才能 commit。这样的时间差，很容易造成一些遗漏或混乱，无形中就增加了成本和风险。我希望就算无法连接服务器，还是能够依目前的进度先 commit，并且继续做后续的修改，这样我就不用在那里空等，也不用担心自己等到网络可连线时，已经忘记那些档案的 commit 先后次序。Git 可以做到这点。快速Git 之所以反应迅速，主要是因为分散式架构的缘故。在此架构下，版本库的完整历史全都在本机上。因此，就算要进行历史版本比对，也都是在本机进行，速度当然比需要实时连线的 VCS 来得快。版本库毁损的风险较低同样是基于分散式架构的缘故，Git 的版本库会在各用户端机器上存在多个完整的复本，因此就算服务器上的版本库损坏了，还是可以利用其他用户端机器的复本轻易复原，大幅降低版本库备份的成本和档案遗失的风险。弹性的本地分支在使用 Subversion 时，分支其实就是把档案复制到另一个文件夹，然后在不同的分支（文件夹）之间切换。在试过 Subversion 的分支之后，我还是有怕怕的感觉，因而倾向尽量少用。因为我觉得自己有一天一定会不小心把分支和主线给弄混了，以至于出现版本错乱的情形。我还没有实验 Git 的分支功能，但从现有的一些技术文件看来，Git 分支的一个主要优点，就是它可以完全在本机进行。比如说，你可以在本机建立几个实验性质的分支，等到你觉得时机成熟了，便可以将特定分支推送至主机，分享给别人。或者，有些实验失败的分支，也可以直接在本机砍掉，而其他开发人员根本不知道曾经有这些分支。其他优点个人是觉得 Git 还有一个小地方比 Subversion 好：它的版本库目录结构。当我从远端 Subversion 服务器 checkout 一个版本库到本机时，在本机的工作目录下，每一层子目录都会有一个 .svn 的资料夹，作为版本控制之用。Git 不是这样。当我从远端服务器 clone 一个 Git 版本库到本机时，就只有该版本库复本的根目录底下会有一个 .git 目录，其他子目录则很「干净」。此外，它的档案忽略清单只要由 .git 目录下的一个名为 .gitignore 的档案就能完全控制。虽然是不太起眼的差异，我却觉得蛮好的。大概是有点洁癖的缘故吧 XD原文需要翻墙，哎http://huan-lin.blogspot.com/2011/05/why-git.html" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/" />
+<meta property="og:url" content="https://kissjava.github.io/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/" />
 <meta property="article:published_time" content="2011-06-03T13:44:31+00:00" />
 <meta property="article:modified_time" content="2011-06-03T13:44:31+00:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -49,14 +49,14 @@
 
 
 
-<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+<link rel="stylesheet" href="https://kissjava.github.io/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
 
 
-<script src="//js/loadCSS.js"></script>
+<script src="https://kissjava.github.io/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -65,7 +65,7 @@
 
 
   
-    <script src="//js/toc-collapse.js"></script>
+    <script src="https://kissjava.github.io/js/toc-collapse.js"></script>
   
 
 
@@ -98,7 +98,7 @@
 </head><body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="/">
+    <a class="a-block nav-head false" href="https://kissjava.github.io">
     
         <div class="nav-title">
             清风徐来
@@ -268,7 +268,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="/">
+        <a ref="navTitle" class="navbar-brand" href="https://kissjava.github.io">
             清风徐来
         </a>
         
@@ -285,7 +285,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="/">
+    <a href="https://kissjava.github.io">
         <div class="single-column-header-title">清风徐来</div>
         
         <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
@@ -358,13 +358,13 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/">
+                <a class="newer-posts" href="https://kissjava.github.io/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/">
 			下回<br>Git安装使用手记
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                <a class="older-posts" href="https://kissjava.github.io/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 			上回<br>eclipse pdt 注释快捷键失效的解决方法
                 </a>
                 
@@ -497,6 +497,6 @@ app = new Vue({
 });
 </script>
 
-<script src="//js/journal.js"></script>
+<script src="https://kissjava.github.io/js/journal.js"></script>
     </body>
 </html>

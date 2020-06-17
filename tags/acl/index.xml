@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>acl on 清风徐来</title>
-    <link>/tags/acl/</link>
+    <link>https://kissjava.github.io/tags/acl/</link>
     <description>Recent content in acl on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Thu, 19 Aug 2010 20:21:54 +0000</lastBuildDate>
     
-	<atom:link href="/tags/acl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/acl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Access Control Library for Codeigniter</title>
-      <link>/posts/access-control-library-for-codeigniter/</link>
+      <link>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</link>
       <pubDate>Thu, 19 Aug 2010 20:21:54 +0000</pubDate>
       
-      <guid>/posts/access-control-library-for-codeigniter/</guid>
+      <guid>https://kissjava.github.io/posts/access-control-library-for-codeigniter/</guid>
       <description>先检讨。比较浮躁，先前帖的Codeigniter ACL library有较大的bug。配置和使用方法也没有说太多。今天正好用到，调试了一下。重新发布。嗯，这个也是淡水在ci在官网论坛上挖到的。还有个autoacl的，也是基于这个修改的。不过淡水觉得太耦合了，而且繁琐了。还是没有采用。
 先来library： </description>
     </item>
     
     <item>
       <title>CodeIgniter 带简单权限控制的登录实例</title>
-      <link>/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
+      <link>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
       
-      <guid>/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
+      <guid>https://kissjava.github.io/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
       <description>function __construct() { parent::__construct(); @session_start(); } function login() { unset($_SESSION[&#39;user&#39;]); $email = $this-&amp;gt;input-&amp;gt;post(&#39;email&#39;); $password = md5($this-&amp;gt;input-&amp;gt;post(&#39;password&#39;)); $this-&amp;gt;db-&amp;gt;where(&#39;email&#39;,$email); $this-&amp;gt;db-&amp;gt;where(&#39;password&#39;,$password); $this-&amp;gt;db-&amp;gt;where(&#39;status &amp;lt;&amp;gt;&#39;,0); $query = $this-&amp;gt;db-&amp;gt;get(&#39;users&#39;); if(!$query-&amp;gt;num_rows()!=0) return false; $row = $query-&amp;gt;row_array(); $_SESSION[&#39;user&#39;][&#39;id&#39;] = $row[&#39;id&#39;]; $_SESSION[&#39;user&#39;][&#39;name&#39;] = $row[&#39;name&#39;]; $_SESSION[&#39;user&#39;][&#39;type&#39;] = $row[&#39;type&#39;]; return true; } function logout() { unset($_SESSION[&#39;user&#39;]); } function isPermitted() { $_SESSION[&#39;return&#39;] = $this-&amp;gt;uri-&amp;gt;uri_string(); if(isset($_SESSION[&#39;user&#39;][&#39;type&#39;])) { $uri = substr($this-&amp;gt;uri-&amp;gt;uri_string(), 1); $permitted = $this-&amp;gt;permitted; $indice = $permitted[$_SESSION[&#39;user&#39;][&#39;type&#39;]][&#39;url&#39;]; foreach($indice as $i){ if(eregi(&#39;(&#39;. $i .&#39;)&#39;, $uri)){ unset($_SESSION[&#39;voltar&#39;]); return true; } } return false; } else { redirect(&#39;access/login&#39;,&#39;refresh&#39;); } }  } ?</description>
     </item>
     

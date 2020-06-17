@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>Demo 学 Echo Part10 安全的Cookie</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
         <pubDate>Sat, 17 Aug 2019 19:38:14 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;使用securecookie非常简单，通过securecookie.New（）创建一个安全的cookie对象，然后使用该对象进行编码 - 解码cookie数据操作。调用.New（）函数需要2个参数。
 第一个，使用HMAC加密算法验证cookie数据需要的哈希密钥
 第二个，cookie数据加密需要块密钥，这些密钥是可选的。使用的默认加密算法是AES。&lt;/p&gt;
@@ -115,18 +115,18 @@ func main() {
 第二次访问可以读取到，然后解码成对应的数据
 可以用chrome的调试工具看到cookie的key为kissjava_cn_data&lt;/p&gt;
 &lt;p&gt;访问http://localhost:9000/delete 会删除cookie;完成后调试工具里也就没有cookie了&lt;/p&gt;
-- /posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part9 配置文件</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
         <pubDate>Sat, 17 Aug 2019 17:22:53 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;配置文件可以用json，YAML格式
 app.conf.json&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{
@@ -203,18 +203,18 @@ ____________________________________O/_______
                                     O\
 ⇨ http server started on [::]:9000
 
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part8 命令行解析</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
         <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;启动服务是可以指定app name和port。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -258,18 +258,18 @@ https://echo.labstack.com
 ____________________________________O/_______
                                     O\
 ⇨ http server started on [::]:3000
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part7 Middleware 和 Logging</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</link>
         <pubDate>Sat, 17 Aug 2019 16:08:04 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 中间件是在处理http请求之前或之后调用的代码块。中间件通常按功能来做，例如：身份验证中间件，用于日志记录的中间件，用于gzip压缩的中间件等
 跑一遍，来理解&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
@@ -389,18 +389,18 @@ true
 #Server:
 http server started on [::]:9000
 method=GET, uri=/index, status=200
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part6 模板渲染</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
         <pubDate>Sat, 17 Aug 2019 15:17:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 echo解析和呈现模板的过程不是由自身处理，而是由&lt;code&gt;html/template&lt;/code&gt;包处理。因此，echo中的模板渲染方式与使用普通golang应用程序相同.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -622,18 +622,18 @@ curl http://localhost:9000/user
         &amp;lt;/table&amp;gt;
     &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part5 HTTP 错误处理</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
         <pubDate>Sat, 17 Aug 2019 13:30:39 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 自定义错误处理程序
 覆盖e.HTTPErrorHandler属性&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
@@ -836,18 +836,18 @@ func main() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时有对应code.html时会show出来，否则就出&lt;code&gt;Errrrooooorrrrr&lt;/code&gt;&lt;/p&gt;
-- /posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part4 HTTP 请求的验证</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
         <pubDate>Sat, 17 Aug 2019 10:52:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 HTTP请求的验证，采用了validator.v9&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -903,18 +903,18 @@ curl -X POST http://localhost:9000/users \
      -d &#39;email=nope@novalagung.com&#39; \
      -d &#39;age=10&#39;  
 #output =&amp;gt; true
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part3 解析HTTP请求</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
         <pubDate>Sat, 17 Aug 2019 10:13:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 解析HTTP请求&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -968,18 +968,18 @@ curl -X POST http://localhost:9000/user \
 
 # output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Joe&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很神奇，没有定义xml，居然也可以解析出来&lt;/p&gt;
-- /posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part2 路由使用及静态文件</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
         <pubDate>Sat, 17 Aug 2019 10:02:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 echo的路由处理及静态文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -1018,18 +1018,18 @@ func main() {
 	r.Start(&amp;quot;:9000&amp;quot;)
 }
 
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Demo 学 Echo Part1 Routing</title>
-        <link>/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
+        <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
         <pubDate>Sat, 17 Aug 2019 09:53:00 +0000</pubDate>
         
-        <guid>/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
-        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part1-routing/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;terminal.png&#34;&gt;
+        <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;terminal.png&#34;&gt;
 echo的路由&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -1108,7 +1108,7 @@ func main() {
 	r.Start(&amp;quot;:9000&amp;quot;)
 }
 
-&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part1-routing/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/ - kissjava.cn</description>
         </item>
     
     

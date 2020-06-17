@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>空间不足 on 清风徐来</title>
-    <link>/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
+    <link>https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
     <description>Recent content in 空间不足 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 03 Aug 2019 10:41:32 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux系统/run/systemd空间不足问题解决</title>
-      <link>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <link>https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
       
-      <guid>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <guid>https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
       <description>搞了olvps家原128m小内存的小小鸡，安装环境时出错了，/run/systemd空间不足
 Failed to reload daemon: Refusing to reload, not enough space available on /run/systemd. Currently, 10.5M are free, but a safety buffer of 16.0M is enforced.用df -h看看，确实不足
 root@AC-GIA:~# df -hFilesystem Size Used Avail Use% Mounted onudev 73M 0 73M 0% /devtmpfs 12M 880K 11M 8% /run/dev/vda1 2.9G 1.5G 1.4G 52% /tmpfs 85M 0 85M 0% /dev/shmtmpfs 5.0M 0 5.0M 0% /run/locktmpfs 85M 0 85M 0% /sys/fs/cgrouptmpfs 17M 0 17M 0% /run/user/0提示/run/systemd空间不足，那就给这个目录增加空间，就增加一行配置，vim /etc/fstab：</description>

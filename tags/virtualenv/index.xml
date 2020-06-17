@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virtualenv on 清风徐来</title>
-    <link>/tags/virtualenv/</link>
+    <link>https://kissjava.github.io/tags/virtualenv/</link>
     <description>Recent content in virtualenv on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 23 Jul 2013 14:34:44 +0000</lastBuildDate>
     
-	<atom:link href="/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python虚拟环境virtualenv</title>
-      <link>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+      <link>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
       <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
       
-      <guid>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+      <guid>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
       <description>昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.
 virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.
 这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.
@@ -30,10 +30,10 @@ domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他�
     
     <item>
       <title>python 安装二三事</title>
-      <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+      <link>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
       <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
       
-      <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+      <guid>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
       <description>恰好,下载文件夹里有个python2.7.5.mis
 双击,一路next,安装完成.
 在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.

@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>golang echo 入门</title>
-        <link>/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
+        <link>https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
         <pubDate>Thu, 15 Aug 2019 14:30:27 +0000</pubDate>
         
-        <guid>/posts/golang-echo-%E5%85%A5%E9%97%A8/</guid>
-        <description>清风徐来 /posts/golang-echo-%E5%85%A5%E9%97%A8/ -&lt;p&gt;#golang echo 入门&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/ -&lt;p&gt;#golang echo 入门&lt;/p&gt;
 &lt;p&gt;##概要
 go web framework echo的入门教程&lt;/p&gt;
 &lt;p&gt;##环境&lt;/p&gt;
@@ -220,18 +220,18 @@ func main() {
 以上，基本认证适用于&lt;code&gt;Group&lt;/code&gt;，也就是&lt;code&gt;g.GET&lt;/code&gt;打头的路由。&lt;/p&gt;
 &lt;p&gt;##最后
 作为后端的API应用差不多够用了。少了模板处理和错误处理，后期涉及到时再补充。&lt;/p&gt;
-- /posts/golang-echo-%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>frp使用小结</title>
-        <link>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+        <link>https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
         <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
         
-        <guid>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
-        <description>清风徐来 /posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ -&lt;p&gt;　frp有服务器端（frps）和客户端（frpc）之分，在Linux和Windows上都可使用，&lt;a href=&#34;https://github.com/fatedier/frp/releases&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ -&lt;p&gt;　frp有服务器端（frps）和客户端（frpc）之分，在Linux和Windows上都可使用，&lt;a href=&#34;https://github.com/fatedier/frp/releases&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;##Linux服务器端安装&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz  #下载frp
 tar -zxvf frp_0.13.0_linux_amd64.tar.gz #解压
@@ -324,18 +324,18 @@ plugin_strip_prefix = static
 plugin_http_user = abc
 plugin_http_passwd = abc
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过浏览器访问 &lt;a href=&#34;http://x.x.x.x&#34;&gt;http://x.x.x.x&lt;/a&gt;:6008/static/ 来查看位于 /root/www/brain_storming/dist 目录下的文件，会要求输入已设置好的用户名和密码。&lt;/p&gt;
-- /posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Linux系统/run/systemd空间不足问题解决</title>
-        <link>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+        <link>https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
         <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
         
-        <guid>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
-        <description>清风徐来 /posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ -&lt;p&gt;搞了olvps家原128m小内存的小小鸡，安装环境时出错了，/run/systemd空间不足&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ -&lt;p&gt;搞了olvps家原128m小内存的小小鸡，安装环境时出错了，/run/systemd空间不足&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Failed to reload daemon: Refusing to reload, not enough space available on /run/systemd. Currently, 10.5M are free, but a safety buffer of 16.0M is enforced.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用&lt;code&gt;df -h&lt;/code&gt;看看，确实不足&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;root@AC-GIA:~# df -h
@@ -349,30 +349,30 @@ tmpfs            85M     0   85M   0% /sys/fs/cgroup
 tmpfs            17M     0   17M   0% /run/user/0
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提示/run/systemd空间不足，那就给这个目录增加空间，就增加一行配置，&lt;code&gt;vim /etc/fstab&lt;/code&gt;：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;tmpfs /run tmpfs nosuid,noexec,size=24M,nr_inodes=4096 0 0
-&lt;/code&gt;&lt;/pre&gt;- /posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>高级Go测试教程</title>
-        <link>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
+        <link>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
         <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
         
-        <guid>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
-        <description>清风徐来 /posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ -&lt;p&gt;本教程中，我们将介绍Go语言更高级测试实践。&lt;/p&gt;
-- /posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ -&lt;p&gt;本教程中，我们将介绍Go语言更高级测试实践。&lt;/p&gt;
+- https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go的单元测试</title>
-        <link>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Tue, 30 Jul 2019 19:00:00 +0000</pubDate>
         
-        <guid>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-        <description>清风徐来 /posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;&lt;strong&gt;测试在所有软件中都非常重要。&lt;/strong&gt;
+        <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;&lt;strong&gt;测试在所有软件中都非常重要。&lt;/strong&gt;
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 能够确保代码的正确性并确保您所做的任何更改最终都不会破坏代码库中任何其他部分的内容，这非常重要。&lt;/p&gt;
 &lt;p&gt;##目标&lt;/p&gt;
@@ -464,18 +464,18 @@ ok      github.com/kissjava/helloworld  0.005s
 以上以html的格式输出测试覆盖率，那些没有测试到的可以看到。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/3485096304.jpg&#34; alt=&#34;20190730185641.jpg&#34;&gt;
 绿色部分是测试覆盖到的，红色部分是未测试的。&lt;/p&gt;
-- /posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go解析XML文件</title>
-        <link>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
         <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
         
-        <guid>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何有效读取XML文件，使用Go的&lt;code&gt;encoding / xml&lt;/code&gt;包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何有效读取XML文件，使用Go的&lt;code&gt;encoding / xml&lt;/code&gt;包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;Go解析XML文件&#34;&gt;&lt;/p&gt;
 &lt;p&gt;##XML示例文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -558,18 +558,18 @@ Facebook Url: https://facebook.com
 User Type: reader
 User Name: Fraser
 Facebook Url: https://facebook.com
-&lt;/code&gt;&lt;/pre&gt;- /posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go解析JSON文件</title>
-        <link>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
         <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
         
-        <guid>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。
+        <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。&lt;/p&gt;
 &lt;p&gt;JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！&lt;/p&gt;
@@ -752,18 +752,18 @@ User Type: Author
 User Age: 17
 User Name: Fraser
 Facebook Url: https://facebook.com
-&lt;/code&gt;&lt;/pre&gt;- /posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>使用Golang执行系统命令</title>
-        <link>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
+        <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
         
-        <guid>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
-        <description>清风徐来 /posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ -&lt;p&gt;在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。
+        <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ -&lt;p&gt;在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。
 &lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
 &lt;p&gt;##条件&lt;/p&gt;
 &lt;p&gt;您需要安装Go 1.11+版本&lt;/p&gt;
@@ -922,18 +922,18 @@ func main() {
 	}
 }
 
-&lt;/code&gt;&lt;/pre&gt;- /posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ - kissjava.cn</description>
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Go从Console读取输入</title>
-        <link>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+        <link>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
         <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
         
-        <guid>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
-        <description>清风徐来 /posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+        <guid>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
 ##一个简单的shell
 一个示例的shell，没啥用：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;package main
@@ -1005,18 +1005,18 @@ func main() {
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;杨的unicode是26472.&lt;/p&gt;
 &lt;p&gt;##小结
 学习来bufio的一些用法，还穿插了一些流程控制语句，if，for，switch。&lt;/p&gt;
-- /posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>在Go中读取和写入文件</title>
-        <link>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
         <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
         
-        <guid>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;在Go中读取和写入文件&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。&lt;/p&gt;
 &lt;p&gt;##读取文件&lt;/p&gt;
@@ -1123,7 +1123,7 @@ func main() {
 在操作文件时，文件权限是比较重要的，特别是写入和追加内容时。&lt;/p&gt;
 &lt;p&gt;##小结
 就是文件的读取和写入，比较简单。&lt;/p&gt;
-- /posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     

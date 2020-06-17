@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>library on 清风徐来</title>
-    <link>/tags/library/</link>
+    <link>https://kissjava.github.io/tags/library/</link>
     <description>Recent content in library on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 31 Mar 2009 12:28:15 +0000</lastBuildDate>
     
-	<atom:link href="/tags/library/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/library/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ci中文转拼音的library</title>
-      <link>/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
+      <link>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
       <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
       
-      <guid>/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
+      <guid>https://kissjava.github.io/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
       <description>拼装了一个codeigniter的中文转拼音的library。 使用方法： $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;utf8pinyin&amp;rsquo;,&#39;&amp;rsquo;,&amp;lsquo;py&amp;rsquo;); $data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;lsquo;昆山风神贸易有限公司成立于2007年&amp;rsquo;); //KunShanFengShenMaoYiYouXianGongSiChengLiYu2007Nian str2py($str,$boolquanpin=true,$booldaxie=true)$str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。 utf8pinyin</description>
     </item>
     

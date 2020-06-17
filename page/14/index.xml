@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>li水平居中css实现</title>
-        <link>/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</link>
+        <link>https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</link>
         <pubDate>Thu, 05 Aug 2010 20:26:42 +0000</pubDate>
         
-        <guid>/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</guid>
-        <description>清风徐来 /posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/ -&lt;p&gt;其实这个是凑数来的。只是好久没动博客了，实在是说不过去了，丫的太懒了。其实是淡水没有时间（好假的借口）。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/ -&lt;p&gt;其实这个是凑数来的。只是好久没动博客了，实在是说不过去了，丫的太懒了。其实是淡水没有时间（好假的借口）。&lt;/p&gt;
 &lt;p&gt;闲话不多说了。现在一般都是用li做菜单了，淡水也就从了。li的float:left,可以了变成横向的菜单了。但是它们怎么跑到区域里居中显示呢（一般是页脚的链接是居中的）？li的display:inline;就可以了，float：left都不要了，自己跑一行去了。&lt;/p&gt;
 &lt;p&gt;#main_footer{
 list-style:none;
@@ -36,46 +36,46 @@ display:inline;
 &amp;lt;/ul&amp;gt;&lt;/p&gt;
 &lt;p&gt;其实淡水还是在用table布局，为啥，方便啊。不过也少了:)&lt;/p&gt;
 &lt;p&gt;哎，div啊。。。&lt;/p&gt;
-- /posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/li%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%ADcss%E5%AE%9E%E7%8E%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>mysql查询今天、昨天、7天、近30天、本月、上一月 数据</title>
-        <link>/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</link>
+        <link>https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</link>
         <pubDate>Sat, 26 Jun 2010 19:24:40 +0000</pubDate>
         
-        <guid>/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</guid>
-        <description>清风徐来 /posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
-- /posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
+        <guid>https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Install ‘xdebug’ PHP extension for XAMPP on Ubuntu10.04</title>
-        <link>/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
+        <link>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
         <pubDate>Wed, 23 Jun 2010 16:38:09 +0000</pubDate>
         
-        <guid>/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
-        <description>清风徐来 /posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/ -&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>关于ci和zend framework的一些牢骚</title>
-        <link>/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
+        <link>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</link>
         <pubDate>Fri, 11 Jun 2010 10:32:57 +0000</pubDate>
         
-        <guid>/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
-        <description>清风徐来 /posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/ -&lt;p&gt;首先说明，这是淡水的牢骚，看不惯不要看。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/ -&lt;p&gt;首先说明，这是淡水的牢骚，看不惯不要看。&lt;/p&gt;
 &lt;p&gt;老华仔歌里唱的应景“总逃不开工作表，做完了又来了，怎样也甩不掉……”。淡水手头的项目还没有完全结束，新的项目又要上马。于是前期就框架选择开大会，开小会。&lt;/p&gt;
 &lt;p&gt;有.net高手就开始在网上搜索合适框架。结果他得出的结论是Zend Framework，理由：官方。
 不推荐Codeigniter是因为，一家小公司做的，后期支持跟不上。而且ci是轻量级的，功能不强。
@@ -93,52 +93,52 @@ zend framework内置许多类库，规范了代码（尽量使用内置类库）
 &lt;p&gt;这些我可以接受，但是说ci不行，以否定ci来肯定zend framwork，那就有些牵强了。&lt;/p&gt;
 &lt;p&gt;滔滔不绝的，连绵不断，就是要表明“zend framework是php官方出品，功能强大。ci一家小公司做的，后期支持跟不上。而且ci是轻量级的，功能不强。”。但是，zend framework哪些方面强大，ci又是哪里功能不强，都没有说出个一二三来。&lt;/p&gt;
 &lt;p&gt;嗯，滔滔不绝但也要言之有物才行吧！&lt;/p&gt;
-- /posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E5%85%B3%E4%BA%8Eci%E5%92%8Czend-framework%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%A2%E9%AA%9A/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>恢复Ubuntu的默认面板</title>
-        <link>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
+        <link>https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
         <pubDate>Thu, 10 Jun 2010 08:10:35 +0000</pubDate>
         
-        <guid>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
-        <description>清风徐来 /posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/ -&lt;p&gt;如果不小心将ubuntu的面板弄得一团糟，又不想慢慢找回来。有没有什么方法一键恢复默认状态呢？
+        <guid>https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/ -&lt;p&gt;如果不小心将ubuntu的面板弄得一团糟，又不想慢慢找回来。有没有什么方法一键恢复默认状态呢？
 答案是：“能恢复是肯定的，但是没有一键！“。&lt;/p&gt;
 &lt;p&gt;首先重置面板设置&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;如果悲剧到没有办法进入终端，那么建个文件。往里面写入这三条命令，再保存为.sh文件。给执行权限，运行即可。&lt;/p&gt;
 &lt;p&gt;真的好用。&lt;/p&gt;
 &lt;p&gt;from:http://blog.okkey.net/1202.html&lt;/p&gt;
-- /posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>投入ubuntu，体验中</title>
-        <link>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</link>
+        <link>https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</link>
         <pubDate>Wed, 09 Jun 2010 10:26:24 +0000</pubDate>
         
-        <guid>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</guid>
-        <description>清风徐来 /posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/ -&lt;p&gt;嗯，体验还不错。推荐。。。
+        <guid>https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/ -&lt;p&gt;嗯，体验还不错。推荐。。。
 不过wine下ie6太耗资源了，能跑死机器。
 两天了，基本上手
 开发用XAMPP+PDT，PDT在linux下比windows下的速度快些，但是边框太粗，难看。
 :p&lt;/p&gt;
-- /posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>SVN小记</title>
-        <link>/posts/svn%E5%B0%8F%E8%AE%B0/</link>
+        <link>https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Fri, 16 Apr 2010 17:30:51 +0000</pubDate>
         
-        <guid>/posts/svn%E5%B0%8F%E8%AE%B0/</guid>
-        <description>清风徐来 /posts/svn%E5%B0%8F%E8%AE%B0/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;名词解释：&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;名词解释：&lt;!-- raw HTML omitted --&gt;
 修订版（revision）：可以认为是某个文件在其生命周期内各个保存的快照，每个快照和一个时间区间对应。
 版本库（Repository）：存放修订版的数据库
 本地工作拷贝（Local working copy）：修订版在本地的副本
@@ -254,18 +254,18 @@ svn merge -r 33:HEAD &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/
 或者：
 svn merge &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/svn/trunk/simpletag@HEAD&#34;&gt;https://easymorse-simpletag.googlecode.com/svn/trunk/simpletag@HEAD&lt;/a&gt; &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/svn/branches/simpletag_select_1@HEAD&#34;&gt;https://easymorse-simpletag.googlecode.com/svn/branches/simpletag_select_1@HEAD&lt;/a&gt;
 提交。&lt;/p&gt;
-- /posts/svn%E5%B0%8F%E8%AE%B0/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/svn%E5%B0%8F%E8%AE%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>socks5 proxy 折腾记</title>
-        <link>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
+        <link>https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
         <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
         
-        <guid>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
-        <description>清风徐来 /posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ -&lt;p&gt;需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。
+        <guid>https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ -&lt;p&gt;需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。
 google之。
 找到了socks5-v1.0r11编译报错:(
 再google之。。。
@@ -291,36 +291,36 @@ cp etc/antinat.xml.allopen /usr/local/etc/antinat.xml
 &lt;pre&gt;&lt;code&gt;    &amp;lt;port value=&#39;1080&#39;/&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>php5.3废弃函数</title>
-        <link>/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
+        <link>https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
         <pubDate>Sun, 14 Mar 2010 19:58:36 +0000</pubDate>
         
-        <guid>/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
-        <description>清风徐来 /posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ -&lt;p&gt;php5.3被放弃的函数有:&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ -&lt;p&gt;php5.3被放弃的函数有:&lt;/p&gt;
 &lt;p&gt;ereg();//直接用mb_ereg代替，或是preg_match代替，但是匹配规则需要用/包括起来
 eregi();//preg_match代替，在规则后加上i，如：preg_match(&amp;quot;/^(style|style_)(.*)*/i&amp;rdquo;, $file);
 ereg_replace();
 set_magic_quotes_runtime();
 split();
 mysql_close();  // 将不支持全部关闭, 需要改为:mysql_close($link);&lt;/p&gt;
-- /posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>继续收拾残局，php和asp.net的md5差别</title>
-        <link>/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
+        <link>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</link>
         <pubDate>Tue, 09 Mar 2010 16:17:19 +0000</pubDate>
         
-        <guid>/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
-        <description>清风徐来 /posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/ -&lt;p&gt;asp.net的md5加密貌似是16位的
+        <guid>https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/ -&lt;p&gt;asp.net的md5加密貌似是16位的
 而php的md5加密是32位的
 这样解决
 &lt;!-- raw HTML omitted --&gt;
@@ -329,7 +329,7 @@ echo &amp;ldquo;&lt;!-- raw HTML omitted --&gt;&amp;rdquo;;
 echo md5(&amp;ldquo;admin&amp;rdquo;); // 32位MD5加密
 &lt;!-- raw HTML omitted --&gt;
 另：php的md5函数，按官方的说法，第二个参数设为true，可以生成16位的，但是淡水测试下来是乱码。淡水没空深究了，有心人可以找找缘由。&lt;/p&gt;
-- /posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E7%BB%A7%E7%BB%AD%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80php%E5%92%8Casp.net%E7%9A%84md5%E5%B7%AE%E5%88%AB/ - kissjava.cn</description>
         </item>
     
     

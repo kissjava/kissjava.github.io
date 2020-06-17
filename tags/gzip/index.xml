@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gzip on 清风徐来</title>
-    <link>/tags/gzip/</link>
+    <link>https://kissjava.github.io/tags/gzip/</link>
     <description>Recent content in Gzip on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 23:05:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/gzip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/gzip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
       <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
       <description>如果不采用Echo时，可以使用第三方库gziphandler，Echo直接用Gzip中间件。 HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。 只要Rquest header中有Accept-Encoding: gzip, deflate就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入Content-Encoding: gzip才行。 么有采用HTTP Gzip看看传输大小：
 package mainimport (&amp;quot;io&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;os&amp;quot;)func main() {mux := new(http.ServeMux)mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {f, err := os.Open(&amp;quot;sample.png&amp;quot;)if f != nil {defer f.Close()}if err != nil {http.Error(w, err.Error(), http.StatusInternalServerError)return}_, err = io.Copy(w, f)if err != nil {http.Error(w, err.Error(), http.StatusInternalServerError)}})server := new(http.</description>
     </item>

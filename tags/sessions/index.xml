@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sessions on 清风徐来</title>
-    <link>/tags/sessions/</link>
+    <link>https://kissjava.github.io/tags/sessions/</link>
     <description>Recent content in sessions on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 19:57:02 +0000</lastBuildDate>
     
-	<atom:link href="/tags/sessions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/sessions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part11 Gorilla Session</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
       <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
       <description>前面用了Gorilla的Cookie，Session也可以用他写的。 首次访问get时，session没有村数据，显示empty result 访问set时，会写入hello 和 world，然后再307临时重定向到get，会显示 hello world 访问delete，会删除session，再307到get显示empty result。
 demo 采用cookie来存储session数据，也支持其他多种方式存储。
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/gorilla/sessions&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)const SESSION_ID = &amp;quot;id&amp;quot;func newCookieStore() *sessions.CookieStore {authKey := []byte(&amp;quot;my-auth-key-very-secret&amp;quot;)encryptionKey := []byte(&amp;quot;my-encryption-key-very-secret123&amp;quot;)store := sessions.NewCookieStore(authKey, encryptionKey)store.Options.Path = &amp;quot;/&amp;quot;store.Options.MaxAge = 86400 * 7store.Options.HttpOnly = truereturn store}var store = newCookieStore()func main() {e := echo.New()e.GET(&amp;quot;/get&amp;quot;, func(c echo.Context) error {session, _ := store.</description>

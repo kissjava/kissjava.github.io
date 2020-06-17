@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>debug on 清风徐来</title>
-    <link>/tags/debug/</link>
+    <link>https://kissjava.github.io/tags/debug/</link>
     <description>Recent content in debug on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 21 Jul 2009 10:21:01 +0000</lastBuildDate>
     
-	<atom:link href="/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>忘记了zend studio for eclipse 怎么调试了</title>
-      <link>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
+      <link>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
       <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
       
-      <guid>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
       <description>老是在netbeans和zend studio for eclipse跳来跳去的。
 今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!
 这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻Gently的Zend Studio For Eclipse 6.1 视频教程-调试php程序。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“服务器调试——Zend Debugger 的安装教程”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。Gently在Zend Studio For Eclipse 6.1 视频教程-调试php程序中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>解析xml on 清风徐来</title>
-    <link>/tags/%E8%A7%A3%E6%9E%90xml/</link>
+    <link>https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90xml/</link>
     <description>Recent content in 解析xml on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 17:28:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/%E8%A7%A3%E6%9E%90xml/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/%E8%A7%A3%E6%9E%90xml/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go解析XML文件</title>
-      <link>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
       
-      <guid>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将介绍如何有效读取XML文件，使用Go的encoding / xml包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端
 ##XML示例文件
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;users&amp;gt;&amp;lt;user type=&amp;quot;admin&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Elliot&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;user type=&amp;quot;reader&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Fraser&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;/users&amp;gt;##完成代码部分

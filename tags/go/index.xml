@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on 清风徐来</title>
-    <link>/tags/go/</link>
+    <link>https://kissjava.github.io/tags/go/</link>
     <description>Recent content in Go on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Tue, 03 Sep 2019 15:56:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>拆分echo示例项目的crud模块</title>
-      <link>/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</link>
+      <link>https://kissjava.github.io/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Tue, 03 Sep 2019 15:56:00 +0000</pubDate>
       
-      <guid>/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</guid>
       <description>拆分echo示例项目的crud模块的源文件。
 对于那些经常写golang的人来说，这可能很无聊。
 目录结构 ➜ crud tree.├── handler│ ├── create.go│ ├── delete.go│ ├── list.go│ └── update.go├── model│ └── user.go└── router.gorouter.go package mainimport (&amp;quot;./handler&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;github.com/labstack/echo/middleware&amp;quot;)func main() {e := echo.New()//middlewaree.Use(middleware.Logger())e.Use(middleware.Recover())//routese.GET(&amp;quot;/users&amp;quot;, handler.ListUser)e.GET(&amp;quot;/users/:id&amp;quot;, handler.GetUser)e.POST(&amp;quot;/users&amp;quot;, handler.CreateUser)e.PUT(&amp;quot;/users/:id&amp;quot;, handler.UpdateUser)e.DELETE(&amp;quot;/users/:id&amp;quot;, handler.DeleteUser)//start servere.Logger.Fatal(e.Start(&amp;quot;:8000&amp;quot;))}model/user.go package modeltype (User struct {ID int `json:&amp;quot;id&amp;quot;`Name string `json:&amp;quot;name&amp;quot;`})//这是一个持久层，基本上被DB取代的区域var (Users = map[int]*User{}Seq = 1)handler目录 用于存储业务逻辑的区域，使用Service可能更好</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Demo 学 Echo Part17 输出Pdf</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</link>
       <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</guid>
       <description>输出PDF也是很容易遇到的要求。
 我们用gopdf实现，先安装go get -u github.com/jung-kurt/gofpdf 用到中文需要注意，设置utf8字体。
 package mainimport (&amp;quot;log&amp;quot;&amp;quot;github.com/jung-kurt/gofpdf&amp;quot;)func main() {//参数说明//文档方向，纵向（P）还是横向（L）//度量单位，mm表示毫米//文档的大小，即将选择A4//字体路径文件，用不到pdf := gofpdf.New(&amp;quot;P&amp;quot;, &amp;quot;mm&amp;quot;, &amp;quot;A4&amp;quot;, &amp;quot;&amp;quot;)//创建新页面pdf.AddPage()//中文字体设置pdf.AddUTF8Font(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;./NotoSansSC-Regular.ttf&amp;quot;)//配置字体pdf.SetFont(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, 16)//左起5mm，上起10mm写字pdf.Text(5, 10, &amp;quot;你好, 世界&amp;quot;)//左侧5mm，距顶部20mm，贴图；//第四个参数是图像宽度。如果大于0的值，则将根据编号按比例调整图像大小pdf.Image(&amp;quot;./assets/terminal.png&amp;quot;, 5, 20, 200, 0, false, &amp;quot;&amp;quot;, 0, &amp;quot;&amp;quot;)err := pdf.OutputFileAndClose(&amp;quot;./file.pdf&amp;quot;)if err != nil {log.Println(&amp;quot;ERROR&amp;quot;, err.Error())}}效果 字体文件下载：NotoSansSC-Regular.ttf.zip</description>
@@ -36,10 +36,10 @@ package mainimport (&amp;quot;log&amp;quot;&amp;quot;github.com/jung-kurt/gof
     
     <item>
       <title>Demo 学 Echo Part16 读写Excel XLSX文件（Excelize）</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</link>
       <pubDate>Sun, 18 Aug 2019 18:52:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</guid>
       <description>Web应用中免不了用到Excel。当然现在都是用XLSX格式了。 先安装go get github.com/360EntSecGroup-Skylar/excelize
 ##建立Excel文件
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;log&amp;quot;&amp;quot;github.com/360EntSecGroup-Skylar/excelize&amp;quot;)type M map[string]interface{}var data = []M{M{&amp;quot;Name&amp;quot;: &amp;quot;Noval&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 18},M{&amp;quot;Name&amp;quot;: &amp;quot;Nabila&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;female&amp;quot;, &amp;quot;Age&amp;quot;: 12},M{&amp;quot;Name&amp;quot;: &amp;quot;Yasa&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 11},}func main() {xlsx := excelize.NewFile()sheet1Name := &amp;quot;Sheet One&amp;quot;xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)xlsx.SetCellValue(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;Name&amp;quot;)xlsx.SetCellValue(sheet1Name, &amp;quot;B1&amp;quot;, &amp;quot;Gender&amp;quot;)xlsx.SetCellValue(sheet1Name, &amp;quot;C1&amp;quot;, &amp;quot;Age&amp;quot;)err := xlsx.AutoFilter(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;C1&amp;quot;, &amp;quot;&amp;quot;)if err != nil {log.</description>
@@ -47,30 +47,30 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;log&amp;quot;&amp;quot;
     
     <item>
       <title>Demo 学 Echo Part15 发送mail</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</link>
       <pubDate>Sun, 18 Aug 2019 10:25:48 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</guid>
       <description>可用用&amp;quot;net/smtp&amp;quot;包，功能比较原始。我们用第三方包gomail，更强大。
 package mainimport (&amp;quot;log&amp;quot;&amp;quot;gopkg.in/gomail.v2&amp;quot;)const CONFIG_SMTP_HOST = &amp;quot;smtp.163.com&amp;quot;const CONFIG_SMTP_PORT = 465const CONFIG_EMAIL = &amp;quot;kissjava@163.com&amp;quot;const CONFIG_PASSWORD = &amp;quot;Mpassword3&amp;quot;func main() {mailer := gomail.NewMessage()mailer.SetHeader(&amp;quot;From&amp;quot;, CONFIG_EMAIL)mailer.SetHeader(&amp;quot;To&amp;quot;, &amp;quot;kissjava.net@gmail.com&amp;quot;, &amp;quot;hellowiki@qq.com&amp;quot;)mailer.SetAddressHeader(&amp;quot;Cc&amp;quot;, &amp;quot;hellowiki@icloud.com&amp;quot;, &amp;quot;HelloWiki&amp;quot;)mailer.SetHeader(&amp;quot;Subject&amp;quot;, &amp;quot;Test mail测试&amp;quot;)mailer.SetBody(&amp;quot;text/html&amp;quot;, &amp;quot;Hello, &amp;lt;b&amp;gt;have a nice day&amp;lt;/b&amp;gt;&amp;quot;)mailer.Attach(&amp;quot;./assets/terminal.png&amp;quot;)dialer := gomail.NewDialer(CONFIG_SMTP_HOST,CONFIG_SMTP_PORT,CONFIG_EMAIL,CONFIG_PASSWORD,)err := dialer.DialAndSend(mailer)if err != nil {log.Println(&amp;quot;Send faild.&amp;quot;)log.Fatal(err.Error())}log.Println(&amp;quot;Mail sent!&amp;quot;)}</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
       <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
       <description>如果不采用Echo时，可以使用第三方库gziphandler，Echo直接用Gzip中间件。 HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。 只要Rquest header中有Accept-Encoding: gzip, deflate就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入Content-Encoding: gzip才行。 么有采用HTTP Gzip看看传输大小：
 package mainimport (&amp;quot;io&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;os&amp;quot;)func main() {mux := new(http.ServeMux)mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {f, err := os.Open(&amp;quot;sample.png&amp;quot;)if f != nil {defer f.Close()}if err != nil {http.Error(w, err.Error(), http.StatusInternalServerError)return}_, err = io.Copy(w, f)if err != nil {http.Error(w, err.Error(), http.StatusInternalServerError)}})server := new(http.</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part13 跨站点请求伪造（CSRF）</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
       <pubDate>Sat, 17 Aug 2019 21:33:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
       <description>跨站点请求伪造（CSRF）攻击以及如何预测它们
 此类攻击的示例：尝试通过Web浏览器以外的媒体登录，例如使用CURL等
 通常的防御方法是使用csrf令牌。在有表单的每个页面上，都会生成csrf令牌。提交表单时，会在请求中插入CSRF，然后后端检查发送的CSRF是否有效
@@ -80,10 +80,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;html/template&amp;quot;
     
     <item>
       <title>Demo 学 Echo Part12 CORS 跨域资源共享和Request 预检</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
       <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
       <description>CORS机制，它使用额外的 HTTP 头来告诉浏览器 让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。 以下是可用于CORS配置的标头列表
 Access-Control-Allow-OriginAccess-Control-Allow-MethodsAccess-Control-Allow-HeadersAccess-Control-Allow-CredentialsAccess-Control-Max-AgeCORS配置位于目标Web应用程序的服务器端。 例如：我们的应用程序在本地从google.com中提取数据，然后CORS配置位于google.com;如果我们收到CORS错误，则无法完成任何其他操作，因为CORS应用程序目标由google.com上的人员控制。
 练习时间： 创建一个新项目。这个简单的应用程序将在http//localhost:9000/上运行，然后我们将尝试从其他域访问它.
@@ -96,10 +96,10 @@ Access-Control-Allow-Methods标头确定允许哪些HTTP方法（使用逗号分
     
     <item>
       <title>Demo 学 Echo Part11 Gorilla Session</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
       <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
       <description>前面用了Gorilla的Cookie，Session也可以用他写的。 首次访问get时，session没有村数据，显示empty result 访问set时，会写入hello 和 world，然后再307临时重定向到get，会显示 hello world 访问delete，会删除session，再307到get显示empty result。
 demo 采用cookie来存储session数据，也支持其他多种方式存储。
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/gorilla/sessions&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)const SESSION_ID = &amp;quot;id&amp;quot;func newCookieStore() *sessions.CookieStore {authKey := []byte(&amp;quot;my-auth-key-very-secret&amp;quot;)encryptionKey := []byte(&amp;quot;my-encryption-key-very-secret123&amp;quot;)store := sessions.NewCookieStore(authKey, encryptionKey)store.Options.Path = &amp;quot;/&amp;quot;store.Options.MaxAge = 86400 * 7store.Options.HttpOnly = truereturn store}var store = newCookieStore()func main() {e := echo.New()e.GET(&amp;quot;/get&amp;quot;, func(c echo.Context) error {session, _ := store.</description>
@@ -107,10 +107,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;
     
     <item>
       <title>Demo 学 Echo Part10 安全的Cookie</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
       <pubDate>Sat, 17 Aug 2019 19:38:14 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</guid>
       <description>使用securecookie非常简单，通过securecookie.New（）创建一个安全的cookie对象，然后使用该对象进行编码 - 解码cookie数据操作。调用.New（）函数需要2个参数。 第一个，使用HMAC加密算法验证cookie数据需要的哈希密钥 第二个，cookie数据加密需要块密钥，这些密钥是可选的。使用的默认加密算法是AES。
 代码中生成随机字符串是通过使用gubrak的第三方库完成的。
 package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;time&amp;quot;&amp;quot;github.com/gorilla/securecookie&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;github.com/novalagung/gubrak&amp;quot;)type M map[string]interface{}var sc = securecookie.New([]byte(&amp;quot;very-secret&amp;quot;), []byte(&amp;quot;a-lot-secret-yay&amp;quot;))func setCookie(c echo.Context, name string, data M) error {encoded, err := sc.Encode(name, data)if err != nil {return err}cookie := &amp;amp;http.Cookie{Name: name,Value: encoded,Path: &amp;quot;/&amp;quot;,Secure: false,HttpOnly: true,Expires: time.Now().Add(1 * time.Hour),}http.SetCookie(c.Response(), cookie)return nil}func getCookie(c echo.</description>
@@ -118,10 +118,10 @@ package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;time&amp;quot;&amp
     
     <item>
       <title>Demo 学 Echo Part9 配置文件</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sat, 17 Aug 2019 17:22:53 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>配置文件可以用json，YAML格式 app.conf.json
 {&amp;quot;appName&amp;quot;: &amp;quot;SimpleApp&amp;quot;,&amp;quot;server&amp;quot;: {&amp;quot;port&amp;quot;: 5000}}main.go
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;github.com/spf13/viper&amp;quot;)func main() {e := echo.New()viper.SetConfigType(&amp;quot;json&amp;quot;)viper.AddConfigPath(&amp;quot;.&amp;quot;)viper.SetConfigName(&amp;quot;app.conf&amp;quot;)err := viper.ReadInConfig()if err != nil {e.Logger.Fatal(err)}fmt.Println(&amp;quot;Starting&amp;quot;, viper.GetString(&amp;quot;appName&amp;quot;))e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {return c.JSON(http.StatusOK, true)})e.Logger.Fatal(e.Start(&amp;quot;:&amp;quot; + viper.GetString(&amp;quot;server.port&amp;quot;)))}运行
@@ -130,10 +130,10 @@ go run main.goStarting SimpleApp____ __/ __/___/ / ___/ _// __/ _ \/ _ \/__
     
     <item>
       <title>Demo 学 Echo Part8 命令行解析</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
       <description>启动服务是可以指定app name和port。
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;gopkg.in/alecthomas/kingpin.v2&amp;quot;)var (argAppName = kingpin.Arg(&amp;quot;name&amp;quot;, &amp;quot;Application name&amp;quot;).Required().String()argPort = kingpin.Arg(&amp;quot;port&amp;quot;, &amp;quot;Web server port&amp;quot;).Default(&amp;quot;9000&amp;quot;).Int())func main() {kingpin.Parse()appName := *argAppNameport := fmt.Sprintf(&amp;quot;:%d&amp;quot;, *argPort)fmt.Printf(&amp;quot;Starting %s at %s&amp;quot;, appName, port)e := echo.New()e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {return c.JSON(http.StatusOK, true)})e.Logger.Fatal(e.Start(port))}编译后执行
  ./main &amp;quot;Echo Demo part 8&amp;quot; 3000 Starting Echo Demo part 8 at :3000____ __/ __/___/ / ___/ _// __/ _ \/ _ \/___/\__/_//_/\___/ v4.</description>
@@ -141,10 +141,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;
     
     <item>
       <title>Demo 学 Echo Part7 Middleware 和 Logging</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</link>
       <pubDate>Sat, 17 Aug 2019 16:08:04 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</guid>
       <description>中间件是在处理http请求之前或之后调用的代码块。中间件通常按功能来做，例如：身份验证中间件，用于日志记录的中间件，用于gzip压缩的中间件等 跑一遍，来理解
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)func middlewareOne(next echo.HandlerFunc) echo.HandlerFunc {return func(c echo.Context) error {fmt.Println(&amp;quot;from middleware one&amp;quot;)return next(c)}}func middlewareTwo(next echo.HandlerFunc) echo.HandlerFunc {return func(c echo.Context) error {fmt.Println(&amp;quot;from middleware two&amp;quot;)return next(c)}}func main() {e := echo.New()// middleware heree.Use(middlewareOne)e.Use(middlewareTwo)e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {fmt.Println(&amp;quot;threeeeee!&amp;quot;)return c.JSON(http.StatusOK, true)})e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))}客户端
 curl http://localhost:9000/indexoutput=&amp;gt;true服务端输出</description>
@@ -152,40 +152,40 @@ curl http://localhost:9000/indexoutput=&amp;gt;true服务端输出</descriptio
     
     <item>
       <title>Demo 学 Echo Part6 模板渲染</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
       <pubDate>Sat, 17 Aug 2019 15:17:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
       <description>echo解析和呈现模板的过程不是由自身处理，而是由html/template包处理。因此，echo中的模板渲染方式与使用普通golang应用程序相同.
 package mainimport (&amp;quot;html/template&amp;quot;&amp;quot;io&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)type M map[string]interface{}type Info struct {Affiliation stringAddress string}func (t Info) GetAffiliationDetailInfo() string {return &amp;quot;have 31 divisions&amp;quot;}type Person struct {Name stringGender stringHobbies []stringInfo Info}//.template属性负责解析和呈现模板//.location属性指向模板文件所在的文件夹路径。// debug 如果为false，则模板解析仅在应用程序启动时执行一次。此模式适合在生产阶段激活type Renderer struct {template *template.Templatedebug boollocation string}//创建NewRenderer（）函数，以便更容易初始化渲染器对象func NewRenderer(location string, debug bool) *Renderer {tpl := new(Renderer)tpl.</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part5 HTTP 错误处理</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
       <pubDate>Sat, 17 Aug 2019 13:30:39 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
       <description>自定义错误处理程序 覆盖e.HTTPErrorHandler属性
 package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;)type User struct {Name string `json:&amp;quot;name&amp;quot; validate:&amp;quot;required&amp;quot;`Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`Age int `json:&amp;quot;age&amp;quot; validate:&amp;quot;gte=0,lte=80&amp;quot;`}type CustomValidator struct {validator *validator.Validate}func (cv *CustomValidator) Validate(i interface{}) error {return cv.validator.Struct(i)}func main() {e := echo.New()e.HTTPErrorHandler = func(err error, c echo.Context) {report, ok := err.(*echo.HTTPError)if !ok {report = echo.NewHTTPError(http.StatusInternalServerError, err.Error())}c.Logger().Error(report)c.</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part4 HTTP 请求的验证</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
       <pubDate>Sat, 17 Aug 2019 10:52:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
       <description>HTTP请求的验证，采用了validator.v9
 package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;)type User struct {Name string `json:&amp;quot;name&amp;quot; validate:&amp;quot;required&amp;quot;`Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`Age int `json:&amp;quot;age&amp;quot; validate:&amp;quot;gte=0,lte=80&amp;quot;`}type CustomValidator struct {validator *validator.Validate}func (cv *CustomValidator) Validate(i interface{}) error {return cv.validator.Struct(i)}func main() {e := echo.New()e.Validator = &amp;amp;CustomValidator{validator: validator.New()}e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {u := new(User)if err := c.Bind(u); err != nil {return err}if err := c.</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part3 解析HTTP请求</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
       <pubDate>Sat, 17 Aug 2019 10:13:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
       <description>解析HTTP请求
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)type User struct {Name string `json:&amp;quot;name&amp;quot; form:&amp;quot;name&amp;quot; query:&amp;quot;name&amp;quot;`Email string `json:&amp;quot;email&amp;quot; form:&amp;quot;email&amp;quot; query:&amp;quot;email&amp;quot;`}func main() {r := echo.New()r.Any(&amp;quot;/user&amp;quot;, func(c echo.Context) (err error) {u := new(User)if err = c.Bind(u); err != nil {return}return c.JSON(http.StatusOK, u)})fmt.Println(&amp;quot;server started at :9000&amp;quot;)r.Start(&amp;quot;:9000&amp;quot;)}测试验证
 curl -X POST http://localhost:9000/user \-d &#39;name=Joe&#39; \-d &#39;email=nope@novalagung.com&#39;# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.</description>
@@ -193,30 +193,30 @@ curl -X POST http://localhost:9000/user \-d &#39;name=Joe&#39; \-d &#39;email=
     
     <item>
       <title>Demo 学 Echo Part2 路由使用及静态文件</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
       <pubDate>Sat, 17 Aug 2019 10:02:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
       <description>echo的路由处理及静态文件
 package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)var ActionIndex = func(w http.ResponseWriter, r *http.Request) {w.Write([]byte(&amp;quot;from action index&amp;quot;))}var ActionHome = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {w.Write([]byte(&amp;quot;from action home&amp;quot;))},)var ActionAbout = echo.WrapHandler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {w.Write([]byte(&amp;quot;from action about&amp;quot;))},),)func main() {r := echo.New()r.Static(&amp;quot;/static&amp;quot;, &amp;quot;assets&amp;quot;)r.GET(&amp;quot;/index&amp;quot;, echo.WrapHandler(http.HandlerFunc(ActionIndex)))r.GET(&amp;quot;/home&amp;quot;, echo.WrapHandler(ActionHome))r.GET(&amp;quot;/about&amp;quot;, ActionAbout)r.Start(&amp;quot;:9000&amp;quot;)}</description>
     </item>
     
     <item>
       <title>Demo 学 Echo Part1 Routing</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
       <pubDate>Sat, 17 Aug 2019 09:53:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
       <description>echo的路由
 package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;net/http&amp;quot;&amp;quot;strings&amp;quot;&amp;quot;github.com/labstack/echo&amp;quot;)type M map[string]interface{}func main() {r := echo.New()r.GET(&amp;quot;/&amp;quot;, func(ctx echo.Context) error {data := &amp;quot;Hello from /index&amp;quot;return ctx.String(http.StatusOK, data)})r.GET(&amp;quot;/html&amp;quot;, func(ctx echo.Context) error {data := &amp;quot;Hello from /html&amp;quot;return ctx.HTML(http.StatusOK, data)})r.GET(&amp;quot;/index&amp;quot;, func(ctx echo.Context) error {return ctx.Redirect(http.StatusTemporaryRedirect, &amp;quot;/&amp;quot;)})r.GET(&amp;quot;/json&amp;quot;, func(ctx echo.Context) error {data := M{&amp;quot;Message&amp;quot;: &amp;quot;Hello&amp;quot;, &amp;quot;Counter&amp;quot;: 2}return ctx.JSON(http.StatusOK, data)})// http://localhost:9000/page1?</description>
     </item>
     
     <item>
       <title>golang echo 入门</title>
-      <link>/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
+      <link>https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
       <pubDate>Thu, 15 Aug 2019 14:30:27 +0000</pubDate>
       
-      <guid>/posts/golang-echo-%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://kissjava.github.io/posts/golang-echo-%E5%85%A5%E9%97%A8/</guid>
       <description>#golang echo 入门
 ##概要 go web framework echo的入门教程
 ##环境
@@ -232,19 +232,19 @@ package mainimport (&amp;quot;github.</description>
     
     <item>
       <title>高级Go测试教程</title>
-      <link>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
+      <link>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
       <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
       
-      <guid>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://kissjava.github.io/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
       <description>本教程中，我们将介绍Go语言更高级测试实践。</description>
     </item>
     
     <item>
       <title>Go的单元测试</title>
-      <link>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Tue, 30 Jul 2019 19:00:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>测试在所有软件中都非常重要。 能够确保代码的正确性并确保您所做的任何更改最终都不会破坏代码库中任何其他部分的内容，这非常重要。
 ##目标
 在本教程结束时，您将掌握使用标准testing包，测试Go中的基本函数和方法。
@@ -261,10 +261,10 @@ package mainimport (&amp;quot;testing&amp;quot;)func TestCalculate(t *testin
     
     <item>
       <title>Go解析XML文件</title>
-      <link>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
       
-      <guid>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将介绍如何有效读取XML文件，使用Go的encoding / xml包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端
 ##XML示例文件
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;users&amp;gt;&amp;lt;user type=&amp;quot;admin&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Elliot&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;user type=&amp;quot;reader&amp;quot;&amp;gt;&amp;lt;name&amp;gt;Fraser&amp;lt;/name&amp;gt;&amp;lt;social&amp;gt;&amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;&amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;&amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;&amp;lt;/social&amp;gt;&amp;lt;/user&amp;gt;&amp;lt;/users&amp;gt;##完成代码部分
@@ -273,10 +273,10 @@ package mainimport (&amp;quot;encoding/xml&amp;quot;&amp;quot;fmt&amp;quot;&
     
     <item>
       <title>Go解析JSON文件</title>
-      <link>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
       
-      <guid>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。 我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。
 JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！
 ##Encoding/Json Package
@@ -290,10 +290,10 @@ jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)if err != nil {fmt.Pri
     
     <item>
       <title>使用Golang执行系统命令</title>
-      <link>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
+      <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
       
-      <guid>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
       <description>在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。 ##条件
 您需要安装Go 1.11+版本
 ##兼容性问题
@@ -305,10 +305,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;os/exec&amp;quot;&amp;q
     
     <item>
       <title>Go从Console读取输入</title>
-      <link>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+      <link>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
       <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
       
-      <guid>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+      <guid>https://kissjava.github.io/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
       <description>##一个简单的shell 一个示例的shell，没啥用：
 package mainimport (&amp;quot;bufio&amp;quot;&amp;quot;fmt&amp;quot;&amp;quot;os&amp;quot;&amp;quot;strings&amp;quot;)func main() {reader := bufio.NewReader(os.Stdin)fmt.Println(&amp;quot;Simple Shell&amp;quot;)fmt.Println(&amp;quot;---------------------&amp;quot;)for {fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)text, _ := reader.ReadString(&#39;\n&#39;)// 将CRLF转换为LFtext = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)// 如果windows，要用下面的// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {fmt.Println(&amp;quot;hello, Yourself&amp;quot;)}if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {fmt.Println(&amp;quot;Bye.&amp;quot;)break}}}输入hi，它会打个招呼；输入bye，退出shell。
 ##读取单个UTF-8编码的Unicode字符
@@ -317,10 +317,10 @@ package mainimport (&amp;quot;bufio&amp;quot;&amp;quot;fmt&amp;quot;&amp;quo
     
     <item>
       <title>在Go中读取和写入文件</title>
-      <link>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
+      <link>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
       <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
       
-      <guid>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
       <description>在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。
 我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。
 ##读取文件
@@ -331,10 +331,10 @@ package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;io/ioutil&amp;quot;)fu
     
     <item>
       <title>Go的接口</title>
-      <link>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
       <description>在本教程中，我们将看看Go编程语言中的接口。 本节包括2个主题：
  接口的基本知识 定义我们自己的接口  ##简单案例
 如果您看到一个需要空接口的函数或方法，那么您通常可以将任何内容传递给此函数/方法。
@@ -348,10 +348,10 @@ package mainimport &amp;quot;fmt&amp;quot;type Guitarist interface {PlayGuita
     
     <item>
       <title>Go的方法</title>
-      <link>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。 ##一个简单实例 我们将创建一个非常简单的员工管理系统，允许您更新员工姓名并打印出该名称。不是最令人兴奋的示例项目，但它将作为演示还可以。
 我们首先创建一个Employee类型的结构，它包含一个字符串字段Name
 接下来，我们将声明一个UpdateName()和一个PrintName()方法，它允许我们更新和打印我们创建的员工的姓名。
@@ -365,10 +365,10 @@ func (g *Player) Update(params ParamsStruct) {fmt.</description>
     
     <item>
       <title>Go的函数</title>
-      <link>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
       <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
       <description>在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。 我们将在本教程中介绍以下主题：
  函数声明的基础知识 使用多个返回值  ##函数的声明 Go中的所有函数都以func关键字开始，然后是函数名称。在名称之后，我们打开括号并定义我们的参数列表，后跟一个非常相似的返回结果列表：
 func name(parameter-list) (result-list) {// 函数体} 访问权限！如果您希望在其他包中访问您的函数，那么您必须将函数名称的第一个字母设为大写！
@@ -380,10 +380,10 @@ package mainimport (&amp;quot;fmt&amp;quot;)func myfunction(firstName string
     
     <item>
       <title>Go的复合数据类型</title>
-      <link>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>上节我们学过来基本数据类型，本节说说go的复合数据类型。
 ##数组 Arrays 让我们首先声明一周中所有天的数组。
 // 声明一个空数组的字符串var days []string// 声明一个包含元素的数组days := [...]string{&amp;quot;monday&amp;quot;, &amp;quot;tuesday&amp;quot;, &amp;quot;wednesday&amp;quot;, &amp;quot;thursday&amp;quot;, &amp;quot;friday&amp;quot;, &amp;quot;saturday&amp;quot;, &amp;quot;sunday&amp;quot;}如果我们想查询数组中的第一个元素或特定元素，我们可以以与其他语言非常相似的方式查询：
@@ -395,10 +395,10 @@ youtubeSubscribers := map[string]int{&amp;quot;TutorialEdge&amp;quot;: 2240,&a
     
     <item>
       <title>Go的基本数据类型</title>
-      <link>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 29 Jul 2019 15:47:00 +0000</pubDate>
       
-      <guid>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kissjava.github.io/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>在本教程中，我们将学习Go语言中可用的所有基本数据类型。在本教程结束时，您应该熟悉该语言中提供的各种不同类型，并希望了解如何在您自己的Go程序中使用这些类型。 ps：本节课程很无聊，但是不可或缺。
 ##数据类型 Go编程语言中有4种不同类型的类型
  基本类型 我们将在本教程中介绍的内容 聚合类型 数组和结构 引用类型 指针和切片 接口类型 标准接口  ##整型
@@ -409,10 +409,10 @@ package mainimport (&amp;quot;fmt&amp;quot;)func main() {fmt.</description>
     
     <item>
       <title>Go入门</title>
-      <link>/posts/go%E5%85%A5%E9%97%A8/</link>
+      <link>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</link>
       <pubDate>Mon, 29 Jul 2019 14:58:00 +0000</pubDate>
       
-      <guid>/posts/go%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://kissjava.github.io/posts/go%E5%85%A5%E9%97%A8/</guid>
       <description>希望是无废话的go语言教程。 Go是一种绝对令人难以置信的语言，可以构建各种不同的应用程序。从命令行界面到分布式微系统甚至云平台，它的简单性和并发性使其成为许多开发团队的强大语言选择。
 在本教程中，我将着手帮助您启动并运行该语言，以便您可以开始构建更加出色的应用程序并推动技术的发展。
 我们将专注于启动和运行一个非常简单的Hello World风格的应用程序。一旦你掌握了一切正常的工作，我们就可以开始学习语言中更复杂的方面，比如函数，方法，以及最终的并发和反射等方面。

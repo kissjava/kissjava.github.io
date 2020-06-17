@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>substr函数 on 清风徐来</title>
-    <link>/tags/substr%E5%87%BD%E6%95%B0/</link>
+    <link>https://kissjava.github.io/tags/substr%E5%87%BD%E6%95%B0/</link>
     <description>Recent content in substr函数 on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 12 Feb 2010 21:54:46 +0000</lastBuildDate>
     
-	<atom:link href="/tags/substr%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/substr%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>php的文档句法(heredoc)</title>
-      <link>/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
+      <link>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
       <pubDate>Fri, 12 Feb 2010 21:54:46 +0000</pubDate>
       
-      <guid>/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
+      <guid>https://kissjava.github.io/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
       <description>不是新文章，以前写的。但是上次空间到期后数据都没了。网上有看到它，就把它弄回来了。 &amp;lt;li&amp;gt;双引号&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;定界符（heredoc syntax）&amp;lt;/li&amp;gt;  看见了吧，单引号居然可以用来表示字符串。那么如果我想表示单引号怎么办？和大多数语言一样，使用转义符号吧。即反斜线&amp;rdquo;&amp;quot;.那么使用单引号和双引号有什么区别呢？我的观点是没有多大区别。唯一的区别就是双引号可以应用更多的转义符。 让我们定界符吧。它的语法是&amp;quot;&amp;laquo;&amp;lt;&amp;rdquo;。用法是在其后提供一个标识符，然后在标识符后提供字符串，再在字符串后提供此标识符来结尾。例如： 2. 字符串的特别之处 从一个例子开始。 假设里你有很长的一段字符串，比如一段话。几个月后，你发现你的需求改变，需要在这段话的某个位置插入一个变量。这个时候如果重新用字符串符肯定是相当复杂的。那么有没有其他的方法呢？请放心，PHP已经考虑到这一点了。那就是花括号的应用。 对于PHP，它一般会按照如下规则解析： 如果遇到美元符号（$），解析器会尽可能多地取得后面的字符以组成一个合法的变量名。如果想明示指定名字的结束，用花括号把变量名括起来。例如 3，字符串的常用操作。我想这是令我们异常激动的一个话题，并且也是非常实用的。 字符串的函数比较多，我们还是介绍一部分函数吧。
 字符串的整理函数 chop(),其实就是rtrim().当然rtrim()还是可以用的 ltrim(),去掉字符串左边的多于空格。 trim(),这个比较比较简单，就是把字符串左右2边的空格都给删除。 字符串的格式化输出 实用HTML格式化的。nl2br().即在字符串的新一行前插入. echo nl2br(&amp;ldquo;foo isn&amp;quot;tn bar&amp;rdquo;); 上面的字符串会分2行显示，如果把此函数去掉，就只在一行上显示了。 打印输出的格式化PHP支持print()函数，它和echo一样，唯一的差别就是print()返回一个整型值，一直为1。除了print(),还有printf()和 sprintf(). 写到这里，你肯定会想，怎么和C一样呢。它们的工作方式一样，差别是printf()将结果输出到浏览器，而sprintf()这是输出到变量。
 看看它们的定义吧。 int printf ( string format [, mixed args [, mixed ]] ) string sprintf ( string format [, mixed args [, mixed ]] )
@@ -28,10 +28,10 @@
     
     <item>
       <title>基础还是牢靠一些比较好</title>
-      <link>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+      <link>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
       <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
       
-      <guid>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
       <description>gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。
 扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。
 主要用的了iconv函数。 //中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码 $filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename); #some code //把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB $file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name); substr函数。插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。 #笨的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,strlen($upload)-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); #比较好的方法 $upload = $news[&amp;lsquo;upload&amp;rsquo;]; $upload = substr($upload,0,-1); $upload = split(&amp;quot;;&amp;rdquo;,$upload); 还有tinyMCE的有些小方法，淡水稍后再更新。</description>

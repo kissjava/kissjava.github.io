@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSRF on 清风徐来</title>
-    <link>/tags/csrf/</link>
+    <link>https://kissjava.github.io/tags/csrf/</link>
     <description>Recent content in CSRF on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Sat, 17 Aug 2019 21:33:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/csrf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/csrf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Demo 学 Echo Part13 跨站点请求伪造（CSRF）</title>
-      <link>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
+      <link>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
       <pubDate>Sat, 17 Aug 2019 21:33:00 +0000</pubDate>
       
-      <guid>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
+      <guid>https://kissjava.github.io/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
       <description>跨站点请求伪造（CSRF）攻击以及如何预测它们
 此类攻击的示例：尝试通过Web浏览器以外的媒体登录，例如使用CURL等
 通常的防御方法是使用csrf令牌。在有表单的每个页面上，都会生成csrf令牌。提交表单时，会在请求中插入CSRF，然后后端检查发送的CSRF是否有效

@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 清风徐来</title>
-    <link>/categories/python/</link>
+    <link>https://kissjava.github.io/categories/python/</link>
     <description>Recent content in Python on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 13 Sep 2017 14:38:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PyQt5表格应用的详细Demo</title>
-      <link>/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</link>
+      <link>https://kissjava.github.io/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</link>
       <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
       
-      <guid>/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</guid>
+      <guid>https://kissjava.github.io/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</guid>
       <description>PyQt5实现的一个表格应用的 demo。涉及的知识点：tableWidget 的基本使用，cell 内放置 widget，设置 cell 模式，分页，获取选中项目。 首先是 QtDesigner 设计, 一个 tablewidget，4个 pushbuttno：
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;ui version=&amp;quot;4.0&amp;quot;&amp;gt;&amp;lt;class&amp;gt;MainWindow&amp;lt;/class&amp;gt;&amp;lt;widget class=&amp;quot;QMainWindow&amp;quot; name=&amp;quot;MainWindow&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;&amp;lt;rect&amp;gt;&amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;&amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;&amp;lt;width&amp;gt;800&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;600&amp;lt;/height&amp;gt;&amp;lt;/rect&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;windowTitle&amp;quot;&amp;gt;&amp;lt;string&amp;gt;MainWindow&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;centralwidget&amp;quot;&amp;gt;&amp;lt;widget class=&amp;quot;QTableWidget&amp;quot; name=&amp;quot;tableWidget&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;&amp;lt;rect&amp;gt;&amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;&amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;&amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;541&amp;lt;/height&amp;gt;&amp;lt;/rect&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;rowCount&amp;quot;&amp;gt;&amp;lt;number&amp;gt;5&amp;lt;/number&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;columnCount&amp;quot;&amp;gt;&amp;lt;number&amp;gt;11&amp;lt;/number&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;row/&amp;gt;&amp;lt;row/&amp;gt;&amp;lt;row/&amp;gt;&amp;lt;row/&amp;gt;&amp;lt;row/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;column/&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;horizontalLayoutWidget&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;&amp;lt;rect&amp;gt;&amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;&amp;lt;y&amp;gt;540&amp;lt;/y&amp;gt;&amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;31&amp;lt;/height&amp;gt;&amp;lt;/rect&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;layout class=&amp;quot;QHBoxLayout&amp;quot; name=&amp;quot;horizontalLayout&amp;quot;&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnLoad&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;Load&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnPre&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;《Pre&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnNext&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;Next》&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnDetail&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;Detail&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/layout&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;widget class=&amp;quot;QStatusBar&amp;quot; name=&amp;quot;statusbar&amp;quot;/&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;resources/&amp;gt;&amp;lt;connections/&amp;gt;&amp;lt;/ui&amp;gt; 生成的 ui 代码 tableWidgetDemo.</description>
     </item>
     
     <item>
       <title>PyQt5自定义改变窗口大小信号</title>
-      <link>/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</link>
+      <link>https://kissjava.github.io/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</link>
       <pubDate>Tue, 12 Sep 2017 11:13:00 +0000</pubDate>
       
-      <guid>/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</guid>
+      <guid>https://kissjava.github.io/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</guid>
       <description>模式是没有这个信号的，但是我们可以自己创建一个 resized 信号，并在 resizeEvent 方法中 emit.
 用 QtDesigner 设计个主窗口，拖了 Horizontal Layout（mainHLayout） 和窗体同一尺寸，三个 pushbutton，分割按钮的4个Horizontal Spacer。就是想改变窗体大小时，可以让按钮可以继续按比例分配空间。
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;ui version=&amp;quot;4.0&amp;quot;&amp;gt;&amp;lt;class&amp;gt;MainWindow&amp;lt;/class&amp;gt;&amp;lt;widget class=&amp;quot;QMainWindow&amp;quot; name=&amp;quot;MainWindow&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;&amp;lt;rect&amp;gt;&amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;&amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;&amp;lt;width&amp;gt;800&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;600&amp;lt;/height&amp;gt;&amp;lt;/rect&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;windowTitle&amp;quot;&amp;gt;&amp;lt;string&amp;gt;MainWindow&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;centralwidget&amp;quot;&amp;gt;&amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;horizontalLayoutWidget&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;&amp;lt;rect&amp;gt;&amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;&amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;&amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;571&amp;lt;/height&amp;gt;&amp;lt;/rect&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;layout class=&amp;quot;QHBoxLayout&amp;quot; name=&amp;quot;mainHLayout&amp;quot;&amp;gt;&amp;lt;item&amp;gt;&amp;lt;spacer name=&amp;quot;horizontalSpacer&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;&amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;size&amp;gt;&amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;&amp;lt;/size&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/spacer&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton_3&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;spacer name=&amp;quot;horizontalSpacer_2&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;&amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;size&amp;gt;&amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;&amp;lt;/size&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/spacer&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton_2&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;spacer name=&amp;quot;horizontalSpacer_3&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;&amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;size&amp;gt;&amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;&amp;lt;/size&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/spacer&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;item&amp;gt;&amp;lt;spacer name=&amp;quot;horizontalSpacer_4&amp;quot;&amp;gt;&amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;&amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;size&amp;gt;&amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;&amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;&amp;lt;/size&amp;gt;&amp;lt;/property&amp;gt;&amp;lt;/spacer&amp;gt;&amp;lt;/item&amp;gt;&amp;lt;/layout&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;widget class=&amp;quot;QStatusBar&amp;quot; name=&amp;quot;statusbar&amp;quot;/&amp;gt;&amp;lt;/widget&amp;gt;&amp;lt;resources/&amp;gt;&amp;lt;connections/&amp;gt;&amp;lt;/ui&amp;gt; pyuic5 resizeDemo.</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
-      <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <link>https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
       
-      <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://kissjava.github.io/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
       <description>使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧 如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。
 好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 https://repo.continuum.io/archive/，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。
 $ wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh--2017-09-04 09:15:29-- https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.shResolving repo.continuum.io (repo.continuum.io)... 104.16.19.10, 104.16.18.10, 2400:cb00:2048:1::6810:130a, ...Connecting to repo.continuum.io (repo.continuum.io)|104.16.19.10|:443... connected.HTTP request sent, awaiting response... 200 OKLength: 523283080 (499M) [application/x-sh]Saving to: ‘Anaconda3-4.4.0-Linux-x86_64.sh’100%[=================================================================&amp;gt;] 523,283,080 11.3MB/s in 59s 2017-09-04 09:16:29 (8.39 MB/s) - ‘Anaconda3-4.4.0-Linux-x86_64.sh’ saved [523283080/523283080] 下载完成，vps 速度还算及格。
@@ -47,10 +47,10 @@ $ sudo bash Anaconda3-4.4.0-Linux-x86_64.shWelcome to Anaconda3 4.</description
     
     <item>
       <title>ipython tab键无法提示补全</title>
-      <link>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
+      <link>https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
       <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
       
-      <guid>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
+      <guid>https://kissjava.github.io/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
       <description>python3.4下pip安装了ipython
 pip install ipythoncmd运行ipython貌似正常，但是无法tab补全、提示 需要pip 安装 pyreadline
 pip install pyreadline以上在win8.1下32位python3.4通过</description>
@@ -58,19 +58,19 @@ pip install pyreadline以上在win8.1下32位python3.4通过</description>
     
     <item>
       <title>cx_Freeze setup.py</title>
-      <link>/posts/cx_freeze-setup.py/</link>
+      <link>https://kissjava.github.io/posts/cx_freeze-setup.py/</link>
       <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
       
-      <guid>/posts/cx_freeze-setup.py/</guid>
+      <guid>https://kissjava.github.io/posts/cx_freeze-setup.py/</guid>
       <description>from cx_Freeze import setup, Executable# http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspxshortcut_table = [(&amp;quot;DesktopShortcut&amp;quot;, # Shortcut&amp;quot;DesktopFolder&amp;quot;, # Directory_&amp;quot;YourAppDetailName&amp;quot;, # App Name&amp;quot;TARGETDIR&amp;quot;, # Component_&amp;quot;[TARGETDIR]AppName.exe&amp;quot;, # TargetNone, # ArgumentsNone, # DescriptionNone, # HotkeyNone, # IconNone, # IconIndexNone, # ShowCmd&#39;TARGETDIR&#39; # WkDir)]# Now create the table dictionarymsi_data = {&amp;quot;Shortcut&amp;quot;: shortcut_table}# Change some default MSI options and specify the use of the above defined tablesbdist_msi_options = {&#39;data&#39;: msi_data}# Dependencies are automatically detected, but it might need# fine tuning.</description>
     </item>
     
     <item>
       <title>spec demo</title>
-      <link>/posts/spec-demo/</link>
+      <link>https://kissjava.github.io/posts/spec-demo/</link>
       <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
       
-      <guid>/posts/spec-demo/</guid>
+      <guid>https://kissjava.github.io/posts/spec-demo/</guid>
       <description># -*- mode: python -*-a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],hiddenimports=[],hookspath=None,runtime_hooks=None)pyz = PYZ(a.pure)exe = EXE(pyz,a.scripts,exclude_binaries=True,name=&#39;dbTools.exe&#39;,debug=False,strip=None,upx=True,console=False , version=&#39;d:\\Work\\dbTools\\v.txt&#39;, icon=&#39;d:\\Work\\dbTools\\dbTools.ico&#39;)dict_tree = Tree(&#39;d:\\Work\\dbTools\\backup&#39;, prefix = &#39;backup&#39;)dict_tree += Tree(&#39;d:\\Work\\dbTools\\test&#39;, prefix = &#39;test&#39;)dict_tree += [(&#39;dbTools.ico&#39;, &#39;d:\\Work\\dbTools\\dbTools.ico&#39;, &#39;DATA&#39;),(&#39;appcfg.dll&#39;,&#39;d:\\Work\\dbTools\\appcfg.dll&#39;,&#39;DATA&#39;),(&#39;backup.dll&#39;,&#39;d:\\Work\\dbTools\\backup.dll&#39;,&#39;DATA&#39;),(&#39;mysqlr.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlr.exe&#39;,&#39;DATA&#39;),(&#39;mysqlb.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlb.exe&#39;,&#39;DATA&#39;)]coll = COLLECT(exe,a.binaries,dict_tree,a.zipfiles,a.datas,strip=None,upx=True,name=&#39;dbTools&#39;)cmd
 pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。
 2015年10月23日11:22:11 update： pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择</description>
@@ -78,10 +78,10 @@ pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec资源文件也拷
     
     <item>
       <title>用Homebrew搞定MySQL-python</title>
-      <link>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
+      <link>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
       <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
       
-      <guid>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
+      <guid>https://kissjava.github.io/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
       <description>写php时，因为懒惰，所以在mac上用了mamp。 后来，写python。MySQLdb一直无法安装，后来是单独安装了mysql-5.1.73-osx10.6-x86_64 。 然后配置.bash_profile :
 # Setting PATH for MySQLdbPATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/bin:${PATH}&amp;quot;export PATHexport DYLD_LIBRARY_PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/lib&amp;quot;export VERSIONER_PYTHON_PREFER_64_BIT=noexport VERSIONER_PYTHON_PREFER_32_BIT=yes再使用pip安装既可：
 sudo pip install MySQL-python比较繁琐。后来发现不用在使用mamp还要再安装一个mysql就可以安装上MySQL-python的方法。用brew两行代码搞定：
@@ -92,10 +92,10 @@ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/insta
     
     <item>
       <title>pycharm 3.1.3 for mac</title>
-      <link>/posts/pycharm-3.1.3-for-mac/</link>
+      <link>https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/</link>
       <pubDate>Wed, 30 Apr 2014 23:55:00 +0000</pubDate>
       
-      <guid>/posts/pycharm-3.1.3-for-mac/</guid>
+      <guid>https://kissjava.github.io/posts/pycharm-3.1.3-for-mac/</guid>
       <description>确实比较好用，下面你懂得。
 yueting3527
 ===== LICENSE BEGIN ===== 93347-12042010 00001FMHemWIs&amp;quot;6wozMZnat3IgXKXJ 2!nV2I6kSO48hgGLa9JNgjQ5oKz1Us FFR8k&amp;quot;nGzJHzjQT6IBG!1fbQZn9!Vi ===== LICENSE END =====</description>
@@ -103,10 +103,10 @@ yueting3527
     
     <item>
       <title>搞定在 Mac 安装 MySQLdb（MySQL-python）</title>
-      <link>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
+      <link>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
       <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
       
-      <guid>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
+      <guid>https://kissjava.github.io/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
       <description>重新安装easy_install（setuptools） 1，去下载 setuptools
 2，到终端执行 sudo sh setuptools-0.6c11-py2.7.egg
 3，清除下载的setuptools-0.6c11-py2.7.egg
@@ -117,10 +117,10 @@ yueting3527
     
     <item>
       <title>wxpython设置背景</title>
-      <link>/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+      <link>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
       <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
       
-      <guid>/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://kissjava.github.io/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
       <description>用wxformbuilder+一点代码来实现。
 首先用wxformbuilder来做出界面，并生成代码。运行结果：
 使其有背景图片效果： 实现代码如下：
@@ -129,29 +129,29 @@ yueting3527
     
     <item>
       <title>PyInstaller无法easy_install或pip安装</title>
-      <link>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
+      <link>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
       
-      <guid>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://kissjava.github.io/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
       <description>应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。 只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。 也就一步，就是解压。淡水解压到d盘根目录 使用也很简单：
 PS C:\Users\Frank&amp;gt; d:PS D:\&amp;gt; cd .\PyInstaller-2.1PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.ico D:\wms\julinWms.py 和easy_install安装后的使用方法几乎一样。 嗯，没多少干货。2014了，随便写点，证明一下还在喘气。</description>
     </item>
     
     <item>
       <title>Python MySQLdb模块的使用</title>
-      <link>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
       
-      <guid>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.github.io/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>#-*- encoding: utf-8 -*-import os, sys, stringimport MySQLdb# 连接数据库　try:conn = MySQLdb.connect(host=&#39;localhost&#39;,user=&#39;root&#39;,passwd=&#39;xxxx&#39;,db=&#39;test1&#39;)except Exception, e:print esys.exit()# 获取cursor对象来进行操作cursor = conn.cursor()# 查询时返回元组#cursor = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)# 查询时返回字典# 创建表sql = &amp;quot;create table if not exists test1(name varchar(128) primary key, age int(4))&amp;quot;cursor.execute(sql)# 插入数据sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;zhaowei&amp;quot;, 23)try:cursor.execute(sql)except Exception, e:print esql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;张三&amp;quot;, 21)try:cursor.</description>
     </item>
     
     <item>
       <title>wxPython跨线程调用[转]</title>
-      <link>/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
+      <link>https://kissjava.github.io/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
       <pubDate>Sat, 21 Dec 2013 12:44:00 +0000</pubDate>
       
-      <guid>/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</guid>
+      <guid>https://kissjava.github.io/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</guid>
       <description>&lt;p&gt;出处：http://guangboo.org/2013/08/23/wxpython-non-gui-thread-call-gui-method
 之前有介绍了《wxPython多线程支持》，包含了wx.CallAfter, wx.PostEvent, wxCallLater的用法，本文将wx.CallAfter封装成decorator，使得UI线程中的方法可以在非UI线程中调用。&lt;/p&gt;
 &lt;p&gt;本文将wx.CallAfter方法进行了封装，代码如下：&lt;/p&gt;
@@ -167,10 +167,10 @@ def call_after(func):
     
     <item>
       <title>wxPython多线程支持[转]</title>
-      <link>/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</link>
+      <link>https://kissjava.github.io/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</link>
       <pubDate>Thu, 19 Dec 2013 09:23:00 +0000</pubDate>
       
-      <guid>/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</guid>
+      <guid>https://kissjava.github.io/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</guid>
       <description>&lt;p&gt;出处：&lt;a href=&#34;http://guangboo.org/2013/03/04/wxpython-threading&#34;&gt;http://guangboo.org/2013/03/04/wxpython-threading&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;wxpython线程安全方法&lt;/strong&gt;&lt;/p&gt;
@@ -181,10 +181,10 @@ def call_after(func):
     
     <item>
       <title>Python调用windows下DLL详解 - ctypes库的使用[转]</title>
-      <link>/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</link>
+      <link>https://kissjava.github.io/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</link>
       <pubDate>Wed, 30 Oct 2013 10:31:29 +0000</pubDate>
       
-      <guid>/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</guid>
+      <guid>https://kissjava.github.io/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</guid>
       <description>来源：http://blog.csdn.net/magictong/article/details/3075478
 在python中某些时候需要C做效率上的补充，在实际应用中，需要做部分数据的交互。使用python中的ctypes模块可以很方便的调用windows的dll（也包括linux下的so等文件），下面将详细的讲解这个模块（以windows平台为例子），当然我假设你们已经对windows下怎么写一个DLL是没有问题的。
 引入ctypes库 from ctypes import * 假设你已经有了一个的DLL（名字是add.dll)，且该DLL有一个符合cdecl（这里强调调用约定是因为，stdcall调用约定和cdecl调用约定声明的导出函数，在使用python加载时使用的加载函数是不同的，后面会有说明）调用约定的导出函数Add。 建立一个Python文件DllCall.py测试： from ctypes import * dll = CDLL(&amp;ldquo;add.dll&amp;rdquo;) print dll.Add(1, 102) 结果：103
@@ -197,20 +197,20 @@ def call_after(func):
     
     <item>
       <title>一个最简单的用PYTHON实现的WINDOWS服务程序 [转]</title>
-      <link>/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</link>
+      <link>https://kissjava.github.io/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</link>
       <pubDate>Wed, 30 Oct 2013 10:31:09 +0000</pubDate>
       
-      <guid>/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</guid>
+      <guid>https://kissjava.github.io/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</guid>
       <description>原文:http://blog.sina.com.cn/s/blog_633b6d790100g4tu.html1、想写一个监视服务器是否运行的简单服务，网上搜到的例程不太完善，如梅劲松的许久 没有更新，而且SvcDoRun写得不完整（见http://www.chinaunix.net/jh/55/558190.html， 不知道是不是原始出处）；而mail.python.org中的没有定义_svc_name_等变量（见 http://mail.python.org/pipermail/python-list/2005-December/315190.html） 2、这个实现功能很简单，就是把当前时间写入‘c:\temp\time.txt’文件，一看即知， 大家可以随意扩充。 3、用 service install 安装 service start 启动 service stop 停止 service debug 调试 service remove 删除
 service.py #coding:utf-8 import win32serviceutil import win32service import win32event import win32evtlogutil import time class service(win32serviceutil.ServiceFramework): svc_name = &amp;ldquo;test_python&amp;rdquo; svc_display_name = &amp;ldquo;test_python&amp;rdquo; def init(self, args): win32serviceutil.ServiceFramework.init(self, args) self.hWaitStop = win32event.CreateEvent(None, 0, 0, None) print &amp;lsquo;服务开始&amp;rsquo; def SvcDoRun(self): import servicemanager #&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; # Make entry in the event log that this service started #&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; servicemanager.</description>
     </item>
     
     <item>
       <title>Pyinstaller安装及使用</title>
-      <link>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
       
-      <guid>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://kissjava.github.io/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       <description>也可以用py2exe,但是总要写个xxx.py的文件来配置,不是很乐意.
 chinaunix上有朋友推荐用pyinstaller,说更容易使用.那就用用看吧.
 第一步:安装 easy_install pyinstaller(淡水在win8.1下需要用管理员权限安装)
@@ -220,10 +220,10 @@ The end.</description>
     
     <item>
       <title>[转]sublime text 3 插件：package control</title>
-      <link>/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
+      <link>https://kissjava.github.io/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
       <pubDate>Thu, 10 Oct 2013 15:03:12 +0000</pubDate>
       
-      <guid>/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
+      <guid>https://kissjava.github.io/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
       <description>来源：http://qianduanblog.com/1900.html和sublime text 2不同的是，sublime text 3无法使用命令直接来安装package control，一直不明白，这么一个很好的工具，为什么不直接集成在软件里呢，还要这么麻烦的安装呢？相比sublime text 2来说，sublime text 3的安装过程相对要麻烦很多。
 在搜索引擎中搜索后，有很多的安装方法，权衡各种方法，这里描述的方法应该是最简单的了。
 打开页面，右下角，点击下载：
@@ -234,20 +234,20 @@ C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;
     
     <item>
       <title>How to run a wxPython GUI app in Sublime Text 2</title>
-      <link>/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
+      <link>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
       <pubDate>Tue, 27 Aug 2013 10:35:55 +0000</pubDate>
       
-      <guid>/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
+      <guid>https://kissjava.github.io/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
       <description>Step 1:Preference-&amp;gt;Browse Packages-&amp;gt;python，编辑Python.sublime-build文件，在字典里添加path item，value为python路径，淡水的如下： { &amp;ldquo;cmd&amp;rdquo;:[&amp;ldquo;python.exe&amp;rdquo;, &amp;ldquo;-u&amp;rdquo;, &amp;ldquo;$file&amp;rdquo;], &amp;ldquo;path&amp;rdquo;:&amp;ldquo;C:/Python27&amp;rdquo;, &amp;ldquo;file_regex&amp;rdquo;: &amp;ldquo;^[ ]File &amp;ldquo;(&amp;hellip;?)&amp;rdquo;, line ([0-9]*)&amp;rdquo;, &amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.python&amp;rdquo; } 这就解决了python的ctrl+b的build（python里算是运行）问题；但是如果使用了wxpython它还是不能跑起来。
 Step 2:Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31行左右注释掉一行代码，淡水的如下（从代码来看适用windows系统）： if os.name == &amp;ldquo;nt&amp;rdquo;: startupinfo = subprocess.STARTUPINFO() # startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW 应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。</description>
     </item>
     
     <item>
       <title>完成第一个基于python的GUI程序</title>
-      <link>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://kissjava.github.io/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
       
-      <guid>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
       <description>上图先
 采用wxpython。涉及到多线程，socket。
 耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。
@@ -257,10 +257,10 @@ Step 2:Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31�
     
     <item>
       <title>python虚拟环境virtualenv</title>
-      <link>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+      <link>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
       <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
       
-      <guid>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+      <guid>https://kissjava.github.io/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
       <description>昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.
 virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.
 这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.
@@ -273,10 +273,10 @@ domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他�
     
     <item>
       <title>python 安装二三事</title>
-      <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+      <link>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
       <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
       
-      <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+      <guid>https://kissjava.github.io/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
       <description>恰好,下载文件夹里有个python2.7.5.mis
 双击,一路next,安装完成.
 在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.
@@ -290,10 +290,10 @@ domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他�
     
     <item>
       <title>安装sublime text 2后的几件事</title>
-      <link>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+      <link>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
       <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
       
-      <guid>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
       <description>1，安装 Package Control 的方法：
 打开 Sublime Text 2，按下 Control + ` 调出 Console 将以下代码粘贴进命令行中并回车：
 重启sublime Text 2
@@ -311,10 +311,10 @@ ctrl+alt+上下方向键 可以在多行同时出现光标,进行多行编辑 �
     
     <item>
       <title>web.py尝鲜时遭遇no module named MySQLdb</title>
-      <link>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+      <link>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
       <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
       
-      <guid>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+      <guid>https://kissjava.github.io/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
       <description>python看了好一阵了，一直没有突破。挤了点时间折腾web.py。
 下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。
 google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。

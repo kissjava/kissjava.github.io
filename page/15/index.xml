@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>清风徐来</title>
-    <link>/</link>
+    <link>https://kissjava.github.io/</link>
     <description>Recent content on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kissjava.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>收拾残局，过滤部分字段重复的数据</title>
-        <link>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+        <link>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
         <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
         
-        <guid>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
-        <description>清风徐来 /posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ -&lt;p&gt;select distinct可以去掉重复记录。
+        <guid>https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ -&lt;p&gt;select distinct可以去掉重复记录。
 disctinct将重复的记录忽略，但它忽略的是&lt;!-- raw HTML omitted --&gt;完全一致&lt;!-- raw HTML omitted --&gt;的重复记录，而不是其中某个字段重复的记录，或者说，distinct查询一个字段时好使，多个字段就不好使。&lt;/p&gt;
 &lt;p&gt;所以用聚合函数和group by实现
 &lt;!-- raw HTML omitted --&gt;注意：group by只能跟聚合函数搭配使用&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
@@ -29,18 +29,18 @@ disctinct将重复的记录忽略，但它忽略的是&lt;!-- raw HTML omitted -
 select   *   from   mytable  where   ID   in(select   max(ID)   from   mytable   group   by   username,password)&lt;/p&gt;
 &lt;p&gt;当username和password重复时，取ID最小的记录：&lt;br&gt;
 select   *   from   mytable  where   ID   in(select   min(ID)   from   mytable  a   group   by   username,password)&lt;/p&gt;
-- /posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Codeigniter ACL library</title>
-        <link>/posts/codeigniter-acl-library/</link>
+        <link>https://kissjava.github.io/posts/codeigniter-acl-library/</link>
         <pubDate>Mon, 08 Mar 2010 09:58:45 +0000</pubDate>
         
-        <guid>/posts/codeigniter-acl-library/</guid>
-        <description>清风徐来 /posts/codeigniter-acl-library/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.github.io/posts/codeigniter-acl-library/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/codeigniter-acl-library/ -&lt;!-- raw HTML omitted --&gt;
 &lt;pre&gt;&lt;code&gt;public function __construct() {
     
     $this-&amp;gt;load-&amp;gt;helper(&#39;url&#39;);
@@ -160,18 +160,18 @@ public function __get($var)    {
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/codeigniter-acl-library/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/codeigniter-acl-library/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>apache下ab网站压力测试命令的参数、输出结果的中文注解</title>
-        <link>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
+        <link>https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
         <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
         
-        <guid>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
-        <description>清风徐来 /posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ -&lt;p&gt;有用，记录一下。from：http://txm3217.blog.163.com/blog/static/21986987200762131027970/
+        <guid>https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ -&lt;p&gt;有用，记录一下。from：http://txm3217.blog.163.com/blog/static/21986987200762131027970/
 以前安装好APACHE总是不知道该如何测试APACHE的性能，现在总算找到一个测试工具了。就是APACHE自带的测试工具AB(apache benchmark).在APACHE的bin目录下。
 格式： ./ab [options] [http://]hostname[:port]/path
 参数：
@@ -283,18 +283,18 @@ Total: 813 1638 1338.9 1093 7785
 100% 7785 (longest request)
 //整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间，其中50％的用户响应时间小于1093 毫秒，60％ 的用户响应时间小于1247 毫秒，最大的响应时间小于7785 毫秒&lt;/p&gt;
 &lt;p&gt;由于对于并发请求，cpu实际上并不是同时处理的，而是按照每个请求获得的时间片逐个轮转处理的，所以基本上第一个Time per request时间约等于第二个Time per request时间乘以并发请求数&lt;/p&gt;
-- /posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>vim记录</title>
-        <link>/posts/vim%E8%AE%B0%E5%BD%95/</link>
+        <link>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Sun, 07 Mar 2010 13:13:54 +0000</pubDate>
         
-        <guid>/posts/vim%E8%AE%B0%E5%BD%95/</guid>
-        <description>清风徐来 /posts/vim%E8%AE%B0%E5%BD%95/ -&lt;p&gt;1，vim中复制带有行号的内容到剪切板
+        <guid>https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/ -&lt;p&gt;1，vim中复制带有行号的内容到剪切板
 进入normal模式，按查找键盘（/），然后然后用鼠标选择需要的内容，选取会自动选择行号，菜单栏编辑-复制（右键也行）即可。
 2，删除引用符号中的内容，并进入到插入模式
 ci[ 删除一对 [] 中的所有字符并进入插入模式
@@ -325,18 +325,18 @@ L：移动光标到屏幕下面&lt;/p&gt;
 &amp;laquo;：和上面类似，但是反缩进&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
-- /posts/vim%E8%AE%B0%E5%BD%95/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/vim%E8%AE%B0%E5%BD%95/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>可以激活Win7系统的Key</title>
-        <link>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</link>
+        <link>https://kissjava.github.io/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</link>
         <pubDate>Sun, 07 Mar 2010 12:05:31 +0000</pubDate>
         
-        <guid>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</guid>
-        <description>清风徐来 /posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ -&lt;p&gt;可以激活Win7系统的Key（序列号）！
+        <guid>https://kissjava.github.io/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ -&lt;p&gt;可以激活Win7系统的Key（序列号）！
 G到的，留着吧，看看什么时候能用上。
 不懂什么是神Key的朋友自己去BD、GG吧！不要问我这样的问题！谢谢配合！
 我个人认为神Key是微软为扩展Win7市场故意放出。
@@ -353,32 +353,32 @@ C4M9W-WPRDG-QBB3F-VM9K8-KDQ9Y
 2VCGQ-BRVJ4-2HGJ2-K36X9-J66JG
 MGX79-TPQB9-KQ248-KXR2V-DHRTD
 FJHWT-KDGHY-K2384-93CT7-323RC&lt;/p&gt;
-- /posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>使用jQuery和flash的多文件上传组件</title>
-        <link>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
+        <link>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
         <pubDate>Sun, 07 Mar 2010 12:02:53 +0000</pubDate>
         
-        <guid>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
-        <description>清风徐来 /posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ -&lt;p&gt;标题党了。
+        <guid>https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ -&lt;p&gt;标题党了。
 这是一个使用jQuery和flash的多文件上传组件：
 &lt;a href=&#34;http://www.uploadify.com/demo/&#34;&gt;http://www.uploadify.com/demo/&lt;/a&gt;&lt;/p&gt;
-- /posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>flash,css hack,等等。。</title>
-        <link>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
+        <link>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
         <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
         
-        <guid>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
-        <description>清风徐来 /posts/flashcss-hack%E7%AD%89%E7%AD%89/ -&lt;p&gt;1，插入flash，不追求web标准，可以这样简短：
+        <guid>https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/ -&lt;p&gt;1，插入flash，不追求web标准，可以这样简短：
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 2，同一选择器针对不同浏览器的css hack
 select {
@@ -395,50 +395,50 @@ border: 5px solid red;/* ie8 */
 3.只有IE6能识别_
 4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。
 5.对于ie8 chrome hack的请 GOOGLE or BAIDU …&lt;/p&gt;
-- /posts/flashcss-hack%E7%AD%89%E7%AD%89/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/flashcss-hack%E7%AD%89%E7%AD%89/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
-        <link>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
+        <link>https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
         <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
         
-        <guid>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
-        <description>清风徐来 /posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ -&lt;!-- raw HTML omitted --&gt;
+        <guid>https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ -&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;实现原理：&lt;/p&gt;
 &lt;p&gt;（1）指定宽度：width:300px;
 （2）overflow:hidden;  将超出内容隐藏
 （3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;)
 （4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。&lt;/p&gt;
-- /posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>Codeigniter里实现get_object_or_404</title>
-        <link>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
+        <link>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
         <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
         
-        <guid>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
-        <description>清风徐来 /posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ -&lt;p&gt;在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ -&lt;p&gt;在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。&lt;/p&gt;
 &lt;p&gt;我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ - kissjava.cn</description>
         </item>
     
     
     
         <item>
         <title>PHP5.3的新特新</title>
-        <link>/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
+        <link>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
         <pubDate>Sat, 13 Feb 2010 16:31:57 +0000</pubDate>
         
-        <guid>/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
-        <description>清风徐来 /posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ -&lt;p&gt;本文主要说说PHP V5.3 的以下特性：&lt;/p&gt;
+        <guid>https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
+        <description>清风徐来 https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ -&lt;p&gt;本文主要说说PHP V5.3 的以下特性：&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;延迟静态绑定&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;PHP V5.3 扩展了 static 关键词的使用。现在，无需实例化类便可访问静态类方法和属性。当类不存在对象，或者不需要对象时，这个特性就比较方便。下面就是展示了延迟静态绑定的一个例子。
@@ -473,7 +473,7 @@ border: 5px solid red;/* ie8 */
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
-- /posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ - kissjava.cn</description>
+- https://kissjava.github.io/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ - kissjava.cn</description>
         </item>
     
     

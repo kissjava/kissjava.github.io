@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kissjava on 清风徐来</title>
-    <link>/tags/kissjava/</link>
+    <link>https://kissjava.github.io/tags/kissjava/</link>
     <description>Recent content in kissjava on 清风徐来</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
     <lastBuildDate>Wed, 29 Nov 2017 17:23:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/kissjava/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kissjava.github.io/tags/kissjava/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>又又又搬家了，搬回国内</title>
-      <link>/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</link>
+      <link>https://kissjava.github.io/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</link>
       <pubDate>Wed, 29 Nov 2017 17:23:00 +0000</pubDate>
       
-      <guid>/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</guid>
+      <guid>https://kissjava.github.io/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</guid>
       <description>又搬回国内阿里云了。 主域名更换为备案过的 kissjava.cn。
 关于 kissjava： 走上it这条路，其实收自己的一个兄弟影响极大。 当时他还做了个比较 nb 的网站，域名就是 kissjava.com。 不过我当时在搞 ASP，后来是 PHP，等我学JAVA 时他早就不纠结技术细节了。 我对 kissjava 念念不忘，于是注册了 kissjava.cn。</description>
     </item>

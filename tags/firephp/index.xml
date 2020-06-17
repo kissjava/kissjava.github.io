@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>firephp on 清风徐来</title>
+    <link>/tags/firephp/</link>
+    <description>Recent content in firephp on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 25 Jan 2011 14:29:37 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/firephp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FirePHP,给力的调试工具</title>
+      <link>/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
+      
+      <guid>/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
+这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;FirePHPCore的lib包里有四个文件，后缀为php4的明显是适用php4的。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

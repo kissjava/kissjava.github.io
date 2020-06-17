@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>easy_install on 清风徐来</title>
+    <link>/tags/easy_install/</link>
+    <description>Recent content in easy_install on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 25 Apr 2014 20:28:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/easy_install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>搞定在 Mac 安装 MySQLdb（MySQL-python）</title>
+      <link>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
+      <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
+      <description>重新安装easy_install（setuptools） 1，去下载 setuptools
+2，到终端执行 sudo sh setuptools-0.6c11-py2.7.egg
+3，清除下载的setuptools-0.6c11-py2.7.egg
+删除MySQL sudo rm /usr/local/mysqlsudo rm -rf /usr/local/mysql*sudo rm -rf /Library/StartupItems/MySQLCOMsudo rm -rf /Library/PreferencePanes/MySQL*vim /etc/hostconfig and removed the line MYSQLCOM=-YES-rm -rf ~/Library/PreferencePanes/MySQL*sudo rm -rf /Library/Receipts/mysql*sudo rm -rf /Library/Receipts/MySQL*sudo rm -rf /var/db/receipts/com.mysql.* Mac下删除自己安装的Python 删除Python框架 sudo rm -rf /Library/Frameworks/Python.framework/Versions/x.x 删除Python程序 sudo rm -rf “/Applications/Python x.x” 删除/usr/local/bin目录下的Python连接 x.x为Python的版本号
+安装PHP开发环境 MAMP 都有了
+安装Python开发环境 受累MAMP，被MySQLdb折腾好久。最后，删除了python重新来过。 安装python 安装wxpython 安装easy_install 安装mysql-5.1.73-osx10.6-x86_64（64位的mysql，就是为了安装下面的MySQLdb） 编辑.</description>
+    </item>
+    
+    <item>
+      <title>python 安装二三事</title>
+      <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+      <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
+      
+      <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+      <description>恰好,下载文件夹里有个python2.7.5.mis
+双击,一路next,安装完成.
+在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.
+系统-&amp;gt;高级属性设置-&amp;gt;环境变量:
+编辑Path:添加上 ;C:\Python27\Scripts;C:\Python27;C:\Python27\Lib再到命令行,敲python回车.妥了.
+还要安装easy install(应该叫它setuptools,官方叫这个包).这个没有mis包.需要下载一个ez_setup.py(这里有:http://peak.telecommunity.com/dist/ez_setup.py)
+命令行下安装:cd 下载目录;python ez_setup.py只要连网了,一般都能安装成功,要么就是人品问题了.
+好吧,这下就可以在命令行下,简单的安装python第三方的包了.比如 easy_install virtualenv还有 easy_install MySQL-python&amp;hellip;
+好像比php方便些呢.其实好久没更新blog了,随意写写,凑数来了. 注意是随意,不是随便.</description>
+    </item>
+    
+  </channel>
+</rss>

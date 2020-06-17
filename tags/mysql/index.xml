@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on 清风徐来</title>
+    <link>/tags/mysql/</link>
+    <description>Recent content in mysql on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sun, 19 Jun 2011 09:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql的随机读取</title>
+      <link>/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
+      
+      <guid>/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
+      <description>随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。
+随机查询5条记录：
+在数十万记录的表里，这样的查询要好几秒的时间。下面采用JOIN的方式改进一下：
+这样得到连续的5条记录。要不联续的记录，可以连续查询几次，每次limit 1条。这淡水比较推荐，SQL语句比较清晰，效率也不错。
+还有，可以这样的：
+其他更复杂的实现，淡水无视之。
+update：2011年8月24日 15:03:26
+如果随机抓取，并且要分页呢？
+在表里增加一个sortbyrand字段。要随机排序時只需一个简单的sql。
+例如记录总数是10000 update table_name set sortbyrand=FLOOR(RAND()*10000); 抓取只需要order by sortbyrand就可以了，其实这个是最不耗脑子的。</description>
+    </item>
+    
+    <item>
+      <title>mysql数据库的备份和恢复</title>
+      <link>/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+      <pubDate>Tue, 12 Jan 2010 14:20:47 +0000</pubDate>
+      
+      <guid>/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+      <description>利用了mysql自带的工具，效率高，也不怕文件过大。 先说备份 mysqldump -u数据库用户名 -p密码 dbname &amp;gt; 备份路径/导出名.sql就是把dbname数据库，导出到 备份路径/导出名.sql
+恢复 mysql -u数据库用户名 -p密码 dbname &amp;lt; 备份路径/数据库名.sqlmysql命令说完了，下面该shell了，用shell来实现mysql的自动备份。
+建立shell mysqlback.sh 内容如下： #!/bin/bash X=date +%Y%m%d	;获取当天时间，命名用 M=/usr/local/mysql/bin	;mysql程序的路径 B= /usr/back/mysql	;mysql备份的路径
+$M/mysqldump -uroot -proot test &amp;gt; $B/$X.sql tar -zcvf $B/$X.tar.gz $B/$X.sql rm -rf $B/$X.sqltar 打包压缩后，rm 删除原sql文件 然后添加到计划任务，每天3点05分自动执行： #echo &amp;ldquo;05 3 * * * root /usr/back/shell/mysqlback.sh &amp;amp;&amp;gt;/dev/null&amp;rdquo; &amp;raquo;/etc/crontab</description>
+    </item>
+    
+    <item>
+      <title>mysql的几个函数</title>
+      <link>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
+      
+      <guid>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+      <description>缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：先说简单点的方法：UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 细说一下： REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)，是替换空格 REGEXP ，是mysql里的正则 &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。 再来一个另类的：UPDATE customer_copy set fax= concat(substring_index(fax,&amp;rsquo; &amp;lsquo;,1), substring_index(fax,&amp;rsquo; &amp;lsquo;,-1)) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 这里用到了两个函数:concat(),substring_index() concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3 substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串. SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com 解释一下，如果count是负数，就从右边开始计数和截取。 substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。</description>
+    </item>
+    
+  </channel>
+</rss>

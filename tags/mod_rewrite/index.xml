@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mod_rewrite on 清风徐来</title>
+    <link>/tags/mod_rewrite/</link>
+    <description>Recent content in mod_rewrite on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 16 Jul 2009 13:22:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mod_rewrite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
+      <link>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
+      <description>最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《Learn Apache mod_rewrite: 13 Real-world Examples》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+原文地址：http://www.sitepoint.com/article/apache-mod_rewrite-examples/原文作者：DK Lynn（DK Lynn is a former instructor pilot and &amp;ldquo;rocket scientist&amp;rdquo; now living in New Zealand where he operates a small business developing and hosting web sites. ）
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝二道华丽的分割线（以下为本人译文）＝＝＝＝＝＝＝＝＝＝
+一个最常用的正则就是（.）。它含有两个元素：一是“点”，表示任意字符；二是“星”，表示以前的全部字符。所以（.）会匹配{REQUEST_URI}的所有字符。{REQUEST_URI}是URL中出去域名以及“？”符号的所有查询字符，也是Apache 重写技术尝试匹配的字符。包裹在正则表达式中的元素存放在“原子”内，它是在规则范围内允许被匹配的变量，所以以上正则存储了USA/California/San_Diego在“原子”中，为了解决我们的问题，我们需要三个“原子”，他们可以用左斜杠“/”进行分隔，所以正则表达式成了： (.)/(.)/(.)以上正则，在{REQUEST_URI}中通过两个“/”的分割存储了三个值，为了解决我们具体问题，我们得加一点限制――毕竟，第一个和最后一个原子可以匹配任何字符。 开始，我们可以添加一些特殊的字符，比如表示正则“开始”或者“结束”，“^”字符表示正则的开始而“$”表示正则的结束。 ^(.)/(.)/(.)$这个正则表示整个字符串将全部匹配，除去之前后者之后，没有任何例外。 但是，这个方法仍然匹配的范围太广，我们将匹配的字符按照原子形式存放，然后通过他们形成查询字符串，所以我们必须信任我们所匹配的字符。用(.*)匹配字符串，由于允许了太多字符，所以会存在潜在的安全隐患，引用不当会使mod_rewrite运行出故障。 为了避免一些不必要的麻烦，让我们更改一下我们的原子正则，让其更加准确的匹配我们允许的字符。因为这些原子代表了地区地名，所以我们完全可以用A到Z的大小写来表示他们，另外因为地名之间有空格，所以下划线“”也是被允许的。我们用中括弧明确我们匹配的正则，然后用短横线“-”表示连接的范围，所以被我们允许的正则修改成了[a-zA-Z],因为我们还要避免匹配到空名字，所以用“+”来匹配在该字符之前的一个或者多个字符，所以我们的正则成了： ^([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ {REQUEST_URI}是以“/”开头。Apache 在更改版本的时候会更改正则引擎，一代Apache要求有斜杠而二代Apache却不允许！但是我们可以用^/?（？表示匹配字符本身或者前一个字符）来兼容两个版本的Apache，所以我们的正则又成了: ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ 正则在手，我们就可以将原子标识到URL上了： display.php?country=$1 &amp;amp;state=$2&amp;amp;city=$3 $1表示国家原子；$2表示省州原子；$3表示城市原子，这里可以加上9个原子，分别用$1到$9表示。 现在我们要做的就是在该目录下创建一个新的.htaccess文件，录入一下代码： RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ display.php?country=$1 &amp;amp;state=$2&amp;amp;city=$3 [L] 然后保存，重写规则必须写在一行并且用一个空格分开每一个参数，我们用[L]或者’last’表示匹配结束。（一会有更多flags介绍） 我们的重写规则已经创建完成， URL请求字符上各原子的值将经过我们匹配的正则，加上查询变量到我们的重写URL上。display.php将从查询字符中解析这些值，然后将他们送入数据库查询或者进行其他数据库操作。 如果你的正则只允许有限的几个国家，为了避免数据库错误，你可以在正则中加入一下被允许条件，例子如下： ^/?(USA|Canada|Mexico)/([a-zA-Z_]+)/([a-zA-Z_]+)$ 如果你关心查询字符串的大小写问题，由于你数据库对大写有严格的限制，那么你可以在正则表达式后面加一个[NC]FLAG位来忽略大小写，但是不要忘记在你通过$_GET 获取传递值的时候，把他们转换成小写。 如果你想用数字（0，1…..9）来表示具体的地区，那么需要更改正则中的([a-zA-Z_]+)成([0-9])来匹配单个数字，([0-9]{1,2})匹配两位数字（0到99）,([0-9]+)匹配多位数字，这个对匹配数据库ID之类的非常有用。RewriteCond 指令现在你已经学会了mod_rewrite的一些基本用法，现在我们来学习下怎样用RewirteCond指令来处理其他各类型的情况。当RewirteCond指令明确声明以后，mod_rewrite将根据它们做出相应的处理。 RewirteCond 指令的形式和RewriteRule有点类似，形式为：RewirteCond 被匹配的字符 正则 FLAG标识。逻辑FLAG标识 [OR],是非常有用的，记住所有RewirteCond 以及RewriteRule指令在[LAST]指令之前，所有的逻辑与关系都会被包含。 你可以用RewirteCond指令测试服务器变量，在this is the best list of server variables一文可以找到相关说明。 举一个列子，假设我们想将“www”放入你的域名中，首先你得测试你的服务器{HTTP_HOST}变量，看www.</description>
+    </item>
+    
+  </channel>
+</rss>

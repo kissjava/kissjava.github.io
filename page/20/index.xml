@@ -1,0 +1,371 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>ADODB的简单使用</title>
+        <link>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Wed, 18 Mar 2009 12:48:44 +0000</pubDate>
+        
+        <guid>/posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 /posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ -&lt;p&gt;最近要用到它吧，于是淡水就整理了一下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;最简单的使用方式：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;配置取回的结果集为关联数组&#34;&gt;配置取回的结果集为关联数组&lt;/h1&gt;
+&lt;p&gt;$ADODB_FETCH_MODE = ADODB_FETCH_ASSOC;&lt;/p&gt;
+&lt;p&gt;// 定义查询sql
+$query = &amp;ldquo;SELECT * FROM yourtable&amp;rdquo;;
+// 执行sql
+$result = $db-&amp;gt;Execute($query) or die(&amp;ldquo;Error in query: $query. &amp;quot; . $db-&amp;gt;ErrorMsg());
+// 循环输出，注意要MoveNext()，否则死循环
+while (!$result-&amp;gt;EOF)
+{
+echo $result-&amp;gt;fields[&amp;lsquo;firstname&amp;rsquo;] . &amp;quot; - &amp;quot; . $result-&amp;gt;fields[&amp;lsquo;lastname&amp;rsquo;] . &amp;ldquo;n&amp;rdquo;;
+$result-&amp;gt;MoveNext();
+}
+// 打印结果集中的记录数
+echo &amp;ldquo;n[&amp;rdquo; . $result-&amp;gt;RecordCount() . &amp;quot; rows returned]n&amp;rdquo;;
+// 关闭连接
+$db-&amp;gt;Close();
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+把结果集用做对象的方法更简短一些（$result-&amp;gt;FetchNextObject()）:
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;使用qstr转码让适应不同的db&#34;&gt;使用qstr转码，让“&#39;”适应不同的DB&lt;/h1&gt;
+&lt;p&gt;$title = $db-&amp;gt;qstr(&amp;ldquo;It&amp;rsquo;s Not Me, It&amp;rsquo;s You!&amp;quot;);&lt;/p&gt;
+&lt;h1 id=&#34;dbdate函数来转换不同数据库之间的日期内定格式&#34;&gt;DBDate()函数来转换不同数据库之间的日期内定格式&lt;/h1&gt;
+&lt;p&gt;$createdate = $db-&amp;gt;DBDate(time());&lt;/p&gt;
+&lt;p&gt;$query = &amp;ldquo;INSERT INTO yourtable (title, createdate) VALUES ($title, $createdate)&amp;quot;;
+$result = $db-&amp;gt;Execute($query) or die(&amp;ldquo;Error in query: $query. &amp;quot; . $db-&amp;gt;ErrorMsg());&lt;/p&gt;
+&lt;h1 id=&#34;打印由-insert_id取得的刚刚插入的记录的id&#34;&gt;打印由 Insert_ID()取得的刚刚插入的记录的ID&lt;/h1&gt;
+&lt;p&gt;if ($result)
+{
+echo &amp;ldquo;Last inserted ID is &amp;quot; . $db-&amp;gt;Insert_ID();
+}&lt;/p&gt;
+&lt;p&gt;$query = &amp;ldquo;DELETE FROM yourtable WHERE author = &amp;lsquo;J. Luser&amp;rsquo;&amp;quot;;
+$result = $db-&amp;gt;Execute($query) or die(&amp;ldquo;Error in query: $query. &amp;quot; . $db-&amp;gt;ErrorMsg());&lt;/p&gt;
+&lt;h1 id=&#34;受影响的记录数&#34;&gt;受影响的记录数&lt;/h1&gt;
+&lt;p&gt;if ($result)
+{
+echo $db-&amp;gt;Affected_Rows() . &amp;quot; rows deleted&amp;rdquo;;
+}&lt;/p&gt;
+&lt;p&gt;// 关闭连接
+$db-&amp;gt;Close();
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+分页要用到的方法，SelectLimit($query,$num,$offset):
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;prepare-query&#34;&gt;prepare query&lt;/h1&gt;
+&lt;p&gt;$query = $db-&amp;gt;Prepare(&amp;ldquo;INSERT INTO yourtable (firstname, lastname) VALUES (?, ?)&amp;quot;);&lt;/p&gt;
+&lt;h1 id=&#34;插入的数据&#34;&gt;插入的数据&lt;/h1&gt;
+&lt;p&gt;$arr = array(&amp;lsquo;wensi&amp;rsquo;,&amp;lsquo;cater&amp;rsquo;);&lt;/p&gt;
+&lt;h1 id=&#34;执行&#34;&gt;执行&lt;/h1&gt;
+&lt;p&gt;$result = $db-&amp;gt;Execute($query, array($arr[0], $arr[1])) or die(&amp;ldquo;Error in query: $query. &amp;quot; . $db-&amp;gt;ErrorMsg());&lt;/p&gt;
+&lt;p&gt;// 关闭连接
+$db-&amp;gt;Close();
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+智能事务处理（Smart Transactions）：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;// UPDATE
+$record[&amp;quot;firstname&amp;quot;] = &amp;quot;Caroline&amp;quot;; 
+$record[&amp;quot;lastname&amp;quot;] = &amp;quot;Smith&amp;quot;; 
+# 更新了Smith的firstname
+$insertSQL = $conn-&amp;gt;AutoExecute($yourtable, $record, &#39;UPDATE&#39;, &#39;id = 1&#39;); 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- /posts/adodb%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP5的重载</title>
+        <link>/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</link>
+        <pubDate>Sun, 08 Mar 2009 17:54:12 +0000</pubDate>
+        
+        <guid>/posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/</guid>
+        <description>清风徐来 /posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ -&lt;p&gt;老样子,看代码.
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php5%E7%9A%84%E9%87%8D%E8%BD%BD/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP5的克隆方法</title>
+        <link>/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Sun, 08 Mar 2009 17:52:18 +0000</pubDate>
+        
+        <guid>/posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 /posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ -&lt;p&gt;不多说了，代码注释里都有。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php5%E7%9A%84%E5%85%8B%E9%9A%86%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ADOdb的错误处理和异常处理</title>
+        <link>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+        <pubDate>Thu, 05 Mar 2009 15:14:48 +0000</pubDate>
+        
+        <guid>/posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+        <description>清风徐来 /posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ -&lt;p&gt;迷上那些mvc的框架后，就很少去关注到ADOdb了。&lt;/p&gt;
+&lt;p&gt;回头看看，ADOdb真的改进不少。淡水关心的是only php5的版本。&lt;/p&gt;
+&lt;p&gt;不仅支持了AR(ADOdb-Active-Record),也支持Exceptions了。淡水测试了一下它。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;淡水也顺便试了一下它的错误处理，如下：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/adodb%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E5%92%8C%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ADOdb有更新了</title>
+        <link>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</link>
+        <pubDate>Thu, 05 Mar 2009 09:28:06 +0000</pubDate>
+        
+        <guid>/posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/</guid>
+        <description>清风徐来 /posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ -&lt;p&gt;支持AR了,想偷懒的同学有福了.&lt;/p&gt;
+&lt;p&gt;相对于Zend Framework,Adodb在实现上有以下几点不同：
+对PHP4和PHP5，Adodb提供一致的方法。
+ADOdb_Active_Record可以同时连接到多个数据库。而Zend只能连接到默认的一个数据库。
+支持ADODB_ASSOC_CASE。字段名大小写由ADODB_ASSOC_CASE项设置。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;adodb_active_record是以“ActiveRecord模型”为原理为设计的，adodb_active_record尝试提出PHP中的最合适的ActiveRecord。
+ADOdb_Active_Record把一个数据库表映射为一个PHP类，每个实例都代表表的一行数据。也可以定义表之间的关系，ADOdb_Active_Record对象支持嵌套。&lt;/p&gt;
+&lt;p&gt;给个详细介绍：http://phplens.com/lens/adodb/docs-active-record.htm&lt;/p&gt;
+- /posts/adodb%E6%9C%89%E6%9B%B4%E6%96%B0%E4%BA%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Kohana 起步了</title>
+        <link>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</link>
+        <pubDate>Tue, 03 Mar 2009 22:06:05 +0000</pubDate>
+        
+        <guid>/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/</guid>
+        <description>清风徐来 /posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ -&lt;p&gt;开始琢磨Kohana。先看了一下Kohana 101，出现了一些问题。&lt;/p&gt;
+&lt;p&gt;当做到 http://localhost/kohana/index.php/test/bye 时，出现了问题。并没有期望的视图出现，而是&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;但是文档并没有提到是何原因。还好有Codeigniter打底。原来是淡水在class中写了一个空的__contruct()，而101并没有用它。
+把它去掉，或是在里面调用一下父类的构造函数就ok了。&lt;/p&gt;
+&lt;p&gt;使用Query Builder查询id=3的产品信息。用php5的method chaining方式：
+&lt;!-- raw HTML omitted --&gt;
+$query = $this-&amp;gt;db-&amp;gt;select()
+-&amp;gt;where(&amp;lsquo;id&amp;rsquo;,3)
+-&amp;gt;form(&amp;lsquo;products&amp;rsquo;)
+-&amp;gt;get();
+&lt;!-- raw HTML omitted --&gt;
+嗯，这个Codeigniter也有。&lt;/p&gt;
+&lt;p&gt;淡水还发现了101的两个笔误：&lt;/p&gt;
+&lt;p&gt;1）20页，Products表插入数据的sql语句里，第三条少个结尾逗号。&lt;/p&gt;
+&lt;p&gt;2）在26页里，&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;貌似发送mail时需要PEAR，否则出错:(,怀念Codeigniter的email类了。&lt;/p&gt;
+- /posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>jQuery AJAX方法提交数据</title>
+        <link>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
+        <pubDate>Sat, 28 Feb 2009 20:23:04 +0000</pubDate>
+        
+        <guid>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
+        <description>清风徐来 /posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
+- /posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Extended Model for CodeIgniter 1.7.x</title>
+        <link>/posts/extended-model-for-codeigniter-1.7.x/</link>
+        <pubDate>Wed, 25 Feb 2009 14:11:01 +0000</pubDate>
+        
+        <guid>/posts/extended-model-for-codeigniter-1.7.x/</guid>
+        <description>清风徐来 /posts/extended-model-for-codeigniter-1.7.x/ -&lt;p&gt;不需要hacking CI的核心代码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载文件
+2. 放入 application/libraries 文件夹&lt;/li&gt;
+&lt;li&gt;在model 里,使用: &lt;!-- raw HTML omitted --&gt;class Product extends MY_Model&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;其他的使用和&lt;!-- raw HTML omitted --&gt;旧版&lt;!-- raw HTML omitted --&gt;一样&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;my_model&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/extended-model-for-codeigniter-1.7.x/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>codeigniter的数据库操作</title>
+        <link>/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+        <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
+        
+        <guid>/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+        <description>清风徐来 /posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ -&lt;h2 id=&#34;code-langphp&#34;&gt;用codeigniter也有一段时间了，一直没有做什么总结。
+昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。
+&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;链接数据库&#34;&gt;链接数据库&lt;/h2&gt;
+&lt;h2 id=&#34;db2--this-load-databasegroup_two-true&#34;&gt;$this-&amp;gt;load-&amp;gt;database();//手动连接数据库
+//连接多数据库
+$DB1 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_one&amp;rsquo;, TRUE);
+$DB2 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_two&amp;rsquo;, TRUE);&lt;/h2&gt;
+&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
+&lt;p&gt;//参数绑定形式
+$sql = &amp;ldquo;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&amp;quot;;
+$this-&amp;gt;db-&amp;gt;query($sql, array(3, &amp;lsquo;live&amp;rsquo;, &amp;lsquo;Rick&amp;rsquo;));&lt;/p&gt;
+&lt;p&gt;//多结果标准查询
+$query = $this-&amp;gt;db-&amp;gt;query($sql); //自定义
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;); //便捷形式，相当于:SELECT * FROM tablename
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;, 10, 20); // 相当于: SELECT * FROM tablename LIMIT 20, 10&lt;/p&gt;
+&lt;p&gt;$query-&amp;gt;result() //对象形式
+$query-&amp;gt;result_array() //数组形式
+/*
+foreach ($query-&amp;gt;result() as $row)
+{
+echo $row-&amp;gt;title;
+echo $row-&amp;gt;name;
+echo $row-&amp;gt;email;
+}
+*/
+$query-&amp;gt;num_rows() //总条数
+$query-&amp;gt;num_fields() //字段数&lt;/p&gt;
+&lt;p&gt;//单结果标准查询
+$row = $query-&amp;gt;row(); //对象形式
+$row = $query-&amp;gt;row_array(); //数组形式
+/*
+$row = $query-&amp;gt;row_array();
+echo $row[&amp;lsquo;name&amp;rsquo;];
+*/&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;插入&#34;&gt;插入&lt;/h2&gt;
+&lt;p&gt;$data = array(
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title,
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name
+);
+$this-&amp;gt;db-&amp;gt;insert(&amp;lsquo;tablename&amp;rsquo;, $data); //便捷插入
+$this-&amp;gt;db-&amp;gt;insert_string(&amp;lsquo;tablename&amp;rsquo;, $data);  //便捷插入&lt;/p&gt;
+&lt;p&gt;$this-&amp;gt;db-&amp;gt;insert_id() //刚插入的id
+$this-&amp;gt;db-&amp;gt;affected_rows() //影响的行数(update,insert)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
+&lt;h2 id=&#34;this-db-update_stringtablename-data-where&#34;&gt;$data = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;email&amp;rsquo; =&amp;gt; $email
+);
+$where = &amp;ldquo;id = 1&amp;rdquo;;
+$this-&amp;gt;db-&amp;gt;update(&amp;lsquo;tablename&amp;rsquo;, $data);
+$this-&amp;gt;db-&amp;gt;update_string(&amp;lsquo;tablename&amp;rsquo;, $data, $where);&lt;/h2&gt;
+&lt;h2 id=&#34;删除&#34;&gt;删除&lt;/h2&gt;
+&lt;p&gt;$array = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
+);
+$this-&amp;gt;db-&amp;gt;delete(&amp;lsquo;tablename&amp;rsquo;, $array);&lt;/p&gt;
+&lt;p&gt;// Produces:
+// &amp;ldquo;DELETE FROM tablename WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;$this-&amp;gt;db-&amp;gt;truncate(&amp;lsquo;tablename&amp;rsquo;); //清空表
+// Produce: TRUNCATE tablename&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;where&#34;&gt;（where）&lt;/h2&gt;
+&lt;h2 id=&#34;-produces-where-name--name-and-title--title&#34;&gt;$array = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
+);
+$this-&amp;gt;db-&amp;gt;where($array);
+// Produces: &amp;ldquo;WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;this-db-count_alltablename-表中记录总行数&#34;&gt;$this-&amp;gt;db-&amp;gt;count_all(&amp;lsquo;tablename&amp;rsquo;); //表中记录总行数&lt;/h2&gt;
+&lt;p&gt;$query-&amp;gt;free_result() //释放资源
+&lt;!-- raw HTML omitted --&gt;
+出处：http://www.linvo2008.cn/blog/?p=437&lt;/p&gt;
+- /posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>家</title>
+        <link>/posts/%E5%AE%B6/</link>
+        <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
+        
+        <guid>/posts/%E5%AE%B6/</guid>
+        <description>清风徐来 /posts/%E5%AE%B6/ -&lt;p&gt;嗯,163拨号上来,不是一般的慢阿.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼东北房间&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼东北房间壁柜&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼过道&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼客厅&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼客厅&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼主卫&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2楼主卧&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;小餐厅&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;仓库(1楼东北房间)&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;厨房&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;灯笼&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;楼梯&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;书房&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;一楼过道&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;一楼客厅&lt;/p&gt;
+- /posts/%E5%AE%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

@@ -1,0 +1,416 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>windows7下面搭建 Xampplite&#43;Eclipse PDT&#43;XDebug的PHP开发环境</title>
+        <link>/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+        <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
+        
+        <guid>/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+        <description>清风徐来 /posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ -&lt;p&gt;淡水是用xampplite1.7.1，它的php版本是5.2.9。最新版的xampp搭载的是php5.3，淡水的程序跑起来好像有些问题-_-!!&lt;/p&gt;
+&lt;p&gt;1，下载PDT(PHP Development Tools)，地址：http://www.eclipse.org/pdt/downloads/
+我下的版本是PDT 2.1 All In Ones，解压后如果不能运行，请安装JRE安装，因为Eclipse需要JRE才能运行。地址 ：http://www.java.com/zh_CN/download/manual.jsp&lt;/p&gt;
+&lt;p&gt;2，下载XAMPPlite1.7.1这个集成的PHP+MySql运行环境，如果是EXE安装包，就双击安装，如果是ZIP包，就解压运行。地址：http://www.apachefriends.org/en/xampp-windows.html&lt;/p&gt;
+&lt;p&gt;3，下载XDebug,我下载的是php_xdebug-2.0.4-5.2.8.dll，用这个替换xampplite1.7.1自带的php_xdebug.dll，自带的无法正常调试。地址：http://xdebug.org/download.php&lt;/p&gt;
+&lt;p&gt;4，编辑php.ini
+添加如下到php.ini
+[XDebug]
+;; Only Zend OR (!) XDebug
+zend_extension_ts=&amp;quot;xampplitephpextphp_xdebug.dll&amp;rdquo;
+xdebug.remote_enable=true
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+xdebug.profiler_enable=on
+xdebug.profiler_output_dir=&amp;quot;xampplitetmp&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;原来php.ini里有;extension=php_xdebug.dll，这里无需去掉注释。因为php5.2.9使用zend_extension_ts来挂载xdebug（php5.3开始用zend_extension挂载，又不一样了）&lt;/p&gt;
+&lt;p&gt;5，配置Eclipse PDT,进入window-&amp;gt;preferences
+展开PHP，配置其中的PHP Executables,如图
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+配置Debug，如图
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+这样就搞定了,可以不用盗版的zend studio for Eclipse鸟。。。最后，说windows7下搭建。。其实只是个噱头;)&lt;/p&gt;
+- /posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>兼容ie的鼠标经过表格变色</title>
+        <link>/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</link>
+        <pubDate>Fri, 11 Sep 2009 13:37:53 +0000</pubDate>
+        
+        <guid>/posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/</guid>
+        <description>清风徐来 /posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ -&lt;!-- raw HTML omitted --&gt;
+- /posts/%E5%85%BC%E5%AE%B9ie%E7%9A%84%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E8%A1%A8%E6%A0%BC%E5%8F%98%E8%89%B2/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>EditPlus配置phpCB,格式化php代码</title>
+        <link>/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</link>
+        <pubDate>Fri, 07 Aug 2009 11:30:54 +0000</pubDate>
+        
+        <guid>/posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/</guid>
+        <description>清风徐来 /posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ -&lt;p&gt;自从&lt;!-- raw HTML omitted --&gt;七月十五&lt;!-- raw HTML omitted --&gt;搞了个EditPlus4php，淡水就一直用它做一些简单的修改工作。如果不在自己的电脑上，也方便做一些演示，他集成了◦xampplite1.7.1
+◦Zend Code Analyzer 1.2.3
+◦LeapFTP2.7.6
+今天发现居然还有phpCB,只是默认没有配置。。。
+配置一下吧，这样拷贝过来的代码，格式一下会看着顺眼些。
+工具》配置用户工具。。。》添加工具》程序（p）
+菜单文本：格式化
+命令：找到EditPlus4php的phpCB.exe
+参数：&amp;ndash;space-after-if &amp;ndash;optimize-eol &amp;ndash;space-after-switch &amp;ndash;space-after-while &amp;ndash;space-before-start-angle-bracket &amp;ndash;space-after-end-angle-bracket &amp;ndash;extra-padding-for-case-statement &amp;ndash;glue-amperscore &amp;ndash;change-shell-comment-to-double-slashes-comment &amp;ndash;indent-with-tab &amp;ndash;force-large-php-code-tag &amp;ndash;force-true-false-null-contant-lowercase &amp;ndash;comment-rendering-style PEAR &amp;ndash;equal-align-position 50 &amp;ndash;padding-char-count 1 &amp;ldquo;$(FilePath)&amp;rdquo;
+勾选“以文本筛选器运行”选择“替换”
+搞定。。。&lt;/p&gt;
+- /posts/editplus%E9%85%8D%E7%BD%AEphpcb%E6%A0%BC%E5%BC%8F%E5%8C%96php%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP创建数据库并导入sql文件到MySQL</title>
+        <link>/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</link>
+        <pubDate>Fri, 07 Aug 2009 11:01:17 +0000</pubDate>
+        
+        <guid>/posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/</guid>
+        <description>清风徐来 /posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ -&lt;p&gt;项目需要自动建库功能，于是就有了本文。搜索引擎好东西啊，就是从其中找到真正有用的太难了。贴代码：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E5%AF%BC%E5%85%A5sql%E6%96%87%E4%BB%B6%E5%88%B0mysql/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>VMware 里的虚拟系统调整为宽屏分辨率</title>
+        <link>/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</link>
+        <pubDate>Thu, 06 Aug 2009 15:25:38 +0000</pubDate>
+        
+        <guid>/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</guid>
+        <description>清风徐来 /posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ -&lt;p&gt;测试成功了，做个备忘。
+在虚拟机的配置文件example.vmx
+的末尾加上：
+svga.vramSize = 20971520（大于等于1366&lt;em&gt;768&lt;/em&gt;4就可以了）
+svga.maxWidth = 1366
+svga.maxHeight = 768
+要在虚拟机关闭时，修改这个文件才能生效。&lt;/p&gt;
+- /posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP中把Exception写入到日志</title>
+        <link>/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</link>
+        <pubDate>Sun, 26 Jul 2009 10:12:49 +0000</pubDate>
+        
+        <guid>/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/</guid>
+        <description>清风徐来 /posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ -&lt;p&gt;PHP5中把Exception写入到日志，是比较好的方法，开发时可以随时查看，部署后也不用担心在页面上打印出一对信息造成不友好的体验和安全隐患。代码：
+&lt;!-- raw HTML omitted --&gt;&amp;lt;?php&lt;/p&gt;
+&lt;p&gt;error_reporting(E_ALL);&lt;/p&gt;
+&lt;p&gt;function exceptionLogger($exception) {
+$file = &amp;lsquo;exceptionLog.log&amp;rsquo;;
+file_put_contents($file,$exception-&amp;gt;__toString(),FILE_APPEND);
+echo &amp;ldquo;Sorry!I&amp;rsquo;m Sick&amp;hellip;&amp;quot;;
+}&lt;/p&gt;
+&lt;p&gt;set_exception_handler(&amp;lsquo;exceptionLogger&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;function connectToDatabase() {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if(!$conn = @mysql_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;)) {
+    throw new Exception;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;connectToDatabase();
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
+        <link>/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
+        <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
+        
+        <guid>/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
+        <description>清风徐来 /posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ -&lt;p&gt;公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。&lt;/p&gt;
+&lt;p&gt;原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.&lt;/p&gt;
+&lt;p&gt;nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.&lt;/p&gt;
+&lt;p&gt;下面就来说说.&lt;/p&gt;
+&lt;p&gt;首先在传输少量数据的时候,  用如下语句生成对象
+&lt;!-- raw HTML omitted --&gt;$client = new soapclient($service_address, true);&lt;!-- raw HTML omitted --&gt;
+然后用如下语句调用对方web service的方法就行了
+&lt;!-- raw HTML omitted --&gt;$result = $client-&amp;gt;call(&amp;lsquo;methodName&amp;rsquo;, $par);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当然这个在我本机测试时是好的, 也就是我自己写的client端调用自己写的service端是好的. 但是当我用这个调用对方.NET的service端时就出问题了. 数据传不过去. 后来发现原来要用proxy.
+在生成$client对象后调用如下方法
+&lt;!-- raw HTML omitted --&gt;$proxy = $client-&amp;gt;getProxy();&lt;!-- raw HTML omitted --&gt;
+然后调用对方web service的语句改成
+&lt;!-- raw HTML omitted --&gt;$result = $proxy-&amp;gt;methodName($par);&lt;!-- raw HTML omitted --&gt;
+就可以了.&lt;/p&gt;
+&lt;p&gt;下面那个使用proxy的方法我后来自己请求自己也测试通过, 就是说用proxy比较好, 至少都能用.&lt;/p&gt;
+&lt;p&gt;这个问题解决后, 测试了几天, 然后需要做load testing了, 几千条的数据一起测, 结果数据传输就掉了很多, 一查, 原来web service中途停了. 所以把php.ini的max_execution_time调长, memory_limit调大, 为了保险, 把max_input_time也调长了. 结果执行结果还是老样子. 所以只好回头研究nusoap类里的东西, 然后发现了&lt;!-- raw HTML omitted --&gt;$response_timeout&lt;!-- raw HTML omitted --&gt;这个东西, 默认是30, 我把他改成了900, 估计是900秒, 然后再次执行, OK了. 当然为了保险, 我把nusoap里的所有$response_timeout的值都改为了900 ^^&lt;/p&gt;
+&lt;p&gt;然后和$response_timeout类似的, 还有一个问题, 就是中文字符的问题. 其实这个很简单, 只要把nusoap里的三个$decode_utf8的值都改成false就可以了. 原来是true, nusoap会自己把utf-8编码的字符转换成iso-8859-1, 所以中文的就变成问号了.&lt;/p&gt;
+&lt;p&gt;还有一个问题, 如果我为了安全, 把放有web service的目录用htaccess保护起来的话, client端当然也就访问不到service端了. 所以我做了下research, 又发现nusoap里有一个现成的方法. 所以说有时间还是要把nusoap这个类里的东西熟悉熟悉啊, 虽然长了点.
+就是下面这个方法,
+&lt;!-- raw HTML omitted --&gt;$client -&amp;gt; setCredentials(&amp;lsquo;username&amp;rsquo;, &amp;lsquo;password&amp;rsquo;);&lt;!-- raw HTML omitted --&gt;
+另外请求的service端的地址也要稍作修改
+比如原来的地址是
+http://domain/test/service.php?wsdl
+现在也要改成
+http://username:password@domain/test/service.php?wsdl
+必须要这两步都做了才能请求被htaccess保护起来的service地址, 缺一不可.&lt;/p&gt;
+&lt;p&gt;好了,我遇到的问题就这些了, 希望能对各位也用nusoap的朋友有点帮助, 如果还有不清楚的, 请留言提问, 谢谢 ;)&lt;/p&gt;
+&lt;p&gt;from：http://blog.csdn.net/mynamesucks/archive/2006/05/26/756480.aspx&lt;/p&gt;
+- /posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP中使用位运算实现简单的权限管理</title>
+        <link>/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+        <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
+        
+        <guid>/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+        <description>清风徐来 /posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ -&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;//所有的权限    
+$final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE  
+             | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; 
+//增加权限使用 |  
+
+echo &amp;quot;管理者拥有的全部权限：&amp;quot; .decbin($final_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
+
+$no_shearch_allow = $final_allow ^ SHARCH_ARTICLE; 
+//删除权限使用 ^ 或 &amp;amp; ~
+echo &amp;quot;仅无法搜索文章的权限：&amp;quot; .decbin($no_shearch_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
+
+//编辑人员独有的权限    
+$editor_allow = PUBLIC_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE;    
+$no_editor_allow = $final_allow &amp;amp; ~$editor_allow;    
+echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+
+//判断权限使用 &amp;amp; ( 是, 返回非0; 不是, 返回0) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+输出为：&lt;/p&gt;
+&lt;p&gt;管理者拥有的全部权限：1111111
+仅无法搜索文章的权限：1101111
+非编辑人员所有的权限：1110010&lt;/p&gt;
+- /posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>忘记了zend studio for eclipse 怎么调试了</title>
+        <link>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
+        <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
+        
+        <guid>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
+        <description>清风徐来 /posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ -&lt;p&gt;老是在netbeans和zend studio for eclipse跳来跳去的。&lt;/p&gt;
+&lt;p&gt;今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!&lt;/p&gt;
+&lt;p&gt;这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;的&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“&lt;!-- raw HTML omitted --&gt;服务器调试——Zend Debugger 的安装教程&lt;!-- raw HTML omitted --&gt;”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;在&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。&lt;/p&gt;
+&lt;p&gt;说说怎样安装Zend Debugger吧，比较简单的。Gently的教程里都有写了。这里淡水给自己加深一下印象。&lt;/p&gt;
+&lt;p&gt;第一步：官网下载Zend Debugger，下载URL：
+&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://downloads.zend.com/pdt/server-debugger/ZendDebugger-5.2.14-cygwin_nt-i386.zip&#34;&gt;http://downloads.zend.com/pdt/server-debugger/ZendDebugger-5.2.14-cygwin_nt-i386.zip&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+请查zip下面的readme文件，可以看到5_2_x_comp目录为PHP 5.2.x所用的版本，把下面的ZendDebugger.dll copy 到php的扩展库目录${php_home}ext，&lt;!-- raw HTML omitted --&gt;把dummy.php copy到phpBB的部署的根目录下，dummy.php主要用来与浏览器安装的Zend Studio Toolbar通信&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;第二步：配置php.ini文件，加入：
+[zend]
+zend_extension_ts=D:PHPPHP5.2.6extZendDebugger.dll
+zend_debugger.allow_hosts=127.0.0.1/10
+zend_debugger.expose_remotely=always
+;以上配置中的127.0.0.1/10代表127.0.0.1到127.0.0.10的地址段允许调试 &lt;/p&gt;
+&lt;p&gt;以上橙色部分，淡水没有去做，这也不影响zend studio for eclipse的正常调试。&lt;/p&gt;
+- /posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
+        <link>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+        <pubDate>Thu, 16 Jul 2009 13:22:00 +0000</pubDate>
+        
+        <guid>/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</guid>
+        <description>清风徐来 /posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ -&lt;p&gt;最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&amp;hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《&lt;!-- raw HTML omitted --&gt;Learn Apache mod_rewrite: 13 Real-world Examples&lt;!-- raw HTML omitted --&gt;》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。&lt;/p&gt;
+&lt;p&gt;＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.sitepoint.com/article/apache-mod_rewrite-examples/&#34;&gt;http://www.sitepoint.com/article/apache-mod_rewrite-examples/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;原文作者：DK Lynn（DK Lynn is a former instructor pilot and &amp;ldquo;rocket scientist&amp;rdquo; now living in New Zealand where he operates a &lt;!-- raw HTML omitted --&gt;small business developing and hosting web sites&lt;!-- raw HTML omitted --&gt;. ）&lt;/p&gt;
+&lt;p&gt;＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝二道华丽的分割线（以下为本人译文）＝＝＝＝＝＝＝＝＝＝&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;一个最常用的正则就是（.&lt;em&gt;）。它含有两个元素：一是“点”，表示任意字符；二是“星”，表示以前的全部字符。所以（.&lt;/em&gt;）会匹配{REQUEST_URI}的所有字符。{REQUEST_URI}是URL中出去域名以及“？”符号的所有查询字符，也是Apache 重写技术尝试匹配的字符。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;包裹在正则表达式中的元素存放在“原子”内，它是在规则范围内允许被匹配的变量，所以以上正则存储了USA/California/San_Diego在“原子”中，为了解决我们的问题，我们需要三个“原子”，他们可以用左斜杠“/”进行分隔，所以正则表达式成了：
+&lt;!-- raw HTML omitted --&gt;(.&lt;em&gt;)/(.&lt;/em&gt;)/(.&lt;em&gt;)&lt;!-- raw HTML omitted --&gt;
+以上正则，在{REQUEST_URI}中通过两个“/”的分割存储了三个值，为了解决我们具体问题，我们得加一点限制――毕竟，第一个和最后一个原子可以匹配任何字符。
+开始，我们可以添加一些特殊的字符，比如表示正则“开始”或者“结束”，“^”字符表示正则的开始而“$”表示正则的结束。
+&lt;!-- raw HTML omitted --&gt;^(.&lt;/em&gt;)/(.&lt;em&gt;)/(.&lt;/em&gt;)$&lt;!-- raw HTML omitted --&gt;
+这个正则表示整个字符串将全部匹配，除去之前后者之后，没有任何例外。
+但是，这个方法仍然匹配的范围太广，我们将匹配的字符按照原子形式存放，然后通过他们形成查询字符串，所以我们必须信任我们所匹配的字符。用(.*)匹配字符串，由于允许了太多字符，所以会存在潜在的安全隐患，引用不当会使mod_rewrite运行出故障。
+为了避免一些不必要的麻烦，让我们更改一下我们的原子正则，让其更加准确的匹配我们允许的字符。因为这些原子代表了地区地名，所以我们完全可以用A到Z的大小写来表示他们，另外因为地名之间有空格，所以下划线“&lt;em&gt;”也是被允许的。我们用中括弧明确我们匹配的正则，然后用短横线“-”表示连接的范围，所以被我们允许的正则修改成了[a-zA-Z&lt;/em&gt;],因为我们还要避免匹配到空名字，所以用“+”来匹配在该字符之前的一个或者多个字符，所以我们的正则成了：
+&lt;!-- raw HTML omitted --&gt;^([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+&lt;!-- raw HTML omitted --&gt;{REQUEST_URI}是以“/”开头。Apache 在更改版本的时候会更改正则引擎，一代Apache要求有斜杠而二代Apache却不允许！但是我们可以用^/?（？表示匹配字符本身或者前一个字符）来兼容两个版本的Apache，所以我们的正则又成了:
+&lt;!-- raw HTML omitted --&gt;^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+&lt;!-- raw HTML omitted --&gt;正则在手，我们就可以将原子标识到URL上了：
+&lt;!-- raw HTML omitted --&gt;display.php?country=$1 &amp;amp;state=$2&amp;amp;city=$3
+&lt;!-- raw HTML omitted --&gt;$1表示国家原子；$2表示省州原子；$3表示城市原子，这里可以加上9个原子，分别用$1到$9表示。
+现在我们要做的就是在该目录下创建一个新的.htaccess文件，录入一下代码：
+&lt;!-- raw HTML omitted --&gt;RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ display.php?country=$1 &amp;amp;state=$2&amp;amp;city=$3 [L]
+&lt;!-- raw HTML omitted --&gt;然后保存，重写规则必须写在一行并且用一个空格分开每一个参数，我们用[L]或者’last’表示匹配结束。（一会有更多flags介绍）
+我们的重写规则已经创建完成， URL请求字符上各原子的值将经过我们匹配的正则，加上查询变量到我们的重写URL上。display.php将从查询字符中解析这些值，然后将他们送入数据库查询或者进行其他数据库操作。
+如果你的正则只允许有限的几个国家，为了避免数据库错误，你可以在正则中加入一下被允许条件，例子如下：
+&lt;!-- raw HTML omitted --&gt;^/?(USA|Canada|Mexico)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+&lt;!-- raw HTML omitted --&gt;如果你关心查询字符串的大小写问题，由于你数据库对大写有严格的限制，那么你可以在正则表达式后面加一个&lt;!-- raw HTML omitted --&gt;[NC]&lt;!-- raw HTML omitted --&gt;FLAG位来忽略大小写，但是不要忘记在你通过$_GET 获取传递值的时候，把他们转换成小写。
+&lt;!-- raw HTML omitted --&gt;如果你想用数字（0，1…..9）来表示具体的地区，那么需要更改正则中的([a-zA-Z_]+)成([0-9])来匹配单个数字，([0-9]{1,2})匹配两位数字（0到99）,([0-9]+)匹配多位数字，这个对匹配数据库ID之类的非常有用。&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;RewriteCond 指令&lt;!-- raw HTML omitted --&gt;
+现在你已经学会了mod_rewrite的一些基本用法，现在我们来学习下怎样用RewirteCond指令来处理其他各类型的情况。当RewirteCond指令明确声明以后，mod_rewrite将根据它们做出相应的处理。
+RewirteCond 指令的形式和RewriteRule有点类似，形式为：&lt;!-- raw HTML omitted --&gt;RewirteCond 被匹配的字符 正则 FLAG标识&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;逻辑FLAG标识 [OR],是非常有用的，记住所有RewirteCond 以及RewriteRule指令在[LAST]指令之前，所有的逻辑与关系都会被包含。
+&lt;!-- raw HTML omitted --&gt;你可以用RewirteCond指令测试服务器变量，在this is the best list of server variables一文可以找到相关说明。
+举一个列子，假设我们想将“www”放入你的域名中，首先你得测试你的服务器{HTTP_HOST}变量，看www.是否已经存在，如果没有那么定向到期望的主机名：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_HOST} !^www.example.com$ [NC]
+RewriteRule .? &lt;a href=&#34;http://www.example.com&#34;&gt;http://www.example.com&lt;/a&gt;%{REQUEST_URI} [R=301,L]&lt;!-- raw HTML omitted --&gt;
+这里{HTTP_HOST}是一个Apache服务器变量，我们必须加一个“%”字符再之前。正则表达式以“!”开始表示如果正则不匹配那么条件成立。我们当然也要转义“.”字符，将其作为一个普通字面字符而不是表示所有字符。再最后我们还加了一个忽略大小写的[NC]FLAG。
+RewriteRule匹配了零或者任意一个字符，并且定向到 &lt;a href=&#34;http://www.example.com&#34;&gt;http://www.example.com&lt;/a&gt;加上原来{REQUEST_URI}值。R=301向服务器提出301请求，表明这是一个永久转向，最后一个[L]表示已经完成这段正则匹配。
+RewriteCond也可以创建原子，在RewriteRule中原子是以$1…..$9表示，但是在RewriteCond中是以%1….%9表示。你可以在稍后的例子中看到具体的原子操作。
+&lt;!-- raw HTML omitted --&gt;mod_rewrite Flags&lt;!-- raw HTML omitted --&gt;
+mod_rewrite用”FLAGS”来建立重写条件以及其他属性。我们用中括弧将FLAGS包起来，放在条件或者是规则的末尾，用逗号将多个FLAGS分隔。以下列表是你需要熟悉的几个主要FLAGS:
+&lt;!-- raw HTML omitted --&gt;last|L －[L]告诉Apache服务器一系列的条件或者是规则将在它出现后结束，换句话说就是[L]不出现，mod_rewrite将会一直执行&lt;!-- raw HTML omitted --&gt;。
+&lt;!-- raw HTML omitted --&gt;nocase|NC －[NC]告诉Apache服务器忽略正则中的大小写，它经常被用到{HTTP_HOST}服务器参数上，因为域名里面是不会区分大小写的&lt;!-- raw HTML omitted --&gt;。
+&lt;!-- raw HTML omitted --&gt;redirect|R －[R] 经常引用到触发可见的定向。默认情况下它是一个HTTP 302的临时重定向，但是你可以注明具体的HTTP 代码，比如你可以用[R=301]来表明这是一个永久重定向，这对搜索引擎抓取你重定向后的网页相当有用。&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;qsappend|QSA －[QSA] 用于添加新的查询参数。你可以在原查询参数后面定义新的查询参数，但命名时注意不要重复已存在的参数名。错误的引用[QSA]将会破坏原来的查询参数导致重定向错误。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;forbidden|F －[F]告诉Apache响应请求时不提供页面。其原理就是Apache会发出一个403 HTTP相应，可以保护网站不被未经授权的或者其他盗链访问。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;ornext|OR －[OR]作为默认值[AND]的反义词，可以通过逻辑关系将一系列重写条件组合起来。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;next|N －[N]可以让你的重写条件循环匹配，当你不知道{REQUEST_URI}有多少字符进行匹配的时候很有用。&lt;!-- raw HTML omitted --&gt;
+你可以在 &lt;!-- raw HTML omitted --&gt;Apache.org’s mod_rewrite documentation page&lt;!-- raw HTML omitted --&gt;.了解到其他mod_rewrite FLAGS。
+&lt;!-- raw HTML omitted --&gt;mod_rewrite注释&lt;!-- raw HTML omitted --&gt;
+任何mod_rewrite代码之前都要加上RewriteEngine on这个状态，另外RewriteEngine on还可以用到其他地方。作为一个好的程序员，你知道注释对于程序来说是多么的重要。mod_rewrite允许在RewriteEngine off 与RewriteEngine on之间加上你的注释：
+&lt;!-- raw HTML omitted --&gt;RewriteEngine off
+RewriteCond %{HTTP_HOST} !^www.example.com$ [NC]
+RewriteRule .? &lt;a href=&#34;http://www.example.com&#34;&gt;http://www.example.com&lt;/a&gt;%{REQUEST_URI} [R=301,L]
+RewriteEngine on&lt;!-- raw HTML omitted --&gt;
+以上所有的程序代码都不会被执行，RewriteEngine状态值的改变对新的mod_rewrite 代码开发非常有用。像你在PHP里面用/* &amp;hellip; */注释一样，好好的运用他们。
+&lt;!-- raw HTML omitted --&gt;mod_rewrite小技巧&lt;!-- raw HTML omitted --&gt;
+作为站长，你要决定怎样提高你网页对访问者的辨识度以及在重写的URI地址里放入适当的信息。在创建新的URI规则的时候务必考虑详细周全一些。另外当你完成新的URI规则以后，必须回去更新以前老的链接来匹配新的规则。
+当你在设计新的URI规则的时候，一定注意其唯一性。举一个先前的例子，我用了国家名，州省名，城市名作为URI的元素，因为他们在数据库里面都是唯一的。但是如果建立一个让用户自己更新的数据库，我们没有理由让用户取的文章名字保持唯一性，所以文章一般在数据库里是以一个自动增长的ID作为唯一识别码，这个唯一ID对URL重写规则相当友好，它可以使你的重写规则更加简洁，在URL里面可以用原子非常直接的将其值标识出来。
+人们通常想映射数据库里面的值比如标题以及其他字符作为URL的标识，在mod_rewrite中有一个RewriteMap状态专门处理这种情况，但是前提是你必须有修改Apache配置文件httpd.conf的权限。所以为了根本避免这个问题，还是直接用ID创建你的链接吧。
+空格是以%20的形式展示在URL中的，所以你必须在PHP代码里面将其替换掉，PHP的str_replace函数完全可以胜任这项工作。你只需要在$_GET获取查询值的时候，将其替换就可以了。但是在数据库中空格是难免的，所以我宁愿将空格替换成下划线，一下为PHP代码：
+$name = str_replace ( &#39; &amp;lsquo;, &amp;lsquo;_&amp;rsquo;, $name );
+在添加新的URL规则的时候，小心不要打破了原先已存在的链接间的相对关系。开发人员通常会惊讶为什么有时候CSS,JAVASCRIPT,图片等文件出现错误或者不启作用了。记住相对链接只匹配你当前URL的地址，所以你需要将这些相对链接更改成绝对链接地址，或者在你的静态网页加上HTML &amp;lt;base&amp;gt;标签。
+&lt;!-- raw HTML omitted --&gt;13 个mod_rewrite 应用举例&lt;!-- raw HTML omitted --&gt;
+先前我们举了一个给每个链接加一个www的列子，现在让我们看看用mod_rewrite还可以做哪些工作。
+&lt;!-- raw HTML omitted --&gt;1．给子域名加www标记 &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_HOST} ^([a-z.]+)?example.com$ [NC]
+RewriteCond %{HTTP_HOST} !^www. [NC]
+RewriteRule .? &lt;a href=&#34;http://www.%1example.com&#34;&gt;http://www.%1example.com&lt;/a&gt;%{REQUEST_URI} [R=301,L]&lt;!-- raw HTML omitted --&gt;
+这个规则抓取二级域名的%1变量，如果不是以www开始，那么就加www，以前的域名以及{REQUEST_URI}会跟在其后。
+&lt;!-- raw HTML omitted --&gt;2．去掉域名中的www标记 &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_HOST} !^example.com$ [NC]
+RewriteRule .? &lt;a href=&#34;http://example.com&#34;&gt;http://example.com&lt;/a&gt;%{REQUEST_URI} [R=301,L]&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;3．去掉www标记，但是保存子域名 &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_HOST} ^www.(([a-z0-9_]+.)?example.com)$ [NC]
+RewriteRule .? http://%1%{REQUEST_URI} [R=301,L]
+&lt;!-- raw HTML omitted --&gt;这里，当匹配到1%变量以后，子域名才会在%2（内部原子）中抓取到，而我们需要的正是这个%1变量。
+&lt;!-- raw HTML omitted --&gt;4．防止图片盗链 &lt;!-- raw HTML omitted --&gt;
+一些站长不择手段的将你的图片盗链在他们网站上，耗费你的带宽。你可以加一下代码阻止这种行为。
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www.)?example.com/ [NC]
+RewriteRule .(gif|jpg|png)$ - [F]
+&lt;!-- raw HTML omitted --&gt;如果{HTTP_REFERER}值不为空，或者不是来自你自己的域名，这个规则用[F]FLAG阻止以gif|jpg|png 结尾的URL
+如果对这种盗链你是坚决鄙视的，你还可以改变图片，让访问盗链网站的用户知道该网站正在盗用你的图片。
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www.)?example.com/.*$ [NC]
+RewriteRule .(gif|jpg|png)$ &lt;a href=&#34;http://www.example.com/hotlinked.gif&#34;&gt;http://www.example.com/hotlinked.gif&lt;/a&gt; [R=301,L]
+&lt;!-- raw HTML omitted --&gt;除了阻止图片盗链链接，以上规则将其盗链的图片全部替换成了你设置的图片。
+你还可以阻止特定域名盗链你的图片：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{HTTP_REFERER} !^http://(www.)?leech_site.com/ [NC]
+RewriteRule .(gif|jpg|png)$ - [F,L]&lt;!-- raw HTML omitted --&gt;
+这个规则将阻止域名黑名单上所有的图片链接请求。
+当然以上这些规则都是以{HTTP_REFERER}获取域名为基础的，如果你想改用成IP地址，用{REMOTE_ADDR}就可以了。
+&lt;!-- raw HTML omitted --&gt;5．如果文件不存在重定向到404页面 &lt;!-- raw HTML omitted --&gt;
+如果你的主机没有提供404页面重定向服务，那么我们自己创建。
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .? /404.php [L]&lt;!-- raw HTML omitted --&gt;
+这里-f匹配的是存在的文件名，-d匹配的存在的路径名。这段代码在进行404重定向之前，会判断你的文件名以及路径名是否存在。你还可以在404页面上加一个?url=$1参数：
+&lt;!-- raw HTML omitted --&gt;RewriteRule ^/?(.*)$ /404.php?url=$1 [L]
+&lt;!-- raw HTML omitted --&gt;这样，你的404页面就可以做一些其他的事情，例如默认信心，发一个邮件提醒，加一个搜索，等等。
+&lt;!-- raw HTML omitted --&gt;6．重命名目录&lt;!-- raw HTML omitted --&gt;
+如果你想在网站上重命名目录，试试这个：
+&lt;!-- raw HTML omitted --&gt;RewriteRule ^/?old_directory/([a-z/.]+)$ new_directory/$1 [R=301,L]&lt;!-- raw HTML omitted --&gt;
+在规则里我添加了一个“.”（注意不是代表得所有字符，前面有转义符）来匹配文件的后缀名。
+&lt;!-- raw HTML omitted --&gt;7．将.html后缀名转换成.php&lt;!-- raw HTML omitted --&gt;
+前提是.html文件能继续访问的情况下，更新你的网站链接。
+&lt;!-- raw HTML omitted --&gt;RewriteRule ^/?([a-z/]+).html$ $1.php [L]&lt;!-- raw HTML omitted --&gt;
+这不是一个网页重定向，所以访问者是不可见的。让他作为一个永久重定向（可见的），将FLAG修改[R=301,L]。
+&lt;!-- raw HTML omitted --&gt;8．创建无文件后缀名链接&lt;!-- raw HTML omitted --&gt;
+如果你想使你的PHP网站的链接更加简洁易记－或者隐藏文件的后缀名，试试这个:
+&lt;!-- raw HTML omitted --&gt;RewriteRule ^/?([a-z]+)$ $1.php [L]&lt;!-- raw HTML omitted --&gt;
+如果网站混有PHP以及HTML文件，你可以用RewriteCond先判断该后缀的文件是否存在，然后进行替换：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^/?([a-zA-Z0-9]+)$ $1.php [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^/?([a-zA-Z0-9]+)$ $1.html [L]&lt;!-- raw HTML omitted --&gt;
+如果文件是以.php为后缀，这条规则将被执行。
+&lt;!-- raw HTML omitted --&gt;9．检查查询变量里的特定参数&lt;!-- raw HTML omitted --&gt;
+如果在URL里面有一个特殊的参数，你可用RewriteCond鉴别其是否存在：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{QUERY_STRING} !uniquekey=
+RewriteRule ^/?script_that_requires_uniquekey.php$ other_script.php [QSA,L]
+&lt;!-- raw HTML omitted --&gt;以上规则将检查{QUERY_STRING}里面的uniquekey参数是否存在，如果{REQUEST_URI}值为script_that_requires_uniquekey，将会定向到新的URL。
+&lt;!-- raw HTML omitted --&gt;10．删除查询变量&lt;!-- raw HTML omitted --&gt;
+Apache的mod_rewrite模块会自动辨识查询变量，除非你做了以下改动：
+a).分配一个新的查询参数（你可以用[QSA,L]FLAG保存最初的查询变量）
+b).在文件名后面加一个“?”（比如index.php?）。符号“?”不会在浏览器的地址栏里显示。
+&lt;!-- raw HTML omitted --&gt;11．用新的格式展示当前URI &lt;!-- raw HTML omitted --&gt;
+如果这就是我们当前正在运行的URLs：/index.php?id=nnnn。我们非常希望将其更改成/nnnn并且让搜索引擎以新格式展现。首先，我们为了让搜索引擎更新成新的，得将旧的URLs重定向到新的格式，但是，我们还得保证以前的index.php照样能够运行。是不是被我搞迷糊了？
+实现以上功能，诀窍就在于在查询变量中加了一个访问者看不到的标记符“marker”。我们只将查询变量中没有出现“marker”标记的链接进行重定向，然后将原有的链接替换成新的格式，并且通过[QSA]FLAG在已有的参数加一个“marker”标记。以下为实现的方式：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{QUERY_STRING} !marker
+RewriteCond %{QUERY_STRING} id=([-a-zA-Z0-9_+]+)
+RewriteRule ^/?index.php$ %1? [R=301,L]
+RewriteRule ^/?([-a-zA-Z0-9_+]+)$ index.php?marker &amp;amp;id=$1 [L]&lt;!-- raw HTML omitted --&gt;
+这里，原先的URL：http://www.example.com/index.php?id=nnnn,不包含marker，所以被第一个规则永久重定向到http://www.example.com/nnnn，第二个规则将http://www.example.com/nnnn反定向到http://www.example.com/index.php?marker &amp;amp;id=nnnn，并且加了marker以及id=nnnn两个变量，最后mod_rewrite就开始进行处理过程。
+第二次匹配，marker被匹配，所以忽略第一条规则，这里有一个“.”字符会出现在http://www.example.com/index.php?marker &amp;amp;id=nnnn中，所以第二条规则也会被忽略，这样我们就完成了。
+注意，这个解决方案要求Apache的一些扩展功能，所以如果你的网站放于在共享主机中会遇到很多障碍。
+&lt;!-- raw HTML omitted --&gt;12．保证安全服务启用&lt;!-- raw HTML omitted --&gt;
+Apache可以用两种方法辨别你是否开启了安全服务，分别引用{HTTPS}和{SERVER_PORT}变量：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{REQUEST_URI} ^secure_page.php$
+RewriteCond %{HTTPS} !on
+RewriteRule ^/?(secure_page.php)$ &lt;a href=&#34;https://www.example.com/$1&#34;&gt;https://www.example.com/$1&lt;/a&gt; [R=301,L]&lt;!-- raw HTML omitted --&gt;
+以上规则测试{REQUEST_URI}值是否等于我们的安全页代码，并且{HTTPS}不等于on。如果这两个条件同时满足，请求将被重定向到安全服务URI.另外你可用{SERVER_PORT}做同样的测试，443是常用的安全服务端口
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{REQUEST_URI} ^secure_page.php$
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/?(secure_page.php)$ &lt;a href=&#34;https://www.example.com/$1&#34;&gt;https://www.example.com/$1&lt;/a&gt; [R=301,L]&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;13．在特定的页面上强制执行安全服务 &lt;!-- raw HTML omitted --&gt;
+遇到同一个服务器根目录下分别有一个安全服务域名和一个非安全服务域名，所以你就需要用RewriteCond 判断安全服务端口是否占用，并且只将以下列表的页面要求为安全服务：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/?(page1|page2|page3|page4|page5)$ &lt;a href=&#34;https://www.example.com/%251&#34;&gt;https://www.example.com/%1&lt;/a&gt; [R=301,L]
+&lt;!-- raw HTML omitted --&gt;以下是怎样将没有设置成安全服务的页面返回到80端口：
+&lt;!-- raw HTML omitted --&gt;RewriteCond %{ SERVER_PORT } ^443$
+RewriteRule !^/?(page6|page7|page8|page9)$ &lt;a href=&#34;http://www.example.com&#34;&gt;http://www.example.com&lt;/a&gt;%{REQUEST_URI} [R=301,L]
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;总结&lt;!-- raw HTML omitted --&gt;
+Apache的mod_rewrite模块，不仅会用在SEO以及URLs用户友好方面，还会用到某些重要的重定向工作中，如果你想学习到更多，以下是我找到的一些网上资源：
+正则表达：
+Great tutorial: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://gnosis.cx/publish/programming/regular_expressions.html&#34;&gt;http://gnosis.cx/publish/programming/regular_expressions.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+Cheat sheet: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://regexlib.com/CheatSheet.aspx&#34;&gt;http://regexlib.com/CheatSheet.aspx&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+A regex-capable text editor: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.editpadpro.com&#34;&gt;http://www.editpadpro.com&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+Regex Coach: &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://weitz.de/regex-coach/&#34;&gt;http://weitz.de/regex-coach/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

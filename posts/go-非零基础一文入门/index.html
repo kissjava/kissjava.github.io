@@ -1,0 +1,5205 @@
+<!DOCTYPE html>
+<html><head>
+<title>Go 非零基础一文入门</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Go 非零基础一文入门" />
+<meta property="og:description" content="其实为了方便使用其他编程语言的开发者快速理解Go的一些特性。
+指针和new package mainimport &quot;fmt&quot;func main() {/*new关键字用于创建具有某些数据类型的指针变量*///创建一个字符串类型的指针Pointer stringname := new(string)//打印指针地址，输出类似0xc0000a0030fmt.Println(name)//给该指针指向的内存写入数据//name是指针变量，//给指针变量前加*就是取消应用，直接访问其中的值*name = &quot;hello world&quot;//打印该指针指向的内存中的数据，输出hello worldfmt.Println(*name)}make关键字的限制 此关键字只能用于创建复杂类型的变量，即：
+ channel slice map  反引号的用途 package mainimport &quot;fmt&quot;func main() {var message = `My name is &quot;John Work&quot;.Are you ready.Let&#39;s learn &quot;Golang&quot;.`fmt.Println(message)}它会原样输出，不用顾虑转义字符，单双引号，想换行直接回车就行。
+nil和零值 nil不是数据类型，而是值。值为nil的变量表示它具有空值。 Go中的数据类型定义后如果没赋值都会有默认的零值，和C不一样，不会出现奇奇怪怪的值 string 零值 &quot;&rdquo; bool 零值 false 整型 零值 0 浮点型 零值 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/" />
+<meta property="article:published_time" content="2019-08-18T22:35:00+00:00" />
+<meta property="article:modified_time" content="2019-08-18T22:35:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go 非零基础一文入门"/>
+<meta name="twitter:description" content="其实为了方便使用其他编程语言的开发者快速理解Go的一些特性。
+指针和new package mainimport &quot;fmt&quot;func main() {/*new关键字用于创建具有某些数据类型的指针变量*///创建一个字符串类型的指针Pointer stringname := new(string)//打印指针地址，输出类似0xc0000a0030fmt.Println(name)//给该指针指向的内存写入数据//name是指针变量，//给指针变量前加*就是取消应用，直接访问其中的值*name = &quot;hello world&quot;//打印该指针指向的内存中的数据，输出hello worldfmt.Println(*name)}make关键字的限制 此关键字只能用于创建复杂类型的变量，即：
+ channel slice map  反引号的用途 package mainimport &quot;fmt&quot;func main() {var message = `My name is &quot;John Work&quot;.Are you ready.Let&#39;s learn &quot;Golang&quot;.`fmt.Println(message)}它会原样输出，不用顾虑转义字符，单双引号，想换行直接回车就行。
+nil和零值 nil不是数据类型，而是值。值为nil的变量表示它具有空值。 Go中的数据类型定义后如果没赋值都会有默认的零值，和C不一样，不会出现奇奇怪怪的值 string 零值 &quot;&rdquo; bool 零值 false 整型 零值 0 浮点型 零值 0."/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%8c%87%e9%92%88%e5%92%8cnew" onclick="collapseOthers(`#指针和new-nav`)" id="指针和new-nav">
+									指针和new
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#make%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e9%99%90%e5%88%b6" onclick="collapseOthers(`#make关键字的限制-nav`)" id="make关键字的限制-nav">
+									make关键字的限制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%bc%95%e5%8f%b7%e7%9a%84%e7%94%a8%e9%80%94" onclick="collapseOthers(`#反引号的用途-nav`)" id="反引号的用途-nav">
+									反引号的用途
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#nil%e5%92%8c%e9%9b%b6%e5%80%bc" onclick="collapseOthers(`#nil和零值-nav`)" id="nil和零值-nav">
+									nil和零值
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#go%e6%b5%81%e7%a8%8b%e6%8e%a7%e5%88%b6" onclick="collapseOthers(`#go流程控制-nav`)" id="go流程控制-nav">
+									Go流程控制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e7%bb%84array" onclick="collapseOthers(`#数组array-nav`)" id="数组array-nav">
+									数组Array
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%87%e7%89%87slice" onclick="collapseOthers(`#切片slice-nav`)" id="切片slice-nav">
+									切片slice
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#cap%e5%92%8clen%e5%82%bb%e5%82%bb%e5%88%86%e4%b8%8d%e6%b8%85" onclick="collapseOthers(`#cap和len傻傻分不清-nav`)" id="cap和len傻傻分不清-nav">
+									cap()和len()傻傻分不清？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%87%e7%89%87%e6%8b%b7%e8%b4%9dcopy" onclick="collapseOthers(`#切片拷贝copy-nav`)" id="切片拷贝copy-nav">
+									切片拷贝copy
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#map-%e6%98%a0%e5%b0%84" onclick="collapseOthers(`#map-映射-nav`)" id="map-映射-nav">
+									Map 映射
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%8f%e6%9c%ba%e6%95%b0%e8%a6%81%e6%9c%89%e9%9a%8f%e6%9c%ba%e7%a7%8d%e5%ad%90%e4%b8%8b%e9%9d%a2%e7%94%a8%e6%97%b6%e9%97%b4%e6%88%b3%e6%9d%a5%e5%81%9a" onclick="collapseOthers(`#随机数要有随机种子下面用时间戳来做-nav`)" id="随机数要有随机种子下面用时间戳来做-nav">
+									随机数，要有随机种子,下面用时间戳来做
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%bd%e6%95%b0%e7%9a%84%e5%ae%9a%e4%b9%89%e5%92%8c%e8%bf%94%e5%9b%9e%e5%80%bc" onclick="collapseOthers(`#函数的定义和返回值-nav`)" id="函数的定义和返回值-nav">
+									函数的定义和返回值
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#pointer-%e6%8c%87%e9%92%88" onclick="collapseOthers(`#pointer-指针-nav`)" id="pointer-指针-nav">
+									Pointer 指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e6%95%b0%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%a8%e6%8c%87%e9%92%88" onclick="collapseOthers(`#参数也可以用指针-nav`)" id="参数也可以用指针-nav">
+									参数也可以用指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#struct-%e7%bb%93%e6%9e%84%e4%bd%93" onclick="collapseOthers(`#struct-结构体-nav`)" id="struct-结构体-nav">
+									Struct 结构体
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#struce-%e7%bb%93%e5%90%88-pointer" onclick="collapseOthers(`#struce-结合-pointer-nav`)" id="struce-结合-pointer-nav">
+									Struce 结合 Pointer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e7%9a%84%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#结构的嵌套-nav`)" id="结构的嵌套-nav">
+									结构的嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%a5%97%e4%b8%ad%e6%9c%89%e5%90%8c%e5%90%8d%e7%9a%84%e5%b1%9e%e6%80%a7%e7%9a%84%e5%a4%84%e7%90%86" onclick="collapseOthers(`#嵌套中有同名的属性的处理-nav`)" id="嵌套中有同名的属性的处理-nav">
+									嵌套中有同名的属性的处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8c%bf%e5%90%8d%e7%bb%93%e6%9e%84" onclick="collapseOthers(`#匿名结构-nav`)" id="匿名结构-nav">
+									匿名结构
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#struce-%e5%92%8c-slice" onclick="collapseOthers(`#struce-和-slice-nav`)" id="struce-和-slice-nav">
+									Struce 和 Slice
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84tag" onclick="collapseOthers(`#结构体的tag-nav`)" id="结构体的tag-nav">
+									结构体的Tag
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#结构体的方法-nav`)" id="结构体的方法-nav">
+									结构体的方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e6%8c%87%e9%92%88" onclick="collapseOthers(`#方法指针-nav`)" id="方法指针-nav">
+									方法指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%bf%e9%97%ae%e6%9d%83%e9%99%90" onclick="collapseOthers(`#访问权限-nav`)" id="访问权限-nav">
+									访问权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e4%b8%aa%e6%96%87%e4%bb%b6%e7%9a%84%e8%bf%90%e8%a1%8c" onclick="collapseOthers(`#多个文件的运行-nav`)" id="多个文件的运行-nav">
+									多个文件的运行
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#init%e5%87%bd%e6%95%b0" onclick="collapseOthers(`#init函数-nav`)" id="init函数-nav">
+									init()函数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8e%a5%e5%8f%a3interface" onclick="collapseOthers(`#接口interface-nav`)" id="接口interface-nav">
+									接口interface
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%8e%a5%e5%8f%a3%e7%9a%84%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#接口的嵌套-nav`)" id="接口的嵌套-nav">
+									接口的嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%a9%ba%e6%8e%a5%e5%8f%a3-interface" onclick="collapseOthers(`#空接口-interface-nav`)" id="空接口-interface-nav">
+									空接口 interface
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%bb%93%e5%90%88%e6%8c%87%e9%92%88%e7%9a%84%e7%94%a8%e6%b3%95" onclick="collapseOthers(`#interface结合指针的用法-nav`)" id="interface结合指针的用法-nav">
+									interface{}结合指针的用法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%bb%93%e5%90%88slicemap" onclick="collapseOthers(`#interface结合slicemap-nav`)" id="interface结合slicemap-nav">
+									interface{}结合slice，map
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%b0%84-reflect" onclick="collapseOthers(`#反射-reflect-nav`)" id="反射-reflect-nav">
+									反射 Reflect
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%b0%83%e7%94%a8%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#调用方法-nav`)" id="调用方法-nav">
+									调用方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#goroutine" onclick="collapseOthers(`#goroutine-nav`)" id="goroutine-nav">
+									Goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#channel-%e9%80%9a%e9%81%93" onclick="collapseOthers(`#channel-通道-nav`)" id="channel-通道-nav">
+									Channel 通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e4%bd%9c%e4%b8%ba%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#通道作为参数-nav`)" id="通道作为参数-nav">
+									通道作为参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#buffer-channel" onclick="collapseOthers(`#buffer-channel-nav`)" id="buffer-channel-nav">
+									Buffer Channel
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#select" onclick="collapseOthers(`#select-nav`)" id="select-nav">
+									select
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#for-range-close" onclick="collapseOthers(`#for-range-close-nav`)" id="for-range-close-nav">
+									for range close
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e6%96%b9%e5%90%91" onclick="collapseOthers(`#通道方向-nav`)" id="通道方向-nav">
+									通道方向
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e7%9a%84timeout" onclick="collapseOthers(`#通道的timeout-nav`)" id="通道的timeout-nav">
+									通道的Timeout
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#defer--exit" onclick="collapseOthers(`#defer--exit-nav`)" id="defer--exit-nav">
+									Defer &amp; Exit
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#error-panic-%e8%bf%98%e6%9c%89-recover" onclick="collapseOthers(`#error-panic-还有-recover-nav`)" id="error-panic-还有-recover-nav">
+									Error, Panic, 还有 Recover
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%ae%9a%e4%b9%89error" onclick="collapseOthers(`#自定义error-nav`)" id="自定义error-nav">
+									自定义Error
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#panic" onclick="collapseOthers(`#panic-nav`)" id="panic-nav">
+									Panic
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#recover-%e6%81%a2%e5%a4%8d" onclick="collapseOthers(`#recover-恢复-nav`)" id="recover-恢复-nav">
+									recover 恢复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#recover-%e5%92%8c-iife" onclick="collapseOthers(`#recover-和-iife-nav`)" id="recover-和-iife-nav">
+									recover 和 IIFE
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba" onclick="collapseOthers(`#字符串格式化输出-nav`)" id="字符串格式化输出-nav">
+									字符串格式化输出
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%97%b6%e9%97%b4%e8%a7%a3%e6%9e%90%e6%97%b6%e9%97%b4%e5%92%8c%e6%a0%bc%e5%bc%8f%e5%8c%96%e6%97%b6%e9%97%b4" onclick="collapseOthers(`#时间解析时间和格式化时间-nav`)" id="时间解析时间和格式化时间-nav">
+									时间，解析时间和格式化时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#timetime" onclick="collapseOthers(`#timetime-nav`)" id="timetime-nav">
+									time.Time
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%a1%e6%97%b6%e5%99%a8%e8%a7%a6%e5%8f%91%e5%99%a8" onclick="collapseOthers(`#计时器触发器-nav`)" id="计时器触发器-nav">
+									计时器,触发器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#timenewtimer" onclick="collapseOthers(`#timenewtimer-nav`)" id="timenewtimer-nav">
+									time.NewTimer()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#timeafterfunc" onclick="collapseOthers(`#timeafterfunc-nav`)" id="timeafterfunc-nav">
+									time.AfterFunc()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8ticker%e8%b0%83%e5%ba%a6%e7%a8%8b%e5%ba%8f" onclick="collapseOthers(`#使用ticker调度程序-nav`)" id="使用ticker调度程序-nav">
+									使用Ticker调度程序
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%94%a8goroutine%e5%81%9atimer" onclick="collapseOthers(`#用goroutine做timer-nav`)" id="用goroutine做timer-nav">
+									用Goroutine做Timer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#数据类型之间的转换-nav`)" id="数据类型之间的转换-nav">
+									数据类型之间的转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#strconvatoi" onclick="collapseOthers(`#strconvatoi-nav`)" id="strconvatoi-nav">
+									strconv.Atoi()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparseint" onclick="collapseOthers(`#strconvparseint-nav`)" id="strconvparseint-nav">
+									strconv.ParseInt()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatint" onclick="collapseOthers(`#strconvformatint-nav`)" id="strconvformatint-nav">
+									strconv.FormatInt()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparsefloat" onclick="collapseOthers(`#strconvparsefloat-nav`)" id="strconvparsefloat-nav">
+									strconv.ParseFloat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatfloat" onclick="collapseOthers(`#strconvformatfloat-nav`)" id="strconvformatfloat-nav">
+									strconv.FormatFloat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparsebool" onclick="collapseOthers(`#strconvparsebool-nav`)" id="strconvparsebool-nav">
+									strconv.ParseBool()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatbool" onclick="collapseOthers(`#strconvformatbool-nav`)" id="strconvformatbool-nav">
+									strconv.FormatBool()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e5%85%b3%e9%94%ae%e5%ad%97%e5%8f%af%e7%94%a8%e4%ba%8e%e8%bd%ac%e6%8d%a2%e6%88%96%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#数据类型关键字可用于转换或数据类型之间的转换-nav`)" id="数据类型关键字可用于转换或数据类型之间的转换-nav">
+									数据类型关键字可用于转换或数据类型之间的转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#string--byte-%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#string--byte-转换-nav`)" id="string--byte-转换-nav">
+									string , byte 转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%9a%84%e8%bd%ac%e5%8c%96" onclick="collapseOthers(`#interface的转化-nav`)" id="interface的转化-nav">
+									interface{}的转化
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringshasprefix" onclick="collapseOthers(`#stringshasprefix-nav`)" id="stringshasprefix-nav">
+									strings.HasPrefix()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringshassuffix" onclick="collapseOthers(`#stringshassuffix-nav`)" id="stringshassuffix-nav">
+									strings.HasSuffix()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringscount" onclick="collapseOthers(`#stringscount-nav`)" id="stringscount-nav">
+									strings.Count()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsindex" onclick="collapseOthers(`#stringsindex-nav`)" id="stringsindex-nav">
+									strings.Index()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsreplace" onclick="collapseOthers(`#stringsreplace-nav`)" id="stringsreplace-nav">
+									strings.Replace()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsrepeat" onclick="collapseOthers(`#stringsrepeat-nav`)" id="stringsrepeat-nav">
+									strings.Repeat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringssplit" onclick="collapseOthers(`#stringssplit-nav`)" id="stringssplit-nav">
+									strings.Split()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsjoin" onclick="collapseOthers(`#stringsjoin-nav`)" id="stringsjoin-nav">
+									strings.Join()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringstolower-stringstoupper" onclick="collapseOthers(`#stringstolower-stringstoupper-nav`)" id="stringstolower-stringstoupper-nav">
+									strings.ToLower() ,strings.ToUpper()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%8c%87%e9%92%88%e5%92%8cnew" onclick="collapseOthers(`#指针和new-nav`)" id="指针和new-nav">
+									指针和new
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#make%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e9%99%90%e5%88%b6" onclick="collapseOthers(`#make关键字的限制-nav`)" id="make关键字的限制-nav">
+									make关键字的限制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%bc%95%e5%8f%b7%e7%9a%84%e7%94%a8%e9%80%94" onclick="collapseOthers(`#反引号的用途-nav`)" id="反引号的用途-nav">
+									反引号的用途
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#nil%e5%92%8c%e9%9b%b6%e5%80%bc" onclick="collapseOthers(`#nil和零值-nav`)" id="nil和零值-nav">
+									nil和零值
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#go%e6%b5%81%e7%a8%8b%e6%8e%a7%e5%88%b6" onclick="collapseOthers(`#go流程控制-nav`)" id="go流程控制-nav">
+									Go流程控制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e7%bb%84array" onclick="collapseOthers(`#数组array-nav`)" id="数组array-nav">
+									数组Array
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%87%e7%89%87slice" onclick="collapseOthers(`#切片slice-nav`)" id="切片slice-nav">
+									切片slice
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#cap%e5%92%8clen%e5%82%bb%e5%82%bb%e5%88%86%e4%b8%8d%e6%b8%85" onclick="collapseOthers(`#cap和len傻傻分不清-nav`)" id="cap和len傻傻分不清-nav">
+									cap()和len()傻傻分不清？
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%87%e7%89%87%e6%8b%b7%e8%b4%9dcopy" onclick="collapseOthers(`#切片拷贝copy-nav`)" id="切片拷贝copy-nav">
+									切片拷贝copy
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#map-%e6%98%a0%e5%b0%84" onclick="collapseOthers(`#map-映射-nav`)" id="map-映射-nav">
+									Map 映射
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%8f%e6%9c%ba%e6%95%b0%e8%a6%81%e6%9c%89%e9%9a%8f%e6%9c%ba%e7%a7%8d%e5%ad%90%e4%b8%8b%e9%9d%a2%e7%94%a8%e6%97%b6%e9%97%b4%e6%88%b3%e6%9d%a5%e5%81%9a" onclick="collapseOthers(`#随机数要有随机种子下面用时间戳来做-nav`)" id="随机数要有随机种子下面用时间戳来做-nav">
+									随机数，要有随机种子,下面用时间戳来做
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%bd%e6%95%b0%e7%9a%84%e5%ae%9a%e4%b9%89%e5%92%8c%e8%bf%94%e5%9b%9e%e5%80%bc" onclick="collapseOthers(`#函数的定义和返回值-nav`)" id="函数的定义和返回值-nav">
+									函数的定义和返回值
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#pointer-%e6%8c%87%e9%92%88" onclick="collapseOthers(`#pointer-指针-nav`)" id="pointer-指针-nav">
+									Pointer 指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e6%95%b0%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%a8%e6%8c%87%e9%92%88" onclick="collapseOthers(`#参数也可以用指针-nav`)" id="参数也可以用指针-nav">
+									参数也可以用指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#struct-%e7%bb%93%e6%9e%84%e4%bd%93" onclick="collapseOthers(`#struct-结构体-nav`)" id="struct-结构体-nav">
+									Struct 结构体
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#struce-%e7%bb%93%e5%90%88-pointer" onclick="collapseOthers(`#struce-结合-pointer-nav`)" id="struce-结合-pointer-nav">
+									Struce 结合 Pointer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e7%9a%84%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#结构的嵌套-nav`)" id="结构的嵌套-nav">
+									结构的嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%a5%97%e4%b8%ad%e6%9c%89%e5%90%8c%e5%90%8d%e7%9a%84%e5%b1%9e%e6%80%a7%e7%9a%84%e5%a4%84%e7%90%86" onclick="collapseOthers(`#嵌套中有同名的属性的处理-nav`)" id="嵌套中有同名的属性的处理-nav">
+									嵌套中有同名的属性的处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8c%bf%e5%90%8d%e7%bb%93%e6%9e%84" onclick="collapseOthers(`#匿名结构-nav`)" id="匿名结构-nav">
+									匿名结构
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#struce-%e5%92%8c-slice" onclick="collapseOthers(`#struce-和-slice-nav`)" id="struce-和-slice-nav">
+									Struce 和 Slice
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84tag" onclick="collapseOthers(`#结构体的tag-nav`)" id="结构体的tag-nav">
+									结构体的Tag
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#结构体的方法-nav`)" id="结构体的方法-nav">
+									结构体的方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%b3%95%e6%8c%87%e9%92%88" onclick="collapseOthers(`#方法指针-nav`)" id="方法指针-nav">
+									方法指针
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%bf%e9%97%ae%e6%9d%83%e9%99%90" onclick="collapseOthers(`#访问权限-nav`)" id="访问权限-nav">
+									访问权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e4%b8%aa%e6%96%87%e4%bb%b6%e7%9a%84%e8%bf%90%e8%a1%8c" onclick="collapseOthers(`#多个文件的运行-nav`)" id="多个文件的运行-nav">
+									多个文件的运行
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#init%e5%87%bd%e6%95%b0" onclick="collapseOthers(`#init函数-nav`)" id="init函数-nav">
+									init()函数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8e%a5%e5%8f%a3interface" onclick="collapseOthers(`#接口interface-nav`)" id="接口interface-nav">
+									接口interface
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e6%8e%a5%e5%8f%a3%e7%9a%84%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#接口的嵌套-nav`)" id="接口的嵌套-nav">
+									接口的嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%a9%ba%e6%8e%a5%e5%8f%a3-interface" onclick="collapseOthers(`#空接口-interface-nav`)" id="空接口-interface-nav">
+									空接口 interface
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%bb%93%e5%90%88%e6%8c%87%e9%92%88%e7%9a%84%e7%94%a8%e6%b3%95" onclick="collapseOthers(`#interface结合指针的用法-nav`)" id="interface结合指针的用法-nav">
+									interface{}结合指针的用法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%bb%93%e5%90%88slicemap" onclick="collapseOthers(`#interface结合slicemap-nav`)" id="interface结合slicemap-nav">
+									interface{}结合slice，map
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%b0%84-reflect" onclick="collapseOthers(`#反射-reflect-nav`)" id="反射-reflect-nav">
+									反射 Reflect
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%b0%83%e7%94%a8%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#调用方法-nav`)" id="调用方法-nav">
+									调用方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#goroutine" onclick="collapseOthers(`#goroutine-nav`)" id="goroutine-nav">
+									Goroutine
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#channel-%e9%80%9a%e9%81%93" onclick="collapseOthers(`#channel-通道-nav`)" id="channel-通道-nav">
+									Channel 通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e4%bd%9c%e4%b8%ba%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#通道作为参数-nav`)" id="通道作为参数-nav">
+									通道作为参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#buffer-channel" onclick="collapseOthers(`#buffer-channel-nav`)" id="buffer-channel-nav">
+									Buffer Channel
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#select" onclick="collapseOthers(`#select-nav`)" id="select-nav">
+									select
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#for-range-close" onclick="collapseOthers(`#for-range-close-nav`)" id="for-range-close-nav">
+									for range close
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e6%96%b9%e5%90%91" onclick="collapseOthers(`#通道方向-nav`)" id="通道方向-nav">
+									通道方向
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%9a%e9%81%93%e7%9a%84timeout" onclick="collapseOthers(`#通道的timeout-nav`)" id="通道的timeout-nav">
+									通道的Timeout
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#defer--exit" onclick="collapseOthers(`#defer--exit-nav`)" id="defer--exit-nav">
+									Defer &amp; Exit
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#error-panic-%e8%bf%98%e6%9c%89-recover" onclick="collapseOthers(`#error-panic-还有-recover-nav`)" id="error-panic-还有-recover-nav">
+									Error, Panic, 还有 Recover
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%ae%9a%e4%b9%89error" onclick="collapseOthers(`#自定义error-nav`)" id="自定义error-nav">
+									自定义Error
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#panic" onclick="collapseOthers(`#panic-nav`)" id="panic-nav">
+									Panic
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#recover-%e6%81%a2%e5%a4%8d" onclick="collapseOthers(`#recover-恢复-nav`)" id="recover-恢复-nav">
+									recover 恢复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#recover-%e5%92%8c-iife" onclick="collapseOthers(`#recover-和-iife-nav`)" id="recover-和-iife-nav">
+									recover 和 IIFE
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba" onclick="collapseOthers(`#字符串格式化输出-nav`)" id="字符串格式化输出-nav">
+									字符串格式化输出
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%97%b6%e9%97%b4%e8%a7%a3%e6%9e%90%e6%97%b6%e9%97%b4%e5%92%8c%e6%a0%bc%e5%bc%8f%e5%8c%96%e6%97%b6%e9%97%b4" onclick="collapseOthers(`#时间解析时间和格式化时间-nav`)" id="时间解析时间和格式化时间-nav">
+									时间，解析时间和格式化时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#timetime" onclick="collapseOthers(`#timetime-nav`)" id="timetime-nav">
+									time.Time
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%a1%e6%97%b6%e5%99%a8%e8%a7%a6%e5%8f%91%e5%99%a8" onclick="collapseOthers(`#计时器触发器-nav`)" id="计时器触发器-nav">
+									计时器,触发器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#timenewtimer" onclick="collapseOthers(`#timenewtimer-nav`)" id="timenewtimer-nav">
+									time.NewTimer()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#timeafterfunc" onclick="collapseOthers(`#timeafterfunc-nav`)" id="timeafterfunc-nav">
+									time.AfterFunc()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8ticker%e8%b0%83%e5%ba%a6%e7%a8%8b%e5%ba%8f" onclick="collapseOthers(`#使用ticker调度程序-nav`)" id="使用ticker调度程序-nav">
+									使用Ticker调度程序
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%94%a8goroutine%e5%81%9atimer" onclick="collapseOthers(`#用goroutine做timer-nav`)" id="用goroutine做timer-nav">
+									用Goroutine做Timer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#数据类型之间的转换-nav`)" id="数据类型之间的转换-nav">
+									数据类型之间的转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#strconvatoi" onclick="collapseOthers(`#strconvatoi-nav`)" id="strconvatoi-nav">
+									strconv.Atoi()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparseint" onclick="collapseOthers(`#strconvparseint-nav`)" id="strconvparseint-nav">
+									strconv.ParseInt()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatint" onclick="collapseOthers(`#strconvformatint-nav`)" id="strconvformatint-nav">
+									strconv.FormatInt()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparsefloat" onclick="collapseOthers(`#strconvparsefloat-nav`)" id="strconvparsefloat-nav">
+									strconv.ParseFloat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatfloat" onclick="collapseOthers(`#strconvformatfloat-nav`)" id="strconvformatfloat-nav">
+									strconv.FormatFloat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvparsebool" onclick="collapseOthers(`#strconvparsebool-nav`)" id="strconvparsebool-nav">
+									strconv.ParseBool()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#strconvformatbool" onclick="collapseOthers(`#strconvformatbool-nav`)" id="strconvformatbool-nav">
+									strconv.FormatBool()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e5%85%b3%e9%94%ae%e5%ad%97%e5%8f%af%e7%94%a8%e4%ba%8e%e8%bd%ac%e6%8d%a2%e6%88%96%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#数据类型关键字可用于转换或数据类型之间的转换-nav`)" id="数据类型关键字可用于转换或数据类型之间的转换-nav">
+									数据类型关键字可用于转换或数据类型之间的转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#string--byte-%e8%bd%ac%e6%8d%a2" onclick="collapseOthers(`#string--byte-转换-nav`)" id="string--byte-转换-nav">
+									string , byte 转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#interface%e7%9a%84%e8%bd%ac%e5%8c%96" onclick="collapseOthers(`#interface的转化-nav`)" id="interface的转化-nav">
+									interface{}的转化
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringshasprefix" onclick="collapseOthers(`#stringshasprefix-nav`)" id="stringshasprefix-nav">
+									strings.HasPrefix()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringshassuffix" onclick="collapseOthers(`#stringshassuffix-nav`)" id="stringshassuffix-nav">
+									strings.HasSuffix()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringscount" onclick="collapseOthers(`#stringscount-nav`)" id="stringscount-nav">
+									strings.Count()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsindex" onclick="collapseOthers(`#stringsindex-nav`)" id="stringsindex-nav">
+									strings.Index()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsreplace" onclick="collapseOthers(`#stringsreplace-nav`)" id="stringsreplace-nav">
+									strings.Replace()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsrepeat" onclick="collapseOthers(`#stringsrepeat-nav`)" id="stringsrepeat-nav">
+									strings.Repeat()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringssplit" onclick="collapseOthers(`#stringssplit-nav`)" id="stringssplit-nav">
+									strings.Split()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringsjoin" onclick="collapseOthers(`#stringsjoin-nav`)" id="stringsjoin-nav">
+									strings.Join()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#stringstolower-stringstoupper" onclick="collapseOthers(`#stringstolower-stringstoupper-nav`)" id="stringstolower-stringstoupper-nav">
+									strings.ToLower() ,strings.ToUpper()
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Go 非零基础一文入门
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2019-08-18 22:35
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Go]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p><img src="https://kissjava.cn/usr/uploads/2019/07/801648324.png" alt="请输入图片描述"></p>
+<p>其实为了方便使用其他编程语言的开发者快速理解Go的一些特性。</p>
+<h2 id="指针和new">指针和new</h2>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	/*
+	new关键字用于创建具有某些数据类型的指针变量
+	*/
+	//创建一个字符串类型的指针Pointer string
+	name := new(string)
+	//打印指针地址，输出类似0xc0000a0030
+	fmt.Println(name)
+
+	//给该指针指向的内存写入数据
+	//name是指针变量，
+	//给指针变量前加*就是取消应用，直接访问其中的值
+	*name = &quot;hello world&quot;
+	//打印该指针指向的内存中的数据，输出hello world
+	fmt.Println(*name)
+}
+</code></pre><h2 id="make关键字的限制">make关键字的限制</h2>
+<p>此关键字只能用于创建复杂类型的变量，即：</p>
+<ul>
+<li>channel</li>
+<li>slice</li>
+<li>map</li>
+</ul>
+<h2 id="反引号的用途">反引号的用途</h2>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	var message = `My name is &quot;John Work&quot;.
+Are you ready.
+Let's learn &quot;Golang&quot;.`
+
+	fmt.Println(message)
+}
+</code></pre><p>它会原样输出，不用顾虑转义字符，单双引号，想换行直接回车就行。</p>
+<h2 id="nil和零值">nil和零值</h2>
+<p>nil不是数据类型，而是值。值为nil的变量表示它具有空值。
+Go中的数据类型定义后如果没赋值都会有默认的零值，和C不一样，不会出现奇奇怪怪的值
+string 零值 &quot;&rdquo;
+bool 零值 false
+整型 零值 0
+浮点型 零值 0.0</p>
+<p>下面的类型才能被赋为nil
+pointer
+func
+slice
+map
+channel
+interface</p>
+<h2 id="go流程控制">Go流程控制</h2>
+<p>不支持三元运算符
+不支持，不支持，不支持</p>
+<p>if 条件不要括号</p>
+<p>switch 中 case匹配后不要，不要，不要break，直接跳出
+一个case可以同时匹配多个，来实现其他语言中不带break的穿透</p>
+<pre><code>var point = 6
+
+switch point {
+case 8:
+    fmt.Println(&quot;perfect&quot;)
+case 7, 6, 5, 4:
+    fmt.Println(&quot;awesome&quot;)
+default:
+    fmt.Println(&quot;not bad&quot;)
+}
+</code></pre><p>switch 结合判断,穿透fallthrough的写法</p>
+<pre><code>var point = 6
+
+switch {
+case point == 8:
+    fmt.Println(&quot;perfect&quot;)
+case (point &lt; 8) &amp;&amp; (point &gt; 3):
+    fmt.Println(&quot;awesome&quot;)
+    fallthrough
+case point &lt; 5:
+    fmt.Println(&quot;you need to learn more&quot;)
+default:
+    {
+        fmt.Println(&quot;not bad&quot;)
+        fmt.Println(&quot;you need to learn more&quot;)
+    }
+}
+</code></pre><h2 id="数组array">数组Array</h2>
+<pre><code>//先声明再一一赋值
+var names [4]string
+names[0] = &quot;trafalgar&quot;
+names[1] = &quot;d&quot;
+names[2] = &quot;water&quot;
+names[3] = &quot;law&quot;
+
+//声明赋值一起
+var fruits = [4]string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+
+/声明后一起赋值，赋值可以一行也可以多行
+var fruits [4]string
+// 一行
+fruits  = [4]string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+// 多行
+fruits  = [4]string{
+    &quot;apple&quot;,
+    &quot;grape&quot;,
+    &quot;banana&quot;,
+    &quot;melon&quot;,
+}
+
+//声明赋值数组，但是不写长度
+var numbers = [...]int{2, 3, 2, 4, 3}
+
+//多维数组
+var numbers1 = [2][3]int{[3]int{3, 2, 3}, [3]int{3, 4, 5}}
+var numbers2 = [2][3]int{{3, 2, 3}, {3, 4, 5}}
+
+//变量数组的方式
+var fruits = [4]string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+for i := 0; i &lt; len(fruits); i++ {
+    fmt.Printf(&quot;elemen %d : %s\n&quot;, i, fruits[i])
+}
+
+var fruits = [4]string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+for i, fruit := range fruits {
+    fmt.Printf(&quot;elemen %d : %s\n&quot;, i, fruit)
+}
+
+var fruits = [4]string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+for _, fruit := range fruits {
+    fmt.Printf(&quot;nama buah : %s\n&quot;, fruit)
+}
+
+//关键字make声明数组
+var fruits = make([]string, 2)
+fruits[0] = &quot;apple&quot;
+fruits[1] = &quot;manggo&quot;
+</code></pre><h2 id="切片slice">切片slice</h2>
+<p>Slice是一个数组元素引用。可以通过操作Array或其他Slice来生成切片。因为它是引用类型的数据，所以在每个切片元素中进行数据更改将对具有相同内存地址的其他切片或数组产生影响。</p>
+<pre><code>var fruits = []string{&quot;apple&quot;, &quot;grape&quot;, &quot;banana&quot;, &quot;melon&quot;}
+fmt.Println(fruits[0]) // &quot;apple&quot;
+</code></pre><p>声明切片，把声明数组时的长度或<code>...</code>去掉就可以了，因为切片可以变长的。</p>
+<pre><code>var fruitsA = []string{&quot;apple&quot;, &quot;grape&quot;}      // slice
+var fruitsB = [2]string{&quot;banana&quot;, &quot;melon&quot;}    // array
+var fruitsC = [...]string{&quot;papaya&quot;, &quot;grape&quot;}  // array
+</code></pre><h3 id="cap和len傻傻分不清">cap()和len()傻傻分不清？</h3>
+<p>len就是返回实际元素数量；cap是目前分配的容量大小，它是&gt;=len的，是在变化slice大小时为了提高效率预先可能多分配的内存空间，这样在下次再次添加元素时就不要每次都去分配内存空间。</p>
+<h3 id="切片拷贝copy">切片拷贝copy</h3>
+<p>注意参数位置，先是目标切片，第二个才是源切片。而且可以把长的切片拷贝到更短的切片中。</p>
+<pre><code>dst := make([]string, 3)
+src := []string{&quot;watermelon&quot;, &quot;pinnaple&quot;, &quot;apple&quot;, &quot;orange&quot;}
+n := copy(dst, src)
+
+fmt.Println(dst) // watermelon pinnaple apple
+fmt.Println(src) // watermelon pinnaple apple orange
+fmt.Println(n)   // 3 拷贝的数量
+</code></pre><p>目标切片有数据的情况，会替换对应位置的数据</p>
+<pre><code>dst := []string{&quot;potato&quot;, &quot;potato&quot;, &quot;potato&quot;}
+src := []string{&quot;watermelon&quot;, &quot;pinnaple&quot;}
+n := copy(dst, src)
+
+fmt.Println(dst) // watermelon pinnaple potato
+fmt.Println(src) // watermelon pinnaple
+fmt.Println(n)   // 2
+</code></pre><h2 id="map-映射">Map 映射</h2>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	var chicken1 = map[string]int{&quot;mac&quot;: 50, &quot;pc&quot;: 40}
+	chicken1[&quot;ipad&quot;] = 100
+
+	for key, val := range chicken1 {
+		fmt.Println(key, &quot;  \t:&quot;, val)
+	}
+
+	var chicken2 = map[string]int{}
+	chicken2[&quot;iphone&quot;] = 100
+	chicken2[&quot;hawei&quot;] = 150
+
+	for key, val := range chicken2 {
+		fmt.Println(key, &quot;  \t:&quot;, val)
+	}
+
+	var value, isExist = chicken2[&quot;xiaomi&quot;]
+
+	if isExist {
+		fmt.Println(value)
+	} else {
+		fmt.Println(&quot;item is not exists&quot;)
+	}
+
+}
+
+</code></pre><p>切片和Map一起来</p>
+<pre><code>var chickens = []map[string]string{
+    map[string]string{&quot;name&quot;: &quot;chicken blue&quot;,   &quot;gender&quot;: &quot;male&quot;},
+    map[string]string{&quot;name&quot;: &quot;chicken red&quot;,    &quot;gender&quot;: &quot;male&quot;},
+    map[string]string{&quot;name&quot;: &quot;chicken yellow&quot;, &quot;gender&quot;: &quot;female&quot;},
+}
+
+for _, chicken := range chickens {
+    fmt.Println(chicken[&quot;gender&quot;], chicken[&quot;name&quot;])
+}
+</code></pre><h2 id="随机数要有随机种子下面用时间戳来做">随机数，要有随机种子,下面用时间戳来做</h2>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math/rand&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    rand.Seed(time.Now().Unix())
+    var randomValue int
+
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&quot;random number:&quot;, randomValue)
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&quot;random number:&quot;, randomValue)
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&quot;random number:&quot;, randomValue)
+}
+
+func randomWithRange(min, max int) int {
+    var value = rand.Int() % (max - min + 1) + min
+    return value
+}
+</code></pre><h2 id="函数的定义和返回值">函数的定义和返回值</h2>
+<p>上面已经写了一个函数了，函数的声明如下：</p>
+<pre><code>func nameOfFunc(paramA type, paramB type, paramC type) returnType
+func nameOfFunc(paramA, paramB, paramC type) returnType
+
+func randomWithRange(min int, max int) int
+func randomWithRange(min, max int) int
+</code></pre><p>返回多个值，而且命名过了，不需要特别返回指定了</p>
+<pre><code>func calculate(d float64) (area float64, circumference float64) {
+    area = math.Pi * math.Pow(d / 2, 2)
+    circumference = math.Pi * d
+
+    return
+}
+</code></pre><p>不定长参数</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	var avg = calculate(2, 4, 3, 5, 4, 3, 3, 5, 5, 3)
+	var msg = fmt.Sprintf(&quot;Avg : %.2f&quot;, avg)
+	fmt.Println(msg)
+}
+
+func calculate(numbers ...int) float64 {
+	var total int = 0
+	for _, number := range numbers {
+		total += number
+	}
+
+	var avg = float64(total) / float64(len(numbers))
+	return avg
+}
+</code></pre><p>可变参数的位置,要放到最后,不然没法处理</p>
+<pre><code>func yourHobbies(name string, hobbies ...string) {
+    var hobbiesAsString = strings.Join(hobbies, &quot;, &quot;)
+
+    fmt.Printf(&quot;Hello, my name is: %s\n&quot;, name)
+    fmt.Printf(&quot;My hobbies are: %s\n&quot;, hobbiesAsString)
+}
+</code></pre><p>经常用到的string比较函数</p>
+<pre><code>var resulta = strings.Contains(&quot;Golang&quot;, &quot;Golang&quot;)
+var resultb = strings.Contains(&quot;Golang&quot;, &quot;lang&quot;)
+//true,true;Golang 包含了Golang 也包含了lang
+
+strings.Split(&quot;ethan hunt&quot;, &quot; &quot;)
+// [&quot;ethan&quot;, &quot;hunt&quot;]
+</code></pre><h2 id="pointer-指针">Pointer 指针</h2>
+<p>指针是引用或内存地址。指针变量表示包含值的内存地址的变量。例如，整数类型变量的值为4，那么其指针的含义是存储值4的存储器地址，而不是值4本身。</p>
+<p>具有相同引用或指针地址的变量彼此相关，并且它们的值必须相同。当值发生变化时，它将使其他变量（相同的引用）生效，即值发生变化。</p>
+<pre><code>//除了一开始介绍的var name = new(string)来声明，也可以用以下方式
+var number *int
+var name *string
+</code></pre><p>指针变量的默认值为nil（空）。指针变量不能保存非指针的值，反之亦然普通变量不能保存指针的值。</p>
+<p>注意：</p>
+<ul>
+<li>可以从常规变量中得到其指针（内存地址），在变量名称之前添加＆符号（＆）。此方法称为引用。</li>
+<li>相反，通过在指针变量名称前添加星号（*），也可以检索指针变量的原始值。此方法称为解除引用。</li>
+</ul>
+<pre><code>var numberA int = 4							// int value
+var numberB *int = &amp;numberA					// 取numberA的地址赋给numberB指针
+											// 他们指向了同一个内存空间，该内存中存储了4
+
+fmt.Println(&quot;numberA (value)   :&quot;, numberA)  // 4
+fmt.Println(&quot;numberA (address) :&quot;, &amp;numberA) // 0xc20800a220，普通变量通过&amp;取其地址
+
+fmt.Println(&quot;numberB (value)   :&quot;, *numberB) // 4，通过指针取赋值用*
+fmt.Println(&quot;numberB (address) :&quot;, numberB)  // 0xc20800a220
+</code></pre><p>此时变化numberA的值后，再执行一遍打印，numberA和*numberB都统一改变。</p>
+<h3 id="参数也可以用指针">参数也可以用指针</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	var number = 4
+	fmt.Println(&quot;before :&quot;, number) // 4
+
+	change(&amp;number, 10)
+	fmt.Println(&quot;after  :&quot;, number) // 10
+}
+
+//第一参数为指针，调用时一般传 &amp;普通变量名 取得地址丢过去
+//第二参数为新值
+func change(original *int, value int) {
+	*original = value
+}
+</code></pre><p>指针理解到这里也就差不多了，再去搞深了，头就晕了。</p>
+<h2 id="struct-结构体">Struct 结构体</h2>
+<p>Struct是变量定义（或属性）和/或函数（或方法）的集合，它们被包装为具有特定名称的新数据类型。结构中的属性，数据类型可以有所不同。与Map类似，只是在开头定义了Key，每个Item的数据类型可以不同。</p>
+<p>golang中struct的概念类似于OOP中的类，尽管它实际上是不同的。使用OOP的概念作为类比，目的是为了更容易消化Struct的相关知识。</p>
+<p>简单的DEMO,定义一个student结构体，main中新建一个student类型的变量，并给其属性赋值。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func main() {
+	var s1 student
+	s1.name = &quot;john wick&quot;
+	s1.grade = 2
+
+	fmt.Println(&quot;name  :&quot;, s1.name)
+	fmt.Println(&quot;grade :&quot;, s1.grade)
+}
+</code></pre><p>结构体初始化</p>
+<pre><code>var s1 = student{}
+s1.name = &quot;wick&quot;
+s1.grade = 2
+
+var s2 = student{&quot;ethan&quot;, 2}
+
+var s3 = student{name: &quot;jason&quot;}
+
+var s4 = student{name: &quot;wayne&quot;, grade: 2}
+var s5 = student{grade: 2, name: &quot;bruce&quot;}
+
+
+fmt.Println(&quot;student 1 :&quot;, s1.name)
+fmt.Println(&quot;student 2 :&quot;, s2.name)
+fmt.Println(&quot;student 3 :&quot;, s3.name)
+fmt.Println(&quot;student 4 :&quot;, s4.name)
+fmt.Println(&quot;student 5 :&quot;, s5.name)
+</code></pre><h3 id="struce-结合-pointer">Struce 结合 Pointer</h3>
+<p>看例子</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func main() {
+	var s1 = student{name: &quot;wick&quot;, grade: 2}
+
+	var s2 *student = &amp;s1
+	fmt.Println(&quot;student 1, name :&quot;, s1.name)
+	fmt.Println(&quot;student 2, name :&quot;, s2.name)
+
+	s2.name = &quot;ethan&quot;
+	fmt.Println(&quot;student 1, name :&quot;, s1.name)
+	fmt.Println(&quot;student 2, name :&quot;, s2.name)
+
+}
+</code></pre><p>注意到没有，s2 是 指针，但是访问其属性时没有，没有，没有用*号!!!
+其实可以用的但是要这样写 <code>(*s2).name</code>，可以正确执行，但是很麻烦，也没有必要这么写。</p>
+<h3 id="结构的嵌套">结构的嵌套</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type person struct {
+    name string
+    age  int
+}
+
+type student struct {
+    grade int
+    person
+}
+
+func main() {
+    var s1 = student{}
+    s1.name = &quot;wick&quot;
+    s1.age = 21
+    s1.grade = 2
+
+    fmt.Println(&quot;name  :&quot;, s1.name)
+    fmt.Println(&quot;age   :&quot;, s1.age)
+    fmt.Println(&quot;age   :&quot;, s1.person.age)
+    fmt.Println(&quot;grade :&quot;, s1.grade)
+}
+</code></pre><p>这种<code>.</code>后面接属性，再接属性的方式我觉得很优雅，要吐槽js和php的<code>-&gt;</code>了有没有？</p>
+<h3 id="嵌套中有同名的属性的处理">嵌套中有同名的属性的处理</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type person struct {
+    name string
+    age  int
+}
+
+type student struct {
+    person
+    age   int
+    grade int
+}
+
+func main() {
+    var s1 = student{}
+    s1.name = &quot;wick&quot;
+    s1.age = 21        // age of student
+    s1.person.age = 22 // age of person
+
+    fmt.Println(s1.name)
+    fmt.Println(s1.age)
+    fmt.Println(s1.person.age)
+}
+</code></pre><p>好吧，就是不处理。不再提升到外层结构，一一对应就好。</p>
+<h3 id="匿名结构">匿名结构</h3>
+<p>匿名结构是未预先声明直接在创建对象时声明的结构。对于创建仅使用一次的结构对象变量非常有效。如以下的s1</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type person struct {
+	name string
+	age  int
+}
+
+func main() {
+	var s1 = struct {
+		person
+		grade int
+	}{}
+	s1.person = person{&quot;wick&quot;, 21}
+	s1.grade = 2
+
+	fmt.Println(&quot;name  :&quot;, s1.person.name)
+	fmt.Println(&quot;age   :&quot;, s1.person.age)
+	fmt.Println(&quot;grade :&quot;, s1.grade)
+}
+</code></pre><h3 id="struce-和-slice">Struce 和 Slice</h3>
+<pre><code>type person struct {
+    name string
+    age  int
+}
+
+var allStudents = []person{
+    {name: &quot;Wick&quot;, age: 23},
+    {name: &quot;Ethan&quot;, age: 23},
+    {name: &quot;Bourne&quot;, age: 22},
+}
+
+for _, student := range allStudents {
+    fmt.Println(student.name, &quot;age is&quot;, student.age)
+}
+</code></pre><p>匿名的</p>
+<pre><code>var allStudents = []struct {
+    person
+    grade int
+}{
+    {person: person{&quot;wick&quot;, 21}, grade: 2},
+    {person: person{&quot;ethan&quot;, 22}, grade: 3},
+    {person: person{&quot;bond&quot;, 21}, grade: 3},
+}
+
+for _, student := range allStudents {
+    fmt.Println(student)
+}
+</code></pre><p>有时为了json解码方便，也可以声明到一个结构体中</p>
+<pre><code>type student struct {
+    person struct {
+        name string
+        age  int
+    }
+    grade   int
+    hobbies []string
+}
+</code></pre><h3 id="结构体的tag">结构体的Tag</h3>
+<p>标签是可以添加到每个结构属性的可选信息。在实际应用中很常见。</p>
+<pre><code>type person struct {
+    name string `tag1`
+    age  int    `tag2`
+}
+</code></pre><h3 id="结构体的方法">结构体的方法</h3>
+<p>有了方法的结构体，功能更加强大</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;strings&quot;
+
+type student struct {
+    name  string
+    grade int
+}
+
+func (s student) sayHello() {
+    fmt.Println(&quot;Hello&quot;, s.name)
+}
+
+func (s student) getNameAt(i int) string {
+    return strings.Split(s.name, &quot; &quot;)[i-1]
+}
+
+func main() {
+    var s1 = student{&quot;john wick&quot;, 21}
+    s1.sayHello()
+
+    var name = s1.getNameAt(2)
+    fmt.Println(&quot;Last Name :&quot;, name)
+}
+</code></pre><h3 id="方法指针">方法指针</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func (s student) changeName1(name string) {
+	fmt.Println(&quot;---&gt; on changeName1, name changed to&quot;, name)
+	s.name = name
+}
+
+func (s *student) changeName2(name string) {
+	fmt.Println(&quot;---&gt; on changeName2, name changed to&quot;, name)
+	s.name = name
+}
+
+func main() {
+	var s1 = student{&quot;john wick&quot;, 21}
+	fmt.Println(&quot;s1 before&quot;, s1.name)
+	// john wick
+
+	s1.changeName1(&quot;jason bourne&quot;)
+	fmt.Println(&quot;s1 after changeName1&quot;, s1.name)
+	// john wick
+
+	s1.changeName2(&quot;ethan hunt&quot;)
+	fmt.Println(&quot;s1 after changeName2&quot;, s1.name)
+	// ethan hunt
+}
+</code></pre><p>执行输出</p>
+<pre><code>s1 before john wick
+---&gt; on changeName1, name changed to jason bourne
+s1 after changeName1 john wick
+---&gt; on changeName2, name changed to ethan hunt
+s1 after changeName2 ethan hunt
+</code></pre><p><code>s1.changeName2（）</code>才会正真改变。<code>changeName1</code>只会在方法内部改变，并没有s1的name。</p>
+<h2 id="访问权限">访问权限</h2>
+<p>导入的包，其中方法大写字母开头的是可以用的，小写字母开头的不能用。
+struct也是一样，我们引用的包中的结构，我们不可以访问小写字母开头的属性。</p>
+<h2 id="多个文件的运行">多个文件的运行</h2>
+<p>hello.go</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func sayHello(name string) {
+	fmt.Println(&quot;Hello&quot;, name)
+}
+</code></pre><p>主文件 main.go</p>
+<pre><code>package main
+
+func main() {
+    sayHello(&quot;Mike&quot;)
+}
+</code></pre><p>运行<code>go run main.go hello.go</code>,也是可以运行的。</p>
+<h2 id="init函数">init()函数</h2>
+<p>假设有个<code>library/mylib.go</code></p>
+<pre><code>package library
+
+import &quot;fmt&quot;
+
+var Student = struct {
+	Name  string
+	Grade int
+}{}
+
+func init() {
+	Student.Name = &quot;John Wick&quot;
+	Student.Grade = 2
+
+	fmt.Println(&quot;--&gt; library/mylib.go imported&quot;)
+}
+
+</code></pre><p>主文件main.go</p>
+<pre><code>package main
+
+import &quot;./library&quot;
+import &quot;fmt&quot;
+
+func main() {
+	fmt.Printf(&quot;Name  : %s\n&quot;, library.Student.Name)
+	fmt.Printf(&quot;Grade : %d\n&quot;, library.Student.Grade)
+}
+</code></pre><p>运行</p>
+<pre><code>go run main.go
+--&gt; library/mylib.go imported
+Name  : John Wick
+Grade : 2
+</code></pre><h2 id="接口interface">接口interface</h2>
+<p>接口是方法定义的集合，没有包含特定的内容（仅定义）</p>
+<p>接口是一种数据类型。类型为接口的对象的零值为nil。如果接口已经具有内容，则可以使用接口，这些内容是具有与接口中的最小方法定义相同的最小方法定义的具体对象。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;math&quot;
+
+//声明接口
+type countit interface {
+	area() float64
+	around() float64
+}
+
+//声明圆的结构
+type circle struct {
+	diameter float64
+}
+
+//结构的方法
+func (l circle) radius() float64 {
+	return l.diameter / 2
+}
+
+//结构的方法，也是接口area的实现
+func (l circle) area() float64 {
+	return math.Pi * math.Pow(l.radius(), 2)
+}
+
+//结构的方法，也是接口around的实现
+func (l circle) around() float64 {
+	return math.Pi * l.diameter
+}
+
+//正方形
+type square struct {
+	side float64
+}
+
+//结构的方法
+func (p square) area() float64 {
+	return math.Pow(p.side, 2)
+}
+
+//结构的方法
+func (p square) around() float64 {
+	return p.side * 4
+}
+
+func main() {
+	var bangunDatar countit
+
+	bangunDatar = square{10.0}
+	fmt.Println(&quot;===== 正方形&quot;)
+	fmt.Println(&quot;面积  :&quot;, bangunDatar.area())
+	fmt.Println(&quot;周长  :&quot;, bangunDatar.around())
+
+	bangunDatar = circle{14.0}
+	fmt.Println(&quot;===== 圆&quot;)
+	fmt.Println(&quot;面积  :&quot;, bangunDatar.area())
+	fmt.Println(&quot;周长  :&quot;, bangunDatar.around())
+	//以下会报错，ype countit has no field or method radius
+	//fmt.Println(&quot;半径  :&quot;, bangunDatar.radius())
+	//要转成结构,调用结构的方法
+	fmt.Println(&quot;半径  :&quot;, bangunDatar.(circle).radius())
+}
+</code></pre><p>接口实现了，那么要调用接口外的方法时，需要转成原来的结构对象，才能访问结构的方法。因为实现了接口后，生成的对象默认就是该接口类型了，不再是结构类型，需要转换<code>objName.(structName)</code>.</p>
+<h3 id="接口的嵌套">接口的嵌套</h3>
+<p>上代码吧</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;math&quot;
+
+//声明接口
+type countit2d interface {
+	area() float64
+	around() float64
+}
+
+type countit3d interface {
+	volume() float64
+}
+
+type countit interface {
+	countit2d
+	countit3d
+}
+
+type cube struct {
+	side float64
+}
+
+func (c *cube) volume() float64 {
+	return math.Pow(c.side, 3)
+}
+
+func (c *cube) area() float64 {
+	return math.Pow(c.side, 2) * 6
+}
+
+func (c *cube) around() float64 {
+	return c.side * 12
+}
+
+func main() {
+	var c countit = &amp;cube{10.0}
+	fmt.Println(&quot;===== 正方体&quot;)
+	fmt.Println(&quot;面积  :&quot;, c.area())
+	fmt.Println(&quot;周长  :&quot;, c.around())
+	fmt.Println(&quot;体积  :&quot;, c.volume())
+
+}
+</code></pre><p>结果</p>
+<pre><code>go run main.go
+===== 正方体
+面积  : 600
+周长  : 120
+体积  : 1000
+</code></pre><p>要注意，这次用了方法指针，所以定义变量时用了<code>&amp;</code>符号</p>
+<h3 id="空接口-interface">空接口 interface</h3>
+<p>空接口是一种非常特殊的数据类型。这种类型的变量可以包含任何类型的数据，甚至是数组，指针，任何东西。具有此概念的数据类型通常称为动态类型。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    var secret interface{}
+
+    secret = &quot;ethan hunt&quot;
+    fmt.Println(secret)
+
+    secret = []string{&quot;apple&quot;, &quot;manggo&quot;, &quot;banana&quot;}
+    fmt.Println(secret)
+
+    secret = 12.4
+    fmt.Println(secret)
+}
+</code></pre><p>输出</p>
+<pre><code>ethan hunt
+[apple manggo banana]
+12.4
+</code></pre><p>一般使用时，需要转换</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;strings&quot;
+
+func main() {
+	var secret interface{}
+
+	secret = 2
+	var number = secret.(int) * 10
+	fmt.Println(secret, &quot;multiplied by 10 is :&quot;, number)
+
+	secret = []string{&quot;apple&quot;, &quot;manggo&quot;, &quot;banana&quot;}
+	var gruits = strings.Join(secret.([]string), &quot;, &quot;)
+	fmt.Println(gruits, &quot;is my favorite fruits&quot;)
+}
+</code></pre><h3 id="interface结合指针的用法">interface{}结合指针的用法</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	type person struct {
+		name string
+		age  int
+	}
+
+	var secret interface{} = &amp;person{name: &quot;mike&quot;, age: 27}
+	var name = secret.(*person).name
+	fmt.Println(name)
+}
+</code></pre><h3 id="interface结合slicemap">interface{}结合slice，map</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+	var person = []map[string]interface{}{
+		{&quot;name&quot;: &quot;Mike&quot;, &quot;age&quot;: 23},
+		{&quot;name&quot;: &quot;Bruce&quot;, &quot;age&quot;: 23},
+		{&quot;name&quot;: &quot;Jay&quot;, &quot;age&quot;: 22},
+	}
+
+	for _, each := range person {
+		fmt.Println(each[&quot;name&quot;], &quot;age is&quot;, each[&quot;age&quot;])
+	}
+}
+</code></pre><h2 id="反射-reflect">反射 Reflect</h2>
+<p>反射是一种检查变量，并从这些变量中获取信息甚至操纵变量的技术。可以通过反射获得的信息范围非常广泛，例如查看变量的结构，类型，指针值等</p>
+<p>有两个最重要的函数，即<code>reflect.ValueOf()</code>和<code>reflect.TypeOf()</code></p>
+<ul>
+<li><code>reflect.ValueOf()</code>函数将返回一个<code>reflect.Value</code>类型的对象，该对象包含与被搜索变量的值相关的信息。</li>
+<li><code>reflect.TypeOf()</code>返回一个<code>reflect.Type</code>类型的对象。该对象包含与搜索的数据类型相关的信息</li>
+</ul>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;reflect&quot;
+
+func main() {
+	var number = 23
+	var reflectValue = reflect.ValueOf(number)
+
+	fmt.Println(&quot;type of variabel :&quot;, reflectValue.Type())
+
+	if reflectValue.Kind() == reflect.Int {
+		fmt.Println(&quot;value of variabel :&quot;, reflectValue.Int())
+	}
+	fmt.Println(&quot;value of variabel :&quot;, reflectValue.Interface())
+}
+</code></pre><p>输出：</p>
+<pre><code>type of variabel : int
+value of variabel : 23
+value of variabel : 23
+</code></pre><p>再来</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;reflect&quot;
+
+type student struct {
+    Name  string
+    Grade int
+}
+
+func (s *student) getPropertyInfo() {
+    var reflectValue = reflect.ValueOf(s)
+
+    if reflectValue.Kind() == reflect.Ptr {
+		//如果时指针，需要用Elem()方法来获取原始的反射对象
+        reflectValue = reflectValue.Elem()
+    }
+
+    var reflectType = reflectValue.Type()
+
+	//NumField（）方法返回结构中的公共属性数
+    for i := 0; i &lt; reflectValue.NumField(); i++ {
+        fmt.Println(&quot;name      :&quot;, reflectType.Field(i).Name)
+        fmt.Println(&quot;data type :&quot;, reflectType.Field(i).Type)
+        fmt.Println(&quot;value     :&quot;, reflectValue.Field(i).Interface())
+        fmt.Println(&quot;&quot;)
+    }
+}
+
+func main() {
+    var s1 = &amp;student{Name: &quot;wick&quot;, Grade: 2}
+    s1.getPropertyInfo()
+}
+</code></pre><p>输出：</p>
+<pre><code>name      : Name
+data type : string
+value     : wick
+
+name      : Grade
+data type : int
+value     : 2
+</code></pre><h3 id="调用方法">调用方法</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;reflect&quot;
+
+type student struct {
+    Name  string
+    Grade int
+}
+
+func (s *student) SetName(name string) {
+    s.Name = name
+}
+
+func main() {
+    var s1 = &amp;student{Name: &quot;john wick&quot;, Grade: 2}
+    fmt.Println(&quot;name :&quot;, s1.Name)
+
+    var reflectValue = reflect.ValueOf(s1)
+    var method = reflectValue.MethodByName(&quot;SetName&quot;)
+    method.Call([]reflect.Value{
+        reflect.ValueOf(&quot;wick&quot;),
+    })
+
+    fmt.Println(&quot;name :&quot;, s1.Name)
+}
+</code></pre><p>结果：</p>
+<pre><code>nama : john wick
+nama : wick
+</code></pre><h2 id="goroutine">Goroutine</h2>
+<p>Goroutine类似于线程，但并不是线程。线程可以包含很多goroutine。
+将goroutine称为迷你线程更合适。 Goroutine很轻，一个goroutine只需要大约2kB的内存。 
+Goroutine 是异步执行的。</p>
+<p>Goroutine是Go上并发编程中最重要的部分之一。
+Goroutine如此特别的一个原因是它可以运行在多核处理器上。我们可以确定Cpu的核心数量越多，速度就越快。当然内存也要够大。</p>
+<p>并发与并行不同。并行是同时执行许多进程。而并发是一个过程的组成。并发是一种结构，而并行是执行的方式。</p>
+<p>要应用goroutine，必须将作为goroutine执行的过程包装到函数中。
+在调用该函数时，会在其前面添加go关键字，也就创建一个新的goroutine，其任务是运行函数中的代码。</p>
+<p>以下是goroutine的简单实现示例。下面的程序显示10行文本，5行以正常方式执行，5行作为新goroutine执行。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;runtime&quot;
+
+func print(till int, message string) {
+    for i := 0; i &lt; till; i++ {
+        fmt.Println((i + 1), message)
+    }
+}
+
+func main() {
+    //确定为程序执行而激活的核心数
+    runtime.GOMAXPROCS(2)
+
+    go print(5, &quot;hello&quot;)
+    print(5, &quot;how are you&quot;)
+
+    var input string
+    fmt.Scanln(&amp;input)
+}
+</code></pre><p>解释一下，<code>fmt.Scanln(&amp;input)</code>会等待用户回车,将在用户按下回车键之前捕获所有字符，然后将它们保存在变量中。
+因为goroutine print()的执行时间可能比main goroutine main() 的执行时间长，因为两者都是异步的。
+等待用户回车，可以确保go print可以执行完成，以免main先完成，导致程序退出，go print无法执行完成。
+执行的结果是不确定的</p>
+<pre><code>➜  learn-golang go run main.go
+1 hello
+2 hello
+3 hello
+4 hello
+5 hello
+1 how are you
+2 how are you
+3 how are you
+4 how are you
+5 how are you
+
+➜  learn-golang go run main.go
+1 how are you
+2 how are you
+3 how are you
+4 how are you
+1 hello
+2 hello
+5 how are you
+3 hello
+4 hello
+5 hello
+</code></pre><p>试试Scanln的用法</p>
+<pre><code>var s1, s2, s3 string
+fmt.Scanln(&amp;s1, &amp;s2, &amp;s3)
+
+// user inputs: &quot;how are you&quot;
+
+fmt.Println(s1) // how
+fmt.Println(s2) // are
+fmt.Println(s3) // you
+</code></pre><h2 id="channel-通道">Channel 通道</h2>
+<p>通道用于连接一个goroutine和另一个goroutine。
+使用的机制是通过Channel交互数据。通道在一个goroutine中充当发送器，并且在另一个goroutine中充当接收器。
+在通道上发送和接收数据是阻塞的或者说是同步的。</p>
+<p><img src="https://kissjava.cn/usr/uploads/2019/08/2570849395.png" alt="channerl.png"></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;runtime&quot;
+
+func main() {
+    runtime.GOMAXPROCS(2)
+
+	//声明一个字符串类型的通道
+    var messages = make(chan string)
+
+	//创建一个闭包，向messages通道发送数据
+    var sayHelloTo = func(who string) {
+        var data = fmt.Sprintf(&quot;hello %s&quot;, who)
+        messages &lt;- data
+    }
+
+    go sayHelloTo(&quot;Mike&quot;)
+    go sayHelloTo(&quot;Bruce&quot;)
+    go sayHelloTo(&quot;Jack&quot;)
+
+	//message1 从通道messages接收数据，在接收到数据前会阻塞等等
+    var message1 = &lt;-messages
+    fmt.Println(message1)
+
+    var message2 = &lt;-messages
+    fmt.Println(message2)
+
+    var message3 = &lt;-messages
+    fmt.Println(message3)
+}
+</code></pre><p>执行结果</p>
+<pre><code>learn-golang go run main.go
+hello Bruce
+hello Jack
+hello Mike
+➜  learn-golang go run main.go
+hello Jack
+hello Mike
+hello Bruce
+</code></pre><h3 id="通道作为参数">通道作为参数</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;runtime&quot;
+
+func printMessage(what chan string) {
+    fmt.Println(&lt;-what)
+}
+
+func main() {
+    runtime.GOMAXPROCS(2)
+
+    var messages = make(chan string)
+
+    for _, each := range []string{&quot;Jack&quot;, &quot;Bruce&quot;, &quot;Mike&quot;} {
+        go func(who string) {
+            var data = fmt.Sprintf(&quot;hello %s&quot;, who)
+            messages &lt;- data
+        }(each)
+    }
+
+    for i := 0; i &lt; 3; i++ {
+        printMessage(messages)
+    }
+}
+</code></pre><p>执行结果</p>
+<pre><code>learn-golang go run main.go
+hello Mike
+hello Jack
+hello Bruce
+➜  learn-golang go run main.go
+hello Jack
+hello Mike
+hello Bruce
+</code></pre><h3 id="buffer-channel">Buffer Channel</h3>
+<p>带缓冲的通道。
+默认情况下，通道上的数据传输过程是非缓冲的，而不是缓冲在内存中。
+当从goroutine通过信道发送数据的过程时，必须有另一个goroutine负责从同一信道接收数据，其中交换过程是阻塞的。
+也就是说，在交换过程完成之前，将不处理发送和接收数据之后的代码行。</p>
+<p>缓冲通道不同。在缓冲通道中，要确定缓冲器的数量。该数量是确定可以同时发送的数据量。
+只要发送的数据量不超过缓冲区的数量，传输就会异步运行（不阻塞）。</p>
+<p>当发送的数据量不超过缓冲区限制时，在缓冲通道上发送数据的过程是异步的。但在通道数据接收总是同步的。
+<img src="https://kissjava.cn/usr/uploads/2019/08/2740698958.png" alt="channel.png"></p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;runtime&quot;
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	messages := make(chan int, 2)
+
+	go func() {
+		for {
+			i := &lt;-messages
+			fmt.Println(&quot;receive data&quot;, i)
+		}
+	}()
+
+	for i := 0; i &lt; 5; i++ {
+		fmt.Println(&quot;send data&quot;, i)
+		messages &lt;- i
+	}
+}
+</code></pre><p>执行结果：</p>
+<pre><code>➜  learn-golang go run main.go
+send data 0
+send data 1
+send data 2
+send data 3
+receive data 0
+receive data 1
+receive data 2
+receive data 3
+send data 4
+receive data 4
+➜  learn-golang go run main.go
+send data 0
+send data 1
+send data 2
+send data 3
+receive data 0
+receive data 1
+send data 4
+receive data 2
+</code></pre><p>第二次执行时，没有接收到3和4，因为main Goroutine已经执行结束，但是匿名的go goroutine还没完成就被退出了。</p>
+<h3 id="select">select</h3>
+<p>以下程序是在通道中应用select的简单示例。
+准备了两个goroutine，一个用于获取平均数，一个用于获取最大值。
+每个goroutine的操作结果通过一个通道发送到<code>main()</code>函数（有两个通道）。
+在<code>main()</code>函数本身中，使用关键字<code>select</code>接收数据。</p>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;runtime&quot;
+)
+
+func getAverage(numbers []int, ch chan float64) {
+	var sum = 0
+	for _, e := range numbers {
+		sum += e
+	}
+	ch &lt;- float64(sum) / float64(len(numbers))
+}
+
+func getMax(numbers []int, ch chan int) {
+	var max = numbers[0]
+	for _, e := range numbers {
+		if max &lt; e {
+			max = e
+		}
+	}
+	ch &lt;- max
+}
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	var numbers = []int{3, 4, 3, 5, 6, 3, 2, 2, 6, 3, 4, 6, 3}
+	fmt.Println(&quot;numbers :&quot;, numbers)
+
+	var ch1 = make(chan float64)
+	go getAverage(numbers, ch1)
+
+	var ch2 = make(chan int)
+	go getMax(numbers, ch2)
+
+	for i := 0; i &lt; 2; i++ {
+		select {
+		case avg := &lt;-ch1:
+			fmt.Printf(&quot;Avg \t: %.2f \n&quot;, avg)
+		case max := &lt;-ch2:
+			fmt.Printf(&quot;Max \t: %d \n&quot;, max)
+		}
+	}
+}
+</code></pre><p>结果</p>
+<pre><code>➜  learn-golang go run main.go
+numbers : [3 4 3 5 6 3 2 2 6 3 4 6 3]
+Max     : 6 
+Avg     : 3.85 
+</code></pre><h3 id="for-range-close">for range close</h3>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;runtime&quot;
+)
+
+func sendMessage(ch chan&lt;- string) {
+	for i := 0; i &lt; 20; i++ {
+		ch &lt;- fmt.Sprintf(&quot;data %d&quot;, i)
+	}
+	close(ch)
+}
+
+func printMessage(ch &lt;-chan string) {
+	for message := range ch {
+		fmt.Println(message)
+	}
+}
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	var messages = make(chan string)
+	go sendMessage(messages)
+	printMessage(messages)
+}
+</code></pre><h3 id="通道方向">通道方向</h3>
+<ul>
+<li><code>ch chan string</code>	可以发送和接收</li>
+<li><code>ch chan&lt;- string</code>	只能用于发送数据</li>
+<li><code>ch &lt;-chan string</code>	只能用于接收数据</li>
+</ul>
+<h3 id="通道的timeout">通道的Timeout</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;math/rand&quot;
+import &quot;runtime&quot;
+import &quot;time&quot;
+
+func sendData(ch chan&lt;- int) {
+	for i := 0; true; i++ {
+		ch &lt;- i
+		time.Sleep(time.Duration(rand.Int()%10+1) * time.Second)
+	}
+}
+
+func retreiveData(ch &lt;-chan int) {
+loop:
+	for {
+		select {
+		case data := &lt;-ch:
+			fmt.Print(`receive data &quot;`, data, `&quot;`, &quot;\n&quot;)
+		case &lt;-time.After(time.Second * 5):
+			fmt.Println(&quot;timeout. no activities under 5 seconds&quot;)
+			break loop
+		}
+	}
+}
+
+func main() {
+	rand.Seed(time.Now().Unix())
+	runtime.GOMAXPROCS(2)
+
+	var messages = make(chan int)
+
+	go sendData(messages)
+	retreiveData(messages)
+}
+</code></pre><p>select上有2个条件块:</p>
+<ul>
+<li><code>case data := &lt;-ch</code>,通道有数据时满足</li>
+<li><code>case &lt;-time.After(time.Second * 5)</code>,5秒没有接收到数据时满足</li>
+</ul>
+<h2 id="defer--exit">Defer &amp; Exit</h2>
+<p>Defer时延迟触发，会在程序退出前触发
+Exit是强制退出程序</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    defer fmt.Println(&quot;Hello&quot;)
+    fmt.Println(&quot;some text&quot;)
+}
+</code></pre><p>程序会先打印some text，后打印Hello（程序退出前执行）</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;os&quot;
+
+func main() {
+    defer fmt.Println(&quot;Hello&quot;)
+    //强制退出，defer也不会执行
+    os.Exit(1)
+    fmt.Println(&quot;some text&quot;)
+}
+</code></pre><p>直接输出</p>
+<pre><code>go run main.go
+exit status 1
+</code></pre><h2 id="error-panic-还有-recover">Error, Panic, 还有 Recover</h2>
+<p>在Go中，有许多函数返回多个返回值。通常，其中一个返回值是错误类型。
+例如，在<code>strconv.Atoi()</code>函数中。该函数用于将字符串数据转换为数字。此函数返回2个返回值。第一个返回值是转换结果，第二个返回值是错误。
+当转换正常运行时，第二个返回值将为nil。当转换失败时，可以从返回的错误中立即知道原因。</p>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;strconv&quot;
+)
+
+func main() {
+	var input string
+	fmt.Print(&quot;Type some number: &quot;)
+	fmt.Scanln(&amp;input)
+
+	var number int
+	var err error
+	number, err = strconv.Atoi(input)
+
+	if err == nil {
+		fmt.Println(number, &quot;is number&quot;)
+	} else {
+		fmt.Println(input, &quot;is not number&quot;)
+		fmt.Println(err.Error())
+	}
+}
+
+</code></pre><p>执行</p>
+<pre><code>➜  learn-golang go run main.go
+Type some number: 99
+99 is number
+➜  learn-golang go run main.go
+Type some number: abc
+abc is not number
+strconv.Atoi: parsing &quot;abc&quot;: invalid syntax
+</code></pre><h3 id="自定义error">自定义Error</h3>
+<pre><code>package main
+
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+	&quot;strings&quot;
+)
+
+func validate(input string) (bool, error) {
+	if strings.TrimSpace(input) == &quot;&quot; {
+		// 输入为空时，返回false和自定义的错误
+		return false, errors.New(&quot;cannot be empty&quot;)
+	}
+	return true, nil
+}
+func main() {
+	var name string
+	fmt.Print(&quot;Type your name: &quot;)
+	fmt.Scanln(&amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&quot;Hello&quot;, name)
+	} else {
+		fmt.Println(err.Error())
+	}
+}
+</code></pre><p>尝试直接回车：</p>
+<pre><code>➜  learn-golang go run main.go
+Type your name: 
+cannot be empty
+</code></pre><h3 id="panic">Panic</h3>
+<p>把main中的fmt.Println(err.Error()),改成panic(err.Error),如下：</p>
+<pre><code>func main() {
+	var name string
+	fmt.Print(&quot;Type your name: &quot;)
+	fmt.Scanln(&amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&quot;hello&quot;, name)
+	} else {
+		panic(err.Error())
+		fmt.Println(&quot;end&quot;)
+	}
+}
+</code></pre><p>执行：</p>
+<pre><code>➜  learn-golang go run main.go
+Type your name: 
+panic: cannot be empty
+
+goroutine 1 [running]:
+main.main()
+        /Users/michael/Desktop/learn-golang/main.go:24 +0x1fe
+exit status 2
+</code></pre><h3 id="recover-恢复">recover 恢复</h3>
+<p>recov恢复对于处理panic恐慌错误很有用。发生恐慌错误时，恢复处于恐慌状态的接管goroutine（不会出现紧急消息）。
+修改上面的例子，添加<code>catch()</code>函数，在此函数中有一个<code>recov()</code>语句，它将返回应该出现的恐慌错误消息。</p>
+<pre><code>package main
+
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+	&quot;strings&quot;
+)
+
+func validate(input string) (bool, error) {
+	if strings.TrimSpace(input) == &quot;&quot; {
+		// 输入为空时，返回false和自定义的错误
+		return false, errors.New(&quot;cannot be empty&quot;)
+	}
+	return true, nil
+}
+
+func catch() {
+	if r := recover(); r != nil {
+		fmt.Println(&quot;Error occured&quot;, r)
+	} else {
+		fmt.Println(&quot;Application running perfectly&quot;)
+	}
+}
+
+func main() {
+	defer catch()
+	var name string
+	fmt.Print(&quot;Type your name: &quot;)
+	fmt.Scanln(&amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&quot;hello&quot;, name)
+	} else {
+		panic(err.Error())
+		fmt.Println(&quot;end&quot;)
+	}
+}
+</code></pre><p>执行</p>
+<pre><code>➜  learn-golang go run main.go
+Type your name: 
+Error occured cannot be empty
+➜  learn-golang go run main.go
+Type your name: mike
+hello mike
+Application running perfectly
+</code></pre><h3 id="recover-和-iife">recover 和 IIFE</h3>
+<pre><code>func main() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(&quot;Panic occured&quot;, r)
+		} else {
+			fmt.Println(&quot;Application running perfectly&quot;)
+		}
+	}()
+
+	panic(&quot;some error happen&quot;)
+}
+</code></pre><p>执行结果</p>
+<pre><code>➜  learn-golang go run main.go
+Panic occured some error happen
+</code></pre><h2 id="字符串格式化输出">字符串格式化输出</h2>
+<p><code>%s, %d, %.2f, %t，%T</code>
+字符串，整型，2位小数的浮点数, 布尔值，类型名称</p>
+<p><code>%e , %E</code>科学记数法，<code>1.825000e+02, 1.825000E+02</code></p>
+<p>一个unicode代码，形成一串unicode字符</p>
+<pre><code>fmt.Printf(&quot;%c\n&quot;, 1400)
+// ո
+fmt.Printf(&quot;%c\n&quot;, 1235)
+// ӓ
+</code></pre><p><code>fmt.Printf(&quot;%o\n&quot;, data.age)</code>,转成8进制表示的字符串</p>
+<p><code>%x , %X</code>,16进制</p>
+<p><code>fmt.Printf(&quot;%p\n&quot;, &amp;data.name)</code>,输出内存地址</p>
+<p><code>%v</code>,用于格式化任何数据（包括接口类型数据{}）。返回结果是一串原始数据值,例如下面：</p>
+<pre><code>fmt.Printf(&quot;%v\n&quot;, data)
+// {wick 182.5 26 false [eating sleeping]}
+</code></pre><p><code>%+v</code>,用于格式化结构，根据结构结构依次返回每个属性的名称及其值。更清晰对应关系。</p>
+<pre><code>fmt.Printf(&quot;%+v\n&quot;, data)
+// {name:wick height:182.5 age:26 isGraduated:false hobbies:[eating sleeping]}
+</code></pre><h2 id="时间解析时间和格式化时间">时间，解析时间和格式化时间</h2>
+<h3 id="timetime">time.Time</h3>
+<p>time.Time类型是日期时间对象的表示。有两种方法可以选择创建此类型的数据</p>
+<ul>
+<li>使用time.Now（）将当前时间信息设为time.Time对象</li>
+<li>使用time.Date（）创建一个具有自定义信息的time.Time类型的新对象</li>
+</ul>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;time&quot;
+
+func main() {
+	var time1 = time.Now()
+	fmt.Printf(&quot;time1 %v\n&quot;, time1)
+	// time1 2019-08-21 17:19:21.673645 +0800 CST m=+0.000212639
+
+	loc, _ := time.LoadLocation(&quot;Local&quot;) //服务器设置的时区
+	var time2 = time.Date(2011, 12, 24, 10, 20, 0, 0, loc)
+	fmt.Printf(&quot;time2 %v\n&quot;, time2)
+	//time2 2011-12-24 10:20:00 +0800 CST
+
+	var time3 = time.Date(2011, 12, 24, 10, 20, 0, 0, time.UTC)
+	fmt.Printf(&quot;time3 %v\n&quot;, time3)
+	// time3 2011-12-24 10:20:00 +0000 UTC
+
+	var now = time.Now()
+	fmt.Println(&quot;year:&quot;, now.Year(), &quot;month:&quot;, now.Month())
+	// year: 2019 month: August
+
+	var date, err = time.Parse(time.RFC3339, &quot;2018-12-23T10:30:21Z&quot;)
+	if err != nil {
+		fmt.Println(&quot;error&quot;, err.Error())
+		return
+	}
+	fmt.Println(date)
+	//2018-12-23 10:30:21 +0000 UTC
+
+	//以下方法用到比较多些
+	localTime, err := time.ParseInLocation(&quot;2006-01-02 15:04:05&quot;, &quot;2017-12-03 22:01:02&quot;, time.Local)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(localTime)
+	//2017-12-03 22:01:02 +0800 CST
+
+	fmt.Println(time.Now())                          //2019-08-21 18:43:05.35283 +0800 CST m=+0.000470403
+	fmt.Println(time.Now().Sub(localTime).Seconds()) //5.4074523352835e+07
+}
+</code></pre><h2 id="计时器触发器">计时器,触发器</h2>
+<p>###time.Sleep()</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;time&quot;
+
+func main() {
+	fmt.Println(&quot;start&quot;)
+	//阻塞，休眠4秒后再启动
+	time.Sleep(time.Second * 4)
+	fmt.Println(&quot;after 4 seconds&quot;)
+}
+</code></pre><h3 id="timenewtimer">time.NewTimer()</h3>
+<p>此功能与<code>time.Sleep()</code>略有不同。 <code>time.NewTimer()</code>函数返回类型为<code>*time.Timer</code>的对象，该对象具有类型为<code>channel</code>的<code>time.C</code>属性。
+工作原理：在指定的时间延迟后，数据将通过通道C发送。使用此函数后必须跟一个从通道C接收数据的语句.</p>
+<pre><code>func main() {
+	//4秒后将有数据发送到timer.C通道
+	var timer = time.NewTimer(4 * time.Second)
+	fmt.Println(&quot;start&quot;)
+	//&lt;-timer.C代码行表示从timer.C通道接收数据。
+	&lt;-timer.C
+	//由于通道接收本身是阻塞的，因此`fmt.Println(&quot;finish&quot;)1语句将在4秒后执行。
+	fmt.Println(&quot;finish&quot;)
+}
+</code></pre><h3 id="timeafterfunc">time.AfterFunc()</h3>
+<p><code>time.AfterFunc()</code>函数有2个参数。第一个参数是计时器持续时间，第二个参数是回调。如果时间已经满足定时器持续时间，则将执行回调</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;time&quot;
+
+func main() {
+	time.AfterFunc(4*time.Second, func() {
+		fmt.Println(&quot;expired&quot;)
+	})
+
+	fmt.Println(&quot;start&quot;)
+	fmt.Println(&quot;finish&quot;)
+	time.Sleep(5 * time.Second)
+}
+</code></pre><p>执行：</p>
+<ul>
+<li>time.AfterFunc本身不会阻塞</li>
+<li>先输出start和finish</li>
+<li>4秒后，输出expired</li>
+<li>程序结束
+如果最后不休眠，会看不到expired，time.AfterFunc会是一个gorutine，main gorouting会先结束导致看不到exprired。</li>
+</ul>
+<h3 id="使用ticker调度程序">使用Ticker调度程序</h3>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	done := make(chan bool)
+	ticker := time.NewTicker(time.Second)
+
+    // 休眠10秒后，给通道发送true
+	go func() {
+		time.Sleep(10 * time.Second) // wait for 10 seconds
+		done &lt;- true
+	}()
+
+    // 如果通道取到为true，停止tiker，并结束跳出
+    // 否则打印出Hello 和 当前时间
+	for {
+		select {
+		case &lt;-done:
+			ticker.Stop()
+			return
+		case t := &lt;-ticker.C:
+			fmt.Println(&quot;Hello !!&quot;, t)
+		}
+	}
+}
+
+</code></pre><p>执行：</p>
+<pre><code>➜  learn-golang go run main.go
+Hello !! 2019-08-22 14:20:04.735523 +0800 CST m=+1.004185671
+Hello !! 2019-08-22 14:20:05.736374 +0800 CST m=+2.005077374
+Hello !! 2019-08-22 14:20:06.736541 +0800 CST m=+3.005285713
+Hello !! 2019-08-22 14:20:07.735261 +0800 CST m=+4.004046067
+Hello !! 2019-08-22 14:20:08.734633 +0800 CST m=+5.003458281
+Hello !! 2019-08-22 14:20:09.735612 +0800 CST m=+6.004478660
+Hello !! 2019-08-22 14:20:10.736302 +0800 CST m=+7.005209268
+Hello !! 2019-08-22 14:20:11.735903 +0800 CST m=+8.004850939
+Hello !! 2019-08-22 14:20:12.736244 +0800 CST m=+9.005233132
+Hello !! 2019-08-22 14:20:13.735353 +0800 CST m=+10.004382172
+</code></pre><h3 id="用goroutine做timer">用Goroutine做Timer</h3>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;os&quot;
+import &quot;time&quot;
+
+func timer(timeout int, ch chan&lt;- bool) {
+	time.AfterFunc(time.Duration(timeout)*time.Second, func() {
+		ch &lt;- true
+	})
+}
+
+func watcher(timeout int, ch &lt;-chan bool) {
+	&lt;-ch
+	fmt.Println(&quot;\ntime out! no answer more than&quot;, timeout, &quot;seconds&quot;)
+	os.Exit(0)
+}
+
+func main() {
+	var timeout = 5
+	var ch = make(chan bool)
+
+	go timer(timeout, ch)
+	go watcher(timeout, ch)
+
+	var input string
+	fmt.Print(&quot;what is 725/25 ? &quot;)
+	fmt.Scan(&amp;input)
+
+	if input == &quot;29&quot; {
+		fmt.Println(&quot;the answer is right!&quot;)
+	} else {
+		fmt.Println(&quot;the answer is wrong!&quot;)
+	}
+}
+</code></pre><p>执行：</p>
+<pre><code>➜  learn-golang go run main.go
+what is 725/25 ? 9
+the answer is wrong!
+➜  learn-golang go run main.go
+what is 725/25 ? 
+time out! no answer more than 5 seconds
+➜  learn-golang go run main.go
+what is 725/25 ? 29
+the answer is right!
+</code></pre><h2 id="数据类型之间的转换">数据类型之间的转换</h2>
+<h3 id="strconvatoi">strconv.Atoi()</h3>
+<p>字符串转数字</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+import &quot;strconv&quot;
+
+func main() {
+	var str = &quot;124&quot;
+	var num, err = strconv.Atoi(str)
+
+	if err == nil {
+		fmt.Println(num) // 124
+	}
+}
+</code></pre><p>数字转字符串</p>
+<pre><code>var num = 124
+var str = strconv.Itoa(num)
+
+fmt.Println(str) // &quot;124&quot;
+</code></pre><h3 id="strconvparseint">strconv.ParseInt()</h3>
+<p>解析成int</p>
+<pre><code>var str = &quot;124&quot;
+//原为10进制，int64
+var num, err = strconv.ParseInt(str, 10, 64)
+
+if err == nil {
+    fmt.Println(num) // 124(int64)
+}
+</code></pre><p>另一个demo</p>
+<pre><code>var str = &quot;1010&quot;
+//原为2进制，int8
+var num, err = strconv.ParseInt(str, 2, 8)
+
+if err == nil {
+    fmt.Println(num) // 10
+}
+</code></pre><h3 id="strconvformatint">strconv.FormatInt()</h3>
+<p>将int64数字数据转换为字符串</p>
+<pre><code>var num = int64(24)
+var str = strconv.FormatInt(num, 8)
+fmt.Println(str) // 30
+</code></pre><h3 id="strconvparsefloat">strconv.ParseFloat()</h3>
+<p>字符串解析成浮点数float32</p>
+<pre><code>var str = &quot;24.12&quot;
+var num, err = strconv.ParseFloat(str, 32)
+
+if err == nil {
+    fmt.Println(num) // 24.1200008392334
+}
+</code></pre><h3 id="strconvformatfloat">strconv.FormatFloat()</h3>
+<p>float格式化为字符串</p>
+<pre><code>var num = float64(24.12)
+var str = strconv.FormatFloat(num, 'f', 6, 64)
+
+fmt.Println(str) // 24.120000
+</code></pre><p>在上面的代码中，float64类型的数据24.12被转换为格式为<code>f</code>，
+6是转换后的小数数据长度。</p>
+<h3 id="strconvparsebool">strconv.ParseBool()</h3>
+<p>转为bool类型的值</p>
+<pre><code>var str = &quot;true&quot;
+var bul, err = strconv.ParseBool(str)
+
+if err == nil {
+    fmt.Println(bul) // true
+}
+</code></pre><h3 id="strconvformatbool">strconv.FormatBool()</h3>
+<pre><code>var bul = true
+var str = strconv.FormatBool(bul)
+
+fmt.Println(str) // &quot;true&quot;
+</code></pre><h3 id="数据类型关键字可用于转换或数据类型之间的转换">数据类型关键字可用于转换或数据类型之间的转换</h3>
+<pre><code>var a float64 = float64(24)
+fmt.Println(a) // 24
+
+var b int32 = int32(24.00)
+fmt.Println(b) // 24
+</code></pre><h3 id="string--byte-转换">string , byte 转换</h3>
+<pre><code>var text1 = &quot;halo&quot;
+var b = []byte(text1)
+
+fmt.Printf(&quot;%d %d %d %d \n&quot;, b[0], b[1], b[2], b[3])
+// 104 97 108 111
+</code></pre><h3 id="interface的转化">interface{}的转化</h3>
+<pre><code>var data = map[string]interface{}{
+    &quot;nama&quot;:    &quot;john wick&quot;,
+    &quot;grade&quot;:   2,
+    &quot;height&quot;:  156.5,
+    &quot;isMale&quot;:  true,
+    &quot;hobbies&quot;: []string{&quot;eating&quot;, &quot;sleeping&quot;},
+}
+
+fmt.Println(data[&quot;nama&quot;].(string))
+fmt.Println(data[&quot;grade&quot;].(int))
+fmt.Println(data[&quot;height&quot;].(float64))
+fmt.Println(data[&quot;isMale&quot;].(bool))
+fmt.Println(data[&quot;hobbies&quot;].([]string))
+
+var data = map[string]interface{}{
+		&quot;nama&quot;:    &quot;john wick&quot;,
+		&quot;grade&quot;:   2,
+		&quot;height&quot;:  156.5,
+		&quot;isMale&quot;:  true,
+		&quot;hobbies&quot;: []string{&quot;eating&quot;, &quot;sleeping&quot;},
+	}
+
+	fmt.Println(data[&quot;nama&quot;].(string))
+	fmt.Println(data[&quot;grade&quot;].(int))
+	fmt.Println(data[&quot;height&quot;].(float64))
+	fmt.Println(data[&quot;isMale&quot;].(bool))
+	fmt.Println(data[&quot;hobbies&quot;].([]string))
+
+	fmt.Println(&quot;=========================&quot;)
+
+	for _, val := range data {
+		switch val.(type) {
+		case string:
+			fmt.Println(val.(string))
+		case int:
+			fmt.Println(val.(int))
+		case float64:
+			fmt.Println(val.(float64))
+		case bool:
+			fmt.Println(val.(bool))
+		case []string:
+			fmt.Println(val.([]string))
+		default:
+			fmt.Println(val.(int))
+		}
+	}
+</code></pre><p>输出：</p>
+<pre><code>john wick
+2
+156.5
+true
+[eating sleeping]
+=========================
+true
+[eating sleeping]
+john wick
+2
+156.5
+</code></pre><h3 id="stringshasprefix">strings.HasPrefix()</h3>
+<pre><code>var isPrefix1 = strings.HasPrefix(&quot;john wick&quot;, &quot;jo&quot;)
+fmt.Println(isPrefix1) // true
+
+var isPrefix2 = strings.HasPrefix(&quot;john wick&quot;, &quot;wi&quot;)
+fmt.Println(isPrefix2) // false
+</code></pre><h3 id="stringshassuffix">strings.HasSuffix()</h3>
+<pre><code>var isSuffix1 = strings.HasSuffix(&quot;john wick&quot;, &quot;ic&quot;)
+fmt.Println(isSuffix1) // false
+
+var isSuffix2 = strings.HasSuffix(&quot;john wick&quot;, &quot;ck&quot;)
+fmt.Println(isSuffix2) // true
+</code></pre><h3 id="stringscount">strings.Count()</h3>
+<pre><code>var howMany = strings.Count(&quot;ethan hunt&quot;, &quot;t&quot;)
+fmt.Println(howMany) // 2
+</code></pre><h3 id="stringsindex">strings.Index()</h3>
+<pre><code>var index1 = strings.Index(&quot;ethan hunt&quot;, &quot;ha&quot;)
+fmt.Println(index1) // 2
+
+var index2 = strings.Index(&quot;ethan hunt&quot;, &quot;n&quot;)
+fmt.Println(index2) // 4
+</code></pre><h3 id="stringsreplace">strings.Replace()</h3>
+<pre><code>var text = &quot;banana&quot;
+var find = &quot;a&quot;
+var replaceWith = &quot;o&quot;
+
+var newText1 = strings.Replace(text, find, replaceWith, 1)
+fmt.Println(newText1) // &quot;bonana&quot;
+
+var newText2 = strings.Replace(text, find, replaceWith, 2)
+fmt.Println(newText2) // &quot;bonona&quot;
+
+var newText3 = strings.Replace(text, find, replaceWith, -1)
+fmt.Println(newText3) // &quot;bonono&quot;
+</code></pre><h3 id="stringsrepeat">strings.Repeat()</h3>
+<pre><code>var str = strings.Repeat(&quot;na&quot;, 4)
+fmt.Println(str) // &quot;nananana&quot;
+</code></pre><h3 id="stringssplit">strings.Split()</h3>
+<pre><code>var string1 = strings.Split(&quot;the dark knight&quot;, &quot; &quot;)
+fmt.Println(string1) // [&quot;the&quot;, &quot;dark&quot;, &quot;knight&quot;]
+
+var string2 = strings.Split(&quot;batman&quot;, &quot;&quot;)
+fmt.Println(string2) // [&quot;b&quot;, &quot;a&quot;, &quot;t&quot;, &quot;m&quot;, &quot;a&quot;, &quot;n&quot;]
+</code></pre><h3 id="stringsjoin">strings.Join()</h3>
+<pre><code>var data = []string{&quot;banana&quot;, &quot;papaya&quot;, &quot;tomato&quot;}
+var str = strings.Join(data, &quot;-&quot;)
+fmt.Println(str) // &quot;banana-papaya-tomato&quot;
+</code></pre><h3 id="stringstolower-stringstoupper">strings.ToLower() ,strings.ToUpper()</h3>
+<pre><code>var str = strings.ToLower(&quot;aLAy&quot;)
+fmt.Println(str) // &quot;alay&quot;
+
+var str1 = strings.ToUpper(&quot;eat!&quot;)
+fmt.Println(str1) // &quot;EAT!&quot;
+</code></pre>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2019-08-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/">
+			下回<br>拆分echo示例项目的crud模块
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/">
+			上回<br>Demo 学 Echo Part17 输出Pdf
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1116 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part10 安全的Cookie</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</link>
+        <pubDate>Sat, 17 Aug 2019 19:38:14 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用securecookie非常简单，通过securecookie.New（）创建一个安全的cookie对象，然后使用该对象进行编码 - 解码cookie数据操作。调用.New（）函数需要2个参数。
+第一个，使用HMAC加密算法验证cookie数据需要的哈希密钥
+第二个，cookie数据加密需要块密钥，这些密钥是可选的。使用的默认加密算法是AES。&lt;/p&gt;
+&lt;p&gt;代码中生成随机字符串是通过使用gubrak的第三方库完成的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;time&amp;quot;
+
+	&amp;quot;github.com/gorilla/securecookie&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/novalagung/gubrak&amp;quot;
+)
+
+type M map[string]interface{}
+
+var sc = securecookie.New([]byte(&amp;quot;very-secret&amp;quot;), []byte(&amp;quot;a-lot-secret-yay&amp;quot;))
+
+func setCookie(c echo.Context, name string, data M) error {
+	encoded, err := sc.Encode(name, data)
+	if err != nil {
+		return err
+	}
+
+	cookie := &amp;amp;http.Cookie{
+		Name:     name,
+		Value:    encoded,
+		Path:     &amp;quot;/&amp;quot;,
+		Secure:   false,
+		HttpOnly: true,
+		Expires:  time.Now().Add(1 * time.Hour),
+	}
+	http.SetCookie(c.Response(), cookie)
+
+	return nil
+}
+
+func getCookie(c echo.Context, name string) (M, error) {
+	cookie, err := c.Request().Cookie(name)
+	if err == nil {
+
+		data := M{}
+		if err = sc.Decode(name, cookie.Value, &amp;amp;data); err == nil {
+			return data, nil
+		}
+	}
+
+	return nil, err
+}
+
+func main() {
+	const COOKIE_NAME = &amp;quot;kissjava_cn_data&amp;quot;
+
+	e := echo.New()
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		data, err := getCookie(c, COOKIE_NAME)
+		if err != nil &amp;amp;&amp;amp; err != http.ErrNoCookie &amp;amp;&amp;amp; err != securecookie.ErrMacInvalid {
+			return err
+		}
+
+		if data == nil {
+			data = M{&amp;quot;Message&amp;quot;: &amp;quot;Hello&amp;quot;, &amp;quot;ID&amp;quot;: gubrak.RandomString(32)}
+
+			err = setCookie(c, COOKIE_NAME, data)
+			if err != nil {
+				return err
+			}
+		}
+
+		return c.JSON(http.StatusOK, data)
+	})
+
+	e.GET(&amp;quot;/delete&amp;quot;, func(c echo.Context) error {
+
+		cookie := &amp;amp;http.Cookie{}
+		cookie.Name = COOKIE_NAME
+		cookie.Path = &amp;quot;/&amp;quot;
+		cookie.MaxAge = -1
+		cookie.Expires = time.Unix(0, 0)
+		http.SetCookie(c.Response(), cookie)
+
+		return c.String(http.StatusOK, &amp;quot;Delete Cookie.&amp;quot;)
+
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试。&lt;/p&gt;
+&lt;p&gt;浏览器访问http://localhost:9000/index
+应用会先尝试读取Cookie，如果读取不到&lt;code&gt;data==nil&lt;/code&gt;就会生成一个Cookie；
+第二次访问可以读取到，然后解码成对应的数据
+可以用chrome的调试工具看到cookie的key为kissjava_cn_data&lt;/p&gt;
+&lt;p&gt;访问http://localhost:9000/delete 会删除cookie;完成后调试工具里也就没有cookie了&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part10-%E5%AE%89%E5%85%A8%E7%9A%84cookie/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part9 配置文件</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Sat, 17 Aug 2019 17:22:53 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;配置文件可以用json，YAML格式
+app.conf.json&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;appName&amp;quot;: &amp;quot;SimpleApp&amp;quot;,
+
+    &amp;quot;server&amp;quot;: {
+        &amp;quot;port&amp;quot;: 5000
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/spf13/viper&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+
+	viper.SetConfigType(&amp;quot;json&amp;quot;)
+	viper.AddConfigPath(&amp;quot;.&amp;quot;)
+	viper.SetConfigName(&amp;quot;app.conf&amp;quot;)
+
+	err := viper.ReadInConfig()
+	if err != nil {
+		e.Logger.Fatal(err)
+	}
+
+	fmt.Println(&amp;quot;Starting&amp;quot;, viper.GetString(&amp;quot;appName&amp;quot;))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:&amp;quot; + viper.GetString(&amp;quot;server.port&amp;quot;)))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+Starting SimpleApp
+
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v4.1.9
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:5000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用YAML
+app.config.yaml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;appName: SimpleApp2
+server:
+  port: 9000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;代码部分修改一下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;viper.SetConfigType(&amp;quot;yaml&amp;quot;)
+viper.AddConfigPath(&amp;quot;.&amp;quot;)
+viper.SetConfigName(&amp;quot;app.config&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+Starting SimpleApp2
+
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v4.1.9
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:9000
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part9-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part8 命令行解析</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</link>
+        <pubDate>Sat, 17 Aug 2019 16:25:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;启动服务是可以指定app name和port。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;gopkg.in/alecthomas/kingpin.v2&amp;quot;
+)
+
+var (
+	argAppName = kingpin.Arg(&amp;quot;name&amp;quot;, &amp;quot;Application name&amp;quot;).Required().String()
+	argPort    = kingpin.Arg(&amp;quot;port&amp;quot;, &amp;quot;Web server port&amp;quot;).Default(&amp;quot;9000&amp;quot;).Int()
+)
+
+func main() {
+	kingpin.Parse()
+
+	appName := *argAppName
+	port := fmt.Sprintf(&amp;quot;:%d&amp;quot;, *argPort)
+
+	fmt.Printf(&amp;quot;Starting %s at %s&amp;quot;, appName, port)
+
+	e := echo.New()
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {
+		return c.JSON(http.StatusOK, true)
+	})
+	e.Logger.Fatal(e.Start(port))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;编译后执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; ./main &amp;quot;Echo Demo part 8&amp;quot; 3000       
+Starting Echo Demo part 8 at :3000
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v4.1.9
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:3000
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part8-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part7 Middleware 和 Logging</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</link>
+        <pubDate>Sat, 17 Aug 2019 16:08:04 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+中间件是在处理http请求之前或之后调用的代码块。中间件通常按功能来做，例如：身份验证中间件，用于日志记录的中间件，用于gzip压缩的中间件等
+跑一遍，来理解&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func middlewareOne(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		fmt.Println(&amp;quot;from middleware one&amp;quot;)
+		return next(c)
+	}
+}
+
+func middlewareTwo(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		fmt.Println(&amp;quot;from middleware two&amp;quot;)
+		return next(c)
+	}
+}
+
+func main() {
+	e := echo.New()
+
+	// middleware here
+	e.Use(middlewareOne)
+	e.Use(middlewareTwo)
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {
+		fmt.Println(&amp;quot;threeeeee!&amp;quot;)
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;客户端&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://localhost:9000/index
+output=&amp;gt;true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;服务端输出&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http server started on [::]:9000
+from middleware one
+from middleware two
+threeeeee!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;集成第三方中间件:使用&lt;code&gt;echo.WrapMiddleware（）&lt;/code&gt;函数将中间件转换为echo兼容中间件，前提是必须采用&lt;code&gt;func（http.Handler）http.Handler&lt;/code&gt;的形式来声明中间件。
+例如&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func middlewareSomething(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println(&amp;quot;from middleware something&amp;quot;)
+		next.ServeHTTP(w, r)
+	})
+}
+
+func main() {
+	e := echo.New()
+
+	// middleware here
+	e.Use(echo.WrapMiddleware(middlewareSomething))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {
+		fmt.Println(&amp;quot;threeeeee!&amp;quot;)
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#Client:
+curl http://localhost:9000/index
+true
+#Server:
+http server started on [::]:9000
+from middleware something
+threeeeee!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Echo 自己的 Middleware: Logger&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: &amp;quot;method=${method}, uri=${uri}, status=${status}\n&amp;quot;,
+	}))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) (err error) {
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行一下
+服务端按定义出现了一行记录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#Client:
+curl http://localhost:9000/index
+true
+#Server:
+http server started on [::]:9000
+method=GET, uri=/index, status=200
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part7-middleware-%E5%92%8C-logging/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part6 模板渲染</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</link>
+        <pubDate>Sat, 17 Aug 2019 15:17:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+echo解析和呈现模板的过程不是由自身处理，而是由&lt;code&gt;html/template&lt;/code&gt;包处理。因此，echo中的模板渲染方式与使用普通golang应用程序相同.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;html/template&amp;quot;
+	&amp;quot;io&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+type M map[string]interface{}
+
+type Info struct {
+	Affiliation string
+	Address     string
+}
+
+func (t Info) GetAffiliationDetailInfo() string {
+	return &amp;quot;have 31 divisions&amp;quot;
+}
+
+type Person struct {
+	Name    string
+	Gender  string
+	Hobbies []string
+	Info    Info
+}
+
+//.template属性负责解析和呈现模板
+//.location属性指向模板文件所在的文件夹路径。
+// debug 如果为false，则模板解析仅在应用程序启动时执行一次。此模式适合在生产阶段激活
+type Renderer struct {
+	template *template.Template
+	debug    bool
+	location string
+}
+
+//创建NewRenderer（）函数，以便更容易初始化渲染器对象
+func NewRenderer(location string, debug bool) *Renderer {
+	tpl := new(Renderer)
+	tpl.location = location
+	tpl.debug = debug
+
+	tpl.ReloadTemplates()
+
+	return tpl
+}
+
+//为struct renderer准备两个方法，即ReloadTemplates（）和.Render（）
+
+//ReloadTemplates方法用于解析模板。初始化渲染器对象时必须调用此方法。
+//如果.debug == true，则每次访问路径时都必须调用此方法
+func (t *Renderer) ReloadTemplates() {
+	t.template = template.Must(template.ParseGlob(t.location))
+}
+
+func (t *Renderer) Render(
+	w io.Writer,
+	name string,
+	data interface{},
+	c echo.Context,
+) error {
+	if t.debug {
+		t.ReloadTemplates()
+	}
+
+	return t.template.ExecuteTemplate(w, name, data)
+}
+
+func main() {
+	e := echo.New()
+
+	e.Renderer = NewRenderer(&amp;quot;./*.html&amp;quot;, true)
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		data := M{&amp;quot;message&amp;quot;: &amp;quot;Hello World!&amp;quot;}
+		return c.Render(http.StatusOK, &amp;quot;index.html&amp;quot;, data)
+	})
+
+	e.GET(&amp;quot;/user&amp;quot;, func(c echo.Context) error {
+		person := Person{
+			Name:    &amp;quot;Bruce&amp;quot;,
+			Gender:  &amp;quot;male&amp;quot;,
+			Hobbies: []string{&amp;quot;Reading Books&amp;quot;, &amp;quot;Traveling&amp;quot;, &amp;quot;Buying things&amp;quot;},
+			Info:    Info{&amp;quot;Julin Enterprises&amp;quot;, &amp;quot;Suzhou City&amp;quot;},
+		}
+		return c.Render(http.StatusOK, &amp;quot;user.html&amp;quot;, person)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;index.html 如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        Message from index: {{.message}}!
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更复杂的user.html&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;Learning html/template Actions&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;table&amp;gt;
+                &amp;lt;tr&amp;gt;
+                    {{/* example how to use actions */}}
+                    &amp;lt;td&amp;gt;{{&amp;quot;姓名&amp;quot;}}&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: {{.Name}}&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;性别&amp;lt;/td&amp;gt;
+                    {{$gender := .Gender}}
+                    &amp;lt;td style=&amp;quot;text-transform: capitalize;&amp;quot;&amp;gt;: 
+                        {{$gender}}
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;爱好&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: 
+                        {{range $index, $elem := .Hobbies}}
+                            {{$elem}},
+                        {{end}}
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;联系&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: {{.Info.Affiliation}} ({{.Info.GetAffiliationDetailInfo}})&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                {{with .Info}}
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;Address&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: {{.Address}}&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                {{end}}
+
+                {{if eq .Name &amp;quot;Bruce&amp;quot;}}
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td colspan=&amp;quot;2&amp;quot; style=&amp;quot;font-weight: bold;&amp;quot;&amp;gt;
+                        Ooooh，Bruce!
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                {{end}}
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://localhost:9000/index
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        Message from index: Hello World!!
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+
+curl http://localhost:9000/user
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;title&amp;gt;Learning html/template Actions&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;table&amp;gt;
+                &amp;lt;tr&amp;gt;
+                    
+                    &amp;lt;td&amp;gt;姓名&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: Bruce&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;性别&amp;lt;/td&amp;gt;
+                    
+                    &amp;lt;td style=&amp;quot;text-transform: capitalize;&amp;quot;&amp;gt;: 
+                        male
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;爱好&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: 
+                        
+                            Reading Books,
+                        
+                            Traveling,
+                        
+                            Buying things,
+                        
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;联系&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: Julin Enterprises (have 31 divisions)&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td&amp;gt;Address&amp;lt;/td&amp;gt;
+                    &amp;lt;td&amp;gt;: Suzhou City&amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                
+
+                
+                &amp;lt;tr&amp;gt;
+                    &amp;lt;td colspan=&amp;quot;2&amp;quot; style=&amp;quot;font-weight: bold;&amp;quot;&amp;gt;
+                        Ooooh，Bruce!
+                    &amp;lt;/td&amp;gt;
+                &amp;lt;/tr&amp;gt;
+                
+        &amp;lt;/table&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part6-%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part5 HTTP 错误处理</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+        <pubDate>Sat, 17 Aug 2019 13:30:39 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+自定义错误处理程序
+覆盖e.HTTPErrorHandler属性&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
+)
+
+type User struct {
+	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
+	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
+	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
+}
+
+type CustomValidator struct {
+	validator *validator.Validate
+}
+
+func (cv *CustomValidator) Validate(i interface{}) error {
+	return cv.validator.Struct(i)
+}
+
+func main() {
+	e := echo.New()
+
+	e.HTTPErrorHandler = func(err error, c echo.Context) {
+		report, ok := err.(*echo.HTTPError)
+		if !ok {
+			report = echo.NewHTTPError(http.StatusInternalServerError, err.Error())
+		}
+
+		c.Logger().Error(report)
+		c.JSON(report.Code, report)
+	}
+
+	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
+
+	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+		u := new(User)
+		if err := c.Bind(u); err != nil {
+			return err
+		}
+		if err := c.Validate(u); err != nil {
+			return err
+		}
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/users \
+     -d &#39;name=Joe&#39; \
+     -d &#39;email=nope@novalagung.com&#39; \
+     -d &#39;age=100&#39;
+#output =&amp;gt; {&amp;quot;message&amp;quot;:&amp;quot;Key: &#39;User.Age&#39; Error:Field validation for &#39;Age&#39; failed on the &#39;lte&#39; tag&amp;quot;}
+
+#服务端也会显示错误Log（c.Logger().Error()输出)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还不错，但是错误提醒对用户不友好，改进一下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
+)
+
+type User struct {
+	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
+	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
+	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
+}
+
+type CustomValidator struct {
+	validator *validator.Validate
+}
+
+func (cv *CustomValidator) Validate(i interface{}) error {
+	return cv.validator.Struct(i)
+}
+
+func main() {
+	e := echo.New()
+
+	e.HTTPErrorHandler = func(err error, c echo.Context) {
+		report, ok := err.(*echo.HTTPError)
+		if !ok {
+			report = echo.NewHTTPError(http.StatusInternalServerError, err.Error())
+		}
+
+		if castedObject, ok := err.(validator.ValidationErrors); ok {
+			for _, err := range castedObject {
+				switch err.Tag() {
+				case &amp;quot;required&amp;quot;:
+					report.Message = fmt.Sprintf(&amp;quot;%s is required&amp;quot;,
+						err.Field())
+				case &amp;quot;email&amp;quot;:
+					report.Message = fmt.Sprintf(&amp;quot;%s is not valid email&amp;quot;,
+						err.Field())
+				case &amp;quot;gte&amp;quot;:
+					report.Message = fmt.Sprintf(&amp;quot;%s value must be greater than %s&amp;quot;,
+						err.Field(), err.Param())
+				case &amp;quot;lte&amp;quot;:
+					report.Message = fmt.Sprintf(&amp;quot;%s value must be lower than %s&amp;quot;,
+						err.Field(), err.Param())
+				}
+
+				break
+			}
+		}
+
+		c.Logger().Error(report)
+		c.JSON(report.Code, report)
+	}
+
+	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
+
+	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+		u := new(User)
+		if err := c.Bind(u); err != nil {
+			return err
+		}
+		if err := c.Validate(u); err != nil {
+			return err
+		}
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再来测试一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/users \
+     -d &#39;name=Joe&#39; \
+     -d &#39;email=nope@novalagung.com&#39; \
+     -d &#39;age=100&#39;
+#output =&amp;gt; {&amp;quot;message&amp;quot;:&amp;quot;Age value must be lower than 80&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自定义错误页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
+)
+
+type User struct {
+	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
+	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
+	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
+}
+
+type CustomValidator struct {
+	validator *validator.Validate
+}
+
+func (cv *CustomValidator) Validate(i interface{}) error {
+	return cv.validator.Struct(i)
+}
+
+func main() {
+	e := echo.New()
+
+	e.HTTPErrorHandler = func(err error, c echo.Context) {
+		report, ok := err.(*echo.HTTPError)
+		if !ok {
+			report = echo.NewHTTPError(http.StatusInternalServerError, err.Error())
+		}
+
+		errPage := fmt.Sprintf(&amp;quot;%d.html&amp;quot;, report.Code)
+		if err := c.File(errPage); err != nil {
+			c.HTML(report.Code, &amp;quot;Errrrooooorrrrr&amp;quot;)
+		}
+	}
+
+	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
+
+	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+		u := new(User)
+		if err := c.Bind(u); err != nil {
+			return err
+		}
+		if err := c.Validate(u); err != nil {
+			return err
+		}
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时有对应code.html时会show出来，否则就出&lt;code&gt;Errrrooooorrrrr&lt;/code&gt;&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part4 HTTP 请求的验证</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
+        <pubDate>Sat, 17 Aug 2019 10:52:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+HTTP请求的验证，采用了validator.v9&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
+)
+
+type User struct {
+	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
+	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
+	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
+}
+
+type CustomValidator struct {
+	validator *validator.Validate
+}
+
+func (cv *CustomValidator) Validate(i interface{}) error {
+	return cv.validator.Struct(i)
+}
+
+func main() {
+	e := echo.New()
+	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
+
+	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+		u := new(User)
+		if err := c.Bind(u); err != nil {
+			return err
+		}
+		if err := c.Validate(u); err != nil {
+			return err
+		}
+
+		return c.JSON(http.StatusOK, true)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;规则比较简单，name和email为必要项目，email还需要符合email规则；年龄&amp;gt;=0且&amp;lt;=80。
+测试一下,能过返回true，否则返回&lt;code&gt;{&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}&lt;/code&gt;且响应500.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/users \
+     -d &#39;name=Joe&#39; \
+     -d &#39;email=nope@novalagung.com&#39; \
+     -d &#39;age=100&#39;
+# output =&amp;gt; {&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}
+
+curl -X POST http://localhost:9000/users \
+     -d &#39;name=Joe&#39; \
+     -d &#39;email=nope@novalagung.com&#39; \
+     -d &#39;age=10&#39;  
+#output =&amp;gt; true
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part3 解析HTTP请求</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
+        <pubDate>Sat, 17 Aug 2019 10:13:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+解析HTTP请求&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+type User struct {
+	Name  string `json:&amp;quot;name&amp;quot; form:&amp;quot;name&amp;quot; query:&amp;quot;name&amp;quot;`
+	Email string `json:&amp;quot;email&amp;quot; form:&amp;quot;email&amp;quot; query:&amp;quot;email&amp;quot;`
+}
+
+func main() {
+	r := echo.New()
+
+	r.Any(&amp;quot;/user&amp;quot;, func(c echo.Context) (err error) {
+		u := new(User)
+		if err = c.Bind(u); err != nil {
+			return
+		}
+
+		return c.JSON(http.StatusOK, u)
+	})
+
+	fmt.Println(&amp;quot;server started at :9000&amp;quot;)
+	r.Start(&amp;quot;:9000&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试验证&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/user \
+     -d &#39;name=Joe&#39; \
+     -d &#39;email=nope@novalagung.com&#39;
+
+# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
+
+curl -X POST http://localhost:9000/user \
+     -H &#39;Content-Type: application/json&#39; \
+     -d &#39;{&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}&#39;
+
+# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
+
+curl -X POST http://localhost:9000/user \
+     -H &#39;Content-Type: application/xml&#39; \
+     -d &#39;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;\
+        &amp;lt;Data&amp;gt;\
+            &amp;lt;Name&amp;gt;Joe&amp;lt;/Name&amp;gt;\
+            &amp;lt;Email&amp;gt;nope@novalagung.com&amp;lt;/Email&amp;gt;\
+        &amp;lt;/Data&amp;gt;&#39;
+
+# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Joe&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很神奇，没有定义xml，居然也可以解析出来&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part2 路由使用及静态文件</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Sat, 17 Aug 2019 10:02:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+echo的路由处理及静态文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+var ActionIndex = func(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(&amp;quot;from action index&amp;quot;))
+}
+
+var ActionHome = http.HandlerFunc(
+	func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&amp;quot;from action home&amp;quot;))
+	},
+)
+
+var ActionAbout = echo.WrapHandler(
+	http.HandlerFunc(
+		func(w http.ResponseWriter, r *http.Request) {
+			w.Write([]byte(&amp;quot;from action about&amp;quot;))
+		},
+	),
+)
+
+func main() {
+	r := echo.New()
+
+	r.Static(&amp;quot;/static&amp;quot;, &amp;quot;assets&amp;quot;)
+	r.GET(&amp;quot;/index&amp;quot;, echo.WrapHandler(http.HandlerFunc(ActionIndex)))
+	r.GET(&amp;quot;/home&amp;quot;, echo.WrapHandler(ActionHome))
+	r.GET(&amp;quot;/about&amp;quot;, ActionAbout)
+
+	r.Start(&amp;quot;:9000&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part1 Routing</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part1-routing/</link>
+        <pubDate>Sat, 17 Aug 2019 09:53:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part1-routing/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part1-routing/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;terminal.png&#34;&gt;
+echo的路由&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;strings&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+type M map[string]interface{}
+
+func main() {
+	r := echo.New()
+
+	r.GET(&amp;quot;/&amp;quot;, func(ctx echo.Context) error {
+		data := &amp;quot;Hello from /index&amp;quot;
+		return ctx.String(http.StatusOK, data)
+	})
+
+	r.GET(&amp;quot;/html&amp;quot;, func(ctx echo.Context) error {
+		data := &amp;quot;Hello from /html&amp;quot;
+		return ctx.HTML(http.StatusOK, data)
+	})
+
+	r.GET(&amp;quot;/index&amp;quot;, func(ctx echo.Context) error {
+		return ctx.Redirect(http.StatusTemporaryRedirect, &amp;quot;/&amp;quot;)
+	})
+
+	r.GET(&amp;quot;/json&amp;quot;, func(ctx echo.Context) error {
+		data := M{&amp;quot;Message&amp;quot;: &amp;quot;Hello&amp;quot;, &amp;quot;Counter&amp;quot;: 2}
+		return ctx.JSON(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page1?name=jayce
+	r.GET(&amp;quot;/page1&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.QueryParam(&amp;quot;name&amp;quot;)
+		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page2/jack
+	r.GET(&amp;quot;/page2/:name&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.Param(&amp;quot;name&amp;quot;)
+		data := fmt.Sprintf(&amp;quot;Hello %s&amp;quot;, name)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	// http://localhost:9000/page3/tim/need/some/sleep
+	r.GET(&amp;quot;/page3/:name/*&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.Param(&amp;quot;name&amp;quot;)
+		message := ctx.Param(&amp;quot;*&amp;quot;)
+
+		data := fmt.Sprintf(&amp;quot;Hello %s, I have message for you: %s&amp;quot;, name, message)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	//curl -X POST -F name=damian -F message=angry http://localhost:9000/page4
+	r.POST(&amp;quot;/page4&amp;quot;, func(ctx echo.Context) error {
+		name := ctx.FormValue(&amp;quot;name&amp;quot;)
+		message := ctx.FormValue(&amp;quot;message&amp;quot;)
+
+		data := fmt.Sprintf(
+			&amp;quot;Hello %s, I have message for you: %s&amp;quot;,
+			name,
+			strings.Replace(message, &amp;quot;/&amp;quot;, &amp;quot;&amp;quot;, 1),
+		)
+
+		return ctx.String(http.StatusOK, data)
+	})
+
+	r.Start(&amp;quot;:9000&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part1-routing/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

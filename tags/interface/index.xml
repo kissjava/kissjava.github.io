@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interface on 清风徐来</title>
+    <link>/tags/interface/</link>
+    <description>Recent content in interface on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 29 Jul 2019 19:33:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/interface/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go的接口</title>
+      <link>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
+      
+      <guid>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+      <description>在本教程中，我们将看看Go编程语言中的接口。 本节包括2个主题：
+ 接口的基本知识 定义我们自己的接口  ##简单案例
+如果您看到一个需要空接口的函数或方法，那么您通常可以将任何内容传递给此函数/方法。
+package mainimport (&amp;quot;fmt&amp;quot;)func myFunc(a interface{}) {fmt.Println(a)}func main() {var my_age intmy_age = 25myFunc(my_age)}运行它
+$ go run main.go25###有什么作用 通过定义interface{}的函数，我们基本上可以灵活地传递任何我们想要的东西。这个函数接受了一些东西，但我们不一定需要关心它的类型是什么。
+##定义接口 那么，什么是接口？为什么我们在Go中使用它们？好吧，通过在Go中定义一个接口，我们基本上定义了一个契约。如果我们根据此接口定义类型，那么我们将必须实现该接口类型中定义的所有函数或方法。
+比如说，我们想为吉他手定义一个interface。我们可以定义我们的接口以包含PlayGuitar（）函数，如下所示：
+type Guitarist interface {// PlayGuitar在终端打印出“弹吉他”PlayGuitar()}通过定义我们的吉他手interface，我们可以定义一个BaseGuitarist和一个AcousticGuitarist结构。
+package mainimport &amp;quot;fmt&amp;quot;type Guitarist interface {PlayGuitar()}type BaseGuitarist struct {Name string}type AcousticGuitarist struct {Name string}func (b BaseGuitarist) PlayGuitar() {fmt.</description>
+    </item>
+    
+  </channel>
+</rss>

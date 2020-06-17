@@ -1,0 +1,1131 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>golang echo 入门</title>
+        <link>/posts/golang-echo-%E5%85%A5%E9%97%A8/</link>
+        <pubDate>Thu, 15 Aug 2019 14:30:27 +0000</pubDate>
+        
+        <guid>/posts/golang-echo-%E5%85%A5%E9%97%A8/</guid>
+        <description>清风徐来 /posts/golang-echo-%E5%85%A5%E9%97%A8/ -&lt;p&gt;#golang echo 入门&lt;/p&gt;
+&lt;p&gt;##概要
+go web framework echo的入门教程&lt;/p&gt;
+&lt;p&gt;##环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 10.14.4&lt;/li&gt;
+&lt;li&gt;golang 1.11.5&lt;/li&gt;
+&lt;li&gt;echo 4.0.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go get -u github.com/labstack/echo/...
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##入门&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir $GOPATH/src/github.com/kissjava/echo_test
+code $GOPATH/src/github.com/kissjava/echo_test/main.go
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;github.com/labstack/echo&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func main() {
+    e := echo.New()
+    e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error {
+        return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+    })
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下开始进行：格式化、编译、运行、访问测试&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go fmt github.com/kissjava/echo_test
+go build github.com/kissjava/echo_test
+./echo_test
+curl localhost:1323
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;应该可以在终端返回“Hello，World！”&lt;/p&gt;
+&lt;p&gt;###提示
+在官方的Github上，按README.md示例运行时，很可能无法正常运行&lt;/p&gt;
+&lt;p&gt;##路由
+按你的喜好添加一些路由进去&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;github.com/labstack/echo&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func getHandler(c echo.Context) error {
+    return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+}
+
+func hogeHandler(c echo.Context) error {
+    return c.String(http.StatusOK, c.Param(&amp;quot;path&amp;quot;))
+}
+
+func main() {
+    e := echo.New()
+    e.GET(&amp;quot;/&amp;quot;, getHandler)
+    e.GET(&amp;quot;/hoge/:path&amp;quot;, hogeHandler)
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以使用&lt;code&gt;e.GET&lt;/code&gt;添加更多的内容。
+&lt;code&gt;c.Param&lt;/code&gt;可以访问URL信息
+测试一下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl localhost:1323/hoge/fuga
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##获取查询参数
+我们刚刚通过&lt;code&gt;c.Param&lt;/code&gt;拿到了URL
+现在再来获取一下查询参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;github.com/labstack/echo&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func getHandler(c echo.Context) error {
+    return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+}
+
+func hogeHandler(c echo.Context) error {
+    return c.String(http.StatusOK, c.QueryParam(&amp;quot;key&amp;quot;))
+}
+
+func main() {
+    e := echo.New()
+    e.GET(&amp;quot;/&amp;quot;, getHandler)
+    e.GET(&amp;quot;/hoge&amp;quot;, hogeHandler)
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试一下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl localhost:1323/hoge?key=value
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;顺便说一下，当从WebUI等接收表单信息时，使用&lt;code&gt;c.FormValue&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##返回HTML
+上代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;github.com/labstack/echo&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func htmlHandler(c echo.Context) error {
+    return c.HTML(http.StatusOK, fmt.Sprintf(&amp;quot;&amp;lt;h1&amp;gt;Hello %s&amp;lt;/h1&amp;gt;&amp;quot;, c.Param(&amp;quot;name&amp;quot;)))
+}
+
+func main() {
+    e := echo.New()
+    e.GET(&amp;quot;/:name&amp;quot;, htmlHandler)
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用c.HTML创建HTML响应，响应头Content-Type是&lt;code&gt;text / html; charset = UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##支持多种内容类型
+例如，您可以定义一个可以同时处理&lt;code&gt;application / json&lt;/code&gt;和&lt;code&gt;application / xml&lt;/code&gt;的处理程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type User struct {
+	Name  string `json:&amp;quot;name&amp;quot; xml:&amp;quot;name&amp;quot; form:&amp;quot;name&amp;quot; query:&amp;quot;name&amp;quot;`
+	Age Int `json:&amp;quot;age&amp;quot; xml:&amp;quot;age&amp;quot; form:&amp;quot;age&amp;quot; query:&amp;quot;age&amp;quot;`
+}
+
+e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+	u := new(User)
+	if err := c.Bind(u); err != nil {
+		return err
+	}
+	return c.JSON(http.StatusCreated, u)
+	// or
+	// return c.XML(http.StatusCreated, u)
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;application / json&lt;/code&gt;可以按如下方式发送
+&lt;code&gt;curl -v -XPOST -H &#39;Content-Type: application/json&#39; -d &#39;{&amp;quot;name&amp;quot;:&amp;quot;mike&amp;quot;,&amp;quot;age&amp;quot;:10}&#39; localhost:1323&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果是&lt;code&gt;application / xml&lt;/code&gt;
+&lt;code&gt;curl -v -XPOST -H &#39;Content-Type: application/xml&#39; -d &#39;&amp;lt;User&amp;gt;&amp;lt;name&amp;gt;mike&amp;lt;/name&amp;gt;&amp;lt;age&amp;gt;20&amp;lt;/age&amp;gt;&amp;lt;/User&amp;gt;&#39; localhost:1323&lt;/code&gt;
+能够使用一个处理程序处理多种媒体类型很方便&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##提供静态文件
+先建立一个文件夹，把icon.png放入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir public
+cp icon.png public
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;编辑main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func main() {
+    e := echo.New()
+    e.Static(&amp;quot;/img&amp;quot;, &amp;quot;./public&amp;quot;)
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用&lt;code&gt;e.Static&lt;/code&gt;搞定，http路径是/img/*的静态文件都可以放入到&lt;code&gt;public&lt;/code&gt;下&lt;/p&gt;
+&lt;p&gt;##中间件
+丰富的中间件功能可以轻松实现日志记录和身份验证
+可以在before/after等情况下处理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;github.com/labstack/echo&amp;quot;
+    &amp;quot;github.com/labstack/echo/middleware&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func main() {
+    e := echo.New()
+
+    // logging
+    e.Use(middleware.Logger())
+    e.Use(middleware.Recover())
+    track := func(next echo.HandlerFunc) echo.HandlerFunc {
+        return func(c echo.Context) error {
+            println(&amp;quot;request to /users&amp;quot;)
+            return next(c)
+        }
+    }
+    e.GET(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+        return c.String(http.StatusOK, &amp;quot;/users&amp;quot;)
+    }, track)
+
+    // basic auth
+    g := e.Group(&amp;quot;/admin&amp;quot;)
+    g.Use(middleware.BasicAuth(func(username, password string, c echo.Context) (bool, error) {
+        if username == &amp;quot;kissjava&amp;quot; &amp;amp;&amp;amp; password == &amp;quot;secret&amp;quot; {
+            return true, nil
+        }
+        return false, nil
+    }))
+    g.GET(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
+        return c.String(http.StatusOK, &amp;quot;/admin/users&amp;quot;)
+    }, track)
+
+    e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上是日志记录和基本身份验证的示例实现&lt;/p&gt;
+&lt;p&gt;首先是日志（Logging）记录，基本上我们想要将记录应用于任何请求，因此将全局设置放在&lt;code&gt;e.Use（middleware.Logger（））&lt;/code&gt;中。如果你想单独处理每个路由，如果你指定一个带有&lt;code&gt;func（next echo.HandlerFunc）echo.HandlerFunc&lt;/code&gt;的函数作为&lt;code&gt;e.GET&lt;/code&gt;的最后一个参数，它将在请求之前被处理。&lt;/p&gt;
+&lt;p&gt;接下来是基本认证
+使用&lt;code&gt;middleware.BasicAuth&lt;/code&gt;
+身份验证成功返回&lt;code&gt;true, nil&lt;/code&gt;,如果失败就是&lt;code&gt;false, nil&lt;/code&gt;，则返回&lt;code&gt;{“message”：“Unauthorized”}&lt;/code&gt;
+以上，基本认证适用于&lt;code&gt;Group&lt;/code&gt;，也就是&lt;code&gt;g.GET&lt;/code&gt;打头的路由。&lt;/p&gt;
+&lt;p&gt;##最后
+作为后端的API应用差不多够用了。少了模板处理和错误处理，后期涉及到时再补充。&lt;/p&gt;
+- /posts/golang-echo-%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>frp使用小结</title>
+        <link>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+        <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
+        
+        <guid>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+        <description>清风徐来 /posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ -&lt;p&gt;　frp有服务器端（frps）和客户端（frpc）之分，在Linux和Windows上都可使用，&lt;a href=&#34;https://github.com/fatedier/frp/releases&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##Linux服务器端安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz  #下载frp
+tar -zxvf frp_0.13.0_linux_amd64.tar.gz #解压
+cd frp_0.13.0_linux_amd64 #进入目录
+rm -rf frpc_full.ini frpc frpc.ini #删除frpc相关的文件，frpc属于客户端
+vi frps.ini   #编辑frps配置文件
+./frps -c ./frps.ini  #启动frps
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;frps.ini&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[common]
+bind_port = 7000 #与客户端绑定的进行通信的端口  
+vhost_http_port = 8080 #访问客户端web服务自定义的端口号
+subdomain_host = frp.abc.com #自定义二级域名
+privilege_token = xxxx  #token验证（可不加）
+ 
+#控制面板
+dashboard_port = 7500
+dashboard_user = admin
+dashboard_pwd = admin
+
+#日志
+log_file = ./frps.log
+log_level = info
+log_max_days = 3
+
+[web1]
+type = http
+subdomain = web1
+auth_token = XXX
+
+[web2]
+type = http
+subdomain = web2
+auth_token = XXX
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##Linux客户端安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz  #下载frp
+tar -zxvf frp_0.13.0_linux_amd64.tar.gz #解压
+cd frp_0.13.0_linux_amd64 #进入目录
+rm -rf frps_full.ini frps frps.ini #删除frps相关的文件，frps属于服务端
+vi frpv.ini   #编辑frps配置文件
+./frpc -c ./frpc.ini  #启动frpc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;frpc.ini&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[common]
+server_addr = x.x.x.x  #远程服务器地址
+server_port = 7000
+privilige_token = XXX #token验证（服务器加了就加这）
+
+[web1]
+type = http
+local_port = 3000
+local_ip = 127.0.0.1 #如果绑定的是本机IP的话，这里改成本机IP即可，此行也可忽略不加，默认为127.0.0.1
+subdomain = web1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##配置服务器上的Nginx 让frp用上80端口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen 80;
+    server_name *.frp.abc.com;
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header    Host            $host:80;
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_hide_header   X-Powered-By;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时，我们访问 web1.frp.abc.com 便可访问到本地的服务&lt;/p&gt;
+&lt;p&gt;windows下的frp的配置文件和linux下使一样的！&lt;/p&gt;
+&lt;p&gt;##使用screen让frp在后台运行&lt;/p&gt;
+&lt;p&gt;首先使用screen指令创建一个会话。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;screen -dmS frp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后进入这个会话&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;screen -r frp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;删除一个screen窗口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;screen -ls  #查看要删除的screen 进程id
+kill -9 xxx #杀掉该进程
+screen  -wipe #清除杀掉的screen
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ps
+1、frps和frpc一定要配套，要是哪个版本都是哪个版本&lt;/p&gt;
+&lt;p&gt;2、windows中 需要借助cmd&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; frpc.exe -c frpc.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、如果frps启动没有问题，并且7500端口的仪表盘可以访问，frpc却连不上，那就把服务器上的防火墙关了把&lt;/p&gt;
+&lt;p&gt;##对外提供简单的文件访问服务
+通过 static_file 插件可以对外提供一个简单的基于 HTTP 的文件访问服务。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#frpc.ini
+
+[static_file]
+type = tcp
+remote_port = 6008
+plugin = static_file
+plugin_local_path = /root/www/brain_storming/dist
+plugin_strip_prefix = static
+plugin_http_user = abc
+plugin_http_passwd = abc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过浏览器访问 &lt;a href=&#34;http://x.x.x.x&#34;&gt;http://x.x.x.x&lt;/a&gt;:6008/static/ 来查看位于 /root/www/brain_storming/dist 目录下的文件，会要求输入已设置好的用户名和密码。&lt;/p&gt;
+- /posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Linux系统/run/systemd空间不足问题解决</title>
+        <link>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+        <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
+        
+        <guid>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+        <description>清风徐来 /posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ -&lt;p&gt;搞了olvps家原128m小内存的小小鸡，安装环境时出错了，/run/systemd空间不足&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Failed to reload daemon: Refusing to reload, not enough space available on /run/systemd. Currently, 10.5M are free, but a safety buffer of 16.0M is enforced.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用&lt;code&gt;df -h&lt;/code&gt;看看，确实不足&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@AC-GIA:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev             73M     0   73M   0% /dev
+tmpfs            12M  880K   11M   8% /run
+/dev/vda1       2.9G  1.5G  1.4G  52% /
+tmpfs            85M     0   85M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            85M     0   85M   0% /sys/fs/cgroup
+tmpfs            17M     0   17M   0% /run/user/0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提示/run/systemd空间不足，那就给这个目录增加空间，就增加一行配置，&lt;code&gt;vim /etc/fstab&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tmpfs /run tmpfs nosuid,noexec,size=24M,nr_inodes=4096 0 0
+&lt;/code&gt;&lt;/pre&gt;- /posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>高级Go测试教程</title>
+        <link>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Tue, 30 Jul 2019 22:06:59 +0000</pubDate>
+        
+        <guid>/posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/</guid>
+        <description>清风徐来 /posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ -&lt;p&gt;本教程中，我们将介绍Go语言更高级测试实践。&lt;/p&gt;
+- /posts/%E9%AB%98%E7%BA%A7go%E6%B5%8B%E8%AF%95%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go的单元测试</title>
+        <link>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 30 Jul 2019 19:00:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;&lt;strong&gt;测试在所有软件中都非常重要。&lt;/strong&gt;
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+能够确保代码的正确性并确保您所做的任何更改最终都不会破坏代码库中任何其他部分的内容，这非常重要。&lt;/p&gt;
+&lt;p&gt;##目标&lt;/p&gt;
+&lt;p&gt;在本教程结束时，您将掌握使用标准&lt;code&gt;testing&lt;/code&gt;包，测试Go中的基本函数和方法。&lt;/p&gt;
+&lt;p&gt;在本教程中，我们将介绍如何使用&lt;code&gt;go test&lt;/code&gt;命令为您的go代码开发和运行测试。&lt;/p&gt;
+&lt;p&gt;##Go的测试文件&lt;/p&gt;
+&lt;p&gt;如果您之前看过一些go项目，您可能已经注意到大多数（如果不是全部）的项目，Go代码文件都在同一目录中具有FILE_test.go对应项。&lt;/p&gt;
+&lt;p&gt;这些文件包含项目的所有单元测试，测试其对应的所有代码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;简单的项目机构&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;myproject/
+- calc.go
+- calc_test.go
+- main.go
+- main_test.go
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##一个简单的测试文件&lt;/p&gt;
+&lt;p&gt;假如我们有一个非常简单的go程序，它由一个文件组成，并具有&lt;code&gt;calculate（）&lt;/code&gt;函数。这个&lt;code&gt;calculate（）&lt;/code&gt;函数只需要1个参数，返回加2后的结果。让我们开始运行
+&lt;strong&gt;main.go&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+// 计算 returns x + 2.
+func Calculate(x int) (result int) {
+    result = x + 2
+    return result
+}
+
+func main() {
+    fmt.Println(&amp;quot;Hello World&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果想要进行测试，我们可以在同一目录中创建一个main_test.go文件并编写以下测试：
+&lt;strong&gt;main_test.go&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;testing&amp;quot;
+)
+
+func TestCalculate(t *testing.T) {
+    if Calculate(2) != 4 {
+        t.Error(&amp;quot;期望 2 + 2 应该等于 4&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##运行测试&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go test
+PASS
+ok      github.com/kissjava/helloworld  0.005s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##Table Drive Testing&lt;/p&gt;
+&lt;p&gt;我们可以用array进行一系列的测试：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func TestTableCalculate(t *testing.T) {
+    var tests = []struct {
+        input    int
+        expected int
+    }{
+        {2, 4},
+        {-1, 1},
+        {0, 2},
+        {-5, -3},
+        {99999, 100001},
+    }
+
+    for _, test := range tests {
+        if output := Calculate(test.input); output != test.expected {
+            t.Errorf(&amp;quot;Test Failed: 输入%d, 期望%d, 实际收到: %d&amp;quot;, test.input, test.expected, output)
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##详细(Verbose)的测试输出
+&lt;code&gt;$ go test -v&lt;/code&gt;
+demo:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go test -v
+=== RUN   TestCalculate
+--- PASS: TestCalculate (0.00s)
+=== RUN   TestTableCalculate
+--- PASS: TestTableCalculate (0.00s)
+PASS
+ok      github.com/kissjava/helloworld  0.005s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##检查测试覆盖率&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go test -cover
+PASS
+coverage: 66.7% of statements
+ok      github.com/kissjava/helloworld  0.005s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上我们的测试覆盖率是66.7%。还好吧，但是，哪些没有测试，哪些已经测试来，这里是没法体现的。&lt;/p&gt;
+&lt;p&gt;##可视化的测试覆盖率
+先运行&lt;code&gt;$ go test -coverprofile=coverage.out&lt;/code&gt;生产测试文件
+再运行&lt;code&gt;$ go tool cover -html=coverage.out&lt;/code&gt;直接浏览器打开可视化结果。
+以上以html的格式输出测试覆盖率，那些没有测试到的可以看到。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/3485096304.jpg&#34; alt=&#34;20190730185641.jpg&#34;&gt;
+绿色部分是测试覆盖到的，红色部分是未测试的。&lt;/p&gt;
+- /posts/go%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go解析XML文件</title>
+        <link>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Tue, 30 Jul 2019 17:28:00 +0000</pubDate>
+        
+        <guid>/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何有效读取XML文件，使用Go的&lt;code&gt;encoding / xml&lt;/code&gt;包解析xml，遍历多个嵌套的xml元素，然后将其打印到终端&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;Go解析XML文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;##XML示例文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;users&amp;gt;
+  &amp;lt;user type=&amp;quot;admin&amp;quot;&amp;gt;
+    &amp;lt;name&amp;gt;Elliot&amp;lt;/name&amp;gt;
+    &amp;lt;social&amp;gt;
+      &amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;
+      &amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;
+      &amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;
+    &amp;lt;/social&amp;gt;
+  &amp;lt;/user&amp;gt;
+  &amp;lt;user type=&amp;quot;reader&amp;quot;&amp;gt;
+    &amp;lt;name&amp;gt;Fraser&amp;lt;/name&amp;gt;
+    &amp;lt;social&amp;gt;
+      &amp;lt;facebook&amp;gt;https://facebook.com&amp;lt;/facebook&amp;gt;
+      &amp;lt;twitter&amp;gt;https://twitter.com&amp;lt;/twitter&amp;gt;
+      &amp;lt;youtube&amp;gt;https://youtube.com&amp;lt;/youtube&amp;gt;
+    &amp;lt;/social&amp;gt;
+  &amp;lt;/user&amp;gt;
+&amp;lt;/users&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##完成代码部分&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;encoding/xml&amp;quot;
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+type Users struct {
+    XMLName xml.Name `xml:&amp;quot;users&amp;quot;`
+    Users   []User   `xml:&amp;quot;user&amp;quot;`
+}
+
+type User struct {
+    XMLName xml.Name `xml:&amp;quot;user&amp;quot;`
+    Type    string   `xml:&amp;quot;type,attr&amp;quot;`
+    Name    string   `xml:&amp;quot;name&amp;quot;`
+    Social  Social   `xml:&amp;quot;social&amp;quot;`
+}
+
+type Social struct {
+    XMLName  xml.Name `xml:&amp;quot;social&amp;quot;`
+    Facebook string   `xml:&amp;quot;facebook&amp;quot;`
+    Twitter  string   `xml:&amp;quot;twitter&amp;quot;`
+    Youtube  string   `xml:&amp;quot;youtube&amp;quot;`
+}
+
+func main() {
+    xmlFile, err := os.Open(&amp;quot;users.xml&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Println(&amp;quot;成功打开 users.xml&amp;quot;)
+    defer xmlFile.Close()
+
+    // 读取 xmlFile 到 byte array.
+    byteValue, _ := ioutil.ReadAll(xmlFile)
+
+    // 初始化 Users array
+    var users Users
+
+    xml.Unmarshal(byteValue, &amp;amp;users)
+
+    for i := 0; i &amp;lt; len(users.Users); i++ {
+        fmt.Println(&amp;quot;User Type: &amp;quot; + users.Users[i].Type)
+        fmt.Println(&amp;quot;User Name: &amp;quot; + users.Users[i].Name)
+        fmt.Println(&amp;quot;Facebook Url: &amp;quot; + users.Users[i].Social.Facebook)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+成功打开 users.xml
+User Type: admin
+User Name: Elliot
+Facebook Url: https://facebook.com
+User Type: reader
+User Name: Fraser
+Facebook Url: https://facebook.com
+&lt;/code&gt;&lt;/pre&gt;- /posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go解析JSON文件</title>
+        <link>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
+        
+        <guid>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。&lt;/p&gt;
+&lt;p&gt;JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！&lt;/p&gt;
+&lt;p&gt;##Encoding/Json Package&lt;/p&gt;
+&lt;p&gt;我们将利用&lt;code&gt;encoding / json&lt;/code&gt;标准库包来启动和运行。我强烈建议你在这里查看官方文档：&lt;a href=&#34;https://golang.org/pkg/encoding/json/&#34;&gt;Encoding / Json&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;##读取和解析JSON文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;user.json&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;users&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Elliot&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;Reader&amp;quot;,
+      &amp;quot;age&amp;quot;: 23,
+      &amp;quot;social&amp;quot;: {
+        &amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,
+        &amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;
+      }
+    },
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Fraser&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;Author&amp;quot;,
+      &amp;quot;age&amp;quot;: 17,
+      &amp;quot;social&amp;quot;: {
+        &amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,
+        &amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###读取JSON文件
+使用os包来从我们的文件系统中打开users.json文件。打开文件后，我们将关闭文件（函数结束时执行defer后的关闭）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+if err != nil {
+    fmt.Println(err)
+}
+fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+// 推迟关闭我们的jsonFile，以便稍后解析它
+defer jsonFile.Close()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###用结构解析&lt;/p&gt;
+&lt;p&gt;我们可以用结构或是&lt;code&gt;map[string]interface{}&lt;/code&gt;来解析&lt;code&gt;users.json&lt;/code&gt;。我们用结构，上代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;encoding/json&amp;quot;
+)
+
+// Users 结构
+// 一个User数组
+type Users struct {
+    Users []User `json:&amp;quot;users&amp;quot;`
+}
+
+// User 结构，包含来Social结构
+type User struct {
+    Name   string `json:&amp;quot;name&amp;quot;`
+    Type   string `json:&amp;quot;type&amp;quot;`
+    Age    int    `json:&amp;quot;Age&amp;quot;`
+    Social Social `json:&amp;quot;social&amp;quot;`
+}
+
+// Social 结构
+type Social struct {
+    Facebook string `json:&amp;quot;facebook&amp;quot;`
+    Twitter  string `json:&amp;quot;twitter&amp;quot;`
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##处理JSON（解组Unmarshal）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 将我们打开的json文件作为字节数组读取.
+byteValue, _ := ioutil.ReadAll(jsonFile)
+
+// 初始化我们的Users数组
+var users Users
+
+// 将json的内容，byte Array解组为上面定义的&#39;users&#39;
+json.Unmarshal(byteValue, &amp;amp;users)
+
+// 遍历数组中的每个用户，输出user的Type, name和脸书的url
+for i := 0; i &amp;lt; len(users.Users); i++ {
+    fmt.Println(&amp;quot;User Type: &amp;quot; + users.Users[i].Type)
+    fmt.Println(&amp;quot;User Age: &amp;quot; + strconv.Itoa(users.Users[i].Age))
+    fmt.Println(&amp;quot;User Name: &amp;quot; + users.Users[i].Name)
+    fmt.Println(&amp;quot;Facebook Url: &amp;quot; + users.Users[i].Social.Facebook)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##使用非结构化数据
+我们也可以用&lt;code&gt;interface{}&lt;/code&gt;来读取JSON数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;encoding/json&amp;quot;
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+    jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+    defer jsonFile.Close()
+
+    byteValue, _ := ioutil.ReadAll(jsonFile)
+
+    var result map[string]interface{}
+    json.Unmarshal([]byte(byteValue), &amp;amp;result)
+
+    fmt.Println(result[&amp;quot;users&amp;quot;])
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果是输出map的格式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+成功打开 users.json
+[map[age:23 name:Elliot social:map[facebook:https://facebook.com twitter:https://twitter.com] type:Reader] map[age:17 name:Fraser social:map[facebook:https://facebook.com twitter:https://twitter.com] type:Author]]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ps:通常都是知道返回的数据的结构的，所以一般建议尝试定义结构去解组。&lt;/p&gt;
+&lt;p&gt;##小结用结构解组的全部代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;encoding/json&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;io/ioutil&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;strconv&amp;quot;
+)
+
+// Users 结构
+// 一个User数组
+type Users struct {
+	Users []User `json:&amp;quot;users&amp;quot;`
+}
+
+// User 结构，包含来Social结构
+type User struct {
+	Name   string `json:&amp;quot;name&amp;quot;`
+	Type   string `json:&amp;quot;type&amp;quot;`
+	Age    int    `json:&amp;quot;Age&amp;quot;`
+	Social Social `json:&amp;quot;social&amp;quot;`
+}
+
+// Social 结构
+type Social struct {
+	Facebook string `json:&amp;quot;facebook&amp;quot;`
+	Twitter  string `json:&amp;quot;twitter&amp;quot;`
+}
+
+func main() {
+	jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+	defer jsonFile.Close()
+
+	// 将我们打开的json文件作为字节数组读取.
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	// 初始化我们的Users数组
+	var users Users
+
+	// 将json的内容，byte Array解组为上面定义的&#39;users&#39;
+	json.Unmarshal(byteValue, &amp;amp;users)
+
+	// 遍历数组中的每个用户，输出user的Type, name和脸书的url
+	for i := 0; i &amp;lt; len(users.Users); i++ {
+		fmt.Println(&amp;quot;User Type: &amp;quot; + users.Users[i].Type)
+		fmt.Println(&amp;quot;User Age: &amp;quot; + strconv.Itoa(users.Users[i].Age))
+		fmt.Println(&amp;quot;User Name: &amp;quot; + users.Users[i].Name)
+		fmt.Println(&amp;quot;Facebook Url: &amp;quot; + users.Users[i].Social.Facebook)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+成功打开 users.json
+User Type: Reader
+User Age: 23
+User Name: Elliot
+Facebook Url: https://facebook.com
+User Type: Author
+User Age: 17
+User Name: Fraser
+Facebook Url: https://facebook.com
+&lt;/code&gt;&lt;/pre&gt;- /posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>使用Golang执行系统命令</title>
+        <link>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
+        
+        <guid>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
+        <description>清风徐来 /posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ -&lt;p&gt;在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;##条件&lt;/p&gt;
+&lt;p&gt;您需要安装Go 1.11+版本&lt;/p&gt;
+&lt;p&gt;##兼容性问题&lt;/p&gt;
+&lt;p&gt;只是简单的教程Demo，所以并未对所有平台适用。&lt;/p&gt;
+&lt;p&gt;###检查当前操作系统
+我们可以使用runtime包并检查GOOS常量。这将返回目标的操作系统：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    if runtime.GOOS == &amp;quot;windows&amp;quot; {
+        fmt.Println(&amp;quot;无法在Windows机器上执行此操作&amp;quot;)
+    } else {
+        execute()
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##上代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;os/exec&amp;quot;
+    &amp;quot;runtime&amp;quot;
+)
+
+func execute() {
+
+    // 这里我们执行pwd命令
+    // 我们可以将它的输出存储在我们的out变量中
+    out, err := exec.Command(&amp;quot;ls&amp;quot;).Output()
+
+    // 如果我们的执行有错误
+    if err != nil {
+        fmt.Printf(&amp;quot;%s&amp;quot;, err)
+    }
+    // 因为上面定义的out变量是[] byte类型，
+    // 我们需要将它转换为字符串，否则我们将看到在我们的控制台中打印出乱码
+    // 这就是我们将它转​​换为字符串的方式
+    fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+    output := string(out[:])
+    fmt.Println(output)
+
+    // 让我们试试pwd命令
+    out, err = exec.Command(&amp;quot;pwd&amp;quot;).Output()
+    if err != nil {
+        fmt.Printf(&amp;quot;%s&amp;quot;, err)
+    }
+    fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+    output = string(out[:])
+    fmt.Println(output)
+}
+
+func main() {
+    if runtime.GOOS == &amp;quot;windows&amp;quot; {
+        fmt.Println(&amp;quot;无法在Windows机器上执行此操作&amp;quot;)
+    } else {
+        execute()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+命令已成功执行 # ls command
+go.mod
+main
+main.go
+myfile.data
+
+命令已成功执行 # pwd command
+/Users/michael/go/src/giogui
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###传入参数 Passing in Arguments&lt;/p&gt;
+&lt;p&gt;我们运行了一些非常简单的命令，但是我们如何将参数传递给这些命令呢？&lt;/p&gt;
+&lt;p&gt;例如，假设我想做&lt;code&gt;ls -ltr&lt;/code&gt;而不是标准&lt;code&gt;ls&lt;/code&gt;？&lt;/p&gt;
+&lt;p&gt;其实也容易，我们只需要将这些参数添加到&lt;code&gt;.Command（）&lt;/code&gt;中，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;os/exec&amp;quot;
+    &amp;quot;runtime&amp;quot;
+)
+
+func execute() {
+    out, err := exec.Command(&amp;quot;ls&amp;quot;, &amp;quot;-ltr&amp;quot;).Output()
+    if err != nil {
+        fmt.Printf(&amp;quot;%s&amp;quot;, err)
+    }
+    fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+    output := string(out[:])
+    fmt.Println(output)
+}
+
+func main() {
+    if runtime.GOOS == &amp;quot;windows&amp;quot; {
+        fmt.Println(&amp;quot;无法在Windows机器上执行此操作&amp;quot;)
+    } else {
+        execute()
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行一下看看&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+命令已成功执行
+total 4136
+-rw-------  1 michael  staff       47 Jul 29 15:10 go.mod
+-rwxr-xr-x  1 michael  staff  2104024 Jul 29 15:11 main
+-rwxr-xr-x  1 michael  staff       77 Jul 29 21:52 myfile.data
+-rw-r--r--  1 michael  staff     1126 Jul 30 07:48 main.go
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ps:.Command（）的函数也是可变参数，可以传入多个参数给我们的命令来执行。&lt;/p&gt;
+&lt;p&gt;#小结贴上全部代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os/exec&amp;quot;
+	&amp;quot;runtime&amp;quot;
+)
+
+func execute() {
+
+	// 这里我们执行pwd命令
+	// 我们可以将它的输出存储在我们的out变量中
+	out, err := exec.Command(&amp;quot;ls&amp;quot;).Output()
+
+	// 如果我们的执行有错误
+	if err != nil {
+		fmt.Printf(&amp;quot;%s&amp;quot;, err)
+	}
+	// 因为上面定义的out变量是[] byte类型，
+	//我们需要将它转换为字符串，否则我们将看到在我们的控制台中打印出乱码
+	// 这就是我们将它转​​换为字符串的方式
+	fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+	output := string(out[:])
+	fmt.Println(output)
+
+	// 让我们试试pwd命令
+	out, err = exec.Command(&amp;quot;pwd&amp;quot;).Output()
+	if err != nil {
+		fmt.Printf(&amp;quot;%s&amp;quot;, err)
+	}
+	fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+	output = string(out[:])
+	fmt.Println(output)
+}
+
+func executeArg() {
+	out, err := exec.Command(&amp;quot;ls&amp;quot;, &amp;quot;-ltr&amp;quot;).Output()
+	if err != nil {
+		fmt.Printf(&amp;quot;%s&amp;quot;, err)
+	}
+	fmt.Println(&amp;quot;命令已成功执行&amp;quot;)
+	output := string(out[:])
+	fmt.Println(output)
+}
+
+func main() {
+	if runtime.GOOS == &amp;quot;windows&amp;quot; {
+		fmt.Println(&amp;quot;无法在Windows机器上执行此操作&amp;quot;)
+	} else {
+		executeArg()
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go从Console读取输入</title>
+        <link>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+        <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
+        
+        <guid>/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+        <description>清风徐来 /posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+##一个简单的shell
+一个示例的shell，没啥用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;bufio&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;strings&amp;quot;
+)
+
+func main() {
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println(&amp;quot;Simple Shell&amp;quot;)
+	fmt.Println(&amp;quot;---------------------&amp;quot;)
+
+	for {
+		fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)
+		text, _ := reader.ReadString(&#39;\n&#39;)
+		// 将CRLF转换为LF
+		text = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)
+		// 如果windows，要用下面的
+		// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)
+
+		if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {
+			fmt.Println(&amp;quot;hello, Yourself&amp;quot;)
+		}
+
+		if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {
+			fmt.Println(&amp;quot;Bye.&amp;quot;)
+			break
+		}
+
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入hi，它会打个招呼；输入bye，退出shell。&lt;/p&gt;
+&lt;p&gt;##读取单个UTF-8编码的Unicode字符&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;bufio&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os&amp;quot;
+)
+
+func main() {
+
+	reader := bufio.NewReader(os.Stdin)
+	char, _, err := reader.ReadRune()
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// 打印出unicode值，即 A -&amp;gt; 65, a -&amp;gt; 97, 杨 -&amp;gt; 26472
+	fmt.Println(char)
+
+	switch char {
+	case &#39;A&#39;:
+		fmt.Println(&amp;quot;A Key Pressed&amp;quot;)
+		break
+	case &#39;a&#39;:
+		fmt.Println(&amp;quot;a Key Pressed&amp;quot;)
+		break
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;杨的unicode是26472.&lt;/p&gt;
+&lt;p&gt;##小结
+学习来bufio的一些用法，还穿插了一些流程控制语句，if，for，switch。&lt;/p&gt;
+- /posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>在Go中读取和写入文件</title>
+        <link>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Mon, 29 Jul 2019 21:56:00 +0000</pubDate>
+        
+        <guid>/posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将介绍如何使用go语言有效地读取和写入文件系统中的文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;在Go中读取和写入文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们将用于读取和写入这些文件的方法将与文件格式无关。这意味着你将能够使用我们将要覆盖的技术来读写，.txt，.csv，.xls等，这些文件唯一不同的是您写入每种文件类型的数据结构。&lt;/p&gt;
+&lt;p&gt;##读取文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;main.go&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+// 导入我们需要的2个模块
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+)
+
+func main() {
+    // 读取文件 localfile.data 的内容
+    data, err := ioutil.ReadFile(&amp;quot;localfile.data&amp;quot;)
+    // 如果我们的程序无法读取该文件
+    // 打印出它不能读取的原因
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    // 如果读取成功，将内容打印为字符串
+    fmt.Print(string(data))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##将文件写入新文件
+我们已经介绍了Go中的文件读取，现在是时候看看创建和写入我们自己的文件了！
+代码说话：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+)
+
+func main() {
+
+    mydata := []byte(&amp;quot;All the data I wish to write to a file&amp;quot;)
+
+    // 如果不成功，WriteFile方法返回错误
+    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
+    // 处理错误，打印出来
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很简单，先定义来字节数组；写入到myfile.data，再去读取它并打印输出。&lt;/p&gt;
+&lt;p&gt;##写入已有文件
+写入信息到现有文件，会发生什么？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+
+    mydata := []byte(&amp;quot;All the data I wish to write to a file\n&amp;quot;)
+
+    // 如果不成功，WriteFile方法返回错误
+    err := ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    data, err := ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+    f, err := os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)
+    if err != nil {
+        panic(err)
+    }
+    defer f.Close()
+
+    if _, err = f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;); err != nil {
+        panic(err)
+    }
+
+    data, err = ioutil.ReadFile(&amp;quot;myfile.data&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Print(string(data))
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行看看。
+&lt;code&gt;ioutil.WriteFile(&amp;quot;myfile.data&amp;quot;, mydata, 0777)&lt;/code&gt;会清空已有内容，并写入新的内容；
+&lt;code&gt;os.OpenFile(&amp;quot;myfile.data&amp;quot;, os.O_APPEND|os.O_WRONLY, 0600)&lt;/code&gt;和&lt;code&gt;f.WriteString(&amp;quot;new data that wasn&#39;t there originally\n&amp;quot;)&lt;/code&gt;会以追加的方式打开文件，并在文件末尾追加内容。&lt;/p&gt;
+&lt;p&gt;##文件权限
+在操作文件时，文件权限是比较重要的，特别是写入和追加内容时。&lt;/p&gt;
+&lt;p&gt;##小结
+就是文件的读取和写入，比较简单。&lt;/p&gt;
+- /posts/%E5%9C%A8go%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

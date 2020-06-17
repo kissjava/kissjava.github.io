@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gui on 清风徐来</title>
+    <link>/tags/gui/</link>
+    <description>Recent content in gui on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 21 Aug 2013 17:28:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>完成第一个基于python的GUI程序</title>
+      <link>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
+      <description>上图先
+采用wxpython。涉及到多线程，socket。
+耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。
+程序写得一般，原因是没有重复利用python的一些语法特色，应可以写得更加pythonic
+开始用php写，但是无法解决多线程同时监控，弃之。</description>
+    </item>
+    
+  </channel>
+</rss>

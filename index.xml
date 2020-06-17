@@ -1,0 +1,2752 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>macOS安装Ngnix php MySQL</title>
+        <link>/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
+        <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
+        
+        <guid>/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
+        <description>清风徐来 /posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/09/1638460549.png&#34; alt=&#34;php.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nginx&#34;&gt;Nginx&lt;/h2&gt;
+&lt;p&gt;虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+&lt;p&gt;安装和启动Nginx，我们使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install nginx
+sudo brew services start nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx&lt;/p&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
+&lt;p&gt;编辑配置文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;首先，我们必须向Nginx授予访问我们文件的权限，并避免令人讨厌的&lt;code&gt;403 Forbidden&lt;/code&gt;错误。为此，我们更改第一行，其中&lt;code&gt;&amp;lt;user&amp;gt;&lt;/code&gt;是您的用户名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user &amp;lt;user&amp;gt; staff;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后，我们将在&lt;code&gt;http&lt;/code&gt;指令中添加一个新的部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+  listen 80;
+  server_name localhost;
+  root /Users/&amp;lt;user&amp;gt;/Documents/path/to/your/website;
+  index index.html index.htm;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后我们重新启动Nginx&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
+&lt;p&gt;为了将PHP与Nginx一起使用，我们将使用PHP-FPM。在这里，我们将使用PHP 7.2，但您可以轻松选择任何其他版本:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install php72
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着编辑配置文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以index开头的行:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;index index.php index.html;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，在部分服务器中添加以下行，以运行PHP:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;location ~ \.php {
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_buffers 16 16k;
+    fastcgi_buffer_size 32k;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了解决&lt;code&gt;File not found.&lt;/code&gt;我们还需要为PHP提供正确的权限。在以下文件中:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/php/7.2/php-fpm.d/www.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以下参数:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user = &amp;lt;user&amp;gt;
+group = staff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，我们重新启动Nginx以激活更改，不要忘记启动PHP，以避免&lt;code&gt;502 Bad Gateway&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
+sudo brew services start php72
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;mysql&#34;&gt;MySQL&lt;/h2&gt;
+&lt;p&gt;安装并启动：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install mariadb
+brew services start mariadb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还要修改MySQL的密码:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自己完成完美的MAMP安装:)&lt;/p&gt;
+- /posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>拆分echo示例项目的crud模块</title>
+        <link>/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</link>
+        <pubDate>Tue, 03 Sep 2019 15:56:00 +0000</pubDate>
+        
+        <guid>/posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/</guid>
+        <description>清风徐来 /posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/ -&lt;p&gt;拆分echo示例项目的crud模块的源文件。&lt;/p&gt;
+&lt;p&gt;对于那些经常写golang的人来说，这可能很无聊。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;目录结构&#34;&gt;目录结构&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;➜  crud tree
+.
+├── handler
+│   ├── create.go
+│   ├── delete.go
+│   ├── list.go
+│   └── update.go
+├── model
+│   └── user.go
+└── router.go
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;routergo&#34;&gt;router.go&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;./handler&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+
+	//middleware
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
+
+	//routes
+	e.GET(&amp;quot;/users&amp;quot;, handler.ListUser)
+	e.GET(&amp;quot;/users/:id&amp;quot;, handler.GetUser)
+	e.POST(&amp;quot;/users&amp;quot;, handler.CreateUser)
+	e.PUT(&amp;quot;/users/:id&amp;quot;, handler.UpdateUser)
+	e.DELETE(&amp;quot;/users/:id&amp;quot;, handler.DeleteUser)
+
+	//start server
+	e.Logger.Fatal(e.Start(&amp;quot;:8000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;modelusergo&#34;&gt;model/user.go&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package model
+
+type (
+	User struct {
+		ID   int    `json:&amp;quot;id&amp;quot;`
+		Name string `json:&amp;quot;name&amp;quot;`
+	}
+)
+
+//这是一个持久层，基本上被DB取代的区域
+var (
+	Users = map[int]*User{}
+	Seq   = 1
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handler目录&#34;&gt;handler目录&lt;/h3&gt;
+&lt;p&gt;用于存储业务逻辑的区域，使用Service可能更好&lt;/p&gt;
+&lt;h4 id=&#34;creatego&#34;&gt;create.go&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;../model&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func CreateUser(c echo.Context) (err error) {
+	u := &amp;amp;model.User{
+		ID: model.Seq,
+	}
+
+	if err := c.Bind(u); err != nil {
+		return err
+	}
+	model.Users[u.ID] = u
+	model.Seq++
+	return c.JSON(http.StatusCreated, u)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在&lt;code&gt;router.go&lt;/code&gt;中，&lt;code&gt;e.POST（“/ users”，handler.CreateUser）&lt;/code&gt;接收以下POST请求并存储数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  ~ curl -v POST -H &amp;quot;Content-Type:application/json&amp;quot; &amp;quot;http://localhost:8000/users&amp;quot; -d &#39;{&amp;quot;id&amp;quot;:1,&amp;quot;name&amp;quot;:&amp;quot;Mike Yang&amp;quot;}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;updatego&#34;&gt;update.go&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;strconv&amp;quot;
+
+	&amp;quot;../model&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func UpdateUser(c echo.Context) (err error) {
+	u := new(model.User)
+	if err := c.Bind(u); err != nil {
+		return err
+	}
+	id, _ := strconv.Atoi(c.Param(&amp;quot;id&amp;quot;))
+	model.Users[id].Name = u.Name
+	return c.JSON(http.StatusOK, model.Users[id])
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在&lt;code&gt;router.go&lt;/code&gt;中，&lt;code&gt;e.PUT（“/ users /：id”，handler.UpdateUser）&lt;/code&gt;接收以下PUT请求并更新数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  ~ curl -v -X PUT -H &amp;quot;Content-Type: application/json&amp;quot; &amp;quot;http://localhost:8000/users/1&amp;quot; -d &#39;{
+  &amp;quot;name&amp;quot; : &amp;quot;Andy Liu&amp;quot;
+}&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;listgo&#34;&gt;list.go&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;strconv&amp;quot;
+
+	&amp;quot;../model&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func GetUser(c echo.Context) (err error) {
+	id, _ := strconv.Atoi(c.Param(&amp;quot;id&amp;quot;))
+	return c.JSON(http.StatusOK, model.Users[id])
+}
+
+func ListUser(c echo.Context) (err error) {
+	return c.JSON(http.StatusOK, model.Users)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用&lt;code&gt;router.go&lt;/code&gt;的 &lt;code&gt;e.GET（“/ users”，handler.ListUser）&lt;/code&gt;或&lt;code&gt;e.GET（“/ users /：id”，handler.GetUser）&lt;/code&gt;接收以下GET请求并获取数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  ~ curl -i -v GET http://localhost:8000/users
+➜  ~ curl -i -v GET http://localhost:8000/users/1
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;deletego&#34;&gt;delete.go&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;log&amp;quot;
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;strconv&amp;quot;
+
+	&amp;quot;../model&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func DeleteUser(c echo.Context) (err error) {
+	log.Println(model.Users)
+	id, _ := strconv.Atoi(c.Param(&amp;quot;id&amp;quot;))
+	delete(model.Users, id)
+	log.Println(model.Users)
+	return c.NoContent(http.StatusNoContent)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试
+&lt;code&gt;curl -i -v -X DELETE &amp;quot;http://localhost:8000/users/1&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;结束&#34;&gt;结束&lt;/h2&gt;
+&lt;p&gt;没有涉及到DB的操作
+还有错误处理、模板等&lt;/p&gt;
+- /posts/%E6%8B%86%E5%88%86echo%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE%E7%9A%84crud%E6%A8%A1%E5%9D%97/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go 非零基础一文入门</title>
+        <link>/posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/</link>
+        <pubDate>Sun, 18 Aug 2019 22:35:00 +0000</pubDate>
+        
+        <guid>/posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/</guid>
+        <description>清风徐来 /posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其实为了方便使用其他编程语言的开发者快速理解Go的一些特性。&lt;/p&gt;
+&lt;h2 id=&#34;指针和new&#34;&gt;指针和new&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	/*
+	new关键字用于创建具有某些数据类型的指针变量
+	*/
+	//创建一个字符串类型的指针Pointer string
+	name := new(string)
+	//打印指针地址，输出类似0xc0000a0030
+	fmt.Println(name)
+
+	//给该指针指向的内存写入数据
+	//name是指针变量，
+	//给指针变量前加*就是取消应用，直接访问其中的值
+	*name = &amp;quot;hello world&amp;quot;
+	//打印该指针指向的内存中的数据，输出hello world
+	fmt.Println(*name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;make关键字的限制&#34;&gt;make关键字的限制&lt;/h2&gt;
+&lt;p&gt;此关键字只能用于创建复杂类型的变量，即：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;channel&lt;/li&gt;
+&lt;li&gt;slice&lt;/li&gt;
+&lt;li&gt;map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;反引号的用途&#34;&gt;反引号的用途&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	var message = `My name is &amp;quot;John Work&amp;quot;.
+Are you ready.
+Let&#39;s learn &amp;quot;Golang&amp;quot;.`
+
+	fmt.Println(message)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;它会原样输出，不用顾虑转义字符，单双引号，想换行直接回车就行。&lt;/p&gt;
+&lt;h2 id=&#34;nil和零值&#34;&gt;nil和零值&lt;/h2&gt;
+&lt;p&gt;nil不是数据类型，而是值。值为nil的变量表示它具有空值。
+Go中的数据类型定义后如果没赋值都会有默认的零值，和C不一样，不会出现奇奇怪怪的值
+string 零值 &amp;quot;&amp;rdquo;
+bool 零值 false
+整型 零值 0
+浮点型 零值 0.0&lt;/p&gt;
+&lt;p&gt;下面的类型才能被赋为nil
+pointer
+func
+slice
+map
+channel
+interface&lt;/p&gt;
+&lt;h2 id=&#34;go流程控制&#34;&gt;Go流程控制&lt;/h2&gt;
+&lt;p&gt;不支持三元运算符
+不支持，不支持，不支持&lt;/p&gt;
+&lt;p&gt;if 条件不要括号&lt;/p&gt;
+&lt;p&gt;switch 中 case匹配后不要，不要，不要break，直接跳出
+一个case可以同时匹配多个，来实现其他语言中不带break的穿透&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var point = 6
+
+switch point {
+case 8:
+    fmt.Println(&amp;quot;perfect&amp;quot;)
+case 7, 6, 5, 4:
+    fmt.Println(&amp;quot;awesome&amp;quot;)
+default:
+    fmt.Println(&amp;quot;not bad&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;switch 结合判断,穿透fallthrough的写法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var point = 6
+
+switch {
+case point == 8:
+    fmt.Println(&amp;quot;perfect&amp;quot;)
+case (point &amp;lt; 8) &amp;amp;&amp;amp; (point &amp;gt; 3):
+    fmt.Println(&amp;quot;awesome&amp;quot;)
+    fallthrough
+case point &amp;lt; 5:
+    fmt.Println(&amp;quot;you need to learn more&amp;quot;)
+default:
+    {
+        fmt.Println(&amp;quot;not bad&amp;quot;)
+        fmt.Println(&amp;quot;you need to learn more&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;数组array&#34;&gt;数组Array&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;//先声明再一一赋值
+var names [4]string
+names[0] = &amp;quot;trafalgar&amp;quot;
+names[1] = &amp;quot;d&amp;quot;
+names[2] = &amp;quot;water&amp;quot;
+names[3] = &amp;quot;law&amp;quot;
+
+//声明赋值一起
+var fruits = [4]string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+
+/声明后一起赋值，赋值可以一行也可以多行
+var fruits [4]string
+// 一行
+fruits  = [4]string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+// 多行
+fruits  = [4]string{
+    &amp;quot;apple&amp;quot;,
+    &amp;quot;grape&amp;quot;,
+    &amp;quot;banana&amp;quot;,
+    &amp;quot;melon&amp;quot;,
+}
+
+//声明赋值数组，但是不写长度
+var numbers = [...]int{2, 3, 2, 4, 3}
+
+//多维数组
+var numbers1 = [2][3]int{[3]int{3, 2, 3}, [3]int{3, 4, 5}}
+var numbers2 = [2][3]int{{3, 2, 3}, {3, 4, 5}}
+
+//变量数组的方式
+var fruits = [4]string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+for i := 0; i &amp;lt; len(fruits); i++ {
+    fmt.Printf(&amp;quot;elemen %d : %s\n&amp;quot;, i, fruits[i])
+}
+
+var fruits = [4]string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+for i, fruit := range fruits {
+    fmt.Printf(&amp;quot;elemen %d : %s\n&amp;quot;, i, fruit)
+}
+
+var fruits = [4]string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+for _, fruit := range fruits {
+    fmt.Printf(&amp;quot;nama buah : %s\n&amp;quot;, fruit)
+}
+
+//关键字make声明数组
+var fruits = make([]string, 2)
+fruits[0] = &amp;quot;apple&amp;quot;
+fruits[1] = &amp;quot;manggo&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;切片slice&#34;&gt;切片slice&lt;/h2&gt;
+&lt;p&gt;Slice是一个数组元素引用。可以通过操作Array或其他Slice来生成切片。因为它是引用类型的数据，所以在每个切片元素中进行数据更改将对具有相同内存地址的其他切片或数组产生影响。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var fruits = []string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}
+fmt.Println(fruits[0]) // &amp;quot;apple&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;声明切片，把声明数组时的长度或&lt;code&gt;...&lt;/code&gt;去掉就可以了，因为切片可以变长的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var fruitsA = []string{&amp;quot;apple&amp;quot;, &amp;quot;grape&amp;quot;}      // slice
+var fruitsB = [2]string{&amp;quot;banana&amp;quot;, &amp;quot;melon&amp;quot;}    // array
+var fruitsC = [...]string{&amp;quot;papaya&amp;quot;, &amp;quot;grape&amp;quot;}  // array
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;cap和len傻傻分不清&#34;&gt;cap()和len()傻傻分不清？&lt;/h3&gt;
+&lt;p&gt;len就是返回实际元素数量；cap是目前分配的容量大小，它是&amp;gt;=len的，是在变化slice大小时为了提高效率预先可能多分配的内存空间，这样在下次再次添加元素时就不要每次都去分配内存空间。&lt;/p&gt;
+&lt;h3 id=&#34;切片拷贝copy&#34;&gt;切片拷贝copy&lt;/h3&gt;
+&lt;p&gt;注意参数位置，先是目标切片，第二个才是源切片。而且可以把长的切片拷贝到更短的切片中。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dst := make([]string, 3)
+src := []string{&amp;quot;watermelon&amp;quot;, &amp;quot;pinnaple&amp;quot;, &amp;quot;apple&amp;quot;, &amp;quot;orange&amp;quot;}
+n := copy(dst, src)
+
+fmt.Println(dst) // watermelon pinnaple apple
+fmt.Println(src) // watermelon pinnaple apple orange
+fmt.Println(n)   // 3 拷贝的数量
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;目标切片有数据的情况，会替换对应位置的数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dst := []string{&amp;quot;potato&amp;quot;, &amp;quot;potato&amp;quot;, &amp;quot;potato&amp;quot;}
+src := []string{&amp;quot;watermelon&amp;quot;, &amp;quot;pinnaple&amp;quot;}
+n := copy(dst, src)
+
+fmt.Println(dst) // watermelon pinnaple potato
+fmt.Println(src) // watermelon pinnaple
+fmt.Println(n)   // 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;map-映射&#34;&gt;Map 映射&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	var chicken1 = map[string]int{&amp;quot;mac&amp;quot;: 50, &amp;quot;pc&amp;quot;: 40}
+	chicken1[&amp;quot;ipad&amp;quot;] = 100
+
+	for key, val := range chicken1 {
+		fmt.Println(key, &amp;quot;  \t:&amp;quot;, val)
+	}
+
+	var chicken2 = map[string]int{}
+	chicken2[&amp;quot;iphone&amp;quot;] = 100
+	chicken2[&amp;quot;hawei&amp;quot;] = 150
+
+	for key, val := range chicken2 {
+		fmt.Println(key, &amp;quot;  \t:&amp;quot;, val)
+	}
+
+	var value, isExist = chicken2[&amp;quot;xiaomi&amp;quot;]
+
+	if isExist {
+		fmt.Println(value)
+	} else {
+		fmt.Println(&amp;quot;item is not exists&amp;quot;)
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;切片和Map一起来&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var chickens = []map[string]string{
+    map[string]string{&amp;quot;name&amp;quot;: &amp;quot;chicken blue&amp;quot;,   &amp;quot;gender&amp;quot;: &amp;quot;male&amp;quot;},
+    map[string]string{&amp;quot;name&amp;quot;: &amp;quot;chicken red&amp;quot;,    &amp;quot;gender&amp;quot;: &amp;quot;male&amp;quot;},
+    map[string]string{&amp;quot;name&amp;quot;: &amp;quot;chicken yellow&amp;quot;, &amp;quot;gender&amp;quot;: &amp;quot;female&amp;quot;},
+}
+
+for _, chicken := range chickens {
+    fmt.Println(chicken[&amp;quot;gender&amp;quot;], chicken[&amp;quot;name&amp;quot;])
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;随机数要有随机种子下面用时间戳来做&#34;&gt;随机数，要有随机种子,下面用时间戳来做&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math/rand&amp;quot;
+    &amp;quot;time&amp;quot;
+)
+
+func main() {
+    rand.Seed(time.Now().Unix())
+    var randomValue int
+
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&amp;quot;random number:&amp;quot;, randomValue)
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&amp;quot;random number:&amp;quot;, randomValue)
+    randomValue = randomWithRange(2, 10)
+    fmt.Println(&amp;quot;random number:&amp;quot;, randomValue)
+}
+
+func randomWithRange(min, max int) int {
+    var value = rand.Int() % (max - min + 1) + min
+    return value
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;函数的定义和返回值&#34;&gt;函数的定义和返回值&lt;/h2&gt;
+&lt;p&gt;上面已经写了一个函数了，函数的声明如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func nameOfFunc(paramA type, paramB type, paramC type) returnType
+func nameOfFunc(paramA, paramB, paramC type) returnType
+
+func randomWithRange(min int, max int) int
+func randomWithRange(min, max int) int
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;返回多个值，而且命名过了，不需要特别返回指定了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func calculate(d float64) (area float64, circumference float64) {
+    area = math.Pi * math.Pow(d / 2, 2)
+    circumference = math.Pi * d
+
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;不定长参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	var avg = calculate(2, 4, 3, 5, 4, 3, 3, 5, 5, 3)
+	var msg = fmt.Sprintf(&amp;quot;Avg : %.2f&amp;quot;, avg)
+	fmt.Println(msg)
+}
+
+func calculate(numbers ...int) float64 {
+	var total int = 0
+	for _, number := range numbers {
+		total += number
+	}
+
+	var avg = float64(total) / float64(len(numbers))
+	return avg
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可变参数的位置,要放到最后,不然没法处理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func yourHobbies(name string, hobbies ...string) {
+    var hobbiesAsString = strings.Join(hobbies, &amp;quot;, &amp;quot;)
+
+    fmt.Printf(&amp;quot;Hello, my name is: %s\n&amp;quot;, name)
+    fmt.Printf(&amp;quot;My hobbies are: %s\n&amp;quot;, hobbiesAsString)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;经常用到的string比较函数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var resulta = strings.Contains(&amp;quot;Golang&amp;quot;, &amp;quot;Golang&amp;quot;)
+var resultb = strings.Contains(&amp;quot;Golang&amp;quot;, &amp;quot;lang&amp;quot;)
+//true,true;Golang 包含了Golang 也包含了lang
+
+strings.Split(&amp;quot;ethan hunt&amp;quot;, &amp;quot; &amp;quot;)
+// [&amp;quot;ethan&amp;quot;, &amp;quot;hunt&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;pointer-指针&#34;&gt;Pointer 指针&lt;/h2&gt;
+&lt;p&gt;指针是引用或内存地址。指针变量表示包含值的内存地址的变量。例如，整数类型变量的值为4，那么其指针的含义是存储值4的存储器地址，而不是值4本身。&lt;/p&gt;
+&lt;p&gt;具有相同引用或指针地址的变量彼此相关，并且它们的值必须相同。当值发生变化时，它将使其他变量（相同的引用）生效，即值发生变化。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//除了一开始介绍的var name = new(string)来声明，也可以用以下方式
+var number *int
+var name *string
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;指针变量的默认值为nil（空）。指针变量不能保存非指针的值，反之亦然普通变量不能保存指针的值。&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以从常规变量中得到其指针（内存地址），在变量名称之前添加＆符号（＆）。此方法称为引用。&lt;/li&gt;
+&lt;li&gt;相反，通过在指针变量名称前添加星号（*），也可以检索指针变量的原始值。此方法称为解除引用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;var numberA int = 4							// int value
+var numberB *int = &amp;amp;numberA					// 取numberA的地址赋给numberB指针
+											// 他们指向了同一个内存空间，该内存中存储了4
+
+fmt.Println(&amp;quot;numberA (value)   :&amp;quot;, numberA)  // 4
+fmt.Println(&amp;quot;numberA (address) :&amp;quot;, &amp;amp;numberA) // 0xc20800a220，普通变量通过&amp;amp;取其地址
+
+fmt.Println(&amp;quot;numberB (value)   :&amp;quot;, *numberB) // 4，通过指针取赋值用*
+fmt.Println(&amp;quot;numberB (address) :&amp;quot;, numberB)  // 0xc20800a220
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时变化numberA的值后，再执行一遍打印，numberA和*numberB都统一改变。&lt;/p&gt;
+&lt;h3 id=&#34;参数也可以用指针&#34;&gt;参数也可以用指针&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	var number = 4
+	fmt.Println(&amp;quot;before :&amp;quot;, number) // 4
+
+	change(&amp;amp;number, 10)
+	fmt.Println(&amp;quot;after  :&amp;quot;, number) // 10
+}
+
+//第一参数为指针，调用时一般传 &amp;amp;普通变量名 取得地址丢过去
+//第二参数为新值
+func change(original *int, value int) {
+	*original = value
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;指针理解到这里也就差不多了，再去搞深了，头就晕了。&lt;/p&gt;
+&lt;h2 id=&#34;struct-结构体&#34;&gt;Struct 结构体&lt;/h2&gt;
+&lt;p&gt;Struct是变量定义（或属性）和/或函数（或方法）的集合，它们被包装为具有特定名称的新数据类型。结构中的属性，数据类型可以有所不同。与Map类似，只是在开头定义了Key，每个Item的数据类型可以不同。&lt;/p&gt;
+&lt;p&gt;golang中struct的概念类似于OOP中的类，尽管它实际上是不同的。使用OOP的概念作为类比，目的是为了更容易消化Struct的相关知识。&lt;/p&gt;
+&lt;p&gt;简单的DEMO,定义一个student结构体，main中新建一个student类型的变量，并给其属性赋值。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func main() {
+	var s1 student
+	s1.name = &amp;quot;john wick&amp;quot;
+	s1.grade = 2
+
+	fmt.Println(&amp;quot;name  :&amp;quot;, s1.name)
+	fmt.Println(&amp;quot;grade :&amp;quot;, s1.grade)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结构体初始化&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var s1 = student{}
+s1.name = &amp;quot;wick&amp;quot;
+s1.grade = 2
+
+var s2 = student{&amp;quot;ethan&amp;quot;, 2}
+
+var s3 = student{name: &amp;quot;jason&amp;quot;}
+
+var s4 = student{name: &amp;quot;wayne&amp;quot;, grade: 2}
+var s5 = student{grade: 2, name: &amp;quot;bruce&amp;quot;}
+
+
+fmt.Println(&amp;quot;student 1 :&amp;quot;, s1.name)
+fmt.Println(&amp;quot;student 2 :&amp;quot;, s2.name)
+fmt.Println(&amp;quot;student 3 :&amp;quot;, s3.name)
+fmt.Println(&amp;quot;student 4 :&amp;quot;, s4.name)
+fmt.Println(&amp;quot;student 5 :&amp;quot;, s5.name)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;struce-结合-pointer&#34;&gt;Struce 结合 Pointer&lt;/h3&gt;
+&lt;p&gt;看例子&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func main() {
+	var s1 = student{name: &amp;quot;wick&amp;quot;, grade: 2}
+
+	var s2 *student = &amp;amp;s1
+	fmt.Println(&amp;quot;student 1, name :&amp;quot;, s1.name)
+	fmt.Println(&amp;quot;student 2, name :&amp;quot;, s2.name)
+
+	s2.name = &amp;quot;ethan&amp;quot;
+	fmt.Println(&amp;quot;student 1, name :&amp;quot;, s1.name)
+	fmt.Println(&amp;quot;student 2, name :&amp;quot;, s2.name)
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意到没有，s2 是 指针，但是访问其属性时没有，没有，没有用*号!!!
+其实可以用的但是要这样写 &lt;code&gt;(*s2).name&lt;/code&gt;，可以正确执行，但是很麻烦，也没有必要这么写。&lt;/p&gt;
+&lt;h3 id=&#34;结构的嵌套&#34;&gt;结构的嵌套&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type person struct {
+    name string
+    age  int
+}
+
+type student struct {
+    grade int
+    person
+}
+
+func main() {
+    var s1 = student{}
+    s1.name = &amp;quot;wick&amp;quot;
+    s1.age = 21
+    s1.grade = 2
+
+    fmt.Println(&amp;quot;name  :&amp;quot;, s1.name)
+    fmt.Println(&amp;quot;age   :&amp;quot;, s1.age)
+    fmt.Println(&amp;quot;age   :&amp;quot;, s1.person.age)
+    fmt.Println(&amp;quot;grade :&amp;quot;, s1.grade)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这种&lt;code&gt;.&lt;/code&gt;后面接属性，再接属性的方式我觉得很优雅，要吐槽js和php的&lt;code&gt;-&amp;gt;&lt;/code&gt;了有没有？&lt;/p&gt;
+&lt;h3 id=&#34;嵌套中有同名的属性的处理&#34;&gt;嵌套中有同名的属性的处理&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type person struct {
+    name string
+    age  int
+}
+
+type student struct {
+    person
+    age   int
+    grade int
+}
+
+func main() {
+    var s1 = student{}
+    s1.name = &amp;quot;wick&amp;quot;
+    s1.age = 21        // age of student
+    s1.person.age = 22 // age of person
+
+    fmt.Println(s1.name)
+    fmt.Println(s1.age)
+    fmt.Println(s1.person.age)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;好吧，就是不处理。不再提升到外层结构，一一对应就好。&lt;/p&gt;
+&lt;h3 id=&#34;匿名结构&#34;&gt;匿名结构&lt;/h3&gt;
+&lt;p&gt;匿名结构是未预先声明直接在创建对象时声明的结构。对于创建仅使用一次的结构对象变量非常有效。如以下的s1&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type person struct {
+	name string
+	age  int
+}
+
+func main() {
+	var s1 = struct {
+		person
+		grade int
+	}{}
+	s1.person = person{&amp;quot;wick&amp;quot;, 21}
+	s1.grade = 2
+
+	fmt.Println(&amp;quot;name  :&amp;quot;, s1.person.name)
+	fmt.Println(&amp;quot;age   :&amp;quot;, s1.person.age)
+	fmt.Println(&amp;quot;grade :&amp;quot;, s1.grade)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;struce-和-slice&#34;&gt;Struce 和 Slice&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;type person struct {
+    name string
+    age  int
+}
+
+var allStudents = []person{
+    {name: &amp;quot;Wick&amp;quot;, age: 23},
+    {name: &amp;quot;Ethan&amp;quot;, age: 23},
+    {name: &amp;quot;Bourne&amp;quot;, age: 22},
+}
+
+for _, student := range allStudents {
+    fmt.Println(student.name, &amp;quot;age is&amp;quot;, student.age)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;匿名的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var allStudents = []struct {
+    person
+    grade int
+}{
+    {person: person{&amp;quot;wick&amp;quot;, 21}, grade: 2},
+    {person: person{&amp;quot;ethan&amp;quot;, 22}, grade: 3},
+    {person: person{&amp;quot;bond&amp;quot;, 21}, grade: 3},
+}
+
+for _, student := range allStudents {
+    fmt.Println(student)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有时为了json解码方便，也可以声明到一个结构体中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type student struct {
+    person struct {
+        name string
+        age  int
+    }
+    grade   int
+    hobbies []string
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;结构体的tag&#34;&gt;结构体的Tag&lt;/h3&gt;
+&lt;p&gt;标签是可以添加到每个结构属性的可选信息。在实际应用中很常见。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type person struct {
+    name string `tag1`
+    age  int    `tag2`
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;结构体的方法&#34;&gt;结构体的方法&lt;/h3&gt;
+&lt;p&gt;有了方法的结构体，功能更加强大&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;strings&amp;quot;
+
+type student struct {
+    name  string
+    grade int
+}
+
+func (s student) sayHello() {
+    fmt.Println(&amp;quot;Hello&amp;quot;, s.name)
+}
+
+func (s student) getNameAt(i int) string {
+    return strings.Split(s.name, &amp;quot; &amp;quot;)[i-1]
+}
+
+func main() {
+    var s1 = student{&amp;quot;john wick&amp;quot;, 21}
+    s1.sayHello()
+
+    var name = s1.getNameAt(2)
+    fmt.Println(&amp;quot;Last Name :&amp;quot;, name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;方法指针&#34;&gt;方法指针&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type student struct {
+	name  string
+	grade int
+}
+
+func (s student) changeName1(name string) {
+	fmt.Println(&amp;quot;---&amp;gt; on changeName1, name changed to&amp;quot;, name)
+	s.name = name
+}
+
+func (s *student) changeName2(name string) {
+	fmt.Println(&amp;quot;---&amp;gt; on changeName2, name changed to&amp;quot;, name)
+	s.name = name
+}
+
+func main() {
+	var s1 = student{&amp;quot;john wick&amp;quot;, 21}
+	fmt.Println(&amp;quot;s1 before&amp;quot;, s1.name)
+	// john wick
+
+	s1.changeName1(&amp;quot;jason bourne&amp;quot;)
+	fmt.Println(&amp;quot;s1 after changeName1&amp;quot;, s1.name)
+	// john wick
+
+	s1.changeName2(&amp;quot;ethan hunt&amp;quot;)
+	fmt.Println(&amp;quot;s1 after changeName2&amp;quot;, s1.name)
+	// ethan hunt
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行输出&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s1 before john wick
+---&amp;gt; on changeName1, name changed to jason bourne
+s1 after changeName1 john wick
+---&amp;gt; on changeName2, name changed to ethan hunt
+s1 after changeName2 ethan hunt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;s1.changeName2（）&lt;/code&gt;才会正真改变。&lt;code&gt;changeName1&lt;/code&gt;只会在方法内部改变，并没有s1的name。&lt;/p&gt;
+&lt;h2 id=&#34;访问权限&#34;&gt;访问权限&lt;/h2&gt;
+&lt;p&gt;导入的包，其中方法大写字母开头的是可以用的，小写字母开头的不能用。
+struct也是一样，我们引用的包中的结构，我们不可以访问小写字母开头的属性。&lt;/p&gt;
+&lt;h2 id=&#34;多个文件的运行&#34;&gt;多个文件的运行&lt;/h2&gt;
+&lt;p&gt;hello.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func sayHello(name string) {
+	fmt.Println(&amp;quot;Hello&amp;quot;, name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;主文件 main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+func main() {
+    sayHello(&amp;quot;Mike&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行&lt;code&gt;go run main.go hello.go&lt;/code&gt;,也是可以运行的。&lt;/p&gt;
+&lt;h2 id=&#34;init函数&#34;&gt;init()函数&lt;/h2&gt;
+&lt;p&gt;假设有个&lt;code&gt;library/mylib.go&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package library
+
+import &amp;quot;fmt&amp;quot;
+
+var Student = struct {
+	Name  string
+	Grade int
+}{}
+
+func init() {
+	Student.Name = &amp;quot;John Wick&amp;quot;
+	Student.Grade = 2
+
+	fmt.Println(&amp;quot;--&amp;gt; library/mylib.go imported&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;主文件main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;./library&amp;quot;
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	fmt.Printf(&amp;quot;Name  : %s\n&amp;quot;, library.Student.Name)
+	fmt.Printf(&amp;quot;Grade : %d\n&amp;quot;, library.Student.Grade)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+--&amp;gt; library/mylib.go imported
+Name  : John Wick
+Grade : 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;接口interface&#34;&gt;接口interface&lt;/h2&gt;
+&lt;p&gt;接口是方法定义的集合，没有包含特定的内容（仅定义）&lt;/p&gt;
+&lt;p&gt;接口是一种数据类型。类型为接口的对象的零值为nil。如果接口已经具有内容，则可以使用接口，这些内容是具有与接口中的最小方法定义相同的最小方法定义的具体对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;math&amp;quot;
+
+//声明接口
+type countit interface {
+	area() float64
+	around() float64
+}
+
+//声明圆的结构
+type circle struct {
+	diameter float64
+}
+
+//结构的方法
+func (l circle) radius() float64 {
+	return l.diameter / 2
+}
+
+//结构的方法，也是接口area的实现
+func (l circle) area() float64 {
+	return math.Pi * math.Pow(l.radius(), 2)
+}
+
+//结构的方法，也是接口around的实现
+func (l circle) around() float64 {
+	return math.Pi * l.diameter
+}
+
+//正方形
+type square struct {
+	side float64
+}
+
+//结构的方法
+func (p square) area() float64 {
+	return math.Pow(p.side, 2)
+}
+
+//结构的方法
+func (p square) around() float64 {
+	return p.side * 4
+}
+
+func main() {
+	var bangunDatar countit
+
+	bangunDatar = square{10.0}
+	fmt.Println(&amp;quot;===== 正方形&amp;quot;)
+	fmt.Println(&amp;quot;面积  :&amp;quot;, bangunDatar.area())
+	fmt.Println(&amp;quot;周长  :&amp;quot;, bangunDatar.around())
+
+	bangunDatar = circle{14.0}
+	fmt.Println(&amp;quot;===== 圆&amp;quot;)
+	fmt.Println(&amp;quot;面积  :&amp;quot;, bangunDatar.area())
+	fmt.Println(&amp;quot;周长  :&amp;quot;, bangunDatar.around())
+	//以下会报错，ype countit has no field or method radius
+	//fmt.Println(&amp;quot;半径  :&amp;quot;, bangunDatar.radius())
+	//要转成结构,调用结构的方法
+	fmt.Println(&amp;quot;半径  :&amp;quot;, bangunDatar.(circle).radius())
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接口实现了，那么要调用接口外的方法时，需要转成原来的结构对象，才能访问结构的方法。因为实现了接口后，生成的对象默认就是该接口类型了，不再是结构类型，需要转换&lt;code&gt;objName.(structName)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;接口的嵌套&#34;&gt;接口的嵌套&lt;/h3&gt;
+&lt;p&gt;上代码吧&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;math&amp;quot;
+
+//声明接口
+type countit2d interface {
+	area() float64
+	around() float64
+}
+
+type countit3d interface {
+	volume() float64
+}
+
+type countit interface {
+	countit2d
+	countit3d
+}
+
+type cube struct {
+	side float64
+}
+
+func (c *cube) volume() float64 {
+	return math.Pow(c.side, 3)
+}
+
+func (c *cube) area() float64 {
+	return math.Pow(c.side, 2) * 6
+}
+
+func (c *cube) around() float64 {
+	return c.side * 12
+}
+
+func main() {
+	var c countit = &amp;amp;cube{10.0}
+	fmt.Println(&amp;quot;===== 正方体&amp;quot;)
+	fmt.Println(&amp;quot;面积  :&amp;quot;, c.area())
+	fmt.Println(&amp;quot;周长  :&amp;quot;, c.around())
+	fmt.Println(&amp;quot;体积  :&amp;quot;, c.volume())
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+===== 正方体
+面积  : 600
+周长  : 120
+体积  : 1000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;要注意，这次用了方法指针，所以定义变量时用了&lt;code&gt;&amp;amp;&lt;/code&gt;符号&lt;/p&gt;
+&lt;h3 id=&#34;空接口-interface&#34;&gt;空接口 interface&lt;/h3&gt;
+&lt;p&gt;空接口是一种非常特殊的数据类型。这种类型的变量可以包含任何类型的数据，甚至是数组，指针，任何东西。具有此概念的数据类型通常称为动态类型。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    var secret interface{}
+
+    secret = &amp;quot;ethan hunt&amp;quot;
+    fmt.Println(secret)
+
+    secret = []string{&amp;quot;apple&amp;quot;, &amp;quot;manggo&amp;quot;, &amp;quot;banana&amp;quot;}
+    fmt.Println(secret)
+
+    secret = 12.4
+    fmt.Println(secret)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输出&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ethan hunt
+[apple manggo banana]
+12.4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一般使用时，需要转换&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;strings&amp;quot;
+
+func main() {
+	var secret interface{}
+
+	secret = 2
+	var number = secret.(int) * 10
+	fmt.Println(secret, &amp;quot;multiplied by 10 is :&amp;quot;, number)
+
+	secret = []string{&amp;quot;apple&amp;quot;, &amp;quot;manggo&amp;quot;, &amp;quot;banana&amp;quot;}
+	var gruits = strings.Join(secret.([]string), &amp;quot;, &amp;quot;)
+	fmt.Println(gruits, &amp;quot;is my favorite fruits&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;interface结合指针的用法&#34;&gt;interface{}结合指针的用法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	type person struct {
+		name string
+		age  int
+	}
+
+	var secret interface{} = &amp;amp;person{name: &amp;quot;mike&amp;quot;, age: 27}
+	var name = secret.(*person).name
+	fmt.Println(name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;interface结合slicemap&#34;&gt;interface{}结合slice，map&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	var person = []map[string]interface{}{
+		{&amp;quot;name&amp;quot;: &amp;quot;Mike&amp;quot;, &amp;quot;age&amp;quot;: 23},
+		{&amp;quot;name&amp;quot;: &amp;quot;Bruce&amp;quot;, &amp;quot;age&amp;quot;: 23},
+		{&amp;quot;name&amp;quot;: &amp;quot;Jay&amp;quot;, &amp;quot;age&amp;quot;: 22},
+	}
+
+	for _, each := range person {
+		fmt.Println(each[&amp;quot;name&amp;quot;], &amp;quot;age is&amp;quot;, each[&amp;quot;age&amp;quot;])
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;反射-reflect&#34;&gt;反射 Reflect&lt;/h2&gt;
+&lt;p&gt;反射是一种检查变量，并从这些变量中获取信息甚至操纵变量的技术。可以通过反射获得的信息范围非常广泛，例如查看变量的结构，类型，指针值等&lt;/p&gt;
+&lt;p&gt;有两个最重要的函数，即&lt;code&gt;reflect.ValueOf()&lt;/code&gt;和&lt;code&gt;reflect.TypeOf()&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;reflect.ValueOf()&lt;/code&gt;函数将返回一个&lt;code&gt;reflect.Value&lt;/code&gt;类型的对象，该对象包含与被搜索变量的值相关的信息。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;reflect.TypeOf()&lt;/code&gt;返回一个&lt;code&gt;reflect.Type&lt;/code&gt;类型的对象。该对象包含与搜索的数据类型相关的信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;reflect&amp;quot;
+
+func main() {
+	var number = 23
+	var reflectValue = reflect.ValueOf(number)
+
+	fmt.Println(&amp;quot;type of variabel :&amp;quot;, reflectValue.Type())
+
+	if reflectValue.Kind() == reflect.Int {
+		fmt.Println(&amp;quot;value of variabel :&amp;quot;, reflectValue.Int())
+	}
+	fmt.Println(&amp;quot;value of variabel :&amp;quot;, reflectValue.Interface())
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输出：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type of variabel : int
+value of variabel : 23
+value of variabel : 23
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再来&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;reflect&amp;quot;
+
+type student struct {
+    Name  string
+    Grade int
+}
+
+func (s *student) getPropertyInfo() {
+    var reflectValue = reflect.ValueOf(s)
+
+    if reflectValue.Kind() == reflect.Ptr {
+		//如果时指针，需要用Elem()方法来获取原始的反射对象
+        reflectValue = reflectValue.Elem()
+    }
+
+    var reflectType = reflectValue.Type()
+
+	//NumField（）方法返回结构中的公共属性数
+    for i := 0; i &amp;lt; reflectValue.NumField(); i++ {
+        fmt.Println(&amp;quot;name      :&amp;quot;, reflectType.Field(i).Name)
+        fmt.Println(&amp;quot;data type :&amp;quot;, reflectType.Field(i).Type)
+        fmt.Println(&amp;quot;value     :&amp;quot;, reflectValue.Field(i).Interface())
+        fmt.Println(&amp;quot;&amp;quot;)
+    }
+}
+
+func main() {
+    var s1 = &amp;amp;student{Name: &amp;quot;wick&amp;quot;, Grade: 2}
+    s1.getPropertyInfo()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输出：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name      : Name
+data type : string
+value     : wick
+
+name      : Grade
+data type : int
+value     : 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;调用方法&#34;&gt;调用方法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;reflect&amp;quot;
+
+type student struct {
+    Name  string
+    Grade int
+}
+
+func (s *student) SetName(name string) {
+    s.Name = name
+}
+
+func main() {
+    var s1 = &amp;amp;student{Name: &amp;quot;john wick&amp;quot;, Grade: 2}
+    fmt.Println(&amp;quot;name :&amp;quot;, s1.Name)
+
+    var reflectValue = reflect.ValueOf(s1)
+    var method = reflectValue.MethodByName(&amp;quot;SetName&amp;quot;)
+    method.Call([]reflect.Value{
+        reflect.ValueOf(&amp;quot;wick&amp;quot;),
+    })
+
+    fmt.Println(&amp;quot;name :&amp;quot;, s1.Name)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nama : john wick
+nama : wick
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;goroutine&#34;&gt;Goroutine&lt;/h2&gt;
+&lt;p&gt;Goroutine类似于线程，但并不是线程。线程可以包含很多goroutine。
+将goroutine称为迷你线程更合适。 Goroutine很轻，一个goroutine只需要大约2kB的内存。 
+Goroutine 是异步执行的。&lt;/p&gt;
+&lt;p&gt;Goroutine是Go上并发编程中最重要的部分之一。
+Goroutine如此特别的一个原因是它可以运行在多核处理器上。我们可以确定Cpu的核心数量越多，速度就越快。当然内存也要够大。&lt;/p&gt;
+&lt;p&gt;并发与并行不同。并行是同时执行许多进程。而并发是一个过程的组成。并发是一种结构，而并行是执行的方式。&lt;/p&gt;
+&lt;p&gt;要应用goroutine，必须将作为goroutine执行的过程包装到函数中。
+在调用该函数时，会在其前面添加go关键字，也就创建一个新的goroutine，其任务是运行函数中的代码。&lt;/p&gt;
+&lt;p&gt;以下是goroutine的简单实现示例。下面的程序显示10行文本，5行以正常方式执行，5行作为新goroutine执行。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;runtime&amp;quot;
+
+func print(till int, message string) {
+    for i := 0; i &amp;lt; till; i++ {
+        fmt.Println((i + 1), message)
+    }
+}
+
+func main() {
+    //确定为程序执行而激活的核心数
+    runtime.GOMAXPROCS(2)
+
+    go print(5, &amp;quot;hello&amp;quot;)
+    print(5, &amp;quot;how are you&amp;quot;)
+
+    var input string
+    fmt.Scanln(&amp;amp;input)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;解释一下，&lt;code&gt;fmt.Scanln(&amp;amp;input)&lt;/code&gt;会等待用户回车,将在用户按下回车键之前捕获所有字符，然后将它们保存在变量中。
+因为goroutine print()的执行时间可能比main goroutine main() 的执行时间长，因为两者都是异步的。
+等待用户回车，可以确保go print可以执行完成，以免main先完成，导致程序退出，go print无法执行完成。
+执行的结果是不确定的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+1 hello
+2 hello
+3 hello
+4 hello
+5 hello
+1 how are you
+2 how are you
+3 how are you
+4 how are you
+5 how are you
+
+➜  learn-golang go run main.go
+1 how are you
+2 how are you
+3 how are you
+4 how are you
+1 hello
+2 hello
+5 how are you
+3 hello
+4 hello
+5 hello
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;试试Scanln的用法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var s1, s2, s3 string
+fmt.Scanln(&amp;amp;s1, &amp;amp;s2, &amp;amp;s3)
+
+// user inputs: &amp;quot;how are you&amp;quot;
+
+fmt.Println(s1) // how
+fmt.Println(s2) // are
+fmt.Println(s3) // you
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;channel-通道&#34;&gt;Channel 通道&lt;/h2&gt;
+&lt;p&gt;通道用于连接一个goroutine和另一个goroutine。
+使用的机制是通过Channel交互数据。通道在一个goroutine中充当发送器，并且在另一个goroutine中充当接收器。
+在通道上发送和接收数据是阻塞的或者说是同步的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2570849395.png&#34; alt=&#34;channerl.png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;runtime&amp;quot;
+
+func main() {
+    runtime.GOMAXPROCS(2)
+
+	//声明一个字符串类型的通道
+    var messages = make(chan string)
+
+	//创建一个闭包，向messages通道发送数据
+    var sayHelloTo = func(who string) {
+        var data = fmt.Sprintf(&amp;quot;hello %s&amp;quot;, who)
+        messages &amp;lt;- data
+    }
+
+    go sayHelloTo(&amp;quot;Mike&amp;quot;)
+    go sayHelloTo(&amp;quot;Bruce&amp;quot;)
+    go sayHelloTo(&amp;quot;Jack&amp;quot;)
+
+	//message1 从通道messages接收数据，在接收到数据前会阻塞等等
+    var message1 = &amp;lt;-messages
+    fmt.Println(message1)
+
+    var message2 = &amp;lt;-messages
+    fmt.Println(message2)
+
+    var message3 = &amp;lt;-messages
+    fmt.Println(message3)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;learn-golang go run main.go
+hello Bruce
+hello Jack
+hello Mike
+➜  learn-golang go run main.go
+hello Jack
+hello Mike
+hello Bruce
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;通道作为参数&#34;&gt;通道作为参数&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;runtime&amp;quot;
+
+func printMessage(what chan string) {
+    fmt.Println(&amp;lt;-what)
+}
+
+func main() {
+    runtime.GOMAXPROCS(2)
+
+    var messages = make(chan string)
+
+    for _, each := range []string{&amp;quot;Jack&amp;quot;, &amp;quot;Bruce&amp;quot;, &amp;quot;Mike&amp;quot;} {
+        go func(who string) {
+            var data = fmt.Sprintf(&amp;quot;hello %s&amp;quot;, who)
+            messages &amp;lt;- data
+        }(each)
+    }
+
+    for i := 0; i &amp;lt; 3; i++ {
+        printMessage(messages)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;learn-golang go run main.go
+hello Mike
+hello Jack
+hello Bruce
+➜  learn-golang go run main.go
+hello Jack
+hello Mike
+hello Bruce
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;buffer-channel&#34;&gt;Buffer Channel&lt;/h3&gt;
+&lt;p&gt;带缓冲的通道。
+默认情况下，通道上的数据传输过程是非缓冲的，而不是缓冲在内存中。
+当从goroutine通过信道发送数据的过程时，必须有另一个goroutine负责从同一信道接收数据，其中交换过程是阻塞的。
+也就是说，在交换过程完成之前，将不处理发送和接收数据之后的代码行。&lt;/p&gt;
+&lt;p&gt;缓冲通道不同。在缓冲通道中，要确定缓冲器的数量。该数量是确定可以同时发送的数据量。
+只要发送的数据量不超过缓冲区的数量，传输就会异步运行（不阻塞）。&lt;/p&gt;
+&lt;p&gt;当发送的数据量不超过缓冲区限制时，在缓冲通道上发送数据的过程是异步的。但在通道数据接收总是同步的。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2740698958.png&#34; alt=&#34;channel.png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;runtime&amp;quot;
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	messages := make(chan int, 2)
+
+	go func() {
+		for {
+			i := &amp;lt;-messages
+			fmt.Println(&amp;quot;receive data&amp;quot;, i)
+		}
+	}()
+
+	for i := 0; i &amp;lt; 5; i++ {
+		fmt.Println(&amp;quot;send data&amp;quot;, i)
+		messages &amp;lt;- i
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+send data 0
+send data 1
+send data 2
+send data 3
+receive data 0
+receive data 1
+receive data 2
+receive data 3
+send data 4
+receive data 4
+➜  learn-golang go run main.go
+send data 0
+send data 1
+send data 2
+send data 3
+receive data 0
+receive data 1
+send data 4
+receive data 2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;第二次执行时，没有接收到3和4，因为main Goroutine已经执行结束，但是匿名的go goroutine还没完成就被退出了。&lt;/p&gt;
+&lt;h3 id=&#34;select&#34;&gt;select&lt;/h3&gt;
+&lt;p&gt;以下程序是在通道中应用select的简单示例。
+准备了两个goroutine，一个用于获取平均数，一个用于获取最大值。
+每个goroutine的操作结果通过一个通道发送到&lt;code&gt;main()&lt;/code&gt;函数（有两个通道）。
+在&lt;code&gt;main()&lt;/code&gt;函数本身中，使用关键字&lt;code&gt;select&lt;/code&gt;接收数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;runtime&amp;quot;
+)
+
+func getAverage(numbers []int, ch chan float64) {
+	var sum = 0
+	for _, e := range numbers {
+		sum += e
+	}
+	ch &amp;lt;- float64(sum) / float64(len(numbers))
+}
+
+func getMax(numbers []int, ch chan int) {
+	var max = numbers[0]
+	for _, e := range numbers {
+		if max &amp;lt; e {
+			max = e
+		}
+	}
+	ch &amp;lt;- max
+}
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	var numbers = []int{3, 4, 3, 5, 6, 3, 2, 2, 6, 3, 4, 6, 3}
+	fmt.Println(&amp;quot;numbers :&amp;quot;, numbers)
+
+	var ch1 = make(chan float64)
+	go getAverage(numbers, ch1)
+
+	var ch2 = make(chan int)
+	go getMax(numbers, ch2)
+
+	for i := 0; i &amp;lt; 2; i++ {
+		select {
+		case avg := &amp;lt;-ch1:
+			fmt.Printf(&amp;quot;Avg \t: %.2f \n&amp;quot;, avg)
+		case max := &amp;lt;-ch2:
+			fmt.Printf(&amp;quot;Max \t: %d \n&amp;quot;, max)
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+numbers : [3 4 3 5 6 3 2 2 6 3 4 6 3]
+Max     : 6 
+Avg     : 3.85 
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;for-range-close&#34;&gt;for range close&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;runtime&amp;quot;
+)
+
+func sendMessage(ch chan&amp;lt;- string) {
+	for i := 0; i &amp;lt; 20; i++ {
+		ch &amp;lt;- fmt.Sprintf(&amp;quot;data %d&amp;quot;, i)
+	}
+	close(ch)
+}
+
+func printMessage(ch &amp;lt;-chan string) {
+	for message := range ch {
+		fmt.Println(message)
+	}
+}
+
+func main() {
+	runtime.GOMAXPROCS(2)
+
+	var messages = make(chan string)
+	go sendMessage(messages)
+	printMessage(messages)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;通道方向&#34;&gt;通道方向&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ch chan string&lt;/code&gt;	可以发送和接收&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ch chan&amp;lt;- string&lt;/code&gt;	只能用于发送数据&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ch &amp;lt;-chan string&lt;/code&gt;	只能用于接收数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;通道的timeout&#34;&gt;通道的Timeout&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;math/rand&amp;quot;
+import &amp;quot;runtime&amp;quot;
+import &amp;quot;time&amp;quot;
+
+func sendData(ch chan&amp;lt;- int) {
+	for i := 0; true; i++ {
+		ch &amp;lt;- i
+		time.Sleep(time.Duration(rand.Int()%10+1) * time.Second)
+	}
+}
+
+func retreiveData(ch &amp;lt;-chan int) {
+loop:
+	for {
+		select {
+		case data := &amp;lt;-ch:
+			fmt.Print(`receive data &amp;quot;`, data, `&amp;quot;`, &amp;quot;\n&amp;quot;)
+		case &amp;lt;-time.After(time.Second * 5):
+			fmt.Println(&amp;quot;timeout. no activities under 5 seconds&amp;quot;)
+			break loop
+		}
+	}
+}
+
+func main() {
+	rand.Seed(time.Now().Unix())
+	runtime.GOMAXPROCS(2)
+
+	var messages = make(chan int)
+
+	go sendData(messages)
+	retreiveData(messages)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;select上有2个条件块:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;case data := &amp;lt;-ch&lt;/code&gt;,通道有数据时满足&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;case &amp;lt;-time.After(time.Second * 5)&lt;/code&gt;,5秒没有接收到数据时满足&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;defer--exit&#34;&gt;Defer &amp;amp; Exit&lt;/h2&gt;
+&lt;p&gt;Defer时延迟触发，会在程序退出前触发
+Exit是强制退出程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    defer fmt.Println(&amp;quot;Hello&amp;quot;)
+    fmt.Println(&amp;quot;some text&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;程序会先打印some text，后打印Hello（程序退出前执行）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;os&amp;quot;
+
+func main() {
+    defer fmt.Println(&amp;quot;Hello&amp;quot;)
+    //强制退出，defer也不会执行
+    os.Exit(1)
+    fmt.Println(&amp;quot;some text&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;直接输出&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+exit status 1
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;error-panic-还有-recover&#34;&gt;Error, Panic, 还有 Recover&lt;/h2&gt;
+&lt;p&gt;在Go中，有许多函数返回多个返回值。通常，其中一个返回值是错误类型。
+例如，在&lt;code&gt;strconv.Atoi()&lt;/code&gt;函数中。该函数用于将字符串数据转换为数字。此函数返回2个返回值。第一个返回值是转换结果，第二个返回值是错误。
+当转换正常运行时，第二个返回值将为nil。当转换失败时，可以从返回的错误中立即知道原因。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;strconv&amp;quot;
+)
+
+func main() {
+	var input string
+	fmt.Print(&amp;quot;Type some number: &amp;quot;)
+	fmt.Scanln(&amp;amp;input)
+
+	var number int
+	var err error
+	number, err = strconv.Atoi(input)
+
+	if err == nil {
+		fmt.Println(number, &amp;quot;is number&amp;quot;)
+	} else {
+		fmt.Println(input, &amp;quot;is not number&amp;quot;)
+		fmt.Println(err.Error())
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Type some number: 99
+99 is number
+➜  learn-golang go run main.go
+Type some number: abc
+abc is not number
+strconv.Atoi: parsing &amp;quot;abc&amp;quot;: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;自定义error&#34;&gt;自定义Error&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;errors&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;strings&amp;quot;
+)
+
+func validate(input string) (bool, error) {
+	if strings.TrimSpace(input) == &amp;quot;&amp;quot; {
+		// 输入为空时，返回false和自定义的错误
+		return false, errors.New(&amp;quot;cannot be empty&amp;quot;)
+	}
+	return true, nil
+}
+func main() {
+	var name string
+	fmt.Print(&amp;quot;Type your name: &amp;quot;)
+	fmt.Scanln(&amp;amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&amp;quot;Hello&amp;quot;, name)
+	} else {
+		fmt.Println(err.Error())
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;尝试直接回车：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Type your name: 
+cannot be empty
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;panic&#34;&gt;Panic&lt;/h3&gt;
+&lt;p&gt;把main中的fmt.Println(err.Error()),改成panic(err.Error),如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func main() {
+	var name string
+	fmt.Print(&amp;quot;Type your name: &amp;quot;)
+	fmt.Scanln(&amp;amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&amp;quot;hello&amp;quot;, name)
+	} else {
+		panic(err.Error())
+		fmt.Println(&amp;quot;end&amp;quot;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Type your name: 
+panic: cannot be empty
+
+goroutine 1 [running]:
+main.main()
+        /Users/michael/Desktop/learn-golang/main.go:24 +0x1fe
+exit status 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;recover-恢复&#34;&gt;recover 恢复&lt;/h3&gt;
+&lt;p&gt;recov恢复对于处理panic恐慌错误很有用。发生恐慌错误时，恢复处于恐慌状态的接管goroutine（不会出现紧急消息）。
+修改上面的例子，添加&lt;code&gt;catch()&lt;/code&gt;函数，在此函数中有一个&lt;code&gt;recov()&lt;/code&gt;语句，它将返回应该出现的恐慌错误消息。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;errors&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;strings&amp;quot;
+)
+
+func validate(input string) (bool, error) {
+	if strings.TrimSpace(input) == &amp;quot;&amp;quot; {
+		// 输入为空时，返回false和自定义的错误
+		return false, errors.New(&amp;quot;cannot be empty&amp;quot;)
+	}
+	return true, nil
+}
+
+func catch() {
+	if r := recover(); r != nil {
+		fmt.Println(&amp;quot;Error occured&amp;quot;, r)
+	} else {
+		fmt.Println(&amp;quot;Application running perfectly&amp;quot;)
+	}
+}
+
+func main() {
+	defer catch()
+	var name string
+	fmt.Print(&amp;quot;Type your name: &amp;quot;)
+	fmt.Scanln(&amp;amp;name)
+
+	if valid, err := validate(name); valid {
+		fmt.Println(&amp;quot;hello&amp;quot;, name)
+	} else {
+		panic(err.Error())
+		fmt.Println(&amp;quot;end&amp;quot;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Type your name: 
+Error occured cannot be empty
+➜  learn-golang go run main.go
+Type your name: mike
+hello mike
+Application running perfectly
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;recover-和-iife&#34;&gt;recover 和 IIFE&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;func main() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(&amp;quot;Panic occured&amp;quot;, r)
+		} else {
+			fmt.Println(&amp;quot;Application running perfectly&amp;quot;)
+		}
+	}()
+
+	panic(&amp;quot;some error happen&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Panic occured some error happen
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;字符串格式化输出&#34;&gt;字符串格式化输出&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;%s, %d, %.2f, %t，%T&lt;/code&gt;
+字符串，整型，2位小数的浮点数, 布尔值，类型名称&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;%e , %E&lt;/code&gt;科学记数法，&lt;code&gt;1.825000e+02, 1.825000E+02&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;一个unicode代码，形成一串unicode字符&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fmt.Printf(&amp;quot;%c\n&amp;quot;, 1400)
+// ո
+fmt.Printf(&amp;quot;%c\n&amp;quot;, 1235)
+// ӓ
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;fmt.Printf(&amp;quot;%o\n&amp;quot;, data.age)&lt;/code&gt;,转成8进制表示的字符串&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;%x , %X&lt;/code&gt;,16进制&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fmt.Printf(&amp;quot;%p\n&amp;quot;, &amp;amp;data.name)&lt;/code&gt;,输出内存地址&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;%v&lt;/code&gt;,用于格式化任何数据（包括接口类型数据{}）。返回结果是一串原始数据值,例如下面：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fmt.Printf(&amp;quot;%v\n&amp;quot;, data)
+// {wick 182.5 26 false [eating sleeping]}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;%+v&lt;/code&gt;,用于格式化结构，根据结构结构依次返回每个属性的名称及其值。更清晰对应关系。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fmt.Printf(&amp;quot;%+v\n&amp;quot;, data)
+// {name:wick height:182.5 age:26 isGraduated:false hobbies:[eating sleeping]}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;时间解析时间和格式化时间&#34;&gt;时间，解析时间和格式化时间&lt;/h2&gt;
+&lt;h3 id=&#34;timetime&#34;&gt;time.Time&lt;/h3&gt;
+&lt;p&gt;time.Time类型是日期时间对象的表示。有两种方法可以选择创建此类型的数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用time.Now（）将当前时间信息设为time.Time对象&lt;/li&gt;
+&lt;li&gt;使用time.Date（）创建一个具有自定义信息的time.Time类型的新对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;time&amp;quot;
+
+func main() {
+	var time1 = time.Now()
+	fmt.Printf(&amp;quot;time1 %v\n&amp;quot;, time1)
+	// time1 2019-08-21 17:19:21.673645 +0800 CST m=+0.000212639
+
+	loc, _ := time.LoadLocation(&amp;quot;Local&amp;quot;) //服务器设置的时区
+	var time2 = time.Date(2011, 12, 24, 10, 20, 0, 0, loc)
+	fmt.Printf(&amp;quot;time2 %v\n&amp;quot;, time2)
+	//time2 2011-12-24 10:20:00 +0800 CST
+
+	var time3 = time.Date(2011, 12, 24, 10, 20, 0, 0, time.UTC)
+	fmt.Printf(&amp;quot;time3 %v\n&amp;quot;, time3)
+	// time3 2011-12-24 10:20:00 +0000 UTC
+
+	var now = time.Now()
+	fmt.Println(&amp;quot;year:&amp;quot;, now.Year(), &amp;quot;month:&amp;quot;, now.Month())
+	// year: 2019 month: August
+
+	var date, err = time.Parse(time.RFC3339, &amp;quot;2018-12-23T10:30:21Z&amp;quot;)
+	if err != nil {
+		fmt.Println(&amp;quot;error&amp;quot;, err.Error())
+		return
+	}
+	fmt.Println(date)
+	//2018-12-23 10:30:21 +0000 UTC
+
+	//以下方法用到比较多些
+	localTime, err := time.ParseInLocation(&amp;quot;2006-01-02 15:04:05&amp;quot;, &amp;quot;2017-12-03 22:01:02&amp;quot;, time.Local)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(localTime)
+	//2017-12-03 22:01:02 +0800 CST
+
+	fmt.Println(time.Now())                          //2019-08-21 18:43:05.35283 +0800 CST m=+0.000470403
+	fmt.Println(time.Now().Sub(localTime).Seconds()) //5.4074523352835e+07
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;计时器触发器&#34;&gt;计时器,触发器&lt;/h2&gt;
+&lt;p&gt;###time.Sleep()&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;time&amp;quot;
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	//阻塞，休眠4秒后再启动
+	time.Sleep(time.Second * 4)
+	fmt.Println(&amp;quot;after 4 seconds&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;timenewtimer&#34;&gt;time.NewTimer()&lt;/h3&gt;
+&lt;p&gt;此功能与&lt;code&gt;time.Sleep()&lt;/code&gt;略有不同。 &lt;code&gt;time.NewTimer()&lt;/code&gt;函数返回类型为&lt;code&gt;*time.Timer&lt;/code&gt;的对象，该对象具有类型为&lt;code&gt;channel&lt;/code&gt;的&lt;code&gt;time.C&lt;/code&gt;属性。
+工作原理：在指定的时间延迟后，数据将通过通道C发送。使用此函数后必须跟一个从通道C接收数据的语句.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func main() {
+	//4秒后将有数据发送到timer.C通道
+	var timer = time.NewTimer(4 * time.Second)
+	fmt.Println(&amp;quot;start&amp;quot;)
+	//&amp;lt;-timer.C代码行表示从timer.C通道接收数据。
+	&amp;lt;-timer.C
+	//由于通道接收本身是阻塞的，因此`fmt.Println(&amp;quot;finish&amp;quot;)1语句将在4秒后执行。
+	fmt.Println(&amp;quot;finish&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;timeafterfunc&#34;&gt;time.AfterFunc()&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;time.AfterFunc()&lt;/code&gt;函数有2个参数。第一个参数是计时器持续时间，第二个参数是回调。如果时间已经满足定时器持续时间，则将执行回调&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;time&amp;quot;
+
+func main() {
+	time.AfterFunc(4*time.Second, func() {
+		fmt.Println(&amp;quot;expired&amp;quot;)
+	})
+
+	fmt.Println(&amp;quot;start&amp;quot;)
+	fmt.Println(&amp;quot;finish&amp;quot;)
+	time.Sleep(5 * time.Second)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;time.AfterFunc本身不会阻塞&lt;/li&gt;
+&lt;li&gt;先输出start和finish&lt;/li&gt;
+&lt;li&gt;4秒后，输出expired&lt;/li&gt;
+&lt;li&gt;程序结束
+如果最后不休眠，会看不到expired，time.AfterFunc会是一个gorutine，main gorouting会先结束导致看不到exprired。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;使用ticker调度程序&#34;&gt;使用Ticker调度程序&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	done := make(chan bool)
+	ticker := time.NewTicker(time.Second)
+
+    // 休眠10秒后，给通道发送true
+	go func() {
+		time.Sleep(10 * time.Second) // wait for 10 seconds
+		done &amp;lt;- true
+	}()
+
+    // 如果通道取到为true，停止tiker，并结束跳出
+    // 否则打印出Hello 和 当前时间
+	for {
+		select {
+		case &amp;lt;-done:
+			ticker.Stop()
+			return
+		case t := &amp;lt;-ticker.C:
+			fmt.Println(&amp;quot;Hello !!&amp;quot;, t)
+		}
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+Hello !! 2019-08-22 14:20:04.735523 +0800 CST m=+1.004185671
+Hello !! 2019-08-22 14:20:05.736374 +0800 CST m=+2.005077374
+Hello !! 2019-08-22 14:20:06.736541 +0800 CST m=+3.005285713
+Hello !! 2019-08-22 14:20:07.735261 +0800 CST m=+4.004046067
+Hello !! 2019-08-22 14:20:08.734633 +0800 CST m=+5.003458281
+Hello !! 2019-08-22 14:20:09.735612 +0800 CST m=+6.004478660
+Hello !! 2019-08-22 14:20:10.736302 +0800 CST m=+7.005209268
+Hello !! 2019-08-22 14:20:11.735903 +0800 CST m=+8.004850939
+Hello !! 2019-08-22 14:20:12.736244 +0800 CST m=+9.005233132
+Hello !! 2019-08-22 14:20:13.735353 +0800 CST m=+10.004382172
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;用goroutine做timer&#34;&gt;用Goroutine做Timer&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;os&amp;quot;
+import &amp;quot;time&amp;quot;
+
+func timer(timeout int, ch chan&amp;lt;- bool) {
+	time.AfterFunc(time.Duration(timeout)*time.Second, func() {
+		ch &amp;lt;- true
+	})
+}
+
+func watcher(timeout int, ch &amp;lt;-chan bool) {
+	&amp;lt;-ch
+	fmt.Println(&amp;quot;\ntime out! no answer more than&amp;quot;, timeout, &amp;quot;seconds&amp;quot;)
+	os.Exit(0)
+}
+
+func main() {
+	var timeout = 5
+	var ch = make(chan bool)
+
+	go timer(timeout, ch)
+	go watcher(timeout, ch)
+
+	var input string
+	fmt.Print(&amp;quot;what is 725/25 ? &amp;quot;)
+	fmt.Scan(&amp;amp;input)
+
+	if input == &amp;quot;29&amp;quot; {
+		fmt.Println(&amp;quot;the answer is right!&amp;quot;)
+	} else {
+		fmt.Println(&amp;quot;the answer is wrong!&amp;quot;)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  learn-golang go run main.go
+what is 725/25 ? 9
+the answer is wrong!
+➜  learn-golang go run main.go
+what is 725/25 ? 
+time out! no answer more than 5 seconds
+➜  learn-golang go run main.go
+what is 725/25 ? 29
+the answer is right!
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;数据类型之间的转换&#34;&gt;数据类型之间的转换&lt;/h2&gt;
+&lt;h3 id=&#34;strconvatoi&#34;&gt;strconv.Atoi()&lt;/h3&gt;
+&lt;p&gt;字符串转数字&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+import &amp;quot;strconv&amp;quot;
+
+func main() {
+	var str = &amp;quot;124&amp;quot;
+	var num, err = strconv.Atoi(str)
+
+	if err == nil {
+		fmt.Println(num) // 124
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;数字转字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var num = 124
+var str = strconv.Itoa(num)
+
+fmt.Println(str) // &amp;quot;124&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;strconvparseint&#34;&gt;strconv.ParseInt()&lt;/h3&gt;
+&lt;p&gt;解析成int&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var str = &amp;quot;124&amp;quot;
+//原为10进制，int64
+var num, err = strconv.ParseInt(str, 10, 64)
+
+if err == nil {
+    fmt.Println(num) // 124(int64)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;另一个demo&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var str = &amp;quot;1010&amp;quot;
+//原为2进制，int8
+var num, err = strconv.ParseInt(str, 2, 8)
+
+if err == nil {
+    fmt.Println(num) // 10
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;strconvformatint&#34;&gt;strconv.FormatInt()&lt;/h3&gt;
+&lt;p&gt;将int64数字数据转换为字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var num = int64(24)
+var str = strconv.FormatInt(num, 8)
+fmt.Println(str) // 30
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;strconvparsefloat&#34;&gt;strconv.ParseFloat()&lt;/h3&gt;
+&lt;p&gt;字符串解析成浮点数float32&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var str = &amp;quot;24.12&amp;quot;
+var num, err = strconv.ParseFloat(str, 32)
+
+if err == nil {
+    fmt.Println(num) // 24.1200008392334
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;strconvformatfloat&#34;&gt;strconv.FormatFloat()&lt;/h3&gt;
+&lt;p&gt;float格式化为字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var num = float64(24.12)
+var str = strconv.FormatFloat(num, &#39;f&#39;, 6, 64)
+
+fmt.Println(str) // 24.120000
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在上面的代码中，float64类型的数据24.12被转换为格式为&lt;code&gt;f&lt;/code&gt;，
+6是转换后的小数数据长度。&lt;/p&gt;
+&lt;h3 id=&#34;strconvparsebool&#34;&gt;strconv.ParseBool()&lt;/h3&gt;
+&lt;p&gt;转为bool类型的值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var str = &amp;quot;true&amp;quot;
+var bul, err = strconv.ParseBool(str)
+
+if err == nil {
+    fmt.Println(bul) // true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;strconvformatbool&#34;&gt;strconv.FormatBool()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var bul = true
+var str = strconv.FormatBool(bul)
+
+fmt.Println(str) // &amp;quot;true&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;数据类型关键字可用于转换或数据类型之间的转换&#34;&gt;数据类型关键字可用于转换或数据类型之间的转换&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var a float64 = float64(24)
+fmt.Println(a) // 24
+
+var b int32 = int32(24.00)
+fmt.Println(b) // 24
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;string--byte-转换&#34;&gt;string , byte 转换&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var text1 = &amp;quot;halo&amp;quot;
+var b = []byte(text1)
+
+fmt.Printf(&amp;quot;%d %d %d %d \n&amp;quot;, b[0], b[1], b[2], b[3])
+// 104 97 108 111
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;interface的转化&#34;&gt;interface{}的转化&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var data = map[string]interface{}{
+    &amp;quot;nama&amp;quot;:    &amp;quot;john wick&amp;quot;,
+    &amp;quot;grade&amp;quot;:   2,
+    &amp;quot;height&amp;quot;:  156.5,
+    &amp;quot;isMale&amp;quot;:  true,
+    &amp;quot;hobbies&amp;quot;: []string{&amp;quot;eating&amp;quot;, &amp;quot;sleeping&amp;quot;},
+}
+
+fmt.Println(data[&amp;quot;nama&amp;quot;].(string))
+fmt.Println(data[&amp;quot;grade&amp;quot;].(int))
+fmt.Println(data[&amp;quot;height&amp;quot;].(float64))
+fmt.Println(data[&amp;quot;isMale&amp;quot;].(bool))
+fmt.Println(data[&amp;quot;hobbies&amp;quot;].([]string))
+
+var data = map[string]interface{}{
+		&amp;quot;nama&amp;quot;:    &amp;quot;john wick&amp;quot;,
+		&amp;quot;grade&amp;quot;:   2,
+		&amp;quot;height&amp;quot;:  156.5,
+		&amp;quot;isMale&amp;quot;:  true,
+		&amp;quot;hobbies&amp;quot;: []string{&amp;quot;eating&amp;quot;, &amp;quot;sleeping&amp;quot;},
+	}
+
+	fmt.Println(data[&amp;quot;nama&amp;quot;].(string))
+	fmt.Println(data[&amp;quot;grade&amp;quot;].(int))
+	fmt.Println(data[&amp;quot;height&amp;quot;].(float64))
+	fmt.Println(data[&amp;quot;isMale&amp;quot;].(bool))
+	fmt.Println(data[&amp;quot;hobbies&amp;quot;].([]string))
+
+	fmt.Println(&amp;quot;=========================&amp;quot;)
+
+	for _, val := range data {
+		switch val.(type) {
+		case string:
+			fmt.Println(val.(string))
+		case int:
+			fmt.Println(val.(int))
+		case float64:
+			fmt.Println(val.(float64))
+		case bool:
+			fmt.Println(val.(bool))
+		case []string:
+			fmt.Println(val.([]string))
+		default:
+			fmt.Println(val.(int))
+		}
+	}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输出：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;john wick
+2
+156.5
+true
+[eating sleeping]
+=========================
+true
+[eating sleeping]
+john wick
+2
+156.5
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringshasprefix&#34;&gt;strings.HasPrefix()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var isPrefix1 = strings.HasPrefix(&amp;quot;john wick&amp;quot;, &amp;quot;jo&amp;quot;)
+fmt.Println(isPrefix1) // true
+
+var isPrefix2 = strings.HasPrefix(&amp;quot;john wick&amp;quot;, &amp;quot;wi&amp;quot;)
+fmt.Println(isPrefix2) // false
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringshassuffix&#34;&gt;strings.HasSuffix()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var isSuffix1 = strings.HasSuffix(&amp;quot;john wick&amp;quot;, &amp;quot;ic&amp;quot;)
+fmt.Println(isSuffix1) // false
+
+var isSuffix2 = strings.HasSuffix(&amp;quot;john wick&amp;quot;, &amp;quot;ck&amp;quot;)
+fmt.Println(isSuffix2) // true
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringscount&#34;&gt;strings.Count()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var howMany = strings.Count(&amp;quot;ethan hunt&amp;quot;, &amp;quot;t&amp;quot;)
+fmt.Println(howMany) // 2
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringsindex&#34;&gt;strings.Index()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var index1 = strings.Index(&amp;quot;ethan hunt&amp;quot;, &amp;quot;ha&amp;quot;)
+fmt.Println(index1) // 2
+
+var index2 = strings.Index(&amp;quot;ethan hunt&amp;quot;, &amp;quot;n&amp;quot;)
+fmt.Println(index2) // 4
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringsreplace&#34;&gt;strings.Replace()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var text = &amp;quot;banana&amp;quot;
+var find = &amp;quot;a&amp;quot;
+var replaceWith = &amp;quot;o&amp;quot;
+
+var newText1 = strings.Replace(text, find, replaceWith, 1)
+fmt.Println(newText1) // &amp;quot;bonana&amp;quot;
+
+var newText2 = strings.Replace(text, find, replaceWith, 2)
+fmt.Println(newText2) // &amp;quot;bonona&amp;quot;
+
+var newText3 = strings.Replace(text, find, replaceWith, -1)
+fmt.Println(newText3) // &amp;quot;bonono&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringsrepeat&#34;&gt;strings.Repeat()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var str = strings.Repeat(&amp;quot;na&amp;quot;, 4)
+fmt.Println(str) // &amp;quot;nananana&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringssplit&#34;&gt;strings.Split()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var string1 = strings.Split(&amp;quot;the dark knight&amp;quot;, &amp;quot; &amp;quot;)
+fmt.Println(string1) // [&amp;quot;the&amp;quot;, &amp;quot;dark&amp;quot;, &amp;quot;knight&amp;quot;]
+
+var string2 = strings.Split(&amp;quot;batman&amp;quot;, &amp;quot;&amp;quot;)
+fmt.Println(string2) // [&amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;t&amp;quot;, &amp;quot;m&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;n&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringsjoin&#34;&gt;strings.Join()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var data = []string{&amp;quot;banana&amp;quot;, &amp;quot;papaya&amp;quot;, &amp;quot;tomato&amp;quot;}
+var str = strings.Join(data, &amp;quot;-&amp;quot;)
+fmt.Println(str) // &amp;quot;banana-papaya-tomato&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;stringstolower-stringstoupper&#34;&gt;strings.ToLower() ,strings.ToUpper()&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;var str = strings.ToLower(&amp;quot;aLAy&amp;quot;)
+fmt.Println(str) // &amp;quot;alay&amp;quot;
+
+var str1 = strings.ToUpper(&amp;quot;eat!&amp;quot;)
+fmt.Println(str1) // &amp;quot;EAT!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;- /posts/go-%E9%9D%9E%E9%9B%B6%E5%9F%BA%E7%A1%80%E4%B8%80%E6%96%87%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part17 输出Pdf</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</link>
+        <pubDate>Sun, 18 Aug 2019 20:09:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/ -&lt;p&gt;输出PDF也是很容易遇到的要求。&lt;/p&gt;
+&lt;p&gt;我们用gopdf实现，先安装&lt;code&gt;go get -u github.com/jung-kurt/gofpdf&lt;/code&gt;
+用到中文需要注意，设置utf8字体。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;log&amp;quot;
+
+	&amp;quot;github.com/jung-kurt/gofpdf&amp;quot;
+)
+
+func main() {
+	//参数说明
+	//文档方向，纵向（P）还是横向（L）
+	//度量单位，mm表示毫米
+	//文档的大小，即将选择A4
+	//字体路径文件，用不到
+	pdf := gofpdf.New(&amp;quot;P&amp;quot;, &amp;quot;mm&amp;quot;, &amp;quot;A4&amp;quot;, &amp;quot;&amp;quot;)
+	//创建新页面
+	pdf.AddPage()
+	//中文字体设置
+	pdf.AddUTF8Font(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;./NotoSansSC-Regular.ttf&amp;quot;)
+	//配置字体
+	pdf.SetFont(&amp;quot;NotoSansSC&amp;quot;, &amp;quot;&amp;quot;, 16)
+	//左起5mm，上起10mm写字
+	pdf.Text(5, 10, &amp;quot;你好, 世界&amp;quot;)
+	//左侧5mm，距顶部20mm，贴图；
+	//第四个参数是图像宽度。如果大于0的值，则将根据编号按比例调整图像大小
+	pdf.Image(&amp;quot;./assets/terminal.png&amp;quot;, 5, 20, 200, 0, false, &amp;quot;&amp;quot;, 0, &amp;quot;&amp;quot;)
+
+	err := pdf.OutputFileAndClose(&amp;quot;./file.pdf&amp;quot;)
+	if err != nil {
+		log.Println(&amp;quot;ERROR&amp;quot;, err.Error())
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2684845569.png&#34; alt=&#34;gopdf.png&#34;&gt;
+字体文件下载：&lt;a href=&#34;https://kissjava.cn/usr/uploads/2019/08/3720698312.zip&#34;&gt;NotoSansSC-Regular.ttf.zip&lt;/a&gt;&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part17-%E8%BE%93%E5%87%BApdf/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part16 读写Excel XLSX文件（Excelize）</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</link>
+        <pubDate>Sun, 18 Aug 2019 18:52:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+Web应用中免不了用到Excel。当然现在都是用XLSX格式了。
+先安装&lt;code&gt;go get github.com/360EntSecGroup-Skylar/excelize&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##建立Excel文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;log&amp;quot;
+
+	&amp;quot;github.com/360EntSecGroup-Skylar/excelize&amp;quot;
+)
+
+type M map[string]interface{}
+
+var data = []M{
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Noval&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 18},
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Nabila&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;female&amp;quot;, &amp;quot;Age&amp;quot;: 12},
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Yasa&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 11},
+}
+
+func main() {
+	xlsx := excelize.NewFile()
+
+	sheet1Name := &amp;quot;Sheet One&amp;quot;
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;Name&amp;quot;)
+	xlsx.SetCellValue(sheet1Name, &amp;quot;B1&amp;quot;, &amp;quot;Gender&amp;quot;)
+	xlsx.SetCellValue(sheet1Name, &amp;quot;C1&amp;quot;, &amp;quot;Age&amp;quot;)
+
+	err := xlsx.AutoFilter(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;C1&amp;quot;, &amp;quot;&amp;quot;)
+	if err != nil {
+		log.Fatal(&amp;quot;ERROR&amp;quot;, err.Error())
+	}
+
+	for i, each := range data {
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;A%d&amp;quot;, i+2), each[&amp;quot;Name&amp;quot;])
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;B%d&amp;quot;, i+2), each[&amp;quot;Gender&amp;quot;])
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;C%d&amp;quot;, i+2), each[&amp;quot;Age&amp;quot;])
+	}
+
+	err = xlsx.SaveAs(&amp;quot;./file1.xlsx&amp;quot;)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开看看
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/1999669164.png&#34; alt=&#34;create_excel.png&#34;&gt;
+##排版，合并单元格和单元格样式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;log&amp;quot;
+
+	&amp;quot;github.com/360EntSecGroup-Skylar/excelize&amp;quot;
+)
+
+type M map[string]interface{}
+
+var data = []M{
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Noval&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 18},
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Nabila&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;female&amp;quot;, &amp;quot;Age&amp;quot;: 12},
+	M{&amp;quot;Name&amp;quot;: &amp;quot;Yasa&amp;quot;, &amp;quot;Gender&amp;quot;: &amp;quot;male&amp;quot;, &amp;quot;Age&amp;quot;: 11},
+}
+
+func main() {
+	xlsx := excelize.NewFile()
+
+	sheet1Name := &amp;quot;Sheet One&amp;quot;
+	xlsx.SetSheetName(xlsx.GetSheetName(1), sheet1Name)
+
+	xlsx.SetCellValue(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;Name&amp;quot;)
+	xlsx.SetCellValue(sheet1Name, &amp;quot;B1&amp;quot;, &amp;quot;Gender&amp;quot;)
+	xlsx.SetCellValue(sheet1Name, &amp;quot;C1&amp;quot;, &amp;quot;Age&amp;quot;)
+
+	err := xlsx.AutoFilter(sheet1Name, &amp;quot;A1&amp;quot;, &amp;quot;C1&amp;quot;, &amp;quot;&amp;quot;)
+	if err != nil {
+		log.Fatal(&amp;quot;ERROR&amp;quot;, err.Error())
+	}
+
+	for i, each := range data {
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;A%d&amp;quot;, i+2), each[&amp;quot;Name&amp;quot;])
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;B%d&amp;quot;, i+2), each[&amp;quot;Gender&amp;quot;])
+		xlsx.SetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;C%d&amp;quot;, i+2), each[&amp;quot;Age&amp;quot;])
+	}
+
+	//sheet 2
+	sheet2Name := &amp;quot;Sheet two&amp;quot;
+	sheetIndex := xlsx.NewSheet(sheet2Name)
+	xlsx.SetActiveSheet(sheetIndex)
+
+	xlsx.SetCellValue(sheet2Name, &amp;quot;A1&amp;quot;, &amp;quot;Hello&amp;quot;)
+	xlsx.MergeCell(sheet2Name, &amp;quot;A1&amp;quot;, &amp;quot;B1&amp;quot;)
+
+	style, err := xlsx.NewStyle(`{
+		&amp;quot;font&amp;quot;: {
+			&amp;quot;bold&amp;quot;: true,
+			&amp;quot;size&amp;quot;: 36
+		},
+		&amp;quot;fill&amp;quot;: {
+			&amp;quot;type&amp;quot;: &amp;quot;pattern&amp;quot;,
+			&amp;quot;color&amp;quot;: [&amp;quot;#E0EBF5&amp;quot;],
+			&amp;quot;pattern&amp;quot;: 1
+		}
+	}`)
+	if err != nil {
+		log.Fatal(&amp;quot;ERROR&amp;quot;, err.Error())
+	}
+	xlsx.SetCellStyle(sheet2Name, &amp;quot;A1&amp;quot;, &amp;quot;A1&amp;quot;, style)
+
+	err = xlsx.SaveAs(&amp;quot;./file2.xlsx&amp;quot;)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/984184223.png&#34; alt=&#34;new_sheet_style_merge_cell.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;##读取Excel&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;log&amp;quot;
+
+	&amp;quot;github.com/360EntSecGroup-Skylar/excelize&amp;quot;
+)
+
+type M map[string]interface{}
+
+func main() {
+
+	xlsx, err := excelize.OpenFile(&amp;quot;./file1.xlsx&amp;quot;)
+	if err != nil {
+		log.Fatal(&amp;quot;ERROR&amp;quot;, err.Error())
+	}
+
+	sheet1Name := &amp;quot;Sheet One&amp;quot;
+
+	rows := make([]M, 0)
+	for i := 2; i &amp;lt; 5; i++ {
+		v1, _ := xlsx.GetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;A%d&amp;quot;, i))
+		v2, _ := xlsx.GetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;B%d&amp;quot;, i))
+		v3, _ := xlsx.GetCellValue(sheet1Name, fmt.Sprintf(&amp;quot;C%d&amp;quot;, i))
+		row := M{
+			&amp;quot;Name&amp;quot;:   v1,
+			&amp;quot;Gender&amp;quot;: v2,
+			&amp;quot;Age&amp;quot;:    v3,
+		}
+		rows = append(rows, row)
+	}
+
+	fmt.Printf(&amp;quot;%v \n&amp;quot;, rows)
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go run main.go
+[map[Age:18 Gender:male Name:Noval] map[Age:12 Gender:female Name:Nabila] map[Age:11
+ Gender:male Name:Yasa]] 
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part16-%E8%AF%BB%E5%86%99excel-xlsx%E6%96%87%E4%BB%B6excelize/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part15 发送mail</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</link>
+        <pubDate>Sun, 18 Aug 2019 10:25:48 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+可用用&amp;quot;net/smtp&amp;quot;包，功能比较原始。我们用第三方包gomail，更强大。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;log&amp;quot;
+
+	&amp;quot;gopkg.in/gomail.v2&amp;quot;
+)
+
+const CONFIG_SMTP_HOST = &amp;quot;smtp.163.com&amp;quot;
+const CONFIG_SMTP_PORT = 465
+const CONFIG_EMAIL = &amp;quot;kissjava@163.com&amp;quot;
+const CONFIG_PASSWORD = &amp;quot;Mpassword3&amp;quot;
+
+func main() {
+	mailer := gomail.NewMessage()
+	mailer.SetHeader(&amp;quot;From&amp;quot;, CONFIG_EMAIL)
+	mailer.SetHeader(&amp;quot;To&amp;quot;, &amp;quot;kissjava.net@gmail.com&amp;quot;, &amp;quot;hellowiki@qq.com&amp;quot;)
+	mailer.SetAddressHeader(&amp;quot;Cc&amp;quot;, &amp;quot;hellowiki@icloud.com&amp;quot;, &amp;quot;HelloWiki&amp;quot;)
+	mailer.SetHeader(&amp;quot;Subject&amp;quot;, &amp;quot;Test mail测试&amp;quot;)
+	mailer.SetBody(&amp;quot;text/html&amp;quot;, &amp;quot;Hello, &amp;lt;b&amp;gt;have a nice day&amp;lt;/b&amp;gt;&amp;quot;)
+	mailer.Attach(&amp;quot;./assets/terminal.png&amp;quot;)
+
+	dialer := gomail.NewDialer(
+		CONFIG_SMTP_HOST,
+		CONFIG_SMTP_PORT,
+		CONFIG_EMAIL,
+		CONFIG_PASSWORD,
+	)
+
+	err := dialer.DialAndSend(mailer)
+	if err != nil {
+		log.Println(&amp;quot;Send faild.&amp;quot;)
+		log.Fatal(err.Error())
+	}
+
+	log.Println(&amp;quot;Mail sent!&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
+        <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果不采用Echo时，可以使用第三方库&lt;code&gt;gziphandler&lt;/code&gt;，Echo直接用Gzip中间件。
+HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。
+只要Rquest header中有&lt;code&gt;Accept-Encoding: gzip, deflate&lt;/code&gt;就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入&lt;code&gt;Content-Encoding: gzip&lt;/code&gt;才行。
+么有采用HTTP Gzip看看传输大小：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;io&amp;quot;
+    &amp;quot;net/http&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+    mux := new(http.ServeMux)
+
+    mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+        f, err := os.Open(&amp;quot;sample.png&amp;quot;)
+        if f != nil {
+            defer f.Close()
+        }
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+            return
+        }
+
+        _, err = io.Copy(w, f)
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+        }
+    })
+
+    server := new(http.Server)
+    server.Addr = &amp;quot;:9000&amp;quot;
+    server.Handler = mux
+
+    server.ListenAndServe()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/735410252.png&#34; alt=&#34;before.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;用上Gzip&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.Use(middleware.Gzip())
+
+	e.Static(&amp;quot;/assets&amp;quot;, &amp;quot;./assets&amp;quot;)
+
+	e.GET(&amp;quot;/image&amp;quot;, func(c echo.Context) error {
+		return c.HTML(http.StatusOK, &amp;quot;&amp;lt;img src=&#39;assets/terminal.png&#39;&amp;gt;&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果：
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4174351952.png&#34; alt=&#34;after.png&#34;&gt;
+图片实际是43K，压缩成了33.9K了。&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part13 跨站点请求伪造（CSRF）</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
+        <pubDate>Sat, 17 Aug 2019 21:33:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;跨站点请求伪造（CSRF）攻击以及如何预测它们&lt;/p&gt;
+&lt;p&gt;此类攻击的示例：尝试通过Web浏览器以外的媒体登录，例如使用CURL等&lt;/p&gt;
+&lt;p&gt;通常的防御方法是使用csrf令牌。在有表单的每个页面上，都会生成csrf令牌。提交表单时，会在请求中插入CSRF，然后后端检查发送的CSRF是否有效&lt;/p&gt;
+&lt;p&gt;csrf令牌本身是每次表单页面出现时生成的随机字符串。通常在每个POST请求中，令牌都作为标头，数据表单或查询字符串插入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;html/template&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+type M map[string]interface{}
+
+func main() {
+	tmpl := template.Must(template.ParseGlob(&amp;quot;./*.html&amp;quot;))
+
+	e := echo.New()
+
+	const CSRF_TOKEN_HEADER = &amp;quot;X-Csrf-Token&amp;quot;
+	const CSRF_KEY = &amp;quot;csrf_token&amp;quot;
+
+	e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
+		TokenLookup: &amp;quot;header:&amp;quot; + CSRF_TOKEN_HEADER,
+		ContextKey:  CSRF_KEY,
+	}))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		data := make(M)
+		data[CSRF_KEY] = c.Get(CSRF_KEY)
+		return tmpl.ExecuteTemplate(c.Response(), &amp;quot;view.html&amp;quot;, data)
+	})
+
+	//sayhello处理程序中没有csrf标记检查，因为它已被中间件隐式处理
+	e.POST(&amp;quot;/sayhello&amp;quot;, func(c echo.Context) error {
+		data := make(M)
+		if err := c.Bind(&amp;amp;data); err != nil {
+			return err
+		}
+
+		message := fmt.Sprintf(&amp;quot;hello %s&amp;quot;, data[&amp;quot;name&amp;quot;])
+		return c.JSON(http.StatusOK, message)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;view.html&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;form id=&amp;quot;form&amp;quot; action=&amp;quot;/sayhello&amp;quot; method=&amp;quot;POST&amp;quot;&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;label&amp;gt;Name&amp;lt;/label&amp;gt;
+            &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot; placeholder=&amp;quot;Type your name here&amp;quot;&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;label&amp;gt;Gender&amp;lt;/label&amp;gt;
+            &amp;lt;select name=&amp;quot;gender&amp;quot;&amp;gt;
+                &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;Select one&amp;lt;/option&amp;gt;
+                &amp;lt;option value=&amp;quot;male&amp;quot;&amp;gt;Male&amp;lt;/option&amp;gt;
+                &amp;lt;option value=&amp;quot;female&amp;quot;&amp;gt;Female&amp;lt;/option&amp;gt;
+            &amp;lt;/select&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;csrf_token&amp;quot; value=&amp;quot;{{ .csrf_token }}&amp;quot;&amp;gt;
+            &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/form&amp;gt;
+
+    &amp;lt;script src=&amp;quot;https://code.jquery.com/jquery-3.3.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+        $(function () {
+            $(&#39;form&#39;).on(&#39;submit&#39;, function (e) {
+                e.preventDefault()
+        
+                var self = $(this)
+        
+                var formData = {
+                    name: self.find(&#39;[name=&amp;quot;name&amp;quot;]&#39;).val(),
+                    gender: self.find(&#39;[name=&amp;quot;gender&amp;quot;]&#39;).val(),
+                }
+        
+                var url = self.attr(&#39;action&#39;)
+                var method = self.attr(&#39;method&#39;)
+                var payload = JSON.stringify(formData)
+        
+                $.ajax({
+                    url: url,
+                    type: method,
+                    contentType: &#39;application/json&#39;,
+                    data: payload,
+                    beforeSend: function(req) {
+                        var csrfToken = self.find(&#39;[name=csrf_token]&#39;).val()
+                        req.setRequestHeader(&amp;quot;X-Csrf-Token&amp;quot;, csrfToken)
+                    },
+                }).then(function (res) {
+                    alert(res)
+                }).catch(function (err) {
+                    alert(&#39;ERROR: &#39; + err.responseText)
+                    console.log(&#39;err&#39;, err)
+                })
+            })
+        })
+    &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器访问，提交数据，一切正常：
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/1911725900.png&#34; alt=&#34;csrf.png&#34;&gt;
+如果把JavaScript中的以下去掉，会验证不过的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;beforeSend: function(req) {
+                        var csrfToken = self.find(&#39;[name=csrf_token]&#39;).val()
+                        req.setRequestHeader(&amp;quot;X-Csrf-Token&amp;quot;, csrfToken)
+                    },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;尝试直接CURL访问，验证肯定不过&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/sayhello \
+     -H &#39;Content-Type: application/json&#39; \
+     -d &#39;{&amp;quot;name&amp;quot;:&amp;quot;noval&amp;quot;,&amp;quot;gender&amp;quot;:&amp;quot;male&amp;quot;}&#39;
+{&amp;quot;message&amp;quot;:&amp;quot;invalid csrf token&amp;quot;}
+
+curl -X POST http://localhost:9000/sayhello \
+     -d &#39;name=Joe&#39; \
+     -d &#39;gender=male&#39;
+{&amp;quot;message&amp;quot;:&amp;quot;invalid csrf token&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part12 CORS 跨域资源共享和Request 预检</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
+        <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CORS机制，它使用额外的 HTTP 头来告诉浏览器  让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。
+以下是可用于CORS配置的标头列表&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Access-Control-Allow-Origin
+Access-Control-Allow-Methods
+Access-Control-Allow-Headers
+Access-Control-Allow-Credentials
+Access-Control-Max-Age
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CORS配置位于目标Web应用程序的服务器端。
+例如：我们的应用程序在本地从google.com中提取数据，然后CORS配置位于google.com;如果我们收到CORS错误，则无法完成任何其他操作，因为CORS应用程序目标由google.com上的人员控制。&lt;/p&gt;
+&lt;p&gt;练习时间：
+创建一个新项目。这个简单的应用程序将在&lt;code&gt;http//localhost:9000/&lt;/code&gt;上运行，然后我们将尝试从其他域访问它.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;log&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func main() {
+    http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;https://www.google.com&amp;quot;)
+        w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;OPTIONS, GET, POST, PUT&amp;quot;)
+        w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;Content-Type, X-CSRF-Token&amp;quot;)
+
+        if r.Method == &amp;quot;OPTIONS&amp;quot; {
+            w.Write([]byte(&amp;quot;allowed&amp;quot;))
+            return
+        }
+
+        w.Write([]byte(&amp;quot;hello&amp;quot;))
+    })
+
+    log.Println(&amp;quot;Starting app at :9000&amp;quot;)
+    http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的代码表示允许从&lt;code&gt;https://www.google.com&lt;/code&gt;发送的请求进入;我们选择了谷歌域名，因为测试将从那里完成，请求的目标是&lt;code&gt;http://localhost:9000/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们模拟是从google.com 访问 本地主机Web应用&lt;code&gt;localhost:9000&lt;/code&gt;（使用Chrome的开发人员工具从浏览器执行请求）。不是通过&lt;code&gt;localhost:9000&lt;/code&gt;访问&lt;code&gt;google.com&lt;/code&gt;，不要理解为颠倒。&lt;/p&gt;
+&lt;p&gt;再次说明，localhost:9000是受，google.com是攻。够形象了吧。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt;标头确定允许哪些HTTP方法（使用逗号分隔符输入）
+&lt;code&gt;Access-Control-Allow-Headers&lt;/code&gt;标头确定请求中允许哪些标头密钥。&lt;/p&gt;
+&lt;p&gt;好的，我们可以测试了。
+首先，请确保安装了Google Chrome；
+其次，你可以爬墙；
+然后安装jQuery Injector扩展。
+打开&lt;code&gt;https://www.google.com&lt;/code&gt;然后注入jQuery。通过强制注入jQuery然后从谷歌网站我们可以使用jQuery。
+打开Chrome开发者工具，切换到Console标签页。输入以下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$.ajax({
+    url: &amp;quot;http://localhost:9000/index&amp;quot;,
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ok,结果如下图
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2029474600.png&#34; alt=&#34;cors_from_google_to_localhost.png&#34;&gt;
+我切换到hk代理，打开google.com.hk，在执行操作就不能访问。因为&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;我们只设置了&lt;code&gt;www.google.com&lt;/code&gt;.如果我们需要能访问呢？以下就可以搞定允许多个主机来访问：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, 
+        &amp;quot;https://www.google.com, https://www.google.com.hk&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然也可以不设防，赤果果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;)
+w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;*&amp;quot;)
+w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;*&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##第三方CORS库来稍微优雅点解决问题
+&lt;code&gt;$ go get github.com/rs/cors&lt;/code&gt;
+利用中间件，代码优雅&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/rs/cors&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+
+	corsMiddleware := cors.New(cors.Options{
+		AllowedOrigins: []string{&amp;quot;https://www.google.com.hk&amp;quot;, &amp;quot;https://www.google.com&amp;quot;},
+		AllowedMethods: []string{&amp;quot;OPTIONS&amp;quot;, &amp;quot;GET&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PUT&amp;quot;},
+		AllowedHeaders: []string{&amp;quot;Content-Type&amp;quot;, &amp;quot;X-CSRF-Token&amp;quot;},
+		Debug:          true,
+	})
+	e.Use(echo.WrapMiddleware(corsMiddleware.Handler))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &amp;quot;hello&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定。&lt;/p&gt;
+- /posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part11 Gorilla Session</title>
+        <link>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</link>
+        <pubDate>Sat, 17 Aug 2019 19:57:02 +0000</pubDate>
+        
+        <guid>/posts/demo-%E5%AD%A6-echo-part11-gorilla-session/</guid>
+        <description>清风徐来 /posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;前面用了Gorilla的Cookie，Session也可以用他写的。
+首次访问get时，session没有村数据，显示empty result
+访问set时，会写入hello 和 world，然后再307临时重定向到get，会显示 hello world
+访问delete，会删除session，再307到get显示empty result。&lt;/p&gt;
+&lt;p&gt;demo 采用cookie来存储session数据，也支持其他多种方式存储。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/gorilla/sessions&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+const SESSION_ID = &amp;quot;id&amp;quot;
+
+func newCookieStore() *sessions.CookieStore {
+	authKey := []byte(&amp;quot;my-auth-key-very-secret&amp;quot;)
+	encryptionKey := []byte(&amp;quot;my-encryption-key-very-secret123&amp;quot;)
+
+	store := sessions.NewCookieStore(authKey, encryptionKey)
+	store.Options.Path = &amp;quot;/&amp;quot;
+	store.Options.MaxAge = 86400 * 7
+	store.Options.HttpOnly = true
+
+	return store
+}
+
+var store = newCookieStore()
+
+func main() {
+	e := echo.New()
+
+	e.GET(&amp;quot;/get&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+
+		if len(session.Values) == 0 {
+			return c.String(http.StatusOK, &amp;quot;empty result&amp;quot;)
+		}
+
+		return c.String(http.StatusOK, fmt.Sprintf(
+			&amp;quot;%s %s&amp;quot;,
+			session.Values[&amp;quot;message1&amp;quot;],
+			session.Values[&amp;quot;message2&amp;quot;],
+		))
+	})
+
+	e.GET(&amp;quot;/set&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+		session.Values[&amp;quot;message1&amp;quot;] = &amp;quot;hello&amp;quot;
+		session.Values[&amp;quot;message2&amp;quot;] = &amp;quot;world&amp;quot;
+		session.Save(c.Request(), c.Response())
+
+		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
+	})
+
+	e.GET(&amp;quot;/delete&amp;quot;, func(c echo.Context) error {
+		session, _ := store.Get(c.Request(), SESSION_ID)
+		session.Options.MaxAge = -1
+		session.Save(c.Request(), c.Response())
+
+		return c.Redirect(http.StatusTemporaryRedirect, &amp;quot;/get&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;- /posts/demo-%E5%AD%A6-echo-part11-gorilla-session/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

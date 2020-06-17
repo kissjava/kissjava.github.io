@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on 清风徐来</title>
+    <link>/tags/js/</link>
+    <description>Recent content in js on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sun, 21 Jun 2009 12:30:38 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>input、select等表单元素与相邻文字对齐</title>
+      <link>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
+      <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
+      
+      <guid>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
+      <description>以前都是把多选框放到一个单独的表格单元格。 现在才知道，用css更简单：</description>
+    </item>
+    
+    <item>
+      <title>PHP利用iframe上传文件并返回值到父框架</title>
+      <link>/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
+      
+      <guid>/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
+      <description>哈哈，淡水其实也是采用这样的做发法的。正好看到有童鞋博客上有这样写。就顺手贴过来了。 if($result) { echo &amp;ldquo;上传成功!文件路径为：&amp;rdquo;.$file2; echo &amp;lsquo;&amp;rsquo;; echo&#39;parent.document.form1.img.value=document.getElementById(&amp;ldquo;img&amp;rdquo;).value;&amp;rsquo;; } 文件上传成功后，把文件路径写入一个隐藏的域中（img），然后用DOM原理把隐藏域中的VALUE发送到父框架的表单form1的img文本框中：ok，再来看看淡水的。 淡水编辑器用了tinyMCE，所以有一点点不一样。 我的form页： </description>
+    </item>
+    
+    <item>
+      <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
+      <link>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
+      <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
+      
+      <guid>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
+      <description>大多都涉及到JS，但是淡水这块儿比较薄弱。于是用jQuery，搞定。 帖一张图，对jQuery的说明很不错 [caption id=&amp;quot;attachment_139&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;jQuery&amp;rdquo;][/caption] 站还没更新，嗯，下周更新吧</description>
+    </item>
+    
+    <item>
+      <title>tinyMCE和CodeIgniter1.7.0</title>
+      <link>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+      <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
+      
+      <guid>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+      <description>tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。 下载tinyMCE并解压到网站目录，淡水是放到根目录的。 在CodeIgniter的View里调用： </description>
+    </item>
+    
+  </channel>
+</rss>

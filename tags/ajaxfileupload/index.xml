@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AjaxFileUpload on 清风徐来</title>
+    <link>/tags/ajaxfileupload/</link>
+    <description>Recent content in AjaxFileUpload on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 15 Sep 2011 14:31:47 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ajaxfileupload/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Codeigniter里的无刷新上传</title>
+      <link>/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
+      <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
+      
+      <guid>/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
+      <description>好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。
+先建个表 CREATE TABLE files ( id int NOT NULL AUTO_INCREMENT PRIMARY KEY, filename varchar(255) NOT NULL, title varchar(100) NOT NULL ); 文件的目录结构如下：
+第一步，建立表单看上去就一个title文本字段，一个文件框，一个提交按钮，还有一个files的div。 控制器部分 首先，我们要建一个上传的表单和一个upload的Controller。在index方法里渲出upload的视图。如下： class Upload extends CI_Controller { public function __construct() { parent::__construct(); $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;files_model&amp;rsquo;); $this-&amp;gt;load-&amp;gt;database(); $this-&amp;gt;load-&amp;gt;helper(&amp;lsquo;url&amp;rsquo;); } public function index() { $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;upload&amp;rsquo;); } } 我们已经在构造里加载了files_model，所以可以使用files_model里的方法。
+建立表单视图视图文件upload.php,包含了我们的上传表单。 &amp;lt;!doctype html&amp;gt;
+一些简单的css在css下建立style.css h1, h2 { font-family: Arial, sans-serif; font-size: 25px; } h2 { font-size: 20px; } label { font-family: Verdana, sans-serif; font-size: 12px; display: block; } input { padding: 3px 5px; width: 250px; margin: 0 0 10px; } input[type=&amp;quot;file&amp;rdquo;] { padding-left: 0; } input[type=&amp;quot;submit&amp;rdquo;] { width: auto; } #files { font-family: Verdana, sans-serif; font-size: 11px; } #files strong { font-size: 13px; } #files a { float: right; margin: 0 0 5px 10px; } #files ul { list-style: none; padding-left: 0; } #files li { width: 280px; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #CCC; } 第二步，Javascript在js下建立site.</description>
+    </item>
+    
+  </channel>
+</rss>

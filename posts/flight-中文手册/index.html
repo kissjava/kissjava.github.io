@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html><head>
+<title>Flight 中文手册</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Flight 中文手册" />
+<meta property="og:description" content="Flight 是什么?
+Flight是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
+中文手册由kissjava.cn翻译。
+require &#39;flight/Flight.php&#39;;
+
+Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+Flight::start();
+** 转载请勿删改，并注明来源：http://kissjava.cn **" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/" />
+<meta property="article:published_time" content="2014-06-12T10:42:00+00:00" />
+<meta property="article:modified_time" content="2014-06-12T10:42:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flight 中文手册"/>
+<meta name="twitter:description" content="Flight 是什么?
+Flight是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
+中文手册由kissjava.cn翻译。
+require &#39;flight/Flight.php&#39;;
+
+Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+Flight::start();
+** 转载请勿删改，并注明来源：http://kissjava.cn **"/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#flight-%e6%98%af%e4%bb%80%e4%b9%88" onclick="collapseOthers(`#flight-是什么-nav`)" id="flight-是什么-nav">
+									Flight 是什么?
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6" onclick="collapseOthers(`#必要条件-nav`)" id="必要条件-nav">
+									必要条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%b8%e5%8f%af" onclick="collapseOthers(`#许可-nav`)" id="许可-nav">
+									许可
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" onclick="collapseOthers(`#安装-nav`)" id="安装-nav">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#routing-%e8%b7%af%e7%94%b1" onclick="collapseOthers(`#routing-路由-nav`)" id="routing-路由-nav">
+									Routing 路由
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#method-routing-%e8%af%b7%e6%b1%82%e6%96%b9%e5%bc%8f%e7%9a%84%e8%b7%af%e7%94%b1" onclick="collapseOthers(`#method-routing-请求方式的路由-nav`)" id="method-routing-请求方式的路由-nav">
+									Method Routing 请求方式的路由
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#regular-expressions-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" onclick="collapseOthers(`#regular-expressions-正则表达式-nav`)" id="regular-expressions-正则表达式-nav">
+									Regular Expressions 正则表达式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#named-parameters-%e5%91%bd%e5%90%8d%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#named-parameters-命名参数-nav`)" id="named-parameters-命名参数-nav">
+									Named Parameters 命名参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#optional-parameters-%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#optional-parameters-可选参数-nav`)" id="optional-parameters-可选参数-nav">
+									Optional Parameters 可选参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wildcards-%e9%80%9a%e9%85%8d%e7%ac%a6" onclick="collapseOthers(`#wildcards-通配符-nav`)" id="wildcards-通配符-nav">
+									Wildcards 通配符
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#passing-%e4%bc%a0%e9%80%92" onclick="collapseOthers(`#passing-传递-nav`)" id="passing-传递-nav">
+									Passing 传递
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#route-info-%e8%b7%af%e7%94%b1%e4%bf%a1%e6%81%af" onclick="collapseOthers(`#route-info-路由信息-nav`)" id="route-info-路由信息-nav">
+									Route Info 路由信息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#extending-%e6%89%a9%e5%b1%95" onclick="collapseOthers(`#extending-扩展-nav`)" id="extending-扩展-nav">
+									Extending 扩展
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#mapping-methods-%e6%98%a0%e5%b0%84%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#mapping-methods-映射方法-nav`)" id="mapping-methods-映射方法-nav">
+									Mapping Methods 映射方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#registering-classes-%e6%b3%a8%e5%86%8c%e7%b1%bb" onclick="collapseOthers(`#registering-classes-注册类-nav`)" id="registering-classes-注册类-nav">
+									Registering Classes 注册类
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#overriding-%e9%87%8d%e5%86%99" onclick="collapseOthers(`#overriding-重写-nav`)" id="overriding-重写-nav">
+									Overriding 重写
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#filtering-%e8%bf%87%e6%bb%a4" onclick="collapseOthers(`#filtering-过滤-nav`)" id="filtering-过滤-nav">
+									Filtering 过滤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#variables-%e5%8f%98%e9%87%8f" onclick="collapseOthers(`#variables-变量-nav`)" id="variables-变量-nav">
+									Variables 变量
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#views-%e8%a7%86%e5%9b%be" onclick="collapseOthers(`#views-视图-nav`)" id="views-视图-nav">
+									Views 视图
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#layouts-%e5%b8%83%e5%b1%80" onclick="collapseOthers(`#layouts-布局-nav`)" id="layouts-布局-nav">
+									Layouts 布局
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#custom-views-%e8%87%aa%e5%ae%9a%e4%b9%89%e8%a7%86%e5%9b%be" onclick="collapseOthers(`#custom-views-自定义视图-nav`)" id="custom-views-自定义视图-nav">
+									Custom Views 自定义视图
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#error-handling-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86" onclick="collapseOthers(`#error-handling-错误处理-nav`)" id="error-handling-错误处理-nav">
+									Error Handling 错误处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#errors-and-exceptions-%e9%94%99%e8%af%af%e5%92%8c%e5%bc%82%e5%b8%b8" onclick="collapseOthers(`#errors-and-exceptions-错误和异常-nav`)" id="errors-and-exceptions-错误和异常-nav">
+									Errors and Exceptions 错误和异常
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#not-found-%e6%9c%aa%e6%89%be%e5%88%b0%e9%a1%b5%e9%9d%a2" onclick="collapseOthers(`#not-found-未找到页面-nav`)" id="not-found-未找到页面-nav">
+									Not Found 未找到页面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#redirects-%e9%87%8d%e5%ae%9a%e5%90%91" onclick="collapseOthers(`#redirects-重定向-nav`)" id="redirects-重定向-nav">
+									Redirects 重定向
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#requests-%e8%af%b7%e6%b1%82" onclick="collapseOthers(`#requests-请求-nav`)" id="requests-请求-nav">
+									Requests 请求
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#http-caching-http%e7%bc%93%e5%ad%98" onclick="collapseOthers(`#http-caching-http缓存-nav`)" id="http-caching-http缓存-nav">
+									HTTP Caching HTTP缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#last-modified-%e6%9c%80%e5%90%8e%e4%bf%ae%e6%94%b9" onclick="collapseOthers(`#last-modified-最后修改-nav`)" id="last-modified-最后修改-nav">
+									Last-Modified 最后修改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#etag" onclick="collapseOthers(`#etag-nav`)" id="etag-nav">
+									ETag
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#stopping" onclick="collapseOthers(`#stopping-nav`)" id="stopping-nav">
+									Stopping
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#json" onclick="collapseOthers(`#json-nav`)" id="json-nav">
+									JSON
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#configuration-%e9%85%8d%e7%bd%ae" onclick="collapseOthers(`#configuration-配置-nav`)" id="configuration-配置-nav">
+									Configuration 配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#framework-methods-%e6%a1%86%e6%9e%b6%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#framework-methods-框架方法-nav`)" id="framework-methods-框架方法-nav">
+									Framework Methods 框架方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#core-methods-%e6%a0%b8%e5%bf%83%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#core-methods-核心方法-nav`)" id="core-methods-核心方法-nav">
+									Core Methods 核心方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#extensible-methods-%e6%89%a9%e5%b1%95%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#extensible-methods-扩展方法-nav`)" id="extensible-methods-扩展方法-nav">
+									Extensible Methods 扩展方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#framework-instance-%e6%a1%86%e6%9e%b6%e5%ae%9e%e4%be%8b" onclick="collapseOthers(`#framework-instance-框架实例-nav`)" id="framework-instance-框架实例-nav">
+									Framework Instance 框架实例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#flight-%e6%98%af%e4%bb%80%e4%b9%88" onclick="collapseOthers(`#flight-是什么-nav`)" id="flight-是什么-nav">
+									Flight 是什么?
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6" onclick="collapseOthers(`#必要条件-nav`)" id="必要条件-nav">
+									必要条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%b8%e5%8f%af" onclick="collapseOthers(`#许可-nav`)" id="许可-nav">
+									许可
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" onclick="collapseOthers(`#安装-nav`)" id="安装-nav">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#routing-%e8%b7%af%e7%94%b1" onclick="collapseOthers(`#routing-路由-nav`)" id="routing-路由-nav">
+									Routing 路由
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#method-routing-%e8%af%b7%e6%b1%82%e6%96%b9%e5%bc%8f%e7%9a%84%e8%b7%af%e7%94%b1" onclick="collapseOthers(`#method-routing-请求方式的路由-nav`)" id="method-routing-请求方式的路由-nav">
+									Method Routing 请求方式的路由
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#regular-expressions-%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" onclick="collapseOthers(`#regular-expressions-正则表达式-nav`)" id="regular-expressions-正则表达式-nav">
+									Regular Expressions 正则表达式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#named-parameters-%e5%91%bd%e5%90%8d%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#named-parameters-命名参数-nav`)" id="named-parameters-命名参数-nav">
+									Named Parameters 命名参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#optional-parameters-%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0" onclick="collapseOthers(`#optional-parameters-可选参数-nav`)" id="optional-parameters-可选参数-nav">
+									Optional Parameters 可选参数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#wildcards-%e9%80%9a%e9%85%8d%e7%ac%a6" onclick="collapseOthers(`#wildcards-通配符-nav`)" id="wildcards-通配符-nav">
+									Wildcards 通配符
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#passing-%e4%bc%a0%e9%80%92" onclick="collapseOthers(`#passing-传递-nav`)" id="passing-传递-nav">
+									Passing 传递
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#route-info-%e8%b7%af%e7%94%b1%e4%bf%a1%e6%81%af" onclick="collapseOthers(`#route-info-路由信息-nav`)" id="route-info-路由信息-nav">
+									Route Info 路由信息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#extending-%e6%89%a9%e5%b1%95" onclick="collapseOthers(`#extending-扩展-nav`)" id="extending-扩展-nav">
+									Extending 扩展
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#mapping-methods-%e6%98%a0%e5%b0%84%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#mapping-methods-映射方法-nav`)" id="mapping-methods-映射方法-nav">
+									Mapping Methods 映射方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#registering-classes-%e6%b3%a8%e5%86%8c%e7%b1%bb" onclick="collapseOthers(`#registering-classes-注册类-nav`)" id="registering-classes-注册类-nav">
+									Registering Classes 注册类
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#overriding-%e9%87%8d%e5%86%99" onclick="collapseOthers(`#overriding-重写-nav`)" id="overriding-重写-nav">
+									Overriding 重写
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#filtering-%e8%bf%87%e6%bb%a4" onclick="collapseOthers(`#filtering-过滤-nav`)" id="filtering-过滤-nav">
+									Filtering 过滤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#variables-%e5%8f%98%e9%87%8f" onclick="collapseOthers(`#variables-变量-nav`)" id="variables-变量-nav">
+									Variables 变量
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#views-%e8%a7%86%e5%9b%be" onclick="collapseOthers(`#views-视图-nav`)" id="views-视图-nav">
+									Views 视图
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#layouts-%e5%b8%83%e5%b1%80" onclick="collapseOthers(`#layouts-布局-nav`)" id="layouts-布局-nav">
+									Layouts 布局
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#custom-views-%e8%87%aa%e5%ae%9a%e4%b9%89%e8%a7%86%e5%9b%be" onclick="collapseOthers(`#custom-views-自定义视图-nav`)" id="custom-views-自定义视图-nav">
+									Custom Views 自定义视图
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#error-handling-%e9%94%99%e8%af%af%e5%a4%84%e7%90%86" onclick="collapseOthers(`#error-handling-错误处理-nav`)" id="error-handling-错误处理-nav">
+									Error Handling 错误处理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#errors-and-exceptions-%e9%94%99%e8%af%af%e5%92%8c%e5%bc%82%e5%b8%b8" onclick="collapseOthers(`#errors-and-exceptions-错误和异常-nav`)" id="errors-and-exceptions-错误和异常-nav">
+									Errors and Exceptions 错误和异常
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#not-found-%e6%9c%aa%e6%89%be%e5%88%b0%e9%a1%b5%e9%9d%a2" onclick="collapseOthers(`#not-found-未找到页面-nav`)" id="not-found-未找到页面-nav">
+									Not Found 未找到页面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#redirects-%e9%87%8d%e5%ae%9a%e5%90%91" onclick="collapseOthers(`#redirects-重定向-nav`)" id="redirects-重定向-nav">
+									Redirects 重定向
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#requests-%e8%af%b7%e6%b1%82" onclick="collapseOthers(`#requests-请求-nav`)" id="requests-请求-nav">
+									Requests 请求
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#http-caching-http%e7%bc%93%e5%ad%98" onclick="collapseOthers(`#http-caching-http缓存-nav`)" id="http-caching-http缓存-nav">
+									HTTP Caching HTTP缓存
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#last-modified-%e6%9c%80%e5%90%8e%e4%bf%ae%e6%94%b9" onclick="collapseOthers(`#last-modified-最后修改-nav`)" id="last-modified-最后修改-nav">
+									Last-Modified 最后修改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#etag" onclick="collapseOthers(`#etag-nav`)" id="etag-nav">
+									ETag
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#stopping" onclick="collapseOthers(`#stopping-nav`)" id="stopping-nav">
+									Stopping
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#json" onclick="collapseOthers(`#json-nav`)" id="json-nav">
+									JSON
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#configuration-%e9%85%8d%e7%bd%ae" onclick="collapseOthers(`#configuration-配置-nav`)" id="configuration-配置-nav">
+									Configuration 配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#framework-methods-%e6%a1%86%e6%9e%b6%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#framework-methods-框架方法-nav`)" id="framework-methods-框架方法-nav">
+									Framework Methods 框架方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#core-methods-%e6%a0%b8%e5%bf%83%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#core-methods-核心方法-nav`)" id="core-methods-核心方法-nav">
+									Core Methods 核心方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#extensible-methods-%e6%89%a9%e5%b1%95%e6%96%b9%e6%b3%95" onclick="collapseOthers(`#extensible-methods-扩展方法-nav`)" id="extensible-methods-扩展方法-nav">
+									Extensible Methods 扩展方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#framework-instance-%e6%a1%86%e6%9e%b6%e5%ae%9e%e4%be%8b" onclick="collapseOthers(`#framework-instance-框架实例-nav`)" id="framework-instance-框架实例-nav">
+									Framework Instance 框架实例
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Flight 中文手册
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-06-12 10:42
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[PHP]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C">中文手册</a>
+                                &nbsp;
+                            
+                                <a href="/tags/php">php</a>
+                                &nbsp;
+                            
+                                <a href="/tags/framework">framework</a>
+                                &nbsp;
+                            
+                                <a href="/tags/flight">flight</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E7%BF%BB%E8%AF%91">翻译</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="flight-是什么">Flight 是什么?</h1>
+<p><a href="http://flightphp.com">Flight</a>是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
+中文手册由<a href="http://kissjava.cn">kissjava.cn</a>翻译。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">require &#39;flight/Flight.php&#39;;
+
+Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+Flight::start();
+</code></pre></div><p>** 转载请勿删改，并注明来源：http://kissjava.cn **</p>
+<p><a href="http://flightphp.com/learn">Learn more</a></p>
+<h1 id="必要条件">必要条件</h1>
+<p>Flight 需要 <code>PHP 5.3</code> 及以上版本.</p>
+<h1 id="许可">许可</h1>
+<p>Flight 按照 <a href="http://flightphp.com/license">MIT</a> 许可发布。</p>
+<h1 id="安装">安装</h1>
+<p>1. <a href="https://github.com/mikecao/flight/tarball/master">下载</a> 并解压
+Flight framework 文件到你的web目录。</p>
+<p>2. 配置你的web服务器。</p>
+<p>如果是 <em>Apache</em>, 对照下面编辑 <code>.htaccess</code> 文件:</p>
+<pre><code>RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+</code></pre><p>如果是 <em>Nginx</em>, 把下面添加到你的服务器声明:</p>
+<pre><code>server {
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+}
+</code></pre><p>3. 建立 <code>index.php</code> 文件。</p>
+<p>先要把框架include进来。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">require &#39;flight/Flight.php&#39;;
+</code></pre></div><p>然后，定义一个路由，并指定一个函数来处理请求。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+</code></pre></div><p>最后，启动框架。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::start();
+</code></pre></div><h1 id="routing-路由">Routing 路由</h1>
+<p>Flight中路由是通过匹配RUL模式，调用回调函数进行的。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+</code></pre></div><p>回调可以是任何可以调用的对象。所以，你也可以采用先定义再注册的方式：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function hello(){
+    echo &#39;hello world!&#39;;
+}
+
+Flight::route(&#39;/&#39;, &#39;hello&#39;);
+</code></pre></div><p>或者，定义类方法，再注册调用:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class Greeting {
+    public static function hello() {
+        echo &#39;hello world!&#39;;
+    }
+}
+
+Flight::route(&#39;/&#39;, array(&#39;Greeting&#39;,&#39;hello&#39;));
+</code></pre></div><p>路由按他们定义的顺序进行匹配。第一个匹配的路由将被调用。</p>
+<h2 id="method-routing-请求方式的路由">Method Routing 请求方式的路由</h2>
+<p>默认情况下，路由模式匹配所有请求方式。
+你可以回应具体的一个请求方式，只要在URL之前放置一个标识符。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;GET /&#39;, function(){
+    echo &#39;I received a GET request.&#39;;
+});
+
+Flight::route(&#39;POST /&#39;, function(){
+    echo &#39;I received a POST request.&#39;;
+});
+</code></pre></div><p>您也可以一个回调对应多个请求方式，使用'|'分隔符：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;GET|POST /&#39;, function(){
+    echo &#39;I received either a GET or a POST request.&#39;;
+});
+</code></pre></div><h2 id="regular-expressions-正则表达式">Regular Expressions 正则表达式</h2>
+<p>你可以在路由中使用正则表达式：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/user/[0-9]+&#39;, function(){
+    // This will match /user/1234
+});
+</code></pre></div><h2 id="named-parameters-命名参数">Named Parameters 命名参数</h2>
+<p>你可以指定路由中的命名参数，参数将被传递
+您的回调函数。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/@name/@id&#39;, function($name, $id){
+    echo &#34;hello, $name ($id)!&#34;;
+});
+</code></pre></div><p>你也可以在命名参数中使用正则表达式，通过<code>:</code>分割：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/@name/@id:[0-9]{3}&#39;, function($name, $id){
+    // This will match /bob/123
+    // But will not match /bob/12345
+});
+</code></pre></div><h2 id="optional-parameters-可选参数">Optional Parameters 可选参数</h2>
+<p>你可以用括号来指定哪些命名参数是可选的。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/blog(/@year(/@month(/@day)))&#39;, function($year, $month, $day){
+    // 这将匹配下列URL:
+    // /blog/2012/12/10
+    // /blog/2012/12
+    // /blog/2012
+    // /blog
+});
+</code></pre></div><p>任何未匹配的可选参数都将传递NULL过去。</p>
+<h2 id="wildcards-通配符">Wildcards 通配符</h2>
+<p>匹配只是对应了URL部分情况。
+如果你想匹配更多，可以使用<code>*</code>通配符。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/blog/*&#39;, function(){
+    // This will match /blog/2000/02/01
+});
+</code></pre></div><p>所有请求路由到一个回调函数，你可以这样做：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;*&#39;, function(){
+    // Do something
+});
+</code></pre></div><h2 id="passing-传递">Passing 传递</h2>
+<p>您可以通过从返回<code>true</code>,从而传递到下一个匹配的路由执行
+您的回调函数。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/user/@name&#39;, function($name){
+    // 检查一些条件
+    if ($name != &#34;Bob&#34;) {
+        // 继续下一个路由
+        return true;
+    }
+});
+
+Flight::route(&#39;/user/*&#39;, function(){
+    // 这里会被调用
+});
+</code></pre></div><h2 id="route-info-路由信息">Route Info 路由信息</h2>
+<p>您匹配的回调将被传递路由的对象，你可以用它来检查
+路由信息。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/&#39;, function($route){
+    // 匹配的 HTTP methods（请求方式) 数组
+    $route-&gt;methods;
+
+    // 命名参数数组
+    $route-&gt;params;
+
+    // 匹配正则表达式
+    $route-&gt;regex;
+
+    // 包含&#39;*&#39;在URL模式中使用的所有内容
+    $route-&gt;splat;
+});
+</code></pre></div><h1 id="extending-扩展">Extending 扩展</h1>
+<p>Flight 被设计成可扩展的框架。框架提供了一组默认的方法和组件，
+但是框架也允许你map（映射）你自己的方法，
+注册您自己的类，甚至重写现有的类和方法。</p>
+<h2 id="mapping-methods-映射方法">Mapping Methods 映射方法</h2>
+<p>映射自定义的方法，您可以使用<code>map</code>函数：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 映射你的方法
+Flight::map(&#39;hello&#39;, function($name){
+    echo &#34;hello $name!&#34;;
+});
+
+// 调用自定义的方法
+Flight::hello(&#39;Bob&#39;);
+</code></pre></div><h2 id="registering-classes-注册类">Registering Classes 注册类</h2>
+<p>注册自定义的类，你可以使用<code>register</code>函数：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 注册自定义类
+Flight::register(&#39;user&#39;, &#39;User&#39;);
+
+// 得到一个自定义类的实例
+$user = Flight::user();
+</code></pre></div><p>该注册方法还允许将参数传递给类的构造函数。
+所以，加载你的自定义类，它会预先初始化。
+可以通过传递一个数组来定义构造函数的参数。
+下面是加载数据库连接的例子：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 注册带有构造函数参数的类
+Flight::register(&#39;db&#39;, &#39;PDO&#39;, array(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;));
+
+// 取得自定义类的一个实例
+// 这将按参数创建一个对象
+//
+//     new PDO(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;);
+//
+$db = Flight::db();
+</code></pre></div><p>如果你传递一个回调函数参数，它将会在类构造完后立即执行。
+这可以让你在程序中设置刚刚构造好的对象。
+回调函数接受一个参数，即新对象的实例。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 回调将被构造的对象作为参数
+Flight::register(&#39;db&#39;, &#39;PDO&#39;, array(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;), function($db){
+    $db-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+});
+</code></pre></div><p>默认情况下，每次加载类时，你会得到一个共享实例。
+要得到一个类的新的实例，只需传递<code>false</code>参数：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 共享实例（单一实例）
+$shared = Flight::db();
+
+// 新的实例
+$new = Flight::db(false);
+</code></pre></div><p>记住，map映射的方法优先于register注册类。
+如果您使用相同的名称声明两个，只有映射的方法将被调用。</p>
+<h1 id="overriding-重写">Overriding 重写</h1>
+<p>Flight 可以让你重写其默认的功能，以满足自己的需要，
+无需修改任何代码。</p>
+<p>例如，当Flight不能从URL匹配到路由, 他会调用 <code>notFound</code>
+方法，发送一个 <code>HTTP 404</code> 应答。
+你可以用 <code>map</code> 方法重写此行为:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::map(&#39;notFound&#39;, function(){
+    // 显示自定义的404页面
+    include &#39;errors/404.html&#39;;
+});
+</code></pre></div><p>Flight 还允许你替换框架的核心组件。
+例如，你可以用你自己的自定义类替换默认的路由器类：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 注册你的自定义类
+Flight::register(&#39;router&#39;, &#39;MyRouter&#39;);
+
+// 当Flight加载路由实例，它会加载您的类
+$myrouter = Flight::router();
+</code></pre></div><p>框架的 <code>map</code> 和 <code>register</code> 不可以重写。
+如果你试图重写，会出现错误。</p>
+<h1 id="filtering-过滤">Filtering 过滤</h1>
+<p>Flight允许你在调用方法前、后进行过滤。你不需要记忆预先定义的hooks。
+您可以过滤框架的所有方法，包括你已经映射的方法以及任何自定义的方法。</p>
+<p>过滤器函数看起来像这样:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output) {
+    // 过滤器处理的代码
+}
+</code></pre></div><p>使用传入的变量，你可以操纵的输入、输出参数。</p>
+<p>你可以运行一个过滤器在方法调用之前：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::before(&#39;start&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    // Do something
+});
+</code></pre></div><p>你可以运行一个过滤器在方法调用之后：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::after(&#39;start&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    // Do something
+});
+</code></pre></div><p>只要你想你可以添加任意多的过滤器。
+他们将按照被定义的顺序进行调用。</p>
+<p>下面是个的过滤处理的例子：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 映射自定义方法
+Flight::map(&#39;hello&#39;, function($name){
+    return &#34;Hello, $name!&#34;;
+});
+
+// Add a before filter 添加一个前置过滤器
+Flight::before(&#39;hello&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    // 操作参数
+    $params[0] = &#39;Fred&#39;;
+});
+
+// Add an after filter 添加一个后置过滤器
+Flight::after(&#39;hello&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    // 控制输出
+    $output .= &#34; Have a nice day!&#34;;
+});
+
+// 调用自定义的方法
+echo Flight::hello(&#39;Bob&#39;);
+</code></pre></div><p>应该得到如下显示:</p>
+<pre><code>Hello Fred! Have a nice day!
+</code></pre>
+<p>如果你定义了多个过滤器，
+你可以返回<code>false</code>来打断过滤器的链式调用：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::before(&#39;start&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    echo &#39;one&#39;;
+});
+
+Flight::before(&#39;start&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    echo &#39;two&#39;;
+
+    // 这里将结束调用
+    return false;
+});
+
+// 这里将不会被调用
+Flight::before(&#39;start&#39;, function(<span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$params, <span style="color:#a61717;background-color:#e3d2d2">&amp;</span>$output){
+    echo &#39;three&#39;;
+});
+</code></pre></div><p>注意：核心方法<code>map</code> 、 <code>register</code>不能被过滤，因为他们不是动态调用的。</p>
+<h1 id="variables-变量">Variables 变量</h1>
+<p>Flight可以让您保存变量，让他们可以在应用程序任何地方使用。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 保存你的变量
+Flight::set(&#39;id&#39;, 123);
+
+// 你应用程序的其他地方
+$id = Flight::get(&#39;id&#39;);
+</code></pre></div><p>要知道一个变量是否已经设置你可以这样做：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if (Flight::has(&#39;id&#39;)) {
+     // Do something
+}
+</code></pre></div><p>你可以清除一个变量:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 清除变量id
+Flight::clear(&#39;id&#39;);
+
+// 清除所有变量
+Flight::clear();
+</code></pre></div><p>Flight也使用变量进行配置。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre></div><h1 id="views-视图">Views 视图</h1>
+<p>Flight 默认情况下提供一些基本的模板功能。 
+要显示一个视图模板调用<code>render</code>方法，传递模板文件参数和可选的模板数据的名称：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::render(&#39;hello.php&#39;, array(&#39;name&#39; =&gt; &#39;Bob&#39;));
+</code></pre></div><p>传递的模板数据被自动插入到模板类似于模板自己的变量。模板文件就是简单的PHP文件。<br>
+如果<code>hello.php</code> 模板的内容如下:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Hello, &#39;<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$name</span>; <span style="color:#1e889b">?&gt;</span>&#39;!
+</code></pre></div><p>输出将是：</p>
+<pre><code>Hello, Bob!
+</code></pre>
+<p>您也可以手动使用set方法来设置视图的变量：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::view()-&gt;set(&#39;name&#39;, &#39;Bob&#39;);
+</code></pre></div><p>变量 <code>name</code> 现在就在你的视图里，你就可以直接渲染模板:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::render(&#39;hello&#39;);
+</code></pre></div><p>请注意，在render方法中指定模板的名称时，可以忽略<code>.php</code>的扩展名。</p>
+<p>Flight默认会在<code>views</code>目录下查找模板文件。 
+您可以通过设置，配置你的模板的路径：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::set(&#39;flight.views.path&#39;, &#39;/path/to/views&#39;);
+</code></pre></div><h2 id="layouts-布局">Layouts 布局</h2>
+<p>一般网站都有一个提供内容替换的布局模板文件。
+呈现在布局中的内容, 你可以传递一个可选参数给<code>render</code>方法。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::render(&#39;header&#39;, array(&#39;heading&#39; =&gt; &#39;Hello&#39;), &#39;header_content&#39;);
+Flight::render(&#39;body&#39;, array(&#39;body&#39; =&gt; &#39;World&#39;), &#39;body_content&#39;);
+</code></pre></div><p>现在，您的两个已经渲染的视图将保存在两个变量 <code>header_content</code> 和 <code>body_content</code>中。
+然后，渲染你的布局视图：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::render(&#39;layout&#39;, array(&#39;title&#39; =&gt; &#39;Home Page&#39;));
+</code></pre></div><p>如果模板文件看起来像这样：</p>
+<p><code>header.php</code>:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$heading</span>; <span style="color:#1e889b">?&gt;</span>&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+</code></pre></div><p><code>body.php</code>:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$body</span>; <span style="color:#1e889b">?&gt;</span>&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+</code></pre></div><p><code>layout.php</code>:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&lt;<span style="color:#8b008b;font-weight:bold">html</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">head</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">title</span>&gt;<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$title</span>; <span style="color:#1e889b">?&gt;</span>&lt;/<span style="color:#8b008b;font-weight:bold">title</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">head</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">body</span>&gt;
+<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$header_content</span>; <span style="color:#1e889b">?&gt;</span>
+<span style="color:#1e889b">&lt;?php</span> <span style="color:#8b008b;font-weight:bold">echo</span> <span style="color:#00688b">$body_content</span>; <span style="color:#1e889b">?&gt;</span>
+&lt;/<span style="color:#8b008b;font-weight:bold">body</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">html</span>&gt;
+</code></pre></div><p>输出如下：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#8b008b;font-weight:bold">html</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">head</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">title</span>&gt;Home Page&lt;/<span style="color:#8b008b;font-weight:bold">title</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">head</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">body</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">h1</span>&gt;Hello&lt;/<span style="color:#8b008b;font-weight:bold">h1</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">div</span>&gt;World&lt;/<span style="color:#8b008b;font-weight:bold">div</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">body</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">html</span>&gt;
+</code></pre></div><h2 id="custom-views-自定义视图">Custom Views 自定义视图</h2>
+<p>Flight允许你用自己的视图类替换默认的视图。
+参考这里使用<a href="http://www.smarty.net/">Smarty</a>模板引擎作为你的视图:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// 加载Smarty library
+require &#39;./Smarty/libs/Smarty.class.php&#39;;
+
+// 注册Smarty成为视图类
+// 传递一个回调函数，用于对加载Smarty的配置
+Flight::register(&#39;view&#39;, &#39;Smarty&#39;, array(), function($smarty){
+    $smarty-&gt;template_dir = &#39;./templates/&#39;;
+    $smarty-&gt;compile_dir = &#39;./templates_c/&#39;;
+    $smarty-&gt;config_dir = &#39;./config/&#39;;
+    $smarty-&gt;cache_dir = &#39;./cache/&#39;;
+});
+
+// 指定模板变量数据
+Flight::view()-&gt;assign(&#39;name&#39;, &#39;Bob&#39;);
+
+// 显示模板
+Flight::view()-&gt;display(&#39;hello.tpl&#39;);
+</code></pre></div><p>为了完整起见，你应该重写Flight的默认渲染方法：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::map(&#39;render&#39;, function($template, $data){
+    Flight::view()-&gt;assign($data);
+    Flight::view()-&gt;display($template);
+});
+</code></pre></div><h1 id="error-handling-错误处理">Error Handling 错误处理</h1>
+<h2 id="errors-and-exceptions-错误和异常">Errors and Exceptions 错误和异常</h2>
+<p>所有的错误和异常捕获Flight都传递给<code>error</code>方法。
+默认发送 <code>HTTP 500 Internal Server Error</code> 应答以及一些错误信息。</p>
+<p>你可以按自己的需求重写此行为：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::map(&#39;error&#39;, function(Exception $ex){
+    // 处理错误
+    echo $ex-&gt;getTraceAsString();
+});
+</code></pre></div><p>默认错误没有记录到服务器。
+如果想记录错误日志，你可以按以下方式修改:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre></div><h2 id="not-found-未找到页面">Not Found 未找到页面</h2>
+<p>如果页面未找到，Flight调用<code>notFound</code>方法。
+默认会发送 <code>HTTP 404 Not Found</code> 应答和一些简单信息。</p>
+<p>你可以按自己的需求重写此行为：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::map(&#39;notFound&#39;, function(){
+    // 处理未找到的错误
+});
+</code></pre></div><h1 id="redirects-重定向">Redirects 重定向</h1>
+<p>你可以通过<code>redirect</code>方法传递一个新的URL来重定向当前请求：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::redirect(&#39;/new/location&#39;);
+</code></pre></div><p>Flight 默认发送 HTTP 303 status code。 
+您也可以自己设置发送的HTTP status code：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::redirect(&#39;/new/location&#39;, 401);
+</code></pre></div><h1 id="requests-请求">Requests 请求</h1>
+<p>Flight封装HTTP请求到一个单一的对象，
+通过以下方式访问它：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$request = Flight::request();
+</code></pre></div><p>请求（request）对象提供了以下属性：</p>
+<pre><code>url - 被请求的URL
+base - The parent subdirectory of the URL该URL的父子目录
+method - 请求方式(GET, POST, PUT, DELETE)
+referrer - 来源URL
+ip - 客户端的ip地址
+ajax - 该请求是否是一个AJAX请求
+scheme - 服务器协议 (http, https)
+user_agent - 浏览器信息
+body - 请求 body 中的原始数据
+type - 内容类型
+length - 内容长度
+query - 查询字符串参数
+data - POST参数
+cookies - Cookie参数
+files - 上传的文件
+secure - 是否是安全链接
+accept - HTTP accept 参数
+proxy_ip - 客户端的代理服务器IP地址
+</code></pre><p>您可以以数组或是对象的方式访问 <code>query</code>, <code>data</code>, <code>cookies</code>, <code>files</code> 的属性。</p>
+<p>例如，要获得一个查询字符串参数，你可以这样做：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$id = Flight::request()-&gt;query[&#39;id&#39;];
+</code></pre></div><p>或者你也可以这样子:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$id = Flight::request()-&gt;query-&gt;id;
+</code></pre></div><h1 id="http-caching-http缓存">HTTP Caching HTTP缓存</h1>
+<p>Flight提供了HTTP级缓存的内置支持。如果缓存的条件得到满足，
+Flight 将返回<code>304 Not Modified</code>的HTTP响应。
+下一次客户端请求相同的资源， 他们将被提示使用其本地缓存版本。</p>
+<h2 id="last-modified-最后修改">Last-Modified 最后修改</h2>
+<p>你可以使用<code>lastModified</code> 方法并传递一个UNIX时间戳（timestamp）来设定页面的最后修改时间。
+客户端将继续使用其缓存，直到最后修改的值被改变。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/news&#39;, function(){
+    Flight::lastModified(1234567890);
+    echo &#39;This content will be cached.&#39;;
+});
+</code></pre></div><h2 id="etag">ETag</h2>
+<p><code>ETag</code> 缓存类似于 <code>Last-Modified</code>，
+但是它可以为资源指定ID ：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::route(&#39;/news&#39;, function(){
+    Flight::etag(&#39;my-unique-id&#39;);
+    echo &#39;This content will be cached.&#39;;
+});
+</code></pre></div><p>无论调用<code>lastModified</code> 或 <code>etag</code>都将设置和检查缓存值。
+如果缓存的值和请求之间是相同的，
+Flight 会立即发送一个<code>HTTP 304</code> 响应，并停止处理。</p>
+<h1 id="stopping">Stopping</h1>
+<p>您可以在任何时候通过调用<code>halt</code>方法停止框架：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::halt();
+</code></pre></div><p>您也可以指定一个可选的<code>HTTP</code>状态码和消息：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::halt(200, &#39;Be right back...&#39;);
+</code></pre></div><p>调用<code>halt</code>将放弃任何回应的内容。
+如果你想停止的框架并且要返回当前响应，使用<code>stop</code> 方法：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::stop();
+</code></pre></div><h1 id="json">JSON</h1>
+<p>Flight提供了一个发送JSON和JSONP响应支持。
+发送一个JSON响应，传递一些数据进行JSON编码：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::json(array(&#39;id&#39; =&gt; 123));
+</code></pre></div><p>对于JSONP请求，
+可选参数传递您用来定义回调函数的查询参数名：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::jsonp(array(&#39;id&#39; =&gt; 123), &#39;q&#39;);
+</code></pre></div><p>例如，一个GET请求使用<code>?q=my_func</code> 你应该得到的输出:</p>
+<pre><code>my_func({&quot;id&quot;:123});
+</code></pre><p>如果不传递查询参数的名称将默认为 <code>jsonp</code>。</p>
+<h1 id="configuration-配置">Configuration 配置</h1>
+<p>您可以通过<code>set</code>方法设置配置值，自定义Flight的某些行为。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre></div><p>以下是所有可用的配置设置的列表：</p>
+<pre><code>flight.base_url - 重写请求的基本url。 (默认：null)
+flight.handle_errors - 允许Flight在内部处理所有的错误。 (default: true)
+flight.log_errors - 错误记录到Web服务器的错误日志文件。 (default: false)
+flight.views.path - 包含视图模板文件的目录路径。 (default: ./views)
+</code></pre>
+<h1 id="framework-methods-框架方法">Framework Methods 框架方法</h1>
+<p>Flight 被设计为易于使用和理解。
+下面是一组完整的框架的方法。 
+它由核心方法，常规的静态方法，以及可扩展并且可以映射可以被过滤或覆盖的方法组成。</p>
+<h2 id="core-methods-核心方法">Core Methods 核心方法</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::map($name, $callback) // 创建一个自定义的框架方法。
+Flight::register($name, $class, [$params], [$callback]) // 注册一个类框架的方法。
+Flight::before($name, $callback) // 框架的方法之前添加一个过滤器。
+Flight::after($name, $callback) // 框架的方法之后添加一个过滤器。
+Flight::path($path) // 添加路径到自动加载的类路径。
+Flight::get($key) // 获取一个变量。
+Flight::set($key, $value) // 设置一个变量。
+Flight::has($key) // 检查一个变量是否被设置。
+Flight::clear([$key]) // 清除变量。
+Flight::init() // 按它的默认设置，初始化框架。
+</code></pre></div><h2 id="extensible-methods-扩展方法">Extensible Methods 扩展方法</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Flight::start() // 启动框架。
+Flight::stop() // 停止框架并发送响应。
+Flight::halt([$code], [$message]) // 停止框架，可选参数状态码和消息。
+Flight::route($pattern, $callback) // 映射一个URL模式到回调函数。
+Flight::redirect($url, [$code]) // 重定向到另一个url。
+Flight::render($file, [$data], [$key]) // 渲染一个模板文件。
+Flight::error($exception) // 发送一个HTTP 500响应。
+Flight::notFound() // 发送一个HTTP 404响应。
+Flight::etag($id, [$type]) // 执行的ETag HTTP缓存。
+Flight::lastModified($time) // 执行last modified（最后修改）HTTP缓存
+Flight::json($data, [$code], [$encode]) // 发送一个JSON响应。
+Flight::jsonp($data, [$param], [$code], [$encode]) // 发送一个JSONP响应。
+</code></pre></div><p><code>map</code> 和 <code>register</code> 添加的任何自定义方法都可以被过滤。</p>
+<h1 id="framework-instance-框架实例">Framework Instance 框架实例</h1>
+<p>你可以选择作为一个对象实例运行它，而不是把Flight作为一个全局的静态类运行。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">require &#39;flight/autoload.php&#39;;
+
+use flight\Engine;
+
+$app = new Engine();
+
+$app-&gt;route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+$app-&gt;start();
+</code></pre></div><p>这样，你就可以调用与引擎对象同名的实例方法，而不是调用静态方法。</p>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2014-06-12</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/">
+			下回<br>用Homebrew搞定MySQL-python
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/phpstorm-7.1.3-for-mac/">
+			上回<br>PhpStorm 7.1.3 for Mac
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,375 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
+        <link>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
+        <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
+        
+        <guid>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
+        <description>清风徐来 /posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/ -&lt;p&gt;大多都涉及到JS，但是淡水这块儿比较薄弱。于是用jQuery，搞定。
+帖一张图，对jQuery的说明很不错
+[caption id=&amp;quot;attachment_139&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;jQuery&amp;rdquo;]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[/caption]
+站还没更新，嗯，下周更新吧&lt;/p&gt;
+- /posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>tinyMCE和CodeIgniter1.7.0</title>
+        <link>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</link>
+        <pubDate>Thu, 06 Nov 2008 16:16:36 +0000</pubDate>
+        
+        <guid>/posts/tinymce%E5%92%8Ccodeigniter1.7.0/</guid>
+        <description>清风徐来 /posts/tinymce%E5%92%8Ccodeigniter1.7.0/ -&lt;p&gt;tinyMCE是个比较优秀的web编辑器。和CodeIgniter集成是非常方便的。
+下载tinyMCE并解压到网站目录，&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;是放到根目录的。
+在CodeIgniter的View里调用：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/tinymce%E5%92%8Ccodeigniter1.7.0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter 1.6.3 to 1.7.0</title>
+        <link>/posts/codeigniter-1.6.3-to-1.7.0/</link>
+        <pubDate>Thu, 06 Nov 2008 14:20:43 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-1.6.3-to-1.7.0/</guid>
+        <description>清风徐来 /posts/codeigniter-1.6.3-to-1.7.0/ -&lt;p&gt;今日升级后，发行有些读取数据库的页面有错误。提示：“SQL logic error or missing database”。咋回事呢？淡水不废话了,看代码,原来1.6.3是这样写的
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;);
+$this-&amp;gt;db-&amp;gt;from(&amp;lsquo;news&amp;rsquo;);
+$this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;);
+$query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3));
+&lt;!-- raw HTML omitted --&gt;
+现在1.7.0要这样
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;db-&amp;gt;select(&amp;lsquo;id,title,time&amp;rsquo;);
+$this-&amp;gt;db-&amp;gt;order_by(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;desc&amp;rsquo;);
+$query=$this-&amp;gt;db-&amp;gt;get(&amp;lsquo;news&amp;rsquo;,$config[&amp;lsquo;per_page&amp;rsquo;],$this-&amp;gt;uri-&amp;gt;segment(3));
+&lt;!-- raw HTML omitted --&gt;
+说白了，就是1.7.0比较严格一些，from后不能再get里还有table name否则会出错，其实还是我在1.6.3里写的不够严谨XD&lt;/p&gt;
+- /posts/codeigniter-1.6.3-to-1.7.0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>基础还是牢靠一些比较好</title>
+        <link>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</link>
+        <pubDate>Mon, 03 Nov 2008 17:17:28 +0000</pubDate>
+        
+        <guid>/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/</guid>
+        <description>清风徐来 /posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/ -&lt;p&gt;gpsnet.cc开始做些变动了。以前偷懒没有附件上传功能，现在要加上了。&lt;/p&gt;
+&lt;p&gt;扩展了CI的URI.php和Upload.php以支持中文url和保证上传的中文命名的文件可以正常上传并以中文命名（方便识别）。好多的基础都模糊了，警惕啊。&lt;/p&gt;
+&lt;p&gt;主要用的了&lt;!-- raw HTML omitted --&gt;iconv函数&lt;!-- raw HTML omitted --&gt;。
+&lt;!-- raw HTML omitted --&gt;
+//中文命名的文件上传到服务器，保证它是以GB2312的编码保存，否则服务器上文件名是乱码
+$filename = iconv(&amp;ldquo;UTF-8&amp;rdquo;,&amp;ldquo;GB2312//IGNORE&amp;rdquo;,$filename);
+#some code
+//把中文命名的文件名从GB2312编码转到UTF8编码，方便在UTF8编码的页面中显示，或插入DB
+$file_name = iconv(&amp;ldquo;GB2312&amp;rdquo;,&amp;ldquo;UTF-8&amp;rdquo;,$file_name);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;substr函数。&lt;!-- raw HTML omitted --&gt;插入的附件以“；”分割路径存入数据库。显示的时候要转换为数组循环输出比较方便。所以要去除最后的“；”，否则会多一个数组项。
+&lt;!-- raw HTML omitted --&gt;
+#笨的方法
+$upload = $news[&amp;lsquo;upload&amp;rsquo;];
+$upload = substr($upload,0,strlen($upload)-1);
+$upload = split(&amp;quot;;&amp;rdquo;,$upload);
+#比较好的方法
+$upload = $news[&amp;lsquo;upload&amp;rsquo;];
+$upload = substr($upload,0,-1);
+$upload = split(&amp;quot;;&amp;rdquo;,$upload);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;还有tinyMCE的有些小方法，淡水稍后再更新。&lt;/p&gt;
+- /posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter 1.7.0 版发布了，有料</title>
+        <link>/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</link>
+        <pubDate>Sat, 25 Oct 2008 19:12:44 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/</guid>
+        <description>清风徐来 /posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/ -&lt;p&gt;修正了一堆bug。&lt;/p&gt;
+&lt;p&gt;更新了session table，嗯session保存的database的才有关系，多了一个user_data字段。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;新增了form_validation.&lt;!-- raw HTML omitted --&gt;旧的validation还是可以用的，不过推荐使用新的form_validation。语法比较简洁明了。&lt;/p&gt;
+&lt;p&gt;旧式调用：
+&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;validation&amp;rsquo;);&lt;!-- raw HTML omitted --&gt;
+新验证类调用：
+&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;form_validation&amp;rsquo;);&lt;!-- raw HTML omitted --&gt;
+新式验证有较大的改善，设置规则时，可以同时设置form控件的显示label。
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;form_validation-&amp;gt;set_rules(&amp;lsquo;password&amp;rsquo;, &amp;lsquo;密码&amp;rsquo;, &amp;lsquo;required&amp;rsquo;);
+//一下子把以前的set_fields的工作也做了
+&lt;!-- raw HTML omitted --&gt;
+旧式的比较麻烦，要多次设置：
+&lt;!-- raw HTML omitted --&gt;
+$rules[&amp;lsquo;password&amp;rsquo;]	= &amp;ldquo;required&amp;rdquo;;
+$this-&amp;gt;validation-&amp;gt;set_rules($rules);
+$fields[&amp;lsquo;password&amp;rsquo;]	= &amp;lsquo;密码&amp;rsquo;;
+$this-&amp;gt;validation-&amp;gt;set_fields($fields);
+//more&amp;hellip;
+&lt;!-- raw HTML omitted --&gt;
+先 set_rules 再 set_fields ,哪像1.70一步搞定爽啊。
+&lt;!-- raw HTML omitted --&gt;Library 加载时指定 object name&lt;!-- raw HTML omitted --&gt;，通过第三个参数。
+手册的例子：
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;session&amp;rsquo;, &amp;lsquo;&amp;rsquo;, &amp;lsquo;my_session&amp;rsquo;);
+// Session class is now accessed using:
+$this-&amp;gt;my_session
+&lt;!-- raw HTML omitted --&gt;
+第二个参数是设置（配置）选项，还是手册（1.70版，1.6.3没有）的例子：
+&lt;!-- raw HTML omitted --&gt;
+$config = array (
+&amp;lsquo;mailtype&amp;rsquo; =&amp;gt; &amp;lsquo;html&amp;rsquo;,
+&amp;lsquo;charset&amp;rsquo;  =&amp;gt; &amp;lsquo;utf-8,
+&amp;lsquo;priority&amp;rsquo; =&amp;gt; &amp;lsquo;1&amp;rsquo;
+);
+$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;email&amp;rsquo;, $config);
+&lt;!-- raw HTML omitted --&gt;
+嗯，CI越来越称手了。&lt;/p&gt;
+- /posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter使用 layout library 简化视图布局</title>
+        <link>/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</link>
+        <pubDate>Wed, 22 Oct 2008 21:17:50 +0000</pubDate>
+        
+        <guid>/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/</guid>
+        <description>清风徐来 /posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/ -&lt;p&gt;一般在网站的开发过程中，都会有个 template 或是叫 layout 的，它包含了整个网站的外观和布局，一般分为header，content，footer 有的甚至还包括 menu。其中的 content 部分则会随着不同的页面和功能而变化。这样就可以保证网站风格的一致性，也可以减少不少工作量。虽然便捷的 Codeigniter没有提供内置的处理方式，但是我们还是自己扩展的。&lt;/p&gt;
+&lt;p&gt;首先，把下面的代码保存到 application/libraries/Layout.php
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在相关的控制器里载入它&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;往下就可以输出页面&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我们的template或是称之为layout的文件（layout_main.php）大致如下(简化了，实际应用中会有很多网站固定元素的):&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;而控制器中载入的视图，例中是“support”。我们只要专注support的内容就可以了。它会填充到template或是叫layout文件中的$content_for_layout部分，并整个一并输出。&lt;/p&gt;
+&lt;p&gt;如果，我们的template或是叫layout不想叫layout_main.php比如想叫template.php；那么我们载入layout library时就要指定template的名称，在第二个参数指定（无需php后缀）：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;update 2009年3月18日 ：&lt;!-- raw HTML omitted --&gt;最新版本请看：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://tsingfeng.sinaapp.com/?p=272&#34;&gt;http://tsingfeng.sinaapp.com/?p=272&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Simple FlashNotice helper for CodeIgniter</title>
+        <link>/posts/simple-flashnotice-helper-for-codeigniter/</link>
+        <pubDate>Wed, 22 Oct 2008 10:07:52 +0000</pubDate>
+        
+        <guid>/posts/simple-flashnotice-helper-for-codeigniter/</guid>
+        <description>清风徐来 /posts/simple-flashnotice-helper-for-codeigniter/ -&lt;p&gt;这是一个容易使用的简单的FlashNotice helper。
+它会在你进行一些操作之后帮助你显示错误或提示信息。
+信息显示一次后就会被自动删除。
+1，保持以下代码到“flash_helper.php” application/helpers 目录
+2，加载它 $this-&amp;gt;load-&amp;gt;helper(&amp;ldquo;flash&amp;rdquo;);&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;你可以在第二个参数上设置其他的通知类型，它会反映在你的提示div块的class名称上。
+#flash 样式你可以自己定义。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/simple-flashnotice-helper-for-codeigniter/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>扩展 CodeIgniter 1.6.3 的 Model </title>
+        <link>/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
+        <pubDate>Tue, 21 Oct 2008 15:16:09 +0000</pubDate>
+        
+        <guid>/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
+        <description>清风徐来 /posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/ -&lt;p&gt;第一步，用下载的文件替换system/libraries/Model.php
+第二步，对于你的每个数据表，都要在system/application/models 下建立一个模型
+第三步，建立一个“products”表，如下所示：
+&lt;!-- raw HTML omitted --&gt;
+CREATE TABLE &lt;code&gt;products&lt;/code&gt; (
+&lt;code&gt;id&lt;/code&gt; int(11) NOT NULL auto_increment,
+&lt;code&gt;title&lt;/code&gt; varchar(50) NOT NULL,
+&lt;code&gt;description&lt;/code&gt; text NOT NULL,
+&lt;code&gt;color&lt;/code&gt; varchar(20) NOT NULL,
+&lt;code&gt;price&lt;/code&gt; float NOT NULL,
+&lt;code&gt;category_id&lt;/code&gt; int(11) NOT NULL,
+&lt;code&gt;featured&lt;/code&gt; char(1) NOT NULL,
+&lt;code&gt;enabled&lt;/code&gt; char(1) NOT NULL,
+&lt;code&gt;visits&lt;/code&gt; int(1) NOT NULL,
+&lt;code&gt;created&lt;/code&gt; int(11) NOT NULL,
+&lt;code&gt;modified&lt;/code&gt; int(11) NOT NULL,
+PRIMARY KEY  (&lt;code&gt;id&lt;/code&gt;)
+) ENGINE=MyISAM;
+&lt;!-- raw HTML omitted --&gt;
+第四步，建立一个模型 system/application/models/product.php
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>郁闷的木乃伊3龙帝之墓</title>
+        <link>/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</link>
+        <pubDate>Sun, 19 Oct 2008 13:24:07 +0000</pubDate>
+        
+        <guid>/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</guid>
+        <description>清风徐来 /posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/ -&lt;p&gt;木乃伊3龙帝之墓，看了。不爽，很愤怒。&lt;/p&gt;
+&lt;p&gt;始皇帝变成了出尔反尔的小人，中国龙变成了邪恶的三头恐龙。&lt;/p&gt;
+&lt;p&gt;荷里活的垃圾编剧绝对有反华心理。&lt;/p&gt;
+&lt;p&gt;李连杰，杨紫琼接拍或许可以理解（理由为了吃饭？……）。但是这样内容的片子居然可以在内地上映。&lt;/p&gt;
+&lt;p&gt;虽说商业片可以胡编乱造，但是辱华的坚决抵制。&lt;/p&gt;
+&lt;p&gt;算了，也只是唠叨一下，也无力去改变什么。日子还是一样的过，只能自己牢记自己炎黄根吧。&lt;/p&gt;
+&lt;p&gt;有个网友说得好，一群盗墓贼，可笑。&lt;/p&gt;
+- /posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>优化CodeIgniter性能</title>
+        <link>/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</link>
+        <pubDate>Sun, 19 Oct 2008 10:15:20 +0000</pubDate>
+        
+        <guid>/posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/</guid>
+        <description>清风徐来 /posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/ -&lt;p&gt;原文《Optimizing and Scaling your CodeIgniter Application - with Benchmarks!》淡水这里只是用中文整理一下。
+首先，是个控制器，一般的标准的写法如下：
+&lt;!-- raw HTML omitted --&gt;
+function index()
+{
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$links = &#39;&#39;;
+
+if ( $query-&amp;gt;num_rows &amp;gt; 0)
+{
+    foreach ($query-&amp;gt;result_array() as $page):
+	
+        $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;;
+        $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;;
+	
+    endforeach;
+	
+    $data[&#39;links&#39;] = $links;
+}
+
+for ($i=0; $i &amp;lt; 10; $i++)
+{
+    $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;);
+    $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1);
+	
+    if ( $query-&amp;gt;num_rows == 1 )
+    {
+        $row = $query-&amp;gt;row_array();
+        $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]);
+		
+        $data[&#39;body&#39;] = $row[&#39;body&#39;];
+    }
+}
+
+$this-&amp;gt;load-&amp;gt;view(&#39;welcome2&#39;, $data);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+视图文件类似以下：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;把循环结果赋给变量&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+foreach ($query-&amp;gt;result_array() as $page):
+&lt;!-- raw HTML omitted --&gt;
+修改为:
+&lt;!-- raw HTML omitted --&gt;
+$pages = $query-&amp;gt;result_array();
+foreach ($pages as $page):
+&lt;!-- raw HTML omitted --&gt;
+Requests per second:    46.75 [#/sec] (mean)
+不错，有了小小的进步。快了1.7请求每秒。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;使用Memcache&lt;!-- raw HTML omitted --&gt;
+用缓存对象的王者，Memcache。我们需要修改一下控制器的代码。
+&lt;!-- raw HTML omitted --&gt;
+$memcache = new Memcache;
+$memcache-&amp;gt;connect(&amp;lsquo;localhost&amp;rsquo;, 11211) or die (&amp;ldquo;Could not connect&amp;rdquo;);
+$data = $memcache-&amp;gt;get(&amp;lsquo;view_data&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;if ( !$data )
+{
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;module_pages&amp;rsquo;);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$links = &#39;&#39;;
+
+if ( $query-&amp;gt;num_rows &amp;gt; 0)
+{
+    $pages = $query-&amp;gt;result_array();
+
+    foreach ($pages as $page):
+
+        $links .= &#39;&amp;lt;a href=&amp;quot;&#39;.site_url($page[&#39;uri&#39;]).&#39;&amp;quot;&amp;gt;&#39;;
+        $links .= ucwords($page[&#39;title&#39;]).&#39;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;&#39;;
+
+    endforeach;
+
+    $data[&#39;links&#39;] = $links;
+}
+
+for ($i=0; $i &amp;lt; 10; $i++)
+{
+    $this-&amp;gt;db-&amp;gt;like(&#39;title&#39;, &#39;London&#39;);
+    $query = $this-&amp;gt;db-&amp;gt;get(&#39;module_pages&#39;, 1);
+
+    if ( $query-&amp;gt;num_rows == 1 )
+    {
+        $row = $query-&amp;gt;row_array();
+        $row[&#39;body&#39;] = str_replace(&#39;Getting&#39;, &#39;booya&#39;, $row[&#39;body&#39;]);
+		
+        $data[&#39;body&#39;] = $row[&#39;body&#39;];
+    }
+}
+
+$memcache-&amp;gt;set(&#39;view_data&#39;, $data, false, 3600) or die (&amp;quot;Failed to save data at the server&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;welcome2&amp;rsquo;, $data);
+&lt;!-- raw HTML omitted --&gt;
+速度更快了，但是还是进步不是太多。怎样才能更快呢？
+&lt;!-- raw HTML omitted --&gt;eAccelerator&lt;!-- raw HTML omitted --&gt;
+添加eAccelerator扩展，确实好很多。还有吗？
+&lt;!-- raw HTML omitted --&gt;CodeIgniter Output Cachining&lt;!-- raw HTML omitted --&gt;
+CI的output cache使用比较容易
+&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;output-&amp;gt;cache(3600);&lt;!-- raw HTML omitted --&gt;
+160.73 requests per second，已经有了很好的改善，但是我不会停止：）
+&lt;!-- raw HTML omitted --&gt;Output Caching + eAccelerator&lt;!-- raw HTML omitted --&gt;
+当她们同时启用时，Requests per second:    389.84 [#/sec] (mean)。
+下图是这次测试的统计
+[caption id=&amp;quot;attachment_93&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;codeigniter_benchmark_results&amp;rdquo;]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[/caption]&lt;/p&gt;
+- /posts/%E4%BC%98%E5%8C%96codeigniter%E6%80%A7%E8%83%BD/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

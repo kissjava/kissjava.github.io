@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian9 on 清风徐来</title>
+    <link>/tags/debian9/</link>
+    <description>Recent content in Debian9 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 08 Oct 2018 11:14:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/debian9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debian9 快速开启 TCP BBR </title>
+      <link>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+      <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
+      
+      <guid>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+      <description>Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。
+干货如下 1,修改系统变量
+echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.confecho &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf 保存修改的配置使之生效
+sysctl -p 2,执行以下命令开启 BBR
+sysctl net.ipv4.tcp_available_congestion_control 一般回显如下:
+sysctl net.ipv4.tcp_available_congestion_controlnet.ipv4.tcp_available_congestion_control = bbr cubic reno 就是开启成功了。
+3,可以执行以下命令以检测 BBR 是否开启。
+lsmod | grep bbr 回显
+tcp_bbr 20480 1  </description>
+    </item>
+    
+  </channel>
+</rss>

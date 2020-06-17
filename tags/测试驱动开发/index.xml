@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试驱动开发 on 清风徐来</title>
+    <link>/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 测试驱动开发 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 25 Jun 2012 15:14:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simple Test 中文参考</title>
+      <link>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+      <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
+      
+      <guid>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+      <description>&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
+&lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
+我们用以下代码来创建一个测试脚本放在tests/log_test.php里．
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;autorun.php不仅包含了Simpletest的相关文件，还能够把测试自动执行起来。&lt;/p&gt;
+&lt;p&gt;TestOfLogging是我们的第一测试用例，此时还是空的。每一个测试用例都是一个继承SimpleTest的类，我们可以在一个文件里写多个测试用例。&lt;/p&gt;
+&lt;p&gt;代码的第三行，引入了Log类，现在我们有了测试框架，但还没有写具体的测试。&lt;/p&gt;
+&lt;p&gt;第一个测试，我们假定Log类通过构造函数传入要存储log信息的文件名，并且我们有临时文件夹来放置这个文件&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/log.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfLogging extends UnitTestCase {
+function testLogCreatesNewFileOnFirstMessage() {
+@unlink(&#39;/temp/test.log&amp;rsquo;);
+$log = new Log(&#39;/temp/test.log&amp;rsquo;);
+$this-&amp;gt;assertFalse(file_exists(&#39;/temp/test.log&amp;rsquo;));
+$log-&amp;gt;message(&amp;lsquo;Should write this to a file&amp;rsquo;);
+$this-&amp;gt;assertTrue(file_exists(&#39;/temp/test.log&amp;rsquo;));
+}
+}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当一个测试用例执行时，它会搜索所有以&amp;quot;test&amp;quot;开头的方法来并且执行。 这里我们用了一个很长的方法名testLogCreatesNewFileOnFirstMessage()，这是一个好习惯，可以让测试的输出信息更有可读性。&lt;/p&gt;
+&lt;p&gt;通常一个测试用例里会有多个测试方法，后边会具体来讲。&lt;/p&gt;
+&lt;p&gt;测试方法中的断言（assertion）会触发测试框架来即时显示测试结果。这个即时反馈很重要，不仅发生在代码导致的崩溃时，也用来显示与断言有关的调试信息。&lt;/p&gt;
+&lt;p&gt;要看测试结果，我们需要实际地执行一下测试。不需要再写代码了，只要在浏览器里打开这个页面就可以了
+测试失败会显示以下信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;1/1 test cases complete. 1 passes and 1 fails.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;通过测试则会显示以下信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果你得到这样的信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;表示你没准备好classes/Log.php这个文件&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+class Log {
+function Log($file_path) {
+}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function message() {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在测试之后写代码，这样的开发方式称之为“测试驱动开发”&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

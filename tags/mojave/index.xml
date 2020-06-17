@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mojave on 清风徐来</title>
+    <link>/tags/mojave/</link>
+    <description>Recent content in Mojave on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 18 Sep 2018 15:09:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mojave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac OS X 设置英文为默认输入法</title>
+      <link>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
+      
+      <guid>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>为了方便开发,一般都是把系统语言改成英文. 但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好. 每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说. 上干货,方便像 Mike 一样的 coder.适用High Sierra ~ Mojave.
+1, System Preferences 2, Language &amp;amp; region 3, 把 Englis 拖到列表顶部,设为 Primary 4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)
+看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.</description>
+    </item>
+    
+  </channel>
+</rss>

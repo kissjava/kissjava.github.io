@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>setuptools on 清风徐来</title>
+    <link>/tags/setuptools/</link>
+    <description>Recent content in setuptools on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sun, 21 Jul 2013 13:44:09 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/setuptools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python 安装二三事</title>
+      <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+      <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
+      
+      <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+      <description>恰好,下载文件夹里有个python2.7.5.mis
+双击,一路next,安装完成.
+在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.
+系统-&amp;gt;高级属性设置-&amp;gt;环境变量:
+编辑Path:添加上 ;C:\Python27\Scripts;C:\Python27;C:\Python27\Lib再到命令行,敲python回车.妥了.
+还要安装easy install(应该叫它setuptools,官方叫这个包).这个没有mis包.需要下载一个ez_setup.py(这里有:http://peak.telecommunity.com/dist/ez_setup.py)
+命令行下安装:cd 下载目录;python ez_setup.py只要连网了,一般都能安装成功,要么就是人品问题了.
+好吧,这下就可以在命令行下,简单的安装python第三方的包了.比如 easy_install virtualenv还有 easy_install MySQL-python&amp;hellip;
+好像比php方便些呢.其实好久没更新blog了,随意写写,凑数来了. 注意是随意,不是随便.</description>
+    </item>
+    
+  </channel>
+</rss>

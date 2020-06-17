@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>调试 on 清风徐来</title>
+    <link>/tags/%E8%B0%83%E8%AF%95/</link>
+    <description>Recent content in 调试 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 21 Jul 2009 10:21:01 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%B0%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>忘记了zend studio for eclipse 怎么调试了</title>
+      <link>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
+      <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
+      
+      <guid>/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
+      <description>老是在netbeans和zend studio for eclipse跳来跳去的。
+今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!
+这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻Gently的Zend Studio For Eclipse 6.1 视频教程-调试php程序。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“服务器调试——Zend Debugger 的安装教程”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。Gently在Zend Studio For Eclipse 6.1 视频教程-调试php程序中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。
+说说怎样安装Zend Debugger吧，比较简单的。Gently的教程里都有写了。这里淡水给自己加深一下印象。
+第一步：官网下载Zend Debugger，下载URL： http://downloads.zend.com/pdt/server-debugger/ZendDebugger-5.2.14-cygwin_nt-i386.zip请查zip下面的readme文件，可以看到5_2_x_comp目录为PHP 5.2.x所用的版本，把下面的ZendDebugger.dll copy 到php的扩展库目录${php_home}ext，把dummy.php copy到phpBB的部署的根目录下，dummy.php主要用来与浏览器安装的Zend Studio Toolbar通信。
+第二步：配置php.ini文件，加入： [zend] zend_extension_ts=D:PHPPHP5.2.6extZendDebugger.dll zend_debugger.allow_hosts=127.0.0.1/10 zend_debugger.expose_remotely=always ;以上配置中的127.0.0.1/10代表127.0.0.1到127.0.0.10的地址段允许调试 以上橙色部分，淡水没有去做，这也不影响zend studio for eclipse的正常调试。</description>
+    </item>
+    
+  </channel>
+</rss>

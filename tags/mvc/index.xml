@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MVC on 清风徐来</title>
+    <link>/tags/mvc/</link>
+    <description>Recent content in MVC on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 03 Feb 2010 09:04:40 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TinyMVC中文手册</title>
+      <link>/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
+      
+      <guid>/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+      <description>照例，先罗嗦几句。 一直想把codeigniter的代码通读一遍，虽然codeigniter是比较轻量级的php框架，但是里面的东西还是很多的，所以一直没有实现。顺便也一直在寻找适合的代替品。其间，大致看了&amp;lt;a href=&amp;quot;http://www.skiyo.cn/punny/&amp;quot;&amp;gt;punny&amp;lt;/a&amp;gt;，还有很自由的&amp;lt;a href=&amp;quot;http://code.google.com/p/lotusphp/&amp;quot;&amp;gt;lotusphp&amp;lt;/a&amp;gt;。lotusphp 这个不像是框架了，倒像是个php的几个常用功能封装起来的组件，很牛13的，好多都可以作为插件放到tinymvc里去。。。 最后还是选中了tinymvc。理由，它确实很小，但是我要的东西他基本都有了：  &amp;lt;li&amp;gt;url路由&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;pdo封装&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;自由的插件机制&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;php5 only&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;最关键的是和codeigniter非常相似的结构和语法&amp;lt;/li&amp;gt;  于是，淡水抱恙（身体和心理都有病）花费了一天的时间，通读了一般它的代码，翻译了它的文档，也就是这个《TinyMVC中文手册》了。如果想研究一下Php的框架，可以从这个入手。没有很多的分岔干扰，比较干净。如果你有什么建议或是插件需要分享的，可以留言。  TinyMVC中文手册</description>
+    </item>
+    
+    <item>
+      <title>PHP演示最简单的MVC模式</title>
+      <link>/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 10 Sep 2008 14:31:36 +0000</pubDate>
+      
+      <guid>/posts/php%E6%BC%94%E7%A4%BA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84mvc%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;p&gt;为了更好的演示MVC的工作方式,我们使用了一个简单的新闻文章发布系统作为例子.分为使用MVC和不使用MVC两种方式.
+我们只作一个基本的演示,从数据库里读出一些文章列表,并在页面上显示。一般的流程就是,连接数据库,查询数据库,循环输出html结果。下面的代码就是如此做的。（淡水感觉怪怪的，语言组织得不好。好在代码比较容易理解）&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

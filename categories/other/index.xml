@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on 清风徐来</title>
+    <link>/categories/other/</link>
+    <description>Recent content in Other on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 12 Aug 2019 15:50:22 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>frp使用小结</title>
+      <link>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Mon, 12 Aug 2019 15:50:22 +0000</pubDate>
+      
+      <guid>/posts/frp%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</guid>
+      <description>frp有服务器端（frps）和客户端（frpc）之分，在Linux和Windows上都可使用，下载地址
+##Linux服务器端安装
+wget https://github.com/fatedier/frp/releases/download/v0.13.0/frp_0.13.0_linux_amd64.tar.gz #下载frptar -zxvf frp_0.13.0_linux_amd64.tar.gz #解压cd frp_0.13.0_linux_amd64 #进入目录rm -rf frpc_full.ini frpc frpc.ini #删除frpc相关的文件，frpc属于客户端vi frps.ini #编辑frps配置文件./frps -c ./frps.ini #启动frpsfrps.ini
+[common]bind_port = 7000 #与客户端绑定的进行通信的端口 vhost_http_port = 8080 #访问客户端web服务自定义的端口号subdomain_host = frp.abc.com #自定义二级域名privilege_token = xxxx #token验证（可不加）#控制面板dashboard_port = 7500dashboard_user = admindashboard_pwd = admin#日志log_file = ./frps.loglog_level = infolog_max_days = 3[web1]type = httpsubdomain = web1auth_token = XXX[web2]type = httpsubdomain = web2auth_token = XXX##Linux客户端安装</description>
+    </item>
+    
+    <item>
+      <title>Linux系统/run/systemd空间不足问题解决</title>
+      <link>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Sat, 03 Aug 2019 10:41:32 +0000</pubDate>
+      
+      <guid>/posts/linux%E7%B3%BB%E7%BB%9F-run-systemd%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description>搞了olvps家原128m小内存的小小鸡，安装环境时出错了，/run/systemd空间不足
+Failed to reload daemon: Refusing to reload, not enough space available on /run/systemd. Currently, 10.5M are free, but a safety buffer of 16.0M is enforced.用df -h看看，确实不足
+root@AC-GIA:~# df -hFilesystem Size Used Avail Use% Mounted onudev 73M 0 73M 0% /devtmpfs 12M 880K 11M 8% /run/dev/vda1 2.9G 1.5G 1.4G 52% /tmpfs 85M 0 85M 0% /dev/shmtmpfs 5.0M 0 5.0M 0% /run/locktmpfs 85M 0 85M 0% /sys/fs/cgrouptmpfs 17M 0 17M 0% /run/user/0提示/run/systemd空间不足，那就给这个目录增加空间，就增加一行配置，vim /etc/fstab：</description>
+    </item>
+    
+    <item>
+      <title>双十一黑五接连而来还是 bwh 的 CN2 GIA 稳定</title>
+      <link>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
+      <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
+      <description>都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。 如果，只是建个小博客，测试点代码，个人爬墙 bwh 的 CN2 GIA 还是比较推荐的，够用且稳定。 推荐一下：直达链接</description>
+    </item>
+    
+    <item>
+      <title>Debian9 快速开启 TCP BBR </title>
+      <link>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+      <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
+      
+      <guid>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+      <description>Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。
+干货如下 1,修改系统变量
+echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.confecho &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf 保存修改的配置使之生效
+sysctl -p 2,执行以下命令开启 BBR
+sysctl net.ipv4.tcp_available_congestion_control 一般回显如下:
+sysctl net.ipv4.tcp_available_congestion_controlnet.ipv4.tcp_available_congestion_control = bbr cubic reno 就是开启成功了。
+3,可以执行以下命令以检测 BBR 是否开启。
+lsmod | grep bbr 回显
+tcp_bbr 20480 1  </description>
+    </item>
+    
+    <item>
+      <title>Mac OS X 设置英文为默认输入法</title>
+      <link>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
+      
+      <guid>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <description>为了方便开发,一般都是把系统语言改成英文. 但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好. 每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说. 上干货,方便像 Mike 一样的 coder.适用High Sierra ~ Mojave.
+1, System Preferences 2, Language &amp;amp; region 3, 把 Englis 拖到列表顶部,设为 Primary 4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)
+看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.</description>
+    </item>
+    
+    <item>
+      <title>SSL去掉了，又加上了</title>
+      <link>/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</link>
+      <pubDate>Mon, 20 Aug 2018 16:05:00 +0000</pubDate>
+      
+      <guid>/posts/ssl%E5%8E%BB%E6%8E%89%E4%BA%86%E5%8F%88%E5%8A%A0%E4%B8%8A%E4%BA%86/</guid>
+      <description>终究还是搬家，然后又加上了。 顺便说一下，阿里国际ECS，很容易被封443。 ====以上2018/08/31更新====
+没时间写东西. ssl 去掉了，ip 被误伤了吧. 443端口联通和电信都无法访问了，没有办法，只好去掉了:(</description>
+    </item>
+    
+    <item>
+      <title>又又又搬家了，搬回国内</title>
+      <link>/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</link>
+      <pubDate>Wed, 29 Nov 2017 17:23:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%8F%88%E5%8F%88%E5%8F%88%E6%90%AC%E5%AE%B6%E4%BA%86%E6%90%AC%E5%9B%9E%E5%9B%BD%E5%86%85/</guid>
+      <description>又搬回国内阿里云了。 主域名更换为备案过的 kissjava.cn。
+关于 kissjava： 走上it这条路，其实收自己的一个兄弟影响极大。 当时他还做了个比较 nb 的网站，域名就是 kissjava.com。 不过我当时在搞 ASP，后来是 PHP，等我学JAVA 时他早就不纠结技术细节了。 我对 kissjava 念念不忘，于是注册了 kissjava.cn。</description>
+    </item>
+    
+    <item>
+      <title>圆通速递？呵呵</title>
+      <link>/posts/%E5%9C%86%E9%80%9A%E9%80%9F%E9%80%92%E5%91%B5%E5%91%B5/</link>
+      <pubDate>Fri, 29 Sep 2017 15:34:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%9C%86%E9%80%9A%E9%80%9F%E9%80%92%E5%91%B5%E5%91%B5/</guid>
+      <description>不想说太多，就放张图吧。 速递，这速是多少？ 客服也是&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>WPF 的状态栏控件</title>
+      <link>/posts/wpf-%E7%9A%84%E7%8A%B6%E6%80%81%E6%A0%8F%E6%8E%A7%E4%BB%B6/</link>
+      <pubDate>Sat, 23 Sep 2017 13:28:00 +0000</pubDate>
+      
+      <guid>/posts/wpf-%E7%9A%84%E7%8A%B6%E6%80%81%E6%A0%8F%E6%8E%A7%E4%BB%B6/</guid>
+      <description>状态栏可以放些提示信息，目前情况下会比 MessageBox 好用。特别是无需用户确认的情况。
+简单的没意思，直接来个多栏的。 &amp;lt;StatusBar.ItemsPanel&amp;gt; &amp;lt;Grid.ColumnDefinitions&amp;gt; &amp;lt;/Grid.ColumnDefinitions&amp;gt; &amp;lt;/StatusBar.ItemsPanel&amp;gt; 效果： </description>
+    </item>
+    
+    <item>
+      <title>Enabling Scrollbar in WPF</title>
+      <link>/posts/enabling-scrollbar-in-wpf/</link>
+      <pubDate>Fri, 22 Sep 2017 10:01:00 +0000</pubDate>
+      
+      <guid>/posts/enabling-scrollbar-in-wpf/</guid>
+      <description>Put a ScrollViewer inside your Window:  &amp;lt;ScrollViewer &amp;gt;&amp;lt;!-- Window content here --&amp;gt;&amp;lt;/ScrollViewer&amp;gt;&amp;lt;/Window&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>C# 测试代码的运行时间</title>
+      <link>/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
+      
+      <guid>/posts/c#-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+      <description>计算C#代码运行的耗时，方便测试出效率。
+System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();watch.Start(); //开始监视代码运行时间// 添加需要测试的代码// ...watch.Stop(); //停止TimeSpan timespan = watch.Elapsed; //获取当前实例测量得出的总时间System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds));  TimeSpan 还可以计算出TotalHours，TotalMinutes， TotalSeconds。</description>
+    </item>
+    
+    <item>
+      <title>Visual C# 中的事件及委托</title>
+      <link>/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
+      <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
+      
+      <guid>/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
+      <description>在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
+委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
+C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。
+namespace WpfApplication1{/// &amp;lt;summary&amp;gt;/// Interaction logic for MainWindow.xaml/// &amp;lt;/summary&amp;gt;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();var timer = new System.Timers.Timer(1000);timer.Start();timer.Elapsed += new System.Timers.ElapsedEventHandler(TimerElapsedHandler);}void TimerElapsedHandler(object sender, EventArgs e){MessageBox.Show(&amp;quot;Timer has Elapsed&amp;quot;);}}} 第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。
+其实委托关联可以简写为timer.Elapsed += TimerElapsedHandler;，取消事件订阅timer.Elapsed -= TimerElapsedHandler;
+匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。
+2017年09月11日 更新一下匿名的两张写法：
+timer.Elapsed += delegate(object sender, System.</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
+      <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
+      
+      <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧 如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。
+好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 https://repo.continuum.io/archive/，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。
+$ wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh--2017-09-04 09:15:29-- https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.shResolving repo.continuum.io (repo.continuum.io)... 104.16.19.10, 104.16.18.10, 2400:cb00:2048:1::6810:130a, ...Connecting to repo.continuum.io (repo.continuum.io)|104.16.19.10|:443... connected.HTTP request sent, awaiting response... 200 OKLength: 523283080 (499M) [application/x-sh]Saving to: ‘Anaconda3-4.4.0-Linux-x86_64.sh’100%[=================================================================&amp;gt;] 523,283,080 11.3MB/s in 59s 2017-09-04 09:16:29 (8.39 MB/s) - ‘Anaconda3-4.4.0-Linux-x86_64.sh’ saved [523283080/523283080] 下载完成，vps 速度还算及格。
+$ sudo bash Anaconda3-4.4.0-Linux-x86_64.shWelcome to Anaconda3 4.</description>
+    </item>
+    
+    <item>
+      <title>Somagu NAT 小鸡的挂载过程</title>
+      <link>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
+      
+      <guid>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
+      <description>Somagu 提供了免费的 kvm 技术的 vps（免费到2017年9月底），虽然是 NAT 的（共享公网 IP），但是线路不错还是可玩的。 Somagu 小鸡根据你选择的 OS 模板，默认只有2.2G 或是8G 的硬盘空间。但是它提供了20G 的 Disk，但是需要我们自己去挂载。官网的说明
+ If you created a VPS based on OS template, your extra disk space is at /dev/vdb device. Please mount, format and use it.
+ 好吧，下面记录一下挂载过程，Linux 挂载基本都是这个套路了。
+# df -hFilesystem Size Used Avail Use% Mounted ondevtmpfs 222M 0 222M 0% /devtmpfs 244M 24K 244M 1% /dev/shmtmpfs 244M 8.3M 236M 4% /runtmpfs 244M 0 244M 0% /sys/fs/cgroup/dev/vda1 8.</description>
+    </item>
+    
+    <item>
+      <title>Visual C# 禁止应用多次启动</title>
+      <link>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
+      <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
+      
+      <guid>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
+      <description>废话少说，上代码：
+System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName(&amp;quot;AppProcessName&amp;quot;);if (myProcesses.Length &amp;gt; 1) {MessageBox.Show(&amp;quot;The application has already started ！&amp;quot;);Close();} 以上是 WPF 适用的。 如果是 winform 就把 Close() 改为 Application.Exit();。 end.</description>
+    </item>
+    
+    <item>
+      <title>转战阿里国际</title>
+      <link>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
+      <pubDate>Mon, 07 Aug 2017 16:11:00 +0000</pubDate>
+      
+      <guid>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
+      <description>转战阿里国际，顺便更新个皮肤。
+原本黑五的新加坡小鸡速度不错，就是最近频繁的宕机。
+正好阿里云国际版出4.5刀/月的新加坡。配置良心，1024m 内存，40G SSD云盘，30m 带宽，1T 流量。于是又搬家了。
+博主亲身体验，阿里云国际真心不错。绝对是目前的首选推荐。地址传送。
+如果要更加便宜还要靠谱的 vps，建议搬瓦工，8机房任你切换。其中两个 LA 机房都是亚洲直连，速度还行。年付19$搬瓦工直连VPS传送。</description>
+    </item>
+    
+    <item>
+      <title>搬出搬瓦工了</title>
+      <link>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+      <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+      <description>剁了个新加坡vps，于是乎搬出搬瓦工。 搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。 还是说明了，世界加钱可达！ 当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。 推荐年付19$搬瓦工KVM直连VPS，传输机在此！ 忽然发现，这2016年的第一篇博文。 今年还有半个月就完了！估计很可能也是今年的最后一篇吧。</description>
+    </item>
+    
+    <item>
+      <title>搬家到SAE</title>
+      <link>/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</link>
+      <pubDate>Tue, 17 Sep 2013 15:53:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</guid>
+      <description>搬家到SAE。友链及部分文章丢失，有劳各位友链博主留言，我会一一补上。从搜索引擎过来的朋友，链接和内容无法对上，请搜索。
+为了找到备案号，搜快照，居然找到2005年在opera上写的东西，还有一张老照片啊。</description>
+    </item>
+    
+    <item>
+      <title>清理.SVN文件夹及右键菜单</title>
+      <link>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
+      
+      <guid>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+      <description>无废话，不博客-_-! 先说清理.svn文件夹吧，不知道为什么好好的svn的export不用，搞得文件夹下都有.svn文件夹。微软上有个批处理，导入到注册表后就有个右键菜单“Delete SVN Folders”。如下，保存为.reg后缀后双击导入注册表即可使用。 Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVN] @=&amp;quot;Delete SVN Folders&amp;rdquo;
+[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVNcommand] @=&amp;quot;cmd.exe /c &amp;ldquo;TITLE Removing SVN Folders in %1 &amp;amp;&amp;amp; COLOR 9A &amp;amp;&amp;amp; FOR /r &amp;ldquo;%1&amp;rdquo; %%f IN (.svn) DO RD /s /q &amp;ldquo;%%f&amp;rdquo; &amp;quot;&amp;rdquo; 说到右键菜单，我就发现，右键的发送到下面有个115备份。这个我早就删除了，注册表也搜索后删除了，但是还在。嗯，很顽强。下载右键管家，终于搞定。右键管家的下载地址：http://www.xiazaiba.com/html/5887.htmlps：win8 64位管家依旧给力支持</description>
+    </item>
+    
+    <item>
+      <title>又要回头搞微软么</title>
+      <link>/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</link>
+      <pubDate>Mon, 19 Nov 2012 12:36:07 +0000</pubDate>
+      
+      <guid>/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</guid>
+      <description>标题党 -_-! 写着php，却喜欢python。但是搞java貌似比有市场，满大街的Andriod呀。 要不，先搞搞比较容易上手的C#？ MS的IDE实在是给力。又是选择题，悲催。 </description>
+    </item>
+    
+    <item>
+      <title>Photoshop教程：一款清新高雅的网页布局</title>
+      <link>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
+      
+      <guid>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+      <description>&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>到当当买东西，太傻太天真</title>
+      <link>/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</link>
+      <pubDate>Tue, 22 Nov 2011 13:20:31 +0000</pubDate>
+      
+      <guid>/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</guid>
+      <description>买了当当两本书。 现在被他们搞得心情郁闷。 付款后，足足等了9天才拿到书，9天啊！还有比这个更慢的么？我在苏州，又不是新疆等边远，交通不便的地方。 当时有活动，满100返200。结果，返券需要再买至少200元的图书才能抵用。 他大爷的，也过了退货期了，换货还要自己邮过去。 算了，希望其他朋友接受我的教训，不要再它那边浪费时间了。 其价钱不是最实惠的，送货的效率也是最差的，还有欺骗消费的行为。。 可恶！</description>
+    </item>
+    
+    <item>
+      <title>将小型、现代的产品主页由psd转换成XHTML/CSS模板 </title>
+      <link>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
+      <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
+      
+      <guid>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果你想跳过第一部分，你可以直接在第一部分中下载源文件，下面将会需要它才能继续。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2 在portfolio目录下面继续创建&lt;!-- raw HTML omitted --&gt;images&lt;!-- raw HTML omitted --&gt;目录用于存放图片。&lt;/p&gt;
+&lt;p&gt;3 接下来创建两个空文件 &lt;!-- raw HTML omitted --&gt;styles.css&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;index.html&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>用Photoshop设计一个小型、现代的产品主页</title>
+      <link>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+      <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
+      
+      <guid>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+      <description>这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。
+3 使用油漆桶工具（G）用任意颜色填充头部刚才选定区域。点开图层样式对话框，用以下设置来增加一个渐变叠加效果。
+完了，应该出现以下效果：
+5 设定好渐变工具（G）后，从顶部的中间垂直的拖动到画布的4/1大小左右。
+7 重复6的步骤，创建另外一条垂直参考线，不过这次输入1025px(175px + 850px = 1025px)。这样一个850px宽、居中的区域就做好了
+9 在标题文本图层下面创建一个新图层，选定矩形选框工具（M），在头部选取出一个区域。宽度必须填满1200px，高度大概在60px左右。
+10 用白色（#FFFFFF）填充（G）选定区域，然后在图层面板中设置透明度为25%。效果如下。
+12 在每个菜单项之间使用矩形选框工具（M）做一个1px宽的分割线；长度跨越整个头部。用#CECECE颜色填充（G）这1px的线条。效果如下图。
+13 现在，我们在每个菜单项中加入鼠标悬停动态效果（hover）。我已经给其中一个菜单项加入颜色表示鼠标悬停时的效果。使用多边形套索工具（L）按住shift，创建一个三角形，以保证每条线都是直的。
+14 用#00315C这个颜色填充选定的三角形区域
+16 在欢迎文本的右边将插入一个欢迎图片；我这里使用的是Six Revisions网站界面裁图。裁剪你的图片，去掉不需要的部分。图片准备好之后，通过编辑 &amp;gt; 变换 &amp;gt; 透视 改变图片的视角。
+17 选择椭圆选框工具，然后在欢迎图片下方画一个椭圆。
+18 用黑色（#000000）填充（G）椭圆选定区域。
+19 然后设置区域图层透明度为35%。
+20 然后使用滤镜 &amp;gt; 模糊 &amp;gt; 高斯模糊这个椭圆，设定模糊半径为1到2px。
+21 把欢迎图片和下面的阴影再复制一份，然后把它们拖动到原图片的下面。
+22 位置拖动好之后，使用高斯模糊下面的裁图，半径为1px。
+24 分别使用颜色#000D19和#003461填充这两个线条。
+25 选择椭圆选框工具（M）然后在分割线上面画出一个椭圆。
+26 使用黑色（#000000）填充（G）选定区域，加上2到3px的高斯模糊。然后使用矩形选框工具删掉分割线上半部分，这样就剩下了半个椭圆。
+27 将这两个图层合并（Ctrl+E），然后添加一个图层蒙版（点击图层面板上的“添加图层蒙版”按钮）来合并图层。
+28 使用渐变工具（G）,渐变类型为对称渐变，前景色设为白色（#FFFFFF）,背景色设置黑色（#000000）。
+29 拖动对称渐变，从分割线中间向两边拖动，从而产生中间向两边淡入效果。
+31 使用圆角矩形工具（U）在内容文本区域的左边创建一个圆角矩形；半径设为10px（默认情况下背景是10px）。
+32 路径画好之后，选择钢笔工具（P），右击矩形内部，选择建立选区。
+33 设置前景色为#00315C，背景色为#001B32，然后选择渐变工具（G），渐变类型为径向渐变。
+34 从顶部把渐变拖动到中间，和我们绘制背景方法相同。效果如下图。
+35 现在需要给圆角矩形图层加入投影、内阴影和描边的图层样式（双击图层面板上面的图层，打开图层样式对话框）。设置如下。
+36 使用多边形套索工具（L），然后在矩形上面做一个三角形的选区。</description>
+    </item>
+    
+    <item>
+      <title>[转载] 用实例详细讲解将PSD转成HTML&amp;amp;CSS</title>
+      <link>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
+      <pubDate>Thu, 17 Nov 2011 11:41:04 +0000</pubDate>
+      
+      <guid>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
+      <description>将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。
+我们将设计页面分成基本的5个部分，每一个部分都有自己的容器wrapper和内容。基本的流程是先编写Html代码，然后通过编写CSS来还原psd设计稿。
+如下图，我们只需要从这个psd文件得到4个非常基本的东西。推荐内容(featured)的背景、底部背景、欢迎文字（Welcome）、推荐图片的框（少女面部图的白色透明边框）。其余的部分我们只需要通过CSS生成或者在html里嵌入相应图片。
+下图红线圈起来的地方，就是我们需要从psd获取的内容。本部分内容需要读者具备一定的Photoshop的基础知识和操作能力。
+你可以借助Photoshop的切片工具或者自己手动切片，并将其保存成相应的图片格式。 为一个网站设置良好的开发环境是非常重要的，我已经创建了一个非常基本的文件夹结构来建立这个网站，下面是文件夹结构设置，也可称之为模板。
+下面这个文件夹结构是由html文件、CSS文件、js等文件组成，你可以根据自己的需要调整文件夹结构。 &amp;lt;li&amp;gt;这是网站的顶级目录&amp;lt;/li&amp;gt;  &amp;lt;li&amp;gt;JavaScript 文件夹&amp;lt;/li&amp;gt;  &amp;lt;li&amp;gt;我们在这个教程用到的jquery插件Nivo-Slider（做推荐内容）也放在这个文件夹里&amp;lt;/li&amp;gt;  &amp;lt;li&amp;gt;样式（Styles ）文件夹&amp;lt;/li&amp;gt;  &amp;lt;li&amp;gt;Images: 这是我们存放推荐内容部分的图片以及网站展示的图片的地方&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Template: 这是存放和网页设计样式相关图片的地方，比如说底部背景图&amp;lt;/li&amp;gt;  将index.html文件放置在根目录，这个文件也是我们编写html代码的文件。 将jquery插件Nivo-Slider里面的三个文件jQuery-1.4.2.min.js和HTML5-Shiv.js以及Nivo-Slider.min.js放到Javascript文件夹。 将两个css文件，reset.css和global.css放到样式文件夹。 这样我们的文件夹结构设置就差不多完成了。
+将psd转换成html/css的工作流程是先编写出html文件，随后再编写css，并加入js动态效果。
+下面我们会一步步讲解html的编写，先编写出大概完整的框架，代码如下： 下面我们要开始为刚才的html文件添加细节。首先是head部分，在head部分我们要添加一些meta信息，这样有利于搜索引擎读取。
+我们增加了keywords、authors、description、copyright等meta信息，并把语言编码设置为utf-8。代码如下:
+现在要开始在html载入一些必须js和css的文件，以便让这些文件起作用，同时为了考虑到浏览器的兼容性，还增加了一些相应的判断条件。具体代码如下：
+ &amp;lt;!-- Meta Data --&amp;gt; &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;photography, commercials, exposure videos, senior pictures&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;Your company description.&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;author&amp;quot; content=&amp;quot;TutToaster.com/authors/CodyRobertson&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;copyright&amp;quot; content=&amp;quot;Copyright 2010 TutToaster.com&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;robots&amp;quot; content=&amp;quot;follow, index&amp;quot;&amp;gt; &amp;lt;!-- Site Theme Styling --&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style/reset.</description>
+    </item>
+    
+    <item>
+      <title>textmate 常用快捷键</title>
+      <link>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Thu, 13 Oct 2011 16:36:19 +0000</pubDate>
+      
+      <guid>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>ctrl + cmd + ^ 整行上移 ctrl + cmd + v 整行下移 ctrl + shift + k 整行删除 ctrl + shift + d 复制所在整行 ctrl + shift + t 查看TODO
+alt + &amp;gt; 光标右移一个单词 alt + &amp;lt; 光标左移一个单词
+esc 自动补全
+F1 开关当前方法块</description>
+    </item>
+    
+    <item>
+      <title>Git安装使用手记</title>
+      <link>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Jun 2011 14:27:28 +0000</pubDate>
+      
+      <guid>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+      <description>这篇主要是记录我在 Windows 平台安装 Git 的过程和git的简单使用。
+先描述一下安装的需求：
+· 用户端和服务器端的操作系统都是 Windows。· 用户端要能透过 HTTP 的方式存取版本库。· 无论是取出档案还是送交档案，都需要验证身分（输入账号密码）。
+底下是安装步骤：
+Step 1: 安装 Git for Windows在 Windows 环境使用 Git，可以用 msysgit (Git for Windows)，我安装的版本是 v1.7.4。装好之后，程序集里面会多出一个选单：Git，里面有两个程序：Git GUI 和 Git Bash。前者是图形操作界面，后者是命令列视窗。Git 的预设安装目录是 c:Program FilesGit。由于我要让用户端可透过 HTTP 协定来存取版本库，因此还要把 Git 安装目录下的 binlibiconv2.dll 复制到安装目录下的 libexecgit-core 底下。少了这个动作，将来透过 HTTP 存取版本库时，就会出现 HTTP 500 Internal Server Error 的讯息。如下图所示：Step 2: 安装 Apache HTTP Server欲提供 HTTP 的存取方式，可以利用Apache Http Server。我安装的版本是 Apache 2.2.19（包含 OpenSSL）。安装好 Apache 之后，修改 httpd.conf，令它使用 8080 port，以免和 IIS 抢 80 port。接下来，一样是修改 httpd.</description>
+    </item>
+    
+    <item>
+      <title>为何改用Git</title>
+      <link>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
+      <pubDate>Fri, 03 Jun 2011 13:44:31 +0000</pubDate>
+      
+      <guid>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
+      <description>Subversion 用得好好的，为什么要改用 Git 呢？记得刚开始用 Subversion 时，它在 Windows 平台上的工具也还不是那么方便，光是安装就要手动设定一堆东西。现在，Subversion 服务已经几乎是点下一步、下一步的方式就能安装完成了，非常方便。而且，现有的软件项目、写作等工作，也都在是用 Subversion 来管理版本。在已经投资不少学习成本、且用得很习惯的情况下，要换另外一套版本管理系统总是会有一些阻力。更顺畅的工作流程其实我 lag 很久了。没有改用 Git，主要就是因为习惯问题，以及考虑到已经付出的学习成本，和没有一个让我觉得非换不可的理由。但是最近由于经常使用笔记本电脑，而且网络经常碰到无法连线的状态（有时候是笔电所在的环境无法连网，有时候是服务器离线），以至于有些本机的修改成果无法立即 commit 成一个修订版次。这个时候，如果我还要继续修改别的东西（例如，修正另一个 bug），往往就会跟刚才的修改混在一起 commit，而且是要等到可连上网络时才能 commit。这样的时间差，很容易造成一些遗漏或混乱，无形中就增加了成本和风险。我希望就算无法连接服务器，还是能够依目前的进度先 commit，并且继续做后续的修改，这样我就不用在那里空等，也不用担心自己等到网络可连线时，已经忘记那些档案的 commit 先后次序。Git 可以做到这点。快速Git 之所以反应迅速，主要是因为分散式架构的缘故。在此架构下，版本库的完整历史全都在本机上。因此，就算要进行历史版本比对，也都是在本机进行，速度当然比需要实时连线的 VCS 来得快。版本库毁损的风险较低同样是基于分散式架构的缘故，Git 的版本库会在各用户端机器上存在多个完整的复本，因此就算服务器上的版本库损坏了，还是可以利用其他用户端机器的复本轻易复原，大幅降低版本库备份的成本和档案遗失的风险。弹性的本地分支在使用 Subversion 时，分支其实就是把档案复制到另一个文件夹，然后在不同的分支（文件夹）之间切换。在试过 Subversion 的分支之后，我还是有怕怕的感觉，因而倾向尽量少用。因为我觉得自己有一天一定会不小心把分支和主线给弄混了，以至于出现版本错乱的情形。我还没有实验 Git 的分支功能，但从现有的一些技术文件看来，Git 分支的一个主要优点，就是它可以完全在本机进行。比如说，你可以在本机建立几个实验性质的分支，等到你觉得时机成熟了，便可以将特定分支推送至主机，分享给别人。或者，有些实验失败的分支，也可以直接在本机砍掉，而其他开发人员根本不知道曾经有这些分支。其他优点个人是觉得 Git 还有一个小地方比 Subversion 好：它的版本库目录结构。当我从远端 Subversion 服务器 checkout 一个版本库到本机时，在本机的工作目录下，每一层子目录都会有一个 .svn 的资料夹，作为版本控制之用。Git 不是这样。当我从远端服务器 clone 一个 Git 版本库到本机时，就只有该版本库复本的根目录底下会有一个 .git 目录，其他子目录则很「干净」。此外，它的档案忽略清单只要由 .git 目录下的一个名为 .gitignore 的档案就能完全控制。虽然是不太起眼的差异，我却觉得蛮好的。大概是有点洁癖的缘故吧 XD原文需要翻墙，哎http://huan-lin.blogspot.com/2011/05/why-git.html</description>
+    </item>
+    
+    <item>
+      <title>五一快到了，唠叨两句</title>
+      <link>/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</link>
+      <pubDate>Fri, 29 Apr 2011 10:19:40 +0000</pubDate>
+      
+      <guid>/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</guid>
+      <description>去苏州的太湖牛仔度假村玩乐两天。折腾得够呛。
+ubuntu11.04出了，嗯安装更加简单来，win7+ubuntu11.04，ubuntu会帮你update-grub，直接搞定双系统的启动菜单。
+ci2也用得比较舒服，配置一下在eclipse里代码提示还是不错的。
+手头两个案子都接近尾声。andirod开发还算没怎么看，python也还是没有进度。这样的学习进度，你伤不起啊伤不起。
+最后祝大家五一玩得开心。</description>
+    </item>
+    
+    <item>
+      <title>班扎古鲁白玛的沉默</title>
+      <link>/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</link>
+      <pubDate>Wed, 12 Jan 2011 19:25:53 +0000</pubDate>
+      
+      <guid>/posts/%E7%8F%AD%E6%89%8E%E5%8F%A4%E9%B2%81%E7%99%BD%E7%8E%9B%E7%9A%84%E6%B2%89%E9%BB%98/</guid>
+      <description>班扎古鲁白玛的沉默
+——扎西拉姆·多多
+你见，或者不见我 我就在那里 不悲不喜
+你念，或者不念我 情就在那里 不来不去
+你爱，或者不爱我 爱就在那里 不增不减
+你跟，或者不跟我 我的手就在你手里 不舍不弃
+来我的怀里 或者 让我住进你的心里
+默然 相爱 寂静 欢喜
+http://blog.sina.com.cn/s/blog_53cd30c90100l2k5.html
+“班扎古鲁白玛”其实是梵文的音译，班扎，就是Vadjra，是“金刚”的意思；古鲁，就是：Guru，是“上师”；白玛，就是pema,是“莲花”的意思。“班扎古鲁白玛”：金刚上师白莲花，也就是莲花生大师（第一个将佛法传入西藏的人，被认为是第二佛陀）。</description>
+    </item>
+    
+    <item>
+      <title>win7，ubuntu10.10双系统，修复grub</title>
+      <link>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
+      <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
+      
+      <guid>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
+      <description>为什么要修复？因为啃黑苹果失败鸟。
+为什么要记录？网上大都不成功。
+我的跟分区在sda9，boot独立分区在sda10；可以用fdisk -l 看。
+ sudo -i  mkdir /home/ubuntu/mnt
+mkdir /home/ubuntu/mnt/boot
+mount /dev/sda9 /home/ubuntu/mnt  解释：mount指令是挂载分区，后面的/home/ubuntu/mnt可以自己更改位置，此处是挂 载根分区
+ mount /dev/sda10 /home/ubuntu/mnt/boot 这一步是有给 /boot 单独分区的命令，若没单独分区跳过这步
+  grub-install &amp;ndash;root-directory=/home/ubuntu/mnt /dev/sda
+  重启.grub回来了。
+  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu10.10安装NVIDIA显卡驱动</title>
+      <link>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <pubDate>Thu, 16 Dec 2010 20:53:09 +0000</pubDate>
+      
+      <guid>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <description>去官方驱动下载页面：http://www.nvidia.cn/Download/index.aspx?lang=cn然后找到你自己的显卡型号，留意一下版本号，版本号只要在256版以上就不用安装编译环境了
+使用右键另存为下载，放到主文件下。
+打开终端：
+如果你下载的显卡驱动版本在256版以下的就输入：
+sudo apt-get install build-essential pkg-config xserver-xorg-dev linux-headers-uname -r否则直接输入：
+sudo /etc/init.d/gdm stop
+回车，然后输入密码，回车停止gdm。
+再按：Ctrl+Alt+F1
+输入你的系统帐号回车，然后输入密码回车，登录tty1
+登录成功后输入：
+sudo sh NVIDIA-Linux.260.xxx.run
+然后输入密码来打开驱动包，会出现使用协议，并询问你接不接收协议，当然Accept。
+接下来可能会出现，预安装脚本安装失败，是否继续安装?或是已经安装过了，是否重新安装等等。。
+点Yes继续,这时会出现进度条。100%后会询问：是否更新X配置文件，选择更新，或手动编辑X配置文件以采用NVIDIA X驱动程序，或者运行 nvidia-xconfig
+这里推荐点Yes，不然需要自己编辑配置文件，到这里安装就完成。startx或是按Ctrl+Alt+Del重启电脑就可以了。</description>
+    </item>
+    
+    <item>
+      <title>宁海，浙东大峡谷2日游</title>
+      <link>/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</link>
+      <pubDate>Wed, 27 Oct 2010 09:55:00 +0000</pubDate>
+      
+      <guid>/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AVG free edition 2011</title>
+      <link>/posts/avg-free-edition-2011/</link>
+      <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
+      
+      <guid>/posts/avg-free-edition-2011/</guid>
+      <description>装上了AVG free edition 2011，好些比9漂亮了一些。上图：
+去除安装文件夹下的 avgfree_zh.mht , avgmwdef_zh.mht , avgresf.dll;这样就更好用了，其他非中文系统，注意选择自己对应的语言版本。嗯，不解释。</description>
+    </item>
+    
+    <item>
+      <title>mysql查询今天、昨天、7天、近30天、本月、上一月 数据</title>
+      <link>/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Sat, 26 Jun 2010 19:24:40 +0000</pubDate>
+      
+      <guid>/posts/mysql%E6%9F%A5%E8%AF%A2%E4%BB%8A%E5%A4%A9%E6%98%A8%E5%A4%A97%E5%A4%A9%E8%BF%9130%E5%A4%A9%E6%9C%AC%E6%9C%88%E4%B8%8A%E4%B8%80%E6%9C%88-%E6%95%B0%E6%8D%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>恢复Ubuntu的默认面板</title>
+      <link>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
+      <pubDate>Thu, 10 Jun 2010 08:10:35 +0000</pubDate>
+      
+      <guid>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
+      <description>如果不小心将ubuntu的面板弄得一团糟，又不想慢慢找回来。有没有什么方法一键恢复默认状态呢？ 答案是：“能恢复是肯定的，但是没有一键！“。
+首先重置面板设置
+如果悲剧到没有办法进入终端，那么建个文件。往里面写入这三条命令，再保存为.sh文件。给执行权限，运行即可。
+真的好用。
+from:http://blog.okkey.net/1202.html</description>
+    </item>
+    
+    <item>
+      <title>投入ubuntu，体验中</title>
+      <link>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</link>
+      <pubDate>Wed, 09 Jun 2010 10:26:24 +0000</pubDate>
+      
+      <guid>/posts/%E6%8A%95%E5%85%A5ubuntu%E4%BD%93%E9%AA%8C%E4%B8%AD/</guid>
+      <description>嗯，体验还不错。推荐。。。 不过wine下ie6太耗资源了，能跑死机器。 两天了，基本上手 开发用XAMPP+PDT，PDT在linux下比windows下的速度快些，但是边框太粗，难看。 :p</description>
+    </item>
+    
+    <item>
+      <title>可以激活Win7系统的Key</title>
+      <link>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</link>
+      <pubDate>Sun, 07 Mar 2010 12:05:31 +0000</pubDate>
+      
+      <guid>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</guid>
+      <description>可以激活Win7系统的Key（序列号）！ G到的，留着吧，看看什么时候能用上。 不懂什么是神Key的朋友自己去BD、GG吧！不要问我这样的问题！谢谢配合！ 我个人认为神Key是微软为扩展Win7市场故意放出。 回复可见！
+本帖隐藏的内容需要回复才可以浏览 已经证实的 236TW-X778T-8MV9F-937GT-QVKBB 87VT2-FY2XW-F7K39-W3T8R-XMFGF KH2J9-PC326-T44D4-39H6V-TVPBY TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK 流传于网上未经验证的 J783Y-JKQWR-677Q8-KCXTF-BHWGC C4M9W-WPRDG-QBB3F-VM9K8-KDQ9Y 2VCGQ-BRVJ4-2HGJ2-K36X9-J66JG MGX79-TPQB9-KQ248-KXR2V-DHRTD FJHWT-KDGHY-K2384-93CT7-323RC</description>
+    </item>
+    
+    <item>
+      <title>淡水的2009</title>
+      <link>/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
+      <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
+      
+      <guid>/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
+      <description>终于肯花一点点时间，做个小小的回望了。 淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip; robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip; 2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。</description>
+    </item>
+    
+    <item>
+      <title>VMware 里的虚拟系统调整为宽屏分辨率</title>
+      <link>/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</link>
+      <pubDate>Thu, 06 Aug 2009 15:25:38 +0000</pubDate>
+      
+      <guid>/posts/vmware-%E9%87%8C%E7%9A%84%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AE%BD%E5%B1%8F%E5%88%86%E8%BE%A8%E7%8E%87/</guid>
+      <description>测试成功了，做个备忘。 在虚拟机的配置文件example.vmx 的末尾加上： svga.vramSize = 20971520（大于等于13667684就可以了） svga.maxWidth = 1366 svga.maxHeight = 768 要在虚拟机关闭时，修改这个文件才能生效。</description>
+    </item>
+    
+    <item>
+      <title>天很热但是也很蓝</title>
+      <link>/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</link>
+      <pubDate>Wed, 15 Jul 2009 20:39:41 +0000</pubDate>
+      
+      <guid>/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</guid>
+      <description>人穷，只好用Lg ks20 拍两张意思一下 -_-
+地点：MP现代广场
+时间：上午8时</description>
+    </item>
+    
+    <item>
+      <title>牛刀：“小阳春”突破的是法律的底线</title>
+      <link>/posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/</link>
+      <pubDate>Sun, 12 Apr 2009 11:44:35 +0000</pubDate>
+      
+      <guid>/posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/</guid>
+      <description>打算买房，收些资料。 http://qzone.qq.com/blog/348973589-1239434360</description>
+    </item>
+    
+    <item>
+      <title>家</title>
+      <link>/posts/%E5%AE%B6/</link>
+      <pubDate>Sun, 25 Jan 2009 10:57:38 +0000</pubDate>
+      
+      <guid>/posts/%E5%AE%B6/</guid>
+      <description>嗯,163拨号上来,不是一般的慢阿.2楼东北房间
+2楼东北房间壁柜
+2楼过道
+2楼客厅
+2楼客厅
+2楼主卫
+2楼主卧
+小餐厅
+仓库(1楼东北房间)
+厨房
+灯笼
+楼梯
+书房
+一楼过道
+一楼客厅</description>
+    </item>
+    
+    <item>
+      <title>折子戏</title>
+      <link>/posts/%E6%8A%98%E5%AD%90%E6%88%8F/</link>
+      <pubDate>Tue, 30 Dec 2008 16:38:56 +0000</pubDate>
+      
+      <guid>/posts/%E6%8A%98%E5%AD%90%E6%88%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>适合Codeingiter1.7.0的authentication library</title>
+      <link>/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
+      <pubDate>Wed, 24 Dec 2008 21:09:59 +0000</pubDate>
+      
+      <guid>/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
+      <description>适合Codeingiter1.7.0的authentication library地址：
+http://dexcell.shinsengumiteam.com/dx_auth/index.html只是一直没空研究看看。时间都被我荒废到哪里去了呢？
+今天对于很多人来说，是个特殊的日子，虽然对我来说只是再平常不过的一天了。嗯，Merry Christmas！</description>
+    </item>
+    
+    <item>
+      <title>告别“黑户”生活</title>
+      <link>/posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Wed, 24 Dec 2008 21:08:43 +0000</pubDate>
+      
+      <guid>/posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/</guid>
+      <description>淡水是2004年毕业的。
+毕业后一直没有从学校把户口迁移。不想竟然成了“黑户”，就连张银行卡都办不了。
+今天老爸辛苦了一天，刚从单位到家，就又跑到学校去……再到老家派出所……劳累一天了，终于帮我把户口办好了。
+小时候总是调皮捣蛋，经常被老爸狠揍。如今自己长大了，老爸也真的老了。时间是如此坚定的流淌着，父爱如山，我却一直无法给他多少欣慰。希望天下的父母都平安、健康、长寿、幸福</description>
+    </item>
+    
+    <item>
+      <title>en、eng辨音字表</title>
+      <link>/posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/</link>
+      <pubDate>Mon, 15 Dec 2008 12:38:01 +0000</pubDate>
+      
+      <guid>/posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/</guid>
+      <description>学会普通话，也挺难的。淡水对en，eng的发音有些模糊，对in和ing更是完全区分不了。难啊 :(</description>
+    </item>
+    
+    <item>
+      <title>(震撼)作个真正的男人</title>
+      <link>/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/</link>
+      <pubDate>Mon, 17 Nov 2008 13:52:58 +0000</pubDate>
+      
+      <guid>/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/</guid>
+      <description>&lt;p&gt;很震撼。我怎么就没碰到这样的先生呢~&lt;/p&gt;
+&lt;p&gt;心理学课上，周正教授正在授课：“上次下课时，一个男孩子递了张纸条：’我是个比较内向的人，又没什么特长，不会踢足球，不会打篮球……唯一的爱好是写作。进入大学后，看到周围的同学在交往、工作中左右逢源、如鱼得水、洒脱干练，很是羡慕。就要步入社会了，我该如何规划自己的前途呢？……周教授，我想我还是当一名作家比较好，一个人，也不错，您说呢？’这个问题要不要回答？”周教授扬了扬手中的纸条。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>郁闷的木乃伊3龙帝之墓</title>
+      <link>/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</link>
+      <pubDate>Sun, 19 Oct 2008 13:24:07 +0000</pubDate>
+      
+      <guid>/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</guid>
+      <description>木乃伊3龙帝之墓，看了。不爽，很愤怒。
+始皇帝变成了出尔反尔的小人，中国龙变成了邪恶的三头恐龙。
+荷里活的垃圾编剧绝对有反华心理。
+李连杰，杨紫琼接拍或许可以理解（理由为了吃饭？……）。但是这样内容的片子居然可以在内地上映。
+虽说商业片可以胡编乱造，但是辱华的坚决抵制。
+算了，也只是唠叨一下，也无力去改变什么。日子还是一样的过，只能自己牢记自己炎黄根吧。
+有个网友说得好，一群盗墓贼，可笑。</description>
+    </item>
+    
+    <item>
+      <title>如何区别前鼻音和后鼻音？</title>
+      <link>/posts/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB%E5%89%8D%E9%BC%BB%E9%9F%B3%E5%92%8C%E5%90%8E%E9%BC%BB%E9%9F%B3/</link>
+      <pubDate>Fri, 17 Oct 2008 10:59:09 +0000</pubDate>
+      
+      <guid>/posts/%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%AB%E5%89%8D%E9%BC%BB%E9%9F%B3%E5%92%8C%E5%90%8E%E9%BC%BB%E9%9F%B3/</guid>
+      <description>&lt;p&gt;这个一直是淡水普通话最大的敌人。据说南方人一般都是这个前后鼻音分辨不清。这么说淡水算是南方人了，但是为什么听到淡水是泰州人后，为什么又说淡水是苏北人呢？不扯了，看看人家的正文。&lt;/p&gt;
+&lt;p&gt;有许多人在发前鼻音-n 和后鼻音-ng的时候往往前鼻音不 &amp;ldquo;前&amp;rdquo;，后鼻音不&amp;quot;后&amp;rdquo;，发前鼻音的时候口腔开得太大，气流往上颚上顶，使得气流过早地进入鼻腔，把-n前面的元音发成了带鼻音的元音；而发后鼻音的时候又往往打不开口腔，舌头不往后拉，还是在口腔前部发音，没有鼻腔共鸣，使得后鼻音发音不到位。如何发好前、后鼻音呢？关键就是要掌握好发音的要领，前鼻音和后鼻音的发音区分主要在两点：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>10月9日，又吵了，记下我的台词</title>
+      <link>/posts/10%E6%9C%889%E6%97%A5%E5%8F%88%E5%90%B5%E4%BA%86%E8%AE%B0%E4%B8%8B%E6%88%91%E7%9A%84%E5%8F%B0%E8%AF%8D/</link>
+      <pubDate>Thu, 09 Oct 2008 16:23:59 +0000</pubDate>
+      
+      <guid>/posts/10%E6%9C%889%E6%97%A5%E5%8F%88%E5%90%B5%E4%BA%86%E8%AE%B0%E4%B8%8B%E6%88%91%E7%9A%84%E5%8F%B0%E8%AF%8D/</guid>
+      <description>该到决定的时候了。
+就算我们现在可以勉强凑合，但是我肯定无法一直容忍你的强势。
+你怎么说都有理？但是有些东西不是一蹴而就的。
+我收入低，但是我在慢慢提高。
+你想要过得好一些，就要我按你的想法去做么，没有自主做事的权力，那我还是一个真正的我么？你需要一个傀儡！
+所有的说法，都是基于我是一个男人，就应该怎样？但是，在你指手画脚的时候，你有想过我是一个男人么？
+不指望可以相敬如宾，但是至少要彼此尊重，动不动就问候别人的父母，不觉得这样很过分么？
+你要面子不是错，但是请不要用打击我来成全你在你亲朋面前的了不起。成熟一点，别人看不起你的男人就会看得起你？
+总爱拿我对你和我对父母的付出比较，怎么不想想你在我身上花了多少，在你父母身上花了多少？难道在你眼里我的智商已经低到接近白痴的程度？
+互相数落，没有意义。争执到如此地步，剩下的路还能走么？</description>
+    </item>
+    
+    <item>
+      <title>AIA友邦在MSN上的广告</title>
+      <link>/posts/aia%E5%8F%8B%E9%82%A6%E5%9C%A8msn%E4%B8%8A%E7%9A%84%E5%B9%BF%E5%91%8A/</link>
+      <pubDate>Wed, 08 Oct 2008 13:57:09 +0000</pubDate>
+      
+      <guid>/posts/aia%E5%8F%8B%E9%82%A6%E5%9C%A8msn%E4%B8%8A%E7%9A%84%E5%B9%BF%E5%91%8A/</guid>
+      <description>aia300250以前用msn都会去除主窗体上的广告区域。由于重装系统比较频繁，去广告的步骤就懒得做了。 碰巧，让淡水看到了AIA在msn打的广告。
+如果你在昆山周边地区，如果你想给自己或是家人买份保险，有或者你想加盟友邦，甚至是你有一些保险问题想要咨询，可以和她联系：孙小姐（Jayce sun) Tel：13915743204</description>
+    </item>
+    
+    <item>
+      <title>有必要记录一下，立志</title>
+      <link>/posts/%E6%9C%89%E5%BF%85%E8%A6%81%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E7%AB%8B%E5%BF%97/</link>
+      <pubDate>Sat, 04 Oct 2008 16:59:19 +0000</pubDate>
+      
+      <guid>/posts/%E6%9C%89%E5%BF%85%E8%A6%81%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E7%AB%8B%E5%BF%97/</guid>
+      <description>10月4日16时30分。一阵嘈杂声惊倒屋里人，我在卫生间摔倒在地，洗漱盘被无意打翻，卫生间里一篇狼藉。
+我这里惊魂未定，却突然被她一通臭骂。我顿时火冒三丈，大声呵斥“xxx，你有没有良心！”
+接下来就是一段你来我往的交锋。记下一些，免得忘性太大。
+“你神经病啊！你有病！什么玩意儿！你什么东西！”
+好的！我记下了。
+总是发生这样的事情，所谓的情感还有必要继续么？
+或许在从常熟回来就应该结束吧。
+也许是现在觉着自己能耐了，赚钱多了，就可以对我呼来喝去了，就觉得高我一等了
+好的，我伺候不了，我不是东西，我决定消失在你眼前。</description>
+    </item>
+    
+    <item>
+      <title>国庆，唠叨几句吧</title>
+      <link>/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</link>
+      <pubDate>Fri, 03 Oct 2008 15:40:12 +0000</pubDate>
+      
+      <guid>/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</guid>
+      <description>国庆有七天长假，不写些什么好像有些愧对这一亩三分地了。
+刚刚听到的一个故事，真实的。
+一个南京小伙和一个湖北姑娘本来计划是今天结婚的。请柬上写的就是今天。请柬也发了，酒店也定了，押金也交了，不过这婚礼却没能办成。为啥？新娘跑了。
+新娘虽然有些胡闹，但是小伙还是比较实在的。飞到湖北找到新娘老家。但是新娘老家人先是说新娘没回来，后来新娘也出现了说给多少多少钱才行……。不用淡水多嘴，这是当下比较典型的例子了。结果，嗯，小伙说了，这人我不要了。
+淡水不想鄙视哪一个人，只是有些感慨。这是结婚呐，还是做买卖呐？淡水还是很佩服那个小伙子的，佩服他能坚守心底那把尺子。再鄙视一把那些垃圾得不能再垃圾的所谓的青春偶像剧，哪里有那么多的王子和灰姑娘的童话在现实生活里发生！</description>
+    </item>
+    
+    <item>
+      <title>淡水，生日快乐</title>
+      <link>/posts/%E6%B7%A1%E6%B0%B4%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</link>
+      <pubDate>Sun, 28 Sep 2008 14:14:24 +0000</pubDate>
+      
+      <guid>/posts/%E6%B7%A1%E6%B0%B4%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</guid>
+      <description>如果这个世界上，有个女人对你付出了全部的心血，给你全部的爱，她肯定不是你的情人或妻子，而是你的母亲。
+上午接到妈妈的电话，以为是要问我十一回不回家。原来不是，她固然希望我能回家看看，但这次电话的主题却是要我别忘记今天是我的生日。忙碌的生活已经让淡水忘记了今天是自己的生日了，但是妈妈不会忘记……
+大声的对自己说：生日快乐！Happy birthday！还有最重要的，妈妈，我爱你！</description>
+    </item>
+    
+    <item>
+      <title>一些曾经用过的文字</title>
+      <link>/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</link>
+      <pubDate>Wed, 10 Sep 2008 16:10:07 +0000</pubDate>
+      
+      <guid>/posts/%E4%B8%80%E4%BA%9B%E6%9B%BE%E7%BB%8F%E7%94%A8%E8%BF%87%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+      <description>这个春天就要结束了,我们一点也不自知,没有任何痕迹。觉得自己就要消失了,模糊得像今天的雾,脆弱而凌乱。
+手指寂寞，需要你的抚摩
+一切都在，除了爱情。
+不想日子过得太有规律，不想热情走得太快。就让时光的棱角磨平那些不尽人意，就让暴雨洗净那瞬逃亡的勇气。莫非，生活的状态只有两种？或者简单，或者华美
+在下着小雨的路上，我学会了哭泣。因为，在这里分不清，谁是眼泪，谁是雨滴 突然间我的嘴巴哽塞住，原来我并不知道自己想说的到底是什么，也许那一切吞在肚子里太多太久。
+它们变得粉碎…… 那么自由那么放纵…… 撕碎了夜，撕碎了空气，撕碎了……
+有时候我们会假装成熟地去判断一段感情有没有结果，但什么又是感情的结果呢？是步入婚姻的殿堂。然后像每对夫妻那样平平安安走到头？还是彼此尽管失散但仍会每天想着对方的好，在心灵深处始终给他留有不可动摇的地位？我们都太年轻，永恒对于我们来说还太远，我们能做到的“结果”，也就是能在用现在时思念对方。当你推开窗子享受凉风遥望明月时，你会想在同一个星空之下的他在干嘛吗? 我蓦地一阵心酸，一股莫名的悲哀奔袭而来，那是种与生俱来的敏感而带来的悲哀，我分不清那悲哀是为了小不点还是为了我自己，那是一种我永远不明所以却又挥之不去的悲哀。
+孤独的人永远孤独，存在的只是那气若游丝，显现孤寂、沉沦、彷徨而忧郁的微弱气息。我习惯孤独，可并不代表我喜欢它。它或许已成为我生命中的一部份，生命有不可承受之重，孤独有不可缺少之嫌。
+生活中有一种自由叫无聊 生活中有一种美丽叫哀伤 生活中有一种痛苦叫错过
+后来，乱乱的采石场，找到了可以相依偎的石头，却再也找不到依偎在身边的她。那晚，她的眼泪砸在我的肩膀，很痛。那时，夜色正浓，她的泪水让我的心痛无法散发。渐渐的爆发了，我狠狠地用小石子砸向石堆。擦出火花，想在每一束火花中遥望到我们曾相爱的影子。现在的我只能用这样落的火花遥望，瞬间即逝。</description>
+    </item>
+    
+    <item>
+      <title>最后的祭奠</title>
+      <link>/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</link>
+      <pubDate>Wed, 10 Sep 2008 15:33:56 +0000</pubDate>
+      
+      <guid>/posts/%E6%9C%80%E5%90%8E%E7%9A%84%E7%A5%AD%E5%A5%A0/</guid>
+      <description>&lt;p&gt;重装系统已经很久,到现在才想到要装一个office,什么时候开始慢慢不写字了的呢?怎么也想不起来,看见曾经为着彼此的文字而惺惺相惜的朋友们.那些认识或者不认识的人们,都还在自己的那一小块地方勤奋地书写着,文思泉涌地。&lt;/p&gt;
+&lt;p&gt;看见这些辛勤写字的孩子的时候，（姑且还是称我们为孩子吧，虽然这个词已经被我们用得恶俗，但是我暂时找不到别的词汇来描述我们这样尴尬的一群）我心里会有一种罪恶感，一种堕落了的罪恶感。曾经我也是和他们一样的孩子，善良而倔强，会为着自己所喜爱的文字，音乐，电影，人，事等等等等那些可以触动到心里某块柔软地方的事物所执着，所感动。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据丢失，从零开始</title>
+      <link>/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</link>
+      <pubDate>Wed, 10 Sep 2008 10:48:37 +0000</pubDate>
+      
+      <guid>/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/</guid>
+      <description>最近QQ上线时间比较少，今天上线后，艾玛童鞋问我博客怎么了，我打开一看，原来空间过期了，忘记续费鸟。
+本来数据可以找回的，但是比较麻烦，所以干脆重新搞个独立IP的空间好了，不贵才100块RMB.200M的web空间+50M的mysql。软件环境： Apache 2.2.3 ＋ PHP 5.2.4 + MySQL 5.0.22 架构 ，支持 PHP 5.2.4 / PHP4(文件名须为*.php4或开通共享IP主机) / SHTML / HTML。试试看PHP5到底爽不爽XD.
+链接丢失了，希望看到的童鞋联系一下淡水&amp;gt;_&amp;lt;</description>
+    </item>
+    
+  </channel>
+</rss>

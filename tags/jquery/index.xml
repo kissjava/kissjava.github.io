@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQuery on 清风徐来</title>
+    <link>/tags/jquery/</link>
+    <description>Recent content in jQuery on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 06 Feb 2012 20:37:18 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lazy Load Plugin for jQuery</title>
+      <link>/posts/lazy-load-plugin-for-jquery/</link>
+      <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
+      
+      <guid>/posts/lazy-load-plugin-for-jquery/</guid>
+      <description>lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。
+这个插件，就是浏览器还没有浏览到的图片，都不加载；等滚动条下拉，下面的页面显示了，原来下面页面包含的图片才会被触发加载。
+已经有些站用这样的技术了。淡水一直不致力于前端研究，正好晃荡到这个插件的站点。
+http://www.appelsiini.net/projects/lazyload
+就不翻译了。简单的用用。图片源给个1*1像素的空图，真正的图片路径放到data-original属性里。底部加载jquery和插件js还有简单的插件函数调用。
+其他还有一些乱七八糟的用法就不多说了。上边的代码足矣。</description>
+    </item>
+    
+    <item>
+      <title>Jquery Notification Plugin</title>
+      <link>/posts/jquery-notification-plugin/</link>
+      <pubDate>Mon, 09 Jan 2012 14:41:24 +0000</pubDate>
+      
+      <guid>/posts/jquery-notification-plugin/</guid>
+      <description>一款简单易用的jquery通知插件。会在页面顶部show出成功，失败，警告，和信息提示框。
+基本设置1，引入jquery和本插件（notification libraries） 插件下载：jquery_notification</description>
+    </item>
+    
+    <item>
+      <title>jQuery Mobile Framework 便捷指南</title>
+      <link>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 09 Jan 2012 14:18:30 +0000</pubDate>
+      
+      <guid>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
+      <description>Jquery mobile framework 可以帮助你开发基于web的富移动应用程序。在这篇教程里，我们将解释一些基本的事情，比如theme selection （主题选择），library usage（库的使用），design pages（页面设计），page links（页面链接）和transition animations （过渡动画）。代码轻便，简单，灵活。它支持流行的智能手机和嵌入平台。使用它可以让你的移动应用更充实。
+包含jQuery Mobile库第一步就是在你的web page头部引入jQuery Mobile的样式表和javascript库文件。
+设计你的web pagejQuery Mobile可以在普通的html标签或html5标签中工作，但是你必须添加一些data属性（data-role，data-theme等等）在html标签中。 自定义列表项你可以自定义你的文章行，添加一些描述和评论数码。看看如下代码：
+选择主题样式Data-theme属性是用来为特定元素选择一个主题的。Data-theme的值可以是a，b，c，d，e。（根据文档data-theme的值可以是a到z，但是还在开发中。） 链接内含页 链接内含页可以使用简单的锚标签。锚链接的href值对应于包含标签的id值。
+过渡动画你可以在页面切换时使用过渡动画。Data-transition属性定义过渡效果。 About Us代码下载：jquery_mobileDemo：http://demos.9lessons.info/demos/jquery_mobile/ 原文：http://www.9lessons.info/2011/12/jquery-mobile-framework-tutorial.html</description>
+    </item>
+    
+    <item>
+      <title>jQuery ajax方式加载页面后，被加载页面的js不能执行的问题</title>
+      <link>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
+      
+      <guid>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在回调函数里注册一下事件就可以了，要么就各个函数写在被加载的页面里。 $(document).ready(function() { $(&amp;lsquo;content_div&amp;rsquo;).hide();
+$(&#39;#list_user&#39;).click(function(event){ event.preventDefault(); load_user(); });  });
+function load_user(){ //load page $(&amp;quot;#content_div&amp;rdquo;).load(&amp;lsquo;your page url&amp;rsquo;,function(){ //回调函数，在这里注册被加载页面需要的事件 $(&amp;quot;.deleteItem&amp;rdquo;).click(delItem); $(&amp;quot;.editItem&amp;rdquo;).click(editItem); });
+function delItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;your url&amp;quot;, dataType:&amp;quot;json&amp;quot;, success:function(data){ } }); } function editItem(){ $.ajax({ type:&amp;quot;POST&amp;quot;, url:&amp;quot;you url&amp;quot;, dataType:&amp;quot;json&amp;quot;, success:function(data){ } }); }  } 这里也有个例子供参考：http://www.crazyphper.com/?p=1167</description>
+    </item>
+    
+    <item>
+      <title>Jquery UI dialog 详解 (中文)转</title>
+      <link>/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <pubDate>Wed, 06 Apr 2011 15:02:44 +0000</pubDate>
+      
+      <guid>/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <description>1.11 autoOpen ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&amp;ldquo;open&amp;rdquo;)的时候才弹出dialog窗口。默认为：true。
+1.12 初始化例：请注意，$(&#39;.selector&amp;rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。
+$(&#39;.selector&amp;rsquo;).dialog({ autoOpen: false });
+1.13 初始化后，得到和设置此属性例：
+//获得
+var autoOpen = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;autoOpen&amp;rsquo;);
+//设置
+$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;autoOpen&amp;rsquo;, false);
+1.21 bgiframe 默认为false ，When true, the bgiframe plugin will be used, to fix the issue in IE6 where select boxes show on top of other elements, regardless of zIndex. Requires including the bgiframe plugin. Future versions may not require a separate plugin.
+在IE6下，让后面那个灰屏盖住select。
+1.22 初始化例：
+$(&#39;.selector&amp;rsquo;).dialog({ bgiframe: true });</description>
+    </item>
+    
+    <item>
+      <title>jquery ui according详解(中文)转</title>
+      <link>/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <pubDate>Wed, 06 Apr 2011 15:02:27 +0000</pubDate>
+      
+      <guid>/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jquery ui tabs详解(中文)转</title>
+      <link>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+      <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
+      
+      <guid>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>使用jQuery和flash的多文件上传组件</title>
+      <link>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Sun, 07 Mar 2010 12:02:53 +0000</pubDate>
+      
+      <guid>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
+      <description>标题党了。 这是一个使用jQuery和flash的多文件上传组件： http://www.uploadify.com/demo/</description>
+    </item>
+    
+    <item>
+      <title>Kohana 与JQUERY实现连动</title>
+      <link>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
+      <pubDate>Thu, 23 Apr 2009 16:10:25 +0000</pubDate>
+      
+      <guid>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
+      <description>控制器 /**
+ ajax加载城市分类   */ public function load_cities($id) { $id = (int) $id; if (!$id) { exit(&amp;quot;{result:0,msg:&amp;lsquo;错误的城市编号&amp;rsquo;}&amp;quot;); } $cities = ORM::factory(&amp;lsquo;city&amp;rsquo;); $cats = $cities-&amp;gt;where(&amp;lsquo;province_id&amp;rsquo;,$id)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); if (!count($cats)) { $cats = array(); } ksort($cats); exit(&amp;quot;{result:1,msg:&amp;quot;.json_encode($cats).&amp;quot;}&amp;quot;); }
+public function index() { //生成省市下拉列表 $provinces = ORM::factory(&amp;lsquo;province&amp;rsquo;)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;); $provinces[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($provinces); $this-&amp;gt;template-&amp;gt;provinces = $provinces; if ($data[&amp;lsquo;province_id&amp;rsquo;]) { $cities = ORM::factory(’city’)-&amp;gt;where(’province_id’,$data[&amp;lsquo;province_id&amp;rsquo;])-&amp;gt;select_list(’id’,&amp;lsquo;name&amp;rsquo;); } $cities[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;; ksort($cities); $this-&amp;gt;template-&amp;gt;cities = $cities; $this-&amp;gt;add_script(&amp;lsquo;home/js/company/add.js?3&amp;rsquo;); } view }); </description>
+    </item>
+    
+    <item>
+      <title>jQuery AJAX方法提交数据</title>
+      <link>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Sat, 28 Feb 2009 20:23:04 +0000</pubDate>
+      
+      <guid>/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>给gpsnet.cc加上了上传附件功能，应用了AJAX管理等</title>
+      <link>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</link>
+      <pubDate>Fri, 07 Nov 2008 17:09:57 +0000</pubDate>
+      
+      <guid>/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/</guid>
+      <description>大多都涉及到JS，但是淡水这块儿比较薄弱。于是用jQuery，搞定。 帖一张图，对jQuery的说明很不错 [caption id=&amp;quot;attachment_139&amp;rdquo; align=&amp;quot;alignnone&amp;rdquo; width=&amp;quot;300&amp;rdquo; caption=&amp;quot;jQuery&amp;rdquo;][/caption] 站还没更新，嗯，下周更新吧</description>
+    </item>
+    
+    <item>
+      <title>jQuery获取表单项目以及AJAX应用</title>
+      <link>/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 10 Sep 2008 16:06:55 +0000</pubDate>
+      
+      <guid>/posts/jquery%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E9%A1%B9%E7%9B%AE%E4%BB%A5%E5%8F%8Aajax%E5%BA%94%E7%94%A8/</guid>
+      <description>1.假如我们有如下页面 Xhtml文件如下： </description>
+    </item>
+    
+  </channel>
+</rss>

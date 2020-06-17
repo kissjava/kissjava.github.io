@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>orm on 清风徐来</title>
+    <link>/tags/orm/</link>
+    <description>Recent content in orm on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 13 Jan 2011 22:38:33 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Doctrine, the PHP ORM Framework</title>
+      <link>/posts/doctrine-the-php-orm-framework/</link>
+      <pubDate>Thu, 13 Jan 2011 22:38:33 +0000</pubDate>
+      
+      <guid>/posts/doctrine-the-php-orm-framework/</guid>
+      <description>Doctrine是 一個在PHP上的資料庫ORM(Object Relational Mapper)，最近手邊的幾個小案子透過Doctrine來實作。ORM的確是讓開發者少寫不少的SQL查詢，但相對的效能一定是比簡單的SQL要來得 差，我想魚跟熊掌要兼得並不容易，便利跟效能之間總有個天平讓開發者來自已調整，所以ORM好不好用就見人見志囉。
+一、前置作業：
+  系統需求 依官網上面提到的，Doctrine需要PHP 5.2.3以上的版本，除此之外就不用再另外安裝其它的套件或函式庫即可運作，不過如果要使用PDO(PHP Data Object)的話，則可能會需要另外安裝PDO驅動程式。
+  檢查PDO驅動程式 如果你要用PDO的話，想要知道你的主機上是不是有安裝你所需要的PDO驅動程式，只要一行簡單的PHP程式放到主機上執行：   二、取得原始檔
+有幾種取得Doctrine的方法：
+ SVN(Subversion) Pear Zip-package  如果你熟悉SVN的操作的話，這應該是最簡單使用的了。如果你只是想試玩一下Doctrine的功能的話，你可以下載官網上打包好的Sandbox套件來玩。我個人比較喜歡官方打包好的壓縮檔
+什麼是Sandbox套件? Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接下載、解壓縮後，就可以拿來試玩了。這裡面包括了一些範例schema檔案以及可以匯入的資料檔，讓你可以很快的就可以開始體驗Doctrine的優點。
+三、開始第一個專案 在Doctrine裡，Doctrine_Record是最基本的元件。資料庫裡的每個資料表都會有一個對應的Doctrine_Record類別。這個類別是以Active Record這個設計模式實作的，所以在其它語言像是在ROR(Ruby on Rails)上才看得到方便功能，在Doctrine裡也可以使用到了，即使是複雜的資料庫操作，透過這個類別也可以簡單的完成。
+在 使用Doctrine_Record來建立資料表時，如果沒有特別指定Primary Key的話，Doctrine會自動幫你加一個叫做”id”的主索引欄位(自動編號)。接下來你需要做的事情，就是建立一個繼承自 Doctrine_Record類別的子類別，然後透過setTableDefinition()以及hasColumn()就可以來建立你的資料表。
+為 了單純一些，我們這裡只先用一個表格做範例(多個表格之間的關聯性操作，例如一對一、一對多、多對多等關係，再另外開幾篇再寫)。假設我們現在要建立一個 叫做”member”的會員資料表，這個資料表裡會有id、username、password以及建立日期這幾個欄位，我們可以這樣做：
+檔案：models/Member.php </description>
+    </item>
+    
+  </channel>
+</rss>

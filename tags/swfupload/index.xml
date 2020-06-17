@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swfupload on 清风徐来</title>
+    <link>/tags/swfupload/</link>
+    <description>Recent content in swfupload on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 15 Jun 2011 12:48:30 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/swfupload/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>swfupload在codeigniter中的应用</title>
+      <link>/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
+      
+      <guid>/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <description>应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。
+第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：
+$this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里
+搞定。
+后来又碰到了第二个问题，在ie6下，上传后无法保存，一刷新才知道被踢出了，登录失效了。google百度之，在sina的一个blog里找到了方法，而且第一个问题他也碰到了。
+这个问题，他的原文如下：
+问题2：带有session验证的后台，会导致上传后退出登陆的状况回答： 一般方法1:swfuplaod在上传时，会新开一个进程，和原来的进程不一致，要解决这个问题，需要指定session_id，然后在登录页面判断，如果有post过来的session_id，那么就用函数session_id( $_POST[&amp;lsquo;PHP_SESSIONID&amp;rsquo;])指定一下。上传页的JS里面，可以获取当前的SESSION_ID的。（淡水注：适合普通的使用php自带session存储登录状态的情况；codeigniter不一样的。）
+ci中的状态：一般情况下，因为诸如uploadify,swfupload采用的都是flash客户端，这样它们产生的useragent与用户使用浏览器的user-agent必然不同。所以，虽然用户登录了你的系统产生了一个session，但是当触发上传程序时会产生另一个session（在上述useragent选项开启的情况下）。
+所以，不是session丢失了，而是当你上传文件时，CI为uploadify另外创建了一个session。
+解决方法1：将$config[&amp;lsquo;sess_match_useragent&amp;rsquo;]设置成FALSE，重试。 解决方法2（推荐）：为了安全起见，不建议使用第1条解决方案，而是使用另外的验证方法，比如在每次上传时，在url中附加一个token与服务器端的token比对（比如这个token可以是用户名的hash值）。具体实现方法请参考stblog的上传验证实现（使用的是swfupload）。~~~~~~我尝试了这个方法，重点在于，如果你的session类是放在autoload里自动加载的，那么，这样肯定是失败的，解决办法是，新建一个类，例如MY_Controller继承于CI_Controller,用于后台登陆，需要权限判断后台处理，讲upload类继承于CI_Controller这样的话，就不经过session类的验证了，当然上传还是得验证，不过可以用post_params传值进行验证：
+示例: class Upload extends CI_Controller { //code&amp;hellip; } &amp;lt;code lang=&#39;php&#39;&amp;gt; class client_photo extends MY_Controller { function __construct() { parent::__construct(); } function index() { //code... } } &amp;lt;/code&amp;gt; </description>
+    </item>
+    
+  </channel>
+</rss>

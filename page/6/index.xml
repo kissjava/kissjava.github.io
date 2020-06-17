@@ -1,0 +1,769 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
+        <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
+        
+        <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+        <description>清风徐来 /posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ -&lt;p&gt;使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/1907126928.png&#34; alt=&#34;jupyter.png&#34;&gt;
+如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。&lt;/p&gt;
+&lt;p&gt;好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 &lt;a href=&#34;https://repo.continuum.io/archive/&#34;&gt;https://repo.continuum.io/archive/&lt;/a&gt;，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
+--2017-09-04 09:15:29--  https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
+Resolving repo.continuum.io (repo.continuum.io)... 104.16.19.10, 104.16.18.10, 2400:cb00:2048:1::6810:130a, ...
+Connecting to repo.continuum.io (repo.continuum.io)|104.16.19.10|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 523283080 (499M) [application/x-sh]
+Saving to: ‘Anaconda3-4.4.0-Linux-x86_64.sh’
+
+100%[=================================================================&amp;gt;] 523,283,080 11.3MB/s   in 59s    
+
+2017-09-04 09:16:29 (8.39 MB/s) - ‘Anaconda3-4.4.0-Linux-x86_64.sh’ saved [523283080/523283080]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载完成，vps 速度还算及格。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo bash Anaconda3-4.4.0-Linux-x86_64.sh
+Welcome to Anaconda3 4.4.0 (by Continuum Analytics, Inc.)
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+&amp;gt;&amp;gt;&amp;gt; 
+===================================
+Anaconda End User License Agreement
+===================================
+
+Copyright 2017, Continuum Analytics, Inc.
+.......
+协议内容省略...
+.......
+
+Do you approve the license terms? [yes|no]
+&amp;gt;&amp;gt;&amp;gt; yes
+
+Anaconda3 will now be installed into this location:
+/root/anaconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/root/anaconda3] &amp;gt;&amp;gt;&amp;gt; /data/anaconda3
+PREFIX=/data/anaconda3
+installing: python-3.6.1-2 ...
+installing: _license-1.1-py36_1 ...
+installing: alabaster-0.7.10-py36_0 ...
+installing: anaconda-client-1.6.3-py36_0 ...
+installing: anaconda-navigator-1.6.2-py36_0 ...
+installing: anaconda-project-0.6.0-py36_0 ...
+installing: asn1crypto-0.22.0-py36_0 ...
+installing: astroid-1.4.9-py36_0 ...
+installing: astropy-1.3.2-np112py36_0 ...
+installing: babel-2.4.0-py36_0 ...
+installing: backports-1.0-py36_0 ...
+installing: beautifulsoup4-4.6.0-py36_0 ...
+installing: bitarray-0.8.1-py36_0 ...
+installing: blaze-0.10.1-py36_0 ...
+installing: bleach-1.5.0-py36_0 ...
+installing: bokeh-0.12.5-py36_1 ...
+installing: boto-2.46.1-py36_0 ...
+installing: bottleneck-1.2.1-np112py36_0 ...
+installing: cairo-1.14.8-0 ...
+installing: cffi-1.10.0-py36_0 ...
+installing: chardet-3.0.3-py36_0 ...
+installing: click-6.7-py36_0 ...
+installing: cloudpickle-0.2.2-py36_0 ...
+installing: clyent-1.2.2-py36_0 ...
+installing: colorama-0.3.9-py36_0 ...
+installing: contextlib2-0.5.5-py36_0 ...
+installing: cryptography-1.8.1-py36_0 ...
+installing: curl-7.52.1-0 ...
+installing: cycler-0.10.0-py36_0 ...
+installing: cython-0.25.2-py36_0 ...
+installing: cytoolz-0.8.2-py36_0 ...
+installing: dask-0.14.3-py36_1 ...
+installing: datashape-0.5.4-py36_0 ...
+installing: dbus-1.10.10-0 ...
+installing: decorator-4.0.11-py36_0 ...
+installing: distributed-1.16.3-py36_0 ...
+installing: docutils-0.13.1-py36_0 ...
+installing: entrypoints-0.2.2-py36_1 ...
+installing: et_xmlfile-1.0.1-py36_0 ...
+installing: expat-2.1.0-0 ...
+installing: fastcache-1.0.2-py36_1 ...
+installing: flask-0.12.2-py36_0 ...
+installing: flask-cors-3.0.2-py36_0 ...
+installing: fontconfig-2.12.1-3 ...
+installing: freetype-2.5.5-2 ...
+installing: get_terminal_size-1.0.0-py36_0 ...
+installing: gevent-1.2.1-py36_0 ...
+installing: glib-2.50.2-1 ...
+installing: greenlet-0.4.12-py36_0 ...
+installing: gst-plugins-base-1.8.0-0 ...
+installing: gstreamer-1.8.0-0 ...
+installing: h5py-2.7.0-np112py36_0 ...
+installing: harfbuzz-0.9.39-2 ...
+installing: hdf5-1.8.17-1 ...
+installing: heapdict-1.0.0-py36_1 ...
+installing: html5lib-0.999-py36_0 ...
+installing: icu-54.1-0 ...
+installing: idna-2.5-py36_0 ...
+installing: imagesize-0.7.1-py36_0 ...
+installing: ipykernel-4.6.1-py36_0 ...
+installing: ipython-5.3.0-py36_0 ...
+installing: ipython_genutils-0.2.0-py36_0 ...
+installing: ipywidgets-6.0.0-py36_0 ...
+installing: isort-4.2.5-py36_0 ...
+installing: itsdangerous-0.24-py36_0 ...
+installing: jbig-2.1-0 ...
+installing: jdcal-1.3-py36_0 ...
+installing: jedi-0.10.2-py36_2 ...
+installing: jinja2-2.9.6-py36_0 ...
+installing: jpeg-9b-0 ...
+installing: jsonschema-2.6.0-py36_0 ...
+installing: jupyter-1.0.0-py36_3 ...
+installing: jupyter_client-5.0.1-py36_0 ...
+installing: jupyter_console-5.1.0-py36_0 ...
+installing: jupyter_core-4.3.0-py36_0 ...
+installing: lazy-object-proxy-1.2.2-py36_0 ...
+installing: libffi-3.2.1-1 ...
+installing: libgcc-4.8.5-2 ...
+installing: libgfortran-3.0.0-1 ...
+installing: libiconv-1.14-0 ...
+installing: libpng-1.6.27-0 ...
+installing: libsodium-1.0.10-0 ...
+installing: libtiff-4.0.6-3 ...
+installing: libtool-2.4.2-0 ...
+installing: libxcb-1.12-1 ...
+installing: libxml2-2.9.4-0 ...
+installing: libxslt-1.1.29-0 ...
+installing: llvmlite-0.18.0-py36_0 ...
+installing: locket-0.2.0-py36_1 ...
+installing: lxml-3.7.3-py36_0 ...
+installing: markupsafe-0.23-py36_2 ...
+installing: matplotlib-2.0.2-np112py36_0 ...
+installing: mistune-0.7.4-py36_0 ...
+installing: mkl-2017.0.1-0 ...
+installing: mkl-service-1.1.2-py36_3 ...
+installing: mpmath-0.19-py36_1 ...
+installing: msgpack-python-0.4.8-py36_0 ...
+installing: multipledispatch-0.4.9-py36_0 ...
+installing: navigator-updater-0.1.0-py36_0 ...
+installing: nbconvert-5.1.1-py36_0 ...
+installing: nbformat-4.3.0-py36_0 ...
+installing: networkx-1.11-py36_0 ...
+installing: nltk-3.2.3-py36_0 ...
+installing: nose-1.3.7-py36_1 ...
+installing: notebook-5.0.0-py36_0 ...
+installing: numba-0.33.0-np112py36_0 ...
+installing: numexpr-2.6.2-np112py36_0 ...
+installing: numpy-1.12.1-py36_0 ...
+installing: numpydoc-0.6.0-py36_0 ...
+installing: odo-0.5.0-py36_1 ...
+installing: olefile-0.44-py36_0 ...
+installing: openpyxl-2.4.7-py36_0 ...
+installing: openssl-1.0.2l-0 ...
+installing: packaging-16.8-py36_0 ...
+installing: pandas-0.20.1-np112py36_0 ...
+installing: pandocfilters-1.4.1-py36_0 ...
+installing: pango-1.40.3-1 ...
+installing: partd-0.3.8-py36_0 ...
+installing: path.py-10.3.1-py36_0 ...
+installing: pathlib2-2.2.1-py36_0 ...
+installing: patsy-0.4.1-py36_0 ...
+installing: pcre-8.39-1 ...
+installing: pep8-1.7.0-py36_0 ...
+installing: pexpect-4.2.1-py36_0 ...
+installing: pickleshare-0.7.4-py36_0 ...
+installing: pillow-4.1.1-py36_0 ...
+installing: pip-9.0.1-py36_1 ...
+installing: pixman-0.34.0-0 ...
+installing: ply-3.10-py36_0 ...
+installing: prompt_toolkit-1.0.14-py36_0 ...
+installing: psutil-5.2.2-py36_0 ...
+installing: ptyprocess-0.5.1-py36_0 ...
+installing: py-1.4.33-py36_0 ...
+installing: pycosat-0.6.2-py36_0 ...
+installing: pycparser-2.17-py36_0 ...
+installing: pycrypto-2.6.1-py36_6 ...
+installing: pycurl-7.43.0-py36_2 ...
+installing: pyflakes-1.5.0-py36_0 ...
+installing: pygments-2.2.0-py36_0 ...
+installing: pylint-1.6.4-py36_1 ...
+installing: pyodbc-4.0.16-py36_0 ...
+installing: pyopenssl-17.0.0-py36_0 ...
+installing: pyparsing-2.1.4-py36_0 ...
+installing: pyqt-5.6.0-py36_2 ...
+installing: pytables-3.3.0-np112py36_0 ...
+installing: pytest-3.0.7-py36_0 ...
+installing: python-dateutil-2.6.0-py36_0 ...
+installing: pytz-2017.2-py36_0 ...
+installing: pywavelets-0.5.2-np112py36_0 ...
+installing: pyyaml-3.12-py36_0 ...
+installing: pyzmq-16.0.2-py36_0 ...
+installing: qt-5.6.2-4 ...
+installing: qtawesome-0.4.4-py36_0 ...
+installing: qtconsole-4.3.0-py36_0 ...
+installing: qtpy-1.2.1-py36_0 ...
+installing: readline-6.2-2 ...
+installing: requests-2.14.2-py36_0 ...
+installing: rope-0.9.4-py36_1 ...
+installing: ruamel_yaml-0.11.14-py36_1 ...
+installing: scikit-image-0.13.0-np112py36_0 ...
+installing: scikit-learn-0.18.1-np112py36_1 ...
+installing: scipy-0.19.0-np112py36_0 ...
+installing: seaborn-0.7.1-py36_0 ...
+installing: setuptools-27.2.0-py36_0 ...
+installing: simplegeneric-0.8.1-py36_1 ...
+installing: singledispatch-3.4.0.3-py36_0 ...
+installing: sip-4.18-py36_0 ...
+installing: six-1.10.0-py36_0 ...
+installing: snowballstemmer-1.2.1-py36_0 ...
+installing: sortedcollections-0.5.3-py36_0 ...
+installing: sortedcontainers-1.5.7-py36_0 ...
+installing: sphinx-1.5.6-py36_0 ...
+installing: spyder-3.1.4-py36_0 ...
+installing: sqlalchemy-1.1.9-py36_0 ...
+installing: sqlite-3.13.0-0 ...
+installing: statsmodels-0.8.0-np112py36_0 ...
+installing: sympy-1.0-py36_0 ...
+installing: tblib-1.3.2-py36_0 ...
+installing: terminado-0.6-py36_0 ...
+installing: testpath-0.3-py36_0 ...
+installing: tk-8.5.18-0 ...
+installing: toolz-0.8.2-py36_0 ...
+installing: tornado-4.5.1-py36_0 ...
+installing: traitlets-4.3.2-py36_0 ...
+installing: unicodecsv-0.14.1-py36_0 ...
+installing: unixodbc-2.3.4-0 ...
+installing: wcwidth-0.1.7-py36_0 ...
+installing: werkzeug-0.12.2-py36_0 ...
+installing: wheel-0.29.0-py36_0 ...
+installing: widgetsnbextension-2.0.0-py36_0 ...
+installing: wrapt-1.10.10-py36_0 ...
+installing: xlrd-1.0.0-py36_0 ...
+installing: xlsxwriter-0.9.6-py36_0 ...
+installing: xlwt-1.2.0-py36_0 ...
+installing: xz-5.2.2-1 ...
+installing: yaml-0.1.6-0 ...
+installing: zeromq-4.1.5-0 ...
+installing: zict-0.1.2-py36_0 ...
+installing: zlib-1.2.8-3 ...
+installing: anaconda-4.4.0-np112py36_0 ...
+installing: conda-4.3.21-py36_0 ...
+installing: conda-env-2.6.0-0 ...
+Python 3.6.1 :: Continuum Analytics, Inc.
+creating default environment...
+installation finished.
+Do you wish the installer to prepend the Anaconda3 install location
+to PATH in your /root/.bashrc ? [yes|no]
+[no] &amp;gt;&amp;gt;&amp;gt; 
+
+You may wish to edit your .bashrc or prepend the Anaconda3 install location:
+
+$ export PATH=/data/anaconda3/bin:$PATH
+
+Thank you for installing Anaconda3!
+
+Share your notebooks and packages on Anaconda Cloud!
+Sign up for free: https://anaconda.org
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据提示输入 yes 及安装路径等（Mike 安装到了 /data/anaconda3, 还记得前两天刚刚的挂载 mount 吧，/data 有20G 呢）直到安装完毕。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ export PATH=/data/anaconda3/bin:$PATH
+
+$ jupyter notebook --generate-config
+Writing default config to: /home/你的用户名/.jupyter/jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建好了，配置文件，就去产生个访问 Jupyter 的密码。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python
+Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:09:58) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; from notebook.auth import passwd
+&amp;gt;&amp;gt;&amp;gt; passwd()
+Enter password: 
+Verify password: 
+&#39;sha1:9c252a7bae90:23bf013a345e05be0b74a2xxxxxx&#39;
+&amp;gt;&amp;gt;&amp;gt; exit()
+
+$ vi /home/centos/.jupyter/jupyter_notebook_config.py 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑配置文件，加入以下。可以自行调整，*，代表可以从任何 ip 来访问 jupyter，password 就是刚刚生成的，port 就是你想通过哪个端口来访问。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c.NotebookApp.ip = &#39;*&#39;
+c.NotebookApp.password = u&#39;sha1:9c252a7bae90:23bf013a345e05be0b74a2xxxxxx&#39;
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8080
+
+$ /data/anaconda3/bin/jupyter notebook
+[W 10:59:15.335 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 10:59:15.347 NotebookApp] Serving notebooks from local directory: /home/centos
+[I 10:59:15.347 NotebookApp] 0 active kernels 
+[I 10:59:15.347 NotebookApp] The Jupyter Notebook is running at: http://[all ip addresses on your system]:8080/
+[I 10:59:15.347 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 10:59:27.350 NotebookApp] Creating new notebook in 
+[I 10:59:34.830 NotebookApp] Kernel started: a8d139ed-3d72-4d05-b02b-448975ab0aaa
+[I 11:01:35.119 NotebookApp] Saving file at /Untitled.ipynb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;搞定了，可以从浏览器访问 Jupyter 了，上面我已经访问了，而且创建了一个Untitled.ipynb 在默认的/home/centos（我的默认启动Jupyter时的目录）下。&lt;/p&gt;
+&lt;p&gt;等等，还有问题。停止它就用 Control+C，如果开机自动启动呢？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo /data/anaconda3/bin/jupyter notebook --allow-root --generate-config
+Writing default config to: /root/.jupyter/jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;root 用户创建配置文件，再去修改配置文件（和前面类似）。
+要确保创建了 root 用户运行的配置文件，能够 vi 打开就是创建了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo vi /etc/rc.local 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;加入以下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /home/centos
+/data/anaconda3/bin/jupyter notebook --allow-root
+
+$ reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启，打开你的 ip:8080,登录密码就是你用 python 时输入的那个。
+end.&lt;/p&gt;
+- /posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Somagu NAT 小鸡的挂载过程</title>
+        <link>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</link>
+        <pubDate>Sat, 02 Sep 2017 13:33:00 +0000</pubDate>
+        
+        <guid>/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</guid>
+        <description>清风徐来 /posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ -&lt;p&gt;Somagu 提供了免费的 kvm 技术的 vps（免费到2017年9月底），虽然是 NAT 的（共享公网 IP），但是线路不错还是可玩的。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2257569525.png&#34; alt=&#34;SomaguVps.png&#34;&gt;
+Somagu 小鸡根据你选择的 OS 模板，默认只有2.2G 或是8G 的硬盘空间。但是它提供了20G 的 Disk，但是需要我们自己去挂载。官网的说明&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you created a VPS based on OS template, your extra disk space is at
+/dev/vdb device. Please mount, format and use it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;好吧，下面记录一下挂载过程，Linux 挂载基本都是这个套路了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        222M     0  222M   0% /dev
+tmpfs           244M   24K  244M   1% /dev/shm
+tmpfs           244M  8.3M  236M   4% /run
+tmpfs           244M     0  244M   0% /sys/fs/cgroup
+/dev/vda1       8.0G  3.7G  4.4G  46% /
+tmpfs            49M     0   49M   0% /run/user/1000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看到了，只有8G。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# fdisk -l
+
+Disk /dev/vda: 8589 MB, 8589934592 bytes, 16777216 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b2270
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/vda1   *        2048    16777215     8387584   83  Linux
+
+Disk /dev/vdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+Disk /dev/vdc: 0 MB, 374784 bytes, 732 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有/dev/vda, /dev/vdb, /dev/vdc;其中/dev/vdb有21.5G,但是没有分区&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# fdisk /dev/vdb
+Welcome to fdisk (util-linux 2.23.2).
+
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table
+Building a new DOS disklabel with disk identifier 0xb548910e.
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   g   create a new empty GPT partition table
+   G   create an IRIX (SGI) partition table
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition&#39;s system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): 
+Using default response p
+Partition number (1-4, default 1): 
+First sector (2048-41943039, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-41943039, default 41943039): 
+Using default value 41943039
+Partition 1 of type Linux and of size 20 GiB is set
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照界面的提示，依次输入“n”(新建分区)、“p”(新建扩展分区)、“1”(使用第1个主分区)，两次回车(使用默认配置)，输入“wq”(保存分区表)，回车开始分区。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# fdisk -l
+
+Disk /dev/vda: 8589 MB, 8589934592 bytes, 16777216 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b2270
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/vda1   *        2048    16777215     8387584   83  Linux
+
+Disk /dev/vdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0xb548910e
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/vdb1            2048    41943039    20970496   83  Linux
+
+Disk /dev/vdc: 0 MB, 374784 bytes, 732 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再次查看，/dev/vdb已经分区了，vdb1已经创建完成。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# mkfs.ext4 /dev/vdb1
+mke2fs 1.42.9 (28-Dec-2013)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+1310720 inodes, 5242624 blocks
+262131 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=2153775104
+160 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+    4096000
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成格式化&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# mkdir /data
+# mount /dev/vdb1 /data
+# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        222M     0  222M   0% /dev
+tmpfs           244M   24K  244M   1% /dev/shm
+tmpfs           244M  8.3M  236M   4% /run
+tmpfs           244M     0  244M   0% /sys/fs/cgroup
+/dev/vda1       8.0G  3.7G  4.4G  46% /
+tmpfs            49M     0   49M   0% /run/user/1000
+/dev/vdb1        20G   45M   19G   1% /data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建/data 文件夹; 挂载/dev/vdb1 到/data; 查看结果，成功挂载了。&lt;/p&gt;
+&lt;p&gt;重启后挂载回消失，所以最好能够自动挂载。先创建 /etc/fstab 文件的备份，再编辑&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# cp /etc/fstab /etc/fstab.backup
+# vi /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入：device_name  mount_point  file_system_type  fs_mntops  fs_freq  fs_passno&lt;/p&gt;
+&lt;p&gt;本例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/dev/vdb1 /data ext4 defaults,nofail 0 1
+
+# mount -a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果运行通过则说明文件正常，刚刚创建的文件系统会在下次启动时自动安装.
+end.&lt;/p&gt;
+- /posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>阿里云 ubuntu 的防火墙操作</title>
+        <link>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
+        <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
+        
+        <guid>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
+        <description>清风徐来 /posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ -&lt;p&gt;阿里云服务器，没有 web 面板权限，只有 root 用户。&lt;/p&gt;
+&lt;p&gt;重新安装了服务器的 web 环境，需要开发相关端口。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/4243143150.png&#34; alt=&#34;Linux-IP-Tables-678x381.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;检查防火墙-&#34;&gt;检查防火墙&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$whereis iptables
+iptables: /sbin/iptables /etc/iptables.rules /usr/share/iptables /usr/share/man/man8/iptables.8.gz
+说明防火墙开了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;根据上面的路径编辑规则-&#34;&gt;根据上面的路径，编辑规则&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$vi /etc/iptables.rules
+-A INPUT -p tcp -m state &amp;ndash;state NEW -m tcp &amp;ndash;dport 9443 -j ACCEPT
+-A INPUT -p udp -m state &amp;ndash;state NEW -m udp &amp;ndash;dport 9443 -j ACCEPT
+以上放行了9443的 tcp 和 udp（拷贝已有规则改端口就好）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;更新规则-&#34;&gt;更新规则&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$iptables-restore &amp;lt; /etc/iptables.rules 
+$chmod +x /etc/network/if-pre-up.d/iptables&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;查看一下-&#34;&gt;查看一下&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$iptables -L -n
+Chain INPUT (policy DROP)
+target     prot opt source               destination      &lt;br&gt;
+ACCEPT     all  &amp;ndash;  0.0.0.0/0            0.0.0.0/0        &lt;br&gt;
+ACCEPT     all  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+ACCEPT     tcp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     tcp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:9443
+ACCEPT     udp  &amp;ndash;  0.0.0.0/0            0.0.0.0/0            state NEW udp dpt:9443
+&amp;hellip; 
+看到了我们放行的端口&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;end.&lt;/p&gt;
+- /posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Visual C# 禁止应用多次启动</title>
+        <link>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</link>
+        <pubDate>Thu, 10 Aug 2017 17:23:00 +0000</pubDate>
+        
+        <guid>/posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/</guid>
+        <description>清风徐来 /posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;废话少说，上代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName(&amp;quot;AppProcessName&amp;quot;);
+            if (myProcesses.Length &amp;gt; 1) 
+            {
+                MessageBox.Show(&amp;quot;The application has already started ！&amp;quot;);
+                Close();
+            }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是 WPF 适用的。
+如果是 winform 就把 &lt;code&gt;Close()&lt;/code&gt; 改为 &lt;code&gt;Application.Exit();&lt;/code&gt;。
+end.&lt;/p&gt;
+- /posts/visual-c#-%E7%A6%81%E6%AD%A2%E5%BA%94%E7%94%A8%E5%A4%9A%E6%AC%A1%E5%90%AF%E5%8A%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>AlibabaCloudPricing</title>
+        <link>/posts/alibabacloudpricing/</link>
+        <pubDate>Tue, 08 Aug 2017 08:17:51 +0000</pubDate>
+        
+        <guid>/posts/alibabacloudpricing/</guid>
+        <description>清风徐来 /posts/alibabacloudpricing/ -&lt;p&gt;a:8:{s:4:&amp;ldquo;name&amp;rdquo;;s:23:&amp;ldquo;alibabaCloudPricing.png&amp;rdquo;;s:4:&amp;ldquo;path&amp;rdquo;;s:35:&amp;quot;/usr/uploads/2017/08/4072597731.png&amp;rdquo;;s:4:&amp;ldquo;size&amp;rdquo;;i:789109;s:4:&amp;ldquo;type&amp;rdquo;;s:3:&amp;ldquo;png&amp;rdquo;;s:4:&amp;ldquo;mime&amp;rdquo;;s:9:&amp;ldquo;image/png&amp;rdquo;;s:7:&amp;ldquo;isImage&amp;rdquo;;b:1;s:3:&amp;ldquo;url&amp;rdquo;;s:54:&amp;ldquo;&lt;a href=&#34;http://kissjava.cn/usr/uploads/2017/08/4072597731.png%22;s:11:%22description%22;N;%7D&#34;&gt;http://kissjava.cn/usr/uploads/2017/08/4072597731.png&amp;quot;;s:11:&amp;quot;description&amp;quot;;N;}&lt;/a&gt;&lt;/p&gt;
+- /posts/alibabacloudpricing/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>转战阿里国际</title>
+        <link>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</link>
+        <pubDate>Mon, 07 Aug 2017 16:11:00 +0000</pubDate>
+        
+        <guid>/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/</guid>
+        <description>清风徐来 /posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ -&lt;p&gt;转战阿里国际，顺便更新个皮肤。&lt;/p&gt;
+&lt;p&gt;原本黑五的新加坡小鸡速度不错，就是最近频繁的宕机。&lt;/p&gt;
+&lt;p&gt;正好阿里云国际版出4.5刀/月的新加坡。配置良心，1024m 内存，40G SSD云盘，30m 带宽，1T 流量。于是又搬家了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/4072597731.png&#34; alt=&#34;alibabaCloudPricing.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;博主亲身体验，阿里云国际真心不错。绝对是目前的&lt;strong&gt;首选推荐&lt;/strong&gt;。&lt;a href=&#34;https://account-intl.aliyun.com/register/intl_register.htm?biz_params=%7B%22intl%22%3A%22%7B%5C%22referralCode%5C%22%3A%5C%221kkkrt%5C%22%7D%22%7D&#34;&gt;地址传送&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果要更加便宜还要靠谱的 vps，建议搬瓦工，8机房任你切换。其中两个 LA 机房都是亚洲直连，速度还行。&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;年付19$搬瓦工直连VPS传送&lt;/a&gt;。&lt;/p&gt;
+- /posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>搬出搬瓦工了</title>
+        <link>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+        <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
+        
+        <guid>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+        <description>清风徐来 /posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ -&lt;p&gt;剁了个新加坡vps，于是乎搬出搬瓦工。
+搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。
+还是说明了，世界加钱可达！
+当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/2966590504.png&#34; alt=&#34;bwh.png&#34;&gt;
+推荐年付19$搬瓦工KVM直连VPS，&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;传输机在此&lt;/a&gt;！
+忽然发现，这2016年的第一篇博文。
+今年还有半个月就完了！估计很可能也是今年的最后一篇吧。&lt;/p&gt;
+- /posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ipython tab键无法提示补全</title>
+        <link>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
+        <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
+        
+        <guid>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
+        <description>清风徐来 /posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ -&lt;p&gt;python3.4下pip安装了ipython&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install ipython
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cmd运行ipython貌似正常，但是无法tab补全、提示
+需要pip 安装 pyreadline&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install pyreadline
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上在win8.1下32位python3.4通过&lt;/p&gt;
+- /posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>cx_Freeze setup.py</title>
+        <link>/posts/cx_freeze-setup.py/</link>
+        <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
+        
+        <guid>/posts/cx_freeze-setup.py/</guid>
+        <description>清风徐来 /posts/cx_freeze-setup.py/ -&lt;pre&gt;&lt;code&gt;from cx_Freeze import setup, Executable
+
+# http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspx
+shortcut_table = [
+    (&amp;quot;DesktopShortcut&amp;quot;,        # Shortcut
+     &amp;quot;DesktopFolder&amp;quot;,          # Directory_
+     &amp;quot;YourAppDetailName&amp;quot;,            # App Name
+     &amp;quot;TARGETDIR&amp;quot;,              # Component_
+     &amp;quot;[TARGETDIR]AppName.exe&amp;quot;,             # Target
+     None,                     # Arguments
+     None,                     # Description
+     None,                     # Hotkey
+     None,                     # Icon
+     None,                     # IconIndex
+     None,                     # ShowCmd
+     &#39;TARGETDIR&#39;               # WkDir
+     )
+    ]
+
+# Now create the table dictionary
+msi_data = {&amp;quot;Shortcut&amp;quot;: shortcut_table}
+
+# Change some default MSI options and specify the use of the above defined tables
+bdist_msi_options = {&#39;data&#39;: msi_data}
+
+# Dependencies are automatically detected, but it might need
+# fine tuning.
+buildOptions = dict(
+    packages = [],
+    excludes = [],
+    include_files=[&#39;tks7.dll&#39;,&#39;Don_API.dll&#39;,&#39;image&#39;,&#39;config.ini&#39;],
+    include_msvcr= True   #skip error msvcr100.dll missing
+)
+
+import sys
+base = &#39;Win32GUI&#39; if sys.platform==&#39;win32&#39; else None
+
+executables = [
+    Executable(
+        &#39;PowerService.py&#39;,
+        base=base,
+        icon=&#39;image\\PowerService.ico&#39;,
+        compress = True,
+        )
+]
+
+setup(name=&#39;PowerService&#39;,#Setup Path
+      version = &#39;1.0.0&#39;,
+      description = &#39;some detail&#39;,
+      maintainer = &amp;quot;MikeYang.Me&amp;quot;,
+      maintainer_email = &amp;quot;kissjava.cn@gmail.com&amp;quot;,
+      url = &#39;http://kissjava.cn&#39;,
+      options = {&amp;quot;build_exe&amp;quot;:buildOptions,&amp;quot;bdist_msi&amp;quot;:bdist_msi_options},
+      executables = executables)
+&lt;/code&gt;&lt;/pre&gt;
+- /posts/cx_freeze-setup.py/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>spec demo</title>
+        <link>/posts/spec-demo/</link>
+        <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
+        
+        <guid>/posts/spec-demo/</guid>
+        <description>清风徐来 /posts/spec-demo/ -&lt;pre&gt;&lt;code&gt;# -*- mode: python -*-
+a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],
+             pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],
+             hiddenimports=[],
+             hookspath=None,
+             runtime_hooks=None)
+pyz = PYZ(a.pure)
+exe = EXE(pyz,
+          a.scripts,
+          exclude_binaries=True,
+          name=&#39;dbTools.exe&#39;,
+          debug=False,
+          strip=None,
+          upx=True,
+          console=False , version=&#39;d:\\Work\\dbTools\\v.txt&#39;, icon=&#39;d:\\Work\\dbTools\\dbTools.ico&#39;)
+dict_tree = Tree(&#39;d:\\Work\\dbTools\\backup&#39;, prefix = &#39;backup&#39;)
+dict_tree += Tree(&#39;d:\\Work\\dbTools\\test&#39;, prefix = &#39;test&#39;)
+dict_tree += [
+                (&#39;dbTools.ico&#39;, &#39;d:\\Work\\dbTools\\dbTools.ico&#39;, &#39;DATA&#39;),
+                (&#39;appcfg.dll&#39;,&#39;d:\\Work\\dbTools\\appcfg.dll&#39;,&#39;DATA&#39;),
+                (&#39;backup.dll&#39;,&#39;d:\\Work\\dbTools\\backup.dll&#39;,&#39;DATA&#39;),
+                (&#39;mysqlr.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlr.exe&#39;,&#39;DATA&#39;),
+                (&#39;mysqlb.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlb.exe&#39;,&#39;DATA&#39;)
+               ]
+coll = COLLECT(exe,
+               a.binaries,
+               dict_tree,
+               a.zipfiles,
+               a.datas,
+               strip=None,
+               upx=True,
+               name=&#39;dbTools&#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cmd&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。&lt;/p&gt;
+&lt;p&gt;2015年10月23日11:22:11 update：
+pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择&lt;/p&gt;
+- /posts/spec-demo/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>py2exe on 清风徐来</title>
+    <link>/tags/py2exe/</link>
+    <description>Recent content in py2exe on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 16 Oct 2013 17:26:21 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/py2exe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pyinstaller安装及使用</title>
+      <link>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
+      
+      <guid>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <description>也可以用py2exe,但是总要写个xxx.py的文件来配置,不是很乐意.
+chinaunix上有朋友推荐用pyinstaller,说更容易使用.那就用用看吧.
+第一步:安装 easy_install pyinstaller(淡水在win8.1下需要用管理员权限安装)
+第二步:使用 cd d: mkdir temp cd temp pyinstaller &amp;ndash;noconsole &amp;ndash;icon d:\ledpub\julin.ico d:\ledpub\julinKanBan.py 真的很简单,在d盘建立了临时文件夹,打包好的程序会放在这里. noconsole,设置不要出现控制台窗口(就是doc窗口) icon,设置exe的图标文件(图标有限制,按128,64,48,32,16的大小排列,否则win7下可能看不到图标)
+The end.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smtp on 清风徐来</title>
+    <link>/tags/smtp/</link>
+    <description>Recent content in smtp on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 03 Nov 2011 10:41:27 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postmark的邮件代发服务</title>
+      <link>/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
+      
+      <guid>/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
+      <description>以往都是找可以开通smtp的免费邮箱来做的。 但是限制较多，一般是发送要延时，每天限制50或100封。容易被屏蔽等等。对外贸用途的就更不行了，大都是被当成垃圾邮件处理了。 有了Postmark就不一样了。下面淡水就介绍一下。
+Postmark是国外服务。可用于web线上发送mail。简单的API，简单的操作，零维护，比较方便。
+问Postmark官方网站：http://postmarkapp.com
+点击“sign up” 进入注册页：
+Full Name ： //这里填入你的全名。 Email ： //你的电子邮件 Password ： //密码 Password again ： //再次输入密码 Time Zone ：//时区，选+8的都可以。。
+点击下面的“Create Account” 提交。
+完成后提示： Congratulations, you have signed up successfully! Unfortunately, you have not setup any servers yet.
+意思是，成功注册鸟，但是没有设置任何服务器。
+接下来，我们就添加一个服务器。点击“Setup a New Server” 跳转到 Add a new server 页面
+点击页面最下方的“Next Step”
+“Enter a name for your server ” 为你的服务器命名，再选一个颜色。然后继续点击页面最下方的“Next Step”
+经过一系列的验证之后，通过！
+点击“Done! Now add a sender signature” 就是说，可以了，现在添加一个签名</description>
+    </item>
+    
+  </channel>
+</rss>

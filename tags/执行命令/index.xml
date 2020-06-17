@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>执行命令 on 清风徐来</title>
+    <link>/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in 执行命令 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 29 Jul 2019 22:43:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Golang执行系统命令</title>
+      <link>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 29 Jul 2019 22:43:00 +0000</pubDate>
+      
+      <guid>/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/</guid>
+      <description>在本教程中，我们将看一下标准库中的os / exec包以及如何使用它在Go应用程序中成功执行系统命令。 ##条件
+您需要安装Go 1.11+版本
+##兼容性问题
+只是简单的教程Demo，所以并未对所有平台适用。
+###检查当前操作系统 我们可以使用runtime包并检查GOOS常量。这将返回目标的操作系统：
+ if runtime.GOOS == &amp;quot;windows&amp;quot; {fmt.Println(&amp;quot;无法在Windows机器上执行此操作&amp;quot;)} else {execute()}##上代码
+package mainimport (&amp;quot;fmt&amp;quot;&amp;quot;os/exec&amp;quot;&amp;quot;runtime&amp;quot;)func execute() {// 这里我们执行pwd命令// 我们可以将它的输出存储在我们的out变量中out, err := exec.Command(&amp;quot;ls&amp;quot;).Output()// 如果我们的执行有错误if err != nil {fmt.Printf(&amp;quot;%s&amp;quot;, err)}// 因为上面定义的out变量是[] byte类型，// 我们需要将它转换为字符串，否则我们将看到在我们的控制台中打印出乱码// 这就是我们将它转​​换为字符串的方式fmt.Println(&amp;quot;命令已成功执行&amp;quot;)output := string(out[:])fmt.Println(output)// 让我们试试pwd命令out, err = exec.Command(&amp;quot;pwd&amp;quot;).Output()if err !</description>
+    </item>
+    
+  </channel>
+</rss>

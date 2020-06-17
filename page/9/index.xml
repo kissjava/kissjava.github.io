@@ -1,0 +1,534 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>python虚拟环境virtualenv</title>
+        <link>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+        <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
+        
+        <guid>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+        <description>清风徐来 /posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ -&lt;p&gt;昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.&lt;/p&gt;
+&lt;p&gt;virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.&lt;/p&gt;
+&lt;p&gt;这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.&lt;/p&gt;
+&lt;p&gt;比如,我可以为公司的项目搞个环境叫comDjango;还可以自己偷偷搞个myDjango.&lt;/p&gt;
+&lt;p&gt;domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他们不会影响到对方.解决了所有项目都用同一版本类库的尴尬,当然还有其他好处.比如某个环境里只安装想要的包,满足洁癖等等&amp;hellip;&lt;/p&gt;
+&lt;p&gt;好吧,说说安装和使用吧.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;#安装
+$easy_install virtualenv&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;#使用
+#在当前目录下,建立了一个comDjango(是个目录)
+$virtualenv comDjango
+#上面的操作,会依赖系统已有的site packages,要建立一个更纯净的可以用
+$virtualenv &amp;ndash;no-site-packages comDjango
+#进入这个目录,并激活这个环境
+$cd comDjango
+#$source bin/activate(Linux下的激活)
+#windows下的操作.
+$Scriptsactivate.bat
+#完成后提示符路径前会多出&amp;rdquo;(comDjango)&amp;quot;,也就是成功进入了comDjango的虚拟环境了&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;此时,去pip install xxx就会安装到comDjango里了,和其他环境不相干了.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;#最后,退出这个虚拟环境
+$deactivate&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>python 安装二三事</title>
+        <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+        <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
+        
+        <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+        <description>清风徐来 /posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ -&lt;p&gt;恰好,下载文件夹里有个python2.7.5.mis&lt;/p&gt;
+&lt;p&gt;双击,一路next,安装完成.&lt;/p&gt;
+&lt;p&gt;在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.&lt;/p&gt;
+&lt;p&gt;系统-&amp;gt;高级属性设置-&amp;gt;环境变量:&lt;/p&gt;
+&lt;p&gt;编辑Path:添加上
+&lt;!-- raw HTML omitted --&gt;;C:\Python27\Scripts;C:\Python27;C:\Python27\Lib&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;再到命令行,敲python回车.妥了.&lt;/p&gt;
+&lt;p&gt;还要安装easy install(应该叫它setuptools,官方叫这个包).这个没有mis包.需要下载一个ez_setup.py(这里有:http://peak.telecommunity.com/dist/ez_setup.py)&lt;/p&gt;
+&lt;p&gt;命令行下安装:cd 下载目录;&lt;!-- raw HTML omitted --&gt;python ez_setup.py&lt;!-- raw HTML omitted --&gt; 只要连网了,一般都能安装成功,要么就是人品问题了.&lt;/p&gt;
+&lt;p&gt;好吧,这下就可以在命令行下,简单的安装python第三方的包了.比如 &lt;!-- raw HTML omitted --&gt;easy_install virtualenv&lt;!-- raw HTML omitted --&gt;还有 &lt;!-- raw HTML omitted --&gt;easy_install MySQL-python&lt;!-- raw HTML omitted --&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;好像比php方便些呢.其实好久没更新blog了,随意写写,凑数来了. 注意是随意,不是随便.&lt;/p&gt;
+- /posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>安装sublime text 2后的几件事</title>
+        <link>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</link>
+        <pubDate>Sat, 01 Dec 2012 09:24:29 +0000</pubDate>
+        
+        <guid>/posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/</guid>
+        <description>清风徐来 /posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ -&lt;p&gt;1，安装 Package Control 的方法：&lt;/p&gt;
+&lt;p&gt;打开 Sublime Text 2，按下 Control + ` 调出 Console
+将以下代码粘贴进命令行中并回车：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;重启sublime Text 2&lt;/p&gt;
+&lt;p&gt;2，ctrl+shift+p 输入 install package，安装alignment用于对其代码(ctrl+alt+a)&lt;/p&gt;
+&lt;p&gt;3, ctrl+shift+p 输入 install package, 安装GBK Encoding Support,支持GBK的文件&lt;/p&gt;
+&lt;p&gt;4, ctrl+shift+p 输入 install package, 安装theme soda, Preferences-&amp;gt;setings user-&amp;gt;&amp;ldquo;theme&amp;rdquo;: &amp;ldquo;Soda Light.sublime-theme&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;5, 2012年12月2日 续补. &lt;a href=&#34;https://github.com/eric-wieser/build-with-input&#34;&gt;https://github.com/eric-wieser/build-with-input&lt;/a&gt; 下载插件,解决写python时ctrl+b运行时无法从控制台获取输入的bug. 安装:preferences-&amp;gt;brower packages ,复制进去即可.&lt;/p&gt;
+&lt;p&gt;ps:记住一些快捷键&lt;/p&gt;
+&lt;p&gt;ctrl+p 直接输入文件名可以立刻打开它&lt;/p&gt;
+&lt;p&gt;ctrl+P 输入 @ 可以列出当前文件的function方便跳转到对应的function
+或ctrl+r,他会自动输入@&lt;/p&gt;
+&lt;p&gt;ctrl+p 输入 : 可以转到对应的行
+或ctrl+g,它会自动输入:&lt;/p&gt;
+&lt;p&gt;ctrl+p 输入 ＃ 在当前文件中快速搜索内容&lt;/p&gt;
+&lt;p&gt;ctrl+alt+上下方向键 可以在多行同时出现光标,进行多行编辑
+也可以用ctrl+鼠标点击
+ctrl+鼠标拖选 可以选择多行的不同部分&lt;/p&gt;
+&lt;p&gt;ctrl+/ 行注释,取消注释(含块注释)
+ctrl+shift+/ 块注释&lt;/p&gt;
+&lt;p&gt;ctrl+j 当前行和下一行合并为一行&lt;/p&gt;
+&lt;p&gt;ctrl + L：选择行。重复按下可以增加选择下一行&lt;/p&gt;
+&lt;p&gt;ctrl + D：选择词。重复按下可以增加选择下一相同的词&lt;/p&gt;
+&lt;p&gt;Ctrl+KK: 从光标处删除至行尾&lt;/p&gt;
+&lt;p&gt;Ctrl+Shift+K: 删除整行&lt;/p&gt;
+&lt;p&gt;ctrl + shift + D:复制光标所在整行，插入在该行之前&lt;/p&gt;
+&lt;p&gt;ctrl + shift + D:复制光标所在整行，插入在该行之前&lt;/p&gt;
+&lt;p&gt;ctrl + Return：在当前行后插入新行&lt;/p&gt;
+&lt;p&gt;ctrl + Shift + Return：在当前行前插入新行&lt;/p&gt;
+&lt;p&gt;ctrl + M：跳转到对应的括号&lt;/p&gt;
+&lt;p&gt;ctrl + Shift + M：选中当前括号内的内容，重复按下可增加选择括号本身&lt;/p&gt;
+&lt;p&gt;ctrl + Shift + J：选中当前缩进级别下的所有代码&lt;/p&gt;
+&lt;p&gt;ctrl + Shift + 上下方向键：调换当前行位置&lt;/p&gt;
+&lt;p&gt;ctrl + x : 删除当前行代码(剪切)&lt;/p&gt;
+&lt;p&gt;=====================================================================
+2013年9月28日 20:01:43 update&lt;/p&gt;
+&lt;p&gt;ctrl+shift+P -&amp;gt; install package -&amp;gt; IMESupport
+安装 支持中文输入法光标跟随
+日本人开发的.官网https://github.com/chikatoike/IMESupport&lt;/p&gt;
+- /posts/%E5%AE%89%E8%A3%85sublime-text-2%E5%90%8E%E7%9A%84%E5%87%A0%E4%BB%B6%E4%BA%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>清理.SVN文件夹及右键菜单</title>
+        <link>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+        <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
+        
+        <guid>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+        <description>清风徐来 /posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ -&lt;p&gt;无废话，不博客-_-!
+先说清理.svn文件夹吧，不知道为什么好好的svn的export不用，搞得文件夹下都有.svn文件夹。微软上有个批处理，导入到注册表后就有个右键菜单“Delete SVN Folders”。如下，保存为.reg后缀后双击导入注册表即可使用。
+&lt;!-- raw HTML omitted --&gt;
+Windows Registry Editor Version 5.00&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVN]
+@=&amp;quot;Delete SVN Folders&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVNcommand]
+@=&amp;quot;cmd.exe /c &amp;ldquo;TITLE Removing SVN Folders in %1 &amp;amp;&amp;amp; COLOR 9A &amp;amp;&amp;amp; FOR /r &amp;ldquo;%1&amp;rdquo; %%f IN (.svn) DO RD /s /q &amp;ldquo;%%f&amp;rdquo; &amp;quot;&amp;rdquo;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;说到右键菜单，我就发现，右键的发送到下面有个115备份。这个我早就删除了，注册表也搜索后删除了，但是还在。嗯，很顽强。下载右键管家，终于搞定。右键管家的下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.xiazaiba.com/html/5887.html&#34;&gt;http://www.xiazaiba.com/html/5887.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+ps：win8 64位管家依旧给力支持&lt;/p&gt;
+- /posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>又要回头搞微软么</title>
+        <link>/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</link>
+        <pubDate>Mon, 19 Nov 2012 12:36:07 +0000</pubDate>
+        
+        <guid>/posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/</guid>
+        <description>清风徐来 /posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ -&lt;p&gt;标题党 -_-!
+写着php，却喜欢python。但是搞java貌似比有市场，满大街的Andriod呀。
+要不，先搞搞比较容易上手的C#？
+MS的IDE实在是给力。又是选择题，悲催。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E5%8F%88%E8%A6%81%E5%9B%9E%E5%A4%B4%E6%90%9E%E5%BE%AE%E8%BD%AF%E4%B9%88/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Simple Test 中文参考</title>
+        <link>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</link>
+        <pubDate>Mon, 25 Jun 2012 15:14:00 +0000</pubDate>
+        
+        <guid>/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/</guid>
+        <description>清风徐来 /posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ -&lt;p&gt;先来一个SimpleTest的简单的演示。&lt;/p&gt;
+&lt;p&gt;我们假设我们正在测试一个简单的文件登陆类。这个叫做Log的类放在classes/log.php里。
+我们用以下代码来创建一个测试脚本放在tests/log_test.php里．
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;autorun.php不仅包含了Simpletest的相关文件，还能够把测试自动执行起来。&lt;/p&gt;
+&lt;p&gt;TestOfLogging是我们的第一测试用例，此时还是空的。每一个测试用例都是一个继承SimpleTest的类，我们可以在一个文件里写多个测试用例。&lt;/p&gt;
+&lt;p&gt;代码的第三行，引入了Log类，现在我们有了测试框架，但还没有写具体的测试。&lt;/p&gt;
+&lt;p&gt;第一个测试，我们假定Log类通过构造函数传入要存储log信息的文件名，并且我们有临时文件夹来放置这个文件&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/log.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfLogging extends UnitTestCase {
+function testLogCreatesNewFileOnFirstMessage() {
+@unlink(&#39;/temp/test.log&amp;rsquo;);
+$log = new Log(&#39;/temp/test.log&amp;rsquo;);
+$this-&amp;gt;assertFalse(file_exists(&#39;/temp/test.log&amp;rsquo;));
+$log-&amp;gt;message(&amp;lsquo;Should write this to a file&amp;rsquo;);
+$this-&amp;gt;assertTrue(file_exists(&#39;/temp/test.log&amp;rsquo;));
+}
+}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当一个测试用例执行时，它会搜索所有以&amp;quot;test&amp;quot;开头的方法来并且执行。 这里我们用了一个很长的方法名testLogCreatesNewFileOnFirstMessage()，这是一个好习惯，可以让测试的输出信息更有可读性。&lt;/p&gt;
+&lt;p&gt;通常一个测试用例里会有多个测试方法，后边会具体来讲。&lt;/p&gt;
+&lt;p&gt;测试方法中的断言（assertion）会触发测试框架来即时显示测试结果。这个即时反馈很重要，不仅发生在代码导致的崩溃时，也用来显示与断言有关的调试信息。&lt;/p&gt;
+&lt;p&gt;要看测试结果，我们需要实际地执行一下测试。不需要再写代码了，只要在浏览器里打开这个页面就可以了
+测试失败会显示以下信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;1/1 test cases complete. 1 passes and 1 fails.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;通过测试则会显示以下信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果你得到这样的信息&amp;hellip;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;表示你没准备好classes/Log.php这个文件&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+class Log {
+function Log($file_path) {
+}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function message() {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在测试之后写代码，这样的开发方式称之为“测试驱动开发”&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;创建测试套装&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;与只运行一个测试用例的应用程序不同,测试套装需要在一个测试脚本中测试多个用例,如果有需要,则执行针对应用程序的所有测试.&lt;/p&gt;
+&lt;p&gt;我们的第一步是创建一个叫做tests/all_tests.php的新文件.然后插入以下代码&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class AllTests extends TestSuite {
+function AllTests() {
+$this-&amp;gt;TestSuite(&amp;lsquo;All tests&amp;rsquo;);
+$this-&amp;gt;addFile(&amp;lsquo;log_test.php&amp;rsquo;);
+}
+}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;引入&amp;quot;autorun&amp;quot;允许我们调用这个脚本时，直接执行测试套装（&lt;!-- raw HTML omitted --&gt;TestSuite&lt;!-- raw HTML omitted --&gt;）。&lt;/p&gt;
+&lt;p&gt;TestSuite的子类必须显式调用它的构造函数，这个限制会在未来的版本中删除。&lt;/p&gt;
+&lt;p&gt;TestSuite::addFile()方法会include测试用例文件，并且读取所有继承自SimpleTestCase的新类.UnitTestCase是继承SimpleTestCase类的一个例子，你也可以自己创建。TestSuite::addFile()也可以include 其他的testSuites&lt;/p&gt;
+&lt;p&gt;此时，这些类还未被实例化，当test suite执行时，他会实例化每个类并执行测试，然后直接销毁。这意味每个测试用例执行前都会被构造，而在下一个用例开始前被析构。&lt;/p&gt;
+&lt;p&gt;一般情况下，测试用例会继承一些超类，这些类是不应该被运行的，而是作为其他测试的基类。“autorun”要正确的运行，就不能盲目地执行这些类，否则会导致测试结果统计不正确。解决起来很简单，只要把这些类声明为抽象类就可以避免以上问题。因为SimpleTest不会去执行一个抽象类。如果你仍在使用PHP4,用SimpleTestOptions::ignore()也能起到同样的作用。&lt;/p&gt;
+&lt;p&gt;测试用例文件不应该在别处被包含，否则会导致用例添加不进来。TestSuite::addFile()方法不会去检测一个已经被PHP加载的测试用例类。&lt;/p&gt;
+&lt;p&gt;要看测试结果，我们只需要通过 web server或命令行调用tests/all_tests.php&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;使用伪装对象（mock object）&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;让我们向前看，来做点真正有挑战的事情。&lt;/p&gt;
+&lt;p&gt;假定我们的logging class通过了测试。同时假定我们要测试另外一个叫做SessionPool的类，它依赖Log来写日志信息。我们想要测试的方法可能会长成这个样子&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;class SessionPool {
+//&amp;hellip;
+function logIn($username) {
+//&amp;hellip;
+$this-&amp;gt;_log-&amp;gt;message(&amp;ldquo;User $username logged in.&amp;quot;);
+//&amp;hellip;
+}
+//&amp;hellip;
+}&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;基于复用的理念,我们要使用我们的Log类,一个常规的测试用例可能会长成这个样子&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/log.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/session_pool.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfSessionLogging extends UnitTestCase {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function setUp() {
+    @unlink(&#39;/temp/test.log&#39;);
+}
+
+function tearDown() {
+    @unlink(&#39;/temp/test.log&#39;);
+}
+
+function testLoggingInIsLogged() {
+    $log = new Log(&#39;/temp/test.log&#39;);
+    $session_pool = &amp;amp;new SessionPool($log);
+    $session_pool-&amp;gt;logIn(&#39;fred&#39;);
+    $messages = file(&#39;/temp/test.log&#39;);
+    $this-&amp;gt;assertEqual($messages[0], &amp;quot;User fred logged in.n&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我们会在后边解释setUp()和tearDown()&lt;/p&gt;
+&lt;p&gt;这个测试用例的设计并不太坏,但还有改进的余地.我们在日志文件上花费了一些时间,但这并不是我们测试的一部分.我们在Log和测试之间建立了不必要的耦合.如果我们不用文件而换用syslog库,结果会怎样呢?这意味着TestOfSessionLogging测试会失败,尽管这并不是日志类的测试.&lt;/p&gt;
+&lt;p&gt;在更细微的方面,它同样脆弱,你注意到message信息吗？你注意到message中添加的额外信息了吗？如果多一个时间戳或者其他信息会怎样。&lt;/p&gt;
+&lt;p&gt;我们唯一真正想要测试的是一个指定的信息被发送到日志对象。如果我们传入一个只简单记录信息的伪日志对象，则可以减少耦合。当然，这个伪对象必须和原对象长得很像。&lt;/p&gt;
+&lt;p&gt;如果这个伪对象不写文件，我们就可以省下清理文件的代码，如果这个对象着可以执行断言操作，则可以节省更多的代码。&lt;/p&gt;
+&lt;p&gt;不要认为这只是空想？我们可以简单的创建这个对象&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/log.php&amp;rsquo;);
+require_once(&amp;rsquo;../classes/session_pool.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;Mock::generate(&amp;lsquo;Log&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfSessionLogging extends UnitTestCase {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function testLoggingInIsLogged() {
+    $log = &amp;amp;new MockLog();
+    $log-&amp;gt;expectOnce(&#39;message&#39;, array(&#39;User fred logged in.&#39;));
+    $session_pool = &amp;amp;new SessionPool($log);
+    $session_pool-&amp;gt;logIn(&#39;fred&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Mock::generate() 创建一个新class，叫做MockLog。这就像一个克隆操作,除非我们可以植入测试代码.expectOnce()做的就是这个操作.它表示如果message()被call,那么传入的参数应该是&amp;quot;User fred logged in.&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;当SessionPool::logIn()调用MockLog对象的message()被调用时,测试就会被触发.这个伪装对象会对比传入的参数,并显示测试结果. 这里可以使用通配符.&lt;/p&gt;
+&lt;p&gt;如果mock的指定方法到测试结束也没有被调用,那么expectOnce()会触发一个失败信息.换句话说,mock既可以检测动作被执行,也可以检测到动作的缺失.&lt;/p&gt;
+&lt;p&gt;mock对象在SimpleTest中可以设置返回值,返回的序列,设置根据输入的参数返回的值,设置期望的参数序列,设置方法被调用的次数的限制.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;网页测试&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如果你想要对一个web项目进行完整的集成测试,那么你需要一个自动浏览网站并验证输出信息的正确性.这是web测试的工作.&lt;/p&gt;
+&lt;p&gt;在SimpleTest中进行web测试相当原始.没有JavaScript.不过其他的大多数操作都能被模拟出来.&lt;/p&gt;
+&lt;p&gt;这里有一个琐碎的例子可供参考.一个主页被打开,我们从这里点击访问&amp;quot;about&amp;quot;页,然后测试客户端检测到的内容.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;lsquo;simpletest/web_tester.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfAbout extends WebTestCase {
+function testOurAboutPageGivesFreeReignToOurEgo() {
+$this-&amp;gt;get(&amp;lsquo;http://test-server/index.php&amp;rsquo;);
+$this-&amp;gt;click(&amp;lsquo;About&amp;rsquo;);
+$this-&amp;gt;assertTitle(&amp;lsquo;About why we are so great&amp;rsquo;);
+$this-&amp;gt;assertText(&amp;lsquo;We are really great&amp;rsquo;);
+}
+}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;你也可以操作表单&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+require_once(&amp;lsquo;simpletest/autorun.php&amp;rsquo;);
+require_once(&amp;lsquo;simpletest/web_tester.php&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;class TestOfRankings extends WebTestCase {
+function testWeAreTopOfGoogle() {
+$this-&amp;gt;get(&amp;lsquo;&lt;a href=&#34;http://google.com/&#39;);&#34;&gt;http://google.com/&#39;);&lt;/a&gt;
+$this-&amp;gt;setField(&amp;lsquo;q&amp;rsquo;, &amp;lsquo;simpletest&amp;rsquo;);
+$this-&amp;gt;click(&amp;ldquo;手气不错&amp;rdquo;);
+$this-&amp;gt;assertTitle(&amp;lsquo;SimpleTest - Unit Testing for PHP&amp;rsquo;);
+}
+}
+?&amp;gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;的标题是《Simple Test 中文参考》，其实下面的那点东西才是中文参考，上面的算是快速入门吧&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;下面是一些方法的中文介绍&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;?php
+UnitTestCase($label = false);//设置测试标题的如果为空自动获取当前类的名称来做标题!&lt;/p&gt;
+&lt;p&gt;setUp();//测试开始的时候自动运行&lt;/p&gt;
+&lt;p&gt;tearDown();//测试结束后自动运行&lt;/p&gt;
+&lt;p&gt;assertTrue($result, $message = false);//测试$result是否为True, 如果是True则通过测试&lt;/p&gt;
+&lt;p&gt;assertFalse($result, $message = &amp;lsquo;%s&amp;rsquo;);//测试$result是否为False, 如果是False则通过测试&lt;/p&gt;
+&lt;p&gt;assertNull($value, $message = &amp;lsquo;%s&amp;rsquo;);//测试$value的值是否为Null, 如果是Null则通过测试.&lt;/p&gt;
+&lt;p&gt;assertNotNull($value, $message = &amp;lsquo;%s&amp;rsquo;);//测试$value的值是否为Null, 如果不是Null则通过测试.&lt;/p&gt;
+&lt;p&gt;assertIsA($object, $type, $message = &amp;lsquo;%s&amp;rsquo;);//测试$object 对象是不是$type类的实例, 如果是则通过测试.&lt;/p&gt;
+&lt;p&gt;assertNotA($object, $type, $message = &amp;lsquo;%s&amp;rsquo;);//测试$object 对象是不是$type类的实例, 如果不是则通过测试.&lt;/p&gt;
+&lt;p&gt;assertEqual($first, $second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first是否等于$second, 如果等于则通过.&lt;/p&gt;
+&lt;p&gt;assertNotEqual($first, $second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first是否等于$second, 如果不等于则通过.&lt;/p&gt;
+&lt;p&gt;assertWithinMargin($first, $second, $margin, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first减去$second的绝对值是否小于$margin, 如果小于则通过.&lt;/p&gt;
+&lt;p&gt;assertOutsideMargin($first, $second, $margin, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first减去$second的绝对值是否大于$margin, 如果大于则通过.&lt;/p&gt;
+&lt;p&gt;assertIdentical($first, $second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first和$second类型是否一样, 如果一样则通过测试.&lt;/p&gt;
+&lt;p&gt;assertNotIdentical($first, $second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first和$second类型是否一样, 如果不一样则通过测试.&lt;/p&gt;
+&lt;p&gt;assertReference(&amp;amp;$first, &amp;amp;$second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first是否为$second的引用, 如果是则通过测试.&lt;/p&gt;
+&lt;p&gt;assertClone(&amp;amp;$first, &amp;amp;$second, $message = &amp;lsquo;%s&amp;rsquo;);//测试$first是否为$second完全的副本, 如果是则通过测试.&lt;/p&gt;
+&lt;p&gt;assertPattern($pattern, $subject, $message = &amp;lsquo;%s&amp;rsquo;);//测试$subject里面是否出现$pattern, 如果出现则通过, $pattern可以使用正则表达式.&lt;/p&gt;
+&lt;p&gt;assertNoPattern($pattern, $subject, $message = &amp;lsquo;%s&amp;rsquo;);//测试$subject里面是否出现$pattern, 如果没出现则通过, $pattern可以使用正则表达式.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最后来个例子:
+&lt;!-- raw HTML omitted --&gt;&amp;lt;?php&lt;/p&gt;
+&lt;p&gt;require_once &amp;lsquo;simpletest/unit_tester.php&amp;rsquo;;
+require_once &amp;lsquo;simpletest/reporter.php&amp;rsquo;;&lt;/p&gt;
+&lt;p&gt;class DbTest extends UnitTestCase {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function setUp() {
+    parent::UnitTestCase(&amp;quot;SimpleTest Title&amp;quot;);
+}
+
+public function testAssertTrue() {
+    $a = true;  //这里赋值为true
+    $this-&amp;gt;assertTrue($a);  //判断是否为true
+}
+
+public function testAssertFalse() {
+    $a = false;  //这里赋值为false
+    $this-&amp;gt;assertFalse($a);  //判断是否为false
+}
+
+public function testAssertNull() {
+    $a = null;  //将$a赋值为null;
+    $this-&amp;gt;assertNull($a); //判断$a是否为null
+}
+
+public function testAssertNotNull() {
+    $a = &amp;quot;asdf&amp;quot;;  //这里赋值为asdf
+    $this-&amp;gt;assertNotNull($a); //判断$a是否为null, 如果不是则通过
+}
+
+public function testAssertIsA() {
+    $a = new mysqli();   //实例化一个mysqli对象
+    $this-&amp;gt;assertIsA($a, &#39;mysqli&#39;);  //判断$a是否为mysqli类的实例
+}
+
+public function testAssertNotA() {
+    $a = new mysqli();   //实例化一个mysqli对象
+    $this-&amp;gt;assertNotA($a, &#39;asdfadfadsfadsf&#39;);  //判断$a是否为mysqlis类的实例
+}
+
+public function testAssertEqual() {
+    $a = true;  //这里将$a赋值为1
+    $this-&amp;gt;assertEqual($a, true);  //判断$a是否为1
+    $a = false;
+    $this-&amp;gt;assertEqual($a, false);  //判断$a是否为1
+}
+
+public function testAssertNoEqual() {
+    $a = false;   //这里将$a赋值为false
+    $this-&amp;gt;assertNotEqual(true, $a);   //判断$不等于false
+    $a = true;
+    $this-&amp;gt;assertNotEqual(false, $a);   //判断$不等于false
+}
+
+public function testAssertWithinMargin() {
+    $this-&amp;gt;assertWithinMargin(25, 25, 5);  //判断25-25的绝对值是否小于5
+    $this-&amp;gt;assertWithinMargin(25, 25, 0);  //判断25-25的绝对值是否小于于0
+    $this-&amp;gt;assertWithinMargin(25, 22, 5);  //判断25-22的绝对值是否小于5
+
+}
+
+public function testAssertOutsideMargin() {
+    $this-&amp;gt;assertOutsideMargin(31, 25, 5); //判断31-25的绝对值是否大于5
+    $this-&amp;gt;assertOutsideMargin(26, 25, 0); //判断26-25的绝对值是否大于0
+    $this-&amp;gt;assertOutsideMargin(27, 20, 5); //判断27-20的绝对值是否大于5
+}
+
+
+public function testAssertIdentical() {
+    $this-&amp;gt;assertIdentical(0, 0);  //判断0和0类型是否一样
+
+    $this-&amp;gt;assertIdentical(&amp;quot;test&amp;quot;, &amp;quot;test&amp;quot;);  //判断&amp;quot;test&amp;quot;和&amp;quot;test&amp;quot;类型是否一样
+}
+
+public function testAssertNotIdentical() {
+    $this-&amp;gt;assertNotIdentical(0, false);  //判断0和false类型是否一样
+
+    $this-&amp;gt;assertNotIdentical(&amp;quot;test&amp;quot;, &amp;quot;tess&amp;quot;); //判断&amp;quot;test&amp;quot;和&amp;quot;tess&amp;quot;类型是否一样
+}
+
+public function testAssertReference() {
+    $a = &amp;quot;test&amp;quot;;
+    $b = &amp;amp;$a;  //这里引用$a
+    $this-&amp;gt;assertReference($a, $b);   //判断$b是否引用$a
+}
+
+public function testAssertPattern() {
+    $this-&amp;gt;assertPattern(&#39;/hello/i&#39;, &#39;Hello world&#39;);
+}
+
+public function testAssertNoPattern() {
+    $this-&amp;gt;assertNoPattern(&#39;/123/i&#39;, &#39;Hello world&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;$test = new DbTest();
+$test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- /posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>xampp下安装 PhpDocumenter</title>
+        <link>/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
+        <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
+        
+        <guid>/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
+        <description>清风徐来 /posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ -&lt;p&gt;没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。
+淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。
+下载PhpDocumentor-1.4.4.tgz 
+解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径）
+然后修改该目录里的 phpdoc.bat 这个批处理文件，将16行 “SET phpCli=”修改成你的PHP路径：
+&lt;!-- raw HTML omitted --&gt;SET phpCli=D:xamppphpphp.exe &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;集成到eclipse PDT里（zend studio for eclipse里已经自带了，pdt要自己动手）：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;参数说明：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;快小半年没更新了，这里都快荒废了，有木有！&lt;/p&gt;
+- /posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Lazy Load Plugin for jQuery</title>
+        <link>/posts/lazy-load-plugin-for-jquery/</link>
+        <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
+        
+        <guid>/posts/lazy-load-plugin-for-jquery/</guid>
+        <description>清风徐来 /posts/lazy-load-plugin-for-jquery/ -&lt;p&gt;lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。&lt;/p&gt;
+&lt;p&gt;这个插件，就是浏览器还没有浏览到的图片，都不加载；等滚动条下拉，下面的页面显示了，原来下面页面包含的图片才会被触发加载。&lt;/p&gt;
+&lt;p&gt;已经有些站用这样的技术了。淡水一直不致力于前端研究，正好晃荡到这个插件的站点。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.appelsiini.net/projects/lazyload&#34;&gt;http://www.appelsiini.net/projects/lazyload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就不翻译了。简单的用用。图片源给个1*1像素的空图，真正的图片路径放到data-original属性里。底部加载jquery和插件js还有简单的插件函数调用。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;其他还有一些乱七八糟的用法就不多说了。上边的代码足矣。&lt;/p&gt;
+- /posts/lazy-load-plugin-for-jquery/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>MongoDB快速上手PHP篇</title>
+        <link>/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</link>
+        <pubDate>Thu, 02 Feb 2012 15:37:20 +0000</pubDate>
+        
+        <guid>/posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/</guid>
+        <description>清风徐来 /posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;1，简介&lt;!-- raw HTML omitted --&gt;
+mongoDB（http://www.mongodb.org）是一种 NoSQL 的文档型的数据库管理系统。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似 json的bjson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。
+　　Mongo主要解决的是海量数据的访问效率问题，根据官方的文档，当数据量达到50GB以上的时候，Mongo的数据库访问速度是MySQL的 10倍以上。Mongo的并发读写效率不是特别出色，根据官方提供的性能测试表明，大约每秒可以处理0.5万－1.5次读写请求。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;2，安装（windows only）&lt;!-- raw HTML omitted --&gt;
+到官网下载对应的包
+解压到d:mongodb
+创建d:mongodbdata放置数据文件&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;3,运行mongodb&lt;!-- raw HTML omitted --&gt;
+d:mongodbbin下有一些可执行文件，其中mongod.exe是服务器端，mongo.exe是客户端。
+运行cmd，输入
+d:mongodbbin&amp;gt;mongod.exe -dbpath d:mongodbdata
+服务器成功启动&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;4，让php支持MongoDB&lt;!-- raw HTML omitted --&gt;
+下载php_mongo.dll,注意版本，php5.3.x应该支持v9的（有些老资料让apache的下v6，其实要看看phpinfo后下载对应的版本）;
+修改php.ini,增加 extension = php_mongo.dll;
+重启apache.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;5,php操作MongoDB&lt;!-- raw HTML omitted --&gt;
+这里淡水找到了 xiaocai 的博文一篇，做了些调整，比较好。
+原文链接：&lt;!-- raw HTML omitted --&gt;PHP操作MongoDB学习笔记&lt;!-- raw HTML omitted --&gt;
+以下是淡水的修改版：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/mongodb%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bphp%E7%AF%87/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>web.py尝鲜时遭遇no module named MySQLdb</title>
+        <link>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+        <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
+        
+        <guid>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+        <description>清风徐来 /posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ -&lt;p&gt;python看了好一阵了，一直没有突破。挤了点时间折腾web.py。&lt;/p&gt;
+&lt;p&gt;下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。&lt;/p&gt;
+&lt;p&gt;google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。&lt;/p&gt;
+&lt;p&gt;这里有下。http://www.lfd.uci.edu/~gohlke/pythonlibs/ 里面还有好多的。&lt;/p&gt;
+- /posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>搬瓦工 on 清风徐来</title>
+    <link>/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</link>
+    <description>Recent content in 搬瓦工 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 15 Dec 2016 12:15:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>搬出搬瓦工了</title>
+      <link>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+      <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
+      
+      <guid>/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+      <description>剁了个新加坡vps，于是乎搬出搬瓦工。 搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。 还是说明了，世界加钱可达！ 当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。 推荐年付19$搬瓦工KVM直连VPS，传输机在此！ 忽然发现，这2016年的第一篇博文。 今年还有半个月就完了！估计很可能也是今年的最后一篇吧。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html><head>
+<title>(转载)phpDocumentor筆記</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="(转载)phpDocumentor筆記" />
+<meta property="og:description" content="phpDocumentor很好的php工具。淡水这里转载的台湾同胞的学习笔记，方便查询。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/" />
+<meta property="article:published_time" content="2008-11-20T12:25:04+00:00" />
+<meta property="article:modified_time" content="2008-11-20T12:25:04+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(转载)phpDocumentor筆記"/>
+<meta name="twitter:description" content="phpDocumentor很好的php工具。淡水这里转载的台湾同胞的学习笔记，方便查询。"/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    (转载)phpDocumentor筆記
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2008-11-20 12:25
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[PHP]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/phpdocumentor">phpDocumentor</a>
+                                &nbsp;
+                            
+                                <a href="/tags/phpdesigner2008">phpDesigner2008</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>phpDocumentor很好的php工具。<!-- raw HTML omitted -->淡水<!-- raw HTML omitted -->这里转载的台湾同胞的学习笔记，方便查询。</p>
+<!-- raw HTML omitted -->
+<p>你喜歡寫文件嗎？我不喜歡。尤其是在趕工的時候，哪來的美國時間寫文件；就算有時間也是希望趕快把事情做完閃人，怎樣都輪不到寫文件的時候。</p>
+<p>文件需要嗎？雖然不喜歡寫文件，但文件真的是必要的。對自己而言，正當在趕案子兵荒馬亂的時候，突然要某個以前寫過的函式結果不知道放哪去了，這時心情會很糟很糟的去把以前的碼挖出來一份一份看，才能找出所要的函式，這樣更浪費時間。對於他人而言，要是每個人寫出來的東西都可以再讓其它人了解，並且進一步使用其它人早已寫好的元件，可以讓我們再省下時間來多喝幾杯咖啡。</p>
+<p>那要怎麼樣讓編寫文件輕鬆又自在？ phpDocumentor 就是一個現成好用的工具，只要在寫程式時順手寫上一點點的註解，困難一點的可以再加上一點點的範例。寫完後交給 phpDocumentor 編譯，一下子圖文並茂的程式文件自動就產生了。而且它還不只可以產生 HTML 檔，還可以產生出 PDF, CHM 等文件。就算產生 HTML 檔，還有許多的風格可以選擇。這樣好用的工具放著不用，實在太可惜了。</p>
+<p>這份資料裡，只會出現馬上能用的資料，除了這個簡介外，不會廢話太多，所以文件中的文句也冰冷了些。會這樣做的目的是希望文件的每一個部份都能讓讀者快速吸收，任何一個例子複製下來後馬上能用。文件中的每個樣版我都是精心設計過，起碼我以後要用的時候不必再想說要寫一個類別正常需要哪些 Tag ，只要把樣版複製下來以後就直接可以用了。</p>
+<p>由於此文件中資料只有使用上最需要的部份（也是一定能用的部份），因此若在使用上想要了解更多，可以到 phpDocumentor 的官方網站 (<!-- raw HTML omitted --><a href="http://www.phpdoc.org/">http://www.phpdoc.org/</a><!-- raw HTML omitted -->)上找到所需資料。</p>
+<p>此文件中所有的測試環境是 Windows XP + PHP 5.2.1 + phpDocumetor v.1.4.1。</p>
+<!-- raw HTML omitted -->
+<p>假設你的 php 目錄在 php5</p>
+<p><!-- raw HTML omitted -->步驟
+<!-- raw HTML omitted --><!-- raw HTML omitted -->安裝 PEAR 基本套件<!-- raw HTML omitted --></p>
+<p>請先查看 php5PEAR 裡的內容，若裡面是空的則是還沒安裝 PEAR 基本套件，請以命令列模式下執行 PHP 目錄下的 go-pear.bat。</p>
+<p>在執行過程中，會要求回答幾個問題，都用預設值即可。</p>
+<p>執行完畢後會在 php5PEAR 下裝了 PEAR 基本套件。
+<!-- raw HTML omitted -->安裝 phpDocumentor<!-- raw HTML omitted --></p>
+<p>在 PHP 目錄下執行以下命令：</p>
+<p>php5PEARpear install -o PhpDocumentor
+此命令會安裝 phpDocumentor 及其相依套件。裝好以後， phpDocumentor 的所有程式會放在 php5PEARPhpDocumentor 裡。</p>
+<p>如此就安裝完成。</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->步驟
+<!-- raw HTML omitted -->把 php5PEARPhpDocumentorphpDocumentor 裡的（含子目錄）的文件裡的所有 iso-8859-1 的字串全部換成 utf-8 。這種事情我是交給我的文字編輯器 (PSPad) 來做多檔的取代動作。</p>
+<!-- raw HTML omitted -->
+<p>/**</p>
+<ul>
+<li>這是 lib.inc.php 的標題</li>
+<li>這是 lib.inc.php 的描述
+*/
+include_once(&lsquo;lib.inc.php&rsquo;);</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>圓周率</li>
+<li>圓周和直徑的比值
+*/
+define(&lsquo;pi&rsquo;, 3.14159);</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>這是 funtion1 的註解區塊標題</li>
+<li>這是 funtion1 的描述</li>
+<li>@global int 這是函式內第一個全域變數的註解，就是 $global1 的註解</li>
+<li>@global string 這是函式內第二個全域變數的註解，就是 $global2 的註解</li>
+<li>@param bool $arg1 這是函式參數 $arg1 的註解</li>
+<li>@param int|string $arg2 這裡是函式參數 $arg2 的註解</li>
+<li>@return mixed 傳回值的註解
+*/
+function function1($arg1, $arg2) {
+global $global1, $global2;
+return array($arg1, $arg2);
+}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>這是MyClass的標題</li>
+<li></li>
+<li>建立簡寫型的清單</li>
+<li>這裡建立一份無序清單</li>
+<li>
+<ul>
+<li>項目一</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>項目二，</li>
+</ul>
+</li>
+<li>每個項目可以是多行，</li>
+<li>就像這個項目，</li>
+<li>這行還在項目二中</li>
+<li>
+<ul>
+<li>項目三</li>
+</ul>
+</li>
+<li>清單結束，因為沒縮排</li>
+<li>這裡建立一份有序清單</li>
+<li>1 有序的項目一，數字後一定要加一個空白。</li>
+<li>2 有序的項目二</li>
+<li>有序清單的另一種寫法</li>
+<li>
+<ol>
+<li>ordered item 1</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>ordered item 2</li>
+</ol>
+</li>
+<li>清單在此結束</li>
+<li></li>
+<li>@package phpDocumentorExample</li>
+<li>@author 多采多姿</li>
+<li>@since 1.0rc1</li>
+<li>@version 0.2b</li>
+<li></li>
+</ul>
+<p><em>/
+class MyClass {
+/</em>*</p>
+<ul>
+<li>這裡是成員變數的註解</li>
+<li></li>
+<li>@var string 成員變數的註解</li>
+<li>@access private
+*/
+private $_variable = &ldquo;Hello&rdquo;;</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>這是一個公開的成員函式</li>
+<li></li>
+<li>@param bool $var1 參數1</li>
+<li>@param string|array $var2 參數1</li>
+<li>@return void</li>
+<li>@access public
+*/
+public function set_vars($var1, $var2) {
+}
+}
+?&gt;
+<!-- raw HTML omitted --></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>在命令列下用以下指令
+phpdoc &ndash;parseprivate -o HTML:frames:earthli -f projectphp_projectexample.php -t projectphp_projectdocs
+或
+phpdoc &ndash;parseprivate -o HTML:Smarty:PHP -d projectphp_project -t projectphp_projectdocs
+<!-- raw HTML omitted -->解說<!-- raw HTML omitted --></p>
+<p>&ndash;parseprivate： 是將私有 (private) 成員函式或私有變數等等也都加入程式文件裡。沒有這參數的話，產生出的文件裡只會有公開的 (public) 和受保護的 (protected) 的成員函式和變數。</p>
+<p>-f ： 是指針對某個檔案產生註解文件。</p>
+<p>-d ： 針對某個目錄（含其子目錄）產生註解文件。</p>
+<p>-t ： 指定要輸出的目錄</p>
+<p>-o ： 指定輸出格式，上例的格式有兩種</p>
+<p>HTML:frames:earthli ： 是輸出有一種帶有框架 (frame) 的說明文件，所產生出來的文件非常漂亮。Zend Framework 的 API 文件就是採用這種風格。</p>
+<p>HTML:Smarty:PHP ： 產生的文件看起來就像是 PHP 網站上或是 phpDocumentor 官網上的的一樣。
+待程式結束後，瀏覽剛剛指定產生文件的目錄下，會有一個 index.html 檔，以瀏覽器打開它就可以看到 phpDocumentor 產生出來的程式文件。倘若在產生文件的過程中，有任何的錯誤，這些錯誤會出現在 error.html檔裡。</p>
+<p>转载：<!-- raw HTML omitted --><a href="http://pkwbim-programming-note.blogspot.com/2008/01/phpdocumentor-0.html">http://pkwbim-programming-note.blogspot.com/2008/01/phpdocumentor-0.html</a><!-- raw HTML omitted --></p>
+<p>淡水备注：生成文案也可以用phpDesigner2008来做的。</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->樣版<!-- raw HTML omitted -->
+基本樣式如下：
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>這是文件區塊 (DocBlock) 的標題</li>
+<li>第二行開始就是描述</li>
+<li>描述可以延伸好幾行
+<em>/
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->解說 <!-- raw HTML omitted -->
+文件區塊的開頭一定要有兩個星號（/**），接下來的每一行的開頭要有一個</em>，結束時使用*/為結尾。
+不符合文件區塊格式的註解 phpDocumentor 不會進行處理。
+標題只能一行。（官方手冊上是說三行，真莫名其妙）。
+標題下一行直接可接描述。（官方手冊上寫一定要空一行，經實驗這是不必要的）
+描述是寫詳細解釋的地方，除了可以寫一般的文字外，可以用標籤和 Tag 為文件區塊增加功能。（標籤和 Tag 之後會解釋）
+描述可省略。
+要為任何一段程式做文件註解，最簡單的方式就是在要解釋的程式之前放一個 DocBlock 。如下所示：
+<!-- raw HTML omitted -->
+/**</li>
+<li>這函數叫foo，可能沒有什麼用</li>
+<li></li>
+<li>要為一個函數做文件註解，</li>
+<li>只要在函式之前放一個文件區塊即可
+<em>/
+function foo() {
+&hellip;
+}
+<!-- raw HTML omitted -->
+文件區塊預設是為它接下來的程式區塊做註解，否則會造成誤判。如：
+<!-- raw HTML omitted -->
+/</em>*</li>
+<li>這個不是 foo 的文件區塊</li>
+<li></li>
+<li>它是 define 的文件區塊
+*/
+define(&lsquo;DEBUG&rsquo;, 0);
+function foo(DEBUG) {
+&hellip;
+}
+<!-- raw HTML omitted -->
+並不是將 DocBlock 放在任何想要解釋的程式前，它的內容就會出現在 phpDocumentor 所產生的註解文件內。會產生在註解文件內的文件區塊有以下幾類：</li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>&lt;li&gt;引入檔的文件區塊 &lt;/li&gt;
+
+&lt;li&gt;類別的文件區塊 &lt;/li&gt;
+
+&lt;li&gt;函式的文件區塊 &lt;/li&gt;
+
+&lt;li&gt;常數的文件區塊&lt;/li&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->請注意：<!-- raw HTML omitted -->若急著使用 phpDocumentor ，那麼不必往下讀，因為讀到這裡已足夠讓 phpDocumentor 產生出程式註解文件來。</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->樣版 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>這是一個檔案層級文件區塊 (file-level DocBlock)</li>
+<li></li>
+<li>這個文件區塊一定要是整份文件的第一個區塊才能夠成為檔案層級文件區塊</li>
+<li>一定要有 @package 這個 Tag</li>
+<li>@package PackageName</li>
+<li>@author 多采多姿</li>
+<li>@version 1.0
+*/
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->解說 <!-- raw HTML omitted --></li>
+</ul>
+<!-- raw HTML omitted -->
+<pre><code>&lt;li&gt;@author 用來標明這檔案的作者，在作者名字之後可以再接電郵位置，但電郵位置一定要放在 &lt; 和 &gt; 之間。 
+</code></pre>
+<p>電郵位置可省略。<!-- raw HTML omitted --></p>
+<pre><code>&lt;li&gt;@version 用來標明這份檔案的版本。 &lt;/li&gt;
+
+&lt;li&gt;@version 和 @author不是檔案層級文件區塊內必要的 Tag，但是一般都會提供這兩樣的資訊。&lt;/li&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>PHP 裡變數可大致可分為以下幾類：全域變數、函數參數、函數內變數、類別的靜態成員變數、類別物件的成員變數。這部份只討論全域變數，函數參數的註解方式請參考 1.4 為函式寫註解。</p>
+<p><!-- raw HTML omitted -->樣版<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>圓周率</li>
+<li>圓周和直徑的比值
+*/
+define(&lsquo;PI&rsquo;, 3.14159);</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>這是 funtion1 的註解區塊標題</li>
+<li>這是 funtion1 的描述</li>
+<li>@global int 這是函式內第一個全域變數的註解，就是 $global1 的註解</li>
+<li>@global string 這是函式內第二個全域變數的註解，就是 $global2 的註解</li>
+<li>@param bool $arg1 這是函式參數 $arg1 的註解</li>
+<li>@param intstring $arg2 這裡是函式參數 $arg2 的註解</li>
+<li>@return mixed 傳回值的註解
+<em>/
+function function1($arg1, $arg2) {
+global $global1, $global2;
+/</em>*</li>
+<li>這註解是不會出現在註解文件裡。
+*/
+$arg = 3;
+return array($arg1, $arg2);
+}
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->解釋 <!-- raw HTML omitted -->
+在對常數寫註解，只要在常數前放一個註解文件即可。省略也無妨， phpDocumentor 還是會自動把所有的常數找出來，在註解文件裡整理成表。
+在要函式內使用全域變數時，在函式前的文件區塊內使用 @global 即可為全域變數編寫註解。
+在@global在使用時不用指明變數名稱，它是依照全域變數在函式內宣告的順序進行註解的判斷。
+global $arg1, $arg2;不能拆成兩行寫，也就是說寫成下面的樣子， phpDocumentor 的判斷會出很大的問題。
+global $arg1;
+global $arg2;
+phpDocumentor 並沒有對於函數內變數特別設計 Tag 來做註解。
+$arg3前的文件區塊不會出現在註解文件裡。</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->樣版<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>這是class1</li>
+<li></li>
+<li>@package PackageName</li>
+<li>@author Cowboy</li>
+<li>@since 1.0rc1</li>
+<li>@version 1.9b
+<em>/
+class Class1 {
+/</em>*</li>
+<li>這裡是成員變數的註解</li>
+<li></li>
+<li>@var string 成員變數的註解</li>
+<li>@access private
+*/
+private $_variable = &ldquo;Hello&rdquo;;</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>這是一個公開的成員函式</li>
+<li></li>
+<li>@param bool $var1 參數1</li>
+<li>@param stringarray $var2 參數1</li>
+<li>@return void</li>
+<li>@access public
+*/
+public function set_vars($var1, $var2) {
+&hellip;
+}
+}
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->解說 <!-- raw HTML omitted -->
+Class 1 前的文件區塊裡的 Tag 並不是必要的，但通常會有這幾樣資訊。
+雖然檔案層級的文件區塊裡有宣告此檔裡的所有程式是屬於哪個 package ，在類別的文件區塊仍然可以再指定。
+@since 指出這類別是從哪個版本以後才加入這個 package 的。
+@access 可以用來指定成員的可視程度 (visibility) 。
+成員函式的文件區塊部份請參考1.4 為函式寫註解。</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->樣版<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>這是 lib.inc.php 的標題</li>
+<li>這是 lib.inc.php 的描述
+*/
+include_once(&lsquo;lib.inc.php&rsquo;);
+<!-- raw HTML omitted --></li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->樣版<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+/**</p>
+<ul>
+<li>建立簡寫型的清單</li>
+<li></li>
+<li>這裡建立一份無序清單</li>
+<li>
+<ul>
+<li>項目一</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>項目二，</li>
+</ul>
+</li>
+<li>每個項目可以是多行，</li>
+<li>就像這個項目，</li>
+<li>這行還在項目二中</li>
+<li>
+<ul>
+<li>項目三</li>
+</ul>
+</li>
+<li>清單結束，因為沒縮排</li>
+<li>這裡建立一份有序清單</li>
+<li>1 有序的項目一，數字後一定要加一個空白。</li>
+<li>2 有序的項目二</li>
+<li>有序清單的另一種寫法</li>
+<li>
+<ol>
+<li>ordered item 1</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>ordered item 2</li>
+</ol>
+</li>
+<li>清單在此結束
+*/
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->解說<!-- raw HTML omitted -->
+以- 開頭就可以建立一個無序清單的項目，減號後面一定要接一個空白。
+以數字加上點號（例：1. ）或是只有數字（例：1 ），就可以建立有序清單，兩種方式後面都需要加上一個空白。
+多行的項目要縮排
+若要結束清單，則不縮排直接填內容即可。
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></li>
+</ul>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2008-11-20</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
+			下回<br>还是phpDocumentor的安装和使用
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/">
+			上回<br>(震撼)作个真正的男人
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,346 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>kohana版企业站范例进行中</title>
+        <link>/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</link>
+        <pubDate>Sat, 02 May 2009 06:51:31 +0000</pubDate>
+        
+        <guid>/posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/</guid>
+        <description>清风徐来 /posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/ -&lt;p&gt;以前是用codeigniter做的，但是为了更敏捷的开发，提高生产效率（其实是要偷懒），所以开始摸索kohana，并为之着迷（主要是ORM）。&lt;/p&gt;
+&lt;p&gt;为了尽快上手kohana，所以把以前公布的企业站又用kohana改写一番。
+现在前端已经完成。&lt;/p&gt;
+&lt;p&gt;kohana版，为了简化代码，使用了ORM
+Codeigniter版，采用了他提供的AR&lt;/p&gt;
+&lt;p&gt;可以自己感觉一下执行效率如内存占用&lt;/p&gt;
+&lt;p&gt;kohana版&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://tsingfeng.sinaapp.com/khn&#34;&gt;http://tsingfeng.sinaapp.com/khn&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+一般结果：Page rendered in 0.0301 seconds.UseMem 1.62MB.&lt;/p&gt;
+&lt;p&gt;Codeigniter版&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://tsingfeng.sinaapp.com/ci&#34;&gt;http://tsingfeng.sinaapp.com/ci&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+一般结果：Page rendered in 0.0248 seconds.UseMem 1.78MB.&lt;/p&gt;
+&lt;p&gt;淡水没有专业的测试经验，只是凭框架本身提供的简陋数据和直觉判断。差不多了，如果空间支持php5最好还是用kohana，可以比较快些完成工作^_^&lt;/p&gt;
+&lt;p&gt;2009.5.3 update:
+给kohana版的加上了含分页的新闻列表页面 &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://tsingfeng.sinaapp.com/khn/index.php/news&#34;&gt;http://tsingfeng.sinaapp.com/khn/index.php/news&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/kohana%E7%89%88%E4%BC%81%E4%B8%9A%E7%AB%99%E8%8C%83%E4%BE%8B%E8%BF%9B%E8%A1%8C%E4%B8%AD/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Kohana 与JQUERY实现连动</title>
+        <link>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</link>
+        <pubDate>Thu, 23 Apr 2009 16:10:25 +0000</pubDate>
+        
+        <guid>/posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/</guid>
+        <description>清风徐来 /posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/ -&lt;p&gt;控制器
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ajax加载城市分类&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;*/
+public function load_cities($id)
+{
+$id = (int) $id;
+if (!$id) {
+exit(&amp;quot;{result:0,msg:&amp;lsquo;错误的城市编号&amp;rsquo;}&amp;quot;);
+}
+$cities = ORM::factory(&amp;lsquo;city&amp;rsquo;);
+$cats = $cities-&amp;gt;where(&amp;lsquo;province_id&amp;rsquo;,$id)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;);
+if (!count($cats)) {
+$cats = array();
+}
+ksort($cats);
+exit(&amp;quot;{result:1,msg:&amp;quot;.json_encode($cats).&amp;quot;}&amp;quot;);
+}&lt;/p&gt;
+&lt;p&gt;public function index()
+{
+//生成省市下拉列表
+$provinces = ORM::factory(&amp;lsquo;province&amp;rsquo;)-&amp;gt;select_list(&amp;lsquo;id&amp;rsquo;,&amp;lsquo;name&amp;rsquo;);
+$provinces[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;;
+ksort($provinces);
+$this-&amp;gt;template-&amp;gt;provinces = $provinces;
+if ($data[&amp;lsquo;province_id&amp;rsquo;]) {
+$cities = ORM::factory(’city’)-&amp;gt;where(’province_id’,$data[&amp;lsquo;province_id&amp;rsquo;])-&amp;gt;select_list(’id’,&amp;lsquo;name&amp;rsquo;);
+}
+$cities[&#39;&#39;] = &amp;lsquo;未选择&amp;rsquo;;
+ksort($cities);
+$this-&amp;gt;template-&amp;gt;cities = $cities;
+$this-&amp;gt;add_script(&amp;lsquo;home/js/company/add.js?3&amp;rsquo;);
+}
+&lt;!-- raw HTML omitted --&gt;
+view
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;});
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/kohana-%E4%B8%8Ejquery%E5%AE%9E%E7%8E%B0%E8%BF%9E%E5%8A%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>kohana一个工程下面建立多个项目app</title>
+        <link>/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</link>
+        <pubDate>Thu, 23 Apr 2009 16:00:35 +0000</pubDate>
+        
+        <guid>/posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/</guid>
+        <description>清风徐来 /posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/ -&lt;p&gt;其实核心的意思就是使用多个application文件夹，而共享一个system和module&lt;/p&gt;
+&lt;p&gt;请参考文章：http://learn.kohanaphp.com/2008/08/15/initial-setup-of-a-kohana-project-revisited/
+具体办法就是建立类似的文件夹结构：&lt;/p&gt;
+&lt;p&gt;app_admin    // administration application
+app_sales     // sales application
+app_public   // public website
+modules
+system
+webroot
+然后注意写配置文件就OK了&lt;/p&gt;
+&lt;p&gt;app_admin/config/config.php: $config[&amp;lsquo;site_domain&amp;rsquo;] = ‘localhost/admin/’;&lt;/p&gt;
+&lt;p&gt;app_sales/config/config.php: $config[&amp;lsquo;site_domain&amp;rsquo;] = ‘localhost/sales/’;&lt;/p&gt;
+&lt;p&gt;app_public/config/config.php: $config[&amp;lsquo;site_domain&amp;rsquo;] = ‘localhost/’;&lt;/p&gt;
+- /posts/kohana%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E4%B8%8B%E9%9D%A2%E5%BB%BA%E7%AB%8B%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AEapp/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Kohana的Events和Hooks研究</title>
+        <link>/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</link>
+        <pubDate>Thu, 23 Apr 2009 15:59:38 +0000</pubDate>
+        
+        <guid>/posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/</guid>
+        <description>清风徐来 /posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/ -&lt;p&gt;Kohana是一个使用PHP5的面向对象的MVC框架，是从CodeIgniter衍生出来，研究了几天，感觉还不错，就是它的文档实在太简陋了，在看到它的Events机制和Hooks机制时，确实有点不明白，文档上说的实在太简单了，后来我在Google上搜索了一下，找到两篇文章《Events and hooks in Kohana》和《Practical Kohana Hooks example: PHPIDS》，上面讲了一下Kohana的Events和Hooks，并举了例子，我也开始慢慢理解了它的含义。&lt;/p&gt;
+&lt;p&gt;在Kohana的Events中，默认定义了很多的Events（例如system.ready、system.pre_controller等等），中文理解就是事件，也就是触发点，在程序在运行到某个位置时，会被触发，具体就是调用Event::run方法，我们在Kohana.php里可以看到在不同的位置执行了不同的Event::run方法，那么Hooks的意义在于当一个事件被触发之前，可以通过已加载的Hooks来修改事件的回调，有点绕口，说白了就是在事件发生之前，做点事情，举个例子，你安排了今天的日程，下午3点要开会，那么在3点开会就是一个Event（事件），那么到3点的时刻，你希望提醒你一下，你在你的手机里定了一个闹钟，在3点的时候会响，这就是一个Hook，可以看出Hook是基于Event的。&lt;/p&gt;
+&lt;p&gt;我们可以创建自己的Hook程序，并加载如默认的Events里，但是默认的Events不一定能满足我们的需要，比如我们在Web应用中经常使用的权限校验，判断这个用户是否登陆过，我们虽然可以使用默认Events里的system.pre_controller，但是这个Event是针对所有的Controller的，有些Controller是不需要校验用户的，还好Kohana允许自己定义Event，下面我们还是举例说明吧。&lt;/p&gt;
+&lt;p&gt;要使用Hooks，首先要在application/config/config.php里将$config[&amp;lsquo;enable_hooks&amp;rsquo;]置为TRUE。&lt;/p&gt;
+&lt;p&gt;之后我们定义自己的Event，我们在application/controllers目录下建立base.php，代码如下：
+&lt;!-- raw HTML omitted --&gt;
+class Base_Controller extends Controller  {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function __construct() {
+    parent::__construct();
+    Event::run(&amp;quot;base.construct&amp;quot;);
+}	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+我们继承了Kohana的Controller，在构造函数里定义了Event，名字叫“base.construct”，以后我们的Controller都继承自Base_Controller，那么在对象创建的时候都会触发base.construct事件。&lt;/p&gt;
+&lt;p&gt;Hook的文件放在application/hooks下，我们就创建一个hook文件sessioncheck.php，代码如下：
+&lt;!-- raw HTML omitted --&gt;
+class SessionCheck {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function check() {
+    echo &amp;quot;check session ...&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;Event::add(&amp;lsquo;base.construct&amp;rsquo;, array(&amp;lsquo;SessionCheck&amp;rsquo;,&amp;lsquo;check&amp;rsquo;));
+&lt;!-- raw HTML omitted --&gt;
+我们将SessionCheck的check方法加载到了base.construct事件上，也就是在触发base.construct事件之前，会执行SessionCheck的check方法。&lt;/p&gt;
+&lt;p&gt;接下来我们写一个Controller，在application/controllers目录下建立first.php，代码如下：
+&lt;!-- raw HTML omitted --&gt;
+class First_Controller extends Base_Controller  {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function index() {
+    echo &amp;quot;First - index&amp;quot;;
+    exit();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+我们执行一下看看会有什么提示，http://localhost/kohana/first，显示&lt;/p&gt;
+&lt;p&gt;check session …First - index&lt;/p&gt;
+&lt;p&gt;没问题了，在Controller构造时，执行了Hook里的方法。&lt;/p&gt;
+&lt;p&gt;from：http://i.laoer.com/&lt;/p&gt;
+- /posts/kohana%E7%9A%84events%E5%92%8Chooks%E7%A0%94%E7%A9%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Kohana的Cache</title>
+        <link>/posts/kohana%E7%9A%84cache/</link>
+        <pubDate>Thu, 23 Apr 2009 15:59:13 +0000</pubDate>
+        
+        <guid>/posts/kohana%E7%9A%84cache/</guid>
+        <description>清风徐来 /posts/kohana%E7%9A%84cache/ -&lt;p&gt;Kohana里有个Cache Library，我今天就测试了一下。&lt;/p&gt;
+&lt;p&gt;首先要配置，将system/config下的cache.php复制到application/config下，打开cache.php文件，我们看一下内容&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在应用中，可能需要不止一个缓存，所以可以配置多个缓存，增加$config数组即可，还有在file方式下可以为每个缓存设置单独文件路径，但前提是文件路径要存在，例如我们增加一个&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;public function index() {
+    $mychache = Cache::instance(&amp;quot;my&amp;quot;);
+    $mychache-&amp;gt;set(&amp;quot;name&amp;quot;,&amp;quot;laoer&amp;quot;);
+    echo &amp;quot;OK&amp;quot;;   
+}
+
+public function name() {
+    $mychache= Cache::instance(&amp;quot;my&amp;quot;);
+    $name = $mychache-&amp;gt;get(&amp;quot;name&amp;quot;);
+    echo $name;
+}   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+Cache::instance(”my”)实例化配置里$config[&amp;lsquo;my&amp;rsquo;]的cache，如果用Cache::instance()就是实例化配置里$config[&amp;lsquo;default&amp;rsquo;]的cache，在浏览器里执行，已经可以存取了，在application/cache/my/文件下可以看到一个名为”name~~0″的文件，里面就是序列化的数据。&lt;/p&gt;
+&lt;p&gt;文件cache还是有一定的局限性，现在越来越的网站开始使用Memcached所谓缓存的解决方案，Kohana的缓存驱动里，有Memcached的支持，但它的文档却没有给出Memcached的配置例子，看来要自己摸索一下。&lt;/p&gt;
+&lt;p&gt;将system/config下的cache_memcache.php复制到application/config下，cache_memcache.php的内容如下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable cache data compression.
+*/
+$config[&amp;lsquo;compression&amp;rsquo;] = FALSE;
+&lt;!-- raw HTML omitted --&gt;
+根据你自己的情况修改Memcached的服务地址和端口，在application/config/cache.php里再加一段
+&lt;!-- raw HTML omitted --&gt;
+$config[&amp;lsquo;mem&amp;rsquo;] = array
+(
+&amp;lsquo;driver&amp;rsquo;   =&amp;gt; &amp;lsquo;memcache&amp;rsquo;,
+&amp;lsquo;params&amp;rsquo;   =&amp;gt; &amp;lsquo;&amp;rsquo;,
+&amp;lsquo;lifetime&amp;rsquo; =&amp;gt; 1800,
+&amp;lsquo;requests&amp;rsquo; =&amp;gt; 1000
+);
+&lt;!-- raw HTML omitted --&gt;
+在Controller里把Cache::instance(”my”)改为Cache::instance(”mem”)，运行看看结果，已经可以从Memcahced里存取了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kohana的Memcached驱动还是有些缺陷，现在只能使用一组Memcached，即$config[&amp;lsquo;servers&amp;rsquo;]这个参数，我觉得Memcacahed组也应该是多个，因为从业务角度会根据功能对cache做划分，我大概看了一下system/libraries/drivers/Cache/Memcache.php文件，应该是可以改造的，还有一点，编译PHP的时候要安装Memcached的支持。&lt;/p&gt;
+&lt;p&gt;from：http://i.laoer.com/&lt;/p&gt;
+- /posts/kohana%E7%9A%84cache/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>牛刀：“小阳春”突破的是法律的底线</title>
+        <link>/posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/</link>
+        <pubDate>Sun, 12 Apr 2009 11:44:35 +0000</pubDate>
+        
+        <guid>/posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/</guid>
+        <description>清风徐来 /posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/ -&lt;p&gt;打算买房，收些资料。
+&lt;a href=&#34;http://qzone.qq.com/blog/348973589-1239434360&#34;&gt;http://qzone.qq.com/blog/348973589-1239434360&lt;/a&gt;&lt;/p&gt;
+- /posts/%E7%89%9B%E5%88%80%E5%B0%8F%E9%98%B3%E6%98%A5%E7%AA%81%E7%A0%B4%E7%9A%84%E6%98%AF%E6%B3%95%E5%BE%8B%E7%9A%84%E5%BA%95%E7%BA%BF/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ci中文转拼音的library</title>
+        <link>/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
+        <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
+        
+        <guid>/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
+        <description>清风徐来 /posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/ -&lt;p&gt;拼装了一个codeigniter的中文转拼音的library。
+使用方法：
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;utf8pinyin&amp;rsquo;,&#39;&amp;rsquo;,&amp;lsquo;py&amp;rsquo;);
+$data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;lsquo;昆山风神贸易有限公司成立于2007年&amp;rsquo;);
+//KunShanFengShenMaoYiYouXianGongSiChengLiYu2007Nian
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;str2py($str,$boolquanpin=true,$booldaxie=true)&lt;!-- raw HTML omitted --&gt;
+$str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。
+&lt;!-- raw HTML omitted --&gt;utf8pinyin&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Simple flexible Caching of parts of code - MP_Cache</title>
+        <link>/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
+        <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
+        
+        <guid>/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
+        <description>清风徐来 /posts/simple-flexible-caching-of-parts-of-code-mp_cache/ -&lt;p&gt;如标题所言，确实是简单灵活。看来想要摆脱Codeigniter越来越难了。
+看看怎样使用吧
+首先，在config.php中设置一下缓存目录，这个目录要存在且可写入
+&lt;!-- raw HTML omitted --&gt;
+$config[&amp;lsquo;mp_cache_dir&amp;rsquo;] = &amp;lsquo;application/mp_cache/&#39;;
+&lt;!-- raw HTML omitted --&gt;
+好了，现在看看代码
+&lt;!-- raw HTML omitted --&gt;
+/&lt;em&gt;加载library，可以放在构造函数中&lt;/em&gt;/
+$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;MP_Cache&amp;rsquo;);
+/&lt;em&gt;抓取名为listNews的缓存&lt;/em&gt;/
+$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;listNews&amp;rsquo;);
+if($listNews===false){
+//没有缓存数据，则查询数据库
+$listNews = $this-&amp;gt;News_model-&amp;gt;getNewslist(&amp;lsquo;guest&amp;rsquo;)-&amp;gt;result();
+//创建缓存，命名为listNews。在mp_cache目录下就生成了listNews.cache文件，内容是序列化的数据
+$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;listNews&amp;rsquo;);
+}
+$data[&amp;lsquo;listNews&amp;rsquo;]= $listNews;
+$this-&amp;gt;layout-&amp;gt;view(&amp;lsquo;news&amp;rsquo;, $data);
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;两个注意点：&lt;!-- raw HTML omitted --&gt;
+1，缓存数据，必须是data，而不是resource id。如，在使用AR后用result(),result_array()等返回的数据
+2，缓存名不要重复。可以使用子文件夹分隔。如，$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;news/listNews&amp;rsquo;);同样创建缓存数据片段用$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;news/listNews&amp;rsquo;);（php5下news文件夹会自动创建）
+其他方法：
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;mp_cache-&amp;gt;delete($filename)
+&lt;!-- raw HTML omitted --&gt;
+删除名为$filename的cache.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/simple-flexible-caching-of-parts-of-code-mp_cache/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>徐徐的Zend studio For Eclipse 教程</title>
+        <link>/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Mon, 23 Mar 2009 10:01:58 +0000</pubDate>
+        
+        <guid>/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</guid>
+        <description>清风徐来 /posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ -&lt;p&gt;如题，好东西啊
+不说废话，给出地址
+&lt;!-- raw HTML omitted --&gt;zend studio 6.1中文视频教程-快速入门&lt;!-- raw HTML omitted --&gt;
+&lt;a href=&#34;http://www.zendstudio.net/zend_studio-6_1-getting-start/&#34;&gt;http://www.zendstudio.net/zend_studio-6_1-getting-start/&lt;/a&gt;
+感谢&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;的工作，好淫啊 :)&lt;/p&gt;
+- /posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>改进layout library，方便自定义layout</title>
+        <link>/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</link>
+        <pubDate>Wed, 18 Mar 2009 22:58:44 +0000</pubDate>
+        
+        <guid>/posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/</guid>
+        <description>清风徐来 /posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;CodeIgniter使用 layout library 简化视图布局&lt;!-- raw HTML omitted --&gt; 中，有些小的缺陷，不能在controller中加载类的同时设定自己的layout。貌似在CI1.6.1时可以的，方式：$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;);自定义的layout就是template。但是现在CI1.7.0+,loader不一样了。
+library($library,$paramsAarry,$objName),有三个参数了。第一个必须的是要加载的library，后面的分别是配置数组和自定义对象名称。
+所以，$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;layout&amp;rsquo;,&amp;lsquo;template&amp;rsquo;)就不适用了。于是淡水就把layout library改写了一下。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;function index() {
+    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
+    $this-&amp;gt;layout-&amp;gt;view(&#39;contact&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;function index() {
+    $data[&amp;quot;page_title&amp;quot;] = &amp;quot;联系我们&amp;quot;;
+    # 下面就是使用自定义的对象名 mytemp
+    $this-&amp;gt;mytemp-&amp;gt;view(&#39;contact&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E6%94%B9%E8%BF%9Blayout-library%E6%96%B9%E4%BE%BF%E8%87%AA%E5%AE%9A%E4%B9%89layout/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 清风徐来</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 04 Sep 2017 16:39:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
+      <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
+      
+      <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧 如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。
+好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 https://repo.continuum.io/archive/，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。
+$ wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh--2017-09-04 09:15:29-- https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.shResolving repo.continuum.io (repo.continuum.io)... 104.16.19.10, 104.16.18.10, 2400:cb00:2048:1::6810:130a, ...Connecting to repo.continuum.io (repo.continuum.io)|104.16.19.10|:443... connected.HTTP request sent, awaiting response... 200 OKLength: 523283080 (499M) [application/x-sh]Saving to: ‘Anaconda3-4.4.0-Linux-x86_64.sh’100%[=================================================================&amp;gt;] 523,283,080 11.3MB/s in 59s 2017-09-04 09:16:29 (8.39 MB/s) - ‘Anaconda3-4.4.0-Linux-x86_64.sh’ saved [523283080/523283080] 下载完成，vps 速度还算及格。
+$ sudo bash Anaconda3-4.4.0-Linux-x86_64.shWelcome to Anaconda3 4.</description>
+    </item>
+    
+    <item>
+      <title>spec demo</title>
+      <link>/posts/spec-demo/</link>
+      <pubDate>Fri, 05 Sep 2014 14:15:00 +0000</pubDate>
+      
+      <guid>/posts/spec-demo/</guid>
+      <description># -*- mode: python -*-a = Analysis([&#39;d:\\Work\\dbTools\\dbTools.py&#39;],pathex=[&#39;D:\\Apps\\PyInstaller-2.1\\dbTools&#39;],hiddenimports=[],hookspath=None,runtime_hooks=None)pyz = PYZ(a.pure)exe = EXE(pyz,a.scripts,exclude_binaries=True,name=&#39;dbTools.exe&#39;,debug=False,strip=None,upx=True,console=False , version=&#39;d:\\Work\\dbTools\\v.txt&#39;, icon=&#39;d:\\Work\\dbTools\\dbTools.ico&#39;)dict_tree = Tree(&#39;d:\\Work\\dbTools\\backup&#39;, prefix = &#39;backup&#39;)dict_tree += Tree(&#39;d:\\Work\\dbTools\\test&#39;, prefix = &#39;test&#39;)dict_tree += [(&#39;dbTools.ico&#39;, &#39;d:\\Work\\dbTools\\dbTools.ico&#39;, &#39;DATA&#39;),(&#39;appcfg.dll&#39;,&#39;d:\\Work\\dbTools\\appcfg.dll&#39;,&#39;DATA&#39;),(&#39;backup.dll&#39;,&#39;d:\\Work\\dbTools\\backup.dll&#39;,&#39;DATA&#39;),(&#39;mysqlr.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlr.exe&#39;,&#39;DATA&#39;),(&#39;mysqlb.exe&#39;,&#39;d:\\Work\\dbTools\\mysqlb.exe&#39;,&#39;DATA&#39;)]coll = COLLECT(exe,a.binaries,dict_tree,a.zipfiles,a.datas,strip=None,upx=True,name=&#39;dbTools&#39;)cmd
+pyinstaller.py --upx-dir=d:\Apps\upx391w path\to\dbTools.spec资源文件也拷贝到位了，文件也压缩了，一下子打包的工作全部完成了。
+2015年10月23日11:22:11 update： pyinstller现在支持python3.5了，cx_Freeze才支持到3.4。头疼的选择</description>
+    </item>
+    
+    <item>
+      <title>python虚拟环境virtualenv</title>
+      <link>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+      <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
+      
+      <guid>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+      <description>昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.
+virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.
+这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.
+比如,我可以为公司的项目搞个环境叫comDjango;还可以自己偷偷搞个myDjango.
+domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他们不会影响到对方.解决了所有项目都用同一版本类库的尴尬,当然还有其他好处.比如某个环境里只安装想要的包,满足洁癖等等&amp;hellip;
+好吧,说说安装和使用吧.
+#安装 $easy_install virtualenv#使用 #在当前目录下,建立了一个comDjango(是个目录) $virtualenv comDjango #上面的操作,会依赖系统已有的site packages,要建立一个更纯净的可以用 $virtualenv &amp;ndash;no-site-packages comDjango #进入这个目录,并激活这个环境 $cd comDjango #$source bin/activate(Linux下的激活) #windows下的操作. $Scriptsactivate.bat #完成后提示符路径前会多出&amp;rdquo;(comDjango)&amp;quot;,也就是成功进入了comDjango的虚拟环境了此时,去pip install xxx就会安装到comDjango里了,和其他环境不相干了.
+#最后,退出这个虚拟环境 $deactivate</description>
+    </item>
+    
+    <item>
+      <title>web.py尝鲜时遭遇no module named MySQLdb</title>
+      <link>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</link>
+      <pubDate>Tue, 31 Jan 2012 17:09:34 +0000</pubDate>
+      
+      <guid>/posts/web.py%E5%B0%9D%E9%B2%9C%E6%97%B6%E9%81%AD%E9%81%87no-module-named-mysqldb/</guid>
+      <description>python看了好一阵了，一直没有突破。挤了点时间折腾web.py。
+下个小应用跑跑看，出现解决“no module named MySQLdb”。就是缺了MySQLdb模块，于是下了安装，但是一直不行。
+google之，原来是版本不一致，淡水是在64位的win7上用的64位的python2.7，所以对应的MySQL-python也要64位的。
+这里有下。http://www.lfd.uci.edu/~gohlke/pythonlibs/ 里面还有好多的。</description>
+    </item>
+    
+  </channel>
+</rss>

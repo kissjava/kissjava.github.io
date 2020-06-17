@@ -1,0 +1,481 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>收拾残局，过滤部分字段重复的数据</title>
+        <link>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</link>
+        <pubDate>Mon, 08 Mar 2010 16:54:03 +0000</pubDate>
+        
+        <guid>/posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/</guid>
+        <description>清风徐来 /posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ -&lt;p&gt;select distinct可以去掉重复记录。
+disctinct将重复的记录忽略，但它忽略的是&lt;!-- raw HTML omitted --&gt;完全一致&lt;!-- raw HTML omitted --&gt;的重复记录，而不是其中某个字段重复的记录，或者说，distinct查询一个字段时好使，多个字段就不好使。&lt;/p&gt;
+&lt;p&gt;所以用聚合函数和group by实现
+&lt;!-- raw HTML omitted --&gt;注意：group by只能跟聚合函数搭配使用&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;例表&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;查询username和password组合起来的条件不能重复的查询结果（这个都能重复，不能不说这是个烂摊子）&lt;/p&gt;
+&lt;p&gt;当username和password重复时，取ID最大的记录:&lt;br&gt;
+select   *   from   mytable  where   ID   in(select   max(ID)   from   mytable   group   by   username,password)&lt;/p&gt;
+&lt;p&gt;当username和password重复时，取ID最小的记录：&lt;br&gt;
+select   *   from   mytable  where   ID   in(select   min(ID)   from   mytable  a   group   by   username,password)&lt;/p&gt;
+- /posts/%E6%94%B6%E6%8B%BE%E6%AE%8B%E5%B1%80%E8%BF%87%E6%BB%A4%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Codeigniter ACL library</title>
+        <link>/posts/codeigniter-acl-library/</link>
+        <pubDate>Mon, 08 Mar 2010 09:58:45 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-acl-library/</guid>
+        <description>清风徐来 /posts/codeigniter-acl-library/ -&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;public function __construct() {
+    
+    $this-&amp;gt;load-&amp;gt;helper(&#39;url&#39;);
+    $this-&amp;gt;load-&amp;gt;library(&#39;session&#39;);
+    $this-&amp;gt;load-&amp;gt;config(&#39;mx_acl&#39;, TRUE);
+    
+    $this-&amp;gt;_config = $this-&amp;gt;config-&amp;gt;item(&#39;mx_acl&#39;);
+    $this-&amp;gt;_cache_path = $this-&amp;gt;config-&amp;gt;item(&#39;cache_path&#39;);
+    
+    /* previous flashdata is available to views */
+    $this-&amp;gt;load-&amp;gt;vars($this-&amp;gt;_config[&#39;error_var&#39;], $this-&amp;gt;session-&amp;gt;flashdata($this-&amp;gt;_config[&#39;error_var&#39;]));
+    
+    /* run the access control check now */
+    ($this-&amp;gt;_config[&#39;check_uri&#39;]) AND $this-&amp;gt;check_uri();
+}
+
+/**
+ * Check the current uri and user privileges against the cached ACL array
+ * Redirect if access is denied
+ *
+ * @return void
+ */
+public function check_uri() {
+    
+    /* Load the cached access control list or show error */
+    (is_file($cached_acl = $this-&amp;gt;_cache_path.&#39;mx_acl&#39;.EXT)) OR show_error($this-&amp;gt;_config[&#39;error_msg&#39;]);
+    
+    $acl = include $cached_acl;
+
+    /* Match current url to access list */
+    if (is_array($acl) AND $acl = $this-&amp;gt;match_uri($this-&amp;gt;current_uri(), $acl)) {
+        
+        /* Check session group against access level group */
+        $allow_access = (bool)(in_array($this-&amp;gt;session-&amp;gt;userdata($this-&amp;gt;_config[&#39;session_var&#39;]), $acl[&#39;allowed&#39;]));
+            
+         /* Additional check to allow IP addresses in range */
+        if ( ! $allow_access AND isset($acl[&#39;ipl&#39;])) $allow_access = $this-&amp;gt;check_ip($acl[&#39;ipl&#39;]);
+            
+        if ($allow_access == FALSE)    {
+            
+            /* Set a return url into the session */
+            $this-&amp;gt;session-&amp;gt;set_userdata(&#39;return_url&#39;, $this-&amp;gt;uri-&amp;gt;uri_string());
+            
+            /* set the error message... */
+            $error_msg = (isset($acl[&#39;error_msg&#39;])) ? $acl[&#39;error_msg&#39;] : $this-&amp;gt;_config[&#39;error_msg&#39;];
+                
+            /* set a flash message... */
+            $this-&amp;gt;session-&amp;gt;set_flashdata($this-&amp;gt;_config[&#39;error_var&#39;], $error_msg);        
+                
+            /* redirect to absolute url */
+            die(header(&amp;quot;Location: &amp;quot;.$acl[&#39;error_uri&#39;], TRUE, 302));
+        }
+    }
+}
+
+/**
+ * Return the access control profile for a given url
+ *
+ * @return string
+ * @param string $current_uri
+ * @param array  $acl
+ */
+private function match_uri($current_uri, $acl) {
+    if (array_key_exists($current_uri, $acl)) {
+        return $acl[$current_uri];            
+    } else {
+        if ($pos = strripos($current_uri, &#39;/&#39;)) {
+            return $this-&amp;gt;match_uri(substr($current_uri, 0, $pos), $acl);
+        }
+    }
+}
+
+/**
+ * Returns the current uri string from segments
+ *
+ * @return string
+ */
+private function current_uri() {
+    return implode(&#39;/&#39;, $this-&amp;gt;uri-&amp;gt;rsegments);
+}
+
+/**
+ * Checks the remote IP address against the specified $ipl array
+ *
+ * @return bool
+ * @param array $ipl
+ * @param string $remote_ip[optional]
+ */    
+ private function check_ip($ipl, $remote_ip = NULL) {
+    
+    /* Convert ip address into a double (for lousy OSes)*/
+    $remote_ip = floatval(ip2long(($this-&amp;gt;session-&amp;gt;userdata(&#39;ip_address&#39;))));
+    
+    /* Loop through the ip list array */
+    foreach ($ipl as $allowed_ip) {
+        
+        /* Replace &#39;*&#39; (for IP ranges) with a suitable range number */
+        $min = str_replace(&amp;quot;*&amp;quot;, &amp;quot;0&amp;quot;, $allowed_ip);        
+        $max = str_replace(&amp;quot;*&amp;quot;, &amp;quot;255&amp;quot;, $allowed_ip);
+
+        /* Check for a match */
+        if (($remote_ip &amp;gt;= floatval(ip2long($min))) AND ($remote_ip &amp;lt;= floatval(ip2long($max)))) {
+            return TRUE;
+        }
+    }
+}
+
+public function __get($var)    {
+    static $CI;
+    (is_object($CI)) OR $CI = get_instance();
+    return $CI-&amp;gt;$var;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+/* End of file MX_ACL.php */
+/* Location: ./application/libraries/MX_ACL.php */
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/codeigniter-acl-library/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>apache下ab网站压力测试命令的参数、输出结果的中文注解</title>
+        <link>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
+        <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
+        
+        <guid>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
+        <description>清风徐来 /posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ -&lt;p&gt;有用，记录一下。from：http://txm3217.blog.163.com/blog/static/21986987200762131027970/
+以前安装好APACHE总是不知道该如何测试APACHE的性能，现在总算找到一个测试工具了。就是APACHE自带的测试工具AB(apache benchmark).在APACHE的bin目录下。
+格式： ./ab [options] [http://]hostname[:port]/path
+参数：
+-n requests Number of requests to perform
+//在测试会话中所执行的请求个数。默认时，仅执行一个请求
+-c concurrency Number of multiple requests to make
+//一次产生的请求个数。默认是一次一个。
+-t timelimit Seconds to max. wait for responses
+//测试所进行的最大秒数。其内部隐含值是-n 50000。它可以使对服务器的测试限制在一个固定的总时间以内。默认时，没有时间限制。
+-p postfile File containing data to POST
+//包含了需要POST的数据的文件.
+-T content-type Content-type header for POSTing
+//POST数据所使用的Content-type头信息。
+-v verbosity How much troubleshooting info to print
+//设置显示信息的详细程度 - 4或更大值会显示头信息， 3或更大值可以显示响应代码(404, 200等), 2或更大值可以显示警告和其他信息。 -V 显示版本号并退出。
+-w Print out results in HTML tables
+//以HTML表的格式输出结果。默认时，它是白色背景的两列宽度的一张表。
+-i Use HEAD instead of GET
+// 执行HEAD请求，而不是GET。
+-x attributes String to insert as table attributes
+//
+-y attributes String to insert as tr attributes
+//
+-z attributes String to insert as td or th attributes
+//
+-C attribute Add cookie, eg. &amp;lsquo;Apache=1234. (repeatable)
+//-C cookie-name=value 对请求附加一个Cookie:行。 其典型形式是name=value的一个参数对。此参数可以重复。
+-H attribute Add Arbitrary header line, eg. &amp;lsquo;Accept-Encoding: gzip&amp;rsquo;
+Inserted after all normal header lines. (repeatable)
+-A attribute Add Basic WWW Authentication, the attributes
+are a colon separated username and password.
+-P attribute Add Basic Proxy Authentication, the attributes
+are a colon separated username and password.
+//-P proxy-auth-username:password 对一个中转代理提供BASIC认证信任。用户名和密码由一个:隔开，并以base64编码形式发送。无论服务器是否需要(即, 是否发送了401认证需求代码)，此字符串都会被发送。
+-X proxy:port Proxyserver and port number to use
+-V Print version number and exit
+-k Use HTTP KeepAlive feature
+-d Do not show percentiles served table.
+-S Do not show confidence estimators and warnings.
+-g filename Output collected data to gnuplot format file.
+-e filename Output CSV file with percentages served
+-h Display usage information (this message)
+//-attributes 设置 属性的字符串. 缺陷程序中有各种静态声明的固定长度的缓冲区。另外，对命令行参数、服务器的响应头和其他外部输入的解析也很简单，这可能会有不良后果。它没有完整地实现 HTTP/1.x; 仅接受某些&amp;rsquo;预想&amp;rsquo;的响应格式。 strstr(3)的频繁使用可能会带来性能问题，即, 你可能是在测试ab而不是服务器的性能。&lt;/p&gt;
+&lt;p&gt;参数很多,一般我们用 -c 和 -n 参数就可以了. 例如:&lt;/p&gt;
+&lt;p&gt;./ab -c 1000 -n 1000 http://127.0.0.1/index.php&lt;/p&gt;
+&lt;p&gt;这个表示同时处理1000个请求并运行1000次index.php文件.
+#/usr/local/xiaobai/apache2054/bin/ab -c 1000 -n 1000 http://127.0.0.1/index.html.zh-cn.gb2312
+This is ApacheBench, Version 2.0.41-dev &amp;lt;$Revision: 1.121.2.12 $&amp;gt; apache-2.0
+Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd, &lt;a href=&#34;http://www.zeustech.net/&#34;&gt;http://www.zeustech.net/&lt;/a&gt;
+Copyright (c) 1998-2002 The Apache Software Foundation, &lt;a href=&#34;http://www.apache.org/&#34;&gt;http://www.apache.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Finished 1000 requests&lt;/p&gt;
+&lt;p&gt;Server Software: Apache/2.0.54
+//平台apache 版本2.0.54
+Server Hostname: 127.0.0.1
+//服务器主机名
+Server Port: 80
+//服务器端口&lt;/p&gt;
+&lt;p&gt;Document Path: /index.html.zh-cn.gb2312
+//测试的页面文档
+Document Length: 1018 bytes
+//文档大小&lt;/p&gt;
+&lt;p&gt;Concurrency Level: 1000
+//并发数
+Time taken for tests: 8.188731 seconds
+//整个测试持续的时间
+Complete requests: 1000
+//完成的请求数量
+Failed requests: 0
+//失败的请求数量
+Write errors: 0&lt;/p&gt;
+&lt;p&gt;Total transferred: 1361581 bytes
+//整个场景中的网络传输量
+HTML transferred: 1055666 bytes
+//整个场景中的HTML内容传输量
+Requests per second: 122.12 [#/sec] (mean)
+//大家最关心的指标之一，相当于 LR 中的 每秒事务数 ，后面括号中的 mean 表示这是一个平均值
+Time per request: 8188.731 [ms] (mean)
+//大家最关心的指标之二，相当于 LR 中的 平均事务响应时间 ，后面括号中的 mean 表示这是一个平均值
+Time per request: 8.189 [ms] (mean, across all concurrent requests)
+//每个请求实际运行时间的平均值
+Transfer rate: 162.30 [Kbytes/sec] received
+//平均每秒网络上的流量，可以帮助排除是否存在网络流量过大导致响应时间延长的问题&lt;/p&gt;
+&lt;p&gt;Connection Times (ms)
+min mean[+/-sd] median max
+Connect: 4 646 1078.7 89 3291
+Processing: 165 992 493.1 938 4712
+Waiting: 118 934 480.6 882 4554
+Total: 813 1638 1338.9 1093 7785
+//网络上消耗的时间的分解，各项数据的具体算法还不是很清楚&lt;/p&gt;
+&lt;p&gt;Percentage of the requests served within a certain time (ms)
+50% 1093
+66% 1247
+75% 1373
+80% 1493
+90% 4061
+95% 4398
+98% 5608
+99% 7368
+100% 7785 (longest request)
+//整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间，其中50％的用户响应时间小于1093 毫秒，60％ 的用户响应时间小于1247 毫秒，最大的响应时间小于7785 毫秒&lt;/p&gt;
+&lt;p&gt;由于对于并发请求，cpu实际上并不是同时处理的，而是按照每个请求获得的时间片逐个轮转处理的，所以基本上第一个Time per request时间约等于第二个Time per request时间乘以并发请求数&lt;/p&gt;
+- /posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>vim记录</title>
+        <link>/posts/vim%E8%AE%B0%E5%BD%95/</link>
+        <pubDate>Sun, 07 Mar 2010 13:13:54 +0000</pubDate>
+        
+        <guid>/posts/vim%E8%AE%B0%E5%BD%95/</guid>
+        <description>清风徐来 /posts/vim%E8%AE%B0%E5%BD%95/ -&lt;p&gt;1，vim中复制带有行号的内容到剪切板
+进入normal模式，按查找键盘（/），然后然后用鼠标选择需要的内容，选取会自动选择行号，菜单栏编辑-复制（右键也行）即可。
+2，删除引用符号中的内容，并进入到插入模式
+ci[ 删除一对 [] 中的所有字符并进入插入模式
+ci( 删除一对 () 中的所有字符并进入插入模式
+ci&amp;lt; 删除一对 &amp;lt;&amp;gt; 中的所有字符并进入插入模式
+ci{ 删除一对 {} 中的所有字符并进入插入模式
+cit 删除一对 HTML/XML 的标签内部的所有字符并进入插入模式
+ci&amp;rdquo;  ci&amp;rsquo;  ci&lt;code&gt;删除一对引号字符 (&amp;quot;或 &#39; 或&lt;/code&gt;) 中所有字符并进入插入模式
+3，除了，hjkl外的更微妙的光标移动
+w：光标往下移动一个词。
+b：光标往回移动一个词。
+0：移动光标到当前行首。
+^：移动光标到当前行的第一个字母位置。
+$：移动光标到行尾。
+)：移动光标到下一个句子。
+( ：移动光标到上一个句子。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;：向下移动一屏。
+&lt;!-- raw HTML omitted --&gt;：向上移动一屏。
+G：到文件尾
+numG：移动光标到指定的行（num）。（比如 10G 就是到第 10 行）
+gg：到文件首
+H：移动光标到屏幕上面
+M：移动光标到屏幕中间
+L：移动光标到屏幕下面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;：缩进所有选择的代码
+&amp;laquo;：和上面类似，但是反缩进&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+- /posts/vim%E8%AE%B0%E5%BD%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>可以激活Win7系统的Key</title>
+        <link>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</link>
+        <pubDate>Sun, 07 Mar 2010 12:05:31 +0000</pubDate>
+        
+        <guid>/posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/</guid>
+        <description>清风徐来 /posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ -&lt;p&gt;可以激活Win7系统的Key（序列号）！
+G到的，留着吧，看看什么时候能用上。
+不懂什么是神Key的朋友自己去BD、GG吧！不要问我这样的问题！谢谢配合！
+我个人认为神Key是微软为扩展Win7市场故意放出。
+回复可见！&lt;/p&gt;
+&lt;p&gt;本帖隐藏的内容需要回复才可以浏览
+已经证实的
+236TW-X778T-8MV9F-937GT-QVKBB
+87VT2-FY2XW-F7K39-W3T8R-XMFGF
+KH2J9-PC326-T44D4-39H6V-TVPBY
+TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK
+流传于网上未经验证的
+J783Y-JKQWR-677Q8-KCXTF-BHWGC
+C4M9W-WPRDG-QBB3F-VM9K8-KDQ9Y
+2VCGQ-BRVJ4-2HGJ2-K36X9-J66JG
+MGX79-TPQB9-KQ248-KXR2V-DHRTD
+FJHWT-KDGHY-K2384-93CT7-323RC&lt;/p&gt;
+- /posts/%E5%8F%AF%E4%BB%A5%E6%BF%80%E6%B4%BBwin7%E7%B3%BB%E7%BB%9F%E7%9A%84key/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>使用jQuery和flash的多文件上传组件</title>
+        <link>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</link>
+        <pubDate>Sun, 07 Mar 2010 12:02:53 +0000</pubDate>
+        
+        <guid>/posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ -&lt;p&gt;标题党了。
+这是一个使用jQuery和flash的多文件上传组件：
+&lt;a href=&#34;http://www.uploadify.com/demo/&#34;&gt;http://www.uploadify.com/demo/&lt;/a&gt;&lt;/p&gt;
+- /posts/%E4%BD%BF%E7%94%A8jquery%E5%92%8Cflash%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%84%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>flash,css hack,等等。。</title>
+        <link>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
+        <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
+        
+        <guid>/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
+        <description>清风徐来 /posts/flashcss-hack%E7%AD%89%E7%AD%89/ -&lt;p&gt;1，插入flash，不追求web标准，可以这样简短：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+2，同一选择器针对不同浏览器的css hack
+select {
+background-color: black;/* firefox, opera, ie8 */
+[;background-color: green;]/* safari, chrome */
+*background-color: blue;/* ie7 */
+_background-color: red;/* ie6 */
+}
+html*~/**/body select {
+border: 5px solid red;/* ie8 */
+}以上只是一个例子说明混合写法.以下是对例子的补充
+1.IE都能识别*;标准浏览器(如FF)不能识别*;
+2.IE7,FF能识别!important,IE6不能.
+3.只有IE6能识别_
+4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。
+5.对于ie8 chrome hack的请 GOOGLE or BAIDU …&lt;/p&gt;
+- /posts/flashcss-hack%E7%AD%89%E7%AD%89/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
+        <link>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
+        <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
+        
+        <guid>/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
+        <description>清风徐来 /posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;实现原理：&lt;/p&gt;
+&lt;p&gt;（1）指定宽度：width:300px;
+（2）overflow:hidden;  将超出内容隐藏
+（3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;)
+（4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。&lt;/p&gt;
+- /posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Codeigniter里实现get_object_or_404</title>
+        <link>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
+        <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
+        
+        <guid>/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
+        <description>清风徐来 /posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ -&lt;p&gt;在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。&lt;/p&gt;
+&lt;p&gt;我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP5.3的新特新</title>
+        <link>/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</link>
+        <pubDate>Sat, 13 Feb 2010 16:31:57 +0000</pubDate>
+        
+        <guid>/posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/</guid>
+        <description>清风徐来 /posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ -&lt;p&gt;本文主要说说PHP V5.3 的以下特性：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;延迟静态绑定&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP V5.3 扩展了 static 关键词的使用。现在，无需实例化类便可访问静态类方法和属性。当类不存在对象，或者不需要对象时，这个特性就比较方便。下面就是展示了延迟静态绑定的一个例子。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;代码中使用 &lt;strong&gt;CLASS&lt;/strong&gt; 也许有点勉强，但确实可以说明 PHP V5.3.0 有一个小小的问题。显然，对于这个例子，这不是多大的问题，但是对于有数千行 PHP 代码的网站来说，就没那么简单了。重复代码通常意味着重复劳动。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;名称空间（也有叫命名空间的）&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP V5.3 提供名称空间功能，以增强该语言的封装能力。名称空间在现代语言中非常常见，例如 C# 和 XML。名称空间的主要优点是，通过它可以为代码符号（类、函数和常量）定义独立的容器，这听起来有点复杂，其实不然。以下代码显示了使用 PHP 名称空间定义本地和全局字符串常量的一个例子。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;有了名称空间功能，和之前相比，代码之间的界限更加清晰。而这一点又有助于团队环境中的代码整合。换句话说，不同的团队可以分配他们自己的名称空间，当所有团队成员都遵循这个惯例时，名称冲突的情况应该会降为零。这也是 5.3.0 版对 PHP 语言在面向对象方面的一个增强。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;类方法重载&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在 PHP 中，术语重载（overloading） 与通常的面向对象上下文稍有不同。在 Java 语言或 C# 中，“重载” 方法是指为不同参数列表提供相同代码的方法。例如，如果有一个名为 draw(String str) 的方法，那么重载的方法可以有以下形式：draw(String str, int i)。这种方法符号名称被称作方法签名，为了便于重载，返回类型被省略。&lt;/p&gt;
+&lt;p&gt;在 PHP 中，“重载” 是指动态创建的方法和属性。这实际上是动态代码，任何这样的动态实体都是由所谓的魔术方法（magic methods） 来处理。可以在一个类中为各种不同的动作创建这些魔术方法。然后，当代码中遇到未声明或不可见的属性或方法时，便可以调用重载方法。这样风格的重载提供了很大程度上的灵活性。&lt;/p&gt;
+&lt;p&gt;听起来有些复杂，所以来看看一个具体的例子。以下代码展示如何使用 PHP 重载调用对象和类方法。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;变量解析和 heredoc&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP 的优势之一在于字符串解析。PHP 对于字符串的长度没有限制，只要主机的可用内存够大就行。下面代码展示了使用 PHP 时拥有的灵活性。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;代码产生以下输出：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这样的代码并不是直到 PHP V5.3.0 才有的。这里给出这段代码，只是为了提醒您字符串处理支持和一些解析规则。但是，PHP V5.3.0 增加了增强的 heredoc 语法支持。下面显示了一个简单的例子。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php5.3%E7%9A%84%E6%96%B0%E7%89%B9%E6%96%B0/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

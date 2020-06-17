@@ -1,0 +1,760 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>php的文档句法(heredoc)</title>
+        <link>/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</link>
+        <pubDate>Fri, 12 Feb 2010 21:54:46 +0000</pubDate>
+        
+        <guid>/posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/</guid>
+        <description>清风徐来 /posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ -&lt;p&gt;不是新文章，以前写的。但是上次空间到期后数据都没了。网上有看到它，就把它弄回来了。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;双引号&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;定界符（heredoc syntax）&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;看见了吧，单引号居然可以用来表示字符串。那么如果我想表示单引号怎么办？和大多数语言一样，使用转义符号吧。即反斜线&amp;rdquo;&amp;quot;.那么使用单引号和双引号有什么区别呢？我的观点是没有多大区别。唯一的区别就是双引号可以应用更多的转义符。
+让我们定界符吧。它的语法是&amp;quot;&amp;laquo;&amp;lt;&amp;rdquo;。用法是在其后提供一个标识符，然后在标识符后提供字符串，再在字符串后提供此标识符来结尾。例如：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;2. 字符串的特别之处 &lt;!-- raw HTML omitted --&gt;
+从一个例子开始。
+假设里你有很长的一段字符串，比如一段话。几个月后，你发现你的需求改变，需要在这段话的某个位置插入一个变量。这个时候如果重新用字符串符肯定是相当复杂的。那么有没有其他的方法呢？请放心，PHP已经考虑到这一点了。那就是花括号的应用。
+对于PHP，它一般会按照如下规则解析：
+如果遇到美元符号（$），解析器会尽可能多地取得后面的字符以组成一个合法的变量名。如果想明示指定名字的结束，用花括号把变量名括起来。例如
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;3，字符串的常用操作。&lt;!-- raw HTML omitted --&gt;
+我想这是令我们异常激动的一个话题，并且也是非常实用的。
+字符串的函数比较多，我们还是介绍一部分函数吧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;字符串的整理函数 &lt;!-- raw HTML omitted --&gt;
+chop(),其实就是rtrim().当然rtrim()还是可以用的
+ltrim(),去掉字符串左边的多于空格。
+trim(),这个比较比较简单，就是把字符串左右2边的空格都给删除。
+&lt;!-- raw HTML omitted --&gt;字符串的格式化输出 &lt;!-- raw HTML omitted --&gt;
+实用HTML格式化的。nl2br().即在字符串的新一行前插入&lt;!-- raw HTML omitted --&gt;.
+&lt;!-- raw HTML omitted --&gt;
+echo nl2br(&amp;ldquo;foo isn&amp;quot;tn bar&amp;rdquo;);
+&lt;!-- raw HTML omitted --&gt;
+上面的字符串会分2行显示，如果把此函数去掉，就只在一行上显示了。
+&lt;!-- raw HTML omitted --&gt;打印输出的格式化&lt;!-- raw HTML omitted --&gt;
+PHP支持print()函数，它和echo一样，唯一的差别就是print()返回一个整型值，一直为1。除了print(),还有printf()和 sprintf(). 写到这里，你肯定会想，怎么和C一样呢。它们的工作方式一样，差别是printf()将结果输出到浏览器，而sprintf()这是输出到变量。&lt;/p&gt;
+&lt;p&gt;看看它们的定义吧。
+int printf ( string format [, mixed args [, mixed ]] )
+string sprintf ( string format [, mixed args [, mixed ]] )&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;改变字符串的大小写&lt;!-- raw HTML omitted --&gt;
+strtolower将字符串变为小写
+strtoupper将字符串变为大写
+ucfirst将字符串的第一个字符大写。
+ucwords 将字符串中的每一个单词的第一个字符变为大写。
+&lt;!-- raw HTML omitted --&gt;格式化字符，以便存储&lt;!-- raw HTML omitted --&gt;
+其实就是为了替换引号，反斜杠，NULL等，因为它们有的时候不适合于很多场合，比如存储到数据库。为了达到目的，addslashes是一个不错的选择，它使用反斜线引用字符串。为了在显示数据，需要在之前调用stripslashes，否则反斜杠会显示出来的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;字符串比较 &lt;!-- raw HTML omitted --&gt;
+strcmp,strcasecmp,strnatcmp,有时间再查一下
+strcmp(str1,str2)用来比较二字符串的大小。返回负数表示 str1 小于 str2；返回正数表示 str1 大于 str2；返回零表示二字符串相同。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;字符串长度请调用strlen&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;字符串连接与分割&lt;!-- raw HTML omitted --&gt;
+explode类似于C#里的Split函数。例如
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;查找字符串的位置可以使用strpos()以及strrpos().&lt;/p&gt;
+&lt;p&gt;替换的话，调用str_replace()以及substr_replace().&lt;/p&gt;
+&lt;p&gt;以上介绍都是最常用的，如果想得到更多字符串的函数以及函数的信息，参考PHP的函数文档。&lt;/p&gt;
+- /posts/php%E7%9A%84%E6%96%87%E6%A1%A3%E5%8F%A5%E6%B3%95heredoc/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP备忘</title>
+        <link>/posts/php%E5%A4%87%E5%BF%98/</link>
+        <pubDate>Thu, 04 Feb 2010 20:33:58 +0000</pubDate>
+        
+        <guid>/posts/php%E5%A4%87%E5%BF%98/</guid>
+        <description>清风徐来 /posts/php%E5%A4%87%E5%BF%98/ -&lt;p&gt;1，stdClass
+他是php内置的一个类，提供给我们直接实例化使用。
+&lt;!-- raw HTML omitted --&gt;
+$obj = new stdClass();
+$obj-&amp;gt;prop = &amp;lsquo;hello world&amp;rsquo;;
+echo $obj-&amp;gt;prop;
+&lt;!-- raw HTML omitted --&gt;
+我们可以看看他的内部结构
+&lt;!-- raw HTML omitted --&gt;
+Reflection::export(new ReflectionClass(&amp;lsquo;stdClass&amp;rsquo;));
+/* 输出结果
+Class [ &lt;!-- raw HTML omitted --&gt; class stdClass ] {&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Constants [0] {
+}&lt;/li&gt;
+&lt;li&gt;Static properties [0] {
+}&lt;/li&gt;
+&lt;li&gt;Static methods [0] {
+}&lt;/li&gt;
+&lt;li&gt;Properties [0] {
+}&lt;/li&gt;
+&lt;li&gt;Methods [0] {
+}
+}
+&lt;!-- raw HTML omitted --&gt;
+*/
+&lt;!-- raw HTML omitted --&gt;
+2，php的exception和error处理
+他们各自的发生：
+exception可以通过php5 的try{}抛出，然后通过catch{}被捕获。
+php内置函数执行时发生问题，是通过trigger_error显示error。
+使用异常：
+&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;// set_error_handler()函数用于让用户自定义错误处理函数
+// set_error_handler(error_function, error_type)
+// error_function 必须, 制定发生错误时运行的函数
+// error_type 可选, 规定不同的错误级别提示的不同信息, 默认是&amp;quot;E_ALL&amp;rdquo;
+set_error_handler(&amp;lsquo;ErrorHandler&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;$foo = 2;
+if ($foo &amp;gt; 1) {
+// trigger_error()接收一个错误信息和一个常量作为参数,
+// 常量为 E_USER_ERROR -&amp;gt; a fatal error
+//       E_USER_WARNING -&amp;gt; a non-fatal error
+//       E_USER_NOTICE -&amp;gt; a report that may not represent an error
+trigger_error(&amp;ldquo;A custom error has been trigglered&amp;rdquo;, E_USER_ERROR);
+}
+echo &amp;lsquo;Go on&amp;hellip;&#39;;
+&lt;!-- raw HTML omitted --&gt;
+不同之处，处理异常后，脚本不再执行；但是error有可能会继续执行。
+整理一下，可以放到tinymvc里做script plugin。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php%E5%A4%87%E5%BF%98/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>TinyMVC中文手册</title>
+        <link>/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+        <pubDate>Wed, 03 Feb 2010 09:04:40 +0000</pubDate>
+        
+        <guid>/posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+        <description>清风徐来 /posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;pre&gt;&lt;code&gt;照例，先罗嗦几句。
+一直想把codeigniter的代码通读一遍，虽然codeigniter是比较轻量级的php框架，但是里面的东西还是很多的，所以一直没有实现。顺便也一直在寻找适合的代替品。其间，大致看了&amp;lt;a href=&amp;quot;http://www.skiyo.cn/punny/&amp;quot;&amp;gt;punny&amp;lt;/a&amp;gt;，还有很自由的&amp;lt;a href=&amp;quot;http://code.google.com/p/lotusphp/&amp;quot;&amp;gt;lotusphp&amp;lt;/a&amp;gt;。lotusphp 这个不像是框架了，倒像是个php的几个常用功能封装起来的组件，很牛13的，好多都可以作为插件放到tinymvc里去。。。
+最后还是选中了tinymvc。理由，它确实很小，但是我要的东西他基本都有了：
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;url路由&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;pdo封装&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;自由的插件机制&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;php5 only&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;最关键的是和codeigniter非常相似的结构和语法&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;于是，淡水抱恙（身体和心理都有病）花费了一天的时间，通读了一般它的代码，翻译了它的文档，也就是这个《TinyMVC中文手册》了。如果想研究一下Php的框架，可以从这个入手。没有很多的分岔干扰，比较干净。如果你有什么建议或是插件需要分享的，可以留言。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;TinyMVC中文手册&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/tinymvc%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter 和 Doctrine 从零开始 1-8章翻译打包下载</title>
+        <link>/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</link>
+        <pubDate>Tue, 26 Jan 2010 09:19:53 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/</guid>
+        <description>清风徐来 /posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ -&lt;p&gt;简介一下：
+CodeIgniter 和 Doctrine 从零开始 是ci配合一个php的orm类库结合开发一个论坛的例子。
+这一系列文章，写的不错，&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;一直在跟着翻译。本想当作新春贺礼的，但是看到有人已经开始重复劳动了，还是先放出下载吧。
+暂时只有八章，第九章还在翻译中，原作者写到了第十章了。
+原作者地址：
+&lt;a href=&#34;http://www.phpandstuff.com/&#34;&gt;http://www.phpandstuff.com/&lt;/a&gt;
+&lt;!-- raw HTML omitted --&gt;CodeIgniter 和 Doctrine 从零开始 1-8&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/codeigniter-%E5%92%8C-doctrine-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B-1-8%E7%AB%A0%E7%BF%BB%E8%AF%91%E6%89%93%E5%8C%85%E4%B8%8B%E8%BD%BD/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>基于PHP的cURL快速入门[译][转]</title>
+        <link>/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</link>
+        <pubDate>Tue, 19 Jan 2010 15:41:26 +0000</pubDate>
+        
+        <guid>/posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ -&lt;p&gt;本来想要翻译的，不想在蓝色上已经有人译好了。直接yy然后p吧（linux下vi的复制粘贴指令，最近捣鼓linux比较多些）。
+原文地址：http://net.tutsplus.com/tutorials/php/techniques-and-resources-for-mastering-curl/
+译文地址：http://bbs.blueidea.com/viewthread.php?tid=2966700&amp;amp;extra=page%3D1%26amp%3Bfilter%3Dtype%26amp%3Btypeid%3D20&lt;/p&gt;
+&lt;p&gt;cURL 是一个利用URL语法规定来传输文件和数据的工具，支持很多协议，如HTTP、FTP、TELNET等。最爽的是，PHP也支持 cURL 库。本文将介绍 cURL 的一些高级特性，以及在PHP中如何运用它。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;为什么要用 cURL?&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;是的，我们可以通过其他办法获取网页内容。大多数时候，我因为想偷懒，都直接用简单的PHP函数：
+&lt;!-- raw HTML omitted --&gt;$content = file_get_contents(&amp;ldquo;&lt;a href=&#34;http://www.nettuts.com&#34;&gt;http://www.nettuts.com&lt;/a&gt;&amp;rdquo;);
+// or
+$lines = file(&amp;ldquo;&lt;a href=&#34;http://www.nettuts.com&#34;&gt;http://www.nettuts.com&lt;/a&gt;&amp;rdquo;);
+// or
+readfile(&lt;a href=&#34;http://www.nettuts.com&#34;&gt;http://www.nettuts.com&lt;/a&gt;);&lt;!-- raw HTML omitted --&gt;
+不过，这种做法缺乏灵活性和有效的错误处理。而且，你也不能用它完成一些高难度任务——比如处理coockies、验证、表单提交、文件上传等等。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;基本结构&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在学习更为复杂的功能之前，先来看一下在PHP中建立cURL请求的基本步骤：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;// 1. 初始化
+$ch = curl_init();
+// 2. 设置选项，包括URL
+curl_setopt($ch, CURLOPT_URL, &amp;ldquo;&lt;a href=&#34;http://www.nettuts.com&#34;&gt;http://www.nettuts.com&lt;/a&gt;&amp;rdquo;);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+// 3. 执行并获取HTML文档内容
+$output = curl_exec($ch);
+// 4. 释放curl句柄
+curl_close($ch);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;第二步（也就是 curl_setopt() ）最为重要，一切玄妙均在此。有一长串cURL参数可供设置，它们能指定URL请求的各个细节。要一次性全部看完并理解可能比较困难，所以今天我们只试一下那些更常用也更有用的选项。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;检查错误&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;你可以加一段检查错误的语句（虽然这并不是必需的）：
+&lt;!-- raw HTML omitted --&gt;// &amp;hellip;
+$output = curl_exec($ch);
+if ($output === FALSE) {
+echo &amp;ldquo;cURL Error: &amp;quot; . curl_error($ch);
+}
+// &amp;hellip;&lt;!-- raw HTML omitted --&gt;
+请注意，比较的时候我们用的是“=== FALSE”，而非“== FALSE”。因为我们得区分 空输出 和 布尔值FALSE，后者才是真正的错误。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;获取信息&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这是另一个可选的设置项，能够在cURL执行后获取这一请求的有关信息：
+&lt;!-- raw HTML omitted --&gt;// &amp;hellip;
+curl_exec($ch);
+$info = curl_getinfo($ch);
+echo &amp;lsquo;获取&amp;rsquo;. $info[&amp;lsquo;url&amp;rsquo;] . &amp;lsquo;耗时&amp;rsquo;. $info[&amp;lsquo;total_time&amp;rsquo;] . &amp;lsquo;秒&amp;rsquo;;
+// &amp;hellip;&lt;!-- raw HTML omitted --&gt;
+返回的数组中包括了以下信息：
+“url” //资源网络地址
+“content_type” //内容编码
+“http_code” //HTTP状态码
+“header_size” //header的大小
+“request_size” //请求的大小
+“filetime” //文件创建时间
+“ssl_verify_result” //SSL验证结果
+“redirect_count” //跳转技术
+“total_time” //总耗时
+“namelookup_time” //DNS查询耗时
+“connect_time” //等待连接耗时
+“pretransfer_time” //传输前准备耗时
+“size_upload” //上传数据的大小
+“size_download” //下载数据的大小
+“speed_download” //下载速度
+“speed_upload” //上传速度
+“download_content_length”//下载内容的长度
+“upload_content_length” //上传内容的长度
+“starttransfer_time” //开始传输的时间
+“redirect_time”//重定向耗时&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;基于浏览器的重定向&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在第一个例子中，我们将提供一段用于侦测服务器是否有基于浏览器的重定向的代码。例如，有些网站会根据是否是手机浏览器甚至用户来自哪个国家来重定向网页。&lt;/p&gt;
+&lt;p&gt;我们利用 CURLOPT_HTTPHEADER 选项来设定我们发送出的HTTP请求头信息（http headers），包括user agent信息和默认语言。然后我们来看看这些特定网站是否会把我们重定向到不同的URL。
+&lt;!-- raw HTML omitted --&gt;// 测试用的URL
+$urls = array(
+&amp;ldquo;&lt;a href=&#34;http://www.cnn.com&#34;&gt;http://www.cnn.com&lt;/a&gt;&amp;rdquo;,
+&amp;ldquo;&lt;a href=&#34;http://www.mozilla.com&#34;&gt;http://www.mozilla.com&lt;/a&gt;&amp;rdquo;,
+&amp;ldquo;&lt;a href=&#34;http://www.facebook.com&#34;&gt;http://www.facebook.com&lt;/a&gt;&amp;rdquo;
+);
+// 测试用的浏览器信息
+$browsers = array(
+&amp;ldquo;standard&amp;rdquo; =&amp;gt; array (
+&amp;ldquo;user_agent&amp;rdquo; =&amp;gt; &amp;ldquo;Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 (.NET CLR 3.5.30729)&amp;rdquo;,
+&amp;ldquo;language&amp;rdquo; =&amp;gt; &amp;ldquo;en-us,en;q=0.5&amp;rdquo;
+),
+&amp;ldquo;iphone&amp;rdquo; =&amp;gt; array (
+&amp;ldquo;user_agent&amp;rdquo; =&amp;gt; &amp;ldquo;Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A537a Safari/419.3&amp;rdquo;,
+&amp;ldquo;language&amp;rdquo; =&amp;gt; &amp;ldquo;en&amp;rdquo;
+),
+&amp;ldquo;french&amp;rdquo; =&amp;gt; array (
+&amp;ldquo;user_agent&amp;rdquo; =&amp;gt; &amp;ldquo;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; GTB6; .NET CLR 2.0.50727)&amp;rdquo;,
+&amp;ldquo;language&amp;rdquo; =&amp;gt; &amp;ldquo;fr,fr-FR;q=0.5&amp;rdquo;
+)
+);
+foreach ($urls as $url) {
+echo &amp;ldquo;URL: $urln&amp;rdquo;;
+foreach ($browsers as $test_name =&amp;gt; $browser) {
+$ch = curl_init();
+// 设置 url
+curl_setopt($ch, CURLOPT_URL, $url);
+// 设置浏览器的特定header
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+&amp;ldquo;User-Agent: {$browser[&amp;lsquo;user_agent&amp;rsquo;]}&amp;rdquo;,
+&amp;ldquo;Accept-Language: {$browser[&amp;lsquo;language&amp;rsquo;]}&amp;rdquo;
+));
+// 页面内容我们并不需要
+curl_setopt($ch, CURLOPT_NOBODY, 1);
+// 只需返回HTTP header
+curl_setopt($ch, CURLOPT_HEADER, 1);
+// 返回结果，而不是输出它
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
+curl_close($ch);
+// 有重定向的HTTP头信息吗?
+if (preg_match(&amp;quot;!Location: (.*)!&amp;rdquo;, $output, $matches)) {
+echo &amp;ldquo;$test_name: redirects to $matches[1]n&amp;rdquo;;
+} else {
+echo &amp;ldquo;$test_name: no redirectionn&amp;rdquo;;
+}
+}
+echo &amp;ldquo;nn&amp;rdquo;;
+}&lt;!-- raw HTML omitted --&gt;
+首先，我们建立一组需要测试的URL，接着指定一组需要测试的浏览器信息。最后通过循环测试各种URL和浏览器匹配可能产生的情况。&lt;/p&gt;
+&lt;p&gt;因为我们指定了cURL选项，所以返回的输出内容则只包括HTTP头信息（被存放于 $output 中）。利用一个简单的正则，我们检查这个头信息中是否包含了“Location:”字样。&lt;/p&gt;
+&lt;p&gt;运行这段代码应该会返回如下结果：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;用POST方法发送数据&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当发起GET请求时，数据可以通过“查询字串”（query string）传递给一个URL。例如，在google中搜索时，搜索关键即为URL的查询字串的一部分：
+&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.google.com/search?q=nettuts&#34;&gt;http://www.google.com/search?q=nettuts&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+这种情况下你可能并不需要cURL来模拟。把这个URL丢给“file_get_contents()”就能得到相同结果。&lt;/p&gt;
+&lt;p&gt;不过有一些HTML表单是用POST方法提交的。这种表单提交时，数据是通过 HTTP请求体（request body） 发送，而不是查询字串。例如，当使用CodeIgniter论坛的表单，无论你输入什么关键字，总是被POST到如下页面：
+&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://codeigniter.com/forums/do_search/&#34;&gt;http://codeigniter.com/forums/do_search/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+你可以用PHP脚本来模拟这种URL请求。首先，新建一个可以接受并显示POST数据的文件，我们给它命名为post_output.php：
+&lt;!-- raw HTML omitted --&gt;print_r($_POST);&lt;!-- raw HTML omitted --&gt;
+接下来，写一段PHP脚本来执行cURL请求：
+&lt;!-- raw HTML omitted --&gt;$url = &amp;ldquo;http://localhost/post_output.php&amp;rdquo;;
+$post_data = array (
+&amp;ldquo;foo&amp;rdquo; =&amp;gt; &amp;ldquo;bar&amp;rdquo;,
+&amp;ldquo;query&amp;rdquo; =&amp;gt; &amp;ldquo;Nettuts&amp;rdquo;,
+&amp;ldquo;action&amp;rdquo; =&amp;gt; &amp;ldquo;Submit&amp;rdquo;
+);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 我们在POST数据哦！
+curl_setopt($ch, CURLOPT_POST, 1);
+// 把post的变量加上
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+$output = curl_exec($ch);
+curl_close($ch);
+echo $output;&lt;!-- raw HTML omitted --&gt;
+执行代码后应该会得到以下结果：
+Array
+(
+[foo]=&amp;gt;bar
+[query]=&amp;gt;Nettuts
+[action]=&amp;gt;Submit
+)
+这段脚本发送一个POST请求给 post_output.php ，这个页面 $_POST 变量并返回，我们利用cURL捕捉了这个输出。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;文件上传&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;上传文件和前面的POST十分相似。因为所有的文件上传表单都是通过POST方法提交的。&lt;/p&gt;
+&lt;p&gt;首先新建一个接收文件的页面，命名为 upload_output.php：
+&lt;!-- raw HTML omitted --&gt;print_r($_FILES);&lt;!-- raw HTML omitted --&gt;
+以下是真正执行文件上传任务的脚本：
+&lt;!-- raw HTML omitted --&gt;$url = &amp;ldquo;http://localhost/upload_output.php&amp;rdquo;;
+$post_data = array (
+&amp;ldquo;foo&amp;rdquo; =&amp;gt; &amp;ldquo;bar&amp;rdquo;,
+// 要上传的本地文件地址
+&amp;ldquo;upload&amp;rdquo; =&amp;gt; &amp;ldquo;@C:/wamp/www/test.zip&amp;rdquo;
+);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+$output = curl_exec($ch);
+curl_close($ch);
+echo $output;&lt;!-- raw HTML omitted --&gt;
+如果你需要上传一个文件，只需要把文件路径像一个post变量一样传过去，不过记得在前面加上@符号。执行这段脚本应该会得到如下输出：
+Array
+(
+[upload]=&amp;gt; Array
+(
+[name] =&amp;gt; test.zip
+[type] =&amp;gt;application/octe-stream
+[tmp_name] =&amp;gt;c:wamptmpphp4CCB.tmp
+[error] =&amp;gt;0
+[size] =&amp;gt;1183642
+)
+)&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;cURL批处理（multi cURL）&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;cURL还有一个高级特性——批处理句柄（handle）。这一特性允许你同时或异步地打开多个URL连接。&lt;/p&gt;
+&lt;p&gt;下面是来自来自php.net的示例代码：
+&lt;!-- raw HTML omitted --&gt;// 创建两个cURL资源
+$ch1 = curl_init();
+$ch2 = curl_init();
+// 指定URL和适当的参数
+curl_setopt($ch1, CURLOPT_URL, &amp;ldquo;&lt;a href=&#34;http://lxr.php.net/%22);&#34;&gt;http://lxr.php.net/&amp;quot;);&lt;/a&gt;
+curl_setopt($ch1, CURLOPT_HEADER, 0);
+curl_setopt($ch2, CURLOPT_URL, &amp;ldquo;&lt;a href=&#34;http://www.php.net/%22);&#34;&gt;http://www.php.net/&amp;quot;);&lt;/a&gt;
+curl_setopt($ch2, CURLOPT_HEADER, 0);
+// 创建cURL批处理句柄
+$mh = curl_multi_init();
+// 加上前面两个资源句柄
+curl_multi_add_handle($mh,$ch1);
+curl_multi_add_handle($mh,$ch2);
+// 预定义一个状态变量
+$active = null;
+// 执行批处理
+do {
+$mrc = curl_multi_exec($mh, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+while ($active &amp;amp;&amp;amp; $mrc == CURLM_OK) {
+if (curl_multi_select($mh) != -1) {
+do {
+$mrc = curl_multi_exec($mh, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+}
+}
+// 关闭各个句柄
+curl_multi_remove_handle($mh, $ch1);
+curl_multi_remove_handle($mh, $ch2);
+curl_multi_close($mh);&lt;!-- raw HTML omitted --&gt;
+这里要做的就是打开多个cURL句柄并指派给一个批处理句柄。然后你就只需在一个while循环里等它执行完毕。&lt;/p&gt;
+&lt;p&gt;这个示例中有两个主要循环。第一个 do-while 循环重复调用 curl_multi_exec() 。这个函数是无隔断（non-blocking）的，但会尽可能少地执行。它返回一个状态值，只要这个值等于常量 CURLM_CALL_MULTI_PERFORM ，就代表还有一些刻不容缓的工作要做（例如，把对应URL的http头信息发送出去）。也就是说，我们需要不断调用该函数，直到返回值发生改变。&lt;/p&gt;
+&lt;p&gt;而接下来的 while 循环，只在 $active 变量为 true 时继续。这一变量之前作为第二个参数传给了 curl_multi_exec() ，代表只要批处理句柄中是否还有活动连接。接着，我们调用 curl_multi_select() ，在活动连接（例如接受服务器响应）出现之前，它都是被“屏蔽”的。这个函数成功执行后，我们又会进入另一个 do-while 循环，继续下一条URL。&lt;/p&gt;
+&lt;p&gt;还是来看一看怎么把这一功能用到实处吧：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;WordPress 连接检查器&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;想象一下你有一个文章数目庞大的博客，这些文章中包含了大量外部网站链接。一段时间之后，因为这样那样的原因，这些链接中相当数量都失效了。要么是被和谐了，要么是整个站点都被功夫网了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;我们下面建立一个脚本，分析所有这些链接，找出打不开或者404的网站/网页，并生成一个报告。&lt;/p&gt;
+&lt;p&gt;请注意，以下并不是一个真正可用的WordPress插件，仅仅是一段独立功能的脚本而已，仅供演示，谢谢。&lt;/p&gt;
+&lt;p&gt;好，开始吧。首先，从数据库中读取所有这些链接：
+&lt;!-- raw HTML omitted --&gt;// CONFIG
+$db_host = &amp;lsquo;localhost&amp;rsquo;;
+$db_user = &amp;lsquo;root&amp;rsquo;;
+$db_pass = &amp;lsquo;&#39;;
+$db_name = &amp;lsquo;wordpress&amp;rsquo;;
+$excluded_domains = array(
+&amp;lsquo;localhost&amp;rsquo;, &amp;lsquo;&lt;a href=&#34;http://www.mydomain.com&#34;&gt;www.mydomain.com&lt;/a&gt;&amp;rsquo;);
+$max_connections = 10;
+// 初始化一些变量
+$url_list = array();
+$working_urls = array();
+$dead_urls = array();
+$not_found_urls = array();
+$active = null;
+// 连到 MySQL
+if (!mysql_connect($db_host, $db_user, $db_pass)) {
+die(&amp;lsquo;Could not connect: &#39; . mysql_error());
+}
+if (!mysql_select_db($db_name)) {
+die(&amp;lsquo;Could not select db: &#39; . mysql_error());
+}
+// 找出所有含有链接的文章
+$q = &amp;ldquo;SELECT post_content FROM wp_posts
+WHERE post_content LIKE &amp;lsquo;%href=%&amp;rsquo;
+AND post_status = &amp;lsquo;publish&amp;rsquo;
+AND post_type = &amp;lsquo;post&amp;rsquo;&amp;quot;;
+$r = mysql_query($q) or die(mysql_error());
+while ($d = mysql_fetch_assoc($r)) {
+// 用正则匹配链接
+if (preg_match_all(&amp;quot;!href=&amp;rdquo;(.*?)&amp;rdquo;!&amp;rdquo;, $d[&amp;lsquo;post_content&amp;rsquo;], $matches)) {
+foreach ($matches[1] as $url) {
+// exclude some domains
+$tmp = parse_url($url);
+if (in_array($tmp[&amp;lsquo;host&amp;rsquo;], $excluded_domains)) {
+continue;
+}
+// store the url
+$url_list []= $url;
+}
+}
+}
+// 移除重复链接
+$url_list = array_values(array_unique($url_list));
+if (!$url_list) {
+die(&amp;lsquo;No URL to check&amp;rsquo;);
+}&lt;!-- raw HTML omitted --&gt;
+我们首先配置好数据库，一系列要排除的域名（$excluded_domains），以及最大并发连接数（$max_connections）。然后，连接数据库，获取文章和包含的链接，把它们收集到一个数组中（$url_list）。&lt;/p&gt;
+&lt;p&gt;下面的代码有点复杂了，因此我将一小步一小步地详细解释：
+&lt;!-- raw HTML omitted --&gt;// 1. 批处理器
+$mh = curl_multi_init();
+// 2. 加入需批量处理的URL
+for ($i = 0; $i &amp;lt; $max_connections; $i++) {
+add_url_to_multi_handle($mh, $url_list);
+}
+// 3. 初始处理
+do {
+$mrc = curl_multi_exec($mh, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+// 4. 主循环
+while ($active &amp;amp;&amp;amp; $mrc == CURLM_OK) {
+// 5. 有活动连接
+if (curl_multi_select($mh) != -1) {
+// 6. 干活
+do {
+$mrc = curl_multi_exec($mh, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+// 7. 有信息否？
+if ($mhinfo = curl_multi_info_read($mh)) {
+// 意味着该连接正常结束
+// 8. 从curl句柄获取信息
+$chinfo = curl_getinfo($mhinfo[&amp;lsquo;handle&amp;rsquo;]);
+// 9. 死链么？
+if (!$chinfo[&amp;lsquo;http_code&amp;rsquo;]) {
+$dead_urls []= $chinfo[&amp;lsquo;url&amp;rsquo;];
+// 10. 404了?
+} else if ($chinfo[&amp;lsquo;http_code&amp;rsquo;] == 404) {
+$not_found_urls []= $chinfo[&amp;lsquo;url&amp;rsquo;];
+// 11. 还能用
+} else {
+$working_urls []= $chinfo[&amp;lsquo;url&amp;rsquo;];
+}
+// 12. 移除句柄
+curl_multi_remove_handle($mh, $mhinfo[&amp;lsquo;handle&amp;rsquo;]);
+curl_close($mhinfo[&amp;lsquo;handle&amp;rsquo;]);
+// 13. 加入新URL，干活
+if (add_url_to_multi_handle($mh, $url_list)) {
+do {
+$mrc = curl_multi_exec($mh, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+}
+}
+}
+}
+// 14. 完了
+curl_multi_close($mh);
+echo &amp;ldquo;==Dead URLs==n&amp;rdquo;;
+echo implode(&amp;ldquo;n&amp;rdquo;,$dead_urls) . &amp;ldquo;nn&amp;rdquo;;
+echo &amp;ldquo;==404 URLs==n&amp;rdquo;;
+echo implode(&amp;ldquo;n&amp;rdquo;,$not_found_urls) . &amp;ldquo;nn&amp;rdquo;;
+echo &amp;ldquo;==Working URLs==n&amp;rdquo;;
+echo implode(&amp;ldquo;n&amp;rdquo;,$working_urls);
+// 15. 向批处理器添加url
+function add_url_to_multi_handle($mh, $url_list) {
+static $index = 0;
+// 如果还剩url没用
+if ($url_list[$index]) {
+// 新建curl句柄
+$ch = curl_init();
+// 配置url
+curl_setopt($ch, CURLOPT_URL, $url_list[$index]);
+// 不想输出返回的内容
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 重定向到哪儿我们就去哪儿
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+// 不需要内容体，能够节约带宽和时间
+curl_setopt($ch, CURLOPT_NOBODY, 1);
+// 加入到批处理器中
+curl_multi_add_handle($mh, $ch);
+// 拨一下计数器，下次调用该函数就能添加下一个url了
+$index++;
+return true;
+} else {
+// 没有新的URL需要处理了
+return false;
+}
+}&lt;!-- raw HTML omitted --&gt;
+下面解释一下以上代码。列表的序号对应着代码注释中的顺序数字。&lt;/p&gt;
+&lt;p&gt;新建一个批处理器。Created a multi handle.&lt;/p&gt;
+&lt;p&gt;稍后我们将创建一个把URL加入批处理器的函数 add_url_to_multi_handle() 。每当这个函数被调用，就有一个新url被加入批处理器。一开始，我们给批处理器添加了10个URL（这一数字由 $max_connections 所决定）。&lt;/p&gt;
+&lt;p&gt;运行 curl_multi_exec()  进行初始化工作是必须的，只要它返回 CURLM_CALL_MULTI_PERFORM 就还有事情要做。这么做主要是为了创建连接，它不会等待完整的URL响应。&lt;/p&gt;
+&lt;p&gt;只要批处理中还有活动连接主循环就会一直持续。&lt;/p&gt;
+&lt;p&gt;curl_multi_select() 会一直等待，直到某个URL查询产生活动连接。&lt;/p&gt;
+&lt;p&gt;cURL的活儿又来了，主要是获取响应数据。&lt;/p&gt;
+&lt;p&gt;检查各种信息。当一个URL请求完成时，会返回一个数组。&lt;/p&gt;
+&lt;p&gt;在返回的数组中有一个 cURL 句柄。我们利用其获取单个cURL请求的相应信息。&lt;/p&gt;
+&lt;p&gt;如果这是一个死链或者请求超时，不会返回http状态码。&lt;/p&gt;
+&lt;p&gt;如果这个页面找不到了，会返回404状态码。&lt;/p&gt;
+&lt;p&gt;其他情况我们都认为这个链接是可用的（当然，你也可以再检查一下500错误之类&amp;hellip;）。&lt;/p&gt;
+&lt;p&gt;从该批次移除这个cURL句柄，因为它已经没有利用价值了，关了它！&lt;/p&gt;
+&lt;p&gt;很好，现在可以另外加一个URL进来了。再一次地，初始化工作又开始进行&amp;hellip;&lt;/p&gt;
+&lt;p&gt;嗯，该干的都干了。关闭批处理器，生成报告。&lt;/p&gt;
+&lt;p&gt;回过头来看给批处理器添加新URL的函数。这个函数每调用一次，静态变量 $index 就递增一次，这样我们才能知道还剩多少URL没处理。&lt;/p&gt;
+&lt;p&gt;我把这个脚本在我的博客上跑了一遍（测试需要，有一些错误链接是故意加上的），结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;共检查约40个URL，只耗费两秒不到。当需要检查更加大量的URL时，其省心省力的效果可想而知！如果你同时打开10个连接，还能再快上10倍！另外，你还可以利用cURL批处理的无隔断特性来处理大量URL请求，而不会阻塞你的Web脚本。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;另一些有用的cURL 选项&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;HTTP 认证&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如果某个URL请求需要基于 HTTP 的身份验证，你可以使用下面的代码：
+&lt;!-- raw HTML omitted --&gt;$url = &amp;ldquo;&lt;a href=&#34;http://www.somesite.com/members/%22;&#34;&gt;http://www.somesite.com/members/&amp;quot;;&lt;/a&gt;
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 发送用户名和密码
+curl_setopt($ch, CURLOPT_USERPWD, &amp;ldquo;myusername:mypassword&amp;rdquo;);
+// 你可以允许其重定向
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+// 下面的选项让 cURL 在重定向后
+// 也能发送用户名和密码
+curl_setopt($ch, CURLOPT_UNRESTRICTED_AUTH, 1);
+$output = curl_exec($ch);
+curl_close($ch);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;FTP 上传&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP 自带有 FTP 类库， 但你也能用 cURL：
+&lt;!-- raw HTML omitted --&gt;// 开一个文件指针
+$file = fopen(&amp;quot;/path/to/file&amp;rdquo;, &amp;ldquo;r&amp;rdquo;);
+// url里包含了大部分所需信息
+$url = &amp;ldquo;&lt;a href=&#34;ftp://username:password@mydomain.com&#34;&gt;ftp://username:password@mydomain.com&lt;/a&gt;:21/path/to/new/file&amp;rdquo;;
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 上传相关的选项
+curl_setopt($ch, CURLOPT_UPLOAD, 1);
+curl_setopt($ch, CURLOPT_INFILE, $fp);
+curl_setopt($ch, CURLOPT_INFILESIZE, filesize(&amp;quot;/path/to/file&amp;rdquo;));
+// 是否开启ASCII模式 (上传文本文件时有用)
+curl_setopt($ch, CURLOPT_FTPASCII, 1);
+$output = curl_exec($ch);
+curl_close($ch);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;翻墙术&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;你可以用代理发起cURL请求：
+&lt;!-- raw HTML omitted --&gt;$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,&amp;lsquo;&lt;a href=&#34;http://www.example.com&#34;&gt;http://www.example.com&lt;/a&gt;&amp;rsquo;);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 指定代理地址
+curl_setopt($ch, CURLOPT_PROXY, &amp;lsquo;11.11.11.11:8080&amp;rsquo;);
+// 如果需要的话，提供用户名和密码
+curl_setopt($ch, CURLOPT_PROXYUSERPWD,&amp;lsquo;user:pass&amp;rsquo;);
+$output = curl_exec($ch);
+curl_close ($ch);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;回调函数&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;可以在一个URL请求过程中，让cURL调用某指定的回调函数。例如，在内容或者响应下载的过程中立刻开始利用数据，而不用等到完全下载完。
+&lt;!-- raw HTML omitted --&gt;$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,&amp;lsquo;&lt;a href=&#34;http://net.tutsplus.com&#34;&gt;http://net.tutsplus.com&lt;/a&gt;&amp;rsquo;);
+curl_setopt($ch, CURLOPT_WRITEFUNCTION,&amp;ldquo;progress_function&amp;rdquo;);
+curl_exec($ch);
+curl_close ($ch);
+function progress_function($ch,$str) {
+echo $str;
+return strlen($str);
+}&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个回调函数必须返回字串的长度，不然此功能将无法正常使用。&lt;/p&gt;
+&lt;p&gt;在URL响应接收的过程中，只要收到一个数据包，这个函数就会被调用。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;小结&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;今天我们一起学习了cURL库的强大功能和灵活的扩展性。希望你喜欢。下一次要发起URL请求时，考虑下cURL吧！&lt;/p&gt;
+&lt;p&gt;谢谢！&lt;/p&gt;
+- /posts/%E5%9F%BA%E4%BA%8Ephp%E7%9A%84curl%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%AF%91%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>mysql数据库的备份和恢复</title>
+        <link>/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+        <pubDate>Tue, 12 Jan 2010 14:20:47 +0000</pubDate>
+        
+        <guid>/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+        <description>清风徐来 /posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ -&lt;p&gt;利用了mysql自带的工具，效率高，也不怕文件过大。
+先说备份
+&lt;!-- raw HTML omitted --&gt;mysqldump -u数据库用户名 -p密码 dbname &amp;gt; 备份路径/导出名.sql&lt;!-- raw HTML omitted --&gt;
+就是把dbname数据库，导出到 备份路径/导出名.sql&lt;/p&gt;
+&lt;p&gt;恢复
+&lt;!-- raw HTML omitted --&gt;mysql -u数据库用户名 -p密码 dbname &amp;lt; 备份路径/数据库名.sql&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;mysql命令说完了，下面该shell了，用shell来实现mysql的自动备份。&lt;/p&gt;
+&lt;p&gt;建立shell
+mysqlback.sh 内容如下：
+&lt;!-- raw HTML omitted --&gt;#!/bin/bash
+X=&lt;code&gt;date +%Y%m%d&lt;/code&gt;				;获取当天时间，命名用
+M=/usr/local/mysql/bin				;mysql程序的路径
+B= /usr/back/mysql				;mysql备份的路径&lt;/p&gt;
+&lt;p&gt;$M/mysqldump -uroot -proot test &amp;gt; $B/$X.sql
+tar -zcvf $B/$X.tar.gz $B/$X.sql
+rm -rf $B/$X.sql&lt;!-- raw HTML omitted --&gt;
+tar 打包压缩后，rm 删除原sql文件
+然后添加到计划任务，每天3点05分自动执行：
+&lt;!-- raw HTML omitted --&gt;#echo &amp;ldquo;05 3 * * * root /usr/back/shell/mysqlback.sh &amp;amp;&amp;gt;/dev/null&amp;rdquo; &amp;raquo;/etc/crontab&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>vi/vim 中文乱码</title>
+        <link>/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+        <pubDate>Tue, 12 Jan 2010 10:43:46 +0000</pubDate>
+        
+        <guid>/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+        <description>清风徐来 /posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ -&lt;p&gt;linux下，用vi、vim编辑文件时，可能会碰到中文乱码。
+由于在windows下默认是gb编码，而vim默认是utf-8（gedit默认也是utf-8），所以打开会成乱码。修改了一下配置文件，使vi、vim支持gb编码就好了。
+$vi ~/.vimrc&lt;/p&gt;
+&lt;p&gt;let &amp;amp;termencoding=&amp;amp;encoding
+set fileencodings=utf-8,gbk&lt;/p&gt;
+&lt;p&gt;$:wq
+再次打开vi、vim，中文显示就正常了。&lt;/p&gt;
+- /posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>淡水的2009</title>
+        <link>/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
+        <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
+        
+        <guid>/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
+        <description>清风徐来 /posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ -&lt;p&gt;终于肯花一点点时间，做个小小的回望了。
+淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip;
+robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip;
+2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。&lt;/p&gt;
+- /posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>mysql的几个函数</title>
+        <link>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
+        
+        <guid>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 /posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ -&lt;p&gt;缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;先说简单点的方法：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)   where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;;
+&lt;!-- raw HTML omitted --&gt;
+细说一下：
+REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)，是替换空格
+REGEXP ，是mysql里的正则
+&amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。
+&lt;!-- raw HTML omitted --&gt;再来一个另类的：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+UPDATE customer_copy set fax= concat(substring_index(fax,&amp;rsquo; &amp;lsquo;,1), substring_index(fax,&amp;rsquo; &amp;lsquo;,-1))  where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;;
+&lt;!-- raw HTML omitted --&gt;
+这里用到了两个函数:concat(),substring_index()
+concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3
+substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串.
+SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysql.com&lt;/a&gt;&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql
+SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysql.com&lt;/a&gt;&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com
+解释一下，如果count是负数，就从右边开始计数和截取。
+substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。&lt;/p&gt;
+- /posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP数据记录批量更新代码</title>
+        <link>/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</link>
+        <pubDate>Wed, 16 Sep 2009 18:00:07 +0000</pubDate>
+        
+        <guid>/posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/</guid>
+        <description>清风徐来 /posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ -&lt;p&gt;需要用到，简单是思路，记录一下。不过用到的应该不多。。。
+一般会循环列出表记录到表单里
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95%E6%89%B9%E9%87%8F%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

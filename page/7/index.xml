@@ -1,0 +1,839 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>用Homebrew搞定MySQL-python</title>
+        <link>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</link>
+        <pubDate>Wed, 13 Aug 2014 14:35:00 +0000</pubDate>
+        
+        <guid>/posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/</guid>
+        <description>清风徐来 /posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ -&lt;p&gt;写php时，因为懒惰，所以在mac上用了mamp。
+后来，写python。MySQLdb一直无法安装，后来是单独安装了mysql-5.1.73-osx10.6-x86_64 。
+然后配置.bash_profile :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Setting PATH for MySQLdb
+
+PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/bin:${PATH}&amp;quot;
+export PATH
+export DYLD_LIBRARY_PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/lib&amp;quot;
+export VERSIONER_PYTHON_PREFER_64_BIT=no
+export VERSIONER_PYTHON_PREFER_32_BIT=yes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再使用pip安装既可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pip install MySQL-python
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;比较繁琐。后来发现不用在使用mamp还要再安装一个mysql就可以安装上MySQL-python的方法。用brew两行代码搞定：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install mysql-connector-c
+sudo pip install MySQL-python
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;爽翻天了。&lt;/p&gt;
+&lt;p&gt;另，安装 Homebrew:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;- /posts/%E7%94%A8homebrew%E6%90%9E%E5%AE%9Amysql-python/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Flight 中文手册</title>
+        <link>/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</link>
+        <pubDate>Thu, 12 Jun 2014 10:42:00 +0000</pubDate>
+        
+        <guid>/posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/</guid>
+        <description>清风徐来 /posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ -&lt;h1 id=&#34;flight-是什么&#34;&gt;Flight 是什么?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://flightphp.com&#34;&gt;Flight&lt;/a&gt;是快速的，简洁的可扩展的PHP开发框架。 Flight 使您能够快速轻松地构建REST风格的Web应用程序。
+中文手册由&lt;a href=&#34;http://kissjava.cn&#34;&gt;kissjava.cn&lt;/a&gt;翻译。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;require &amp;#39;flight/Flight.php&amp;#39;;
+
+Flight::route(&amp;#39;/&amp;#39;, function(){
+    echo &amp;#39;hello world!&amp;#39;;
+});
+
+Flight::start();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;** 转载请勿删改，并注明来源：http://kissjava.cn **&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://flightphp.com/learn&#34;&gt;Learn more&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;必要条件&#34;&gt;必要条件&lt;/h1&gt;
+&lt;p&gt;Flight 需要 &lt;code&gt;PHP 5.3&lt;/code&gt; 及以上版本.&lt;/p&gt;
+&lt;h1 id=&#34;许可&#34;&gt;许可&lt;/h1&gt;
+&lt;p&gt;Flight 按照 &lt;a href=&#34;http://flightphp.com/license&#34;&gt;MIT&lt;/a&gt; 许可发布。&lt;/p&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;p&gt;1. &lt;a href=&#34;https://github.com/mikecao/flight/tarball/master&#34;&gt;下载&lt;/a&gt; 并解压
+Flight framework 文件到你的web目录。&lt;/p&gt;
+&lt;p&gt;2. 配置你的web服务器。&lt;/p&gt;
+&lt;p&gt;如果是 &lt;em&gt;Apache&lt;/em&gt;, 对照下面编辑 &lt;code&gt;.htaccess&lt;/code&gt; 文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果是 &lt;em&gt;Nginx&lt;/em&gt;, 把下面添加到你的服务器声明:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3. 建立 &lt;code&gt;index.php&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;p&gt;先要把框架include进来。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;require &amp;#39;flight/Flight.php&amp;#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后，定义一个路由，并指定一个函数来处理请求。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/&amp;#39;, function(){
+    echo &amp;#39;hello world!&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后，启动框架。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::start();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;routing-路由&#34;&gt;Routing 路由&lt;/h1&gt;
+&lt;p&gt;Flight中路由是通过匹配RUL模式，调用回调函数进行的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/&amp;#39;, function(){
+    echo &amp;#39;hello world!&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;回调可以是任何可以调用的对象。所以，你也可以采用先定义再注册的方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;function hello(){
+    echo &amp;#39;hello world!&amp;#39;;
+}
+
+Flight::route(&amp;#39;/&amp;#39;, &amp;#39;hello&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者，定义类方法，再注册调用:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;class Greeting {
+    public static function hello() {
+        echo &amp;#39;hello world!&amp;#39;;
+    }
+}
+
+Flight::route(&amp;#39;/&amp;#39;, array(&amp;#39;Greeting&amp;#39;,&amp;#39;hello&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;路由按他们定义的顺序进行匹配。第一个匹配的路由将被调用。&lt;/p&gt;
+&lt;h2 id=&#34;method-routing-请求方式的路由&#34;&gt;Method Routing 请求方式的路由&lt;/h2&gt;
+&lt;p&gt;默认情况下，路由模式匹配所有请求方式。
+你可以回应具体的一个请求方式，只要在URL之前放置一个标识符。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;GET /&amp;#39;, function(){
+    echo &amp;#39;I received a GET request.&amp;#39;;
+});
+
+Flight::route(&amp;#39;POST /&amp;#39;, function(){
+    echo &amp;#39;I received a POST request.&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;您也可以一个回调对应多个请求方式，使用&#39;|&#39;分隔符：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;GET|POST /&amp;#39;, function(){
+    echo &amp;#39;I received either a GET or a POST request.&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;regular-expressions-正则表达式&#34;&gt;Regular Expressions 正则表达式&lt;/h2&gt;
+&lt;p&gt;你可以在路由中使用正则表达式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/user/[0-9]+&amp;#39;, function(){
+    // This will match /user/1234
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;named-parameters-命名参数&#34;&gt;Named Parameters 命名参数&lt;/h2&gt;
+&lt;p&gt;你可以指定路由中的命名参数，参数将被传递
+您的回调函数。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/@name/@id&amp;#39;, function($name, $id){
+    echo &amp;#34;hello, $name ($id)!&amp;#34;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你也可以在命名参数中使用正则表达式，通过&lt;code&gt;:&lt;/code&gt;分割：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/@name/@id:[0-9]{3}&amp;#39;, function($name, $id){
+    // This will match /bob/123
+    // But will not match /bob/12345
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;optional-parameters-可选参数&#34;&gt;Optional Parameters 可选参数&lt;/h2&gt;
+&lt;p&gt;你可以用括号来指定哪些命名参数是可选的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/blog(/@year(/@month(/@day)))&amp;#39;, function($year, $month, $day){
+    // 这将匹配下列URL:
+    // /blog/2012/12/10
+    // /blog/2012/12
+    // /blog/2012
+    // /blog
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;任何未匹配的可选参数都将传递NULL过去。&lt;/p&gt;
+&lt;h2 id=&#34;wildcards-通配符&#34;&gt;Wildcards 通配符&lt;/h2&gt;
+&lt;p&gt;匹配只是对应了URL部分情况。
+如果你想匹配更多，可以使用&lt;code&gt;*&lt;/code&gt;通配符。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/blog/*&amp;#39;, function(){
+    // This will match /blog/2000/02/01
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;所有请求路由到一个回调函数，你可以这样做：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;*&amp;#39;, function(){
+    // Do something
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;passing-传递&#34;&gt;Passing 传递&lt;/h2&gt;
+&lt;p&gt;您可以通过从返回&lt;code&gt;true&lt;/code&gt;,从而传递到下一个匹配的路由执行
+您的回调函数。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/user/@name&amp;#39;, function($name){
+    // 检查一些条件
+    if ($name != &amp;#34;Bob&amp;#34;) {
+        // 继续下一个路由
+        return true;
+    }
+});
+
+Flight::route(&amp;#39;/user/*&amp;#39;, function(){
+    // 这里会被调用
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;route-info-路由信息&#34;&gt;Route Info 路由信息&lt;/h2&gt;
+&lt;p&gt;您匹配的回调将被传递路由的对象，你可以用它来检查
+路由信息。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/&amp;#39;, function($route){
+    // 匹配的 HTTP methods（请求方式) 数组
+    $route-&amp;gt;methods;
+
+    // 命名参数数组
+    $route-&amp;gt;params;
+
+    // 匹配正则表达式
+    $route-&amp;gt;regex;
+
+    // 包含&amp;#39;*&amp;#39;在URL模式中使用的所有内容
+    $route-&amp;gt;splat;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;extending-扩展&#34;&gt;Extending 扩展&lt;/h1&gt;
+&lt;p&gt;Flight 被设计成可扩展的框架。框架提供了一组默认的方法和组件，
+但是框架也允许你map（映射）你自己的方法，
+注册您自己的类，甚至重写现有的类和方法。&lt;/p&gt;
+&lt;h2 id=&#34;mapping-methods-映射方法&#34;&gt;Mapping Methods 映射方法&lt;/h2&gt;
+&lt;p&gt;映射自定义的方法，您可以使用&lt;code&gt;map&lt;/code&gt;函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 映射你的方法
+Flight::map(&amp;#39;hello&amp;#39;, function($name){
+    echo &amp;#34;hello $name!&amp;#34;;
+});
+
+// 调用自定义的方法
+Flight::hello(&amp;#39;Bob&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;registering-classes-注册类&#34;&gt;Registering Classes 注册类&lt;/h2&gt;
+&lt;p&gt;注册自定义的类，你可以使用&lt;code&gt;register&lt;/code&gt;函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 注册自定义类
+Flight::register(&amp;#39;user&amp;#39;, &amp;#39;User&amp;#39;);
+
+// 得到一个自定义类的实例
+$user = Flight::user();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;该注册方法还允许将参数传递给类的构造函数。
+所以，加载你的自定义类，它会预先初始化。
+可以通过传递一个数组来定义构造函数的参数。
+下面是加载数据库连接的例子：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 注册带有构造函数参数的类
+Flight::register(&amp;#39;db&amp;#39;, &amp;#39;PDO&amp;#39;, array(&amp;#39;mysql:host=localhost;dbname=test&amp;#39;,&amp;#39;user&amp;#39;,&amp;#39;pass&amp;#39;));
+
+// 取得自定义类的一个实例
+// 这将按参数创建一个对象
+//
+//     new PDO(&amp;#39;mysql:host=localhost;dbname=test&amp;#39;,&amp;#39;user&amp;#39;,&amp;#39;pass&amp;#39;);
+//
+$db = Flight::db();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果你传递一个回调函数参数，它将会在类构造完后立即执行。
+这可以让你在程序中设置刚刚构造好的对象。
+回调函数接受一个参数，即新对象的实例。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 回调将被构造的对象作为参数
+Flight::register(&amp;#39;db&amp;#39;, &amp;#39;PDO&amp;#39;, array(&amp;#39;mysql:host=localhost;dbname=test&amp;#39;,&amp;#39;user&amp;#39;,&amp;#39;pass&amp;#39;), function($db){
+    $db-&amp;gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;默认情况下，每次加载类时，你会得到一个共享实例。
+要得到一个类的新的实例，只需传递&lt;code&gt;false&lt;/code&gt;参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 共享实例（单一实例）
+$shared = Flight::db();
+
+// 新的实例
+$new = Flight::db(false);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;记住，map映射的方法优先于register注册类。
+如果您使用相同的名称声明两个，只有映射的方法将被调用。&lt;/p&gt;
+&lt;h1 id=&#34;overriding-重写&#34;&gt;Overriding 重写&lt;/h1&gt;
+&lt;p&gt;Flight 可以让你重写其默认的功能，以满足自己的需要，
+无需修改任何代码。&lt;/p&gt;
+&lt;p&gt;例如，当Flight不能从URL匹配到路由, 他会调用 &lt;code&gt;notFound&lt;/code&gt;
+方法，发送一个 &lt;code&gt;HTTP 404&lt;/code&gt; 应答。
+你可以用 &lt;code&gt;map&lt;/code&gt; 方法重写此行为:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::map(&amp;#39;notFound&amp;#39;, function(){
+    // 显示自定义的404页面
+    include &amp;#39;errors/404.html&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Flight 还允许你替换框架的核心组件。
+例如，你可以用你自己的自定义类替换默认的路由器类：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 注册你的自定义类
+Flight::register(&amp;#39;router&amp;#39;, &amp;#39;MyRouter&amp;#39;);
+
+// 当Flight加载路由实例，它会加载您的类
+$myrouter = Flight::router();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;框架的 &lt;code&gt;map&lt;/code&gt; 和 &lt;code&gt;register&lt;/code&gt; 不可以重写。
+如果你试图重写，会出现错误。&lt;/p&gt;
+&lt;h1 id=&#34;filtering-过滤&#34;&gt;Filtering 过滤&lt;/h1&gt;
+&lt;p&gt;Flight允许你在调用方法前、后进行过滤。你不需要记忆预先定义的hooks。
+您可以过滤框架的所有方法，包括你已经映射的方法以及任何自定义的方法。&lt;/p&gt;
+&lt;p&gt;过滤器函数看起来像这样:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output) {
+    // 过滤器处理的代码
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用传入的变量，你可以操纵的输入、输出参数。&lt;/p&gt;
+&lt;p&gt;你可以运行一个过滤器在方法调用之前：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::before(&amp;#39;start&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    // Do something
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以运行一个过滤器在方法调用之后：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::after(&amp;#39;start&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    // Do something
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;只要你想你可以添加任意多的过滤器。
+他们将按照被定义的顺序进行调用。&lt;/p&gt;
+&lt;p&gt;下面是个的过滤处理的例子：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 映射自定义方法
+Flight::map(&amp;#39;hello&amp;#39;, function($name){
+    return &amp;#34;Hello, $name!&amp;#34;;
+});
+
+// Add a before filter 添加一个前置过滤器
+Flight::before(&amp;#39;hello&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    // 操作参数
+    $params[0] = &amp;#39;Fred&amp;#39;;
+});
+
+// Add an after filter 添加一个后置过滤器
+Flight::after(&amp;#39;hello&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    // 控制输出
+    $output .= &amp;#34; Have a nice day!&amp;#34;;
+});
+
+// 调用自定义的方法
+echo Flight::hello(&amp;#39;Bob&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;应该得到如下显示:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Hello Fred! Have a nice day!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你定义了多个过滤器，
+你可以返回&lt;code&gt;false&lt;/code&gt;来打断过滤器的链式调用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::before(&amp;#39;start&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    echo &amp;#39;one&amp;#39;;
+});
+
+Flight::before(&amp;#39;start&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    echo &amp;#39;two&amp;#39;;
+
+    // 这里将结束调用
+    return false;
+});
+
+// 这里将不会被调用
+Flight::before(&amp;#39;start&amp;#39;, function(&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$params, &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;amp;&lt;/span&gt;$output){
+    echo &amp;#39;three&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意：核心方法&lt;code&gt;map&lt;/code&gt; 、 &lt;code&gt;register&lt;/code&gt;不能被过滤，因为他们不是动态调用的。&lt;/p&gt;
+&lt;h1 id=&#34;variables-变量&#34;&gt;Variables 变量&lt;/h1&gt;
+&lt;p&gt;Flight可以让您保存变量，让他们可以在应用程序任何地方使用。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 保存你的变量
+Flight::set(&amp;#39;id&amp;#39;, 123);
+
+// 你应用程序的其他地方
+$id = Flight::get(&amp;#39;id&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;要知道一个变量是否已经设置你可以这样做：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;if (Flight::has(&amp;#39;id&amp;#39;)) {
+     // Do something
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以清除一个变量:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 清除变量id
+Flight::clear(&amp;#39;id&amp;#39;);
+
+// 清除所有变量
+Flight::clear();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Flight也使用变量进行配置。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::set(&amp;#39;flight.log_errors&amp;#39;, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;views-视图&#34;&gt;Views 视图&lt;/h1&gt;
+&lt;p&gt;Flight 默认情况下提供一些基本的模板功能。 
+要显示一个视图模板调用&lt;code&gt;render&lt;/code&gt;方法，传递模板文件参数和可选的模板数据的名称：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::render(&amp;#39;hello.php&amp;#39;, array(&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;Bob&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;传递的模板数据被自动插入到模板类似于模板自己的变量。模板文件就是简单的PHP文件。&lt;br&gt;
+如果&lt;code&gt;hello.php&lt;/code&gt; 模板的内容如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Hello, &amp;#39;&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$name&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;#39;!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;输出将是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Hello, Bob!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;您也可以手动使用set方法来设置视图的变量：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::view()-&amp;gt;set(&amp;#39;name&amp;#39;, &amp;#39;Bob&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;变量 &lt;code&gt;name&lt;/code&gt; 现在就在你的视图里，你就可以直接渲染模板:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::render(&amp;#39;hello&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;请注意，在render方法中指定模板的名称时，可以忽略&lt;code&gt;.php&lt;/code&gt;的扩展名。&lt;/p&gt;
+&lt;p&gt;Flight默认会在&lt;code&gt;views&lt;/code&gt;目录下查找模板文件。 
+您可以通过设置，配置你的模板的路径：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::set(&amp;#39;flight.views.path&amp;#39;, &amp;#39;/path/to/views&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;layouts-布局&#34;&gt;Layouts 布局&lt;/h2&gt;
+&lt;p&gt;一般网站都有一个提供内容替换的布局模板文件。
+呈现在布局中的内容, 你可以传递一个可选参数给&lt;code&gt;render&lt;/code&gt;方法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::render(&amp;#39;header&amp;#39;, array(&amp;#39;heading&amp;#39; =&amp;gt; &amp;#39;Hello&amp;#39;), &amp;#39;header_content&amp;#39;);
+Flight::render(&amp;#39;body&amp;#39;, array(&amp;#39;body&amp;#39; =&amp;gt; &amp;#39;World&amp;#39;), &amp;#39;body_content&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在，您的两个已经渲染的视图将保存在两个变量 &lt;code&gt;header_content&lt;/code&gt; 和 &lt;code&gt;body_content&lt;/code&gt;中。
+然后，渲染你的布局视图：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::render(&amp;#39;layout&amp;#39;, array(&amp;#39;title&amp;#39; =&amp;gt; &amp;#39;Home Page&amp;#39;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果模板文件看起来像这样：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;header.php&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$heading&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;body.php&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$body&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;layout.php&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;html&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;title&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$title&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$header_content&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#1e889b&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;$body_content&lt;/span&gt;; &lt;span style=&#34;color:#1e889b&#34;&gt;?&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;输出如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;html&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;title&lt;/span&gt;&amp;gt;Home Page&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;Hello&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;World&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;custom-views-自定义视图&#34;&gt;Custom Views 自定义视图&lt;/h2&gt;
+&lt;p&gt;Flight允许你用自己的视图类替换默认的视图。
+参考这里使用&lt;a href=&#34;http://www.smarty.net/&#34;&gt;Smarty&lt;/a&gt;模板引擎作为你的视图:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// 加载Smarty library
+require &amp;#39;./Smarty/libs/Smarty.class.php&amp;#39;;
+
+// 注册Smarty成为视图类
+// 传递一个回调函数，用于对加载Smarty的配置
+Flight::register(&amp;#39;view&amp;#39;, &amp;#39;Smarty&amp;#39;, array(), function($smarty){
+    $smarty-&amp;gt;template_dir = &amp;#39;./templates/&amp;#39;;
+    $smarty-&amp;gt;compile_dir = &amp;#39;./templates_c/&amp;#39;;
+    $smarty-&amp;gt;config_dir = &amp;#39;./config/&amp;#39;;
+    $smarty-&amp;gt;cache_dir = &amp;#39;./cache/&amp;#39;;
+});
+
+// 指定模板变量数据
+Flight::view()-&amp;gt;assign(&amp;#39;name&amp;#39;, &amp;#39;Bob&amp;#39;);
+
+// 显示模板
+Flight::view()-&amp;gt;display(&amp;#39;hello.tpl&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了完整起见，你应该重写Flight的默认渲染方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::map(&amp;#39;render&amp;#39;, function($template, $data){
+    Flight::view()-&amp;gt;assign($data);
+    Flight::view()-&amp;gt;display($template);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;error-handling-错误处理&#34;&gt;Error Handling 错误处理&lt;/h1&gt;
+&lt;h2 id=&#34;errors-and-exceptions-错误和异常&#34;&gt;Errors and Exceptions 错误和异常&lt;/h2&gt;
+&lt;p&gt;所有的错误和异常捕获Flight都传递给&lt;code&gt;error&lt;/code&gt;方法。
+默认发送 &lt;code&gt;HTTP 500 Internal Server Error&lt;/code&gt; 应答以及一些错误信息。&lt;/p&gt;
+&lt;p&gt;你可以按自己的需求重写此行为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::map(&amp;#39;error&amp;#39;, function(Exception $ex){
+    // 处理错误
+    echo $ex-&amp;gt;getTraceAsString();
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;默认错误没有记录到服务器。
+如果想记录错误日志，你可以按以下方式修改:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::set(&amp;#39;flight.log_errors&amp;#39;, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;not-found-未找到页面&#34;&gt;Not Found 未找到页面&lt;/h2&gt;
+&lt;p&gt;如果页面未找到，Flight调用&lt;code&gt;notFound&lt;/code&gt;方法。
+默认会发送 &lt;code&gt;HTTP 404 Not Found&lt;/code&gt; 应答和一些简单信息。&lt;/p&gt;
+&lt;p&gt;你可以按自己的需求重写此行为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::map(&amp;#39;notFound&amp;#39;, function(){
+    // 处理未找到的错误
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;redirects-重定向&#34;&gt;Redirects 重定向&lt;/h1&gt;
+&lt;p&gt;你可以通过&lt;code&gt;redirect&lt;/code&gt;方法传递一个新的URL来重定向当前请求：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::redirect(&amp;#39;/new/location&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Flight 默认发送 HTTP 303 status code。 
+您也可以自己设置发送的HTTP status code：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::redirect(&amp;#39;/new/location&amp;#39;, 401);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;requests-请求&#34;&gt;Requests 请求&lt;/h1&gt;
+&lt;p&gt;Flight封装HTTP请求到一个单一的对象，
+通过以下方式访问它：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$request = Flight::request();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;请求（request）对象提供了以下属性：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url - 被请求的URL
+base - The parent subdirectory of the URL该URL的父子目录
+method - 请求方式(GET, POST, PUT, DELETE)
+referrer - 来源URL
+ip - 客户端的ip地址
+ajax - 该请求是否是一个AJAX请求
+scheme - 服务器协议 (http, https)
+user_agent - 浏览器信息
+body - 请求 body 中的原始数据
+type - 内容类型
+length - 内容长度
+query - 查询字符串参数
+data - POST参数
+cookies - Cookie参数
+files - 上传的文件
+secure - 是否是安全链接
+accept - HTTP accept 参数
+proxy_ip - 客户端的代理服务器IP地址
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;您可以以数组或是对象的方式访问 &lt;code&gt;query&lt;/code&gt;, &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;cookies&lt;/code&gt;, &lt;code&gt;files&lt;/code&gt; 的属性。&lt;/p&gt;
+&lt;p&gt;例如，要获得一个查询字符串参数，你可以这样做：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$id = Flight::request()-&amp;gt;query[&amp;#39;id&amp;#39;];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者你也可以这样子:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$id = Flight::request()-&amp;gt;query-&amp;gt;id;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;http-caching-http缓存&#34;&gt;HTTP Caching HTTP缓存&lt;/h1&gt;
+&lt;p&gt;Flight提供了HTTP级缓存的内置支持。如果缓存的条件得到满足，
+Flight 将返回&lt;code&gt;304 Not Modified&lt;/code&gt;的HTTP响应。
+下一次客户端请求相同的资源， 他们将被提示使用其本地缓存版本。&lt;/p&gt;
+&lt;h2 id=&#34;last-modified-最后修改&#34;&gt;Last-Modified 最后修改&lt;/h2&gt;
+&lt;p&gt;你可以使用&lt;code&gt;lastModified&lt;/code&gt; 方法并传递一个UNIX时间戳（timestamp）来设定页面的最后修改时间。
+客户端将继续使用其缓存，直到最后修改的值被改变。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/news&amp;#39;, function(){
+    Flight::lastModified(1234567890);
+    echo &amp;#39;This content will be cached.&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;etag&#34;&gt;ETag&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ETag&lt;/code&gt; 缓存类似于 &lt;code&gt;Last-Modified&lt;/code&gt;，
+但是它可以为资源指定ID ：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::route(&amp;#39;/news&amp;#39;, function(){
+    Flight::etag(&amp;#39;my-unique-id&amp;#39;);
+    echo &amp;#39;This content will be cached.&amp;#39;;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;无论调用&lt;code&gt;lastModified&lt;/code&gt; 或 &lt;code&gt;etag&lt;/code&gt;都将设置和检查缓存值。
+如果缓存的值和请求之间是相同的，
+Flight 会立即发送一个&lt;code&gt;HTTP 304&lt;/code&gt; 响应，并停止处理。&lt;/p&gt;
+&lt;h1 id=&#34;stopping&#34;&gt;Stopping&lt;/h1&gt;
+&lt;p&gt;您可以在任何时候通过调用&lt;code&gt;halt&lt;/code&gt;方法停止框架：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::halt();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;您也可以指定一个可选的&lt;code&gt;HTTP&lt;/code&gt;状态码和消息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::halt(200, &amp;#39;Be right back...&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;调用&lt;code&gt;halt&lt;/code&gt;将放弃任何回应的内容。
+如果你想停止的框架并且要返回当前响应，使用&lt;code&gt;stop&lt;/code&gt; 方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::stop();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;json&#34;&gt;JSON&lt;/h1&gt;
+&lt;p&gt;Flight提供了一个发送JSON和JSONP响应支持。
+发送一个JSON响应，传递一些数据进行JSON编码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::json(array(&amp;#39;id&amp;#39; =&amp;gt; 123));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对于JSONP请求，
+可选参数传递您用来定义回调函数的查询参数名：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::jsonp(array(&amp;#39;id&amp;#39; =&amp;gt; 123), &amp;#39;q&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如，一个GET请求使用&lt;code&gt;?q=my_func&lt;/code&gt; 你应该得到的输出:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;my_func({&amp;quot;id&amp;quot;:123});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果不传递查询参数的名称将默认为 &lt;code&gt;jsonp&lt;/code&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;configuration-配置&#34;&gt;Configuration 配置&lt;/h1&gt;
+&lt;p&gt;您可以通过&lt;code&gt;set&lt;/code&gt;方法设置配置值，自定义Flight的某些行为。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::set(&amp;#39;flight.log_errors&amp;#39;, true);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下是所有可用的配置设置的列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flight.base_url - 重写请求的基本url。 (默认：null)
+flight.handle_errors - 允许Flight在内部处理所有的错误。 (default: true)
+flight.log_errors - 错误记录到Web服务器的错误日志文件。 (default: false)
+flight.views.path - 包含视图模板文件的目录路径。 (default: ./views)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;framework-methods-框架方法&#34;&gt;Framework Methods 框架方法&lt;/h1&gt;
+&lt;p&gt;Flight 被设计为易于使用和理解。
+下面是一组完整的框架的方法。 
+它由核心方法，常规的静态方法，以及可扩展并且可以映射可以被过滤或覆盖的方法组成。&lt;/p&gt;
+&lt;h2 id=&#34;core-methods-核心方法&#34;&gt;Core Methods 核心方法&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::map($name, $callback) // 创建一个自定义的框架方法。
+Flight::register($name, $class, [$params], [$callback]) // 注册一个类框架的方法。
+Flight::before($name, $callback) // 框架的方法之前添加一个过滤器。
+Flight::after($name, $callback) // 框架的方法之后添加一个过滤器。
+Flight::path($path) // 添加路径到自动加载的类路径。
+Flight::get($key) // 获取一个变量。
+Flight::set($key, $value) // 设置一个变量。
+Flight::has($key) // 检查一个变量是否被设置。
+Flight::clear([$key]) // 清除变量。
+Flight::init() // 按它的默认设置，初始化框架。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;extensible-methods-扩展方法&#34;&gt;Extensible Methods 扩展方法&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Flight::start() // 启动框架。
+Flight::stop() // 停止框架并发送响应。
+Flight::halt([$code], [$message]) // 停止框架，可选参数状态码和消息。
+Flight::route($pattern, $callback) // 映射一个URL模式到回调函数。
+Flight::redirect($url, [$code]) // 重定向到另一个url。
+Flight::render($file, [$data], [$key]) // 渲染一个模板文件。
+Flight::error($exception) // 发送一个HTTP 500响应。
+Flight::notFound() // 发送一个HTTP 404响应。
+Flight::etag($id, [$type]) // 执行的ETag HTTP缓存。
+Flight::lastModified($time) // 执行last modified（最后修改）HTTP缓存
+Flight::json($data, [$code], [$encode]) // 发送一个JSON响应。
+Flight::jsonp($data, [$param], [$code], [$encode]) // 发送一个JSONP响应。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;map&lt;/code&gt; 和 &lt;code&gt;register&lt;/code&gt; 添加的任何自定义方法都可以被过滤。&lt;/p&gt;
+&lt;h1 id=&#34;framework-instance-框架实例&#34;&gt;Framework Instance 框架实例&lt;/h1&gt;
+&lt;p&gt;你可以选择作为一个对象实例运行它，而不是把Flight作为一个全局的静态类运行。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;require &amp;#39;flight/autoload.php&amp;#39;;
+
+use flight\Engine;
+
+$app = new Engine();
+
+$app-&amp;gt;route(&amp;#39;/&amp;#39;, function(){
+    echo &amp;#39;hello world!&amp;#39;;
+});
+
+$app-&amp;gt;start();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样，你就可以调用与引擎对象同名的实例方法，而不是调用静态方法。&lt;/p&gt;- /posts/flight-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PhpStorm 7.1.3 for Mac</title>
+        <link>/posts/phpstorm-7.1.3-for-mac/</link>
+        <pubDate>Tue, 06 May 2014 23:13:25 +0000</pubDate>
+        
+        <guid>/posts/phpstorm-7.1.3-for-mac/</guid>
+        <description>清风徐来 /posts/phpstorm-7.1.3-for-mac/ -&lt;p&gt;EMBRACE&lt;/p&gt;
+&lt;p&gt;===== LICENSE BEGIN =====
+43136-12042010
+00002UsvSON704l&amp;quot;dILe1PVx3y4&amp;quot;B3
+49AU6oSDJrsjE8nMOQh&amp;quot;8HTDJHIUUh
+gd1BebYc5U&amp;quot;6OxDbVsALB4Eb10PW8&amp;rdquo;
+===== LICENSE END =====&lt;/p&gt;
+&lt;p&gt;作为dscxy，你懂的。&lt;/p&gt;
+- /posts/phpstorm-7.1.3-for-mac/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>pycharm 3.1.3 for mac</title>
+        <link>/posts/pycharm-3.1.3-for-mac/</link>
+        <pubDate>Wed, 30 Apr 2014 23:55:00 +0000</pubDate>
+        
+        <guid>/posts/pycharm-3.1.3-for-mac/</guid>
+        <description>清风徐来 /posts/pycharm-3.1.3-for-mac/ -&lt;p&gt;确实比较好用，下面你懂得。&lt;/p&gt;
+&lt;p&gt;yueting3527&lt;/p&gt;
+&lt;p&gt;===== LICENSE BEGIN =====
+93347-12042010
+00001FMHemWIs&amp;quot;6wozMZnat3IgXKXJ
+2!nV2I6kSO48hgGLa9JNgjQ5oKz1Us
+FFR8k&amp;quot;nGzJHzjQT6IBG!1fbQZn9!Vi
+===== LICENSE END =====&lt;/p&gt;
+- /posts/pycharm-3.1.3-for-mac/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>准备申请SAE中级开发者（已通过）</title>
+        <link>/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</link>
+        <pubDate>Sun, 27 Apr 2014 10:57:00 +0000</pubDate>
+        
+        <guid>/posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/</guid>
+        <description>清风徐来 /posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ -&lt;p&gt;为了每月免费补充至1万云豆，打算申请sina云的中级开发者认证，应用需要各位的独立IP，希望路过的多点支持，进去看看谢谢。&lt;/p&gt;
+&lt;p&gt;是一个进销存的web应用，前段用J-UI，php采用了Codeigniter框架。测试账号demo/demo。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://minimis.sinaapp.com&#34;&gt;http://minimis.sinaapp.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2014-05-04 update:已经通过，谢谢各位。&lt;/p&gt;
+- /posts/%E5%87%86%E5%A4%87%E7%94%B3%E8%AF%B7sae%E4%B8%AD%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%B2%E9%80%9A%E8%BF%87/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>搞定在 Mac 安装 MySQLdb（MySQL-python）</title>
+        <link>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</link>
+        <pubDate>Fri, 25 Apr 2014 20:28:00 +0000</pubDate>
+        
+        <guid>/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/</guid>
+        <description>清风徐来 /posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ -&lt;h2 id=&#34;重新安装easy_installsetuptools&#34;&gt;重新安装easy_install（setuptools）&lt;/h2&gt;
+&lt;p&gt;1，去下载 &lt;a href=&#34;https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg&#34;&gt;setuptools&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2，到终端执行 sudo sh setuptools-0.6c11-py2.7.egg&lt;/p&gt;
+&lt;p&gt;3，清除下载的setuptools-0.6c11-py2.7.egg&lt;/p&gt;
+&lt;h2 id=&#34;删除mysql&#34;&gt;删除MySQL&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo rm /usr/local/mysql
+sudo rm -rf /usr/local/mysql*
+sudo rm -rf /Library/StartupItems/MySQLCOM
+sudo rm -rf /Library/PreferencePanes/MySQL*
+vim /etc/hostconfig and removed the line MYSQLCOM=-YES-
+rm -rf ~/Library/PreferencePanes/MySQL*
+sudo rm -rf /Library/Receipts/mysql*
+sudo rm -rf /Library/Receipts/MySQL*
+sudo rm -rf /var/db/receipts/com.mysql.*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;mac下删除自己安装的python&#34;&gt;Mac下删除自己安装的Python&lt;/h2&gt;
+&lt;p&gt;删除Python框架
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/x.x
+删除Python程序
+sudo rm -rf “/Applications/Python x.x”
+删除/usr/local/bin目录下的Python连接
+x.x为Python的版本号&lt;/p&gt;
+&lt;h2 id=&#34;安装php开发环境&#34;&gt;安装PHP开发环境&lt;/h2&gt;
+&lt;p&gt;MAMP 都有了&lt;/p&gt;
+&lt;h2 id=&#34;安装python开发环境&#34;&gt;安装Python开发环境&lt;/h2&gt;
+&lt;p&gt;受累MAMP，被MySQLdb折腾好久。最后，删除了python重新来过。
+安装python
+安装wxpython
+安装easy_install
+安装mysql-5.1.73-osx10.6-x86_64（64位的mysql，就是为了安装下面的MySQLdb）
+编辑.bash_profile :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Setting PATH for MySQLdb
+
+PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/bin:${PATH}&amp;quot;
+export PATH
+export DYLD_LIBRARY_PATH=&amp;quot;/usr/local/mysql-5.1.73-osx10.6-x86_64/lib&amp;quot;
+export VERSIONER_PYTHON_PREFER_64_BIT=no
+export VERSIONER_PYTHON_PREFER_32_BIT=yes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装MySQL-python（sudo easy_install MySQL-python）&lt;/p&gt;
+- /posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Sublime text 3059 for MAC</title>
+        <link>/posts/sublime-text-3059-for-mac/</link>
+        <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
+        
+        <guid>/posts/sublime-text-3059-for-mac/</guid>
+        <description>清风徐来 /posts/sublime-text-3059-for-mac/ -&lt;p&gt;1、去Sublime 官网下载最新的3059并安装。&lt;/p&gt;
+&lt;p&gt;2、执行并退出Sublime主程序。&lt;/p&gt;
+&lt;p&gt;3、下载本文附件，并解压。&lt;/p&gt;
+&lt;p&gt;4、Finder 打开 Applications 目录， 找到Sublime，右键“显示包内容”，找到 macOS 目录，把上一步解压出来的文件，拷贝到这里来，会提示“你是否要替换该文件”，选择替换。&lt;/p&gt;
+&lt;p&gt;5、打开终端，输入命令：
+cd /Applications/Sublime\ Text.app/Contents/macOS/ 
+sudo chmod +x Sublime\ Text 
+根据提示，输入密码，因为要临时获取root权限。&lt;/p&gt;
+&lt;p&gt;6、运行Sublime，“关于 Sublime Text”，已经注册了。&lt;/p&gt;
+&lt;p&gt;End&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1sjjQGY5&#34;&gt;你懂得附件&lt;/a&gt;&lt;/p&gt;
+- /posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>wxpython设置背景</title>
+        <link>/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+        <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
+        
+        <guid>/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+        <description>清风徐来 /posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ -&lt;p&gt;用wxformbuilder+一点代码来实现。&lt;/p&gt;
+&lt;p&gt;首先用wxformbuilder来做出界面，并生成代码。运行结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/1144182459.bmp&#34; alt=&#34;默认效果图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使其有背景图片效果：
+&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/83875334.bmp&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;实现代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#coding:utf-8
+
+import wx
+#导入wxformbuilder生成的代码
+import BgDemo
+
+class Main(wx.App):
+    def __init__(self, redirect=False, filename=None):
+        wx.App.__init__(self, redirect, filename)
+        dlg = BgDemo.MyFrame(None)
+
+        #这里设置哪个控件需要设置背景
+        dlg.m_panel1.Bind(wx.EVT_ERASE_BACKGROUND, self.OnEraseBackground)
+
+        dlg.Show()
+
+    def OnEraseBackground(self, evt):
+        &amp;quot;&amp;quot;&amp;quot;
+        设置背景的方法
+        &amp;quot;&amp;quot;&amp;quot;
+        dc = evt.GetDC()
+        if not dc:
+            dc = wx.ClientDC(self)
+            rect = self.GetUpdateRegion().GetBox()
+            dc.SetClippingRect(rect)
+        dc.Clear()
+        bmp = wx.Bitmap(&amp;quot;Sunset.jpg&amp;quot;)
+        dc.DrawBitmap(bmp, 0, 0)
+ 
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app = Main()
+    app.MainLoop()
+&lt;/code&gt;&lt;/pre&gt;
+- /posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PyInstaller无法easy_install或pip安装</title>
+        <link>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
+        
+        <guid>/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 /posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ -&lt;p&gt;应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。
+只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。
+也就一步，就是解压。淡水解压到d盘根目录
+使用也很简单：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PS C:\Users\Frank&amp;gt; d:
+PS D:\&amp;gt; cd .\PyInstaller-2.1
+PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.ico D:\wms\julinWms.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和easy_install安装后的使用方法几乎一样。
+嗯，没多少干货。2014了，随便写点，证明一下还在喘气。&lt;/p&gt;
+- /posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Python MySQLdb模块的使用</title>
+        <link>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sun, 22 Dec 2013 08:59:00 +0000</pubDate>
+        
+        <guid>/posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 /posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;pre&gt;&lt;code&gt;#-*- encoding: utf-8 -*-
+
+import os, sys, string
+import MySQLdb
+
+# 连接数据库　
+try:
+    conn = MySQLdb.connect(host=&#39;localhost&#39;,user=&#39;root&#39;,passwd=&#39;xxxx&#39;,db=&#39;test1&#39;)
+except Exception, e:
+    print e
+    sys.exit()
+
+# 获取cursor对象来进行操作
+
+cursor = conn.cursor()# 查询时返回元组
+#cursor = conn.cursor(cursorclass = MySQLdb.cursors.DictCursor)# 查询时返回字典
+
+# 创建表
+sql = &amp;quot;create table if not exists test1(name varchar(128) primary key, age int(4))&amp;quot;
+cursor.execute(sql)
+# 插入数据
+sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;zhaowei&amp;quot;, 23)
+try:
+    cursor.execute(sql)
+except Exception, e:
+    print e
+
+sql = &amp;quot;insert into test1(name, age) values (&#39;%s&#39;, %d)&amp;quot; % (&amp;quot;张三&amp;quot;, 21)
+try:
+    cursor.execute(sql)
+except Exception, e:
+    print e
+# 插入多条
+
+sql = &amp;quot;insert into test1(name, age) values (%s, %s)&amp;quot; 
+val = ((&amp;quot;李四&amp;quot;, 24), (&amp;quot;王五&amp;quot;, 25), (&amp;quot;洪六&amp;quot;, 26))
+try:
+    cursor.executemany(sql, val)
+except Exception, e:
+    print e
+
+#查询出数据
+sql = &amp;quot;select * from test1&amp;quot;
+cursor.execute(sql)
+alldata = cursor.fetchall()
+# 如果有数据返回，就循环输出, alldata是有个二维的列表
+if alldata:
+    for rec in alldata:
+        print rec[0], rec[1]
+
+#更新    
+sql = &amp;quot;update test1 set name=%s where age=23&amp;quot;   
+param = (&amp;quot;赵薇&amp;quot;)
+try:
+    cursor.execute(sql,param)    
+except Exception, e:
+    print e  
+   
+#删除    
+sql = &amp;quot;delete from test1 where name=%s&amp;quot;   
+param =(&amp;quot;赵薇&amp;quot;)  
+try:
+    cursor.execute(sql,param)    
+except Exception, e:
+    print e  
+
+conn.commit()#提交，否则可能不会提交到db生效
+
+cursor.close()
+
+conn.close()&lt;/code&gt;&lt;/pre&gt;
+- /posts/python-mysqldb%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

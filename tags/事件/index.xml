@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>事件 on 清风徐来</title>
+    <link>/tags/%E4%BA%8B%E4%BB%B6/</link>
+    <description>Recent content in 事件 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sat, 09 Sep 2017 15:53:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visual C# 中的事件及委托</title>
+      <link>/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</link>
+      <pubDate>Sat, 09 Sep 2017 15:53:00 +0000</pubDate>
+      
+      <guid>/posts/visual-c#-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%A7%94%E6%89%98/</guid>
+      <description>在传统的程式设计语言中，事件一般是一种回调。在C#中这种回调被称为委托，事件处理不过是通过委托呼叫方法。
+委托类别定义一个方法签名，可将相容签名的方法与委托相关联。
+C#中事件采用发布/订阅模型，订阅事件其实就是用委托来实现的。
+namespace WpfApplication1{/// &amp;lt;summary&amp;gt;/// Interaction logic for MainWindow.xaml/// &amp;lt;/summary&amp;gt;public partial class MainWindow : Window{public MainWindow(){InitializeComponent();var timer = new System.Timers.Timer(1000);timer.Start();timer.Elapsed += new System.Timers.ElapsedEventHandler(TimerElapsedHandler);}void TimerElapsedHandler(object sender, EventArgs e){MessageBox.Show(&amp;quot;Timer has Elapsed&amp;quot;);}}} 第一个参数 sender 表示引发实践的物件；第二个参数 e 是传说的数据，类别是 EventArgs 或其子类。事件处理方法返回值 void。
+其实委托关联可以简写为timer.Elapsed += TimerElapsedHandler;，取消事件订阅timer.Elapsed -= TimerElapsedHandler;
+匿名委托更为简洁，但是取消订阅不好处理,这里不作展开。
+2017年09月11日 更新一下匿名的两张写法：
+timer.Elapsed += delegate(object sender, System.</description>
+    </item>
+    
+  </channel>
+</rss>

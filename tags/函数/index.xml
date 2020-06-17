@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>函数 on 清风徐来</title>
+    <link>/tags/%E5%87%BD%E6%95%B0/</link>
+    <description>Recent content in 函数 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 29 Jul 2019 17:37:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go的函数</title>
+      <link>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
+      
+      <guid>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+      <description>在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。 我们将在本教程中介绍以下主题：
+ 函数声明的基础知识 使用多个返回值  ##函数的声明 Go中的所有函数都以func关键字开始，然后是函数名称。在名称之后，我们打开括号并定义我们的参数列表，后跟一个非常相似的返回结果列表：
+func name(parameter-list) (result-list) {// 函数体} 访问权限！如果您希望在其他包中访问您的函数，那么您必须将函数名称的第一个字母设为大写！
+ ##举个栗子 对于这个例子，我们将创建一个名为myFunction的函数，它将接收2个字符串参数并返回结果字符串：
+func myfunction(firstName string, lastName string) (string) {fullname := firstName + &amp;quot; &amp;quot; + lastName return fullname}在函数体的第一行，我们创建了一个名为fullname的新变量，它是我们的firstName变量与空格和我们的lastName变量连接成的新字符串。完成此连接后，我们将返回fullname变量。
+##完整的代码
+package mainimport (&amp;quot;fmt&amp;quot;)func myfunction(firstName string, lastName string) (string) {fullname := firstName + &amp;quot; &amp;quot; + lastName return fullname}func main() {fmt.Println(&amp;quot;Hello World&amp;quot;)fullName := myfunction(&amp;quot;Michael&amp;quot;, &amp;quot;Yang&amp;quot;)fmt.</description>
+    </item>
+    
+  </channel>
+</rss>

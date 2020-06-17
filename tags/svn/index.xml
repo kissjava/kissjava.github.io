@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svn on 清风徐来</title>
+    <link>/tags/svn/</link>
+    <description>Recent content in svn on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 30 Nov 2012 13:02:20 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>清理.SVN文件夹及右键菜单</title>
+      <link>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</link>
+      <pubDate>Fri, 30 Nov 2012 13:02:20 +0000</pubDate>
+      
+      <guid>/posts/%E6%B8%85%E7%90%86.svn%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/</guid>
+      <description>无废话，不博客-_-! 先说清理.svn文件夹吧，不知道为什么好好的svn的export不用，搞得文件夹下都有.svn文件夹。微软上有个批处理，导入到注册表后就有个右键菜单“Delete SVN Folders”。如下，保存为.reg后缀后双击导入注册表即可使用。 Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVN] @=&amp;quot;Delete SVN Folders&amp;rdquo;
+[HKEY_LOCAL_MACHINESOFTWAREClassesFoldershellDeleteSVNcommand] @=&amp;quot;cmd.exe /c &amp;ldquo;TITLE Removing SVN Folders in %1 &amp;amp;&amp;amp; COLOR 9A &amp;amp;&amp;amp; FOR /r &amp;ldquo;%1&amp;rdquo; %%f IN (.svn) DO RD /s /q &amp;ldquo;%%f&amp;rdquo; &amp;quot;&amp;rdquo; 说到右键菜单，我就发现，右键的发送到下面有个115备份。这个我早就删除了，注册表也搜索后删除了，但是还在。嗯，很顽强。下载右键管家，终于搞定。右键管家的下载地址：http://www.xiazaiba.com/html/5887.htmlps：win8 64位管家依旧给力支持</description>
+    </item>
+    
+    <item>
+      <title>SVN小记</title>
+      <link>/posts/svn%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Fri, 16 Apr 2010 17:30:51 +0000</pubDate>
+      
+      <guid>/posts/svn%E5%B0%8F%E8%AE%B0/</guid>
+      <description>名词解释：修订版（revision）：可以认为是某个文件在其生命周期内各个保存的快照，每个快照和一个时间区间对应。 版本库（Repository）：存放修订版的数据库 本地工作拷贝（Local working copy）：修订版在本地的副本 版本的检入（Check in）：本地副本提交到服务器的版本库 检出（Check out）：从服务器的版本库中取出修订版成为本地副本 版本号的来源：有两种策略，基于文件的计数和基于仓库的计数，subversion使用后者 标签（Tags）：为版本加一个名字，便于检出 分支（Branches）：修订版打分支，以后可以平行修改，互不干扰 合并（Merging）：将分支的修订版合并为一个新的修订版 锁（Locking）：为修订版枷锁 冲突（Conflict）：并发版本控制时防止修订版混乱的错误机制
+创建版本库创建服务器端版本库 命令行： svnadmin create file_path/repo_name
+初始导入（import）通过命令行导入： svn import -m &amp;ldquo;init import&amp;rdquo; http://10.0.0.6/svn/teaching/ 该命令可将当前路径下文件导入到版本库中。
+检出（checkout）通过命令行检入： svn co http://10.0.0.6/svn/teaching/ mysvntest 或者： svn checkout http://10.0.0.6/svn/teaching/ mysvntest 最后取出来的新目录名，不给定就会用路径的最后一个目录名（如这里的teaching，这里给了就是mysvntest）
+保持更新（update）命令行： svn update 或者 svn up 多人合作时： 更新要经常频繁的做，尽量让问题及早暴露，便于处理。 提交代码前要更新，否则容易产生版本冲突。 通过第一步import后的那个目录并没有默认建立svn与远程的关系,需要手动从服务器checkout回服务器的版本到本地, 才算正式建立与远程的关系,才能直接 svn up……
+添加（add）命令行： svn add file_path
+告知svn服务器，添加目录和/或文件到服务器上，这个操作类似SQL的insert，但是并没有真的操作，直到commit。
+提交改动（commit）相当于通用概念：检入（checkin）。 命令行： svn commit 或者： svn ci 要求：一般要注明修改的原因 svn ci -m &amp;ldquo;修改bug #224&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>windows下基于apache的subversion（svn）的安装</title>
+      <link>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
+      
+      <guid>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <description>上午折腾了一下，可以写个详细步骤出来了。 预期目标：搭建一个apache下的svn服务，服务地址 http://localhost/svn
+本地环境：已经装有xampplite集成环境。 svn的服务目录为D:svnroot 已经安装好了小乌龟（TortoiseSVN）
+安装步骤：1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi 这里注意要和apache的版本对应，我是apache2.2的。 双击安装它，这个没说头。 2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中 有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so （淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下） 3，配置apache的httpd.conf文件 这个是个容易出差错的地方 把下两行的注释去掉：
+所有人可以读，管理员可以写 [svn:/] @g_admin = rw
+ = r  [svn:/机密文件] @g_admin = rw
+ =  [svn:/公告文件] @g_admin = rw
+ = r  [svn:/测试组] @g_admin = rw @g_test = rw
+ =  如果是多个库，则权限文件类似以下
+所有人可以读，管理员可以写 [/] @g_admin = rw
+ = r  [khn:/] @g_admin = rw
+ =  [ci170:/] @g_admin = rw @g_test = rw</description>
+    </item>
+    
+  </channel>
+</rss>

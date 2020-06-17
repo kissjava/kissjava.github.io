@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>权限 on 清风徐来</title>
+    <link>/tags/%E6%9D%83%E9%99%90/</link>
+    <description>Recent content in 权限 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 23 Jul 2009 12:02:24 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%9D%83%E9%99%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP中使用位运算实现简单的权限管理</title>
+      <link>/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
+      
+      <guid>/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+      <description>//所有的权限 $final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; //增加权限使用 | echo &amp;quot;管理者拥有的全部权限：&amp;quot; .decbin($final_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; $no_shearch_allow = $final_allow ^ SHARCH_ARTICLE; //删除权限使用 ^ 或 &amp;amp; ~ echo &amp;quot;仅无法搜索文章的权限：&amp;quot; .decbin($no_shearch_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; //编辑人员独有的权限 $editor_allow = PUBLIC_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE; $no_editor_allow = $final_allow &amp;amp; ~$editor_allow; echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; //判断权限使用 &amp;amp; ( 是, 返回非0; 不是, 返回0)  ?&amp;gt; 输出为：
+管理者拥有的全部权限：1111111 仅无法搜索文章的权限：1101111 非编辑人员所有的权限：1110010</description>
+    </item>
+    
+  </channel>
+</rss>

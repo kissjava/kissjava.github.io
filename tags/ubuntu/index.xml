@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on 清风徐来</title>
+    <link>/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 23 Aug 2017 15:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>阿里云 ubuntu 的防火墙操作</title>
+      <link>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Wed, 23 Aug 2017 15:16:00 +0000</pubDate>
+      
+      <guid>/posts/%E9%98%BF%E9%87%8C%E4%BA%91-ubuntu-%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C/</guid>
+      <description>阿里云服务器，没有 web 面板权限，只有 root 用户。
+重新安装了服务器的 web 环境，需要开发相关端口。
+检查防火墙  $whereis iptables iptables: /sbin/iptables /etc/iptables.rules /usr/share/iptables /usr/share/man/man8/iptables.8.gz 说明防火墙开了
+ 根据上面的路径，编辑规则  $vi /etc/iptables.rules -A INPUT -p tcp -m state &amp;ndash;state NEW -m tcp &amp;ndash;dport 9443 -j ACCEPT -A INPUT -p udp -m state &amp;ndash;state NEW -m udp &amp;ndash;dport 9443 -j ACCEPT 以上放行了9443的 tcp 和 udp（拷贝已有规则改端口就好）
+ 更新规则  $iptables-restore &amp;lt; /etc/iptables.rules $chmod +x /etc/network/if-pre-up.d/iptables
+ 查看一下  $iptables -L -n Chain INPUT (policy DROP) target prot opt source destination ACCEPT all &amp;ndash; 0.</description>
+    </item>
+    
+    <item>
+      <title>win7，ubuntu10.10双系统，修复grub</title>
+      <link>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</link>
+      <pubDate>Wed, 12 Jan 2011 00:15:12 +0000</pubDate>
+      
+      <guid>/posts/win7ubuntu10.10%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dgrub/</guid>
+      <description>为什么要修复？因为啃黑苹果失败鸟。
+为什么要记录？网上大都不成功。
+我的跟分区在sda9，boot独立分区在sda10；可以用fdisk -l 看。
+ sudo -i  mkdir /home/ubuntu/mnt
+mkdir /home/ubuntu/mnt/boot
+mount /dev/sda9 /home/ubuntu/mnt  解释：mount指令是挂载分区，后面的/home/ubuntu/mnt可以自己更改位置，此处是挂 载根分区
+ mount /dev/sda10 /home/ubuntu/mnt/boot 这一步是有给 /boot 单独分区的命令，若没单独分区跳过这步
+  grub-install &amp;ndash;root-directory=/home/ubuntu/mnt /dev/sda
+  重启.grub回来了。
+  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu10.10安装NVIDIA显卡驱动</title>
+      <link>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <pubDate>Thu, 16 Dec 2010 20:53:09 +0000</pubDate>
+      
+      <guid>/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <description>去官方驱动下载页面：http://www.nvidia.cn/Download/index.aspx?lang=cn然后找到你自己的显卡型号，留意一下版本号，版本号只要在256版以上就不用安装编译环境了
+使用右键另存为下载，放到主文件下。
+打开终端：
+如果你下载的显卡驱动版本在256版以下的就输入：
+sudo apt-get install build-essential pkg-config xserver-xorg-dev linux-headers-uname -r否则直接输入：
+sudo /etc/init.d/gdm stop
+回车，然后输入密码，回车停止gdm。
+再按：Ctrl+Alt+F1
+输入你的系统帐号回车，然后输入密码回车，登录tty1
+登录成功后输入：
+sudo sh NVIDIA-Linux.260.xxx.run
+然后输入密码来打开驱动包，会出现使用协议，并询问你接不接收协议，当然Accept。
+接下来可能会出现，预安装脚本安装失败，是否继续安装?或是已经安装过了，是否重新安装等等。。
+点Yes继续,这时会出现进度条。100%后会询问：是否更新X配置文件，选择更新，或手动编辑X配置文件以采用NVIDIA X驱动程序，或者运行 nvidia-xconfig
+这里推荐点Yes，不然需要自己编辑配置文件，到这里安装就完成。startx或是按Ctrl+Alt+Del重启电脑就可以了。</description>
+    </item>
+    
+    <item>
+      <title>Install ‘xdebug’ PHP extension for XAMPP on Ubuntu10.04</title>
+      <link>/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</link>
+      <pubDate>Wed, 23 Jun 2010 16:38:09 +0000</pubDate>
+      
+      <guid>/posts/install-xdebug-php-extension-for-xampp-on-ubuntu10.04/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>恢复Ubuntu的默认面板</title>
+      <link>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</link>
+      <pubDate>Thu, 10 Jun 2010 08:10:35 +0000</pubDate>
+      
+      <guid>/posts/%E6%81%A2%E5%A4%8Dubuntu%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9D%A2%E6%9D%BF/</guid>
+      <description>如果不小心将ubuntu的面板弄得一团糟，又不想慢慢找回来。有没有什么方法一键恢复默认状态呢？ 答案是：“能恢复是肯定的，但是没有一键！“。
+首先重置面板设置
+如果悲剧到没有办法进入终端，那么建个文件。往里面写入这三条命令，再保存为.sh文件。给执行权限，运行即可。
+真的好用。
+from:http://blog.okkey.net/1202.html</description>
+    </item>
+    
+  </channel>
+</rss>

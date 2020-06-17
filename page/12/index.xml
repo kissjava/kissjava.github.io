@@ -1,0 +1,602 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Git安装使用手记</title>
+        <link>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+        <pubDate>Fri, 03 Jun 2011 14:27:28 +0000</pubDate>
+        
+        <guid>/posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+        <description>清风徐来 /posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这篇主要是记录我在 &lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;平台安装 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的过程&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的简单使用&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;先描述一下安装的需求：&lt;/p&gt;
+&lt;p&gt;· 用户端和服务器端的操作系统都是 &lt;!-- raw HTML omitted --&gt;Windows&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;· 用户端要能透过 &lt;!-- raw HTML omitted --&gt;HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的方式存取版本库。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;· 无论是取出档案还是送交档案，都需要验证身分（输入账号密码）。&lt;/p&gt;
+&lt;p&gt;底下是安装步骤：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 1: &lt;!-- raw HTML omitted --&gt;安装 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git for Windows&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;环境使用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，可以用 &lt;!-- raw HTML omitted --&gt;msysgit (Git for Windows)&lt;!-- raw HTML omitted --&gt;，我安装的版本是 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;v1.7.4&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。装好之后，程序集里面会多出一个选单：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，里面有两个程序：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git GUI &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;和 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git Bash&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。前者是图形操作界面，后者是命令列视窗。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的预设安装目录是 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;c:Program FilesGit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;由于我要让用户端可透过 &lt;!-- raw HTML omitted --&gt;HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;协定来存取版本库，因此还要把 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;安装目录下的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;binlibiconv2.dll &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;复制到安装目录下的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;libexecgit-core &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;底下。少了这个动作，将来透过 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;存取版本库时，就会出现 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;HTTP 500 Internal Server Error &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的讯息。如下图所示：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 2: &lt;!-- raw HTML omitted --&gt;安装 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Apache HTTP Server&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;欲提供 &lt;!-- raw HTML omitted --&gt;HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的存取方式，可以利用&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Apache Http Server&lt;!-- raw HTML omitted --&gt;。我安装的版本是 &lt;!-- raw HTML omitted --&gt;Apache 2.2.19&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;（包含 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;OpenSSL&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;）。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;安装好 &lt;!-- raw HTML omitted --&gt;Apache &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;之后，修改 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;httpd.conf&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，令它使用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;8080 port&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，以免和 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;IIS &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;抢 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;80 port&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来，一样是修改 &lt;!-- raw HTML omitted --&gt;httpd.conf&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。找到 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;directory&amp;gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;标签，确认其设定如下：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Options FollowSymLinks&lt;/p&gt;
+&lt;p&gt;AllowOverride None&lt;/p&gt;
+&lt;p&gt;Order deny,allow&lt;/p&gt;
+&lt;p&gt;Allow from all&lt;/p&gt;
+&lt;p&gt;&amp;lt;/directory&amp;gt;&lt;!-- raw HTML omitted --&gt;
+接着在 &lt;!-- raw HTML omitted --&gt;httpd.conf &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的最后面加入以下文字：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;# Git &lt;!-- raw HTML omitted --&gt;你的版本库放在哪里&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SetEnv GIT_PROJECT_ROOT D:/GitRepos&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;# Set this to export all projects by default (by default,&lt;/p&gt;
+&lt;p&gt;# git will only publish those repositories that contain a&lt;/p&gt;
+&lt;p&gt;# file named “git-daemon-export-ok”&lt;/p&gt;
+&lt;p&gt;# &lt;!-- raw HTML omitted --&gt;该目录下的所有版本库都可以透过 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;http(s) &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的方式存取&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SetEnv GIT_HTTP_EXPORT_ALL&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;# Route specific URLS matching this regular expression to the git http server.&lt;/p&gt;
+&lt;p&gt;# &lt;!-- raw HTML omitted --&gt;令 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Apache &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;把 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;相关 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;URL &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;导向给 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;http &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;处理程序&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;ScriptAliasMatch &lt;/p&gt;
+&lt;p&gt;&amp;ldquo;(?x)^/(.*/(HEAD | &lt;/p&gt;
+&lt;p&gt;info/refs | &lt;/p&gt;
+&lt;p&gt;objects/(info/[^/]+ | &lt;/p&gt;
+&lt;p&gt;[0-9a-f]{2}/[0-9a-f]{38} | &lt;/p&gt;
+&lt;p&gt;pack/pack-[0-9a-f]{40}.(pack|idx)) | &lt;/p&gt;
+&lt;p&gt;git-(upload|receive)-pack))$&amp;rdquo; &lt;/p&gt;
+&lt;p&gt;&amp;ldquo;C:/Program Files/git/libexec/git-core/git-http-backend.exe/$1&amp;rdquo;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&amp;lt;Location /&amp;gt;&lt;/p&gt;
+&lt;p&gt;AuthType Basic&lt;/p&gt;
+&lt;p&gt;AuthName &amp;ldquo;GIT Repository&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;AuthUserFile &amp;ldquo;D:/GitRepos/htpasswd&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Require valid-user&lt;/p&gt;
+&lt;p&gt;&amp;lt;/Location&amp;gt;&lt;!-- raw HTML omitted --&gt;
+其中第一道指令是告诉 &lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;你的版本库放在哪里，第二道指令表示该目录下的所有版本库都可以透过 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;http(s) &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的方式存取。第三道指令则是令 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Apache &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;把 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;相关 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;URL &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;导向给 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;http &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;处理程序。注意：如果你的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;系统是 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;64 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;位，里面的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;C:/Program Files/&amp;hellip;. &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;就要改一下。最后的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;lt;Location&amp;gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;区段设定了虚拟根路径 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;rdquo;/&amp;rdquo; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的验证规则，&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;D:/GitRepos/htpassword &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;是账号密码文件。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;完成上述修改之后，重启 &lt;!-- raw HTML omitted --&gt;Apache HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Note: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;如果你希望将来透过远端存取版本库时，一律使用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;http://my-server/git/* &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;开头的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;URL&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，则可将 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;ScriptAliasMatch &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;指令改为 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;rdquo;(?x)^/&lt;!-- raw HTML omitted --&gt;git/(.*/(HEAD |  &amp;hellip;&amp;hellip;.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 3: &lt;!-- raw HTML omitted --&gt;建立版本储存库&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这里先建立一个测试用的版本库，以确认用户端可以透过 &lt;!-- raw HTML omitted --&gt;HTTP &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;协定取出档案。步骤如下：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1 开启 &lt;!-- raw HTML omitted --&gt;Git Bash &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;命令列视窗：开始 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;程序 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;gt; Git &amp;gt; Git Bash&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2 输入以下命令，以建立一个空的版本库（&lt;!-- raw HTML omitted --&gt;&#39;$&amp;rsquo; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;符号是提示字符，不用输入）：&lt;!-- raw HTML omitted --&gt;
+$ cd D:/GitRepos
+$ git init MyProject&lt;/p&gt;
+&lt;p&gt;参考下图：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;此范例的 &lt;!-- raw HTML omitted --&gt;git init &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;命令会在 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;MyProject &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;目录下建立一个名为「&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;」的隐藏目录，&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;用来管理版本所需的控制档案全都放在这里。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;MyProject &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;这个目录本身则是工作目录，你可以在此目录下加入档案或子目录。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Note: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;在初次建立一个可让多人共享的版本库时，应该要使用 &lt;!-- raw HTML omitted --&gt;git init &amp;ndash;bare 命令。加上 &lt;!-- raw HTML omitted --&gt;&amp;ndash;bare &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的参数，表示要建立「单纯的」版本库，也就是不含任何工作复本（&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;working copy&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;）档案，而只包含版本控制相关的档案。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Note: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库的根目录（这里是 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;D:GitRepos&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;）之下的第一层子目录不必一定要建立成版本库。我们也可以在其下建立单纯的子目录，然后在各个子目录底下建立版本库。例如： &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; +&amp;ndash; Projects&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; +&amp;ndash; PrjA &lt;!-- raw HTML omitted --&gt;(&lt;!-- raw HTML omitted --&gt;版本库&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;)&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; +&amp;ndash; PrjB &lt;!-- raw HTML omitted --&gt;(&lt;!-- raw HTML omitted --&gt;版本库&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;)&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; +&amp;ndash; Notes&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; +&amp;ndash; DotNet &lt;!-- raw HTML omitted --&gt;(&lt;!-- raw HTML omitted --&gt;版本库&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;)&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+这样的话，以后我们就可以用类似「&lt;!-- raw HTML omitted --&gt;http://my-server/Projects/PrjA&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;」的网址来存取版本库。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Step 4: &lt;!-- raw HTML omitted --&gt;取出版本库&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;比较正确的说法，是把版本库复制（&lt;!-- raw HTML omitted --&gt;clone&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;）一份回自己家里（本机）。一样开启 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git Bash &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;视窗，切换到你打算存放本机版本库的目录，然后使用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;git clone &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;把档案库拉回来。指令如下：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;$ cd d:/Work&lt;/p&gt;
+&lt;p&gt;$ git clone http://localhost:8080/MyProject&lt;/p&gt;
+&lt;p&gt;接着应该会要求你输入账号和密码，若输入正确，便可将本库取回。参考下图：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;使用 &lt;!-- raw HTML omitted --&gt;git clone &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;命令时，网址也可以包含使用者账户名称，例如：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;$ git clone http://michael@localhost:8080/MyProject&lt;/p&gt;
+&lt;p&gt;如果欲复制的远端版本库不是空的，&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;会先压缩档案再传送，而且在荧幕上显示压缩的进度，如下图：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;下一步&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;后续的作业，就是在本机的工作目录下进行日常的档案修改与版本提交程序了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;基础作业流程&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1 建立一个共享的版本库。&lt;/p&gt;
+&lt;p&gt;2 将远端主机上的版本库复制一份至本机。&lt;/p&gt;
+&lt;p&gt;3 修改本机的工作复本，然后提交。&lt;/p&gt;
+&lt;p&gt;4 将提交的档案推送至远端主机的版本库。&lt;/p&gt;
+&lt;p&gt;以下是范例：&lt;/p&gt;
+&lt;p&gt;1. &lt;!-- raw HTML omitted --&gt;建立一个共享的版本库&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;cd d:/GitRepos/Projects/MyProjectA&lt;/p&gt;
+&lt;p&gt;git init &amp;ndash;bare
+2. &lt;!-- raw HTML omitted --&gt;将远端主机上的版本库复制一份至本机&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git clone http://my-server:8080/Projects/MyProjectA&lt;/p&gt;
+&lt;p&gt;如果你的 &lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务器支援 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;https:// &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;协定，则复制版本库的指令会类似这样：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git clone https://my-server/Projects/MyProjectA&lt;/p&gt;
+&lt;p&gt;若以 &lt;!-- raw HTML omitted --&gt;https:// &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;协定复制版本库时出现错误：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;error: SSL certificate problem, verify that the CA cert is OK. Details:&lt;/p&gt;
+&lt;p&gt;error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify faile&lt;/p&gt;
+&lt;p&gt;d while accessing https://localhost/Projects/test/info/refs&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;fatal: HTTP request failed
+可尝试以下列指令解决：&lt;/p&gt;
+&lt;p&gt;git config &amp;ndash;global http.sslverify  false
+此外，你也可以在复制时直接指定账号密码，例如：&lt;/p&gt;
+&lt;p&gt;git clone https://michael:guesswhat@my-server/Projects/MyProjectA
+如果这个「远端主机」就是你目前工作的本机，即要在同一台机器上复制出另一个版本库，则可以用 &lt;!-- raw HTML omitted --&gt;file:// &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。例如：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git clone file://d:/GitRepos/Projects/MyProjectA
+没有加 &lt;!-- raw HTML omitted --&gt;file:// &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;或者写 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;file:///&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;（三个斜线）也可以。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;3. &lt;!-- raw HTML omitted --&gt;修改本机的工作复本，然后提交&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git add .&lt;/p&gt;
+&lt;p&gt;git commit -m &amp;ldquo;&lt;!-- raw HTML omitted --&gt;提交时的说明文字&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;quot;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;4. &lt;!-- raw HTML omitted --&gt;将提交的档案推送至远端主机的版本库&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git push origin master&lt;/p&gt;
+&lt;p&gt;其中的 &lt;!-- raw HTML omitted --&gt;push &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;代表要将变更推送至远端服务器；&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;origin &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;代表此 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;local &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库在远端服务器的来源，你可以从 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;local &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.gitconfig &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;档案中找到这个远端的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&amp;quot;origin&amp;quot;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;；最后的参数 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;master &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;则代表 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;master &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;分支。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;所以上述指令的意思，以比较精确的解释来说，就是：将本机的 &lt;!-- raw HTML omitted --&gt;master &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;分支的所有变更推送至远端主机的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;master &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;分支。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如果没有指定 &lt;!-- raw HTML omitted --&gt;master &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;分支，只写这样：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git push origin&lt;/p&gt;
+&lt;p&gt;则表示要将本机的所有分支的变更推送至远端主机的对应分支。&lt;/p&gt;
+&lt;p&gt;若要将本机的变更推送至远端版本库的其他分支，例如 &lt;!-- raw HTML omitted --&gt;feature101&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，就可以输入指令：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;git push origin feature101
+其他开发人员如果要取得最新的档案，可以在自己的 &lt;!-- raw HTML omitted --&gt;local &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库的目录之下执行 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;git pull &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;命令。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;以上大概就是最简单、最基础的 &lt;!-- raw HTML omitted --&gt;git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;作业流程。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;原文：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://huan-lin.blogspot.com/2011/05/install-git-server-and-apache-on.html&#34;&gt;http://huan-lin.blogspot.com/2011/05/install-git-server-and-apache-on.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/git%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>为何改用Git</title>
+        <link>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</link>
+        <pubDate>Fri, 03 Jun 2011 13:44:31 +0000</pubDate>
+        
+        <guid>/posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/</guid>
+        <description>清风徐来 /posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ -&lt;p&gt;Subversion &lt;!-- raw HTML omitted --&gt;用得好好的，为什么要改用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;呢？&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;记得刚开始用 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;时，它在 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Windows &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;平台上的工具也还不是那么方便，光是安装就要手动设定一堆东西。现在，&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务已经几乎是点下一步、下一步的方式就能安装完成了，非常方便。而且，现有的软件项目、写作等工作，也都在是用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;来管理版本。在已经投资不少学习成本、且用得很习惯的情况下，要换另外一套版本管理系统总是会有一些阻力。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;更顺畅的工作流程&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;其实我 &lt;!-- raw HTML omitted --&gt;lag &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;很久了。没有改用 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，主要就是因为习惯问题，以及考虑到已经付出的学习成本，和没有一个让我觉得非换不可的理由。但是最近由于经常使用&lt;!-- raw HTML omitted --&gt;笔记本电脑，而且网络经常碰到无法连线的状态（有时候是笔电所在的环境无法连网，有时候是服务器离线），以至于有些本机的修改成果无法立即 &lt;!-- raw HTML omitted --&gt;commit &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;成一个修订版次。这个时候，如果我还要继续修改别的东西（例如&lt;!-- raw HTML omitted --&gt;，修正另一个  &lt;!-- raw HTML omitted --&gt;bug&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;），往往就会跟刚才的修改混在一起 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，而且是要等到可连上网络时才能 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;。这样的时间差，很容易造成一些遗漏或混乱，无形中就增加了成本和风险。我希望就算无法连接服务器，还是能够依目前的进度先 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;，并且继续做后续的修改，这样我就不用在那里空等，也不用担心自己等到网络可连线时，已经忘记那些档案的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;commit &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;先后次序。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;可以做到这点。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;快速&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Git &lt;!-- raw HTML omitted --&gt;之所以反应迅速，主要是因为分散式架构的缘故。在此架构下，版本库的完整历史全都在本机上。因此，就算要进行历史版本比对，也都是在本机进行，速度当然比需要实时连线的 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;VCS &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;来得快。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;版本库毁损的风险较低&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;同样是基于分散式架构的缘故，&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的版本库会在各用户端机器上存在多个完整的复本，因此就算服务器上的版本库损坏了，还是可以利用其他用户端机器的复本轻易复原，大幅降低版本库备份的成本和档案遗失的风险。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;弹性的本地分支&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在使用 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;时，分支其实就是把档案复制到另一个&lt;!-- raw HTML omitted --&gt;文件夹，然后在不同的分支（文件夹）之间切换。在试过 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的分支之后，我还是有怕怕的感觉，因而倾向尽量少用。因为我觉得自己有一天一定会不小心把分支和主线给弄混了，以至于出现版本错乱的情形。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;我还没有实验 &lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的分支功能，但从现有的一些技术文件看来，&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;分支的一个主要优点，就是它可以完全在本机进行。比如说，你可以在本机建立几个实验性质的分支，等到你觉得时机成熟了，便可以将特定分支推送至主机，分享给别人。或者，有些实验失败的分支，也可以直接在本机砍掉，而其他开发人员根本不知道曾经有这些分支。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;其他优点&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;个人是觉得 &lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;还有一个小地方比 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;好：它的版本库目录结构。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当我从远端 &lt;!-- raw HTML omitted --&gt;Subversion &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;服务器 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;checkout &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;一个版本库到本机时，在本机的工作目录下，每一层子目录都会有一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.svn &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的资料夹，作为版本控制之用。&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;不是这样。当我从远端服务器 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;clone &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;版本库到本机时，就只有该版本库复本的根目录底下会有一个 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;目录，其他子目录则很「干净」。此外，它&lt;!-- raw HTML omitted --&gt;的档案忽略清单只要由 &lt;!-- raw HTML omitted --&gt;.git &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;目录下的一个名为 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;.gitignore &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;的档案就能完全控制。虽然是不太起眼的差异，我却觉得蛮好的。大概是有点洁癖的缘故吧 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;XD&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;原文需要翻墙，哎&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://huan-lin.blogspot.com/2011/05/why-git.html&#34;&gt;http://huan-lin.blogspot.com/2011/05/why-git.html&lt;/a&gt;&lt;/p&gt;
+- /posts/%E4%B8%BA%E4%BD%95%E6%94%B9%E7%94%A8git/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>eclipse pdt 注释快捷键失效的解决方法</title>
+        <link>/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Fri, 13 May 2011 15:31:28 +0000</pubDate>
+        
+        <guid>/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 /posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ -&lt;p&gt;重装win7 64位系统后，下了64为的java jre和64位的eclipse pdt。&lt;/p&gt;
+&lt;p&gt;淡水突然发现写代码时，无法注释了。还以为是64位的谷歌输入法搞的鬼。卸载输入法后还是不行。&lt;/p&gt;
+&lt;p&gt;google之。原来是新版eclipse的bug。&lt;/p&gt;
+&lt;p&gt;到 &lt;a href=&#34;http://sourceforge.jp/projects/pdt-tools/releases/51060&#34;&gt;http://sourceforge.jp/projects/pdt-tools/releases/51060&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载：org.eclipse.php.ui_2.2.1.v20101001-2300.jar&lt;/p&gt;
+&lt;p&gt;复制到你的eclipse的plugins目录。&lt;/p&gt;
+&lt;p&gt;eclipse.exe -clean 运行就可以了。&lt;/p&gt;
+&lt;p&gt;浪费了不少时间。记录下来，希望遇到同意问题的朋友可以看到。&lt;/p&gt;
+- /posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>五一快到了，唠叨两句</title>
+        <link>/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</link>
+        <pubDate>Fri, 29 Apr 2011 10:19:40 +0000</pubDate>
+        
+        <guid>/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/</guid>
+        <description>清风徐来 /posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ -&lt;p&gt;去苏州的太湖牛仔度假村玩乐两天。折腾得够呛。&lt;/p&gt;
+&lt;p&gt;ubuntu11.04出了，嗯安装更加简单来，win7+ubuntu11.04，ubuntu会帮你update-grub，直接搞定双系统的启动菜单。&lt;/p&gt;
+&lt;p&gt;ci2也用得比较舒服，配置一下在eclipse里代码提示还是不错的。&lt;/p&gt;
+&lt;p&gt;手头两个案子都接近尾声。andirod开发还算没怎么看，python也还是没有进度。这样的学习进度，你伤不起啊伤不起。&lt;/p&gt;
+&lt;p&gt;最后祝大家五一玩得开心。&lt;/p&gt;
+- /posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Jquery UI dialog 详解 (中文)转</title>
+        <link>/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <pubDate>Wed, 06 Apr 2011 15:02:44 +0000</pubDate>
+        
+        <guid>/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;1.11 autoOpen  ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&amp;ldquo;open&amp;rdquo;)的时候才弹出dialog窗口。默认为：true。&lt;/p&gt;
+&lt;p&gt;1.12 初始化例：请注意，$(&#39;.selector&amp;rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ autoOpen: false });&lt;/p&gt;
+&lt;p&gt;1.13 初始化后，得到和设置此属性例：&lt;/p&gt;
+&lt;p&gt;//获得&lt;/p&gt;
+&lt;p&gt;var autoOpen = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;autoOpen&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;autoOpen&amp;rsquo;, false);&lt;/p&gt;
+&lt;p&gt;1.21 bgiframe 默认为false ，When true, the bgiframe plugin will be used, to fix  the issue in IE6 where select boxes show on top of other elements, regardless of  zIndex. Requires including the bgiframe plugin. Future versions may not require  a separate plugin.&lt;/p&gt;
+&lt;p&gt;在IE6下，让后面那个灰屏盖住select。&lt;/p&gt;
+&lt;p&gt;1.22 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ bgiframe: true });&lt;/p&gt;
+&lt;p&gt;1.23 初始化后，得到和设置：&lt;/p&gt;
+&lt;p&gt;//获取&lt;/p&gt;
+&lt;p&gt;var bgiframe = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;bgiframe&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;bgiframe&amp;rsquo;, true);&lt;/p&gt;
+&lt;p&gt;1.31 buttons 显示一个按钮，并写上按钮的文本，设置按钮点击函数。默认为{}，没有按钮。&lt;/p&gt;
+&lt;p&gt;最上面的例子中已经有buttons属性的用法，请注意。&lt;/p&gt;
+&lt;p&gt;1.32 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ buttons: { &amp;ldquo;Ok&amp;rdquo;: function() {  $(this).dialog(&amp;ldquo;close&amp;rdquo;); } } });&lt;/p&gt;
+&lt;p&gt;1.33 初始化后，得到和设置：&lt;/p&gt;
+&lt;p&gt;//获取&lt;/p&gt;
+&lt;p&gt;var buttons = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;buttons&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;buttons&amp;rsquo;, { &amp;ldquo;Ok&amp;rdquo;: function() {  $(this).dialog(&amp;ldquo;close&amp;rdquo;); } });&lt;/p&gt;
+&lt;p&gt;1.41 closeOnEscape 为true的时候，点击键盘ESC键关闭dialog，默认为true；&lt;/p&gt;
+&lt;p&gt;1.42 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ closeOnEscape: false });&lt;/p&gt;
+&lt;p&gt;1.43 初始化后，得到和设置：&lt;/p&gt;
+&lt;p&gt;//获取&lt;/p&gt;
+&lt;p&gt;var closeOnEscape = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;closeOnEscape&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;closeOnEscape&amp;rsquo;, false);&lt;/p&gt;
+&lt;p&gt;1.51 dialogClass 类型将被添加到dialog，默认为空&lt;/p&gt;
+&lt;p&gt;1.52 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ dialogClass: &amp;lsquo;alert&amp;rsquo; });&lt;/p&gt;
+&lt;p&gt;1.53 初始化后，得到和设置：&lt;/p&gt;
+&lt;p&gt;//获取&lt;/p&gt;
+&lt;p&gt;var dialogClass = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;dialogClass&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;dialogClass&amp;rsquo;, &amp;lsquo;alert&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;1.61 draggable、resizable :  draggable是否可以使用标题头进行拖动，默认为true，可以拖动;resizable是否可以改变dialog的大小，默认为true，可以改变大小。&lt;/p&gt;
+&lt;p&gt;1.62 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ draggable: false,resizable:false });&lt;/p&gt;
+&lt;p&gt;1.63 初始化后，得到和设置：&lt;/p&gt;
+&lt;p&gt;//获取&lt;/p&gt;
+&lt;p&gt;var draggable = $(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;draggable&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;//设置&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog(&amp;lsquo;option&amp;rsquo;, &amp;lsquo;draggable&amp;rsquo;, false);&lt;/p&gt;
+&lt;p&gt;1.71 width、height ，dialog的宽和高，默认为auto，自动。&lt;/p&gt;
+&lt;p&gt;1.72 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ height: 530,width:200 });&lt;/p&gt;
+&lt;p&gt;1.73 初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.81 maxWidth、maxHeight、minWidth、minHeight  ，dialog可改变的最大宽度、最大高度、最小宽度、最小高度。maxWidth、maxHeight的默认为false，为不限。minWidth、minHeight的默认为150。要使用这些属性需要ui.resizable.js  的支持。&lt;/p&gt;
+&lt;p&gt;1.82 初始化例：&lt;/p&gt;
+&lt;p&gt;$(&#39;.selector&amp;rsquo;).dialog({ maxHeight:  400,maxWidth:600,minHeight:300,minWidth:300 });&lt;/p&gt;
+&lt;p&gt;1.83 初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.91 hide、show ，当dialog关闭和打开时候的效果。默认为null，无效果&lt;/p&gt;
+&lt;p&gt;1.92 初始化例：最上面的实例中用到，请自己看吧。&lt;/p&gt;
+&lt;p&gt;1.93 初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.101 modal,是否使用模式窗口，模式窗口打开后，页面其他元素将不能点击，直到关闭模式窗口。默认为false不是模式窗口。&lt;/p&gt;
+&lt;p&gt;1.102 初始化例：$(&#39;.selector&amp;rsquo;).dialog({ modal: true });&lt;/p&gt;
+&lt;p&gt;1.103 初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.111 title，dialog的标题文字，默认为空。&lt;/p&gt;
+&lt;p&gt;1.112 初始化例：见最上面的实例。1.113 初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.121 position ，dialog的显示位置：可以是&amp;rsquo;center&amp;rsquo;, &amp;lsquo;left&amp;rsquo;, &amp;lsquo;right&amp;rsquo;, &amp;lsquo;top&amp;rsquo;,  &amp;lsquo;bottom&amp;rsquo;,也可以是top和left的偏移量也可以是一个字符串数组例如[&amp;lsquo;right&amp;rsquo;,&amp;lsquo;top&amp;rsquo;]。&lt;/p&gt;
+&lt;p&gt;1.122 初始化例：$(&#39;.selector&amp;rsquo;).dialog({ position: [&amp;lsquo;top&amp;rsquo;,&amp;lsquo;right&amp;rsquo;] }); 1.123  初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.131 zIndex, dialog的zindex值，默认值为1000.&lt;/p&gt;
+&lt;p&gt;1.132 初始化例：$(&#39;.selector&amp;rsquo;).dialog({ zIndex: 3999 }); 1.133  初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;1.141 stack 默认值为true，当dialog获得焦点是，dialog将在最上面。&lt;/p&gt;
+&lt;p&gt;1.142 初始化例：$(&#39;.selector&amp;rsquo;).dialog({ stack: false }); 1.143  初始化后，得到和设置：请参考1.63&lt;/p&gt;
+&lt;p&gt;2 事件&lt;/p&gt;
+&lt;p&gt;2.11 beforeclose 类型dialogbeforeclose ，  当dialog尝试关闭的时候此事件将被触发，如果返回false，那么关闭将被阻止。&lt;/p&gt;
+&lt;p&gt;2.12 初始化例：$(&#39;.selector&amp;rsquo;).dialog({&lt;/p&gt;
+&lt;p&gt;beforeclose: function(event, ui) { &amp;hellip; }&lt;/p&gt;
+&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;2.13 使用类型绑定此事件例：$(&#39;.selector&amp;rsquo;).bind(&amp;lsquo;dialogbeforeclose&amp;rsquo;, function(event, ui)  {&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;2.21 close 类型：dialogclose ，当dialog被关闭后触发此事件。&lt;/p&gt;
+&lt;p&gt;2.22 初始化例：$(&#39;.selector&amp;rsquo;).dialog({&lt;/p&gt;
+&lt;p&gt;close: function(event, ui) { &amp;hellip; }&lt;/p&gt;
+&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;2.23 使用类型绑定此事件例：$(&#39;.selector&amp;rsquo;).bind(&amp;lsquo;dialogclose&amp;rsquo;, function(event, ui) {&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;2.3 open 类型：dialogopen  ，当dialog打开时触发。（篇幅有限，该省略的就省略了啊，初始化例和使用类型绑定事件可以向上参考。）&lt;/p&gt;
+&lt;p&gt;2.4 focus 类型：dialogfocus ，当dialog获得焦点时触发。&lt;/p&gt;
+&lt;p&gt;2.5 dragStart 类型：dragStart，当dialog拖动开始时触发。&lt;/p&gt;
+&lt;p&gt;2.6 drag 类型：drag ，当dialog被拖动时触发。&lt;/p&gt;
+&lt;p&gt;2.7 dragStop 类型：dragStop ，当dialog拖动完成时触发。&lt;/p&gt;
+&lt;p&gt;2.8 resizeStart 类型：resizeStart ，当dialog开始改变窗体大小时触发。&lt;/p&gt;
+&lt;p&gt;2.9 resize 类型：resize，当dialog被改变大小时触发。&lt;/p&gt;
+&lt;p&gt;2.10 resizeStop 类型：resizeStop，当改变完大小时触发。&lt;/p&gt;
+&lt;p&gt;3 方法&lt;/p&gt;
+&lt;p&gt;3.1 destroy ，我喜欢这个哦，摧毁地球。。。 例：.dialog( &amp;lsquo;destroy&amp;rsquo; )&lt;/p&gt;
+&lt;p&gt;3.2 disable，dialog不可用，例：.dialog(&amp;lsquo;disable&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;3.3 enable,dialog可用，例，如3.2&lt;/p&gt;
+&lt;p&gt;3.4 close，open，关闭、打开dialog&lt;/p&gt;
+&lt;p&gt;3.5 option ，设置和获取dialog属性，例如：.dialog( &amp;lsquo;option&amp;rsquo; , optionName , [value] )  ，如果没有value，将是获取。&lt;/p&gt;
+&lt;p&gt;3.6 isOpen ，如果dialog打开则返回true，例如：.dialog(&amp;lsquo;isOpen&amp;rsquo;)&lt;/p&gt;
+&lt;p&gt;3.7 moveToTop ,将dialog移到最上层，例如：.dialog( &amp;lsquo;moveToTop&amp;rsquo; )&lt;/p&gt;
+&lt;p&gt;来源：http://www.cnblogs.com/bestfc/archive/2009/06/08/1498742.html&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>jquery ui according详解(中文)转</title>
+        <link>/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <pubDate>Wed, 06 Apr 2011 15:02:27 +0000</pubDate>
+        
+        <guid>/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+- /posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>jquery ui tabs详解(中文)转</title>
+        <link>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
+        
+        <guid>/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+- /posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter2 Model 支持单例</title>
+        <link>/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
+        <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
+        
+        <guid>/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
+        <description>清风徐来 /posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ -&lt;p&gt;CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter Reactor&#39;s Caching Drivers</title>
+        <link>/posts/codeigniter-reactors-caching-drivers/</link>
+        <pubDate>Sat, 02 Apr 2011 17:18:51 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-reactors-caching-drivers/</guid>
+        <description>清风徐来 /posts/codeigniter-reactors-caching-drivers/ -&lt;p&gt;Before &lt;!-- raw HTML omitted --&gt;Reactor&lt;!-- raw HTML omitted --&gt; dropped, I snuck in some &lt;!-- raw HTML omitted --&gt;caching drivers&lt;!-- raw HTML omitted --&gt; (&lt;!-- raw HTML omitted --&gt;Docs Link&lt;!-- raw HTML omitted --&gt;) that &lt;!-- raw HTML omitted --&gt;Pascal&lt;!-- raw HTML omitted --&gt; had been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.&lt;/p&gt;
+&lt;p&gt;At this time, there are drivers available for &lt;!-- raw HTML omitted --&gt;APC&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Memcached&lt;!-- raw HTML omitted --&gt;, file-based caching, and a dummy cache. If you haven&amp;rsquo;t already, head over to &lt;!-- raw HTML omitted --&gt;BitBucket&lt;!-- raw HTML omitted --&gt; and get cloning or forking.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Tweet extends CI_Controller {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function index()
+{
+    $this-&amp;gt;output-&amp;gt;enable_profiler();
+
+    // Load up drivers
+    $this-&amp;gt;load-&amp;gt;library(&#39;driver&#39;);
+    $this-&amp;gt;load-&amp;gt;driver(&#39;cache&#39;, array(&#39;adapter&#39; =&amp;gt; &#39;apc&#39;));
+
+    // Get Tweets from Cache
+    $tweets = $this-&amp;gt;cache-&amp;gt;get(&#39;my_tweets&#39;);
+
+    if ( ! $tweets)
+    {
+        // No tweets in the cache, so get new ones.
+        $url = &#39;http://api.twitter.com/1/statuses/user_timeline.json?screen_name=gaker&amp;amp;count=5&#39;;
+
+        $tweets = json_decode(file_get_contents($url));
+        $this-&amp;gt;cache-&amp;gt;save(&#39;my_tweets&#39;,$tweets, 300);
+    }
+
+    $data = array(
+        &#39;title&#39;     =&amp;gt; &#39;tweet tweet&#39;,
+        &#39;tweets&#39;    =&amp;gt; $tweets
+    );
+
+    $this-&amp;gt;load-&amp;gt;view(&#39;tweets&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Then a really super simple view could be:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Then let&amp;rsquo;s see what Seige has to say:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:               3216 hits
+Availability:             100.00 %
+Elapsed time:               9.73 secs
+Data transferred:           5.96 MB
+Response time:              0.01 secs
+Transaction rate:         330.52 trans/sec
+Throughput:             0.61 MB/sec
+Concurrency:                2.97
+Successful transactions:        3216
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;So if you&amp;rsquo;re running a single web server/VPS APC can be fantastic to cache API requests in.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;In my local development ExpressionEngine database, I have about 1600 members, and round about 4,000 entries. I&amp;rsquo;m going to first select all the member ids, cycle through them doing a query to get the title and a bit more info on the entry. So this is going to be just entirely stupid and inefficient. Here we go:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&amp;gt;output-&amp;gt;enable_profiler();
+$this-&amp;gt;load-&amp;gt;database();&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    $members = $this-&amp;gt;db-&amp;gt;select(&#39;member_id&#39;)-&amp;gt;get(&#39;exp_members&#39;);
+
+    $res = array();
+
+    foreach ($members-&amp;gt;result() as $m)
+    {
+        $qry = $this-&amp;gt;db-&amp;gt;select(&#39;ct.entry_id, ct.title, ct.url_title,
+                                  ct.entry_date, m.member_id, m.screen_name, 
+                                  m.group_id&#39;)
+                        -&amp;gt;where(&#39;ct.author_id&#39;, (int) $m-&amp;gt;member_id)
+                        -&amp;gt;where(&#39;ct.status&#39;, &#39;open&#39;)
+                        -&amp;gt;join(&#39;exp_members m&#39;, &#39;m.member_id = ct.author_id&#39;)
+                        -&amp;gt;order_by(&#39;ct.entry_date&#39;, &#39;ASC&#39;)
+                        -&amp;gt;get(&#39;exp_channel_titles ct&#39;);
+
+        $res[] = $qry-&amp;gt;result();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Based on my dataset, this lunacy produces 1605 queries, and is horribly inefficient. We can get around it some with memcached. That&amp;rsquo;s not to say that just because you can toss caching at it you should do it, but I just want to illustrate how it can help :) So, with this controller, seige gives us:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:                  3 hits
+Availability:             100.00 %
+Elapsed time:               9.02 secs
+Data transferred:           0.33 MB
+Response time:              5.17 secs
+Transaction rate:           0.33 trans/sec
+Throughput:             0.04 MB/sec
+Concurrency:                1.72
+Successful transactions:           3
+Failed transactions:               0
+Longest transaction:            5.27
+Shortest transaction:           4.99
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;And it&amp;rsquo;s pretty evident that MySQL is getting the living shit beat out of it. This is no good for your visitors. If we cache this mess with memcached, the controller turns into:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&amp;gt;output-&amp;gt;enable_profiler();
+$this-&amp;gt;load-&amp;gt;database();&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    // Load Drivers
+    $this-&amp;gt;load-&amp;gt;library(&#39;driver&#39;);
+    $this-&amp;gt;load-&amp;gt;driver(&#39;cache&#39;, array(&#39;adapter&#39; =&amp;gt; &#39;memcached&#39;));
+
+    $res = $this-&amp;gt;cache-&amp;gt;get(&#39;my_mess&#39;, 300);
+
+    if ( ! $res)
+    {
+        $members = $this-&amp;gt;db-&amp;gt;select(&#39;member_id&#39;)-&amp;gt;get(&#39;exp_members&#39;);
+
+        $res = array();
+
+        foreach ($members-&amp;gt;result() as $m)
+        {
+            $qry = $this-&amp;gt;db-&amp;gt;select(&#39;ct.entry_id, ct.title, ct.url_title,
+                                      ct.entry_date, m.member_id, 
+                                      m.screen_name, m.group_id&#39;)
+                            -&amp;gt;where(&#39;ct.author_id&#39;, (int) $m-&amp;gt;member_id)
+                            -&amp;gt;where(&#39;ct.status&#39;, &#39;open&#39;)
+                            -&amp;gt;join(&#39;exp_members m&#39;, &#39;m.member_id = ct.author_id&#39;)
+                            -&amp;gt;order_by(&#39;ct.entry_date&#39;, &#39;ASC&#39;)
+                            -&amp;gt;get(&#39;exp_channel_titles ct&#39;);
+
+            $res[] = $qry-&amp;gt;result();
+        }
+
+        $res = json_encode($res);
+        $this-&amp;gt;cache-&amp;gt;save(&#39;my_mess&#39;, $res, 300);
+    }
+
+    var_dump(json_decode($res));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Results from seige are:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:                432 hits
+Availability:             100.00 %
+Elapsed time:               9.53 secs
+Data transferred:           2.91 MB
+Response time:              0.07 secs
+Transaction rate:          45.33 trans/sec
+Throughput:             0.31 MB/sec
+Concurrency:                2.98
+Successful transactions:         432
+Failed transactions:               0
+Longest transaction:            0.10
+Shortest transaction:           0.05
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;So we&amp;rsquo;ve increased our output from 3 hits to 432 in 10 seconds. Not a bad boost, if I do say so myself. In a &amp;lsquo;real&amp;rsquo; application, my query calls would be in the model, but we can also avoid loading the models unless the cache is stale, which saves on an&lt;!-- raw HTML omitted --&gt;include()&lt;!-- raw HTML omitted --&gt;, and helps to keep CI breezing along even faster!&lt;/p&gt;
+&lt;p&gt;Have you checked out the new cached drivers in CI Reactor? If so, how do you find them stacking up with your applications needs?&lt;/p&gt;
+- /posts/codeigniter-reactors-caching-drivers/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>FirePHP,给力的调试工具</title>
+        <link>/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Tue, 25 Jan 2011 14:29:37 +0000</pubDate>
+        
+        <guid>/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+        <description>清风徐来 /posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ -&lt;p&gt;FirePHP功能就是将调试信息输出到http头信息上，不影响页面显示；
+这样就特别适用ajax的调试，也适用线上产品不停止运行的调试。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;FirePHPCore的lib包里有四个文件，后缀为php4的明显是适用php4的。&lt;/p&gt;
+&lt;p&gt;简单应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message&amp;rsquo;);
+&lt;!-- raw HTML omitted --&gt;
+分组应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+FB::group(&amp;lsquo;Group A&amp;rsquo;); // 分组&lt;br&gt;
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message&amp;rsquo;);
+FB::groupEnd();&lt;/p&gt;
+&lt;p&gt;FB::group(&amp;lsquo;Group B&amp;rsquo;); // 分组&lt;br&gt;
+//以下按照类型进行信息记录
+FB::log(&amp;lsquo;Plain Message B&amp;rsquo;);
+FB::info(&amp;lsquo;Info Message B&amp;rsquo;);
+FB::warn(&amp;lsquo;Warn Message B&amp;rsquo;);
+FB::error(&amp;lsquo;Error Message B&amp;rsquo;);
+FB::groupEnd();
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;按table应用：
+&lt;!-- raw HTML omitted --&gt;
+require_once(&amp;lsquo;FirePHPCore/fb.php&amp;rsquo;);
+$table[] = array(&amp;lsquo;1&amp;rsquo;, &amp;lsquo;2&amp;rsquo;, &amp;lsquo;3&amp;rsquo;);
+$table[] = array(&amp;lsquo;11&amp;rsquo;, &amp;lsquo;22&amp;rsquo;, &amp;lsquo;33&amp;rsquo;);
+$table[] = array(&amp;lsquo;111&amp;rsquo;, &amp;lsquo;222&amp;rsquo;, &amp;lsquo;333&amp;rsquo;);&lt;/p&gt;
+&lt;p&gt;FB:table(&amp;lsquo;The table&amp;rsquo;, $table);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;好的，现在再说说如何与CodeIgniter结合使用。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;$this-&amp;gt;fb-&amp;gt;group(&#39;Group B&#39;); // 分组  
+//以下按照类型进行信息记录
+$this-&amp;gt;fb-&amp;gt;log(&#39;Plain Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;info(&#39;Info Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;warn(&#39;Warn Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;error(&#39;Error Message B&#39;);
+$this-&amp;gt;fb-&amp;gt;groupEnd();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+效果：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+完了，就是贴图太麻烦了:(&lt;/p&gt;- /posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

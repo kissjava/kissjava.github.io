@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html><head>
+<title>wxPython多线程支持[转]</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="wxPython多线程支持[转]" />
+<meta property="og:description" content="出处：http://guangboo.org/2013/03/04/wxpython-threading
+如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。
+wxpython线程安全方法
+wxPython中，有三个“线程安全”的函数。如果你在更新UI界面时，三个函数都不使用，那么你可能会遇到奇怪的问题。有时GUI也运行挺正常，有时却会无缘无故的崩溃。因此就需要这三个线程安全的函数：wx.PostEvent, wx.CallAfter和wx.CallLater。据Robin Dunn（wxPython作者）描述，wx.CallAfter使用了wx.PostEvent来给应用程序对象发生事件。应用程序会有个事件处理程序绑定到事件上，并在收到事件后，执行处理程序来做出反应。我认为wx.CallLater是在特定时间后调用了wx.CallAfter函数，以实现规定时间后发送事件。
+Robin Dunn还指出Python全局解释锁 (GIL)也会避免多线程同时执行python字节码，这会限制程序使用CPU内核的数量。另外，他还说，“wxPython发布GIL是为了在调用wx API时，其他线程也可以运行”。换句话说，在多核机器上使用多线程，可能效果会不同。
+总之，大概的意思是wx函数中，wx.CallLater是最抽象的线程安全函数, wx.CallAfter次之，wx.PostEvent是最低级的。下面的实例，演示了如何使用wx.CallAfter和wx.PostEvent函数来更新wxPython程序。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/" />
+<meta property="article:published_time" content="2013-12-19T09:23:00+00:00" />
+<meta property="article:modified_time" content="2013-12-19T09:23:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="wxPython多线程支持[转]"/>
+<meta name="twitter:description" content="出处：http://guangboo.org/2013/03/04/wxpython-threading
+如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。
+wxpython线程安全方法
+wxPython中，有三个“线程安全”的函数。如果你在更新UI界面时，三个函数都不使用，那么你可能会遇到奇怪的问题。有时GUI也运行挺正常，有时却会无缘无故的崩溃。因此就需要这三个线程安全的函数：wx.PostEvent, wx.CallAfter和wx.CallLater。据Robin Dunn（wxPython作者）描述，wx.CallAfter使用了wx.PostEvent来给应用程序对象发生事件。应用程序会有个事件处理程序绑定到事件上，并在收到事件后，执行处理程序来做出反应。我认为wx.CallLater是在特定时间后调用了wx.CallAfter函数，以实现规定时间后发送事件。
+Robin Dunn还指出Python全局解释锁 (GIL)也会避免多线程同时执行python字节码，这会限制程序使用CPU内核的数量。另外，他还说，“wxPython发布GIL是为了在调用wx API时，其他线程也可以运行”。换句话说，在多核机器上使用多线程，可能效果会不同。
+总之，大概的意思是wx函数中，wx.CallLater是最抽象的线程安全函数, wx.CallAfter次之，wx.PostEvent是最低级的。下面的实例，演示了如何使用wx.CallAfter和wx.PostEvent函数来更新wxPython程序。"/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    wxPython多线程支持[转]
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-19 09:23
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Python]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/wxpython">wxpython</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B">多线程</a>
+                                &nbsp;
+                            
+                                <a href="/tags/threading">threading</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>出处：<a href="http://guangboo.org/2013/03/04/wxpython-threading">http://guangboo.org/2013/03/04/wxpython-threading</a></p>
+<p>如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。</p>
+<p><strong>wxpython线程安全方法</strong></p>
+<p>wxPython中，有三个“线程安全”的函数。如果你在更新UI界面时，三个函数都不使用，那么你可能会遇到奇怪的问题。有时GUI也运行挺正常，有时却会无缘无故的崩溃。因此就需要这三个线程安全的函数：wx.PostEvent, wx.CallAfter和wx.CallLater。据Robin Dunn（wxPython作者）描述，wx.CallAfter使用了wx.PostEvent来给应用程序对象发生事件。应用程序会有个事件处理程序绑定到事件上，并在收到事件后，执行处理程序来做出反应。我认为wx.CallLater是在特定时间后调用了wx.CallAfter函数，以实现规定时间后发送事件。</p>
+<p>Robin Dunn还指出Python全局解释锁 (GIL)也会避免多线程同时执行python字节码，这会限制程序使用CPU内核的数量。另外，他还说，“wxPython发布GIL是为了在调用wx API时，其他线程也可以运行”。换句话说，在多核机器上使用多线程，可能效果会不同。</p>
+<p>总之，大概的意思是wx函数中，wx.CallLater是最抽象的线程安全函数, wx.CallAfter次之，wx.PostEvent是最低级的。下面的实例，演示了如何使用wx.CallAfter和wx.PostEvent函数来更新wxPython程序。</p>
+<p><strong>wxPython, Theading, wx.CallAfter and PubSub</strong></p>
+<p>wxPython邮件列表中，有些专家会告诉其他人使用wx.CallAfter，并利用PubSub实现wxPython应用程序与其他线程进行通讯，我也赞成。如下代码是具体实现：</p>
+<pre><code>import time
+import wx
+ 
+from threading import Thread
+from wx.lib.pubsub import Publisher
+ 
+########################################################################
+class TestThread(Thread):
+    &quot;&quot;&quot;Test Worker Thread Class.&quot;&quot;&quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &quot;&quot;&quot;Init Worker Thread Class.&quot;&quot;&quot;
+        Thread.__init__(self)
+        self.start()    # start the thread
+ 
+    #----------------------------------------------------------------------
+    def run(self):
+        &quot;&quot;&quot;Run Worker Thread.&quot;&quot;&quot;
+        # This is the code executing in the new thread.
+        for i in range(6):
+            time.sleep(10)
+            wx.CallAfter(self.postTime, i)
+        time.sleep(5)
+        wx.CallAfter(Publisher().sendMessage, &quot;update&quot;, &quot;Thread finished!&quot;)
+ 
+    #----------------------------------------------------------------------
+    def postTime(self, amt):
+        &quot;&quot;&quot;
+        Send time to GUI
+        &quot;&quot;&quot;
+        amtOfTime = (amt + 1) * 10
+        Publisher().sendMessage(&quot;update&quot;, amtOfTime)
+ 
+########################################################################
+class MyForm(wx.Frame):
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, &quot;Tutorial&quot;)
+ 
+        # Add a panel so it looks the correct on all platforms
+        panel = wx.Panel(self, wx.ID_ANY)
+        self.displayLbl = wx.StaticText(panel, label=&quot;Amount of time since thread started goes here&quot;)
+        self.btn = btn = wx.Button(panel, label=&quot;Start Thread&quot;)
+ 
+        btn.Bind(wx.EVT_BUTTON, self.onButton)
+ 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.displayLbl, 0, wx.ALL|wx.CENTER, 5)
+        sizer.Add(btn, 0, wx.ALL|wx.CENTER, 5)
+        panel.SetSizer(sizer)
+ 
+        # create a pubsub receiver
+        Publisher().subscribe(self.updateDisplay, &quot;update&quot;)
+ 
+    #----------------------------------------------------------------------
+    def onButton(self, event):
+        &quot;&quot;&quot;
+        Runs the thread
+        &quot;&quot;&quot;
+        TestThread()
+        self.displayLbl.SetLabel(&quot;Thread started!&quot;)
+        btn = event.GetEventObject()
+        btn.Disable()
+ 
+    #----------------------------------------------------------------------
+    def updateDisplay(self, msg):
+        &quot;&quot;&quot;
+        Receives data from thread and updates the display
+        &quot;&quot;&quot;
+        t = msg.data
+        if isinstance(t, int):
+            self.displayLbl.SetLabel(&quot;Time since thread started: %s seconds&quot; % t)
+        else:
+            self.displayLbl.SetLabel(&quot;%s&quot; % t)
+            self.btn.Enable()
+ 
+#----------------------------------------------------------------------
+# Run the program
+if __name__ == &quot;__main__&quot;:
+    app = wx.PySimpleApp()
+    frame = MyForm().Show()
+    app.MainLoop()
+</code></pre>
+<p>我们会用time模块来模拟耗时过程，请随意将自己的代码来代替，而在实际项目中，我用来打开Adobe Reader，并将其发送给打印机。这并没什么特别的，但我不用线程的话，应用程序中的打印按钮就会在文档发送过程中卡住，UI界面也会被挂起，直到文档发送完毕。即使一秒，两秒对用户来说都有卡的感觉。</p>
+<p>总之，让我们来看看是如何工作的。在我们编写的Thread类中，我们重写了run方法。该线程在被实例化时即被启动，因为我们在__init__方法中有“self.start”代码。run方法中，我们循环6次，每次sheep10秒，然后使用wx.CallAfter和PubSub更新UI界面。循环结束后，我们发送结束消息给应用程序，通知用户。</p>
+<p>你会注意到，在我们的代码中，我们是在按钮的事件处理程序中启动的线程。我们还禁用按钮，这样就不能开启多余的线程来。如果我们让一堆线程跑的话，UI界面就会随机的显示“已完成”，而实际却没有完成，这就会产生混乱。对用户来说是一个考验，你可以显示线程PID，来区分线程，你可能要在可以滚动的文本控件中输出信息，这样你就能看到各线程的动向。</p>
+<p>最后可能就是PubSub接收器和事件的处理程序了：</p>
+<pre><code>    def updateDisplay(self, msg):
+    &quot;&quot;&quot;
+    Receives data from thread and updates the display
+    &quot;&quot;&quot;
+    t = msg.data
+    if isinstance(t, int):
+        self.displayLbl.SetLabel(&quot;Time since thread started: %s seconds&quot; % t)
+    else:
+        self.displayLbl.SetLabel(&quot;%s&quot; % t)
+        self.btn.Enable()
+</code></pre>
+<p>看我们如何从线程中提取消息，并用来更新界面？我们还使用接受到数据的类型来告诉我们什么显示给了用户。很酷吧？现在，我们玩点相对低级一点点，看wx.PostEvent是如何办的。</p>
+<p><strong>wx.PostEvent与线程</strong></p>
+<p>下面的代码是基于<a href="http://wiki.wxpython.org/LongRunningTasks">wxPython wiki</a>编写的，这看起来比wx.CallAfter稍微复杂一下，但我相信我们能理解。</p>
+<pre><code>import time
+import wx
+ 
+from threading import Thread
+ 
+# Define notification event for thread completion
+EVT_RESULT_ID = wx.NewId()
+ 
+def EVT_RESULT(win, func):
+    &quot;&quot;&quot;Define Result Event.&quot;&quot;&quot;
+    win.Connect(-1, -1, EVT_RESULT_ID, func)
+ 
+class ResultEvent(wx.PyEvent):
+    &quot;&quot;&quot;Simple event to carry arbitrary result data.&quot;&quot;&quot;
+    def __init__(self, data):
+        &quot;&quot;&quot;Init Result Event.&quot;&quot;&quot;
+        wx.PyEvent.__init__(self)
+        self.SetEventType(EVT_RESULT_ID)
+        self.data = data
+ 
+########################################################################
+class TestThread(Thread):
+    &quot;&quot;&quot;Test Worker Thread Class.&quot;&quot;&quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self, wxObject):
+        &quot;&quot;&quot;Init Worker Thread Class.&quot;&quot;&quot;
+        Thread.__init__(self)
+        self.wxObject = wxObject
+        self.start()    # start the thread
+ 
+    #----------------------------------------------------------------------
+    def run(self):
+        &quot;&quot;&quot;Run Worker Thread.&quot;&quot;&quot;
+        # This is the code executing in the new thread.
+        for i in range(6):
+            time.sleep(10)
+            amtOfTime = (i + 1) * 10
+            wx.PostEvent(self.wxObject, ResultEvent(amtOfTime))
+        time.sleep(5)
+        wx.PostEvent(self.wxObject, ResultEvent(&quot;Thread finished!&quot;))
+ 
+########################################################################
+class MyForm(wx.Frame):
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, &quot;Tutorial&quot;)
+ 
+        # Add a panel so it looks the correct on all platforms
+        panel = wx.Panel(self, wx.ID_ANY)
+        self.displayLbl = wx.StaticText(panel, label=&quot;Amount of time since thread started goes here&quot;)
+        self.btn = btn = wx.Button(panel, label=&quot;Start Thread&quot;)
+ 
+        btn.Bind(wx.EVT_BUTTON, self.onButton)
+ 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.displayLbl, 0, wx.ALL|wx.CENTER, 5)
+        sizer.Add(btn, 0, wx.ALL|wx.CENTER, 5)
+        panel.SetSizer(sizer)
+ 
+        # Set up event handler for any worker thread results
+        EVT_RESULT(self, self.updateDisplay)
+ 
+    #----------------------------------------------------------------------
+    def onButton(self, event):
+        &quot;&quot;&quot;
+        Runs the thread
+        &quot;&quot;&quot;
+        TestThread(self)
+        self.displayLbl.SetLabel(&quot;Thread started!&quot;)
+        btn = event.GetEventObject()
+        btn.Disable()
+ 
+    #----------------------------------------------------------------------
+    def updateDisplay(self, msg):
+        &quot;&quot;&quot;
+        Receives data from thread and updates the display
+        &quot;&quot;&quot;
+        t = msg.data
+        if isinstance(t, int):
+            self.displayLbl.SetLabel(&quot;Time since thread started: %s seconds&quot; % t)
+        else:
+            self.displayLbl.SetLabel(&quot;%s&quot; % t)
+            self.btn.Enable()
+ 
+#----------------------------------------------------------------------
+# Run the program
+if __name__ == &quot;__main__&quot;:
+    app = wx.PySimpleApp()
+    frame = MyForm().Show()
+    app.MainLoop()
+</code></pre>
+<p>让我们先稍微放一放，对我来说，最困扰的事情是第一块：</p>
+<pre><code># Define notification event for thread completion
+EVT_RESULT_ID = wx.NewId()
+ 
+def EVT_RESULT(win, func):
+    &quot;&quot;&quot;Define Result Event.&quot;&quot;&quot;
+    win.Connect(-1, -1, EVT_RESULT_ID, func)
+ 
+class ResultEvent(wx.PyEvent):
+    &quot;&quot;&quot;Simple event to carry arbitrary result data.&quot;&quot;&quot;
+    def __init__(self, data):
+        &quot;&quot;&quot;Init Result Event.&quot;&quot;&quot;
+        wx.PyEvent.__init__(self)
+        self.SetEventType(EVT_RESULT_ID)
+        self.data = data
+</code></pre>
+<p>EVT_RESULT_ID只是一个标识，它将线程与wx.PyEvent和“EVT_RESULT”函数关联起来，在wxPython代码中，我们将事件处理函数与EVT_RESULT进行捆绑，这就可以在线程中使用wx.PostEvent来将事件发送给自定义的ResultEvent了。</p>
+<p><strong>结束语</strong></p>
+<p>希望你已经明白在wxPython中基本的多线程技巧。还有其他多种多线程方法这里就不在涉及，如wx.Yield和Queues。幸好有<a href="http://wiki.wxpython.org/LongRunningTasks">wxPython wiki</a>,它涵盖了这些话题，因此如果你有兴趣可以访问wiki的主页，查看这些方法的使用。</p>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2013-12-19</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/">
+			下回<br>wxPython跨线程调用[转]
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/">
+			上回<br>新玩具
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

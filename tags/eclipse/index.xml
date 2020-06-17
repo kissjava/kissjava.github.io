@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eclipse on 清风徐来</title>
+    <link>/tags/eclipse/</link>
+    <description>Recent content in eclipse on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 13 May 2011 15:31:28 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>eclipse pdt 注释快捷键失效的解决方法</title>
+      <link>/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 13 May 2011 15:31:28 +0000</pubDate>
+      
+      <guid>/posts/eclipse-pdt-%E6%B3%A8%E9%87%8A%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>重装win7 64位系统后，下了64为的java jre和64位的eclipse pdt。
+淡水突然发现写代码时，无法注释了。还以为是64位的谷歌输入法搞的鬼。卸载输入法后还是不行。
+google之。原来是新版eclipse的bug。
+到 http://sourceforge.jp/projects/pdt-tools/releases/51060
+下载：org.eclipse.php.ui_2.2.1.v20101001-2300.jar
+复制到你的eclipse的plugins目录。
+eclipse.exe -clean 运行就可以了。
+浪费了不少时间。记录下来，希望遇到同意问题的朋友可以看到。</description>
+    </item>
+    
+    <item>
+      <title>windows7下面搭建 Xampplite&#43;Eclipse PDT&#43;XDebug的PHP开发环境</title>
+      <link>/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 12 Sep 2009 16:36:55 +0000</pubDate>
+      
+      <guid>/posts/windows7%E4%B8%8B%E9%9D%A2%E6%90%AD%E5%BB%BA-xampplite&#43;eclipse-pdt&#43;xdebug%E7%9A%84php%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>淡水是用xampplite1.7.1，它的php版本是5.2.9。最新版的xampp搭载的是php5.3，淡水的程序跑起来好像有些问题-_-!!
+1，下载PDT(PHP Development Tools)，地址：http://www.eclipse.org/pdt/downloads/ 我下的版本是PDT 2.1 All In Ones，解压后如果不能运行，请安装JRE安装，因为Eclipse需要JRE才能运行。地址 ：http://www.java.com/zh_CN/download/manual.jsp
+2，下载XAMPPlite1.7.1这个集成的PHP+MySql运行环境，如果是EXE安装包，就双击安装，如果是ZIP包，就解压运行。地址：http://www.apachefriends.org/en/xampp-windows.html
+3，下载XDebug,我下载的是php_xdebug-2.0.4-5.2.8.dll，用这个替换xampplite1.7.1自带的php_xdebug.dll，自带的无法正常调试。地址：http://xdebug.org/download.php
+4，编辑php.ini 添加如下到php.ini [XDebug] ;; Only Zend OR (!) XDebug zend_extension_ts=&amp;quot;xampplitephpextphp_xdebug.dll&amp;rdquo; xdebug.remote_enable=true xdebug.remote_host=127.0.0.1 xdebug.remote_port=9000 xdebug.remote_handler=dbgp xdebug.profiler_enable=on xdebug.profiler_output_dir=&amp;quot;xampplitetmp&amp;rdquo;
+原来php.ini里有;extension=php_xdebug.dll，这里无需去掉注释。因为php5.2.9使用zend_extension_ts来挂载xdebug（php5.3开始用zend_extension挂载，又不一样了）
+5，配置Eclipse PDT,进入window-&amp;gt;preferences 展开PHP，配置其中的PHP Executables,如图 配置Debug，如图 这样就搞定了,可以不用盗版的zend studio for Eclipse鸟。。。最后，说windows7下搭建。。其实只是个噱头;)</description>
+    </item>
+    
+    <item>
+      <title>学习php中的soap</title>
+      <link>/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
+      <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
+      
+      <guid>/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
+      <description>淡水摸索了一阵子。 说说吧，先说说wsdl文件的建立。 用zend studio for eclipse 或是 easyeclipse for php都可以建立。但是zse方便一些。例如提供一个简单的加法服务： sum.php</description>
+    </item>
+    
+  </channel>
+</rss>

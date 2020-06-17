@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>virtualenv on 清风徐来</title>
+    <link>/tags/virtualenv/</link>
+    <description>Recent content in virtualenv on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 23 Jul 2013 14:34:44 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python虚拟环境virtualenv</title>
+      <link>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</link>
+      <pubDate>Tue, 23 Jul 2013 14:34:44 +0000</pubDate>
+      
+      <guid>/posts/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv/</guid>
+      <description>昨儿提到了python安装virtualenv但是并未说明它的用途和使用方法.今天就再次勤快一下.
+virtualenv是可以在python中建立隔离不同的第三方工具包的工具,它建立一个虚拟的独立环境.嗯,就是一个沙箱吧.
+这样每个项目都可以有自己的第三方工具包,可以自己升级,而不会影响到其他环境里的工具包.
+比如,我可以为公司的项目搞个环境叫comDjango;还可以自己偷偷搞个myDjango.
+domDjango里可以是老版的Django,myDjango里可以是最新的测试版.他们不会影响到对方.解决了所有项目都用同一版本类库的尴尬,当然还有其他好处.比如某个环境里只安装想要的包,满足洁癖等等&amp;hellip;
+好吧,说说安装和使用吧.
+#安装 $easy_install virtualenv#使用 #在当前目录下,建立了一个comDjango(是个目录) $virtualenv comDjango #上面的操作,会依赖系统已有的site packages,要建立一个更纯净的可以用 $virtualenv &amp;ndash;no-site-packages comDjango #进入这个目录,并激活这个环境 $cd comDjango #$source bin/activate(Linux下的激活) #windows下的操作. $Scriptsactivate.bat #完成后提示符路径前会多出&amp;rdquo;(comDjango)&amp;quot;,也就是成功进入了comDjango的虚拟环境了此时,去pip install xxx就会安装到comDjango里了,和其他环境不相干了.
+#最后,退出这个虚拟环境 $deactivate</description>
+    </item>
+    
+    <item>
+      <title>python 安装二三事</title>
+      <link>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</link>
+      <pubDate>Sun, 21 Jul 2013 13:44:09 +0000</pubDate>
+      
+      <guid>/posts/python-%E5%AE%89%E8%A3%85%E4%BA%8C%E4%B8%89%E4%BA%8B/</guid>
+      <description>恰好,下载文件夹里有个python2.7.5.mis
+双击,一路next,安装完成.
+在命令行窗口,敲python回车.尽然没有说不是内部或外部命令.显然是没有写到Path里. 好吧,手动吧.
+系统-&amp;gt;高级属性设置-&amp;gt;环境变量:
+编辑Path:添加上 ;C:\Python27\Scripts;C:\Python27;C:\Python27\Lib再到命令行,敲python回车.妥了.
+还要安装easy install(应该叫它setuptools,官方叫这个包).这个没有mis包.需要下载一个ez_setup.py(这里有:http://peak.telecommunity.com/dist/ez_setup.py)
+命令行下安装:cd 下载目录;python ez_setup.py只要连网了,一般都能安装成功,要么就是人品问题了.
+好吧,这下就可以在命令行下,简单的安装python第三方的包了.比如 easy_install virtualenv还有 easy_install MySQL-python&amp;hellip;
+好像比php方便些呢.其实好久没更新blog了,随意写写,凑数来了. 注意是随意,不是随便.</description>
+    </item>
+    
+  </channel>
+</rss>

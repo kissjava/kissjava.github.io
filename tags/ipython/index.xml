@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ipython on 清风徐来</title>
+    <link>/tags/ipython/</link>
+    <description>Recent content in ipython on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sat, 07 Nov 2015 08:39:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ipython/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ipython tab键无法提示补全</title>
+      <link>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
+      <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
+      
+      <guid>/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
+      <description>python3.4下pip安装了ipython
+pip install ipythoncmd运行ipython貌似正常，但是无法tab补全、提示 需要pip 安装 pyreadline
+pip install pyreadline以上在win8.1下32位python3.4通过</description>
+    </item>
+    
+  </channel>
+</rss>

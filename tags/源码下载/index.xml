@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>源码下载 on 清风徐来</title>
+    <link>/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/</link>
+    <description>Recent content in 源码下载 on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 08 Oct 2008 20:09:32 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于Codeigniter1.6.3的华领GPS车管系统网站</title>
+      <link>/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Wed, 08 Oct 2008 20:09:32 +0000</pubDate>
+      
+      <guid>/posts/%E5%9F%BA%E4%BA%8Ecodeigniter1.6.3%E7%9A%84%E5%8D%8E%E9%A2%86gps%E8%BD%A6%E7%AE%A1%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%AB%99/</guid>
+      <description>&lt;p&gt;华领GPS车管系统网站(&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;)
+名称：华领GPS车辆管理系统
+地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.gpsnet.cc&#34;&gt;http://www.gpsnet.cc&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+CodeIgniter版本：1.6.3
+工具dw，UltraEdit（资源管理器比editplus好用）&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

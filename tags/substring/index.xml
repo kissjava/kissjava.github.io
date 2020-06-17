@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>substring on 清风徐来</title>
+    <link>/tags/substring/</link>
+    <description>Recent content in substring on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 15 Oct 2009 10:45:42 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/substring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql的几个函数</title>
+      <link>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
+      
+      <guid>/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+      <description>缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：先说简单点的方法：UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 细说一下： REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)，是替换空格 REGEXP ，是mysql里的正则 &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。 再来一个另类的：UPDATE customer_copy set fax= concat(substring_index(fax,&amp;rsquo; &amp;lsquo;,1), substring_index(fax,&amp;rsquo; &amp;lsquo;,-1)) where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;; 这里用到了两个函数:concat(),substring_index() concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3 substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串. SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql SUBSTRING_INDEX(&amp;lsquo;www.mysql.com&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com 解释一下，如果count是负数，就从右边开始计数和截取。 substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。</description>
+    </item>
+    
+  </channel>
+</rss>

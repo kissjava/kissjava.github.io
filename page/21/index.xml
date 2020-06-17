@@ -1,0 +1,591 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>折子戏</title>
+        <link>/posts/%E6%8A%98%E5%AD%90%E6%88%8F/</link>
+        <pubDate>Tue, 30 Dec 2008 16:38:56 +0000</pubDate>
+        
+        <guid>/posts/%E6%8A%98%E5%AD%90%E6%88%8F/</guid>
+        <description>清风徐来 /posts/%E6%8A%98%E5%AD%90%E6%88%8F/ -&lt;!-- raw HTML omitted --&gt;
+- /posts/%E6%8A%98%E5%AD%90%E6%88%8F/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>适合Codeingiter1.7.0的authentication library</title>
+        <link>/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</link>
+        <pubDate>Wed, 24 Dec 2008 21:09:59 +0000</pubDate>
+        
+        <guid>/posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/</guid>
+        <description>清风徐来 /posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/ -&lt;p&gt;适合Codeingiter1.7.0的authentication library地址：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://dexcell.shinsengumiteam.com/dx_auth/index.html&#34;&gt;http://dexcell.shinsengumiteam.com/dx_auth/index.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;只是一直没空研究看看。时间都被我荒废到哪里去了呢？&lt;/p&gt;
+&lt;p&gt;今天对于很多人来说，是个特殊的日子，虽然对我来说只是再平常不过的一天了。嗯，Merry Christmas！&lt;/p&gt;
+- /posts/%E9%80%82%E5%90%88codeingiter1.7.0%E7%9A%84authentication-library/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>告别“黑户”生活</title>
+        <link>/posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Wed, 24 Dec 2008 21:08:43 +0000</pubDate>
+        
+        <guid>/posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/</guid>
+        <description>清风徐来 /posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/ -&lt;p&gt;淡水是2004年毕业的。&lt;/p&gt;
+&lt;p&gt;毕业后一直没有从学校把户口迁移。不想竟然成了“黑户”，就连张银行卡都办不了。&lt;/p&gt;
+&lt;p&gt;今天老爸辛苦了一天，刚从单位到家，就又跑到学校去……再到老家派出所……劳累一天了，终于帮我把户口办好了。&lt;/p&gt;
+&lt;p&gt;小时候总是调皮捣蛋，经常被老爸狠揍。如今自己长大了，老爸也真的老了。时间是如此坚定的流淌着，父爱如山，我却一直无法给他多少欣慰。希望天下的父母都平安、健康、长寿、幸福&lt;/p&gt;
+- /posts/%E5%91%8A%E5%88%AB%E9%BB%91%E6%88%B7%E7%94%9F%E6%B4%BB/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>en、eng辨音字表</title>
+        <link>/posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/</link>
+        <pubDate>Mon, 15 Dec 2008 12:38:01 +0000</pubDate>
+        
+        <guid>/posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/</guid>
+        <description>清风徐来 /posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/ -&lt;p&gt;学会普通话，也挺难的。淡水对en，eng的发音有些模糊，对in和ing更是完全区分不了。难啊 :(&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/eneng%E8%BE%A8%E9%9F%B3%E5%AD%97%E8%A1%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP利用iframe上传文件并返回值到父框架</title>
+        <link>/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</link>
+        <pubDate>Fri, 28 Nov 2008 16:14:07 +0000</pubDate>
+        
+        <guid>/posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/</guid>
+        <description>清风徐来 /posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/ -&lt;p&gt;哈哈，淡水其实也是采用这样的做发法的。正好看到有童鞋博客上有这样写。就顺手贴过来了。
+&lt;!-- raw HTML omitted --&gt;
+if($result)  &lt;br&gt;
+{ &lt;br&gt;
+echo &amp;ldquo;上传成功!文件路径为：&amp;rdquo;.$file2; &lt;br&gt;
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;; &lt;br&gt;
+echo&#39;&lt;!-- raw HTML omitted --&gt;parent.document.form1.img.value=document.getElementById(&amp;ldquo;img&amp;rdquo;).value;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;; &lt;br&gt;
+}
+&lt;!-- raw HTML omitted --&gt;
+文件上传成功后，把文件路径写入一个隐藏的域中（img），然后用DOM原理把隐藏域中的VALUE发送到父框架的表单form1的img文本框中：&lt;!-- raw HTML omitted --&gt;
+ok，再来看看淡水的。
+淡水编辑器用了tinyMCE，所以有一点点不一样。
+我的form页：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php%E5%88%A9%E7%94%A8iframe%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%B9%B6%E8%BF%94%E5%9B%9E%E5%80%BC%E5%88%B0%E7%88%B6%E6%A1%86%E6%9E%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>还是phpDocumentor的安装和使用</title>
+        <link>/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sun, 23 Nov 2008 12:51:18 +0000</pubDate>
+        
+        <guid>/posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 /posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/ -&lt;p&gt;写文件是一个程序设计师最最痛苦的事情之一，尤其是写了一堆程序后有人要你把 Function ，Class 等等等等，写成一份文件。&lt;/p&gt;
+&lt;p&gt;这事情不管你是写 c/c++ , perl , ruby , php 都不例外。&lt;/p&gt;
+&lt;p&gt;phpDocumentor 是我们的救星! 只要在写程序的时候，乖乖的写一点注解，写一点范例，多一点说明，注意一下格式，等到程序完工后，只要一个指令，就可以立刻把全部程序的说明文件产生出来，而且还有多种样式可以选择，甚至可以作成  PDF , CHM 喔&amp;hellip;&lt;/p&gt;
+&lt;p&gt;好了，屁话不多说，先来说说怎么装上这好用的东西吧&amp;hellip;
+phpDocumentor 本身已经是 pear 的成员之一，所以安装的时候只要用 pear 来安装即可（以下范例为在 Windows 下进行，以后再补上 LInux 下的）&lt;/p&gt;
+&lt;p&gt;&amp;ndash;如果你已经有装 php 跟 pear 请跳过&amp;ndash;&lt;/p&gt;
+&lt;p&gt;首先假设我把我的的 php 安装路径在 d:php
+也就是说我从 &lt;a href=&#34;http://www.php.net&#34;&gt;www.php.net&lt;/a&gt; 下载了最新的 php win32 安装档案，解开后放在 d:php
+那么这个目录下面应该有 d:phpPEAR这个目录，但是当你进去看的时候，你会发现好像没有 PEAR 相关程序库阿&amp;hellip;
+没错，这个时候你还没有安装 PEAR 请先用 go-pear.php 安装基本 pear 环境。&lt;/p&gt;
+&lt;p&gt;那么在 d:php 目录下有一个档案，叫做 go-pear.bat 请开一个 cmd 视窗去执行他，中间会有一些问题，基本上都照预设值去跑就可以了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;跑玩后，你的 pear 应该会被安装在 d:phpPEARpear 下面，而帮助你安装其他 pear 套件的 pear.bat 则在 d:phpPEAR下面&lt;/p&gt;
+&lt;p&gt;&amp;ndash;安使安装 phpDocumentor &amp;ndash;&lt;/p&gt;
+&lt;p&gt;安装 phpDocumentor 的过程也很简单，只要利用 pear.bat 即可！
+使用指令如下&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;d:phpPEARpear.bat install -o PhpDocumentor&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;当中有多下一个 -o 的参数，意思是要 pear 把相依的套件也一起下载安装。
+安装完成后 d:phpPEAR 下面应该会多一个 phpdoc.bat 的批次档，我们就可以用这个批次档来产生我们的文件。&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 使用 phpdoc.bat 产生文件 &amp;ndash;&lt;/p&gt;
+&lt;p&gt;产生文件的方式我通常只有用下面一行指令解决：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;d:phpPEARphpdoc.bat -o HTML:Smarty:PHP -d d:myProjectphp_source -t d:myProjectdocs&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这样子的意思是说，采用 HTML:Smarty:PHP 的样板格式，然后原始码目录在 d:myProjectphp_source ，接着把产生的文件放在 d:myProjectdocs 底下。&lt;/p&gt;
+&lt;p&gt;当中若是你只要对一个档案作文件的话，可以把 -d 改成 -f 然后后面接的着就是指定的档名。&lt;/p&gt;
+&lt;p&gt;样板的格式基本上有 HTML, XML, PDF, CHM 四大类别，通常我用的都是 HTML:Smarty:PHP 这个，因为他比较好看!&lt;/p&gt;
+&lt;p&gt;另外还有就是 CHM:default:default 这个.用来产生 chm 的，不过他产生出来的是 .hhp 档案，也就是还没有经过 HTML helper 编译过的档案，所以要另外安装 HTML Helper 来编译 hhp 档案就可以产生你要的档案。&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 最后来说一下怎么写注解 &amp;ndash;&lt;/p&gt;
+&lt;p&gt;phpDocumentor 的注解有一定的规格，但是都跟我们原来写注解的方式很像，只是要注意一下东西而已。
+简单的来看个范例好了
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;- /posts/%E8%BF%98%E6%98%AFphpdocumentor%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>(转载)phpDocumentor筆記</title>
+        <link>/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</link>
+        <pubDate>Thu, 20 Nov 2008 12:25:04 +0000</pubDate>
+        
+        <guid>/posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/</guid>
+        <description>清风徐来 /posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/ -&lt;p&gt;phpDocumentor很好的php工具。&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;这里转载的台湾同胞的学习笔记，方便查询。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;你喜歡寫文件嗎？我不喜歡。尤其是在趕工的時候，哪來的美國時間寫文件；就算有時間也是希望趕快把事情做完閃人，怎樣都輪不到寫文件的時候。&lt;/p&gt;
+&lt;p&gt;文件需要嗎？雖然不喜歡寫文件，但文件真的是必要的。對自己而言，正當在趕案子兵荒馬亂的時候，突然要某個以前寫過的函式結果不知道放哪去了，這時心情會很糟很糟的去把以前的碼挖出來一份一份看，才能找出所要的函式，這樣更浪費時間。對於他人而言，要是每個人寫出來的東西都可以再讓其它人了解，並且進一步使用其它人早已寫好的元件，可以讓我們再省下時間來多喝幾杯咖啡。&lt;/p&gt;
+&lt;p&gt;那要怎麼樣讓編寫文件輕鬆又自在？ phpDocumentor 就是一個現成好用的工具，只要在寫程式時順手寫上一點點的註解，困難一點的可以再加上一點點的範例。寫完後交給 phpDocumentor 編譯，一下子圖文並茂的程式文件自動就產生了。而且它還不只可以產生 HTML 檔，還可以產生出 PDF, CHM 等文件。就算產生 HTML 檔，還有許多的風格可以選擇。這樣好用的工具放著不用，實在太可惜了。&lt;/p&gt;
+&lt;p&gt;這份資料裡，只會出現馬上能用的資料，除了這個簡介外，不會廢話太多，所以文件中的文句也冰冷了些。會這樣做的目的是希望文件的每一個部份都能讓讀者快速吸收，任何一個例子複製下來後馬上能用。文件中的每個樣版我都是精心設計過，起碼我以後要用的時候不必再想說要寫一個類別正常需要哪些 Tag ，只要把樣版複製下來以後就直接可以用了。&lt;/p&gt;
+&lt;p&gt;由於此文件中資料只有使用上最需要的部份（也是一定能用的部份），因此若在使用上想要了解更多，可以到 phpDocumentor 的官方網站 (&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.phpdoc.org/&#34;&gt;http://www.phpdoc.org/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;)上找到所需資料。&lt;/p&gt;
+&lt;p&gt;此文件中所有的測試環境是 Windows XP + PHP 5.2.1 + phpDocumetor v.1.4.1。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;假設你的 php 目錄在 php5&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;步驟
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;安裝 PEAR 基本套件&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;請先查看 php5PEAR 裡的內容，若裡面是空的則是還沒安裝 PEAR 基本套件，請以命令列模式下執行 PHP 目錄下的 go-pear.bat。&lt;/p&gt;
+&lt;p&gt;在執行過程中，會要求回答幾個問題，都用預設值即可。&lt;/p&gt;
+&lt;p&gt;執行完畢後會在 php5PEAR 下裝了 PEAR 基本套件。
+&lt;!-- raw HTML omitted --&gt;安裝 phpDocumentor&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在 PHP 目錄下執行以下命令：&lt;/p&gt;
+&lt;p&gt;php5PEARpear install -o PhpDocumentor
+此命令會安裝 phpDocumentor 及其相依套件。裝好以後， phpDocumentor 的所有程式會放在 php5PEARPhpDocumentor 裡。&lt;/p&gt;
+&lt;p&gt;如此就安裝完成。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;步驟
+&lt;!-- raw HTML omitted --&gt;把 php5PEARPhpDocumentorphpDocumentor 裡的（含子目錄）的文件裡的所有 iso-8859-1 的字串全部換成 utf-8 。這種事情我是交給我的文字編輯器 (PSPad) 來做多檔的取代動作。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是 lib.inc.php 的標題&lt;/li&gt;
+&lt;li&gt;這是 lib.inc.php 的描述
+*/
+include_once(&amp;lsquo;lib.inc.php&amp;rsquo;);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;圓周率&lt;/li&gt;
+&lt;li&gt;圓周和直徑的比值
+*/
+define(&amp;lsquo;pi&amp;rsquo;, 3.14159);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是 funtion1 的註解區塊標題&lt;/li&gt;
+&lt;li&gt;這是 funtion1 的描述&lt;/li&gt;
+&lt;li&gt;@global int 這是函式內第一個全域變數的註解，就是 $global1 的註解&lt;/li&gt;
+&lt;li&gt;@global string 這是函式內第二個全域變數的註解，就是 $global2 的註解&lt;/li&gt;
+&lt;li&gt;@param bool $arg1 這是函式參數 $arg1 的註解&lt;/li&gt;
+&lt;li&gt;@param int|string $arg2 這裡是函式參數 $arg2 的註解&lt;/li&gt;
+&lt;li&gt;@return mixed 傳回值的註解
+*/
+function function1($arg1, $arg2) {
+global $global1, $global2;
+return array($arg1, $arg2);
+}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是MyClass的標題&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;建立簡寫型的清單&lt;/li&gt;
+&lt;li&gt;這裡建立一份無序清單&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目二，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每個項目可以是多行，&lt;/li&gt;
+&lt;li&gt;就像這個項目，&lt;/li&gt;
+&lt;li&gt;這行還在項目二中&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目三&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;清單結束，因為沒縮排&lt;/li&gt;
+&lt;li&gt;這裡建立一份有序清單&lt;/li&gt;
+&lt;li&gt;1 有序的項目一，數字後一定要加一個空白。&lt;/li&gt;
+&lt;li&gt;2 有序的項目二&lt;/li&gt;
+&lt;li&gt;有序清單的另一種寫法&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;ordered item 1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ordered item 2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;清單在此結束&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@package phpDocumentorExample&lt;/li&gt;
+&lt;li&gt;@author 多采多姿&lt;/li&gt;
+&lt;li&gt;@since 1.0rc1&lt;/li&gt;
+&lt;li&gt;@version 0.2b&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;/
+class MyClass {
+/&lt;/em&gt;*&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這裡是成員變數的註解&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@var string 成員變數的註解&lt;/li&gt;
+&lt;li&gt;@access private
+*/
+private $_variable = &amp;ldquo;Hello&amp;rdquo;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是一個公開的成員函式&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@param bool $var1 參數1&lt;/li&gt;
+&lt;li&gt;@param string|array $var2 參數1&lt;/li&gt;
+&lt;li&gt;@return void&lt;/li&gt;
+&lt;li&gt;@access public
+*/
+public function set_vars($var1, $var2) {
+}
+}
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在命令列下用以下指令
+phpdoc &amp;ndash;parseprivate -o HTML:frames:earthli -f projectphp_projectexample.php -t projectphp_projectdocs
+或
+phpdoc &amp;ndash;parseprivate -o HTML:Smarty:PHP -d projectphp_project -t projectphp_projectdocs
+&lt;!-- raw HTML omitted --&gt;解說&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ndash;parseprivate： 是將私有 (private) 成員函式或私有變數等等也都加入程式文件裡。沒有這參數的話，產生出的文件裡只會有公開的 (public) 和受保護的 (protected) 的成員函式和變數。&lt;/p&gt;
+&lt;p&gt;-f ： 是指針對某個檔案產生註解文件。&lt;/p&gt;
+&lt;p&gt;-d ： 針對某個目錄（含其子目錄）產生註解文件。&lt;/p&gt;
+&lt;p&gt;-t ： 指定要輸出的目錄&lt;/p&gt;
+&lt;p&gt;-o ： 指定輸出格式，上例的格式有兩種&lt;/p&gt;
+&lt;p&gt;HTML:frames:earthli ： 是輸出有一種帶有框架 (frame) 的說明文件，所產生出來的文件非常漂亮。Zend Framework 的 API 文件就是採用這種風格。&lt;/p&gt;
+&lt;p&gt;HTML:Smarty:PHP ： 產生的文件看起來就像是 PHP 網站上或是 phpDocumentor 官網上的的一樣。
+待程式結束後，瀏覽剛剛指定產生文件的目錄下，會有一個 index.html 檔，以瀏覽器打開它就可以看到 phpDocumentor 產生出來的程式文件。倘若在產生文件的過程中，有任何的錯誤，這些錯誤會出現在 error.html檔裡。&lt;/p&gt;
+&lt;p&gt;转载：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://pkwbim-programming-note.blogspot.com/2008/01/phpdocumentor-0.html&#34;&gt;http://pkwbim-programming-note.blogspot.com/2008/01/phpdocumentor-0.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;淡水备注：生成文案也可以用phpDesigner2008来做的。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版&lt;!-- raw HTML omitted --&gt;
+基本樣式如下：
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是文件區塊 (DocBlock) 的標題&lt;/li&gt;
+&lt;li&gt;第二行開始就是描述&lt;/li&gt;
+&lt;li&gt;描述可以延伸好幾行
+&lt;em&gt;/
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;解說 &lt;!-- raw HTML omitted --&gt;
+文件區塊的開頭一定要有兩個星號（/**），接下來的每一行的開頭要有一個&lt;/em&gt;，結束時使用*/為結尾。
+不符合文件區塊格式的註解 phpDocumentor 不會進行處理。
+標題只能一行。（官方手冊上是說三行，真莫名其妙）。
+標題下一行直接可接描述。（官方手冊上寫一定要空一行，經實驗這是不必要的）
+描述是寫詳細解釋的地方，除了可以寫一般的文字外，可以用標籤和 Tag 為文件區塊增加功能。（標籤和 Tag 之後會解釋）
+描述可省略。
+要為任何一段程式做文件註解，最簡單的方式就是在要解釋的程式之前放一個 DocBlock 。如下所示：
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/li&gt;
+&lt;li&gt;這函數叫foo，可能沒有什麼用&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;要為一個函數做文件註解，&lt;/li&gt;
+&lt;li&gt;只要在函式之前放一個文件區塊即可
+&lt;em&gt;/
+function foo() {
+&amp;hellip;
+}
+&lt;!-- raw HTML omitted --&gt;
+文件區塊預設是為它接下來的程式區塊做註解，否則會造成誤判。如：
+&lt;!-- raw HTML omitted --&gt;
+/&lt;/em&gt;*&lt;/li&gt;
+&lt;li&gt;這個不是 foo 的文件區塊&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;它是 define 的文件區塊
+*/
+define(&amp;lsquo;DEBUG&amp;rsquo;, 0);
+function foo(DEBUG) {
+&amp;hellip;
+}
+&lt;!-- raw HTML omitted --&gt;
+並不是將 DocBlock 放在任何想要解釋的程式前，它的內容就會出現在 phpDocumentor 所產生的註解文件內。會產生在註解文件內的文件區塊有以下幾類：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;引入檔的文件區塊 &amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;類別的文件區塊 &amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;函式的文件區塊 &amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;常數的文件區塊&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;請注意：&lt;!-- raw HTML omitted --&gt;若急著使用 phpDocumentor ，那麼不必往下讀，因為讀到這裡已足夠讓 phpDocumentor 產生出程式註解文件來。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版 &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是一個檔案層級文件區塊 (file-level DocBlock)&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;這個文件區塊一定要是整份文件的第一個區塊才能夠成為檔案層級文件區塊&lt;/li&gt;
+&lt;li&gt;一定要有 @package 這個 Tag&lt;/li&gt;
+&lt;li&gt;@package PackageName&lt;/li&gt;
+&lt;li&gt;@author 多采多姿&lt;/li&gt;
+&lt;li&gt;@version 1.0
+*/
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;解說 &lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;@author 用來標明這檔案的作者，在作者名字之後可以再接電郵位置，但電郵位置一定要放在 &amp;lt; 和 &amp;gt; 之間。 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;電郵位置可省略。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;@version 用來標明這份檔案的版本。 &amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;@version 和 @author不是檔案層級文件區塊內必要的 Tag，但是一般都會提供這兩樣的資訊。&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;PHP 裡變數可大致可分為以下幾類：全域變數、函數參數、函數內變數、類別的靜態成員變數、類別物件的成員變數。這部份只討論全域變數，函數參數的註解方式請參考 1.4 為函式寫註解。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;圓周率&lt;/li&gt;
+&lt;li&gt;圓周和直徑的比值
+*/
+define(&amp;lsquo;PI&amp;rsquo;, 3.14159);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是 funtion1 的註解區塊標題&lt;/li&gt;
+&lt;li&gt;這是 funtion1 的描述&lt;/li&gt;
+&lt;li&gt;@global int 這是函式內第一個全域變數的註解，就是 $global1 的註解&lt;/li&gt;
+&lt;li&gt;@global string 這是函式內第二個全域變數的註解，就是 $global2 的註解&lt;/li&gt;
+&lt;li&gt;@param bool $arg1 這是函式參數 $arg1 的註解&lt;/li&gt;
+&lt;li&gt;@param intstring $arg2 這裡是函式參數 $arg2 的註解&lt;/li&gt;
+&lt;li&gt;@return mixed 傳回值的註解
+&lt;em&gt;/
+function function1($arg1, $arg2) {
+global $global1, $global2;
+/&lt;/em&gt;*&lt;/li&gt;
+&lt;li&gt;這註解是不會出現在註解文件裡。
+*/
+$arg = 3;
+return array($arg1, $arg2);
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;解釋 &lt;!-- raw HTML omitted --&gt;
+在對常數寫註解，只要在常數前放一個註解文件即可。省略也無妨， phpDocumentor 還是會自動把所有的常數找出來，在註解文件裡整理成表。
+在要函式內使用全域變數時，在函式前的文件區塊內使用 @global 即可為全域變數編寫註解。
+在@global在使用時不用指明變數名稱，它是依照全域變數在函式內宣告的順序進行註解的判斷。
+global $arg1, $arg2;不能拆成兩行寫，也就是說寫成下面的樣子， phpDocumentor 的判斷會出很大的問題。
+global $arg1;
+global $arg2;
+phpDocumentor 並沒有對於函數內變數特別設計 Tag 來做註解。
+$arg3前的文件區塊不會出現在註解文件裡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是class1&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@package PackageName&lt;/li&gt;
+&lt;li&gt;@author Cowboy&lt;/li&gt;
+&lt;li&gt;@since 1.0rc1&lt;/li&gt;
+&lt;li&gt;@version 1.9b
+&lt;em&gt;/
+class Class1 {
+/&lt;/em&gt;*&lt;/li&gt;
+&lt;li&gt;這裡是成員變數的註解&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@var string 成員變數的註解&lt;/li&gt;
+&lt;li&gt;@access private
+*/
+private $_variable = &amp;ldquo;Hello&amp;rdquo;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是一個公開的成員函式&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;@param bool $var1 參數1&lt;/li&gt;
+&lt;li&gt;@param stringarray $var2 參數1&lt;/li&gt;
+&lt;li&gt;@return void&lt;/li&gt;
+&lt;li&gt;@access public
+*/
+public function set_vars($var1, $var2) {
+&amp;hellip;
+}
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;解說 &lt;!-- raw HTML omitted --&gt;
+Class 1 前的文件區塊裡的 Tag 並不是必要的，但通常會有這幾樣資訊。
+雖然檔案層級的文件區塊裡有宣告此檔裡的所有程式是屬於哪個 package ，在類別的文件區塊仍然可以再指定。
+@since 指出這類別是從哪個版本以後才加入這個 package 的。
+@access 可以用來指定成員的可視程度 (visibility) 。
+成員函式的文件區塊部份請參考1.4 為函式寫註解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;這是 lib.inc.php 的標題&lt;/li&gt;
+&lt;li&gt;這是 lib.inc.php 的描述
+*/
+include_once(&amp;lsquo;lib.inc.php&amp;rsquo;);
+&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;樣版&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建立簡寫型的清單&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;這裡建立一份無序清單&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目二，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每個項目可以是多行，&lt;/li&gt;
+&lt;li&gt;就像這個項目，&lt;/li&gt;
+&lt;li&gt;這行還在項目二中&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;項目三&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;清單結束，因為沒縮排&lt;/li&gt;
+&lt;li&gt;這裡建立一份有序清單&lt;/li&gt;
+&lt;li&gt;1 有序的項目一，數字後一定要加一個空白。&lt;/li&gt;
+&lt;li&gt;2 有序的項目二&lt;/li&gt;
+&lt;li&gt;有序清單的另一種寫法&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;ordered item 1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ordered item 2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;清單在此結束
+*/
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;解說&lt;!-- raw HTML omitted --&gt;
+以- 開頭就可以建立一個無序清單的項目，減號後面一定要接一個空白。
+以數字加上點號（例：1. ）或是只有數字（例：1 ），就可以建立有序清單，兩種方式後面都需要加上一個空白。
+多行的項目要縮排
+若要結束清單，則不縮排直接填內容即可。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;- /posts/%E8%BD%AC%E8%BD%BDphpdocumentor%E7%AD%86%E8%A8%98/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>(震撼)作个真正的男人</title>
+        <link>/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/</link>
+        <pubDate>Mon, 17 Nov 2008 13:52:58 +0000</pubDate>
+        
+        <guid>/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/</guid>
+        <description>清风徐来 /posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/ -&lt;p&gt;很震撼。我怎么就没碰到这样的先生呢~&lt;/p&gt;
+&lt;p&gt;心理学课上，周正教授正在授课：“上次下课时，一个男孩子递了张纸条：’我是个比较内向的人，又没什么特长，不会踢足球，不会打篮球……唯一的爱好是写作。进入大学后，看到周围的同学在交往、工作中左右逢源、如鱼得水、洒脱干练，很是羡慕。就要步入社会了，我该如何规划自己的前途呢？……周教授，我想我还是当一名作家比较好，一个人，也不错，您说呢？’这个问题要不要回答？”周教授扬了扬手中的纸条。&lt;/p&gt;
+&lt;p&gt;“回——答——”同学们兴致大起，“作家梦”可是不少惮于竞争之人的救命稻草啊！&lt;/p&gt;
+&lt;p&gt;周教授放下手中的纸条：“好，今天我就当面回答这位同学——我的态度，很简单：凡是做’作家梦’的人，都是逃避现实的、无能的人……”&lt;/p&gt;
+&lt;p&gt;话音未落，下面已是一片嘘声。&lt;/p&gt;
+&lt;p&gt;“我来问问你们，一支笔、一张纸的事，谁不会？当作家，就是这么简单，人人都会。我常说，一流人才在军界和商界，二流人才在政界，三流人才在学术界。对军人而言，你领十万人，我领十万人，没本事，死的十万就是你的。这里要的是综合素质，是挑战，所以军界的人是最强的。商界也是如此，投入两个亿，三个月后，可能家破人亡，你干不干？要的是同样的素质。政界就不同，他可以调整、迂回，政策不行可以再改，是有余地的，但要负责任。而学术界，一次不行两次，两次不行三次……永远不行都可以。军人和商人的成败一目了然，唯有作家可进可退，无所谓胜负成败……”有人若有所思地点头。&lt;/p&gt;
+&lt;p&gt;“某著名作家在一所大学做讲座的时候，有同学问他怎样才能当作家？他说：’首先养活你的家，再说当作家！’”周教授认真地看着大家，眼神里自然地流露出一种深切的关爱，“《论语》中记载：有一次孔子来到卫国，见卫国人很多，就说’庶矣哉’，意思是’卫国人多啊’。旁边有人问’既庶矣，又何加焉？’意思是’人多，怎么办呢？’——问题来了，有人，人多了，怎么办？我们该做点什么呢？你们认为孔子会怎么说？”&lt;/p&gt;
+&lt;p&gt;“教之——”大家很自信，大教育家嘛。&lt;/p&gt;
+&lt;p&gt;周教授微笑着摇摇头：“子曰：’富之。’——孔子说：’让他们富起来。’你们以为有了人就要教育，却不知道在教育之前，首先要让人富起来。旁人又问：’既富矣，又何加焉？’——’人们富足以后，又该如何？’”&lt;/p&gt;
+&lt;p&gt;“教之——”大家会心一笑。&lt;/p&gt;
+&lt;p&gt;“对，人富足了才有条件接受教育。吃不好穿不暖的时候，教育是句空话，况且对衣食无安的人大谈教育，这种行为本身就不厚道。孔子不愧是教育大家，他这’不富不教’的意义很深远！按照心理学家马斯洛的需求层次理论，人只有满足了基本的生理需求以后，才会去考虑安全、爱与被爱的需要，才会有自我实现的需要。”&lt;/p&gt;
+&lt;p&gt;“举例而言：勒紧腰带过日子的小两口，到了情人节，丈夫一咬牙，送爱妻一大束玫瑰，这时候妻子是什么感觉？”&lt;/p&gt;
+&lt;p&gt;“浪漫吧？”&lt;/p&gt;
+&lt;p&gt;“是浪费！”同学们争起来。&lt;/p&gt;
+&lt;p&gt;“还不如送我一双毛皮手套呢！你看看，这个冬天我的手又冻了，净花冤枉钱……”周教授开玩笑似的嗔怪道，大家在嬉笑中亦有所感悟。&lt;/p&gt;
+&lt;p&gt;“当人过日子都紧张的时候，是不会想着浪漫的，那是有钱人的享受。问你们一个常识：知道雄鸟追求雌鸟的时候，送给雌鸟的是什么？”&lt;/p&gt;
+&lt;p&gt;“虫子。”&lt;/p&gt;
+&lt;p&gt;“对啊，一送虫子，雌鸟就会意了：这家伙生存能力强，跟着它，今后我们的孩子不会挨饿。这是一个连鸟都明白的道理。”&lt;/p&gt;
+&lt;p&gt;下面安静极了，生怕漏掉周教授的任何一句话。&lt;/p&gt;
+&lt;p&gt;“’仓廪实而知礼节，衣食足而知荣辱。’自古以来，人们便说’饥寒起盗心’。能吃得好、穿得好，生活安定之后才能让晚辈过正常的生活。如果没有东西吃，连父母的东西也会抢过来吃，兄弟的就更不用提了。在人们陷入最差的生活状态时，就顾不得什么道义。这就是人类真正的本性。中国的先哲早在几千年以前，就已指出了人类的真实形貌。”&lt;/p&gt;
+&lt;p&gt;“在衣食无法获得满足时，依然能保持礼节，这是凡人做不到的事情。”&lt;/p&gt;
+&lt;p&gt;“如果希望这种兽性不要出现，期待我们最理想的人性流露，也为了维持社会秩序，提高道义，彼此能懂得礼貌，并以此幸福生活，就必须确保每个人都能有自己的收入。换句话说，要让大家能赚到钱。基于义务，我们必须要赚钱才行。”&lt;/p&gt;
+&lt;p&gt;必须赚钱！——看来，所谓“以人为本”，我们并不比古人懂得多。&lt;/p&gt;
+&lt;p&gt;“雄性丧失了生存能力就丧失了天赋雄性之本性。历史表明，男人的不幸、民族的不幸源于贫穷。所谓’贫病交加’、’穷凶极恶’……因此，你们必须认识到：挣钱是公德，要重视金钱。我这样告诉你们：男孩子，你可以不会踢足球，不会打篮球，可以不会作诗，不会弹钢琴，不会做饭。可以什么都不会，但是必须会挣钱。”&lt;/p&gt;
+&lt;p&gt;周教授的话字字珠玑、鞭辟入里。我感觉很多男孩子的眼睛在放光，不知他们看到的是压力还是希望？&lt;/p&gt;
+&lt;p&gt;“最后，再给你们一个例子，你们用心思考。比如说，快到春节了，太太说：’该过春节了，咱爸咱妈想来深圳这边，看看咱们和小外孙。’她先生立刻就说：’来啥来？根本不用来！咱已经忙得够呛了，再让他们过来，净添乱！再说，这路上，老年人多不方便！’这个男人现在是什么状态？”&lt;/p&gt;
+&lt;p&gt;“气急败坏！”有人笑着回答。&lt;/p&gt;
+&lt;p&gt;“记住，凡是气急败坏的男人都是穷男人。但是另外一家，太太说：’老公啊，快过春节了，老人们都想过来看看咱们，一年没见面了！’先生说：’哦，好啊好啊，应该让他们过来。这样，你让他们坐飞机过来。’这个男人就不气急败坏，他很平静。’还有，你看，咱家的房子，这三层七八间，冷冷清清的，孩子也没有人陪着玩。爷爷奶奶来了，或者姥姥姥爷来了，家里有生气，过年过节的有生气多好！’他为什么这样说？因为这个男人有钱，他不怕，他有地方住，有钱让父母过来。他有办法显示他的孝心，而且这种男人往往不会发脾气。因为他有很大的控制权，有很好的基础，任何事情到他这里都可以化解，可以平静对待。然后，一家人高高兴兴地过了春节。老人走的时候，先生问太太：’爸妈他们有什么要求没有？’’没有没有，他们都很高兴，一点要求都没有。’先生说：’我听见了，他们说老三要结婚，没房子住，他们想空出房子去住老房。这怎么可以呢？这样，在老家花6万块钱，我们出3万，三弟拿3万，盖一栋两层小楼让他们住，爸妈就不用动了。’听了这话，太太抱着丈夫说不出话来，这样的老公哪个太太不爱不感激呢？好，房子盖成了，弟弟说姐夫是好人，全村羡慕，父母开心，一家生活幸福。3万块钱，只是他一个月的工资，他愿意拿出这3万块钱。”&lt;/p&gt;
+&lt;p&gt;周教授最后说：“愿意做哪一个，你们自己选择。但是，要记住：知识不一定会带来金钱，挣钱靠的是能力。”&lt;/p&gt;- /posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>解决phpDesigner 2008 6.1.1中文语言包假死问题</title>
+        <link>/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Thu, 13 Nov 2008 12:39:09 +0000</pubDate>
+        
+        <guid>/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
+        <description>清风徐来 /posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/ -&lt;p&gt;其实要从php视频教程说起。
+&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;以前也出过php的视频教学误人前程，前些日子看到php100有出php视频教学。去逛了好几圈，嗯，人气不错。站长很用心。还搞了一些工具方便php新人，比如easyclipse中文化，还有phpDesigner的中语言包。淡水试了phpDesigner2008的中文语言包，有些问题，一旦切换到中文就会假死。本来淡水并不用它，但是并不否认她是个杰出的编辑器。
+淡水在试了N多种方法后，终于有了办法。
+&lt;!-- raw HTML omitted --&gt;新建一个project，再切换语言。不行就打开新建的project，再切换到中文。&lt;!-- raw HTML omitted --&gt;搞定。
+哈哈，可以换着用用看了。
+没有project用其他语言就会假死，这个可能是程序的bug。
+语言包：&lt;!-- raw HTML omitted --&gt;chinese-zh&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>适合Programmer的字体Monaco</title>
+        <link>/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</link>
+        <pubDate>Thu, 13 Nov 2008 09:33:41 +0000</pubDate>
+        
+        <guid>/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/</guid>
+        <description>清风徐来 /posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/ -&lt;p&gt;以前都是用ms自带的Consolas。
+看到CodeIgniter视频上Textmate里的字体蛮好看的，于是就开始了寻宝之旅。现在终于找到了，她就是Monaco。
+贴两个效果图看看
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+字体下载：&lt;!-- raw HTML omitted --&gt;monaco&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

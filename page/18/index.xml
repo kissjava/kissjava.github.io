@@ -1,0 +1,474 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>天很热但是也很蓝</title>
+        <link>/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</link>
+        <pubDate>Wed, 15 Jul 2009 20:39:41 +0000</pubDate>
+        
+        <guid>/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/</guid>
+        <description>清风徐来 /posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ -&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;人穷，只好用Lg ks20 拍两张意思一下 -_-&lt;/p&gt;
+&lt;p&gt;地点：MP现代广场&lt;/p&gt;
+&lt;p&gt;时间：上午8时&lt;/p&gt;
+- /posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Kohana:敏捷的 PHP 框架</title>
+        <link>/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</link>
+        <pubDate>Tue, 14 Jul 2009 09:45:34 +0000</pubDate>
+        
+        <guid>/posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/</guid>
+        <description>清风徐来 /posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ -&lt;p&gt;其实是Kohana v2.3.4入门教程。通过一个简单的项目说明了kohana的mvc架构和数据库类和kohana助手（helper）的用法。&lt;/p&gt;
+&lt;p&gt;原文：&lt;!-- raw HTML omitted --&gt;Kohana: The Swift PHP Framework&lt;!-- raw HTML omitted --&gt; 作者：Cristian Gilè 中文翻译：&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;因为实在是太长了，所以做成PDF了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Kohana the swift PHP framework&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/kohana-%E6%95%8F%E6%8D%B7%E7%9A%84-php-%E6%A1%86%E6%9E%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>input、select等表单元素与相邻文字对齐</title>
+        <link>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</link>
+        <pubDate>Sun, 21 Jun 2009 12:30:38 +0000</pubDate>
+        
+        <guid>/posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/</guid>
+        <description>清风徐来 /posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ -&lt;p&gt;以前都是把多选框放到一个单独的表格单元格。
+现在才知道，用css更简单：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/inputselect%E7%AD%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E7%9B%B8%E9%82%BB%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>系统时间不准确造成 IE 下 Kohana 的 Captcha 库验证失败</title>
+        <link>/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</link>
+        <pubDate>Tue, 16 Jun 2009 10:08:25 +0000</pubDate>
+        
+        <guid>/posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/</guid>
+        <description>清风徐来 /posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ -&lt;p&gt;淡水碰到了，记下来备忘。&lt;/p&gt;
+&lt;p&gt;作者：Hily 原始链接：http://hily.me/blog/2009/04/system-time-kohana-captcha-fail/
+版权声明：可以转载，转载时务必以超链接形式标明文章原始出处和作者信息及版权声明&lt;/p&gt;
+&lt;p&gt;好糗……&lt;/p&gt;
+&lt;p&gt;最近玩 Kohana 碰到太多诡异的问题，比如所有模板都要以 UTF8 无 BOM 的编码格式保存，否则 IE 下显示会有问题。自己写的 helper 类也要保存成 UTF8 无 BOM 的编码格式，否则也会出现类似的问题。&lt;/p&gt;
+&lt;p&gt;这一系列诡异的问题，把我原本清晰的思路也被搞乱了。&lt;/p&gt;
+&lt;p&gt;测试代码（使用 Kohana 文档上的）：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;// Load Captcha library, you can supply the name of the config group you would like to use.
+$captcha = new Captcha;
+// Ban bots (that accept session cookies) after 50 invalid responses.
+// Be careful not to ban real people though! Set the threshold high enough.
+if ($captcha-&amp;gt;invalid_count() &amp;gt; 49)
+exit(&amp;lsquo;Bye! Stupid bot.&#39;);
+// Form submitted
+if ($_POST)
+{
+// Captcha::valid() is a static method that can be used as a Validation rule also.
+if (Captcha::valid($this-&amp;gt;input-&amp;gt;post(&amp;lsquo;captcha_response&amp;rsquo;)))
+{
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;Good answer!&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+}
+else
+{
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;Wrong answer!&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+}
+// Validate other fields here
+}
+// Show form
+echo form::open();
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;Other form fields here…&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+// Don&amp;rsquo;t show Captcha anymore after the user has given enough valid
+// responses. The &amp;ldquo;enough&amp;rdquo; count is set in the captcha config.
+if ( ! $captcha-&amp;gt;promoted())
+{
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+echo $captcha-&amp;gt;render(); // Shows the Captcha challenge (image/riddle/etc)
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+echo form::input(&amp;lsquo;captcha_response&amp;rsquo;);
+}
+else
+{
+echo &amp;lsquo;&lt;!-- raw HTML omitted --&gt;You have been promoted to human.&lt;!-- raw HTML omitted --&gt;&amp;rsquo;;
+}
+// Close form
+echo form::submit(array(&amp;lsquo;value&amp;rsquo; =&amp;gt; &amp;lsquo;Check&amp;rsquo;));
+echo form::close();&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;验证代码在 Firefox 下工作正常，在 IE、Chrome 下都不能正常工作，这肯定就是浏览器之间的差别造成的。&lt;/p&gt;
+&lt;p&gt;跟踪后发现在 IE 下调用：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;总是返回空。怎么会取不到 Session 的 Cookie？&lt;/p&gt;
+&lt;p&gt;用 Fiddler 看了看 Cookie，发现 expires 时间比我当前系统的时间，也就是说 Session 类写了一个过期的时间到 Cookie 中，所以总是取不到 Session 的 Cookie 信息。按我的理解，写入一个过期的 Cookie，本就不应该被取到，而 Firefox 下还能取到这条过期的 Cookie，应该算 FF 的一个 Bug 吧。&lt;/p&gt;
+&lt;p&gt;怎么会出现过期时间？&lt;/p&gt;
+&lt;p&gt;因为我的 Kohana 是放在虚拟机里跑的，而我的虚拟机长年都是 suspend 而不是 poweroff，所以时间自然要比当前时间慢 = =&lt;/p&gt;
+&lt;p&gt;这类诡异的问题在 QQ 群上问是几乎不可能找到答案的，所以关键时刻还是得靠自己解决啊。&lt;/p&gt;
+&lt;p&gt;– EOF –&lt;/p&gt;
+- /posts/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%87%86%E7%A1%AE%E9%80%A0%E6%88%90-ie-%E4%B8%8B-kohana-%E7%9A%84-captcha-%E5%BA%93%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>一点代码，体验严谨</title>
+        <link>/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</link>
+        <pubDate>Thu, 04 Jun 2009 15:59:46 +0000</pubDate>
+        
+        <guid>/posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/</guid>
+        <description>清风徐来 /posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ -&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    $type = $this-&amp;gt;input-&amp;gt;post(&amp;quot;type&amp;quot;);
+    $keyword = $this-&amp;gt;input-&amp;gt;post(&amp;quot;keyword&amp;quot;);
+
+    if(empty($keyword)){
+        echo &#39;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&#39;;
+        echo &amp;quot;alert(&#39;搜索的关键词，不能为空！&#39;);&amp;quot;;
+        echo &amp;quot;&amp;lt;/script&amp;gt;&amp;quot;;
+
+        $this-&amp;gt;listnews();
+    }else{
+
+        if($type==&amp;quot;title&amp;quot;){
+            $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;title&amp;quot;,$keyword)-&amp;gt;find_all();
+        }elseif($type==&amp;quot;content&amp;quot;){
+            $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;content&amp;quot;,$keyword)-&amp;gt;find_all();
+        }else{
+            $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;orlike(array(&amp;quot;title&amp;quot;=&amp;gt;$keyword,&amp;quot;content&amp;quot;=&amp;gt;$keyword))-&amp;gt;find_all();
+        }
+
+        $news = new View(&#39;admin/searchNews&#39;);
+        $news-&amp;gt;newslist = $newslist;
+        $this-&amp;gt;template-&amp;gt;content = $news;
+    }
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    $type = $this-&amp;gt;input-&amp;gt;post(&amp;quot;type&amp;quot;);
+    $keyword = $this-&amp;gt;input-&amp;gt;post(&amp;quot;keyword&amp;quot;);
+
+    if(empty($keyword)){
+        echo &#39;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&#39;;
+        echo &amp;quot;alert(&#39;搜索的关键词，不能为空！&#39;);&amp;quot;;
+        echo &amp;quot;&amp;lt;/script&amp;gt;&amp;quot;;
+
+        $this-&amp;gt;listnews();
+    }
+
+    if($type==&amp;quot;title&amp;quot;){
+        $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;title&amp;quot;,$keyword)-&amp;gt;find_all();
+    }elseif($type==&amp;quot;content&amp;quot;){
+        $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;like(&amp;quot;content&amp;quot;,$keyword)-&amp;gt;find_all();
+    }else{
+        $newslist = ORM :: factory(&#39;news&#39;)-&amp;gt;orlike(array(&amp;quot;title&amp;quot;=&amp;gt;$keyword,&amp;quot;content&amp;quot;=&amp;gt;$keyword))-&amp;gt;find_all();
+    }
+
+    $news = new View(&#39;admin/searchNews&#39;);
+    $news-&amp;gt;newslist = $newslist;
+    $this-&amp;gt;template-&amp;gt;content = $news;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E4%B8%80%E7%82%B9%E4%BB%A3%E7%A0%81%E4%BD%93%E9%AA%8C%E4%B8%A5%E8%B0%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Netbeans 的自选代码折叠（Code Folding）</title>
+        <link>/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</link>
+        <pubDate>Tue, 02 Jun 2009 17:13:56 +0000</pubDate>
+        
+        <guid>/posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/</guid>
+        <description>清风徐来 /posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ -&lt;p&gt;-_-!!!这里长草了，来除草了。最近试用netbeans for php，感觉不错。里面的代码折叠比较好看，也好用。
+不过自选代码的折叠，还是要深挖一下才出来的。eclipse 系列的 php IDE，的自选代码折叠怎么搞呢？不晓得。也许&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;知道,自己问去吧XD&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;//&lt;!-- raw HTML omitted --&gt;&lt;br&gt;
+&lt;!-- raw HTML omitted --&gt;
+嗯，netbeans4php越来越好用了。&lt;/p&gt;
+- /posts/netbeans-%E7%9A%84%E8%87%AA%E9%80%89%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0code-folding/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>学习php中的soap</title>
+        <link>/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</link>
+        <pubDate>Mon, 18 May 2009 17:36:02 +0000</pubDate>
+        
+        <guid>/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/</guid>
+        <description>清风徐来 /posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ -&lt;p&gt;淡水摸索了一阵子。
+说说吧，先说说wsdl文件的建立。
+用zend studio for eclipse 或是 easyeclipse for php都可以建立。但是zse方便一些。例如提供一个简单的加法服务：
+&lt;!-- raw HTML omitted --&gt;
+sum.php&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>windows下基于apache的subversion（svn）的安装</title>
+        <link>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
+        
+        <guid>/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 /posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ -&lt;p&gt;上午折腾了一下，可以写个详细步骤出来了。
+&lt;!-- raw HTML omitted --&gt;预期目标：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;搭建一个apache下的svn服务，服务地址 http://localhost/svn&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;本地环境：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;已经装有xampplite集成环境。
+svn的服务目录为D:svnroot
+已经安装好了小乌龟（TortoiseSVN）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;安装步骤：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi
+这里注意要和apache的版本对应，我是apache2.2的。
+双击安装它，这个没说头。
+2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中
+有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so
+（淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下）
+3，配置apache的httpd.conf文件
+这个是个容易出差错的地方
+把下两行的注释去掉：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;所有人可以读管理员可以写&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
+&lt;p&gt;[svn:/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/机密文件]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/公告文件]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/测试组]
+@g_admin = rw
+@g_test = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果是多个库，则权限文件类似以下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;所有人可以读管理员可以写-1&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
+&lt;p&gt;[/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[khn:/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[ci170:/]
+@g_admin = rw
+@g_test = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;6，在d:svnroot下，用tortoiseSVN创建版本库。
+7，重启apache。搞定了。
+&lt;!-- raw HTML omitted --&gt;注意点：&lt;!-- raw HTML omitted --&gt;
+先不要启用权限控制。用tortoiseSVN登录进入以后，创建文件夹后，再启用权限控制。
+如果想要把地址改成http://localhost/kisssvn，两步：apache的httpd.conf 里 改为&amp;lt;Location /kisssvn&amp;gt;，再把权限文档里的[svn:/]等改成[kisssvn:/]。ok&lt;/p&gt;
+- /posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>PHP5的SOAP扩展</title>
+        <link>/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+        <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
+        
+        <guid>/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+        <description>清风徐来 /posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;简介&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。&lt;/p&gt;
+&lt;p&gt;PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。&lt;/p&gt;
+&lt;p&gt;SOAP扩展支持以下规范。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SOAP 1.1&lt;/li&gt;
+&lt;li&gt;SOAP 1.2&lt;/li&gt;
+&lt;li&gt;WSDL 1.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SOAP扩展主要用来处理RPC形式的Web services。不过，你也可以使用文本形式的WSDL文件配合WSDL模式的服务端和客户端。&lt;/p&gt;
+&lt;p&gt;这个扩展使用 GNOME XML库来处理XML。&lt;/p&gt;
+&lt;p&gt;扩展中的类
+这个扩展实现了6个类。
+其中有三个高级的类，它们的方法很有用，它们是 SoapClient，SoapServer和SoapFault。
+另外三个类除了构造器外没有其它别的方法，这三个是低级的类，它们是SoapHeader，SoapParam和SoapVar。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapClient类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类用来使用Web services。SoapClient类可以作为给定Web services的客户端。
+它有两种操作形式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WSDL 模式&lt;/li&gt;
+&lt;li&gt;Non-WSDL 模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在WSDL模式中，构造器可以使用WSDL文件名作为参数，并从WSDL中提取服务所使用的信息。&lt;/p&gt;
+&lt;p&gt;non-WSDL模式中使用参数来传递要使用的信息。这个类有许多可以用来使用服务的有用的方法。其中SoapClient::__soapCall()是最重要的。这个方法可以用来调用服务中的某个操作。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapServer类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类可以用来提供Web services。与SoapClient类似，SoapServer也有两种操作模式：WSDL模式和non-WSDL模式。这两种模式的意义跟 SoapClient的两种模式一样。在WSDL模式中，服务实现了WSDL提供的接口；在non-WSDL模式中，参数被用来管理服务的行为。&lt;/p&gt;
+&lt;p&gt;在SoapServer类的众多方法中，有三个方法比较重要。它们是SoapServer::setClass()，SoapServer::addFunction()和SoapServer::handle()。&lt;/p&gt;
+&lt;p&gt;SoapServer::setClass()方法设定用来实现Web Service的类。SoapServer::setClass所设定的类中的所有公共方法将成为Web Services的操作(operation)。&lt;/p&gt;
+&lt;p&gt;SoapServer::addFunction()方法用来添加一个或多个作为Web Services操作(operation)的函数。&lt;/p&gt;
+&lt;p&gt;SoapServer:: handle()方法指示Web Service脚本开始处理进入的请求。Web Service脚本是用PHP脚本写的一个或多个SoapServer对象的实例。尽管你可以有不止一个的SoapServer对象，但通常的习惯是一个脚本只拥有一个SoapServer实例。在调用SoapServer::handle()方法之前，Web Service脚本会使用设置在SoapServer对象实例上的任何信息来处理进入的请求和输出的相应。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapFault类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类从Exception类继承而来，可以用来处理错误。SoapFault实例可以抛出或获取Soap错误的相关信息并按程序员的请求处理。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapHeader类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类可以用来描述SOAP headers。它只是一个只包含构造器方法的数据容器。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapParam类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;SoapParam也是一个只包含构造器方法的数据容器。这个方法可以用来描述传递给Web services操作的参数。在non-WSDL模式中这是一个很有用的类，可以用来传递所期望格式的参数信息。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapVar类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;SoapVar也是一个只包含构造器的低级类，与SoapHeader和SoapParam类相似。这个类可以用来给一个Web services操作传递编码参数。这个类对non-WSDL中传递类型信息是非常有用的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;WSDL VS. non-WSDL模式&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Web Services有两种实现模式：契约先行(Contract first)模式和代码先行(Code first)模式。&lt;/p&gt;
+&lt;p&gt;契约先行模式使用了一个用XML定义的服务接口的WSDL文件。WSDL文件定义了服务必须实现或客户端必须使用的接口。SoapServer和SoapClient的WSDL模式就基于这个概念。&lt;/p&gt;
+&lt;p&gt;在代码先行模式中，首先要先写出实现服务的代码。然后在大多数情况下，代码会产生一个契约，换种说法，一个WSDL。接着客户端在使用服务的时候就可以使用那个WSDL来获得服务的接口。尽管如此，PHP5的扩展并没有从代码输出一个WSDL的规定，考虑到这种情况，可以在non-WSDL模式下使用 SoapServer和SoapClient。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SOAP扩展与Hello World&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这一节介绍如何使用WSDL模式和non-WSDL模式来实现服务和客户端。相对而言，使用WSDL模式来实现服务和客户端会比较容易，假定已经有一个定义了接口的WSDL文件。（淡水对WSDL还比较陌生，就只关注non-wsdl模式了。）&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在这个Hello World例子的服务中有一个被命名为greet的操作。这个操作有一个字符串形式的名字并返回一个字符串形式的greeting。所用到的WSDL如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;WSDL模式服务&lt;/p&gt;
+&lt;p&gt;下面是WSDL模式的服务所使用的SOAP扩展API代码：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在这个服务的实现过程中，函数实现了WSDL所定义的服务操作greet，greet操作有一个WSDL指定的参数，按照greet操作的语义，这个参数是一个用户的名字。最后handle调用了触发处理请求的服务对象。&lt;/p&gt;
+&lt;p&gt;WSDL模式客户端&lt;/p&gt;
+&lt;p&gt;客户端代码如下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;客户端代码中，首先创建一个使用WSDL文件作参数的SoapClient实例。接着__soapCall()调用作为参数传入它的操作，也就是greet和传入操作的参数。
+请求和响应&lt;/p&gt;
+&lt;p&gt;当你将上述的PHP脚本放在你web服务器目录下的文档中，并利用WEB浏览器或在PHP解析器的命令行调用脚本，客户端发送一个SOAP请求到服务端脚本，服务端将向客户端发送一个SOAP响应来响应客户端的请求。&lt;/p&gt;
+&lt;p&gt;下面是客户端所发送的SOAP请求：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&amp;lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;rdquo;                    &lt;br&gt;
+xmlns:ns1=&amp;quot;http://wso2.org/wsf/php/helloService&amp;quot;&amp;gt; &lt;br&gt;
+&lt;a href=&#34;SOAP-ENV:Body&#34;&gt;SOAP-ENV:Body&lt;/a&gt;
+&lt;a href=&#34;ns1:greet&#34;&gt;ns1:greet&lt;/a&gt;
+&lt;a href=&#34;ns1:name&#34;&gt;ns1:name&lt;/a&gt;Sam&amp;lt;/ns1:name&amp;gt;
+&amp;lt;/ns1:greet&amp;gt;
+&amp;lt;/SOAP-ENV:Body&amp;gt;
+&amp;lt;/SOAP-ENV:Envelope&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+下面是服务端响应上诉请求而发送的SOAP响应：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&amp;lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;rdquo;
+xmlns:ns1=&amp;quot;http://wso2.org/wsf/php/helloService&amp;quot;&amp;gt;
+&lt;a href=&#34;SOAP-ENV:Body&#34;&gt;SOAP-ENV:Body&lt;/a&gt;
+&lt;a href=&#34;ns1:greetResponse&#34;&gt;ns1:greetResponse&lt;/a&gt;
+&lt;a href=&#34;ns1:greetReturn&#34;&gt;ns1:greetReturn&lt;/a&gt;Hello Sam&amp;lt;/ns1:greetReturn&amp;gt;
+&amp;lt;/ns1:greetResponse&amp;gt;
+&amp;lt;/SOAP-ENV:Body&amp;gt;
+&amp;lt;/SOAP-ENV:Envelope&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+上面的SOAP消息都是利用WSDL模式的服务端和客户端来获取的。也可以利用non-WSDL模式的服务端和客户端来产生与上面相同的SOAP消息。但是，PHP代码必须有一点改变。下一节会说明如何使用non-WSDL模式。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;non-WSDL模式服务端&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$server = new SoapServer(null, array(&amp;lsquo;uri&amp;rsquo; =&amp;gt; &amp;lsquo;&lt;a href=&#34;http://wso2.org/wsf/php/helloService&#39;));&#34;&gt;http://wso2.org/wsf/php/helloService&#39;));&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$server-&amp;gt;addFunction(&amp;lsquo;greet&amp;rsquo;);
+$server-&amp;gt;handle();
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在non -WSDL模式中，想WSDL模式一样首先实现greet函数的功能，但是函数实现的方式跟WSDL模式稍稍有所不同。在non-WSDL模式中，我们必须返回一个SoapParam对象作为响应，而不是一个数组。创建服务时，第一个参数设为null，说明没有提供WSDL；接着传递一个选项作为参数，这个选项参数是服务的URI。最后像WSDL模式一样调用剩下的方法。&lt;/p&gt;
+&lt;p&gt;non-WSDL模式客户端&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在non-WSDL模式中，因为没有使用WSDL，传递了一个包含服务所在位置和服务URI的参数数组作为参数。然后象WSDL模式中一样调用__soapCall()方法，但是使用了SoapParam类用指定格式打包参数。返回的结果将获取greet中的响应。&lt;/p&gt;
+- /posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
+        <link>/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+        <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
+        
+        <guid>/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+        <description>清风徐来 /posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ -&lt;p&gt;嗯，又找到一些好玩的东西，web service。
+有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。
+先恶补一下相关知识。
+先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。
+方法：
+SoapClient-&amp;gt;__soapCall()
+说明：
+class SoapClient {
+mixed __soapCall ( string function_name, array arguments [, array options [, mixed input_headers [, array &amp;amp;output_headers]]])
+}
+In WSDL mode, you can simply call SOAP functions as SoapClient methods. This method useful in non-WSDL mode when soapaction is unknown, uri differs from the default or when sending and/or receiving SOAP Headers
+返回值：
+一个简单类型的返回值，或是一个关联数组
+例子：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SOAP发送的协议：&lt;/p&gt;
+&lt;p&gt;POST /servicepath/service.asmx HTTP/1.1
+Host: 211.186.1.4
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: &amp;ldquo;http://211.186.5.15/Service/ServiceMethod&amp;rdquo;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;调用方法：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;SOAP发送协议：&lt;/p&gt;
+&lt;p&gt;POST /services/SoapMethod?WSDL HTTP/1.1
+Host: 220.211.1.12:8088
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.2.5
+Content-Type: text/xml; charset=utf-8
+SOAPAction: &amp;ldquo;urn:SoapMethod#ServiceMethod&amp;rdquo;
+Content-Length: 1297&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;调用方法：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;name
+参数名
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

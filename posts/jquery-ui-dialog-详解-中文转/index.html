@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html><head>
+<title>Jquery UI dialog 详解 (中文)转</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Jquery UI dialog 详解 (中文)转" />
+<meta property="og:description" content="1.11 autoOpen ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&ldquo;open&rdquo;)的时候才弹出dialog窗口。默认为：true。
+1.12 初始化例：请注意，$(&#39;.selector&rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。
+$(&#39;.selector&rsquo;).dialog({ autoOpen: false });
+1.13 初始化后，得到和设置此属性例：
+//获得
+var autoOpen = $(&#39;.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;);
+//设置
+$(&#39;.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;, false);
+1.21 bgiframe 默认为false ，When true, the bgiframe plugin will be used, to fix the issue in IE6 where select boxes show on top of other elements, regardless of zIndex. Requires including the bgiframe plugin. Future versions may not require a separate plugin.
+在IE6下，让后面那个灰屏盖住select。
+1.22 初始化例：
+$(&#39;.selector&rsquo;).dialog({ bgiframe: true });" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/jquery-ui-dialog-%E8%AF%A6%E8%A7%A3-%E4%B8%AD%E6%96%87%E8%BD%AC/" />
+<meta property="article:published_time" content="2011-04-06T15:02:44+00:00" />
+<meta property="article:modified_time" content="2011-04-06T15:02:44+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jquery UI dialog 详解 (中文)转"/>
+<meta name="twitter:description" content="1.11 autoOpen ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&ldquo;open&rdquo;)的时候才弹出dialog窗口。默认为：true。
+1.12 初始化例：请注意，$(&#39;.selector&rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。
+$(&#39;.selector&rsquo;).dialog({ autoOpen: false });
+1.13 初始化后，得到和设置此属性例：
+//获得
+var autoOpen = $(&#39;.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;);
+//设置
+$(&#39;.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;, false);
+1.21 bgiframe 默认为false ，When true, the bgiframe plugin will be used, to fix the issue in IE6 where select boxes show on top of other elements, regardless of zIndex. Requires including the bgiframe plugin. Future versions may not require a separate plugin.
+在IE6下，让后面那个灰屏盖住select。
+1.22 初始化例：
+$(&#39;.selector&rsquo;).dialog({ bgiframe: true });"/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Jquery UI dialog 详解 (中文)转
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2011-04-06 15:02
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[PHP]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/jquery">jQuery</a>
+                                &nbsp;
+                            
+                                <a href="/tags/jqueryui">jqueryui</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <!-- raw HTML omitted -->
+<p>1.11 autoOpen  ，这个属性为true的时候dialog被调用的时候自动打开dialog窗口。当属性为false的时候，一开始隐藏窗口，知道.dialog(&ldquo;open&rdquo;)的时候才弹出dialog窗口。默认为：true。</p>
+<p>1.12 初始化例：请注意，$('.selector&rsquo;)是dialog 的类名，在本例中.selector=#dialoag,以后不再说明。</p>
+<p>$('.selector&rsquo;).dialog({ autoOpen: false });</p>
+<p>1.13 初始化后，得到和设置此属性例：</p>
+<p>//获得</p>
+<p>var autoOpen = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;autoOpen&rsquo;, false);</p>
+<p>1.21 bgiframe 默认为false ，When true, the bgiframe plugin will be used, to fix  the issue in IE6 where select boxes show on top of other elements, regardless of  zIndex. Requires including the bgiframe plugin. Future versions may not require  a separate plugin.</p>
+<p>在IE6下，让后面那个灰屏盖住select。</p>
+<p>1.22 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ bgiframe: true });</p>
+<p>1.23 初始化后，得到和设置：</p>
+<p>//获取</p>
+<p>var bgiframe = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;bgiframe&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;bgiframe&rsquo;, true);</p>
+<p>1.31 buttons 显示一个按钮，并写上按钮的文本，设置按钮点击函数。默认为{}，没有按钮。</p>
+<p>最上面的例子中已经有buttons属性的用法，请注意。</p>
+<p>1.32 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ buttons: { &ldquo;Ok&rdquo;: function() {  $(this).dialog(&ldquo;close&rdquo;); } } });</p>
+<p>1.33 初始化后，得到和设置：</p>
+<p>//获取</p>
+<p>var buttons = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;buttons&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;buttons&rsquo;, { &ldquo;Ok&rdquo;: function() {  $(this).dialog(&ldquo;close&rdquo;); } });</p>
+<p>1.41 closeOnEscape 为true的时候，点击键盘ESC键关闭dialog，默认为true；</p>
+<p>1.42 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ closeOnEscape: false });</p>
+<p>1.43 初始化后，得到和设置：</p>
+<p>//获取</p>
+<p>var closeOnEscape = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;closeOnEscape&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;closeOnEscape&rsquo;, false);</p>
+<p>1.51 dialogClass 类型将被添加到dialog，默认为空</p>
+<p>1.52 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ dialogClass: &lsquo;alert&rsquo; });</p>
+<p>1.53 初始化后，得到和设置：</p>
+<p>//获取</p>
+<p>var dialogClass = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;dialogClass&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;dialogClass&rsquo;, &lsquo;alert&rsquo;);</p>
+<p>1.61 draggable、resizable :  draggable是否可以使用标题头进行拖动，默认为true，可以拖动;resizable是否可以改变dialog的大小，默认为true，可以改变大小。</p>
+<p>1.62 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ draggable: false,resizable:false });</p>
+<p>1.63 初始化后，得到和设置：</p>
+<p>//获取</p>
+<p>var draggable = $('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;draggable&rsquo;);</p>
+<p>//设置</p>
+<p>$('.selector&rsquo;).dialog(&lsquo;option&rsquo;, &lsquo;draggable&rsquo;, false);</p>
+<p>1.71 width、height ，dialog的宽和高，默认为auto，自动。</p>
+<p>1.72 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ height: 530,width:200 });</p>
+<p>1.73 初始化后，得到和设置：请参考1.63</p>
+<p>1.81 maxWidth、maxHeight、minWidth、minHeight  ，dialog可改变的最大宽度、最大高度、最小宽度、最小高度。maxWidth、maxHeight的默认为false，为不限。minWidth、minHeight的默认为150。要使用这些属性需要ui.resizable.js  的支持。</p>
+<p>1.82 初始化例：</p>
+<p>$('.selector&rsquo;).dialog({ maxHeight:  400,maxWidth:600,minHeight:300,minWidth:300 });</p>
+<p>1.83 初始化后，得到和设置：请参考1.63</p>
+<p>1.91 hide、show ，当dialog关闭和打开时候的效果。默认为null，无效果</p>
+<p>1.92 初始化例：最上面的实例中用到，请自己看吧。</p>
+<p>1.93 初始化后，得到和设置：请参考1.63</p>
+<p>1.101 modal,是否使用模式窗口，模式窗口打开后，页面其他元素将不能点击，直到关闭模式窗口。默认为false不是模式窗口。</p>
+<p>1.102 初始化例：$('.selector&rsquo;).dialog({ modal: true });</p>
+<p>1.103 初始化后，得到和设置：请参考1.63</p>
+<p>1.111 title，dialog的标题文字，默认为空。</p>
+<p>1.112 初始化例：见最上面的实例。1.113 初始化后，得到和设置：请参考1.63</p>
+<p>1.121 position ，dialog的显示位置：可以是&rsquo;center&rsquo;, &lsquo;left&rsquo;, &lsquo;right&rsquo;, &lsquo;top&rsquo;,  &lsquo;bottom&rsquo;,也可以是top和left的偏移量也可以是一个字符串数组例如[&lsquo;right&rsquo;,&lsquo;top&rsquo;]。</p>
+<p>1.122 初始化例：$('.selector&rsquo;).dialog({ position: [&lsquo;top&rsquo;,&lsquo;right&rsquo;] }); 1.123  初始化后，得到和设置：请参考1.63</p>
+<p>1.131 zIndex, dialog的zindex值，默认值为1000.</p>
+<p>1.132 初始化例：$('.selector&rsquo;).dialog({ zIndex: 3999 }); 1.133  初始化后，得到和设置：请参考1.63</p>
+<p>1.141 stack 默认值为true，当dialog获得焦点是，dialog将在最上面。</p>
+<p>1.142 初始化例：$('.selector&rsquo;).dialog({ stack: false }); 1.143  初始化后，得到和设置：请参考1.63</p>
+<p>2 事件</p>
+<p>2.11 beforeclose 类型dialogbeforeclose ，  当dialog尝试关闭的时候此事件将被触发，如果返回false，那么关闭将被阻止。</p>
+<p>2.12 初始化例：$('.selector&rsquo;).dialog({</p>
+<p>beforeclose: function(event, ui) { &hellip; }</p>
+<p>});</p>
+<p>2.13 使用类型绑定此事件例：$('.selector&rsquo;).bind(&lsquo;dialogbeforeclose&rsquo;, function(event, ui)  {</p>
+<p>&hellip;</p>
+<p>});</p>
+<p>2.21 close 类型：dialogclose ，当dialog被关闭后触发此事件。</p>
+<p>2.22 初始化例：$('.selector&rsquo;).dialog({</p>
+<p>close: function(event, ui) { &hellip; }</p>
+<p>});</p>
+<p>2.23 使用类型绑定此事件例：$('.selector&rsquo;).bind(&lsquo;dialogclose&rsquo;, function(event, ui) {</p>
+<p>&hellip;</p>
+<p>});</p>
+<p>2.3 open 类型：dialogopen  ，当dialog打开时触发。（篇幅有限，该省略的就省略了啊，初始化例和使用类型绑定事件可以向上参考。）</p>
+<p>2.4 focus 类型：dialogfocus ，当dialog获得焦点时触发。</p>
+<p>2.5 dragStart 类型：dragStart，当dialog拖动开始时触发。</p>
+<p>2.6 drag 类型：drag ，当dialog被拖动时触发。</p>
+<p>2.7 dragStop 类型：dragStop ，当dialog拖动完成时触发。</p>
+<p>2.8 resizeStart 类型：resizeStart ，当dialog开始改变窗体大小时触发。</p>
+<p>2.9 resize 类型：resize，当dialog被改变大小时触发。</p>
+<p>2.10 resizeStop 类型：resizeStop，当改变完大小时触发。</p>
+<p>3 方法</p>
+<p>3.1 destroy ，我喜欢这个哦，摧毁地球。。。 例：.dialog( &lsquo;destroy&rsquo; )</p>
+<p>3.2 disable，dialog不可用，例：.dialog(&lsquo;disable&rsquo;);</p>
+<p>3.3 enable,dialog可用，例，如3.2</p>
+<p>3.4 close，open，关闭、打开dialog</p>
+<p>3.5 option ，设置和获取dialog属性，例如：.dialog( &lsquo;option&rsquo; , optionName , [value] )  ，如果没有value，将是获取。</p>
+<p>3.6 isOpen ，如果dialog打开则返回true，例如：.dialog(&lsquo;isOpen&rsquo;)</p>
+<p>3.7 moveToTop ,将dialog移到最上层，例如：.dialog( &lsquo;moveToTop&rsquo; )</p>
+<p>来源：http://www.cnblogs.com/bestfc/archive/2009/06/08/1498742.html</p>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2011-04-06</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/%E4%BA%94%E4%B8%80%E5%BF%AB%E5%88%B0%E4%BA%86%E5%94%A0%E5%8F%A8%E4%B8%A4%E5%8F%A5/">
+			下回<br>五一快到了，唠叨两句
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/jquery-ui-according%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/">
+			上回<br>jquery ui according详解(中文)转
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

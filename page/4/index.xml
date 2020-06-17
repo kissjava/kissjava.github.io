@@ -1,0 +1,748 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Go的接口</title>
+        <link>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</link>
+        <pubDate>Mon, 29 Jul 2019 19:33:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ -&lt;p&gt;在本教程中，我们将看看Go编程语言中的接口。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go的接口&#34;&gt;&lt;/p&gt;
+&lt;p&gt;本节包括2个主题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;接口的基本知识&lt;/li&gt;
+&lt;li&gt;定义我们自己的接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##简单案例&lt;/p&gt;
+&lt;p&gt;如果您看到一个需要空接口的函数或方法，那么您通常可以将任何内容传递给此函数/方法。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func myFunc(a interface{}) {
+    fmt.Println(a)
+}
+
+func main() {
+    var my_age int
+    my_age = 25
+
+    myFunc(my_age)
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行它&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+25
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###有什么作用
+通过定义&lt;code&gt;interface{}&lt;/code&gt;的函数，我们基本上可以灵活地传递任何我们想要的东西。这个函数接受了一些东西，但我们不一定需要关心它的类型是什么。&lt;/p&gt;
+&lt;p&gt;##定义接口
+那么，什么是接口？为什么我们在Go中使用它们？好吧，通过在Go中定义一个接口，我们基本上定义了一个契约。如果我们根据此接口定义类型，那么我们将必须实现该接口类型中定义的所有函数或方法。&lt;/p&gt;
+&lt;p&gt;比如说，我们想为吉他手定义一个interface。我们可以定义我们的接口以包含&lt;code&gt;PlayGuitar（）&lt;/code&gt;函数，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type Guitarist interface {
+  // PlayGuitar在终端打印出“弹吉他”
+  PlayGuitar()
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过定义我们的吉他手interface，我们可以定义一个BaseGuitarist和一个AcousticGuitarist结构。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+type Guitarist interface {
+    PlayGuitar()
+}
+
+type BaseGuitarist struct {
+    Name string
+}
+
+type AcousticGuitarist struct {
+    Name string
+}
+
+func (b BaseGuitarist) PlayGuitar() {
+    fmt.Printf(&amp;quot;%s 演奏低音吉他\n&amp;quot;, b.Name)
+}
+
+func (b AcousticGuitarist) PlayGuitar() {
+    fmt.Printf(&amp;quot;%s 弹奏原声吉他\n&amp;quot;, b.Name)
+}
+
+func main() {
+    var player BaseGuitarist
+    player.Name = &amp;quot;Paul&amp;quot;
+    player.PlayGuitar()
+
+    var player2 AcousticGuitarist
+    player2.Name = &amp;quot;Ringo&amp;quot;
+    player2.PlayGuitar()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可以创建一个类型吉他手阵列/数组，可以存储我们的BaseGuitarist和AcousticGuitarist对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var guitarists []Guitarist
+guitarists = append(guitarists, player)
+guitarists = append(guitarists, player2)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##返回值
+在实际示例中，我们通常在接口中具有更复杂的函数，这些函数具有返回值。我们可以像这样定义这些接口：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type Employee interface {
+    Name() string
+    Language() string
+    Age() int
+    Random() (string, error)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##实现接口
+假设我们想要在公司中创建一个所有员工的数组。在这个阵列中，我们想要存储所有的工程师。
+我们需要我们的Engineer类型来满足Employee接口，否则它将不允许我们编译我们的程序：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+type Employee interface {
+    Language() string
+    Age() int
+    Random() (string, error)
+}
+
+type Engineer struct {
+    Name string
+}
+
+func (e *Engineer) Language() string {
+    return e.Name + &amp;quot; programs in Go&amp;quot;
+}
+
+func main() {
+    // 这会引发错误
+    var programmers []Employee
+    elliot := Engineer{Name: &amp;quot;Elliot&amp;quot;}
+    // Engineer 没有实现Employee接口 
+    // 你需要实现Age（）和Random（）
+    programmers = append(programmers, elliot)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行不了吧
+改成下面的：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+type Employee interface {
+	Language() string
+	Age() int
+	Random() (string, error)
+}
+
+type Engineer struct {
+	Name string
+}
+
+func (e Engineer) Language() string {
+	return e.Name + &amp;quot; programs in Go&amp;quot;
+}
+
+func (e Engineer) Age() int {
+	return 18
+}
+
+func (e Engineer) Random() (string, error) {
+	return e.Name + &amp;quot;hello&amp;quot;, nil
+}
+
+func main() {
+	var programmers []Employee
+	elliot := Engineer{Name: &amp;quot;Elliot&amp;quot;}
+	programmers = append(programmers, elliot)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#小结
+go的接口可以模拟oop，需要多花点时间练习。&lt;/p&gt;
+- /posts/go%E7%9A%84%E6%8E%A5%E5%8F%A3/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go的方法</title>
+        <link>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Mon, 29 Jul 2019 18:52:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ -&lt;p&gt;在本教程中，我们将首先了解哪些方法以及它们如何在Go编程语言的范围内工作。然后，我们将看看揭开方法和函数之间的差异，以及何时在Go程序中使用它们。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go的方法&#34;&gt;&lt;/p&gt;
+&lt;p&gt;##一个简单实例
+我们将创建一个非常简单的员工管理系统，允许您更新员工姓名并打印出该名称。不是最令人兴奋的示例项目，但它将作为演示还可以。&lt;/p&gt;
+&lt;p&gt;我们首先创建一个Employee类型的结构，它包含一个字符串字段Name&lt;/p&gt;
+&lt;p&gt;接下来，我们将声明一个&lt;code&gt;UpdateName()&lt;/code&gt;和一个&lt;code&gt;PrintName()&lt;/code&gt;方法，它允许我们更新和打印我们创建的员工的姓名。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+type Employee struct {
+    Name string
+}
+
+func (e *Employee) UpdateName(newName string) {
+    e.Name = newName
+}
+
+func (e *Employee) PrintName() {
+    fmt.Println(e.Name)
+}
+
+func main() {
+    var employee Employee
+    employee.Name = &amp;quot;Michael&amp;quot;
+    employee.UpdateName(&amp;quot;Mike&amp;quot;)
+    employee.PrintName()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;与函数一样，方法会创建传递给它的参数的副本。为避免这种情况，我们可以在定义方法时使用指针接收器&lt;code&gt;func (pointer *Pointer) myMethod()&lt;/code&gt;。指针指向内存地址，是传递的引用。多用用就回习惯了，不像C的指针那么恐怖。&lt;/p&gt;
+&lt;p&gt;为什么我们在Go程序中使用方法呢？&lt;/p&gt;
+&lt;p&gt;##函数vs方法&lt;/p&gt;
+&lt;p&gt;方法通常作用于给定的对象，即&lt;code&gt;player.Update（params）&lt;/code&gt;，这种方式比用&lt;code&gt;UpdatePlayer（player，params）&lt;/code&gt;更优雅和直观。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func UpdatePlayer(player *Player, params ParamsStruct) {
+  fmt.Println(&amp;quot;这是个简单的函数&amp;quot;)
+}
+
+UpdatePlayer(player, params)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面需要传入player和其它参数，下面的方式更加明了：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func (g *Player) Update(params ParamsStruct) {
+  fmt.Println(&amp;quot;这是个简单的方法&amp;quot;)
+}
+// 在我看来,这样好多了
+myPlayer.Update(params)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##小结
+在本教程中，我们了解了方法以及它们与函数有何不同。一般我们都是先声明一个结构体，然后给它声明一些方法。和其它语言中的类的概念相似。&lt;/p&gt;
+- /posts/go%E7%9A%84%E6%96%B9%E6%B3%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go的函数</title>
+        <link>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Mon, 29 Jul 2019 17:37:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ -&lt;p&gt;在本教程中，我们将学习Golang中的函数，并希望在本教程结束时，您将牢牢掌握它们是什么以及如何在您自己的项目中使用它们。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+我们将在本教程中介绍以下主题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;函数声明的基础知识&lt;/li&gt;
+&lt;li&gt;使用多个返回值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##函数的声明
+Go中的所有函数都以func关键字开始，然后是函数名称。在名称之后，我们打开括号并定义我们的参数列表，后跟一个非常相似的返回结果列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func name(parameter-list) (result-list) {
+  // 函数体
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;访问权限！如果您希望在其他包中访问您的函数，那么您必须将函数名称的第一个字母设为大写！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;##举个栗子
+对于这个例子，我们将创建一个名为myFunction的函数，它将接收2个字符串参数并返回结果字符串：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func myfunction(firstName string, lastName string) (string) {
+  fullname := firstName + &amp;quot; &amp;quot; + lastName 
+  return fullname
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在函数体的第一行，我们创建了一个名为fullname的新变量，它是我们的firstName变量与空格和我们的lastName变量连接成的新字符串。完成此连接后，我们将返回fullname变量。&lt;/p&gt;
+&lt;p&gt;##完整的代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func myfunction(firstName string, lastName string) (string) {
+  fullname := firstName + &amp;quot; &amp;quot; + lastName 
+  return fullname
+}
+
+func main() {
+    fmt.Println(&amp;quot;Hello World&amp;quot;)
+
+    fullName := myfunction(&amp;quot;Michael&amp;quot;, &amp;quot;Yang&amp;quot;)
+    fmt.Println(fullName)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##返回多个值的函数
+在Go程序中经常会看到从函数调用返回的两个结果。通常第一个值是正常情况下的期望结果，第二个返回值是任何潜在错误。我们重新实现一下函数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func myfunction(firstName string, lastName string) (string, error) {
+  return firstName + &amp;quot; &amp;quot; + lastName, nil
+}
+
+func main() {
+  fmt.Println(&amp;quot;Hello World&amp;quot;)
+
+  // 我们可以将结果分配给多个变量
+  // 通过在逗号分隔的列表中定义其名称
+  // like so: 
+  fullName, err := myfunction(&amp;quot;Michael&amp;quot;, &amp;quot;Yang&amp;quot;)
+  if err != nil {
+    fmt.Println(&amp;quot;处理错误情况&amp;quot;)
+  }
+  fmt.Println(fullName)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##匿名函数
+匿名函数与常规函数非常相似，只是它们在函数声明中缺少名称。这些函数可以在命名函数中定义，并且可以访问其封闭函数中的任何变量，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+  &amp;quot;fmt&amp;quot;
+)
+
+func addOne() func() int {
+  var x int
+  // 我们声明并返回一个匿名函数
+  // 匿名函数返回一个整型值
+  return func() int {
+    // 这是匿名函数
+    // 可以访问父函数中声明的 x 变量
+    x++
+    return x + 1
+  }
+}
+
+func main() {
+  myFunc := addOne()
+  fmt.Println(myFunc()) // 2
+  fmt.Println(myFunc()) // 3
+  fmt.Println(myFunc()) // 4
+  fmt.Println(myFunc()) // 5
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##可变参函数
+有些时候，我们不知道我们的函数需要多少个参数。这是可变函数发挥作用的地方：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+  &amp;quot;fmt&amp;quot;
+)
+
+func myVariadicFunction(args ...string) {
+  fmt.Println(args)
+}
+
+func main() {
+  myVariadicFunction(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们尝试运行它，程序打印包含Hello和world的字符串数组。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+[hello world]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ps：可变参数函数不仅限于字符串，我们可以使用复合或基本类型&lt;/p&gt;
+&lt;p&gt;go的&lt;code&gt;Println()&lt;/code&gt;就是个很好的栗子：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func Println(a ...interface{}) (n int, err error) {
+    return Fprintln(os.Stdout, a...)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此示例接受任意数量的interface {}参数&lt;/p&gt;
+&lt;p&gt;##小结
+在本文中，我们学习了在go编程语言中的函数及匿名函数。希望你发现这很有用！
+关于匿名函数不是很了解没关系，先记着，后面慢慢就回理解。&lt;/p&gt;
+- /posts/go%E7%9A%84%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go的复合数据类型</title>
+        <link>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+        <pubDate>Mon, 29 Jul 2019 17:13:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;上节我们学过来基本数据类型，本节说说go的复合数据类型。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;##数组 Arrays
+让我们首先声明一周中所有天的数组。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 声明一个空数组的字符串
+var days []string
+
+// 声明一个包含元素的数组
+days := [...]string{&amp;quot;monday&amp;quot;, &amp;quot;tuesday&amp;quot;, &amp;quot;wednesday&amp;quot;, &amp;quot;thursday&amp;quot;, &amp;quot;friday&amp;quot;, &amp;quot;saturday&amp;quot;, &amp;quot;sunday&amp;quot;}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果我们想查询数组中的第一个元素或特定元素，我们可以以与其他语言非常相似的方式查询：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fmt.Println(days[0]) // 打印 &#39;monday&#39;
+fmt.Println(days[5]) // 打印 &#39;saturday&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##切片 Slices
+切片和数组之间的区别非常微妙。 Go中的切片允许您访问底层数组元素的子集。&lt;/p&gt;
+&lt;p&gt;切片由三个部分组成，&lt;code&gt;指针&lt;/code&gt;，&lt;code&gt;长度length&lt;/code&gt;和&lt;code&gt;容量capactiy&lt;/code&gt;。让我们试着用一个例子来形象化。比方说，例如，我们有一个星期几的数组，我们可以使用切片来仅提取那些工作日的天数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;days := [...]string{&amp;quot;Monday&amp;quot;, &amp;quot;Tuesday&amp;quot;, &amp;quot;Wednesday&amp;quot;, &amp;quot;Thursday&amp;quot;, &amp;quot;Friday&amp;quot;, &amp;quot;Saturday&amp;quot;, &amp;quot;Sunday&amp;quot;}
+weekdays := days[0:5]
+fmt.Println(weekdays)
+// 这会返回: [Monday Tuesday Wednesday Thursday Friday]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##映射 Maps
+映射是Go表示的哈希表，这是一种允许您将一种任意数据类型映射到另一种数据的数据结构。例如，让我们根据该频道的订阅者数量创建 YouTube频道名称=&amp;gt;订阅数量 的Map：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;youtubeSubscribers := map[string]int{
+  &amp;quot;TutorialEdge&amp;quot;:     2240,
+  &amp;quot;MKBHD&amp;quot;:            6580350,
+  &amp;quot;Fun Fun Function&amp;quot;: 171220,
+}
+
+fmt.Println(youtubeSubscribers[&amp;quot;MKBHD&amp;quot;]) // 打印输出 6580350
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这是字符串数据类型和int数据类型之间的映射。&lt;/p&gt;
+&lt;p&gt;##结构 Structs
+在Go中，我们有一个结构的概念。
+这些结构允许我们创建数据类型，这些数据类型是其他数据类型的聚合（类似与其它语言的Class）。&lt;/p&gt;
+&lt;p&gt;比如说，我们在应用程序中有一个Person的概念。我们可以创建一个person结构，其中包含许多字段，例如，我们可以有一个name字段，其类型为string，age字段的类型为int，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 我们的 Person 结构
+type Person struct {
+  name string
+  age int
+}
+
+// 声明一个新的 `Person`
+var myPerson Person
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用这些结构的优点是我们可以有效地处理所有这些值或字段，因为它们被称为单个实体并且可以轻松地修改它们。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 声明一个新的Person， `Michael`
+mike := Person{name: &amp;quot;Michael&amp;quot;, age: 32}
+
+// 试图在我受伤之前回到过去
+mike.age = 18
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##结构嵌套 Nested Structs
+由于我们可以在结构中创建嵌套结构，因此结构具有令人难以置信的可扩展性。例如，假设我们有一个团队结构，该团队中有许多人：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func main() {
+    type Person struct {
+        name string
+        age  int
+    }
+
+    // 我们的团队struct
+    type Team struct {
+        name    string
+        players [2]Person
+    }
+
+    // 声明一个空的 &#39;Team&#39;
+    var myTeam Team
+    fmt.Println(myTeam)
+
+    players := [...]Person{Person{name: &amp;quot;Forrest&amp;quot;}, Person{name: &amp;quot;Gordon&amp;quot;}}
+    // 声明一个带玩家的Team
+    celtic := Team{name: &amp;quot;Celtic FC&amp;quot;, players: players}
+  fmt.Println(celtic)
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##小结
+希望本教程对你有用，它让你深入了解如何在自己的Go程序中使用更高级的数据类型，来编写更有趣的应用。&lt;/p&gt;
+- /posts/go%E7%9A%84%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go的基本数据类型</title>
+        <link>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+        <pubDate>Mon, 29 Jul 2019 15:47:00 +0000</pubDate>
+        
+        <guid>/posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+        <description>清风徐来 /posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ -&lt;p&gt;在本教程中，我们将学习Go语言中可用的所有基本数据类型。在本教程结束时，您应该熟悉该语言中提供的各种不同类型，并希望了解如何在您自己的Go程序中使用这些类型。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;Go的基本数据类型&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ps：本节课程很无聊，但是不可或缺。&lt;/p&gt;
+&lt;p&gt;##数据类型
+Go编程语言中有4种不同类型的类型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基本类型 我们将在本教程中介绍的内容&lt;/li&gt;
+&lt;li&gt;聚合类型 数组和结构&lt;/li&gt;
+&lt;li&gt;引用类型 指针和切片&lt;/li&gt;
+&lt;li&gt;接口类型 标准接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##整型&lt;/p&gt;
+&lt;p&gt;简单点，直接在代码里注释讲解吧&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 所有数字类型默认为0
+
+// 无符号的8位整型
+// 可存储: 0 to 255
+var myint uint8
+// 有符号的8位整型
+// 可存储: -127 to 127
+var myint int8
+
+// 无符号的16位整型
+var myint uint16
+// 有符号的16位整型
+var myint int16
+
+// 无符号的32位整型
+var myint uint32
+// 带符号的32位整型
+var myint int32
+
+// 无符号的64位整型
+var myint uint64
+// 带符号的64位整型
+var myint int64
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;存储超过大小的值编译会无法通过。初始存储未超过大小，但是运行中溢出了，可能会出现其它结果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func main() {
+    fmt.Println(&amp;quot;Hello World&amp;quot;)
+
+    var myint int8
+    for i := 0; i &amp;lt; 129; i++ {
+        myint += 1
+    }
+    fmt.Println(myint) // 打印输出 -127
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这是你编写程序时需要注意的！&lt;/p&gt;
+&lt;p&gt;##标准int类型
+如果在定义整数值时用这么冗长写法，肯定麻烦。大多数情况下，可以默认为int。此int数据类型通常为32位或64位，具体取决于您的操作系统是32位系统还是64位系统。&lt;/p&gt;
+&lt;p&gt;为简单起见，最好默认使用此数据类型，您会发现这是使用最广泛的数据类型。&lt;/p&gt;
+&lt;p&gt;###类型转换
+在进行一些运算时，需要进行转换，因为不同类型是不能进行运算的。上代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var men uint8
+men = 5
+var women int16
+women = 6
+
+var people int
+// 这会引发编译错误
+people = men + women
+// 转换为以下标准格式才能编译执行
+people = int(men) + int(women)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##浮点数类型&lt;/p&gt;
+&lt;p&gt;接下来，我们来说浮点数。它们有两种不同的大小，float32或float64。比int64大的数字，也可以用他们来替代。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var f1 float32
+var f2 float64
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;看看如何声明和使用浮点数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var maxFloat32 float32
+maxFloat32 = 16777216
+fmt.Println(maxFloat32 == maxFloat32+10) // 有其它语言基础的同学，通常会期望这会返回false
+// 它返回true
+fmt.Println(maxFloat32+10) // 16777216
+fmt.Println(maxFloat32+2000000) // 16777216
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###将float和int互相转换&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 从int转换为float
+var myint int
+myfloat := float64(myint)
+
+// 从float转换为int
+var myfloat2 float64
+myint2 := int(myfloat2)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##复数
+与浮点数据类型非常相似，有两种不同的大小，你可以选择complex64或complex128&lt;/p&gt;
+&lt;p&gt;##Booleans
+bool，表示真或假。让我们看看如何在我们的Go程序中使用它：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var amazing bool
+amazing = true
+if amazing {
+  subscribeToChannel()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很简单，但是如果我们想在程序中做一些布尔逻辑运算会发生什么？好吧，使用||和&amp;amp;&amp;amp;来实现或和与运算。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var isTrue bool = true
+var isFalse bool = false
+// AND
+if isTrue &amp;amp;&amp;amp; isFalse {
+  fmt.Println(&amp;quot;两个条件都必须是真&amp;quot;)
+}
+// OR
+if isTrue || isFalse {
+  fmt.Println(&amp;quot;只有一个条件需要为True&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##Strings 字符串
+Go语言中的字符串就是我们称之为字符切片的字符串。我们可以使用string声明一个新的字符串变量：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var myName string
+myName = &amp;quot;Michael Yang&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##常量
+常量是Go语言中的最终（final）基本数据类型。它们允许我们指定在程序执行过程中不会改变的不可变值。
+&lt;code&gt;const meaningOfLife = 32&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##小结
+本节把基本数据类型过了一边，不能再简单了，要不就说不清了。&lt;/p&gt;
+- /posts/go%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go入门</title>
+        <link>/posts/go%E5%85%A5%E9%97%A8/</link>
+        <pubDate>Mon, 29 Jul 2019 14:58:00 +0000</pubDate>
+        
+        <guid>/posts/go%E5%85%A5%E9%97%A8/</guid>
+        <description>清风徐来 /posts/go%E5%85%A5%E9%97%A8/ -&lt;p&gt;希望是无废话的go语言教程。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;go.png&#34;&gt;
+Go是一种绝对令人难以置信的语言，可以构建各种不同的应用程序。从命令行界面到分布式微系统甚至云平台，它的简单性和并发性使其成为许多开发团队的强大语言选择。&lt;/p&gt;
+&lt;p&gt;在本教程中，我将着手帮助您启动并运行该语言，以便您可以开始构建更加出色的应用程序并推动技术的发展。&lt;/p&gt;
+&lt;p&gt;我们将专注于启动和运行一个非常简单的Hello World风格的应用程序。一旦你掌握了一切正常的工作，我们就可以开始学习语言中更复杂的方面，比如函数，方法，以及最终的并发和反射等方面。&lt;/p&gt;
+&lt;p&gt;您需要在开发计算机上安装Go。如果您需要安装，请查看官方下载页面：&lt;a href=&#34;https://golang.org/dl/&#34;&gt;官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##入门&lt;/p&gt;
+&lt;p&gt;让我们深入了解安装好所有内容并编写一个非常简单的程序来让我们热热身。&lt;/p&gt;
+&lt;p&gt;您首先要进入&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;官方的入门页面&lt;/a&gt;，其中包含一个链接，用于安装目前可用的各种不同版本的Go。&lt;/p&gt;
+&lt;p&gt;使用官方安装文件安装，把Go的可执行文件添加到您机器的PATH中。完成后，我们应该能够在终端中运行go version：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go version
+go version go1.12.5 darwin/amd64
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果正常，我们就准备开始编写自己的Go程序。&lt;/p&gt;
+&lt;p&gt;打开代码编辑器，然后创建一个新的目录，我们的Hello World项目将存在该目录中。&lt;/p&gt;
+&lt;p&gt;在这个目录中，我们将创建一个名为main.go的新文件，它将包含我们相对简单的Go程序。我们还想在这个目录打开一个终端并运行以下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ GOMODULES11=ON
+$ go mod init github.com/hello/world
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这将初始化我们的项目，并允许我们将来的Go代码分成子包。它还允许我们以最小的麻烦来检索我们可能想要的任何外部依赖项。就是用go module来管理包依赖。&lt;/p&gt;
+&lt;p&gt;现在，在我们的main.go文件中，我们将要添加以下代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 每个go源文件的第一个语句
+// 必须是包裹声明。如果我们什么都不做
+// 一般就是main包
+package main
+
+// 我们想要使用fmt包
+// 它具有`print`功能 -  Println
+import &amp;quot;fmt&amp;quot;
+
+// 我们需要定义我们的main函数
+// 把它想象成我们Go的切入点，就是程序入口
+func main() {
+    // 在main函数中，我们调用fmt的Println函数打印出Hello World
+    fmt.Println(&amp;quot;Hello World&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可直接运行。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+Hello World
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;或是编译成二进制文件后再运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go build main.go
+$ ./main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们已成功编写，运行和编译了第一个Go应用程序！&lt;/p&gt;
+&lt;p&gt;##小结&lt;/p&gt;
+&lt;p&gt;在这个简单的教程中，我们成功地进入Go开发的旅程。&lt;/p&gt;
+&lt;p&gt;如果您有兴趣进一步了解Go，下一站我们学习Go语言中提供的基本类型&lt;/p&gt;
+- /posts/go%E5%85%A5%E9%97%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>双十一黑五接连而来还是 bwh 的 CN2 GIA 稳定</title>
+        <link>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
+        <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
+        
+        <guid>/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
+        <description>清风徐来 /posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ -&lt;p&gt;都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。
+如果，只是建个小博客，测试点代码，个人爬墙 bwh 的 CN2 GIA 还是比较推荐的，够用且稳定。
+推荐一下：&lt;a href=&#34;https://bwh8.net/aff.php?aff=15657&amp;amp;pid=83&#34;&gt;直达链接&lt;/a&gt;&lt;/p&gt;
+- /posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Debian9 快速开启 TCP BBR </title>
+        <link>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+        <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
+        
+        <guid>/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+        <description>清风徐来 /posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/10/2233004097.png&#34; alt=&#34;1100px-Comic_strips_Linux_BBR.svg.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。&lt;/p&gt;
+&lt;p&gt;干货如下
+1,修改系统变量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf
+echo &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存修改的配置使之生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2,执行以下命令开启 BBR&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl net.ipv4.tcp_available_congestion_control
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一般回显如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就是开启成功了。&lt;/p&gt;
+&lt;p&gt;3,可以执行以下命令以检测 BBR 是否开启。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lsmod | grep bbr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;回显&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tcp_bbr                20480  1  
+&lt;/code&gt;&lt;/pre&gt;
+- /posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Mac OS X 设置英文为默认输入法</title>
+        <link>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+        <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
+        
+        <guid>/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+        <description>清风徐来 /posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ -&lt;p&gt;为了方便开发,一般都是把系统语言改成英文.
+但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好.
+每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说.
+上干货,方便像 &lt;a href=&#34;https://kissjava.cn&#34;&gt;Mike&lt;/a&gt; 一样的 coder.适用High Sierra ~ Mojave.&lt;/p&gt;
+&lt;p&gt;1, System Preferences
+2, Language &amp;amp; region
+3, 把 Englis 拖到列表顶部,设为 Primary
+4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)&lt;/p&gt;
+&lt;p&gt;看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/09/2395988471.png&#34; alt=&#34;setDefaultInputSource.png&#34;&gt;&lt;/p&gt;
+- /posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Nginx 反向代理并替换内容的Demo</title>
+        <link>/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</link>
+        <pubDate>Fri, 31 Aug 2018 08:12:00 +0000</pubDate>
+        
+        <guid>/posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/</guid>
+        <description>清风徐来 /posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ -&lt;p&gt;我就是把mikeyang.me反向代理到kissjava.cn/about.html，并且把logo文字从kissjava.cn改成了mikeyang.me。上配置。
+server                                                                                                                    &lt;br&gt;
+{                                                                                                                     &lt;br&gt;
+listen 80;                                                                                                        &lt;br&gt;
+#listen [::]:80;                                                                                                  &lt;br&gt;
+server_name mikeyang.me ;                                                                                         &lt;br&gt;
+index index.html index.htm index.php default.html default.htm default.php;                                        &lt;br&gt;
+root  /home/wwwroot/mikeyang.me;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    include rewrite/none.conf;                                                                                           
+    #error_page   404   /404.html;                                                                                       
+                                                                                                                         
+    # Deny access to PHP files in specific directory                                                                     
+    #location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ { deny all; }                                          
+                                                                                                                         
+    # 以下开始是反向代理配置
+    location / {                                                                                                         
+            proxy_pass      https://kissjava.cn/about.html;                                                              
+            proxy_redirect  off;                                                                                         
+            proxy_set_header        X-Real-IP       $remote_addr;                                                        
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;                                          
+            # 以下是替换内容，可以继续增加条目，也支持正则，可以看官方文档                                                              
+            sub_filter &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;                                              
+                    kissjava.cn                    &amp;lt;/a&amp;gt;&#39; &#39;&amp;lt;a href=&amp;quot;https://kissjava.cn/&amp;quot; class=&amp;quot;navbar-logo&amp;quot;&amp;gt;mikeyang.me&amp;lt;/a&amp;gt;&#39;;
+            # 以下说明只替换一次                                                                                    
+            sub_filter_once on;                                                                                         
+    }  
+    #...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ok，尝试一下吧。&lt;a href=&#34;http://mikeyang.me&#34;&gt;mikeyang.me&lt;/a&gt;
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/08/1465588119.png&#34; alt=&#34;nginx-proxy-demo.png&#34;&gt;&lt;/p&gt;
+- /posts/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%B9%B6%E6%9B%BF%E6%8D%A2%E5%86%85%E5%AE%B9%E7%9A%84demo/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

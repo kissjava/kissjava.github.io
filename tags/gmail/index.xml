@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gmail on 清风徐来</title>
+    <link>/tags/gmail/</link>
+    <description>Recent content in gmail on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Wed, 08 Oct 2008 10:08:42 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gmail/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>怎样透过Codeigniter的SMTP类发mail</title>
+      <link>/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</link>
+      <pubDate>Wed, 08 Oct 2008 10:08:42 +0000</pubDate>
+      
+      <guid>/posts/%E6%80%8E%E6%A0%B7%E9%80%8F%E8%BF%87codeigniter%E7%9A%84smtp%E7%B1%BB%E5%8F%91mail/</guid>
+      <description>其实手册上已经讲得比较好了。但是有些不太对味，排版不太符合国人的习惯。闲话不说了，淡水喜欢直奔主题。 以Gmail为例，其他的更加简单（smtp_host和port改一下就行了，而且一般的smtp都无需ssl的）。要发信，先要配置。 配置有两种方式，方式一直接写在发送mail代码的前面，如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;;
+$this-&amp;gt;email-&amp;gt;initialize($config); 方式二,创建一个配置文件config/email.php，内容如下： $config[&amp;lsquo;protocol&amp;rsquo;] = &amp;lsquo;smtp&amp;rsquo;; $config[&amp;lsquo;smtp_host&amp;rsquo;] = &amp;lsquo;ssl://smtp.gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_user&amp;rsquo;] = &amp;lsquo;username@gmail.com&amp;rsquo;; $config[&amp;lsquo;smtp_pass&amp;rsquo;] = &amp;lsquo;password&amp;rsquo;; $config[&amp;lsquo;smtp_port&amp;rsquo;] = &amp;lsquo;465&amp;rsquo;; $config[&amp;lsquo;smtp_timeout&amp;rsquo;] = &amp;lsquo;5&amp;rsquo;; $config[&amp;lsquo;newline&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; $config[&amp;lsquo;crlf&amp;rsquo;] = &amp;ldquo;rn&amp;rdquo;; ok,现在可以发信了。 $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;email&amp;rsquo;); $this-&amp;gt;email-&amp;gt;from(&amp;lsquo;username@gmail.com&amp;rsquo;, &amp;lsquo;your_name&amp;rsquo;); $this-&amp;gt;email-&amp;gt;to(&amp;lsquo;your_friend@xxx.com&amp;rsquo;); $this-&amp;gt;email-&amp;gt;subject(&amp;lsquo;subject&amp;rsquo;); $this-&amp;gt;email-&amp;gt;message(&amp;lsquo;this is the mail content&amp;rsquo;); $this-&amp;gt;email-&amp;gt;send(); 啰嗦一下，用Gmail发信，不太容易被当作垃圾邮件，但是主机要支持ssl才可以，否则是发不出的。其他免费的stmp也有不错的，而且不用ssl支持。比如tom和qq了。</description>
+    </item>
+    
+  </channel>
+</rss>

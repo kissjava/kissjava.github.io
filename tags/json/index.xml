@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>json on 清风徐来</title>
+    <link>/tags/json/</link>
+    <description>Recent content in json on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 30 Jul 2019 08:49:10 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go解析JSON文件</title>
+      <link>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
+      
+      <guid>/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+      <description>在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。 我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。
+JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！
+##Encoding/Json Package
+我们将利用encoding / json标准库包来启动和运行。我强烈建议你在这里查看官方文档：Encoding / Json。
+##读取和解析JSON文件
+user.json
+{&amp;quot;users&amp;quot;: [{&amp;quot;name&amp;quot;: &amp;quot;Elliot&amp;quot;,&amp;quot;type&amp;quot;: &amp;quot;Reader&amp;quot;,&amp;quot;age&amp;quot;: 23,&amp;quot;social&amp;quot;: {&amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,&amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;}},{&amp;quot;name&amp;quot;: &amp;quot;Fraser&amp;quot;,&amp;quot;type&amp;quot;: &amp;quot;Author&amp;quot;,&amp;quot;age&amp;quot;: 17,&amp;quot;social&amp;quot;: {&amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,&amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;}}]}###读取JSON文件 使用os包来从我们的文件系统中打开users.json文件。打开文件后，我们将关闭文件（函数结束时执行defer后的关闭）。
+jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)if err != nil {fmt.Println(err)}fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)// 推迟关闭我们的jsonFile，以便稍后解析它defer jsonFile.Close()###用结构解析
+我们可以用结构或是map[string]interface{}来解析users.json。我们用结构，上代码：</description>
+    </item>
+    
+  </channel>
+</rss>

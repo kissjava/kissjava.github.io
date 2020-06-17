@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web service on 清风徐来</title>
+    <link>/tags/web-service/</link>
+    <description>Recent content in web service on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 24 Jul 2009 21:55:45 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
+      <link>/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
+      <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
+      
+      <guid>/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
+      <description>公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。
+原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.
+nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.
+下面就来说说.
+首先在传输少量数据的时候, 用如下语句生成对象 $client = new soapclient($service_address, true);然后用如下语句调用对方web service的方法就行了 $result = $client-&amp;gt;call(&amp;lsquo;methodName&amp;rsquo;, $par);当然这个在我本机测试时是好的, 也就是我自己写的client端调用自己写的service端是好的. 但是当我用这个调用对方.NET的service端时就出问题了. 数据传不过去. 后来发现原来要用proxy. 在生成$client对象后调用如下方法 $proxy = $client-&amp;gt;getProxy();然后调用对方web service的语句改成 $result = $proxy-&amp;gt;methodName($par);就可以了.
+下面那个使用proxy的方法我后来自己请求自己也测试通过, 就是说用proxy比较好, 至少都能用.
+这个问题解决后, 测试了几天, 然后需要做load testing了, 几千条的数据一起测, 结果数据传输就掉了很多, 一查, 原来web service中途停了. 所以把php.ini的max_execution_time调长, memory_limit调大, 为了保险, 把max_input_time也调长了. 结果执行结果还是老样子. 所以只好回头研究nusoap类里的东西, 然后发现了$response_timeout这个东西, 默认是30, 我把他改成了900, 估计是900秒, 然后再次执行, OK了. 当然为了保险, 我把nusoap里的所有$response_timeout的值都改为了900 ^^
+然后和$response_timeout类似的, 还有一个问题, 就是中文字符的问题.</description>
+    </item>
+    
+    <item>
+      <title>PHP5的SOAP扩展</title>
+      <link>/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
+      
+      <guid>/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+      <description>简介PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。
+PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。
+SOAP扩展支持以下规范。
+ SOAP 1.1 SOAP 1.2 WSDL 1.1  SOAP扩展主要用来处理RPC形式的Web services。不过，你也可以使用文本形式的WSDL文件配合WSDL模式的服务端和客户端。
+这个扩展使用 GNOME XML库来处理XML。
+扩展中的类 这个扩展实现了6个类。 其中有三个高级的类，它们的方法很有用，它们是 SoapClient，SoapServer和SoapFault。 另外三个类除了构造器外没有其它别的方法，这三个是低级的类，它们是SoapHeader，SoapParam和SoapVar。 SoapClient类这个类用来使用Web services。SoapClient类可以作为给定Web services的客户端。 它有两种操作形式：
+ WSDL 模式 Non-WSDL 模式  在WSDL模式中，构造器可以使用WSDL文件名作为参数，并从WSDL中提取服务所使用的信息。
+non-WSDL模式中使用参数来传递要使用的信息。这个类有许多可以用来使用服务的有用的方法。其中SoapClient::__soapCall()是最重要的。这个方法可以用来调用服务中的某个操作。
+SoapServer类这个类可以用来提供Web services。与SoapClient类似，SoapServer也有两种操作模式：WSDL模式和non-WSDL模式。这两种模式的意义跟 SoapClient的两种模式一样。在WSDL模式中，服务实现了WSDL提供的接口；在non-WSDL模式中，参数被用来管理服务的行为。
+在SoapServer类的众多方法中，有三个方法比较重要。它们是SoapServer::setClass()，SoapServer::addFunction()和SoapServer::handle()。
+SoapServer::setClass()方法设定用来实现Web Service的类。SoapServer::setClass所设定的类中的所有公共方法将成为Web Services的操作(operation)。
+SoapServer::addFunction()方法用来添加一个或多个作为Web Services操作(operation)的函数。
+SoapServer:: handle()方法指示Web Service脚本开始处理进入的请求。Web Service脚本是用PHP脚本写的一个或多个SoapServer对象的实例。尽管你可以有不止一个的SoapServer对象，但通常的习惯是一个脚本只拥有一个SoapServer实例。在调用SoapServer::handle()方法之前，Web Service脚本会使用设置在SoapServer对象实例上的任何信息来处理进入的请求和输出的相应。
+SoapFault类这个类从Exception类继承而来，可以用来处理错误。SoapFault实例可以抛出或获取Soap错误的相关信息并按程序员的请求处理。
+SoapHeader类这个类可以用来描述SOAP headers。它只是一个只包含构造器方法的数据容器。
+SoapParam类SoapParam也是一个只包含构造器方法的数据容器。这个方法可以用来描述传递给Web services操作的参数。在non-WSDL模式中这是一个很有用的类，可以用来传递所期望格式的参数信息。
+SoapVar类SoapVar也是一个只包含构造器的低级类，与SoapHeader和SoapParam类相似。这个类可以用来给一个Web services操作传递编码参数。这个类对non-WSDL中传递类型信息是非常有用的。
+WSDL VS. non-WSDL模式Web Services有两种实现模式：契约先行(Contract first)模式和代码先行(Code first)模式。
+契约先行模式使用了一个用XML定义的服务接口的WSDL文件。WSDL文件定义了服务必须实现或客户端必须使用的接口。SoapServer和SoapClient的WSDL模式就基于这个概念。
+在代码先行模式中，首先要先写出实现服务的代码。然后在大多数情况下，代码会产生一个契约，换种说法，一个WSDL。接着客户端在使用服务的时候就可以使用那个WSDL来获得服务的接口。尽管如此，PHP5的扩展并没有从代码输出一个WSDL的规定，考虑到这种情况，可以在non-WSDL模式下使用 SoapServer和SoapClient。
+SOAP扩展与Hello World这一节介绍如何使用WSDL模式和non-WSDL模式来实现服务和客户端。相对而言，使用WSDL模式来实现服务和客户端会比较容易，假定已经有一个定义了接口的WSDL文件。（淡水对WSDL还比较陌生，就只关注non-wsdl模式了。）</description>
+    </item>
+    
+    <item>
+      <title>php5下web service的大致浏览(注意php调用.net的web services的方式)</title>
+      <link>/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 11 May 2009 16:48:42 +0000</pubDate>
+      
+      <guid>/posts/php5%E4%B8%8Bweb-service%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%8F%E8%A7%88%E6%B3%A8%E6%84%8Fphp%E8%B0%83%E7%94%A8.net%E7%9A%84web-services%E7%9A%84%E6%96%B9%E5%BC%8F/</guid>
+      <description>嗯，又找到一些好玩的东西，web service。 有个叫Nusoap类，在php4下比较流行。但是淡水这次玩的是php5，所以他就没戏了。 先恶补一下相关知识。 先要打开php5的web service扩展。linux下，嗯，好像不会-_-!。windows下，把php.ini文件中 extension=php_soap.dll 去掉注释即可。 方法： SoapClient-&amp;gt;__soapCall() 说明： class SoapClient { mixed __soapCall ( string function_name, array arguments [, array options [, mixed input_headers [, array &amp;amp;output_headers]]]) } In WSDL mode, you can simply call SOAP functions as SoapClient methods. This method useful in non-WSDL mode when soapaction is unknown, uri differs from the default or when sending and/or receiving SOAP Headers 返回值： 一个简单类型的返回值，或是一个关联数组 例子： SOAP发送的协议：
+POST /servicepath/service.</description>
+    </item>
+    
+  </channel>
+</rss>

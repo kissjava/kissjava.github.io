@@ -1,0 +1,373 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>怎样使用php编辑以文件形式存储的配置文件</title>
+        <link>/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Mon, 30 Jan 2012 20:08:20 +0000</pubDate>
+        
+        <guid>/posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 /posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ -&lt;p&gt;文件形式存储配置文件比较方便，一些不常变动的部分就无需写到数据库中，这样就无需每次都要读取数据库，可以降低数据库的负担，还可以提高响应速度。但是修改貌似没那么方便，如果可以在线上修改php配置文件那就好了。比如改改广告链接啊，变动部分css等等都可以的。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;淡水的意思其实就是不要滥用数据库，文件的读写也是可以帮助我们完成许多工作的。&lt;/p&gt;
+- /posts/%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8php%E7%BC%96%E8%BE%91%E4%BB%A5%E6%96%87%E4%BB%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>meta标签简明教程</title>
+        <link>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Mon, 30 Jan 2012 02:13:46 +0000</pubDate>
+        
+        <guid>/posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/</guid>
+        <description>清风徐来 /posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/ -&lt;p&gt;又是简明教程，嗯，好为人师啊。&lt;/p&gt;
+&lt;p&gt;其实这应该是基本功，只是有些只注意速成的web设计师没有留心到。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;meta的存放位置&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;meta标签放置在head标签之间。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;关键字&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;关键字须用英文逗号(,)隔开,不要有空白。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;网站描述&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;页面如果没有给出网站描述时，搜寻引擎通常会自动抓网页的前25字做为网页内容摘要，呈现在搜寻结果上。但有时网页的前25字可能未必能表达文章的宗旨。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;网页隐私&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;用来告知搜寻引擎该网页是否可被搜寻，并且有几个参数可作设定:
+noindex：不要检索。
+nofollow：只检索该页，不检索该页里的链结。
+noindex, nofollow：搜寻引擎的小蜘蛛到这里时，就会停止，不作任何的检索。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;作者&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;版权说明&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;网页编码&lt;!-- raw HTML omitted --&gt;
+强烈建议编码设为utf-8（这个都统一用它比较方便，避免乱码等问题）。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;关闭图片菜单&lt;!-- raw HTML omitted --&gt;
+关闭鼠标移到图片上方，出现储存图片的相关菜单。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/meta%E6%A0%87%E7%AD%BE%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Jquery Notification Plugin</title>
+        <link>/posts/jquery-notification-plugin/</link>
+        <pubDate>Mon, 09 Jan 2012 14:41:24 +0000</pubDate>
+        
+        <guid>/posts/jquery-notification-plugin/</guid>
+        <description>清风徐来 /posts/jquery-notification-plugin/ -&lt;p&gt;一款简单易用的jquery通知插件。会在页面顶部show出成功，失败，警告，和信息提示框。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;基本设置&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1，引入jquery和本插件（notification libraries）
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;插件下载：&lt;!-- raw HTML omitted --&gt;jquery_notification&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/jquery-notification-plugin/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>jQuery Mobile Framework 便捷指南</title>
+        <link>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</link>
+        <pubDate>Mon, 09 Jan 2012 14:18:30 +0000</pubDate>
+        
+        <guid>/posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/</guid>
+        <description>清风徐来 /posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/ -&lt;p&gt;Jquery mobile framework 可以帮助你开发基于web的富移动应用程序。在这篇教程里，我们将解释一些基本的事情，比如theme selection （主题选择），library usage（库的使用），design pages（页面设计），page links（页面链接）和transition animations （过渡动画）。代码轻便，简单，灵活。它支持流行的智能手机和嵌入平台。使用它可以让你的移动应用更充实。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;包含jQuery Mobile库&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;第一步就是在你的web page头部引入jQuery Mobile的样式表和javascript库文件。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;设计你的web page&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;jQuery Mobile可以在普通的html标签或html5标签中工作，但是你必须添加一些data属性（data-role，data-theme等等）在html标签中。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;自定义列表项&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;你可以自定义你的文章行，添加一些描述和评论数码。看看如下代码：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;选择主题样式&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Data-theme属性是用来为特定元素选择一个主题的。Data-theme的值可以是a，b，c，d，e。（根据文档data-theme的值可以是a到z，但是还在开发中。）
+链接内含页
+链接内含页可以使用简单的锚标签。锚链接的href值对应于包含标签的id值。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;过渡动画&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;你可以在页面切换时使用过渡动画。Data-transition属性定义过渡效果。
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;About Us&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+代码下载：&lt;!-- raw HTML omitted --&gt;jquery_mobile&lt;!-- raw HTML omitted --&gt;
+Demo：http://demos.9lessons.info/demos/jquery_mobile/
+原文：http://www.9lessons.info/2011/12/jquery-mobile-framework-tutorial.html&lt;/p&gt;
+- /posts/jquery-mobile-framework-%E4%BE%BF%E6%8D%B7%E6%8C%87%E5%8D%97/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>贴点权限系统的部分代码</title>
+        <link>/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</link>
+        <pubDate>Sat, 24 Dec 2011 12:04:21 +0000</pubDate>
+        
+        <guid>/posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/</guid>
+        <description>清风徐来 /posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/ -&lt;p&gt;好久未更了，凑数:(
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/%E8%B4%B4%E7%82%B9%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%83%A8%E5%88%86%E4%BB%A3%E7%A0%81/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>jQuery ajax方式加载页面后，被加载页面的js不能执行的问题</title>
+        <link>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Wed, 07 Dec 2011 09:46:58 +0000</pubDate>
+        
+        <guid>/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <description>清风徐来 /posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/ -&lt;p&gt;在回调函数里注册一下事件就可以了，要么就各个函数写在被加载的页面里。
+&lt;!-- raw HTML omitted --&gt;
+$(document).ready(function() {
+$(&amp;lsquo;content_div&amp;rsquo;).hide();&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(&#39;#list_user&#39;).click(function(event){
+    event.preventDefault();
+    load_user();
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;function load_user(){
+//load page
+$(&amp;quot;#content_div&amp;rdquo;).load(&amp;lsquo;your page url&amp;rsquo;,function(){
+//回调函数，在这里注册被加载页面需要的事件
+$(&amp;quot;.deleteItem&amp;rdquo;).click(delItem);
+$(&amp;quot;.editItem&amp;rdquo;).click(editItem);
+});&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function delItem(){
+    $.ajax({
+        type:&amp;quot;POST&amp;quot;,
+        url:&amp;quot;your url&amp;quot;,
+        dataType:&amp;quot;json&amp;quot;,
+        success:function(data){
+        }
+    });
+}
+
+function editItem(){
+    $.ajax({
+        type:&amp;quot;POST&amp;quot;,
+        url:&amp;quot;you url&amp;quot;,
+        dataType:&amp;quot;json&amp;quot;,
+        success:function(data){
+        }
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这里也有个例子供参考：http://www.crazyphper.com/?p=1167&lt;/p&gt;
+- /posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>MAMP环境下，在zend studio 9 里使用xdebug调试</title>
+        <link>/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
+        <pubDate>Sat, 03 Dec 2011 08:40:07 +0000</pubDate>
+        
+        <guid>/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
+        <description>清风徐来 /posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/ -&lt;p&gt;没有技术含量。
+MAMP下面有两个版本（MAMP/bin/php），他们都有各自的php.ini
+在其文件最后，都提供了xdebug块，仅有一行，“；zend_extension=&amp;hellip;”貌似去掉zend_extension前的注释就能使用了。
+实际上还需要添加一些配置才能进行断点调试的。否则只是在页面上var_dump变量提供更详情的信息而已。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Photoshop教程：一款清新高雅的网页布局</title>
+        <link>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+        <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
+        
+        <guid>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+        <description>清风徐来 /posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/ -&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;复制（cmd/ctrl+J）刚新建的导航图层，并对其添加杂色滤镜（滤镜&amp;gt;杂色&amp;gt;添加杂色），如下设置：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后更改图层混合模式为&amp;quot;叠加&amp;rdquo;，透明度下降到大约23%。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了让激活状态下的菜单更加醒目，选取圆角矩形工具（T）创建一个圆角矩形（圆角半径为5px，前景色为#464646）放置在菜单图层下方，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后设置如下图层样式：&amp;lsquo;内阴影&amp;rsquo;/&amp;lsquo;描边&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下一步，下载凌乱、自然灰褐色图案（或其它图案）拖放到文档中，放在矩形图层上方。接下来我们要遮住一些不需要的纹理，在图层面板选中矩形图层，按住cmd/ctrl键，点击缩略图，创建一个自动选区，然后选中纹理图层，在下拉菜单中点击&amp;quot;添加图层蒙版&amp;rdquo;，这样遮住了除选区外的所有区域，最后，撤消选区（ctrl+D），把纹理图层的透明度下降到35%。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了使标题更加炫目，按如下设置添加图层样式：&amp;lsquo;阴影&amp;rsquo;/&amp;lsquo;渐变叠加&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来，创建&amp;quot;About us&amp;quot;的圆角按钮。再一次选取圆角矩形工具（U），设置半径5PX，文本颜色为&lt;!-- raw HTML omitted --&gt;#404040&lt;!-- raw HTML omitted --&gt;，同时在右边有一个箭头图标（Mono图标集中的&lt;!-- raw HTML omitted --&gt;circleright32&lt;!-- raw HTML omitted --&gt;），重设它的大小以匹配按钮。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在矩形图层上添加以下样式：&amp;lsquo;外发光&amp;rsquo;/&amp;lsquo;渐变叠加&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最后一步是在按钮右边添加花纹，就是这微妙的设计元素增加了此设计的优雅度。下载并安装花纹笔刷（资源区的上方），先设置前景色为&lt;!-- raw HTML omitted --&gt;#343434&lt;!-- raw HTML omitted --&gt;，选取画笔工具（B），找到花纹笔刷，在画布上进行一次点击，然后把图层混合模式改为“强光”。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;设置此图层的透明度为15%，以显示背景图案，接着添加&amp;rsquo;阴影&amp;rsquo;的图层样式：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;此刻，我们需要在幻灯片区域添加图片缩略图，你可以找一个网站截图或其它图片，放在白色圆角矩形上方。我们得把图片四角变成圆角，在图层面板，按住cmd/ctrl，点击白色圆角矩形的缩略图，创建一个自动选区，接着选择放图片的图层，去往菜单&amp;quot;选择&amp;gt;修改&amp;gt;收缩&amp;rdquo;，收缩10px，然后执行&amp;quot;选择&amp;gt;反选&amp;rdquo;（cmd/ctrl+shift+I）反选选区，最后执行&amp;quot;编辑&amp;gt;清除&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加图片描述，在图层面板，按住cmd/ctrl，点击图片图层的缩略图，创建一个自动选区，新建图层，并以黑色填充选区，然后使用圆角矩形选框工具（M），选取新建的黑色矩形的上部分并删除。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;降低图层透明度到75%，添加简单的文字说明&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;设计的主内容区的时间到了！&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;主内容区的设计其实相当简单，但是要让人看出很简单也要花一定时间完成。我们将从左边开始，放置服务列表。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了给路径描边，设置前景色为文本颜色（&lt;!-- raw HTML omitted --&gt;#323232&lt;!-- raw HTML omitted --&gt;），然后选择一个较硬的画笔工具，大小大约为3px。接着打开&amp;quot;路径&amp;quot;面板（窗口&amp;gt;路径），点击面板下方的&amp;quot;用画笔给路径描边&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下面为曲线添加一点渐变，设置&amp;quot;渐变叠加&amp;quot;的图层样式：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;复制曲线图层，离原图层下方4或5px处，降低透明度到24%。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;着为圆角矩形设置图层样式：&amp;lsquo;外发光&amp;rsquo;/&amp;lsquo;描边&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后，在圆角矩形内添加与描述相配的图片。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;使用字体&lt;!-- raw HTML omitted --&gt;Georgia Italic&lt;!-- raw HTML omitted --&gt;编辑标题，从Mono图标中选择一个信封的图标，给此图标设置了颜色（&lt;!-- raw HTML omitted --&gt;#F7E5C4&lt;!-- raw HTML omitted --&gt;）叠加，创建了一个圆角矩形选框，用来输入用户邮箱，以白色填充。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来创建一些链接，选取圆角矩形选框工具（M），生成如下图一样的选框，以深灰色(&lt;!-- raw HTML omitted --&gt;#323232&lt;!-- raw HTML omitted --&gt;)进行填充，里面用白色文字填充。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后把混合模式改成&amp;quot;弱光&amp;rdquo;，透明度降低到63%，以突出背景颜色。重复此流程，创建其它链接。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最后一件事，选择一些社区媒体图标添加到链接上方，选择站点logo和copyright放在footer右侧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;clean_classy_webdesign_template&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- /posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>CodeIgniter Ajax Request</title>
+        <link>/posts/codeigniter-ajax-request/</link>
+        <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
+        
+        <guid>/posts/codeigniter-ajax-request/</guid>
+        <description>清风徐来 /posts/codeigniter-ajax-request/ -&lt;p&gt;先添加一行简单的代码，在ci里定义ajax的请求。&lt;/p&gt;
+&lt;p&gt;在application/config/constants.php 添加如下：
+&lt;!-- raw HTML omitted --&gt;
+// Define Ajax Request
+define(&amp;lsquo;IS_AJAX&amp;rsquo;, isset($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) &amp;amp;&amp;amp; strtolower($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) == &amp;lsquo;xmlhttprequest&amp;rsquo;);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在控制器里就可以判断是否是Ajax的请求，从而决定是否load view。
+&lt;!-- raw HTML omitted --&gt;
+public function test(){
+if(IS_AJAX){
+$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;ajax_test&amp;rsquo;);
+}else{
+echo &amp;lsquo;Direct access not allowed!&#39;;
+// or load other view file.
+//$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;test&amp;rsquo;);
+}
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Codeigniter里在登录后使用Ajax的简单方式.如果没有登录，发送401。
+&lt;!-- raw HTML omitted --&gt;
+public function secure(){
+if(! $this-&amp;gt;session-&amp;gt;userdata(&amp;lsquo;logged_in&amp;rsquo;)){
+header(&amp;lsquo;HTTP/1.1 401 Unauthorized);
+}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//other code...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+再在js做判断跳转：
+&lt;!-- raw HTML omitted --&gt;
+$().ajaxError(function(xhr,status,err){
+if(status.status == 401){
+window.location.href=&amp;rsquo;/login&amp;rsquo;;
+}
+});
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/codeigniter-ajax-request/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>到当当买东西，太傻太天真</title>
+        <link>/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</link>
+        <pubDate>Tue, 22 Nov 2011 13:20:31 +0000</pubDate>
+        
+        <guid>/posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/</guid>
+        <description>清风徐来 /posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/ -&lt;p&gt;买了当当两本书。
+现在被他们搞得心情郁闷。
+付款后，足足等了9天才拿到书，9天啊！还有比这个更慢的么？我在苏州，又不是新疆等边远，交通不便的地方。
+当时有活动，满100返200。结果，返券需要再买至少200元的图书才能抵用。
+他大爷的，也过了退货期了，换货还要自己邮过去。
+算了，希望其他朋友接受我的教训，不要再它那边浪费时间了。
+其价钱不是最实惠的，送货的效率也是最差的，还有欺骗消费的行为。。
+可恶！&lt;/p&gt;
+- /posts/%E5%88%B0%E5%BD%93%E5%BD%93%E4%B9%B0%E4%B8%9C%E8%A5%BF%E5%A4%AA%E5%82%BB%E5%A4%AA%E5%A4%A9%E7%9C%9F/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

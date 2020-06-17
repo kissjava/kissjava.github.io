@@ -1,0 +1,835 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>wxPython跨线程调用[转]</title>
+        <link>/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</link>
+        <pubDate>Sat, 21 Dec 2013 12:44:00 +0000</pubDate>
+        
+        <guid>/posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/ -&lt;p&gt;出处：http://guangboo.org/2013/08/23/wxpython-non-gui-thread-call-gui-method
+之前有介绍了《wxPython多线程支持》，包含了wx.CallAfter, wx.PostEvent, wxCallLater的用法，本文将wx.CallAfter封装成decorator，使得UI线程中的方法可以在非UI线程中调用。&lt;/p&gt;
+&lt;p&gt;本文将wx.CallAfter方法进行了封装，代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import wx
+
+def call_after(func):
+    def _wrapper(*args, **kwargs):
+        return wx.CallAfter(func, *args, **kwargs)
+    return _wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当UI线程中的方法需要被非UI线程调用时，只有使用call_after进行修饰即可。如下对《wxPython多线程》中的实例改进：&lt;/p&gt;
+&lt;p&gt;import time
+import wx&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from threading import Thread
+from wx.lib.pubsub import Publisher
+
+def call_after(func):
+    def _wrapper(*args, **kwargs):
+        return wx.CallAfter(func, *args, **kwargs)
+    return _wrapper
+
+class MyForm(wx.Frame):
+    #----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, &amp;quot;Tutorial&amp;quot;)
+ 
+        # Add a panel so it looks the correct on all platforms
+        panel = wx.Panel(self, wx.ID_ANY)
+        self.displayLbl = wx.StaticText(panel, label=&amp;quot;Amount of time since thread started goes here&amp;quot;)
+        self.btn = btn = wx.Button(panel, label=&amp;quot;Start Thread&amp;quot;)
+ 
+        btn.Bind(wx.EVT_BUTTON, self.onButton)
+ 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.displayLbl, 0, wx.ALL|wx.CENTER, 5)
+        sizer.Add(btn, 0, wx.ALL|wx.CENTER, 5)
+        panel.SetSizer(sizer)
+ 
+        self._thread = Thread(target = self.run, args = ())
+        self._thread.daemon = True
+        
+
+    def run(self):
+        i = 0
+        while True:
+            i += 1
+            time.sleep(1)
+            self.updateDisplay(&#39;Seconds: %d&#39; % i)
+
+    #----------------------------------------------------------------------
+    def onButton(self, event):
+        &amp;quot;&amp;quot;&amp;quot;
+        Runs the thread
+        &amp;quot;&amp;quot;&amp;quot;
+        self._thread.start()
+        self.started = True
+        self.displayLbl.SetLabel(&amp;quot;Thread started!&amp;quot;)
+        btn = event.GetEventObject()
+        btn.Disable()
+
+    @call_after
+    def updateDisplay(self, msg):
+        &amp;quot;&amp;quot;&amp;quot;
+        Receives data from thread and updates the display
+        &amp;quot;&amp;quot;&amp;quot;
+        self.displayLbl.SetLabel(msg)
+ 
+#----------------------------------------------------------------------
+# Run the program
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app = wx.PySimpleApp()
+    frame = MyForm().Show()
+    app.MainLoop()
+&lt;/code&gt;&lt;/pre&gt;- /posts/wxpython%E8%B7%A8%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>wxPython多线程支持[转]</title>
+        <link>/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</link>
+        <pubDate>Thu, 19 Dec 2013 09:23:00 +0000</pubDate>
+        
+        <guid>/posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/ -&lt;p&gt;出处：&lt;a href=&#34;http://guangboo.org/2013/03/04/wxpython-threading&#34;&gt;http://guangboo.org/2013/03/04/wxpython-threading&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你经常使用python开发GUI程序的话，那么就知道，有时你需要很长时间来执行一个任务。当然，如果你使用命令行程序来做的话，你回非常惊讶。大部分情况下，这会堵塞GUI的事件循环，用户会看到程序卡死。如何才能避免这种情况呢？当然是利用线程或进程了！本文，我们将探索如何使用wxPython和theading模块来实现。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;wxpython线程安全方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;wxPython中，有三个“线程安全”的函数。如果你在更新UI界面时，三个函数都不使用，那么你可能会遇到奇怪的问题。有时GUI也运行挺正常，有时却会无缘无故的崩溃。因此就需要这三个线程安全的函数：wx.PostEvent, wx.CallAfter和wx.CallLater。据Robin Dunn（wxPython作者）描述，wx.CallAfter使用了wx.PostEvent来给应用程序对象发生事件。应用程序会有个事件处理程序绑定到事件上，并在收到事件后，执行处理程序来做出反应。我认为wx.CallLater是在特定时间后调用了wx.CallAfter函数，以实现规定时间后发送事件。&lt;/p&gt;
+&lt;p&gt;Robin Dunn还指出Python全局解释锁 (GIL)也会避免多线程同时执行python字节码，这会限制程序使用CPU内核的数量。另外，他还说，“wxPython发布GIL是为了在调用wx API时，其他线程也可以运行”。换句话说，在多核机器上使用多线程，可能效果会不同。&lt;/p&gt;
+&lt;p&gt;总之，大概的意思是wx函数中，wx.CallLater是最抽象的线程安全函数, wx.CallAfter次之，wx.PostEvent是最低级的。下面的实例，演示了如何使用wx.CallAfter和wx.PostEvent函数来更新wxPython程序。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;wxPython, Theading, wx.CallAfter and PubSub&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;wxPython邮件列表中，有些专家会告诉其他人使用wx.CallAfter，并利用PubSub实现wxPython应用程序与其他线程进行通讯，我也赞成。如下代码是具体实现：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import time
+import wx
+ 
+from threading import Thread
+from wx.lib.pubsub import Publisher
+ 
+########################################################################
+class TestThread(Thread):
+    &amp;quot;&amp;quot;&amp;quot;Test Worker Thread Class.&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        &amp;quot;&amp;quot;&amp;quot;Init Worker Thread Class.&amp;quot;&amp;quot;&amp;quot;
+        Thread.__init__(self)
+        self.start()    # start the thread
+ 
+    #----------------------------------------------------------------------
+    def run(self):
+        &amp;quot;&amp;quot;&amp;quot;Run Worker Thread.&amp;quot;&amp;quot;&amp;quot;
+        # This is the code executing in the new thread.
+        for i in range(6):
+            time.sleep(10)
+            wx.CallAfter(self.postTime, i)
+        time.sleep(5)
+        wx.CallAfter(Publisher().sendMessage, &amp;quot;update&amp;quot;, &amp;quot;Thread finished!&amp;quot;)
+ 
+    #----------------------------------------------------------------------
+    def postTime(self, amt):
+        &amp;quot;&amp;quot;&amp;quot;
+        Send time to GUI
+        &amp;quot;&amp;quot;&amp;quot;
+        amtOfTime = (amt + 1) * 10
+        Publisher().sendMessage(&amp;quot;update&amp;quot;, amtOfTime)
+ 
+########################################################################
+class MyForm(wx.Frame):
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, &amp;quot;Tutorial&amp;quot;)
+ 
+        # Add a panel so it looks the correct on all platforms
+        panel = wx.Panel(self, wx.ID_ANY)
+        self.displayLbl = wx.StaticText(panel, label=&amp;quot;Amount of time since thread started goes here&amp;quot;)
+        self.btn = btn = wx.Button(panel, label=&amp;quot;Start Thread&amp;quot;)
+ 
+        btn.Bind(wx.EVT_BUTTON, self.onButton)
+ 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.displayLbl, 0, wx.ALL|wx.CENTER, 5)
+        sizer.Add(btn, 0, wx.ALL|wx.CENTER, 5)
+        panel.SetSizer(sizer)
+ 
+        # create a pubsub receiver
+        Publisher().subscribe(self.updateDisplay, &amp;quot;update&amp;quot;)
+ 
+    #----------------------------------------------------------------------
+    def onButton(self, event):
+        &amp;quot;&amp;quot;&amp;quot;
+        Runs the thread
+        &amp;quot;&amp;quot;&amp;quot;
+        TestThread()
+        self.displayLbl.SetLabel(&amp;quot;Thread started!&amp;quot;)
+        btn = event.GetEventObject()
+        btn.Disable()
+ 
+    #----------------------------------------------------------------------
+    def updateDisplay(self, msg):
+        &amp;quot;&amp;quot;&amp;quot;
+        Receives data from thread and updates the display
+        &amp;quot;&amp;quot;&amp;quot;
+        t = msg.data
+        if isinstance(t, int):
+            self.displayLbl.SetLabel(&amp;quot;Time since thread started: %s seconds&amp;quot; % t)
+        else:
+            self.displayLbl.SetLabel(&amp;quot;%s&amp;quot; % t)
+            self.btn.Enable()
+ 
+#----------------------------------------------------------------------
+# Run the program
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app = wx.PySimpleApp()
+    frame = MyForm().Show()
+    app.MainLoop()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们会用time模块来模拟耗时过程，请随意将自己的代码来代替，而在实际项目中，我用来打开Adobe Reader，并将其发送给打印机。这并没什么特别的，但我不用线程的话，应用程序中的打印按钮就会在文档发送过程中卡住，UI界面也会被挂起，直到文档发送完毕。即使一秒，两秒对用户来说都有卡的感觉。&lt;/p&gt;
+&lt;p&gt;总之，让我们来看看是如何工作的。在我们编写的Thread类中，我们重写了run方法。该线程在被实例化时即被启动，因为我们在__init__方法中有“self.start”代码。run方法中，我们循环6次，每次sheep10秒，然后使用wx.CallAfter和PubSub更新UI界面。循环结束后，我们发送结束消息给应用程序，通知用户。&lt;/p&gt;
+&lt;p&gt;你会注意到，在我们的代码中，我们是在按钮的事件处理程序中启动的线程。我们还禁用按钮，这样就不能开启多余的线程来。如果我们让一堆线程跑的话，UI界面就会随机的显示“已完成”，而实际却没有完成，这就会产生混乱。对用户来说是一个考验，你可以显示线程PID，来区分线程，你可能要在可以滚动的文本控件中输出信息，这样你就能看到各线程的动向。&lt;/p&gt;
+&lt;p&gt;最后可能就是PubSub接收器和事件的处理程序了：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    def updateDisplay(self, msg):
+    &amp;quot;&amp;quot;&amp;quot;
+    Receives data from thread and updates the display
+    &amp;quot;&amp;quot;&amp;quot;
+    t = msg.data
+    if isinstance(t, int):
+        self.displayLbl.SetLabel(&amp;quot;Time since thread started: %s seconds&amp;quot; % t)
+    else:
+        self.displayLbl.SetLabel(&amp;quot;%s&amp;quot; % t)
+        self.btn.Enable()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看我们如何从线程中提取消息，并用来更新界面？我们还使用接受到数据的类型来告诉我们什么显示给了用户。很酷吧？现在，我们玩点相对低级一点点，看wx.PostEvent是如何办的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;wx.PostEvent与线程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下面的代码是基于&lt;a href=&#34;http://wiki.wxpython.org/LongRunningTasks&#34;&gt;wxPython wiki&lt;/a&gt;编写的，这看起来比wx.CallAfter稍微复杂一下，但我相信我们能理解。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import time
+import wx
+ 
+from threading import Thread
+ 
+# Define notification event for thread completion
+EVT_RESULT_ID = wx.NewId()
+ 
+def EVT_RESULT(win, func):
+    &amp;quot;&amp;quot;&amp;quot;Define Result Event.&amp;quot;&amp;quot;&amp;quot;
+    win.Connect(-1, -1, EVT_RESULT_ID, func)
+ 
+class ResultEvent(wx.PyEvent):
+    &amp;quot;&amp;quot;&amp;quot;Simple event to carry arbitrary result data.&amp;quot;&amp;quot;&amp;quot;
+    def __init__(self, data):
+        &amp;quot;&amp;quot;&amp;quot;Init Result Event.&amp;quot;&amp;quot;&amp;quot;
+        wx.PyEvent.__init__(self)
+        self.SetEventType(EVT_RESULT_ID)
+        self.data = data
+ 
+########################################################################
+class TestThread(Thread):
+    &amp;quot;&amp;quot;&amp;quot;Test Worker Thread Class.&amp;quot;&amp;quot;&amp;quot;
+ 
+    #----------------------------------------------------------------------
+    def __init__(self, wxObject):
+        &amp;quot;&amp;quot;&amp;quot;Init Worker Thread Class.&amp;quot;&amp;quot;&amp;quot;
+        Thread.__init__(self)
+        self.wxObject = wxObject
+        self.start()    # start the thread
+ 
+    #----------------------------------------------------------------------
+    def run(self):
+        &amp;quot;&amp;quot;&amp;quot;Run Worker Thread.&amp;quot;&amp;quot;&amp;quot;
+        # This is the code executing in the new thread.
+        for i in range(6):
+            time.sleep(10)
+            amtOfTime = (i + 1) * 10
+            wx.PostEvent(self.wxObject, ResultEvent(amtOfTime))
+        time.sleep(5)
+        wx.PostEvent(self.wxObject, ResultEvent(&amp;quot;Thread finished!&amp;quot;))
+ 
+########################################################################
+class MyForm(wx.Frame):
+ 
+    #----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, &amp;quot;Tutorial&amp;quot;)
+ 
+        # Add a panel so it looks the correct on all platforms
+        panel = wx.Panel(self, wx.ID_ANY)
+        self.displayLbl = wx.StaticText(panel, label=&amp;quot;Amount of time since thread started goes here&amp;quot;)
+        self.btn = btn = wx.Button(panel, label=&amp;quot;Start Thread&amp;quot;)
+ 
+        btn.Bind(wx.EVT_BUTTON, self.onButton)
+ 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(self.displayLbl, 0, wx.ALL|wx.CENTER, 5)
+        sizer.Add(btn, 0, wx.ALL|wx.CENTER, 5)
+        panel.SetSizer(sizer)
+ 
+        # Set up event handler for any worker thread results
+        EVT_RESULT(self, self.updateDisplay)
+ 
+    #----------------------------------------------------------------------
+    def onButton(self, event):
+        &amp;quot;&amp;quot;&amp;quot;
+        Runs the thread
+        &amp;quot;&amp;quot;&amp;quot;
+        TestThread(self)
+        self.displayLbl.SetLabel(&amp;quot;Thread started!&amp;quot;)
+        btn = event.GetEventObject()
+        btn.Disable()
+ 
+    #----------------------------------------------------------------------
+    def updateDisplay(self, msg):
+        &amp;quot;&amp;quot;&amp;quot;
+        Receives data from thread and updates the display
+        &amp;quot;&amp;quot;&amp;quot;
+        t = msg.data
+        if isinstance(t, int):
+            self.displayLbl.SetLabel(&amp;quot;Time since thread started: %s seconds&amp;quot; % t)
+        else:
+            self.displayLbl.SetLabel(&amp;quot;%s&amp;quot; % t)
+            self.btn.Enable()
+ 
+#----------------------------------------------------------------------
+# Run the program
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app = wx.PySimpleApp()
+    frame = MyForm().Show()
+    app.MainLoop()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;让我们先稍微放一放，对我来说，最困扰的事情是第一块：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Define notification event for thread completion
+EVT_RESULT_ID = wx.NewId()
+ 
+def EVT_RESULT(win, func):
+    &amp;quot;&amp;quot;&amp;quot;Define Result Event.&amp;quot;&amp;quot;&amp;quot;
+    win.Connect(-1, -1, EVT_RESULT_ID, func)
+ 
+class ResultEvent(wx.PyEvent):
+    &amp;quot;&amp;quot;&amp;quot;Simple event to carry arbitrary result data.&amp;quot;&amp;quot;&amp;quot;
+    def __init__(self, data):
+        &amp;quot;&amp;quot;&amp;quot;Init Result Event.&amp;quot;&amp;quot;&amp;quot;
+        wx.PyEvent.__init__(self)
+        self.SetEventType(EVT_RESULT_ID)
+        self.data = data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;EVT_RESULT_ID只是一个标识，它将线程与wx.PyEvent和“EVT_RESULT”函数关联起来，在wxPython代码中，我们将事件处理函数与EVT_RESULT进行捆绑，这就可以在线程中使用wx.PostEvent来将事件发送给自定义的ResultEvent了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;结束语&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;希望你已经明白在wxPython中基本的多线程技巧。还有其他多种多线程方法这里就不在涉及，如wx.Yield和Queues。幸好有&lt;a href=&#34;http://wiki.wxpython.org/LongRunningTasks&#34;&gt;wxPython wiki&lt;/a&gt;,它涵盖了这些话题，因此如果你有兴趣可以访问wiki的主页，查看这些方法的使用。&lt;/p&gt;- /posts/wxpython%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%94%AF%E6%8C%81%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>新玩具</title>
+        <link>/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</link>
+        <pubDate>Sat, 16 Nov 2013 12:47:00 +0000</pubDate>
+        
+        <guid>/posts/%E6%96%B0%E7%8E%A9%E5%85%B7/</guid>
+        <description>清风徐来 /posts/%E6%96%B0%E7%8E%A9%E5%85%B7/ -&lt;p&gt;先上图&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+App? 其实是jquerymobile写的html5.
+感谢jquerymobile，感谢LazyPHP(真的很好用)。
+都是刚刚上手，耗时大约48个小时完成。
+用到html5的localStorage和eventSource特性。
+遗憾没有真正的push，其实eventSource和使用定时ajax轮询效果相当，都是定时发送查询。
+eventSource可以少写些代码，ajax轮询可以自己定制多些。
+最后，玩一把美图秀秀&amp;hellip;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E6%96%B0%E7%8E%A9%E5%85%B7/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Python调用windows下DLL详解 - ctypes库的使用[转]</title>
+        <link>/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</link>
+        <pubDate>Wed, 30 Oct 2013 10:31:29 +0000</pubDate>
+        
+        <guid>/posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/ -&lt;p&gt;来源：http://blog.csdn.net/magictong/article/details/3075478&lt;/p&gt;
+&lt;p&gt;在python中某些时候需要C做效率上的补充，在实际应用中，需要做部分数据的交互。使用python中的ctypes模块可以很方便的调用windows的dll（也包括linux下的so等文件），下面将详细的讲解这个模块（以windows平台为例子），当然我假设你们已经对windows下怎么写一个DLL是没有问题的。&lt;/p&gt;
+&lt;p&gt;引入ctypes库 
+&lt;!-- raw HTML omitted --&gt;
+from ctypes import *
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;假设你已经有了一个的DLL（名字是add.dll)，且该DLL有一个符合cdecl（这里强调调用约定是因为，stdcall调用约定和cdecl调用约定声明的导出函数，在使用python加载时使用的加载函数是不同的，后面会有说明）调用约定的导出函数Add。
+建立一个Python文件DllCall.py测试： 
+&lt;!-- raw HTML omitted --&gt;
+from ctypes import *
+dll = CDLL(&amp;ldquo;add.dll&amp;rdquo;)
+print dll.Add(1, 102)
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;结果：103&lt;/p&gt;
+&lt;p&gt;上面是一个简单的例子。下面简单聊一下调用流程： 
+&lt;!-- raw HTML omitted --&gt;1、加载DLL &lt;!-- raw HTML omitted --&gt;
+上面已经说过，加载的时候要根据你将要调用的函数是符合什么调用约定的。 
+stdcall调用约定：两种加载方式 
+&lt;!-- raw HTML omitted --&gt;
+Objdll = ctypes.windll.LoadLibrary(&amp;ldquo;dllpath&amp;rdquo;)
+Objdll = ctypes.WinDLL(&amp;ldquo;dllpath&amp;rdquo;) 
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;cdecl调用约定：也有两种加载方式 
+&lt;!-- raw HTML omitted --&gt;
+Objdll = ctypes.cdll.LoadLibrary(&amp;ldquo;dllpath&amp;rdquo;)
+Objdll = ctypes.CDLL(&amp;ldquo;dllpath&amp;rdquo;)
+&lt;!-- raw HTML omitted --&gt;
+其实windll和cdll分别是WinDLL类和CDll类的对象。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;2、调用dll中的方法 &lt;!-- raw HTML omitted --&gt;
+在1中加载dll的时候会返回一个DLL对象（假设名字叫Objdll），利用该对象就可以调用dll中的方法。 
+e.g.如果dll中有个方法名字叫Add（注意如果经过stdcall声明的方法，如果不是用def文件声明的导出函数或者extern “C” 声明的话，编译器会对函数名进行修改，这个要注意，我想你们懂的。）
+调用：nRet = Objdll.Add(12, 15) 即完成一次调用。&lt;/p&gt;
+&lt;p&gt;看起来调用似乎很简单，不要只看表象，呵呵，这是因为Add这个函数太简单了，现在假设函数需要你传入一个int类型的指针（int*），可以通过库中的byref关键字来实现，假设现在调用的函数的第三个参数是个int类型的指针。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果是要传入一个char缓冲区指针，和缓冲区长度，方法至少有四种：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;方法2&#34;&gt;方法2&lt;/h1&gt;
+&lt;p&gt;sBuf = &amp;lsquo;aaaaaaaaaabbbbbbbbbbbbbb&amp;rsquo;
+pStr = c_char_p( )
+pStr.value = sBuf
+#pVoid = ctypes.cast( pStr, ctypes.c_void_p ).value
+dll.PrintInfo(pStr, len(pStr.value))
+print pStr.value&lt;/p&gt;
+&lt;h1 id=&#34;方法3&#34;&gt;方法3&lt;/h1&gt;
+&lt;p&gt;strMa = &amp;ldquo;/0&amp;rdquo;*20
+FunPrint  = dll.PrintInfo
+FunPrint.argtypes = [c_char_p, c_int]
+#FunPrint.restypes = c_void_p
+nRst = FunPrint(strMa, len(strMa))
+print strMa,len(strMa)&lt;/p&gt;
+&lt;h1 id=&#34;方法4&#34;&gt;方法4&lt;/h1&gt;
+&lt;p&gt;pStr2 = c_char_p(&amp;quot;/0&amp;rdquo;)
+print pStr2.value
+#pVoid = ctypes.cast( pStr, ctypes.c_void_p ).value
+dll.PrintInfo(pStr2, len(pStr.value))
+print pStr2.value
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;3、C基本类型和ctypes中实现的类型映射表 &lt;!-- raw HTML omitted --&gt;
+ctypes数据类型          C数据类型 
+c_char                          char 
+c_short                         short 
+c_int                             int 
+c_long                          long 
+c_ulong                        unsign long 
+c_float                          float 
+c_double                      double 
+c_void_p                       void 
+对应的指针类型是在后面加上&amp;rdquo;_p&amp;rdquo;，如int*是c_int_p等等。 
+在python中要实现c语言中的结构，需要用到类。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;4、DLL中的函数返回一个指针。 &lt;!-- raw HTML omitted --&gt;
+虽然这不是个好的编程方法，不过这种情况的处理方法也很简单，其实返回的都是地址，把他们转换相应的python类型，再通过value属性访问。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;5、处理C中的结构体类型 &lt;!-- raw HTML omitted --&gt;
+为什么把这个单独提出来说呢，因为这个是最麻烦也是最复杂的，在python里面申明一个类似c的结构体，要用到类，并且这个类必须继承自Structure。 
+先看一个简单的例子： 
+C里面dll的定义如下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;extern &amp;ldquo;C&amp;quot;int  __declspec(dllexport) PrintStruct(PSimpleStruct simp);
+int PrintStruct(PSimpleStruct simp)
+{
+printf (&amp;ldquo;nMaxNum=%f, szContent=%s&amp;rdquo;, simp-&amp;gt;fVirus, simp-&amp;gt;szBuffer);
+return simp-&amp;gt;nNo;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Python的定义：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;dll = CDLL(&amp;ldquo;AddDll.dll&amp;rdquo;)
+simple = SimpStruct();
+simple.nNo = 16
+simple.fVirus = 3.1415926
+simple.szBuffer = &amp;ldquo;magicTong/0&amp;rdquo;
+print dll.PrintStruct(byref(simple))
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;上面例子结构体很简单，但是如果结构体里面有指针，甚至是指向结构体的指针，处理起来会复杂很多，不过Python里面也有相应的处理方法，下面这个例子来自网上，本来想自己写个，懒得写了，能说明问题就行：
+C代码如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;char words[10];&lt;/p&gt;
+&lt;p&gt;}keywords;&lt;/p&gt;
+&lt;p&gt;typedef struct&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;keywords *kws;&lt;/p&gt;
+&lt;p&gt;unsigned int len;&lt;/p&gt;
+&lt;p&gt;}outStruct;&lt;/p&gt;
+&lt;p&gt;extern &amp;ldquo;C&amp;quot;int __declspec(dllexport) test(outStruct *o);&lt;/p&gt;
+&lt;p&gt;int test(outStruct *o)&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;unsigned int i = 4;&lt;/p&gt;
+&lt;p&gt;o-&amp;gt;kws = (keywords *)malloc(sizeof(unsigned char) * 10 * i);&lt;/p&gt;
+&lt;p&gt;strcpy(o-&amp;gt;kws[0].words, &amp;ldquo;The First Data&amp;rdquo;);&lt;/p&gt;
+&lt;p&gt;strcpy(o-&amp;gt;kws[1].words, &amp;ldquo;The Second Data&amp;rdquo;);&lt;/p&gt;
+&lt;p&gt;o-&amp;gt;len = i;&lt;/p&gt;
+&lt;p&gt;return 1;&lt;/p&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Python代码如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    _fields_ = [(&#39;words&#39;, c_char *10),]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;class outStruct(Structure):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    _fields_ = [(&#39;kws&#39;, POINTER(keywords)),
+
+                (&#39;len&#39;, c_int),]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;o = outStruct()&lt;/p&gt;
+&lt;p&gt;dll.test(byref(o))&lt;/p&gt;
+&lt;p&gt;print o.kws[0].words;&lt;/p&gt;
+&lt;p&gt;print o.kws[1].words;&lt;/p&gt;
+&lt;p&gt;print o.len
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;6、例子&lt;!-- raw HTML omitted --&gt; 
+说得天花乱坠，嘿嘿，还是看两个实际的例子。 
+&lt;!-- raw HTML omitted --&gt;例子1：&lt;!-- raw HTML omitted --&gt; 
+这是一个GUID生成器，其实很多第三方的python库已经有封装好的库可以调用，不过这得装了那个库才行，如果想直接调用一些API，对于python来说，也要借助一个第三方库才行，这个例子比较简单，就是用C++调用win32 API来产生GUID，然后python通过调用C++写的dll来获得这个GUID。
+C++代码如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;char* newGUID()&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; static char buf[64] = {0};
+
+ statc GUID guid;
+
+ if (S_OK == ::CoCreateGuid(&amp;amp;guid)) 
+
+ {
+
+   _snprintf(buf, sizeof(buf),
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ldquo;%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X&amp;rdquo;,&lt;/p&gt;
+&lt;p&gt;guid.Data1,&lt;/p&gt;
+&lt;p&gt;guid.Data2,&lt;/p&gt;
+&lt;p&gt;guid.Data3,&lt;/p&gt;
+&lt;p&gt;guid.Data4[0], guid.Data4[1],&lt;/p&gt;
+&lt;p&gt;guid.Data4[2], guid.Data4[3],&lt;/p&gt;
+&lt;p&gt;guid.Data4[4], guid.Data4[5],&lt;/p&gt;
+&lt;p&gt;guid.Data4[6], guid.Data4[7]&lt;/p&gt;
+&lt;p&gt;);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   ::MessageBox(NULL, buf, &amp;quot;GUID&amp;quot;, MB_OK); 
+
+  }
+
+ return (char*)buf;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Python代码如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;
+
+创建一个全局唯一标识符
+
+类似：E06093E2-699A-4BF2-A325-4F1EADB50E18
+
+NewVersion
+
+&amp;quot;&amp;quot;&amp;quot;
+
+try:
+
+    # dll path
+
+    strDllPath = sys.path[0] + str(os.sep) + &amp;quot;createguid.dll&amp;quot;
+
+    dll = CDLL(strDllPath)
+
+    b = dll.newGUID()
+
+    a = c_char_p(b)
+
+except Exception, error:
+
+    print error
+
+    return &amp;quot;&amp;quot;
+
+return a.value
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;例子2：&lt;!-- raw HTML omitted --&gt; 
+这个例子是调用kernel32.dll中的createprocessA函数来启动一个记事本进程&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;from ctypes import *&lt;/p&gt;
+&lt;h1 id=&#34;定义_process_information结构体&#34;&gt;定义_PROCESS_INFORMATION结构体&lt;/h1&gt;
+&lt;p&gt;class _PROCESS_INFORMATION(Structure):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_fields_ = [(&#39;hProcess&#39;, c_void_p),
+
+            (&#39;hThread&#39;, c_void_p),
+
+            (&#39;dwProcessId&#39;, c_ulong),
+
+            (&#39;dwThreadId&#39;, c_ulong)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;定义_startupinfo结构体&#34;&gt;定义_STARTUPINFO结构体&lt;/h1&gt;
+&lt;p&gt;class _STARTUPINFO(Structure):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_fields_ = [(&#39;cb&#39;,c_ulong),
+
+            (&#39;lpReserved&#39;, c_char_p),
+
+            (&#39;lpDesktop&#39;, c_char_p),
+
+            (&#39;lpTitle&#39;, c_char_p),
+
+            (&#39;dwX&#39;, c_ulong),
+
+            (&#39;dwY&#39;, c_ulong),
+
+            (&#39;dwXSize&#39;, c_ulong),
+
+            (&#39;dwYSize&#39;, c_ulong),
+
+            (&#39;dwXCountChars&#39;, c_ulong),
+
+            (&#39;dwYCountChars&#39;, c_ulong),
+
+            (&#39;dwFillAttribute&#39;, c_ulong),
+
+            (&#39;dwFlags&#39;, c_ulong),
+
+            (&#39;wShowWindow&#39;, c_ushort),
+
+            (&#39;cbReserved2&#39;, c_ushort),
+
+            (&#39;lpReserved2&#39;, c_char_p),
+
+            (&#39;hStdInput&#39;, c_ulong),
+
+            (&#39;hStdOutput&#39;, c_ulong),
+
+            (&#39;hStdError&#39;, c_ulong)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;NORMAL_PRIORITY_CLASS = 0x00000020 #定义NORMAL_PRIORITY_CLASS&lt;/p&gt;
+&lt;p&gt;kernel32 = windll.LoadLibrary(&amp;ldquo;kernel32.dll&amp;rdquo;)  #加载kernel32.dll&lt;/p&gt;
+&lt;p&gt;CreateProcess = kernel32.CreateProcessA   #获得CreateProcess函数地址&lt;/p&gt;
+&lt;p&gt;ReadProcessMemory = kernel32.ReadProcessMemory #获得ReadProcessMemory函数地址&lt;/p&gt;
+&lt;p&gt;WriteProcessMemory = kernel32.WriteProcessMemory #获得WriteProcessMemory函数地址&lt;/p&gt;
+&lt;p&gt;TerminateProcess = kernel32.TerminateProcess&lt;/p&gt;
+&lt;h1 id=&#34;声明结构体&#34;&gt;声明结构体&lt;/h1&gt;
+&lt;p&gt;ProcessInfo = _PROCESS_INFORMATION()&lt;/p&gt;
+&lt;p&gt;StartupInfo = _STARTUPINFO()&lt;/p&gt;
+&lt;p&gt;fileName = &amp;lsquo;c:/windows/notepad.exe&amp;rsquo;       # 要进行修改的文件&lt;/p&gt;
+&lt;p&gt;address = 0x0040103c        # 要修改的内存地址&lt;/p&gt;
+&lt;p&gt;strbuf = c_char_p(&amp;quot;_&amp;quot;)        # 缓冲区地址&lt;/p&gt;
+&lt;p&gt;bytesRead = c_ulong(0)       # 读入的字节数&lt;/p&gt;
+&lt;p&gt;bufferSize =  len(strbuf.value)     # 缓冲区大小&lt;/p&gt;
+&lt;h1 id=&#34;创建进程&#34;&gt;创建进程&lt;/h1&gt;
+&lt;p&gt;CreateProcess(fileName, 0, 0, 0, 0, NORMAL_PRIORITY_CLASS,0, 0, byref(StartupInfo), byref(ProcessInfo))
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/python%E8%B0%83%E7%94%A8windows%E4%B8%8Bdll%E8%AF%A6%E8%A7%A3-ctypes%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>一个最简单的用PYTHON实现的WINDOWS服务程序 [转]</title>
+        <link>/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</link>
+        <pubDate>Wed, 30 Oct 2013 10:31:09 +0000</pubDate>
+        
+        <guid>/posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/</guid>
+        <description>清风徐来 /posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/ -&lt;p&gt;原文:&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://blog.sina.com.cn/s/blog_633b6d790100g4tu.html&#34;&gt;http://blog.sina.com.cn/s/blog_633b6d790100g4tu.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1、想写一个监视服务器是否运行的简单服务，网上搜到的例程不太完善，如梅劲松的许久
+没有更新，而且SvcDoRun写得不完整（见http://www.chinaunix.net/jh/55/558190.html，
+不知道是不是原始出处）；而mail.python.org中的没有定义_svc_name_等变量（见
+&lt;a href=&#34;http://mail.python.org/pipermail/python-list/2005-December/315190.html&#34;&gt;http://mail.python.org/pipermail/python-list/2005-December/315190.html&lt;/a&gt;）
+2、这个实现功能很简单，就是把当前时间写入‘c:\temp\time.txt’文件，一看即知，
+大家可以随意扩充。
+3、用
+service install 安装
+service start   启动
+service stop    停止
+service debug   调试
+service remove  删除&lt;/p&gt;
+&lt;p&gt;service.py
+&lt;!-- raw HTML omitted --&gt;
+#coding:utf-8
+import win32serviceutil
+import win32service
+import win32event
+import win32evtlogutil
+import time
+class service(win32serviceutil.ServiceFramework):
+&lt;em&gt;svc_name&lt;/em&gt; = &amp;ldquo;test_python&amp;rdquo;
+&lt;em&gt;svc_display_name&lt;/em&gt; = &amp;ldquo;test_python&amp;rdquo;
+def &lt;strong&gt;init&lt;/strong&gt;(self, args):
+win32serviceutil.ServiceFramework.&lt;strong&gt;init&lt;/strong&gt;(self, args)
+self.hWaitStop = win32event.CreateEvent(None, 0, 0, None)
+print &amp;lsquo;服务开始&amp;rsquo;
+def SvcDoRun(self):
+import servicemanager
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+# Make entry in the event log that this service started
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,servicemanager.PYS_SERVICE_STARTED,(self.&lt;em&gt;svc_name&lt;/em&gt;, &amp;lsquo;&#39;))
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+# Set an amount of time to wait (in milliseconds) between runs
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+self.timeout=100
+while 1:
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+# Wait for service stop signal, if I timeout, loop again
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+rc=win32event.WaitForSingleObject(self.hWaitStop,self.timeout)
+#
+# Check to see if self.hWaitStop happened
+#
+if rc == win32event.WAIT_OBJECT_0:
+#
+# Stop signal encountered
+#
+break
+else:
+#
+# Put your code here
+#
+#
+f=open(&amp;lsquo;c:\temp\time.txt&amp;rsquo;,&amp;lsquo;w&amp;rsquo;,0)
+f.write(time.ctime(time.time()))
+f.close()
+print &amp;lsquo;服务运行中&amp;rsquo;
+time.sleep(1)
+#
+# Only return from SvcDoRun when you wish to stop
+#
+return&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    def SvcStop(self):
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+# Before we do anything, tell SCM we are starting the stop process.
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+# And set my event
+#&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;
+win32event.SetEvent(self.hWaitStop)
+print &amp;lsquo;服务结束&amp;rsquo;
+return
+if __name__==&amp;rsquo;&lt;strong&gt;main&lt;/strong&gt;&#39;:
+win32serviceutil.HandleCommandLine(service)
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%94%A8python%E5%AE%9E%E7%8E%B0%E7%9A%84windows%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F-%E8%BD%AC/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Pyinstaller安装及使用</title>
+        <link>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Wed, 16 Oct 2013 17:26:21 +0000</pubDate>
+        
+        <guid>/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+        <description>清风徐来 /posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/ -&lt;p&gt;也可以用py2exe,但是总要写个xxx.py的文件来配置,不是很乐意.&lt;/p&gt;
+&lt;p&gt;chinaunix上有朋友推荐用pyinstaller,说更容易使用.那就用用看吧.&lt;/p&gt;
+&lt;p&gt;第一步:安装
+&lt;!-- raw HTML omitted --&gt;easy_install pyinstaller&lt;!-- raw HTML omitted --&gt;
+(淡水在win8.1下需要用管理员权限安装)&lt;/p&gt;
+&lt;p&gt;第二步:使用
+&lt;!-- raw HTML omitted --&gt;cd d:
+mkdir temp
+cd temp
+pyinstaller &amp;ndash;noconsole &amp;ndash;icon d:\ledpub\julin.ico d:\ledpub\julinKanBan.py
+&lt;!-- raw HTML omitted --&gt;
+真的很简单,在d盘建立了临时文件夹,打包好的程序会放在这里.
+noconsole,设置不要出现控制台窗口(就是doc窗口)
+icon,设置exe的图标文件(图标有限制,按128,64,48,32,16的大小排列,否则win7下可能看不到图标)&lt;/p&gt;
+&lt;p&gt;The end.&lt;/p&gt;
+- /posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>[转]sublime text 3 插件：package control</title>
+        <link>/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
+        <pubDate>Thu, 10 Oct 2013 15:03:12 +0000</pubDate>
+        
+        <guid>/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
+        <description>清风徐来 /posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;来源：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://qianduanblog.com/1900.html&#34;&gt;http://qianduanblog.com/1900.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;和sublime text 2不同的是，sublime text 3无法使用命令直接来安装package control，一直不明白，这么一个很好的工具，为什么不直接集成在软件里呢，还要这么麻烦的安装呢？相比sublime text 2来说，sublime text 3的安装过程相对要麻烦很多。&lt;/p&gt;
+&lt;p&gt;在搜索引擎中搜索后，有很多的安装方法，权衡各种方法，这里描述的方法应该是最简单的了。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;打开页面，右下角，点击下载：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;下载之后，修改该文件夹名称为&lt;!-- raw HTML omitted --&gt;Package Control&lt;!-- raw HTML omitted --&gt;，注意大小写。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;B、复制刚才的“package control”文件到该目录下面。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;Package Settings和Package Control选项，就说明安装Package Control成功了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>搬家到SAE</title>
+        <link>/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</link>
+        <pubDate>Tue, 17 Sep 2013 15:53:00 +0000</pubDate>
+        
+        <guid>/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</guid>
+        <description>清风徐来 /posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ -&lt;p&gt;搬家到SAE。&lt;!-- raw HTML omitted --&gt;友链及部分文章丢失，有劳各位友链博主留言，我会一一补上。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;从搜索引擎过来的朋友，链接和内容无法对上，请搜索。&lt;/p&gt;
+&lt;p&gt;为了找到备案号，搜快照，居然找到2005年在opera上写的东西，还有一张老照片啊。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>How to run a wxPython GUI app in Sublime Text 2</title>
+        <link>/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
+        <pubDate>Tue, 27 Aug 2013 10:35:55 +0000</pubDate>
+        
+        <guid>/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
+        <description>清风徐来 /posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 1:&lt;!-- raw HTML omitted --&gt;
+Preference-&amp;gt;Browse Packages-&amp;gt;python，编辑Python.sublime-build文件，在字典里添加path item，value为python路径，淡水的如下：
+&lt;!-- raw HTML omitted --&gt;
+{
+&amp;ldquo;cmd&amp;rdquo;:[&amp;ldquo;python.exe&amp;rdquo;, &amp;ldquo;-u&amp;rdquo;, &amp;ldquo;$file&amp;rdquo;],
+&amp;ldquo;path&amp;rdquo;:&amp;ldquo;C:/Python27&amp;rdquo;,
+&amp;ldquo;file_regex&amp;rdquo;: &amp;ldquo;^[ ]&lt;em&gt;File &amp;ldquo;(&amp;hellip;&lt;/em&gt;?)&amp;rdquo;, line ([0-9]*)&amp;rdquo;,
+&amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.python&amp;rdquo;
+}
+&lt;!-- raw HTML omitted --&gt;
+这就解决了python的ctrl+b的build（python里算是运行）问题；但是如果使用了wxpython它还是不能跑起来。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 2:&lt;!-- raw HTML omitted --&gt;
+Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31行左右注释掉一行代码，淡水的如下（从代码来看适用windows系统）：
+&lt;!-- raw HTML omitted --&gt;
+if os.name == &amp;ldquo;nt&amp;rdquo;:
+startupinfo = subprocess.STARTUPINFO()
+# startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+&lt;!-- raw HTML omitted --&gt;
+应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。&lt;/p&gt;
+- /posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>完成第一个基于python的GUI程序</title>
+        <link>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</link>
+        <pubDate>Wed, 21 Aug 2013 17:28:00 +0000</pubDate>
+        
+        <guid>/posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/</guid>
+        <description>清风徐来 /posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ -&lt;p&gt;上图先&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;采用wxpython。涉及到多线程，socket。&lt;/p&gt;
+&lt;p&gt;耗费时间大概5天，从tkinter，到wxpython的转变。还有wxpython的gui工具等占了一半，后面多线程和socket的测试占了一半时间。&lt;/p&gt;
+&lt;p&gt;程序写得一般，原因是没有重复利用python的一些语法特色，应可以写得更加pythonic&lt;/p&gt;
+&lt;p&gt;开始用php写，但是无法解决多线程同时监控，弃之。&lt;/p&gt;
+- /posts/%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Epython%E7%9A%84gui%E7%A8%8B%E5%BA%8F/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

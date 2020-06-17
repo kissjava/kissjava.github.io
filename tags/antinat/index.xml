@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>antinat on 清风徐来</title>
+    <link>/tags/antinat/</link>
+    <description>Recent content in antinat on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sat, 27 Mar 2010 09:53:02 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/antinat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>socks5 proxy 折腾记</title>
+      <link>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
+      <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
+      
+      <guid>/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
+      <description>需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。 google之。 找到了socks5-v1.0r11编译报错:( 再google之。。。 又转找到ss5-3.6.4-3, 编译,又报错:( 时间有限，精力有限，关键是能力有限。。 最后google之。。。。。。 找到Antinat。看似很方便的样子。官网：http://antinat.sourceforge.net/ 下载： antinat-0.90-1.i386.rpm antinat-libs-0.90-1.i386.rpm 先rpm -ivh antinat-libs-0.90-1.i386.rpm 再rpm -ivh antinat-0.90-1.i386.rpm 搞定。 也可以下载：antinat-0.90.tar.bz2 编译安装。 tar jvxf antinat-0.90.tar.bz2 cd antinat-0.90 ./configure make install cp etc/antinat.xml.allopen /usr/local/etc/antinat.xml 配置端口：  &amp;lt;port value=&#39;1080&#39;/&amp;gt;  </description>
+    </item>
+    
+  </channel>
+</rss>

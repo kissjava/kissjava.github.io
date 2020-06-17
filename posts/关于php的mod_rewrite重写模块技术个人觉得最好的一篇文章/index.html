@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html><head>
+<title>关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章" />
+<meta property="og:description" content="最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《Learn Apache mod_rewrite: 13 Real-world Examples》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+原文地址：http://www.sitepoint.com/article/apache-mod_rewrite-examples/原文作者：DK Lynn（DK Lynn is a former instructor pilot and &ldquo;rocket scientist&rdquo; now living in New Zealand where he operates a small business developing and hosting web sites. ）
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝二道华丽的分割线（以下为本人译文）＝＝＝＝＝＝＝＝＝＝
+一个最常用的正则就是（.）。它含有两个元素：一是“点”，表示任意字符；二是“星”，表示以前的全部字符。所以（.）会匹配{REQUEST_URI}的所有字符。{REQUEST_URI}是URL中出去域名以及“？”符号的所有查询字符，也是Apache 重写技术尝试匹配的字符。包裹在正则表达式中的元素存放在“原子”内，它是在规则范围内允许被匹配的变量，所以以上正则存储了USA/California/San_Diego在“原子”中，为了解决我们的问题，我们需要三个“原子”，他们可以用左斜杠“/”进行分隔，所以正则表达式成了： (.)/(.)/(.)以上正则，在{REQUEST_URI}中通过两个“/”的分割存储了三个值，为了解决我们具体问题，我们得加一点限制――毕竟，第一个和最后一个原子可以匹配任何字符。 开始，我们可以添加一些特殊的字符，比如表示正则“开始”或者“结束”，“^”字符表示正则的开始而“$”表示正则的结束。 ^(.)/(.)/(.)$这个正则表示整个字符串将全部匹配，除去之前后者之后，没有任何例外。 但是，这个方法仍然匹配的范围太广，我们将匹配的字符按照原子形式存放，然后通过他们形成查询字符串，所以我们必须信任我们所匹配的字符。用(.*)匹配字符串，由于允许了太多字符，所以会存在潜在的安全隐患，引用不当会使mod_rewrite运行出故障。 为了避免一些不必要的麻烦，让我们更改一下我们的原子正则，让其更加准确的匹配我们允许的字符。因为这些原子代表了地区地名，所以我们完全可以用A到Z的大小写来表示他们，另外因为地名之间有空格，所以下划线“”也是被允许的。我们用中括弧明确我们匹配的正则，然后用短横线“-”表示连接的范围，所以被我们允许的正则修改成了[a-zA-Z],因为我们还要避免匹配到空名字，所以用“&#43;”来匹配在该字符之前的一个或者多个字符，所以我们的正则成了： ^([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ {REQUEST_URI}是以“/”开头。Apache 在更改版本的时候会更改正则引擎，一代Apache要求有斜杠而二代Apache却不允许！但是我们可以用^/?（？表示匹配字符本身或者前一个字符）来兼容两个版本的Apache，所以我们的正则又成了: ^/?([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ 正则在手，我们就可以将原子标识到URL上了： display.php?country=$1 &amp;state=$2&amp;city=$3 $1表示国家原子；$2表示省州原子；$3表示城市原子，这里可以加上9个原子，分别用$1到$9表示。 现在我们要做的就是在该目录下创建一个新的.htaccess文件，录入一下代码： RewriteRule ^/?([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ display.php?country=$1 &amp;state=$2&amp;city=$3 [L] 然后保存，重写规则必须写在一行并且用一个空格分开每一个参数，我们用[L]或者’last’表示匹配结束。（一会有更多flags介绍） 我们的重写规则已经创建完成， URL请求字符上各原子的值将经过我们匹配的正则，加上查询变量到我们的重写URL上。display.php将从查询字符中解析这些值，然后将他们送入数据库查询或者进行其他数据库操作。 如果你的正则只允许有限的几个国家，为了避免数据库错误，你可以在正则中加入一下被允许条件，例子如下： ^/?(USA|Canada|Mexico)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ 如果你关心查询字符串的大小写问题，由于你数据库对大写有严格的限制，那么你可以在正则表达式后面加一个[NC]FLAG位来忽略大小写，但是不要忘记在你通过$_GET 获取传递值的时候，把他们转换成小写。 如果你想用数字（0，1…..9）来表示具体的地区，那么需要更改正则中的([a-zA-Z_]&#43;)成([0-9])来匹配单个数字，([0-9]{1,2})匹配两位数字（0到99）,([0-9]&#43;)匹配多位数字，这个对匹配数据库ID之类的非常有用。RewriteCond 指令现在你已经学会了mod_rewrite的一些基本用法，现在我们来学习下怎样用RewirteCond指令来处理其他各类型的情况。当RewirteCond指令明确声明以后，mod_rewrite将根据它们做出相应的处理。 RewirteCond 指令的形式和RewriteRule有点类似，形式为：RewirteCond 被匹配的字符 正则 FLAG标识。逻辑FLAG标识 [OR],是非常有用的，记住所有RewirteCond 以及RewriteRule指令在[LAST]指令之前，所有的逻辑与关系都会被包含。 你可以用RewirteCond指令测试服务器变量，在this is the best list of server variables一文可以找到相关说明。 举一个列子，假设我们想将“www”放入你的域名中，首先你得测试你的服务器{HTTP_HOST}变量，看www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/%E5%85%B3%E4%BA%8Ephp%E7%9A%84mod_rewrite%E9%87%8D%E5%86%99%E6%A8%A1%E5%9D%97%E6%8A%80%E6%9C%AF%E4%B8%AA%E4%BA%BA%E8%A7%89%E5%BE%97%E6%9C%80%E5%A5%BD%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" />
+<meta property="article:published_time" content="2009-07-16T13:22:00+00:00" />
+<meta property="article:modified_time" content="2009-07-16T13:22:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章"/>
+<meta name="twitter:description" content="最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《Learn Apache mod_rewrite: 13 Real-world Examples》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+原文地址：http://www.sitepoint.com/article/apache-mod_rewrite-examples/原文作者：DK Lynn（DK Lynn is a former instructor pilot and &ldquo;rocket scientist&rdquo; now living in New Zealand where he operates a small business developing and hosting web sites. ）
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝二道华丽的分割线（以下为本人译文）＝＝＝＝＝＝＝＝＝＝
+一个最常用的正则就是（.）。它含有两个元素：一是“点”，表示任意字符；二是“星”，表示以前的全部字符。所以（.）会匹配{REQUEST_URI}的所有字符。{REQUEST_URI}是URL中出去域名以及“？”符号的所有查询字符，也是Apache 重写技术尝试匹配的字符。包裹在正则表达式中的元素存放在“原子”内，它是在规则范围内允许被匹配的变量，所以以上正则存储了USA/California/San_Diego在“原子”中，为了解决我们的问题，我们需要三个“原子”，他们可以用左斜杠“/”进行分隔，所以正则表达式成了： (.)/(.)/(.)以上正则，在{REQUEST_URI}中通过两个“/”的分割存储了三个值，为了解决我们具体问题，我们得加一点限制――毕竟，第一个和最后一个原子可以匹配任何字符。 开始，我们可以添加一些特殊的字符，比如表示正则“开始”或者“结束”，“^”字符表示正则的开始而“$”表示正则的结束。 ^(.)/(.)/(.)$这个正则表示整个字符串将全部匹配，除去之前后者之后，没有任何例外。 但是，这个方法仍然匹配的范围太广，我们将匹配的字符按照原子形式存放，然后通过他们形成查询字符串，所以我们必须信任我们所匹配的字符。用(.*)匹配字符串，由于允许了太多字符，所以会存在潜在的安全隐患，引用不当会使mod_rewrite运行出故障。 为了避免一些不必要的麻烦，让我们更改一下我们的原子正则，让其更加准确的匹配我们允许的字符。因为这些原子代表了地区地名，所以我们完全可以用A到Z的大小写来表示他们，另外因为地名之间有空格，所以下划线“”也是被允许的。我们用中括弧明确我们匹配的正则，然后用短横线“-”表示连接的范围，所以被我们允许的正则修改成了[a-zA-Z],因为我们还要避免匹配到空名字，所以用“&#43;”来匹配在该字符之前的一个或者多个字符，所以我们的正则成了： ^([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ {REQUEST_URI}是以“/”开头。Apache 在更改版本的时候会更改正则引擎，一代Apache要求有斜杠而二代Apache却不允许！但是我们可以用^/?（？表示匹配字符本身或者前一个字符）来兼容两个版本的Apache，所以我们的正则又成了: ^/?([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ 正则在手，我们就可以将原子标识到URL上了： display.php?country=$1 &amp;state=$2&amp;city=$3 $1表示国家原子；$2表示省州原子；$3表示城市原子，这里可以加上9个原子，分别用$1到$9表示。 现在我们要做的就是在该目录下创建一个新的.htaccess文件，录入一下代码： RewriteRule ^/?([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ display.php?country=$1 &amp;state=$2&amp;city=$3 [L] 然后保存，重写规则必须写在一行并且用一个空格分开每一个参数，我们用[L]或者’last’表示匹配结束。（一会有更多flags介绍） 我们的重写规则已经创建完成， URL请求字符上各原子的值将经过我们匹配的正则，加上查询变量到我们的重写URL上。display.php将从查询字符中解析这些值，然后将他们送入数据库查询或者进行其他数据库操作。 如果你的正则只允许有限的几个国家，为了避免数据库错误，你可以在正则中加入一下被允许条件，例子如下： ^/?(USA|Canada|Mexico)/([a-zA-Z_]&#43;)/([a-zA-Z_]&#43;)$ 如果你关心查询字符串的大小写问题，由于你数据库对大写有严格的限制，那么你可以在正则表达式后面加一个[NC]FLAG位来忽略大小写，但是不要忘记在你通过$_GET 获取传递值的时候，把他们转换成小写。 如果你想用数字（0，1…..9）来表示具体的地区，那么需要更改正则中的([a-zA-Z_]&#43;)成([0-9])来匹配单个数字，([0-9]{1,2})匹配两位数字（0到99）,([0-9]&#43;)匹配多位数字，这个对匹配数据库ID之类的非常有用。RewriteCond 指令现在你已经学会了mod_rewrite的一些基本用法，现在我们来学习下怎样用RewirteCond指令来处理其他各类型的情况。当RewirteCond指令明确声明以后，mod_rewrite将根据它们做出相应的处理。 RewirteCond 指令的形式和RewriteRule有点类似，形式为：RewirteCond 被匹配的字符 正则 FLAG标识。逻辑FLAG标识 [OR],是非常有用的，记住所有RewirteCond 以及RewriteRule指令在[LAST]指令之前，所有的逻辑与关系都会被包含。 你可以用RewirteCond指令测试服务器变量，在this is the best list of server variables一文可以找到相关说明。 举一个列子，假设我们想将“www”放入你的域名中，首先你得测试你的服务器{HTTP_HOST}变量，看www."/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    关于PHP的mod_rewrite重写模块技术个人觉得最好的一篇文章
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2009-07-16 13:22
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[PHP]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/apache">apache</a>
+                                &nbsp;
+                            
+                                <a href="/tags/mod_rewrite">mod_rewrite</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>最近手里一个PHP项目要用到mod_rewrite模块，很早就听mod_rewrite广泛应用于URL重写，防止盗链，伪静态等各方面，于是怀着激动的心情到网上一阵猛搜，果然很多资料，窃喜&hellip;..遗憾的是很多文章看了以后仍旧一团雾水，还是不得要领，甚为苦恼。正当山穷水尽的时候，一篇《<!-- raw HTML omitted -->Learn Apache mod_rewrite: 13 Real-world Examples<!-- raw HTML omitted -->》柳暗花明般走进了我的视线，读罢此文，眼前豁然开朗，手里的项目也渐渐有了眉目。由于原文是英文版本，在参考过程中还是费了许多周折，所以本人操起了早已生锈的英语砍刀，斗胆将其翻译过来，英语过关的还是建议看原文。在译文中有很多不恰当的地方，希望大家将就看吧，话不多说，上文。</p>
+<p>＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝一道华丽的分割线＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</p>
+<p>原文地址：<!-- raw HTML omitted --><a href="http://www.sitepoint.com/article/apache-mod_rewrite-examples/">http://www.sitepoint.com/article/apache-mod_rewrite-examples/</a><!-- raw HTML omitted --></p>
+<p>原文作者：DK Lynn（DK Lynn is a former instructor pilot and &ldquo;rocket scientist&rdquo; now living in New Zealand where he operates a <!-- raw HTML omitted -->small business developing and hosting web sites<!-- raw HTML omitted -->. ）</p>
+<p>＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝二道华丽的分割线（以下为本人译文）＝＝＝＝＝＝＝＝＝＝</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->一个最常用的正则就是（.<em>）。它含有两个元素：一是“点”，表示任意字符；二是“星”，表示以前的全部字符。所以（.</em>）会匹配{REQUEST_URI}的所有字符。{REQUEST_URI}是URL中出去域名以及“？”符号的所有查询字符，也是Apache 重写技术尝试匹配的字符。<!-- raw HTML omitted --></p>
+<p>包裹在正则表达式中的元素存放在“原子”内，它是在规则范围内允许被匹配的变量，所以以上正则存储了USA/California/San_Diego在“原子”中，为了解决我们的问题，我们需要三个“原子”，他们可以用左斜杠“/”进行分隔，所以正则表达式成了：
+<!-- raw HTML omitted -->(.<em>)/(.</em>)/(.<em>)<!-- raw HTML omitted -->
+以上正则，在{REQUEST_URI}中通过两个“/”的分割存储了三个值，为了解决我们具体问题，我们得加一点限制――毕竟，第一个和最后一个原子可以匹配任何字符。
+开始，我们可以添加一些特殊的字符，比如表示正则“开始”或者“结束”，“^”字符表示正则的开始而“$”表示正则的结束。
+<!-- raw HTML omitted -->^(.</em>)/(.<em>)/(.</em>)$<!-- raw HTML omitted -->
+这个正则表示整个字符串将全部匹配，除去之前后者之后，没有任何例外。
+但是，这个方法仍然匹配的范围太广，我们将匹配的字符按照原子形式存放，然后通过他们形成查询字符串，所以我们必须信任我们所匹配的字符。用(.*)匹配字符串，由于允许了太多字符，所以会存在潜在的安全隐患，引用不当会使mod_rewrite运行出故障。
+为了避免一些不必要的麻烦，让我们更改一下我们的原子正则，让其更加准确的匹配我们允许的字符。因为这些原子代表了地区地名，所以我们完全可以用A到Z的大小写来表示他们，另外因为地名之间有空格，所以下划线“<em>”也是被允许的。我们用中括弧明确我们匹配的正则，然后用短横线“-”表示连接的范围，所以被我们允许的正则修改成了[a-zA-Z</em>],因为我们还要避免匹配到空名字，所以用“+”来匹配在该字符之前的一个或者多个字符，所以我们的正则成了：
+<!-- raw HTML omitted -->^([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+<!-- raw HTML omitted -->{REQUEST_URI}是以“/”开头。Apache 在更改版本的时候会更改正则引擎，一代Apache要求有斜杠而二代Apache却不允许！但是我们可以用^/?（？表示匹配字符本身或者前一个字符）来兼容两个版本的Apache，所以我们的正则又成了:
+<!-- raw HTML omitted -->^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+<!-- raw HTML omitted -->正则在手，我们就可以将原子标识到URL上了：
+<!-- raw HTML omitted -->display.php?country=$1 &amp;state=$2&amp;city=$3
+<!-- raw HTML omitted -->$1表示国家原子；$2表示省州原子；$3表示城市原子，这里可以加上9个原子，分别用$1到$9表示。
+现在我们要做的就是在该目录下创建一个新的.htaccess文件，录入一下代码：
+<!-- raw HTML omitted -->RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ display.php?country=$1 &amp;state=$2&amp;city=$3 [L]
+<!-- raw HTML omitted -->然后保存，重写规则必须写在一行并且用一个空格分开每一个参数，我们用[L]或者’last’表示匹配结束。（一会有更多flags介绍）
+我们的重写规则已经创建完成， URL请求字符上各原子的值将经过我们匹配的正则，加上查询变量到我们的重写URL上。display.php将从查询字符中解析这些值，然后将他们送入数据库查询或者进行其他数据库操作。
+如果你的正则只允许有限的几个国家，为了避免数据库错误，你可以在正则中加入一下被允许条件，例子如下：
+<!-- raw HTML omitted -->^/?(USA|Canada|Mexico)/([a-zA-Z_]+)/([a-zA-Z_]+)$
+<!-- raw HTML omitted -->如果你关心查询字符串的大小写问题，由于你数据库对大写有严格的限制，那么你可以在正则表达式后面加一个<!-- raw HTML omitted -->[NC]<!-- raw HTML omitted -->FLAG位来忽略大小写，但是不要忘记在你通过$_GET 获取传递值的时候，把他们转换成小写。
+<!-- raw HTML omitted -->如果你想用数字（0，1…..9）来表示具体的地区，那么需要更改正则中的([a-zA-Z_]+)成([0-9])来匹配单个数字，([0-9]{1,2})匹配两位数字（0到99）,([0-9]+)匹配多位数字，这个对匹配数据库ID之类的非常有用。<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->RewriteCond 指令<!-- raw HTML omitted -->
+现在你已经学会了mod_rewrite的一些基本用法，现在我们来学习下怎样用RewirteCond指令来处理其他各类型的情况。当RewirteCond指令明确声明以后，mod_rewrite将根据它们做出相应的处理。
+RewirteCond 指令的形式和RewriteRule有点类似，形式为：<!-- raw HTML omitted -->RewirteCond 被匹配的字符 正则 FLAG标识<!-- raw HTML omitted -->。<!-- raw HTML omitted -->逻辑FLAG标识 [OR],是非常有用的，记住所有RewirteCond 以及RewriteRule指令在[LAST]指令之前，所有的逻辑与关系都会被包含。
+<!-- raw HTML omitted -->你可以用RewirteCond指令测试服务器变量，在this is the best list of server variables一文可以找到相关说明。
+举一个列子，假设我们想将“www”放入你的域名中，首先你得测试你的服务器{HTTP_HOST}变量，看www.是否已经存在，如果没有那么定向到期望的主机名：
+<!-- raw HTML omitted -->RewriteCond %{HTTP_HOST} !^www.example.com$ [NC]
+RewriteRule .? <a href="http://www.example.com">http://www.example.com</a>%{REQUEST_URI} [R=301,L]<!-- raw HTML omitted -->
+这里{HTTP_HOST}是一个Apache服务器变量，我们必须加一个“%”字符再之前。正则表达式以“!”开始表示如果正则不匹配那么条件成立。我们当然也要转义“.”字符，将其作为一个普通字面字符而不是表示所有字符。再最后我们还加了一个忽略大小写的[NC]FLAG。
+RewriteRule匹配了零或者任意一个字符，并且定向到 <a href="http://www.example.com">http://www.example.com</a>加上原来{REQUEST_URI}值。R=301向服务器提出301请求，表明这是一个永久转向，最后一个[L]表示已经完成这段正则匹配。
+RewriteCond也可以创建原子，在RewriteRule中原子是以$1…..$9表示，但是在RewriteCond中是以%1….%9表示。你可以在稍后的例子中看到具体的原子操作。
+<!-- raw HTML omitted -->mod_rewrite Flags<!-- raw HTML omitted -->
+mod_rewrite用”FLAGS”来建立重写条件以及其他属性。我们用中括弧将FLAGS包起来，放在条件或者是规则的末尾，用逗号将多个FLAGS分隔。以下列表是你需要熟悉的几个主要FLAGS:
+<!-- raw HTML omitted -->last|L －[L]告诉Apache服务器一系列的条件或者是规则将在它出现后结束，换句话说就是[L]不出现，mod_rewrite将会一直执行<!-- raw HTML omitted -->。
+<!-- raw HTML omitted -->nocase|NC －[NC]告诉Apache服务器忽略正则中的大小写，它经常被用到{HTTP_HOST}服务器参数上，因为域名里面是不会区分大小写的<!-- raw HTML omitted -->。
+<!-- raw HTML omitted -->redirect|R －[R] 经常引用到触发可见的定向。默认情况下它是一个HTTP 302的临时重定向，但是你可以注明具体的HTTP 代码，比如你可以用[R=301]来表明这是一个永久重定向，这对搜索引擎抓取你重定向后的网页相当有用。<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->qsappend|QSA －[QSA] 用于添加新的查询参数。你可以在原查询参数后面定义新的查询参数，但命名时注意不要重复已存在的参数名。错误的引用[QSA]将会破坏原来的查询参数导致重定向错误。
+<!-- raw HTML omitted --><!-- raw HTML omitted -->forbidden|F －[F]告诉Apache响应请求时不提供页面。其原理就是Apache会发出一个403 HTTP相应，可以保护网站不被未经授权的或者其他盗链访问。
+<!-- raw HTML omitted --><!-- raw HTML omitted -->ornext|OR －[OR]作为默认值[AND]的反义词，可以通过逻辑关系将一系列重写条件组合起来。
+<!-- raw HTML omitted --><!-- raw HTML omitted -->next|N －[N]可以让你的重写条件循环匹配，当你不知道{REQUEST_URI}有多少字符进行匹配的时候很有用。<!-- raw HTML omitted -->
+你可以在 <!-- raw HTML omitted -->Apache.org’s mod_rewrite documentation page<!-- raw HTML omitted -->.了解到其他mod_rewrite FLAGS。
+<!-- raw HTML omitted -->mod_rewrite注释<!-- raw HTML omitted -->
+任何mod_rewrite代码之前都要加上RewriteEngine on这个状态，另外RewriteEngine on还可以用到其他地方。作为一个好的程序员，你知道注释对于程序来说是多么的重要。mod_rewrite允许在RewriteEngine off 与RewriteEngine on之间加上你的注释：
+<!-- raw HTML omitted -->RewriteEngine off
+RewriteCond %{HTTP_HOST} !^www.example.com$ [NC]
+RewriteRule .? <a href="http://www.example.com">http://www.example.com</a>%{REQUEST_URI} [R=301,L]
+RewriteEngine on<!-- raw HTML omitted -->
+以上所有的程序代码都不会被执行，RewriteEngine状态值的改变对新的mod_rewrite 代码开发非常有用。像你在PHP里面用/* &hellip; */注释一样，好好的运用他们。
+<!-- raw HTML omitted -->mod_rewrite小技巧<!-- raw HTML omitted -->
+作为站长，你要决定怎样提高你网页对访问者的辨识度以及在重写的URI地址里放入适当的信息。在创建新的URI规则的时候务必考虑详细周全一些。另外当你完成新的URI规则以后，必须回去更新以前老的链接来匹配新的规则。
+当你在设计新的URI规则的时候，一定注意其唯一性。举一个先前的例子，我用了国家名，州省名，城市名作为URI的元素，因为他们在数据库里面都是唯一的。但是如果建立一个让用户自己更新的数据库，我们没有理由让用户取的文章名字保持唯一性，所以文章一般在数据库里是以一个自动增长的ID作为唯一识别码，这个唯一ID对URL重写规则相当友好，它可以使你的重写规则更加简洁，在URL里面可以用原子非常直接的将其值标识出来。
+人们通常想映射数据库里面的值比如标题以及其他字符作为URL的标识，在mod_rewrite中有一个RewriteMap状态专门处理这种情况，但是前提是你必须有修改Apache配置文件httpd.conf的权限。所以为了根本避免这个问题，还是直接用ID创建你的链接吧。
+空格是以%20的形式展示在URL中的，所以你必须在PHP代码里面将其替换掉，PHP的str_replace函数完全可以胜任这项工作。你只需要在$_GET获取查询值的时候，将其替换就可以了。但是在数据库中空格是难免的，所以我宁愿将空格替换成下划线，一下为PHP代码：
+$name = str_replace ( ' &lsquo;, &lsquo;_&rsquo;, $name );
+在添加新的URL规则的时候，小心不要打破了原先已存在的链接间的相对关系。开发人员通常会惊讶为什么有时候CSS,JAVASCRIPT,图片等文件出现错误或者不启作用了。记住相对链接只匹配你当前URL的地址，所以你需要将这些相对链接更改成绝对链接地址，或者在你的静态网页加上HTML &lt;base&gt;标签。
+<!-- raw HTML omitted -->13 个mod_rewrite 应用举例<!-- raw HTML omitted -->
+先前我们举了一个给每个链接加一个www的列子，现在让我们看看用mod_rewrite还可以做哪些工作。
+<!-- raw HTML omitted -->1．给子域名加www标记 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->RewriteCond %{HTTP_HOST} ^([a-z.]+)?example.com$ [NC]
+RewriteCond %{HTTP_HOST} !^www. [NC]
+RewriteRule .? <a href="http://www.%1example.com">http://www.%1example.com</a>%{REQUEST_URI} [R=301,L]<!-- raw HTML omitted -->
+这个规则抓取二级域名的%1变量，如果不是以www开始，那么就加www，以前的域名以及{REQUEST_URI}会跟在其后。
+<!-- raw HTML omitted -->2．去掉域名中的www标记 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->RewriteCond %{HTTP_HOST} !^example.com$ [NC]
+RewriteRule .? <a href="http://example.com">http://example.com</a>%{REQUEST_URI} [R=301,L]<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->3．去掉www标记，但是保存子域名 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->RewriteCond %{HTTP_HOST} ^www.(([a-z0-9_]+.)?example.com)$ [NC]
+RewriteRule .? http://%1%{REQUEST_URI} [R=301,L]
+<!-- raw HTML omitted -->这里，当匹配到1%变量以后，子域名才会在%2（内部原子）中抓取到，而我们需要的正是这个%1变量。
+<!-- raw HTML omitted -->4．防止图片盗链 <!-- raw HTML omitted -->
+一些站长不择手段的将你的图片盗链在他们网站上，耗费你的带宽。你可以加一下代码阻止这种行为。
+<!-- raw HTML omitted -->RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www.)?example.com/ [NC]
+RewriteRule .(gif|jpg|png)$ - [F]
+<!-- raw HTML omitted -->如果{HTTP_REFERER}值不为空，或者不是来自你自己的域名，这个规则用[F]FLAG阻止以gif|jpg|png 结尾的URL
+如果对这种盗链你是坚决鄙视的，你还可以改变图片，让访问盗链网站的用户知道该网站正在盗用你的图片。
+<!-- raw HTML omitted -->RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www.)?example.com/.*$ [NC]
+RewriteRule .(gif|jpg|png)$ <a href="http://www.example.com/hotlinked.gif">http://www.example.com/hotlinked.gif</a> [R=301,L]
+<!-- raw HTML omitted -->除了阻止图片盗链链接，以上规则将其盗链的图片全部替换成了你设置的图片。
+你还可以阻止特定域名盗链你的图片：
+<!-- raw HTML omitted -->RewriteCond %{HTTP_REFERER} !^http://(www.)?leech_site.com/ [NC]
+RewriteRule .(gif|jpg|png)$ - [F,L]<!-- raw HTML omitted -->
+这个规则将阻止域名黑名单上所有的图片链接请求。
+当然以上这些规则都是以{HTTP_REFERER}获取域名为基础的，如果你想改用成IP地址，用{REMOTE_ADDR}就可以了。
+<!-- raw HTML omitted -->5．如果文件不存在重定向到404页面 <!-- raw HTML omitted -->
+如果你的主机没有提供404页面重定向服务，那么我们自己创建。
+<!-- raw HTML omitted -->RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .? /404.php [L]<!-- raw HTML omitted -->
+这里-f匹配的是存在的文件名，-d匹配的存在的路径名。这段代码在进行404重定向之前，会判断你的文件名以及路径名是否存在。你还可以在404页面上加一个?url=$1参数：
+<!-- raw HTML omitted -->RewriteRule ^/?(.*)$ /404.php?url=$1 [L]
+<!-- raw HTML omitted -->这样，你的404页面就可以做一些其他的事情，例如默认信心，发一个邮件提醒，加一个搜索，等等。
+<!-- raw HTML omitted -->6．重命名目录<!-- raw HTML omitted -->
+如果你想在网站上重命名目录，试试这个：
+<!-- raw HTML omitted -->RewriteRule ^/?old_directory/([a-z/.]+)$ new_directory/$1 [R=301,L]<!-- raw HTML omitted -->
+在规则里我添加了一个“.”（注意不是代表得所有字符，前面有转义符）来匹配文件的后缀名。
+<!-- raw HTML omitted -->7．将.html后缀名转换成.php<!-- raw HTML omitted -->
+前提是.html文件能继续访问的情况下，更新你的网站链接。
+<!-- raw HTML omitted -->RewriteRule ^/?([a-z/]+).html$ $1.php [L]<!-- raw HTML omitted -->
+这不是一个网页重定向，所以访问者是不可见的。让他作为一个永久重定向（可见的），将FLAG修改[R=301,L]。
+<!-- raw HTML omitted -->8．创建无文件后缀名链接<!-- raw HTML omitted -->
+如果你想使你的PHP网站的链接更加简洁易记－或者隐藏文件的后缀名，试试这个:
+<!-- raw HTML omitted -->RewriteRule ^/?([a-z]+)$ $1.php [L]<!-- raw HTML omitted -->
+如果网站混有PHP以及HTML文件，你可以用RewriteCond先判断该后缀的文件是否存在，然后进行替换：
+<!-- raw HTML omitted -->RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^/?([a-zA-Z0-9]+)$ $1.php [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^/?([a-zA-Z0-9]+)$ $1.html [L]<!-- raw HTML omitted -->
+如果文件是以.php为后缀，这条规则将被执行。
+<!-- raw HTML omitted -->9．检查查询变量里的特定参数<!-- raw HTML omitted -->
+如果在URL里面有一个特殊的参数，你可用RewriteCond鉴别其是否存在：
+<!-- raw HTML omitted -->RewriteCond %{QUERY_STRING} !uniquekey=
+RewriteRule ^/?script_that_requires_uniquekey.php$ other_script.php [QSA,L]
+<!-- raw HTML omitted -->以上规则将检查{QUERY_STRING}里面的uniquekey参数是否存在，如果{REQUEST_URI}值为script_that_requires_uniquekey，将会定向到新的URL。
+<!-- raw HTML omitted -->10．删除查询变量<!-- raw HTML omitted -->
+Apache的mod_rewrite模块会自动辨识查询变量，除非你做了以下改动：
+a).分配一个新的查询参数（你可以用[QSA,L]FLAG保存最初的查询变量）
+b).在文件名后面加一个“?”（比如index.php?）。符号“?”不会在浏览器的地址栏里显示。
+<!-- raw HTML omitted -->11．用新的格式展示当前URI <!-- raw HTML omitted -->
+如果这就是我们当前正在运行的URLs：/index.php?id=nnnn。我们非常希望将其更改成/nnnn并且让搜索引擎以新格式展现。首先，我们为了让搜索引擎更新成新的，得将旧的URLs重定向到新的格式，但是，我们还得保证以前的index.php照样能够运行。是不是被我搞迷糊了？
+实现以上功能，诀窍就在于在查询变量中加了一个访问者看不到的标记符“marker”。我们只将查询变量中没有出现“marker”标记的链接进行重定向，然后将原有的链接替换成新的格式，并且通过[QSA]FLAG在已有的参数加一个“marker”标记。以下为实现的方式：
+<!-- raw HTML omitted -->RewriteCond %{QUERY_STRING} !marker
+RewriteCond %{QUERY_STRING} id=([-a-zA-Z0-9_+]+)
+RewriteRule ^/?index.php$ %1? [R=301,L]
+RewriteRule ^/?([-a-zA-Z0-9_+]+)$ index.php?marker &amp;id=$1 [L]<!-- raw HTML omitted -->
+这里，原先的URL：http://www.example.com/index.php?id=nnnn,不包含marker，所以被第一个规则永久重定向到http://www.example.com/nnnn，第二个规则将http://www.example.com/nnnn反定向到http://www.example.com/index.php?marker &amp;id=nnnn，并且加了marker以及id=nnnn两个变量，最后mod_rewrite就开始进行处理过程。
+第二次匹配，marker被匹配，所以忽略第一条规则，这里有一个“.”字符会出现在http://www.example.com/index.php?marker &amp;id=nnnn中，所以第二条规则也会被忽略，这样我们就完成了。
+注意，这个解决方案要求Apache的一些扩展功能，所以如果你的网站放于在共享主机中会遇到很多障碍。
+<!-- raw HTML omitted -->12．保证安全服务启用<!-- raw HTML omitted -->
+Apache可以用两种方法辨别你是否开启了安全服务，分别引用{HTTPS}和{SERVER_PORT}变量：
+<!-- raw HTML omitted -->RewriteCond %{REQUEST_URI} ^secure_page.php$
+RewriteCond %{HTTPS} !on
+RewriteRule ^/?(secure_page.php)$ <a href="https://www.example.com/$1">https://www.example.com/$1</a> [R=301,L]<!-- raw HTML omitted -->
+以上规则测试{REQUEST_URI}值是否等于我们的安全页代码，并且{HTTPS}不等于on。如果这两个条件同时满足，请求将被重定向到安全服务URI.另外你可用{SERVER_PORT}做同样的测试，443是常用的安全服务端口
+<!-- raw HTML omitted -->RewriteCond %{REQUEST_URI} ^secure_page.php$
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/?(secure_page.php)$ <a href="https://www.example.com/$1">https://www.example.com/$1</a> [R=301,L]<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->13．在特定的页面上强制执行安全服务 <!-- raw HTML omitted -->
+遇到同一个服务器根目录下分别有一个安全服务域名和一个非安全服务域名，所以你就需要用RewriteCond 判断安全服务端口是否占用，并且只将以下列表的页面要求为安全服务：
+<!-- raw HTML omitted -->RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^/?(page1|page2|page3|page4|page5)$ <a href="https://www.example.com/%251">https://www.example.com/%1</a> [R=301,L]
+<!-- raw HTML omitted -->以下是怎样将没有设置成安全服务的页面返回到80端口：
+<!-- raw HTML omitted -->RewriteCond %{ SERVER_PORT } ^443$
+RewriteRule !^/?(page6|page7|page8|page9)$ <a href="http://www.example.com">http://www.example.com</a>%{REQUEST_URI} [R=301,L]
+<!-- raw HTML omitted --><!-- raw HTML omitted -->总结<!-- raw HTML omitted -->
+Apache的mod_rewrite模块，不仅会用在SEO以及URLs用户友好方面，还会用到某些重要的重定向工作中，如果你想学习到更多，以下是我找到的一些网上资源：
+正则表达：
+Great tutorial: <!-- raw HTML omitted --><a href="http://gnosis.cx/publish/programming/regular_expressions.html">http://gnosis.cx/publish/programming/regular_expressions.html</a><!-- raw HTML omitted -->
+Cheat sheet: <!-- raw HTML omitted --><a href="http://regexlib.com/CheatSheet.aspx">http://regexlib.com/CheatSheet.aspx</a><!-- raw HTML omitted -->
+A regex-capable text editor: <!-- raw HTML omitted --><a href="http://www.editpadpro.com">http://www.editpadpro.com</a><!-- raw HTML omitted -->
+Regex Coach: <!-- raw HTML omitted --><a href="http://weitz.de/regex-coach/">http://weitz.de/regex-coach/</a><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2009-07-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/">
+			下回<br>忘记了zend studio for eclipse 怎么调试了
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/%E5%A4%A9%E5%BE%88%E7%83%AD%E4%BD%86%E6%98%AF%E4%B9%9F%E5%BE%88%E8%93%9D/">
+			上回<br>天很热但是也很蓝
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

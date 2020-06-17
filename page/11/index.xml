@@ -1,0 +1,1689 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>清风徐来</title>
+    <link>/</link>
+    <description>Recent content on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>将小型、现代的产品主页由psd转换成XHTML/CSS模板 </title>
+        <link>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</link>
+        <pubDate>Sat, 19 Nov 2011 15:31:29 +0000</pubDate>
+        
+        <guid>/posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/</guid>
+        <description>清风徐来 /posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果你想跳过第一部分，你可以直接在第一部分中下载源文件，下面将会需要它才能继续。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2 在portfolio目录下面继续创建&lt;!-- raw HTML omitted --&gt;images&lt;!-- raw HTML omitted --&gt;目录用于存放图片。&lt;/p&gt;
+&lt;p&gt;3 接下来创建两个空文件 &lt;!-- raw HTML omitted --&gt;styles.css&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;index.html&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;4 用你最喜欢的文本编辑器打开index.html，我将在本教程中使用Adobe Dreamweaver。&lt;/p&gt;
+&lt;p&gt;5 在文档的&lt;!-- raw HTML omitted --&gt;标签加入对styles.css的链接。可以使用如下代码：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段1&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;HTML代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段2&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;9 选定好之后，点编辑 &amp;gt; 合并拷贝，创建一个新Photoshop文件（Ctrl+N），然后将选定区域复制到新文档中。通常新建Photoshop画布长宽是剪切板中选定区域的大小。如果不是，请确保他们是一致的。&lt;/p&gt;
+&lt;p&gt;10 在新Photoshop文档中，点文件 &amp;gt; 另存为 web 和设备所用格式（Alt+Shift+Ctrl+S），选择PNG-8格式，保存文件为background.png，保存在images目录下。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段3&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;{
+margin: 0px;
+padding: 0px;
+border: none;
+}
+body {
+background-image: url(images/background.png);
+background-repeat: repeat-x;
+background-color: #001b32;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #c8c8c8;
+}
+#container {
+margin: auto;
+width: 850px;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段3的解释&lt;!-- raw HTML omitted --&gt;
+让我们来仔细的分析一下样式代码。&lt;/p&gt;
+&lt;p&gt;首先我们将所有元素的margin，padding，border的值归零以避免跨浏览器的兼容性。我们这个用到的是*选择器。&lt;/p&gt;
+&lt;p&gt;接下来，我们样式化 body 元素；我们将 background.png 设置为背景，通过 repeat-x 使它水平重复。同样把背景色设置为深蓝（#001b32）。&lt;/p&gt;
+&lt;p&gt;最后，我们把#container的margin设置为 auto 让布局居中，并且设置宽度为850px。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;15 在#title div里面，加入元素来放置我们的站点名；同样需要创建一个超链接a标签链接到站点主页。对于这个模板，我们仅把href属性的值设为#，如果需要在实际中使用这个模板，你可以用反斜杠（/）来代替#。&lt;/p&gt;
+&lt;p&gt;HTML代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段4&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段5&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+#top {
+float: left;
+width: 850px;
+height: 119px;
+}
+#title {
+float: left;
+width: 278px;
+height: 74px;
+padding-top: 45px;
+}
+#title h1 {
+display: block;
+float: left;
+width: 278px;
+height: 74px;
+text-indent: -9999px;
+}
+#title h1 a {
+display: block;
+width: 100%;
+height: 100%;
+background-image: url(images/title.png);
+background-repeat: no-repeat;
+background-position: 0 0;
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段5的解释&lt;!-- raw HTML omitted --&gt;
+让我们来仔细分析一下上面的代码。&lt;/p&gt;
+&lt;p&gt;首先我们需要将#top浮动到左边，然后给定一个固定的宽度和高度。&lt;/p&gt;
+&lt;p&gt;宽度应该和#container等宽，850px，高度应该和浅灰色区域等高，119px。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+接下来，我们使用一种CSS背景图片替换的技术使用text-indent方法。我们将#title h1 里面的文字向左缩进-9999px，将文字推出了浏览器的可视区域。这个技术对于屏幕阅读器的可访问性和搜索引擎优化都有好处。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段6&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段7&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+.nav-links li a {
+float: left;
+width: 120px;
+height: 68px;
+text-decoration: none;
+text-transform: capitalize;
+color: #666666;
+font-size: 12px;
+text-align: center;
+padding-top: 51px;
+border-left-width: 1px;
+border-left-style: solid;
+border-left-color: #cecece;
+}
+.nav-links li a:hover {
+color: #00284a;
+background-image: url(images/nav_hover.png);
+background-repeat: no-repeat;
+background-position: center bottom;
+}
+li.borderx2 {
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #cecece;
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段7的解释&lt;!-- raw HTML omitted --&gt;
+首先，为了让列表项挨个的显示，我们将它们向左浮动。然后给他们固定的宽度高度，使他们之前的空间均衡。然后通过给text-decoration值none来去掉超链接默认的下划线。然后给每个列表项一个1px、灰色的左边框。&lt;/p&gt;
+&lt;p&gt;然后通过:hover伪类来样式化悬停效果。当鼠标悬停时，我们将列表项的背景设为nav_hover.png。&lt;/p&gt;
+&lt;p&gt;最后解决最后一个列表项右边没有分割线的问题，需要给.borderx2类声明一个border属性。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;22 使用矩形选框工具（M）选定一个宽度不超过850px的矩形，可以通过第一部分的设定好的参考线来选定。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;23 将这个深蓝背景转成web图片content_background.png，放在images目录下。使用同样的方法，关闭除了欢迎图片图层的其他图层，切片蓝点和欢迎图片（见一下参考）
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+新区域的HTML类似如下。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段8&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;24 在#welcome-text div中文名增加一些欢迎文字。使用h2标签给欢迎文字增加标题，然后在以下添加无序列表。&lt;/p&gt;
+&lt;p&gt;25 在#welcome-image中添加欢迎图片（本案例添加的是Six Revisions的网站裁图）。&lt;/p&gt;
+&lt;p&gt;合起来，HTML代码如下。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段9&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段10&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+#welcome {
+float: left;
+width: 850px;
+background-image: url(images/content_background.png);
+background-repeat: no-repeat;
+height: 326px;
+padding-top: 40px;
+}
+h2 {
+text-transform: uppercase;
+color: #ffffff;
+font-size: 16px;
+margin-bottom: 15px;
+}
+.heading-color2 { color: #9a9a9a; }
+#welcome-text {
+width: 406px;
+line-height: 18px;
+padding-top: 50px;
+float: left;
+text-align: justify;
+}
+#welcome-text { margin-bottom:10px; }
+.list li {
+text-decoration: none;
+background-image: url(images/bullet.png);
+background-repeat: no-repeat;
+list-style-type: none;
+float: left;
+width: 180px;
+padding-left: 20px;
+margin-top: 10px;
+background-position: left center;
+}
+#welcome-image {
+float: right;
+height: 326px;
+width: 427px;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段10的解释&lt;!-- raw HTML omitted --&gt;
+让我们来详解一下上面的代码。首先，我们通过background属性（content_background.png）给#welcome加入渐变背景，并且是不重复的（repeat: no-repeat）。让后给这个div一个固定的宽度高度；宽度为模板内容宽度（850px）,高度为欢迎图片的高度（236px）。&lt;/p&gt;
+&lt;p&gt;通过text-transform属性让内的文字大写。将‘yourwebsite’包裹在class为heading-color2的span中，赋予其不同的颜色。&lt;/p&gt;
+&lt;p&gt;无序列表加入类list，然后把背景设置为bullet.png，通过list-style-type设为none去掉默认列表项前面的圆点。&lt;/p&gt;
+&lt;p&gt;最后，为了让#welcome-image在#welcome-text的右边显示，我们将其向右浮动，给定固定的宽度（在浮动元素中常用）。同样给welcome_image.png一个固定的宽度高度值。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段11&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段12&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+.separator {
+background-image: url(images/separator.png);
+background-repeat: no-repeat;
+float: left;
+height: 17px;
+width: 850px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段12的解释&lt;!-- raw HTML omitted --&gt;
+我们将.separator的background-image设定为separator.png。给定宽度850，然后向左浮动。height值等于separator.png的高度。然后给顶部和底部margin设为20px，让它们彼此之间有一定的间歇。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;33 使用矩形选框工具，设定宽度为1px，高度为2px。选定文字之间的分割线部分。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;34 和往常一样，存为images目录下的divider.png。选定很小是因为下面将通过CSS将其水平重复。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段13&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段14&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+#sidebar {
+float: left;
+height: 209px;
+width: 219px;
+background-image: url(images/contentbox.png);
+background-repeat: no-repeat;
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 30px;
+padding-left: 20px;
+}
+h3 {
+text-transform: uppercase;
+color: #ffffff;
+text-align: center;
+margin-bottom: 20px;
+font-size: 12px;
+}
+.sidebar-list li {
+list-style-type: none;
+margin-top: 10px;
+padding-bottom: 10px;
+background-image: url(images/divider.png);
+background-repeat: repeat-x;
+background-position: bottom;
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段14的解释&lt;!-- raw HTML omitted --&gt;
+我们给#sidebar和contentbox.png一样的宽度高度。然后向左浮动，保证内容居左。同样设定background-image为contentbox.png。&lt;/p&gt;
+&lt;p&gt;通过text-transform将h3文字大小，通过text-align让文字居中。&lt;/p&gt;
+&lt;p&gt;最后通过list-style-type取值为none去掉.sidebar-list列表项的默认圆点，然后设定background-image为divider.png，水平重复(repeat-x)。然后给定一些margin和padding值，让他们之间留些空间。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段15&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段16&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+#content {
+float: right;
+width: 550px;
+text-align: justify;
+}
+#content p { margin-bottom: 10px; }
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段16的解释&lt;!-- raw HTML omitted --&gt;
+为了让#content在右边显示，我们将其向右浮动，然后给定一个固定的宽度。不给定一个固定的高度的原因是我们想通过内部文本来控制高度。然后给&lt;!-- raw HTML omitted --&gt;加入顶部和底部margin让它们之间留有空间（因为之前我们已经将它们都归零了，这步是必须的）。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段17&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码段18&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+#footer {
+float: left;
+width: 850px;
+background-image: url(images/footer.png);
+background-repeat: no-repeat;
+height: 60px;
+margin-top: 40px;
+padding-top: 25px;
+text-align: center;
+}
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;代码段18的解释&lt;!-- raw HTML omitted --&gt;
+我们将#footer层的background-image属性设置为footer.png；向左浮动；通过no-repeat保证背景图的不重复。#footer宽度高度大小和footer.png相等。然后在顶部通过margin给出一定空间。&lt;/p&gt;
+&lt;p&gt;完成！最终效果的链接如下：
+&lt;a href=&#34;http://sixrevisions.com/demo/minimal_modern_layout/index.html&#34;&gt;http://sixrevisions.com/demo/minimal_modern_layout/index.html&lt;/a&gt;&lt;/p&gt;- /posts/%E5%B0%86%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5%E7%94%B1psd%E8%BD%AC%E6%8D%A2%E6%88%90xhtml-css%E6%A8%A1%E6%9D%BF-/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>用Photoshop设计一个小型、现代的产品主页</title>
+        <link>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+        <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
+        
+        <guid>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+        <description>清风徐来 /posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ -&lt;p&gt;这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;3 使用油漆桶工具（G）用任意颜色填充头部刚才选定区域。点开图层样式对话框，用以下设置来增加一个渐变叠加效果。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;完了，应该出现以下效果：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;5 设定好渐变工具（G）后，从顶部的中间垂直的拖动到画布的4/1大小左右。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;7 重复6的步骤，创建另外一条垂直参考线，不过这次输入&lt;!-- raw HTML omitted --&gt;1025px&lt;!-- raw HTML omitted --&gt; (175px + 850px = 1025px)。这样一个850px宽、居中的区域就做好了&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;9 在标题文本图层下面创建一个新图层，选定矩形选框工具（M），在头部选取出一个区域。宽度必须填满&lt;!-- raw HTML omitted --&gt;1200px&lt;!-- raw HTML omitted --&gt;，高度大概在&lt;!-- raw HTML omitted --&gt;60px&lt;!-- raw HTML omitted --&gt;左右。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;10 用白色（&lt;!-- raw HTML omitted --&gt;#FFFFFF&lt;!-- raw HTML omitted --&gt;）填充（G）选定区域，然后在图层面板中设置透明度为&lt;!-- raw HTML omitted --&gt;25%&lt;!-- raw HTML omitted --&gt;。效果如下。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;12 在每个菜单项之间使用矩形选框工具（M）做一个&lt;!-- raw HTML omitted --&gt;1px&lt;!-- raw HTML omitted --&gt;宽的分割线；长度跨越整个头部。用&lt;!-- raw HTML omitted --&gt;#CECECE&lt;!-- raw HTML omitted --&gt;颜色填充（G）这1px的线条。效果如下图。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;13 现在，我们在每个菜单项中加入鼠标悬停动态效果（hover）。我已经给其中一个菜单项加入颜色表示鼠标悬停时的效果。使用多边形套索工具（L）按住shift，创建一个三角形，以保证每条线都是直的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;14 用&lt;!-- raw HTML omitted --&gt;#00315C&lt;!-- raw HTML omitted --&gt;这个颜色填充选定的三角形区域&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;16 在欢迎文本的右边将插入一个欢迎图片；我这里使用的是Six Revisions网站界面裁图。裁剪你的图片，去掉不需要的部分。图片准备好之后，通过编辑 &amp;gt; 变换 &amp;gt; 透视 改变图片的视角。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;17 选择椭圆选框工具，然后在欢迎图片下方画一个椭圆。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;18 用黑色（&lt;!-- raw HTML omitted --&gt;#000000&lt;!-- raw HTML omitted --&gt;）填充（G）椭圆选定区域。&lt;/p&gt;
+&lt;p&gt;19 然后设置区域图层透明度为&lt;!-- raw HTML omitted --&gt;35%&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;20 然后使用滤镜 &amp;gt; 模糊 &amp;gt; 高斯模糊这个椭圆，设定模糊半径为&lt;!-- raw HTML omitted --&gt;1到2px&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;21 把欢迎图片和下面的阴影再复制一份，然后把它们拖动到原图片的下面。&lt;/p&gt;
+&lt;p&gt;22 位置拖动好之后，使用高斯模糊下面的裁图，半径为&lt;!-- raw HTML omitted --&gt;1px&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;24 分别使用颜色&lt;!-- raw HTML omitted --&gt;#000D19&lt;!-- raw HTML omitted --&gt;和&lt;!-- raw HTML omitted --&gt;#003461&lt;!-- raw HTML omitted --&gt;填充这两个线条。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;25 选择椭圆选框工具（M）然后在分割线上面画出一个椭圆。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;26 使用黑色（&lt;!-- raw HTML omitted --&gt;#000000&lt;!-- raw HTML omitted --&gt;）填充（G）选定区域，加上&lt;!-- raw HTML omitted --&gt;2到3px&lt;!-- raw HTML omitted --&gt;的高斯模糊。然后使用矩形选框工具删掉分割线上半部分，这样就剩下了半个椭圆。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;27 将这两个图层合并（Ctrl+E），然后添加一个图层蒙版（点击图层面板上的“添加图层蒙版”按钮）来合并图层。&lt;/p&gt;
+&lt;p&gt;28 使用渐变工具（G）,渐变类型为对称渐变，前景色设为白色（&lt;!-- raw HTML omitted --&gt;#FFFFFF&lt;!-- raw HTML omitted --&gt;）,背景色设置黑色（&lt;!-- raw HTML omitted --&gt;#000000&lt;!-- raw HTML omitted --&gt;）。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;29 拖动对称渐变，从分割线中间向两边拖动，从而产生中间向两边淡入效果。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;31 使用圆角矩形工具（U）在内容文本区域的左边创建一个圆角矩形；半径设为&lt;!-- raw HTML omitted --&gt;10px&lt;!-- raw HTML omitted --&gt;（默认情况下背景是10px）。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;32 路径画好之后，选择钢笔工具（P），右击矩形内部，选择&lt;!-- raw HTML omitted --&gt;建立选区&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
+&lt;p&gt;33 设置前景色为&lt;!-- raw HTML omitted --&gt;#00315C&lt;!-- raw HTML omitted --&gt;，背景色为&lt;!-- raw HTML omitted --&gt;#001B32&lt;!-- raw HTML omitted --&gt; ，然后选择渐变工具（G），渐变类型为径向渐变。&lt;/p&gt;
+&lt;p&gt;34 从顶部把渐变拖动到中间，和我们绘制背景方法相同。效果如下图。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;35 现在需要给圆角矩形图层加入投影、内阴影和描边的图层样式（双击图层面板上面的图层，打开图层样式对话框）。设置如下。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;36 使用多边形套索工具（L），然后在矩形上面做一个三角形的选区。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;37 剪切并复制选区到一个新图层，一般这样做将会丢失掉选取的图层样式，所以在这之前我们必须给右下角图层重复添加一次样式。&lt;/p&gt;
+&lt;p&gt;38 通过编辑 &amp;gt; 变换 &amp;gt; 旋转给边角图层翻转180度；&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;39 加入一些任意文字以完成内容框的绘制。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;41 使用任意颜色来填充这个圆角矩形选区，选区加入如下样式的渐变叠加效果。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;42 最后，加上页脚信息就大功告成了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;原文：http://sixrevisions.com/tutorials/photoshop-tutorials/design-a-minimal-and-modern-portfolio-layout-with-photoshop/&lt;/p&gt;
+- /posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>[转载] 用实例详细讲解将PSD转成HTML&amp;amp;CSS</title>
+        <link>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</link>
+        <pubDate>Thu, 17 Nov 2011 11:41:04 +0000</pubDate>
+        
+        <guid>/posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/</guid>
+        <description>清风徐来 /posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ -&lt;p&gt;将PSD转成一个静态的html/css对一些朋友来说是一个很大的困扰。这个教程通过对一个完整实例的详细讲解，来教大家如何将psd转成html/css，以及JS插件的使用，制作完成的html/css页面兼容各种主流浏览器。&lt;/p&gt;
+&lt;p&gt;我们将设计页面分成基本的5个部分，每一个部分都有自己的容器wrapper和内容。基本的流程是先编写Html代码，然后通过编写CSS来还原psd设计稿。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如下图，我们只需要从这个psd文件得到4个非常基本的东西。推荐内容(featured)的背景、底部背景、欢迎文字（Welcome）、推荐图片的框（少女面部图的白色透明边框）。其余的部分我们只需要通过CSS生成或者在html里嵌入相应图片。&lt;/p&gt;
+&lt;p&gt;下图红线圈起来的地方，就是我们需要从psd获取的内容。本部分内容需要读者具备一定的Photoshop的基础知识和操作能力。&lt;/p&gt;
+&lt;p&gt;你可以借助Photoshop的切片工具或者自己手动切片，并将其保存成相应的图片格式。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;为一个网站设置良好的开发环境是非常重要的，我已经创建了一个非常基本的文件夹结构来建立这个网站，下面是文件夹结构设置，也可称之为模板。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;下面这个文件夹结构是由html文件、CSS文件、js等文件组成，你可以根据自己的需要调整文件夹结构。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;这是网站的顶级目录&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;JavaScript 文件夹&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;我们在这个教程用到的jquery插件Nivo-Slider（做推荐内容）也放在这个文件夹里&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;样式（Styles ）文件夹&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;Images: 这是我们存放推荐内容部分的图片以及网站展示的图片的地方&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;Template: 这是存放和网页设计样式相关图片的地方，比如说底部背景图&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;将index.html文件放置在根目录，这个文件也是我们编写html代码的文件。
+将jquery插件Nivo-Slider里面的三个文件jQuery-1.4.2.min.js和HTML5-Shiv.js以及Nivo-Slider.min.js放到Javascript文件夹。
+将两个css文件，reset.css和global.css放到样式文件夹。
+这样我们的文件夹结构设置就差不多完成了。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;将psd转换成html/css的工作流程是先编写出html文件，随后再编写css，并加入js动态效果。&lt;/p&gt;
+&lt;p&gt;下面我们会一步步讲解html的编写，先编写出大概完整的框架，代码如下：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;下面我们要开始为刚才的html文件添加细节。首先是head部分，在head部分我们要添加一些meta信息，这样有利于搜索引擎读取。&lt;/p&gt;
+&lt;p&gt;我们增加了keywords、authors、description、copyright等meta信息，并把语言编码设置为utf-8。代码如下:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;现在要开始在html载入一些必须js和css的文件，以便让这些文件起作用，同时为了考虑到浏览器的兼容性，还增加了一些相应的判断条件。具体代码如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;!-- Meta Data --&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;
+    &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;photography, commercials, exposure videos, senior pictures&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;Your company description.&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;author&amp;quot; content=&amp;quot;TutToaster.com/authors/CodyRobertson&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;copyright&amp;quot; content=&amp;quot;Copyright 2010 TutToaster.com&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;robots&amp;quot; content=&amp;quot;follow, index&amp;quot;&amp;gt;
+
+    &amp;lt;!-- Site Theme Styling --&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style/reset.css&amp;quot; /&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style/global.css&amp;quot; /&amp;gt;
+
+    &amp;lt;!--[if lt IE 9]&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/HTML5-Shiv.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;![endif] --&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+    &amp;lt;!-- jQuery and Nivo Slider --&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/jQuery-1.4.2.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/Nivo-Slider.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;body部分是html文件的主要部分，网页上显示主要是body部分的内容，我们会将这个网页的布局分成以下5个部分：header、featured、status、content、footer。我们为每个部分增加一个div并在每个部分的内部加一个类名为container的div。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这个网页的header部分主要由两部分组成，一个是logo，另一个是导航栏。logo是简单div，而导航栏则是列表ul。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;网页的#featured是我们放置推荐内容的部分，这部分也有两部分组成，一个是欢迎文字（welcome），另一个滑动图片Slider。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Welcome区域&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;welcome区域是一个id为welcome的div，由标题文字和描述文字组成，标题文字h2的显示用图片来代替。描述的文字用p标签包起来。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Slider区域&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;slider区域由一个透明边框和几张滑动图片组成。滑动图片放在class为slides的列表里边。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;完整的#featured部分的代码&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下面是完整的#featured部分的代码，读者可以参照对比查看。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;!-- Nivo-Slider --&amp;gt;
+    &amp;lt;div id=&amp;quot;slider&amp;quot;&amp;gt;
+        &amp;lt;div id=&amp;quot;frame&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/div&amp;gt;
+        &amp;lt;ul class=&amp;quot;slides&amp;quot;&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder2.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder2.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+        &amp;lt;/ul&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这部分非常简单，由一段文字和一个按钮组成。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在psd文件中，你可以看到#content部分的内容会比较多一点，所以我将它按上下分成两个部分。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第一部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在psd文件中，你可以看到，第一部分由两块区域组成，这两块区域各占据了50%的宽度，一个区域是About Us，另一个区域是What others think，两个区域都有一个标题和一些文字描述。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;A little about us&amp;hellip;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;We are a full service production companel that company that is your one stop needs, weither it be family photographs, a college sport exposure video, senior pictures or.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第二部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;第二部分是由四个各占据25%宽度的小区域组成，这些小区域是由一些预览图、标题和文字组成。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Commercials --&amp;gt;
+&amp;lt;li&amp;gt;
+    &amp;lt;img src=&amp;quot;style/images/service_preview_2.gif&amp;quot; alt=&amp;quot;placeholder&amp;quot; /&amp;gt;
+    &amp;lt;h4&amp;gt;Commercials&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+
+&amp;lt;!-- Sports --&amp;gt;
+&amp;lt;li&amp;gt;
+    &amp;lt;img src=&amp;quot;style/images/service_preview_3.gif&amp;quot; alt=&amp;quot;plceholder&amp;quot; /&amp;gt;
+    &amp;lt;h4&amp;gt;Sports&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+
+&amp;lt;!-- Exposure Videos --&amp;gt;
+&amp;lt;li&amp;gt;
+    &amp;lt;img src=&amp;quot;style/images/service_preview_1.gif&amp;quot; alt=&amp;quot;placeholder&amp;quot; /&amp;gt;
+    &amp;lt;h4&amp;gt;Exposure Videos&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;现在是#footer部分的编写，包含一些联系信息和版权信息等。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Contact Us&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;3352 Streetname rd.&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Commerce Township, MI, 48382.&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Tell: (248)838-9823&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Fax: (248)942-2342&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Email: &lt;a href=&#34;mailto:johnnywaller@me.com&#34;&gt;johnnywaller@me.com&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Services&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Home&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Photography&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Commercials&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Sports&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Exposure Videos&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;Contact&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;About Johnny&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Hey, my name is Johnny, this is a quick little one or two sentences about how im awesome and you should pay me money to do stuff for you!&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;About Amber&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;Hey, my name is Amber, this is a quick little one or two sentences about how im awesome and you should pay me money to do stuff for you!&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Html最终显示结果&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下图是我们编写好的html文件的最终显示结果，下面还有一份完整的html的代码，方便读者阅读对比。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;!-- Meta Data --&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;
+    &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;photography, commercials, exposure videos, senior pictures&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;Your company description.&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;author&amp;quot; content=&amp;quot;TutToaster.com/authors/CodyRobertson&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;copyright&amp;quot; content=&amp;quot;Copyright 2010 TutToaster.com&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;robots&amp;quot; content=&amp;quot;follow, index&amp;quot;&amp;gt;
+
+    &amp;lt;!-- Site Theme Styling --&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style/reset.css&amp;quot; /&amp;gt;
+    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style/global.css&amp;quot; /&amp;gt;
+
+    &amp;lt;!--[if lt IE 9]&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/HTML5-Shiv.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;![endif] --&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+            &amp;lt;!-- Logo --&amp;gt;
+            &amp;lt;h1 id=&amp;quot;logo&amp;quot;&amp;gt;YourSite Title&amp;lt;/h1&amp;gt;
+
+            &amp;lt;!-- Navigation Menu --&amp;gt;
+            &amp;lt;ul id=&amp;quot;menu&amp;quot;&amp;gt;
+                &amp;lt;li class=&amp;quot;active&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;HOME&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;PHOTOGRAPHY&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;COMMERCIALS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;SPORTS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;EXPOSURE VIDEOS&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;CONTACT&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div id=&amp;quot;featured&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+            &amp;lt;!-- Welcome Text/Site Welcome --&amp;gt;
+            &amp;lt;div id=&amp;quot;welcome&amp;quot;&amp;gt;
+                &amp;lt;h2&amp;gt;Welcome&amp;lt;/h2&amp;gt;
+                &amp;lt;p&amp;gt;Welcome to Johnny Waller Productions! We are a full service production company, and are a one-stop shop for your production needs. We love interacting with people and have a passion for creating a product that wows! As a husband and wife team and graduates of Specs Howard School of Broadcast Arts, we love to learn new things and are continually striving to perfect our craft.&amp;lt;/p&amp;gt;
+                &amp;lt;p&amp;gt;Whether it be Family Photographs, a College Sports Exposure Video, Senior Pictures, or Video Editing, we do it all! Thanks for stopping by and feel free to look around!!!&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;!-- Nivo-Slider --&amp;gt;
+            &amp;lt;div id=&amp;quot;slider&amp;quot;&amp;gt;
+                &amp;lt;div id=&amp;quot;frame&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/div&amp;gt;
+                &amp;lt;ul class=&amp;quot;slides&amp;quot;&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;img src=&amp;quot;style/images/slider-placeholder2.png&amp;quot; /&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;/ul&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
+        &amp;lt;!-- Working Status --&amp;gt;
+        &amp;lt;div id=&amp;quot;status&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+                &amp;lt;span id=&amp;quot;avalibility&amp;quot;&amp;gt;I am currently accepting new projects/appointmentsat this time.&amp;lt;/span&amp;gt;
+                &amp;lt;button&amp;gt;Hire Me&amp;lt;/button&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+
+        &amp;lt;div class=&amp;quot;container&amp;quot; id=&amp;quot;main&amp;quot;&amp;gt;
+            &amp;lt;!-- About Us/What They Say --&amp;gt;
+            &amp;lt;div id=&amp;quot;about_us&amp;quot;&amp;gt;
+                &amp;lt;h3&amp;gt;A little about us...&amp;lt;/h3&amp;gt;
+                &amp;lt;p&amp;gt;We are a full service production companel that company that is your one stop needs, weither it be family photographs, a college sport exposure video, senior pictures or.&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div id=&amp;quot;others_say&amp;quot;&amp;gt;
+                &amp;lt;h3&amp;gt;What others think...&amp;lt;/h3&amp;gt;
+                &amp;lt;p&amp;gt;When I first came to Johnny for a first time job I was a bit nervous n how the service would be, but after the first job and how smooth it went i’ll never go anywhere else.
+                    &amp;lt;br /&amp;gt;&amp;lt;cite&amp;gt;- Cody Robertson (&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Website&amp;lt;/a&amp;gt;)&amp;lt;/cite&amp;gt;
+                &amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+            &amp;lt;!-- Clear Fix --&amp;gt;
+            &amp;lt;br class=&amp;quot;clear&amp;quot; /&amp;gt;
+
+            &amp;lt;!-- Services --&amp;gt;
+            &amp;lt;ul id=&amp;quot;services&amp;quot;&amp;gt;
+                &amp;lt;!-- Photography --&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;img src=&amp;quot;style/images/service_preview_1.gif&amp;quot; alt=&amp;quot;placeholder&amp;quot; /&amp;gt;
+                    &amp;lt;h4&amp;gt;Photography&amp;lt;/h4&amp;gt;
+                    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+
+                &amp;lt;!-- Commercials --&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;img src=&amp;quot;style/images/service_preview_2.gif&amp;quot; alt=&amp;quot;placeholder&amp;quot; /&amp;gt;
+                    &amp;lt;h4&amp;gt;Commercials&amp;lt;/h4&amp;gt;
+                    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+
+                &amp;lt;!-- Sports --&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;img src=&amp;quot;style/images/service_preview_3.gif&amp;quot; alt=&amp;quot;plceholder&amp;quot; /&amp;gt;
+                    &amp;lt;h4&amp;gt;Sports&amp;lt;/h4&amp;gt;
+                    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+
+                &amp;lt;!-- Exposure Videos --&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;img src=&amp;quot;style/images/service_preview_1.gif&amp;quot; alt=&amp;quot;placeholder&amp;quot; /&amp;gt;
+                    &amp;lt;h4&amp;gt;Exposure Videos&amp;lt;/h4&amp;gt;
+                    &amp;lt;p&amp;gt;Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel, semper a, posuere in, orci. Praesent imperdiet nulla at tortor. Phasellus non lectus eget massa rhoncus consequat. Donec lectus ligula, posuere vel.&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div id=&amp;quot;footer&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+            &amp;lt;!-- Footer Widgets --&amp;gt;
+            &amp;lt;ul id=&amp;quot;footer-widgets&amp;quot;&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;h5&amp;gt;Contact Us&amp;lt;/h5&amp;gt;
+                    &amp;lt;ul&amp;gt;
+                        &amp;lt;li&amp;gt;3352 Streetname rd.&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;Commerce Township, MI, 48382.&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;amp;nbsp;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;Tell: (248)838-9823&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;Fax: (248)942-2342&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;Email: johnnywaller@me.com&amp;lt;/li&amp;gt;
+                    &amp;lt;/ul&amp;gt;
+                &amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;h5&amp;gt;Services&amp;lt;/h5&amp;gt;
+                    &amp;lt;ul&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Photography&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Commercials&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Sports&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Exposure Videos&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                        &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Contact&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;/ul&amp;gt;
+                &amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;h5&amp;gt;About Johnny&amp;lt;/h5&amp;gt;
+                    &amp;lt;p&amp;gt;Hey, my name is Johnny, this is a quick little one or two sentences about how im awesome and you should pay me money to do stuff for you!&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+                &amp;lt;li&amp;gt;
+                    &amp;lt;h5&amp;gt;About Amber&amp;lt;/h5&amp;gt;
+                    &amp;lt;p&amp;gt;Hey, my name is Amber, this is a quick little one or two sentences about how im awesome and you should pay me money to do stuff for you!&amp;lt;/p&amp;gt;
+                &amp;lt;/li&amp;gt;
+            &amp;lt;/ul&amp;gt;
+
+            &amp;lt;!-- Positioning Fix --&amp;gt;
+            &amp;lt;br class=&amp;quot;clear&amp;quot; /&amp;gt;
+            &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;
+
+            &amp;lt;!-- Copyright --&amp;gt;
+            &amp;lt;div id=&amp;quot;copyright&amp;quot;&amp;gt;
+                &amp;lt;span&amp;gt;&amp;amp;copy; Copywright 2010 TutToaster.com. All Rights Reserved.&amp;lt;/span&amp;gt;
+                &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Back to top&amp;lt;/a&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;!-- jQuery and Nivo Slider --&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/jQuery-1.4.2.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;javascript/Nivo-Slider.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我们将css文件分成两个，一个是css重置文件，css reset可以让html元素在各个浏览器上有相同的显示效果，有关于css的重置（css reset）读者可以去查阅相关的资料，这里的CSS reset文件的代码主要来自于雅虎的YUI reset。另一个文件css文件是这个网页的样式。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;首先我们要为网页做一些基本的css样式，包括文字字体、基本结构等。下面开始设置背景色、字体、去掉超链接的下划线以及一些容器的尺寸。
+&lt;!-- raw HTML omitted --&gt;
+body {
+background: #F2F2F2;
+font: 10px Verdana;
+}&lt;/p&gt;
+&lt;p&gt;a {
+text-decoration: none;
+}&lt;/p&gt;
+&lt;p&gt;p, span {
+line-height: 20px;
+}&lt;/p&gt;
+&lt;p&gt;#header, #featured, #content, #footer {
+overflow: hidden;
+}&lt;/p&gt;
+&lt;p&gt;.container {
+margin: 0 auto;
+width: 1024px;
+}&lt;/p&gt;
+&lt;p&gt;.clear {
+clear: both;
+}
+&lt;!-- raw HTML omitted --&gt;
+现在的css样式效果如下：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;现在开始为header部分编写样式，将header部分的高设为68px，背景为灰色，2px的下边框。&lt;/p&gt;
+&lt;p&gt;通过将logo文字的text-indent设为-9999px，可以让图像来代替文字的显示。然后我们为导航栏设置左浮动（float：left），让它变成横向导航。通过增加一个.active来编写导航栏当前页的样式。
+&lt;!-- raw HTML omitted --&gt;
+#header {
+background: #171717;
+border-bottom: 2px solid #252525;
+height: 68px;
+}&lt;/p&gt;
+&lt;p&gt;#header #logo {
+float: left;
+text-indent: -9999px;
+}&lt;/p&gt;
+&lt;p&gt;#header ul {
+float: right;
+height: 68px;
+padding: 17px 0;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li {
+color: #D1D1D1;
+display: block;
+float: left;
+font: bold 10px Verdana;
+padding: 10px 15px;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li a {
+color: #D1D1D1;
+text-decoration: none;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li a:hover {
+color: #FFF;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li:hover a {
+color: #FFF;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li.active {
+background: #252525;
+border-radius: 2px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+-o-border-radius: 2px;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li.active a {
+color: #FFF;
+}&lt;/p&gt;
+&lt;p&gt;#header ul li:last-child {
+padding: 10px 0 10px 15px;
+}
+&lt;!-- raw HTML omitted --&gt;
+现在的css样式效果如下：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;我们为featured部分添加相应的背景，这个背景设为水平居中，这样即使图片比一些屏幕分辨率大，也能居中显示。然后我们要将welcome部分的文字设为不可见，这样我们就可以用图像来代替它。&lt;/p&gt;
+&lt;p&gt;同时为welcome下的文字加一些css3的属性，文字阴影。
+&lt;!-- raw HTML omitted --&gt;
+#featured {
+background: #476D13 url(&amp;lsquo;layout/header.png&amp;rsquo;) no-repeat center top;
+height: 290px;
+}&lt;/p&gt;
+&lt;p&gt;#featured #welcome {
+float: left;
+width: 440px;
+}&lt;/p&gt;
+&lt;p&gt;#featured #welcome h2 {
+background: url(&amp;lsquo;layout/welcome.png&amp;rsquo;) no-repeat left top;
+line-height: 57px;
+padding: 0 0 20px;
+text-indent: -9999px;
+}&lt;/p&gt;
+&lt;p&gt;#featured #welcome p {
+color: #FFF;
+font: 10px Verdana;
+line-height: 20px;
+margin: 15px 0;
+text-shadow: 0px 1px 0px #3F6211;
+-webkit-text-shadow: 0px 1px 0px #3F6211;
+-moz-text-shadow: 0px 1px 0px #3F6211;
+-o-text-shadow: 0px 1px 0px #3F6211;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;slider部分样式编写也比较简单，我们将slider的overflow设为hidden，这样超出slider区域部分的内容就不会显示出来。边框的部分用绝对定位的方式（position：absolute），将透明的边框覆盖在slider的图片上。
+&lt;!-- raw HTML omitted --&gt;
+#featured #slider {
+float: right;
+position: relative;
+width: 512px;
+overflow: hidden;
+}&lt;/p&gt;
+&lt;p&gt;#slider #frame {
+background: transparent url(&amp;lsquo;layout/frame.png&amp;rsquo;) no-repeat center top;
+height:300px;
+position: absolute;
+top: 0;
+left: 0;
+width: 512px;
+z-index: 100;
+}
+&lt;!-- raw HTML omitted --&gt;
+现在的css样式效果如下图：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这个部分只是一段文字和一个按钮，因为#featured部分有一个40px的margin，所以我们要为#status加一个-40px的margin来抵消它。&lt;/p&gt;
+&lt;p&gt;按钮的制作是用了一些css的属性，这样一些不支持css3的浏览器将会显示不同的效果，如果需要所有浏览器显示相同效果，可以考虑用图片。具体代码如下:
+&lt;!-- raw HTML omitted --&gt;
+#status {
+background: #F1EEEE;
+border-bottom: 1px solid #DCDEDE;
+margin: -40px 0 0;
+padding: 20px 0;
+}&lt;/p&gt;
+&lt;p&gt;#status span {
+color: #CCC9C9;
+font: bold 20px Verdana;
+line-height: 50px;
+}&lt;/p&gt;
+&lt;p&gt;#status button {
+background-color: #E9E5E5;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#E9E5E5));
+background: -moz-linear-gradient(top, #FFF 0%, #E9E5E5 100%);
+filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=&amp;rsquo;#FFFFFF&amp;rsquo;, endColorstr=&amp;rsquo;#E9E5E5&amp;rsquo;); /* IE6 &amp;amp; IE7 */
+-ms-filter: &amp;ldquo;progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=&amp;rsquo;#FFFFFF&amp;rsquo;, endColorstr=&amp;rsquo;#E9E5E5&amp;rsquo;)&amp;quot;; /* IE8 */
+border: 1px solid #D9D9D9;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+-o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+color: #333;
+float: right;
+font: bold 20px Verdana;
+height: 50px;
+line-height: 30px;
+width: 175px;
+}&lt;/p&gt;
+&lt;p&gt;#status button:hover {
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E9E5E5), to(#FFF));
+background: -moz-linear-gradient(top, #E9E5E5 0%, #FFF 100%);
+}
+&lt;!-- raw HTML omitted --&gt;
+现在css样式效果如下：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;#content的第一部分由两个各占据50%宽度的div组成，标题部分文字大小我们设为20px并且设为粗体、斜体，让它更为突出：
+&lt;!-- raw HTML omitted --&gt;#content #about_us, #content #others_say {
+float: left;
+padding: 20px 0 30px;
+width: 50%;
+}&lt;/p&gt;
+&lt;p&gt;#content #about_us h3, #content #others_say h3 {
+color: #474747;
+font: bold italic 20px Verdana;
+line-height: 40px;
+}&lt;/p&gt;
+&lt;p&gt;#content #others_say p cite {
+font: bold italic 10px Verdana;
+padding: 0 0 0 60px;
+}&lt;/p&gt;
+&lt;p&gt;#content #others_say p cite a {
+color: #000;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;第二部分的四块区域每个大概占据23%左右的宽度，这样我们就能为各区域之间增加一些margin，同时由于我们为图片加了1px的边框，所以宽度要计算好。同时最后一块区域的右边距要设为0。
+&lt;!-- raw HTML omitted --&gt;#content ul li {
+float: left;
+margin: 0 28px 0 0;
+width: 235px;
+}&lt;/p&gt;
+&lt;p&gt;#content ul li img {
+background: #F1EEEE;
+border: 1px solid #DCDEDE;
+padding: 5px;
+}&lt;/p&gt;
+&lt;p&gt;#content ul li h4 {
+color: #474747;
+font: bold 14px Verdana;
+line-height: 30px;
+}&lt;/p&gt;
+&lt;p&gt;#content ul li:last-child {
+margin: 0;
+}
+&lt;!-- raw HTML omitted --&gt;
+现在的css样式效果如下：
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;footer部分只是一些简单的css属性，比如背景、填充（padding）、颜色等。
+&lt;!-- raw HTML omitted --&gt;
+#footer {
+background: #171717 url(&amp;lsquo;layout/footer.png&amp;rsquo;) no-repeat center top;
+height: 250px;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul {
+padding: 40px 0 0;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li {
+float: left;
+margin: 0 28px 0 0;
+width: 235px;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li h5 {
+color: #CCCDD2;
+font: bold 14px Verdana;
+padding: 0 0 10px;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li p {
+color: #7E7E7E;
+font: bold 11px Verdana;
+line-height: 20px;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li ul {
+margin: 0;
+padding: 0;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li ul li {
+color: #7E7E7E;
+font: bold 11px Verdana;
+line-height: 20px;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li ul li a {
+color: #7E7E7E;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li ul li a:hover {
+color: #9E9E9E;
+}&lt;/p&gt;
+&lt;p&gt;#footer ul li:last-child {
+margin: 0;
+}&lt;/p&gt;
+&lt;p&gt;#footer #copyright {
+border-top: 1px solid #424242;
+font-size: 11px;
+width: 100%;
+}&lt;/p&gt;
+&lt;p&gt;#footer #copyright span {
+color: #424242;
+float: left;
+line-height: 30px;
+}&lt;/p&gt;
+&lt;p&gt;#footer #copyright a {
+color: #63961A;
+float: right;
+line-height: 30px;
+}
+&lt;!-- raw HTML omitted --&gt;
+现在的css样式效果如下图。基本的CSS样式已经编写完成，这是css样式的最终效果。
+&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;现在我们要开始为滑动图片slider部分增加一些样式。图片的滑动我们用到了nivo-slider这个插件，这个插件自身带有默认的css样式，我们只需要把它默认的css样式添加到我们的css样式文件即可。如果有兴趣的话，也可以自己更改里面的css样式。&lt;/p&gt;
+&lt;p&gt;nivo-slider默认的css样式如下，我们把它复制到我们的css文件的最后面。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;/* The Nivo Slider styles */
+.nivoSlider {
+position:relative;
+}
+.nivoSlider img {
+position:absolute;
+top:0px;
+left:0px;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+border:0;
+padding:0;
+margin:0;
+z-index:60;
+display:none;
+}
+/* The slices in the Slider */
+.nivo-slice {
+display:block;
+position:absolute;
+z-index:50;
+height:100%;
+}
+/* Caption styles */
+.nivo-caption {
+position:absolute;
+left:0px;
+bottom:0px;
+background:#000;
+color:#fff;
+opacity:0.8; /* Overridden by captionOpacity setting */
+width:100%;
+z-index:89;
+}
+.nivo-caption p {
+padding:5px;
+margin:0;
+}
+.nivo-caption a {
+display:inline !important;
+}
+.nivo-html-caption {
+display:none;
+}
+/* Direction nav styles (e.g. Next &amp;amp; Prev) */
+.nivo-directionNav a {
+position:absolute;
+top:45%;
+z-index:99;
+cursor:pointer;
+}
+.nivo-prevNav {
+left:0px;
+}
+.nivo-nextNav {
+right:0px;
+}
+/* Control nav styles (e.g. 1,2,3&amp;hellip;) */
+.nivo-controlNav a {
+position:relative;
+z-index:99;
+cursor:pointer;
+}
+.nivo-controlNav a.active {
+font-weight:bold;
+}
+&lt;!-- raw HTML omitted --&gt;
+插入Java Script语句来调用插件&lt;/p&gt;
+&lt;p&gt;我们需要在html里面加入一段js语句来调用这个插件，记住这个语句要放在导入Nivo-slider.min.js之后。至于具体的一些选项，读者可以到这个插件的官网查询相应的文档。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;经过漫长的操作，终于完成了将psd转成html/css的过程，现在读者应该对这个工作的流程有一个系统的了解，转换psd到html/css的工作包括psd图片的切片、html和css文件的编写、js插件的使用等。现在你可以开始尝试做一个网页，相信很快就会懂得如何转换psd到html/css。&lt;/p&gt;
+&lt;p&gt;原文地址：http://www.tuttoaster.com/how-to-convert-a-slick-psd-design-to-xhtmlcss/
+&lt;!-- raw HTML omitted --&gt;PSD&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;sliced&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- /posts/%E8%BD%AC%E8%BD%BD-%E7%94%A8%E5%AE%9E%E4%BE%8B%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%B0%86psd%E8%BD%AC%E6%88%90htmlampcss/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Postmark的邮件代发服务</title>
+        <link>/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</link>
+        <pubDate>Thu, 03 Nov 2011 10:41:27 +0000</pubDate>
+        
+        <guid>/posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/</guid>
+        <description>清风徐来 /posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ -&lt;p&gt;以往都是找可以开通smtp的免费邮箱来做的。
+但是限制较多，一般是发送要延时，每天限制50或100封。容易被屏蔽等等。对外贸用途的就更不行了，大都是被当成垃圾邮件处理了。
+有了Postmark就不一样了。下面淡水就介绍一下。&lt;/p&gt;
+&lt;p&gt;Postmark是国外服务。可用于web线上发送mail。简单的API，简单的操作，零维护，比较方便。&lt;/p&gt;
+&lt;p&gt;问Postmark官方网站：http://postmarkapp.com&lt;/p&gt;
+&lt;p&gt;点击“sign up” 进入注册页：&lt;/p&gt;
+&lt;p&gt;Full Name ： //这里填入你的全名。
+Email ： //你的电子邮件
+Password ： //密码
+Password again ： //再次输入密码
+Time Zone ：//时区，选+8的都可以。。&lt;/p&gt;
+&lt;p&gt;点击下面的“Create Account” 提交。&lt;/p&gt;
+&lt;p&gt;完成后提示：
+Congratulations, you have signed up successfully!
+Unfortunately, you have not setup any servers yet.&lt;/p&gt;
+&lt;p&gt;意思是，成功注册鸟，但是没有设置任何服务器。&lt;/p&gt;
+&lt;p&gt;接下来，我们就添加一个服务器。点击“Setup a New Server” 跳转到 Add a new server 页面&lt;/p&gt;
+&lt;p&gt;点击页面最下方的“Next Step”&lt;/p&gt;
+&lt;p&gt;“Enter a name for your server ”
+为你的服务器命名，再选一个颜色。然后继续点击页面最下方的“Next Step”&lt;/p&gt;
+&lt;p&gt;经过一系列的验证之后，通过！&lt;/p&gt;
+&lt;p&gt;点击“Done! Now add a sender signature”
+就是说，可以了，现在添加一个签名&lt;/p&gt;
+&lt;p&gt;签名，就是说每一个代发服务器对应一个唯一签名。
+如果你希望使用xxxxx@126.com作为名称发送邮件时候，签名是为了证实你确实是这个邮箱的主人。&lt;/p&gt;
+&lt;p&gt;在“Add a new Signture”页面中，填写发件人的详细信息。&lt;/p&gt;
+&lt;p&gt;Full Name ： //这里填入你的全名。
+From Email ： //发送邮件用的电子邮件，签名会发送到此
+Reply to email： //回复地址&lt;/p&gt;
+&lt;p&gt;其他的随意，不重要，无视。&lt;/p&gt;
+&lt;p&gt;点击“Create Signture”按钮&lt;/p&gt;
+&lt;p&gt;搞定了。可以到刚刚填写的From Email的邮箱去接受系统发送给我们的确认邮件，
+内容中有一个确认的link，直接点击链接，不行就复制到浏览器访问。&lt;/p&gt;
+&lt;p&gt;会提示 “Sender Signature activated.”  你的这个“发件人签名”被激活了。&lt;/p&gt;
+&lt;p&gt;现在我们就可以使用Postmark来帮助你发邮件了。免费1000封，可以测试用。过后时1.5刀1000封。&lt;/p&gt;
+&lt;p&gt;淡水使用php来发送，但是postmark支持各种语言，神马python，java，ruby。。。都不在话下。都不用自己去看api了，直接下载对应语言的demo。就php来讲就支持好多的framewrok。简单来测试看看：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/postmark%E7%9A%84%E9%82%AE%E4%BB%B6%E4%BB%A3%E5%8F%91%E6%9C%8D%E5%8A%A1/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>codeigniter2中使用simpletest做单元测试</title>
+        <link>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Sat, 29 Oct 2011 12:26:11 +0000</pubDate>
+        
+        <guid>/posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 /posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;接近年底，人手紧张。为了保证进度的同时还要保证质量，于是就单元测试就出现在了淡水的视野。&lt;/p&gt;
+&lt;p&gt;由于采用codeigniter2，所以首选是内置的unit_test类。但是实在是比较的简单，所以就看中了simpletest。
+但是ci+simpletest整合起来，网上可用的并不多。支持1.6/1.7的倒是有。&lt;/p&gt;
+&lt;p&gt;最后才用呢了codeigniter—simpletest，但是默认在php5.2下，并不能运行。做了些调整，嗯。记录一下。&lt;/p&gt;
+&lt;p&gt;##安装
+　　
+　　unit_test.php文件应该放在CodeIgniter的根目录，也就是index.php相同的地方
+　　
+　　打开这个文件,并且在文件顶部改变一下以适合你的路径。
+　　
+　　tests目录可以放到任何你想放的地方,但放在根目录比较好。
+　　
+　　所有测试文件需要命名成“test_name_folder.php”的格式。例如:
+　　
+　　test_whatever_bug.php
+　　test_string_helper.php
+　　test_auth_library.php
+　　test_core_model.php
+　　
+　　
+　　增加了一个完整的simpletest下载，仅定制了“simpletest/extensions/my_reporter.php”。&lt;/p&gt;
+&lt;p&gt;　　##注:
+　　
+　　在目录“tests”里,包含了两个测试文件的例子。test_users_model。php并能运行，因为你的程序里没有对应的user model。它只是一个提供的指导。
+　　
+　　注意,simpletest版本不支持php 5.3&lt;/p&gt;
+&lt;h2 id=&#34;下面的修改很重要&#34;&gt;下面的修改很重要！！！&lt;/h2&gt;
+&lt;p&gt;淡水的本机测试无法成功，查看日志后，淡水做了如下修改：
+1,unit_test.php 的32-36行；的构造函数:
+public function __construct($lable=false)
+{
+parent::__construct($lable);
+$this-&amp;gt;_ci =&amp;amp; get_instance();
+}&lt;/p&gt;
+&lt;p&gt;2,test/tests/test_gui.php增加编码支持：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;3,test_123_bug.php的构造函数里，调用父类构造时，添加了测试主题。方便显示。可以忽视。&lt;/p&gt;
+&lt;p&gt;4,test_user_model.php的构造改用php5的方式调用：
+public function __construct()
+{
+parent::__construct(&amp;lsquo;Users Model&amp;rsquo;);
+$this-&amp;gt;load-&amp;gt;model(&amp;lsquo;users/users_model&amp;rsquo;);
+$this-&amp;gt;rand = rand(500,15000);
+}&lt;/p&gt;
+&lt;p&gt;5,另外还增加了test_homepage.php的demo，来演示如何测试界面。&lt;/p&gt;
+- /posts/codeigniter2%E4%B8%AD%E4%BD%BF%E7%94%A8simpletest%E5%81%9A%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Codeigniter里的单元测试</title>
+        <link>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Thu, 27 Oct 2011 12:49:57 +0000</pubDate>
+        
+        <guid>/posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description>清风徐来 /posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ -&lt;p&gt;测试驱动开发已经提出好久了。在web领域估计国内采用的不多。
+其实单元测试也是很好用的东西，确实可以提高开发人员的效率。
+淡水用codeigniter举例说明一下。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/codeigniter%E9%87%8C%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>textmate 常用快捷键</title>
+        <link>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+        <pubDate>Thu, 13 Oct 2011 16:36:19 +0000</pubDate>
+        
+        <guid>/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+        <description>清风徐来 /posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;ctrl + cmd + ^        整行上移
+ctrl + cmd + v        整行下移
+ctrl + shift + k    整行删除
+ctrl + shift + d    复制所在整行
+ctrl + shift + t    查看TODO&lt;/p&gt;
+&lt;p&gt;alt + &amp;gt;                光标右移一个单词
+alt + &amp;lt;                光标左移一个单词&lt;/p&gt;
+&lt;p&gt;esc                    自动补全&lt;/p&gt;
+&lt;p&gt;F1                    开关当前方法块&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- /posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Codeigniter里的无刷新上传</title>
+        <link>/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
+        <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
+        
+        <guid>/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
+        <description>清风徐来 /posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ -&lt;p&gt;好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD
+Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。&lt;/p&gt;
+&lt;p&gt;先建个表
+&lt;!-- raw HTML omitted --&gt;
+CREATE TABLE &lt;code&gt;files&lt;/code&gt; (
+  &lt;code&gt;id&lt;/code&gt; int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  &lt;code&gt;filename&lt;/code&gt; varchar(255) NOT NULL,
+  &lt;code&gt;title&lt;/code&gt; varchar(100) NOT NULL
+);
+&lt;!-- raw HTML omitted --&gt;
+文件的目录结构如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第一步，建立表单&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;看上去就一个title文本字段，一个文件框，一个提交按钮，还有一个files的div。
+控制器部分
+首先，我们要建一个上传的表单和一个upload的Controller。在index方法里渲出upload的视图。如下：
+&lt;!-- raw HTML omitted --&gt;
+class Upload extends CI_Controller
+{
+   public function __construct()
+   {
+      parent::__construct();
+      $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;files_model&amp;rsquo;);
+      $this-&amp;gt;load-&amp;gt;database();
+      $this-&amp;gt;load-&amp;gt;helper(&amp;lsquo;url&amp;rsquo;);
+   }
+ 
+   public function index()
+   {
+      $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;upload&amp;rsquo;);
+   }
+}
+&lt;!-- raw HTML omitted --&gt;
+我们已经在构造里加载了files_model，所以可以使用files_model里的方法。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;建立表单视图&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;视图文件upload.php,包含了我们的上传表单。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;!doctype html&amp;gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;一些简单的css&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在css下建立style.css
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;h1, h2 { font-family: Arial, sans-serif; font-size: 25px; }
+h2 { font-size: 20px; }
+ 
+label { font-family: Verdana, sans-serif; font-size: 12px; display: block; }
+input { padding: 3px 5px; width: 250px; margin: 0 0 10px; }
+input[type=&amp;quot;file&amp;rdquo;] { padding-left: 0; }
+input[type=&amp;quot;submit&amp;rdquo;] { width: auto; }
+ 
+#files { font-family: Verdana, sans-serif; font-size: 11px; }
+#files strong { font-size: 13px; }
+#files a { float: right; margin: 0 0 5px 10px; }
+#files ul { list-style: none; padding-left: 0; }
+#files li { width: 280px; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #CCC; }
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第二步，Javascript&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在js下建立site.js
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;$(function() {
+   $(&#39;#upload_file&amp;rsquo;).submit(function(e) {
+      e.preventDefault();
+      $.ajaxFileUpload({
+         url         :&amp;rsquo;./upload/upload_file/&amp;rsquo;,
+         secureuri      :false,
+         fileElementId  :&amp;lsquo;userfile&amp;rsquo;,
+         dataType    : &amp;lsquo;json&amp;rsquo;,
+         data        : {
+            &amp;lsquo;title&amp;rsquo;           : $(&#39;#title&amp;rsquo;).val()
+         },
+         success  : function (data, status)
+         {
+            if(data.status != &amp;lsquo;error&amp;rsquo;)
+            {
+               $(&#39;#files&amp;rsquo;).html(&amp;lsquo;&lt;!-- raw HTML omitted --&gt;Reloading files&amp;hellip;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;);
+               refresh_files();
+               $(&#39;#title&amp;rsquo;).val(&#39;&#39;);
+            }
+            alert(data.msg);
+         }
+      });
+      return false;
+   });
+});
+&lt;!-- raw HTML omitted --&gt;
+Javascript劫持了表单的提交，并由ajaxfileupload接管。其实是在后台创建了一个iframe并提交了数据。
+我只是ajax提交了#title的值，可以通过参数提交更多的字段。
+检查返回的json数据，如果没有错误，就刷新文件列表（下文有），清除title字段。不管怎样，都alert出返回的数据。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第三步，上传文件&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;现在开始上传文件了。我们的URL是这样的 /uplaod/upload_file/，所以，我们在uoload的控制器里建立upload_file方法。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;public function upload_file()
+{
+   $status = &amp;ldquo;&amp;quot;;
+   $msg = &amp;ldquo;&amp;quot;;
+   $file_element_name = &amp;lsquo;userfile&amp;rsquo;;
+ 
+   if (empty($_POST[&amp;lsquo;title&amp;rsquo;]))
+   {
+      $status = &amp;ldquo;error&amp;rdquo;;
+      $msg = &amp;ldquo;Please enter a title&amp;rdquo;;
+   }
+ 
+   if ($status != &amp;ldquo;error&amp;rdquo;)
+   {
+      $config[&amp;lsquo;upload_path&amp;rsquo;] = &amp;lsquo;./files/&#39;;
+      $config[&amp;lsquo;allowed_types&amp;rsquo;] = &amp;lsquo;gif|jpg|png|doc|txt&amp;rsquo;;
+      $config[&amp;lsquo;max_size&amp;rsquo;]  = 1024 * 8;
+      $config[&amp;lsquo;encrypt_name&amp;rsquo;] = TRUE;
+ 
+      $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;upload&amp;rsquo;, $config);
+ 
+      if (!$this-&amp;gt;upload-&amp;gt;do_upload($file_element_name))
+      {
+         $status = &amp;lsquo;error&amp;rsquo;;
+         $msg = $this-&amp;gt;upload-&amp;gt;display_errors(&#39;&amp;rsquo;, &amp;lsquo;&#39;);
+      }
+      else
+      {
+         $data = $this-&amp;gt;upload-&amp;gt;data();
+         $file_id = $this-&amp;gt;files_model-&amp;gt;insert_file($data[&amp;lsquo;file_name&amp;rsquo;], $_POST[&amp;lsquo;title&amp;rsquo;]);
+         if($file_id)
+         {
+            $status = &amp;ldquo;success&amp;rdquo;;
+            $msg = &amp;ldquo;File successfully uploaded&amp;rdquo;;
+         }
+         else
+         {
+            unlink($data[&amp;lsquo;full_path&amp;rsquo;]);
+            $status = &amp;ldquo;error&amp;rdquo;;
+            $msg = &amp;ldquo;Something went wrong when saving the file, please try again.&amp;quot;;
+         }
+      }
+      @unlink($_FILES[$file_element_name]);
+   }
+   echo json_encode(array(&amp;lsquo;status&amp;rsquo; =&amp;gt; $status, &amp;lsquo;msg&amp;rsquo; =&amp;gt; $msg));
+}
+&lt;!-- raw HTML omitted --&gt;
+我们对title字段做了个简单的数据检查，看看他是否为空。不为空就加载codeigniter的upload库。这个类库为我们处理了很多的数据验证。
+接着，我们上传文件了。如果成功我们保存title和file_name。然后我们删除了临时文件，最后，json方法返回了状态和信息，来告诉我们结果。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;按大多数人的MVC模式理念，我们应该在模型里处理数据库交换。
+建立files_model.php
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;class Files_Model extends CI_Model {
+ 
+   public function insert_file($filename, $title)
+   {
+      $data = array(
+         &amp;lsquo;filename&amp;rsquo;     =&amp;gt; $filename,
+         &amp;lsquo;title&amp;rsquo;        =&amp;gt; $title
+      );
+      $this-&amp;gt;db-&amp;gt;insert(&amp;lsquo;files&amp;rsquo;, $data);
+      return $this-&amp;gt;db-&amp;gt;insert_id();
+   }
+ 
+}
+&lt;!-- raw HTML omitted --&gt;
+保存上传文件的文件夹
+不要忘记在根目录建立个files文件夹，并给他写入权限。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第四步，文件列表&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;成功上传后，我们需要更新文件列表，方便修改。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Javascript部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;打开site.js，在后面追加：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;function refresh_files()
+{
+   $.get(&amp;rsquo;./upload/files/&#39;)
+   .success(function (data){
+      $(&#39;#files&amp;rsquo;).html(data);
+   });
+}
+&lt;!-- raw HTML omitted --&gt;
+Jquery的简单应用。Ajax取得指定url的内容，填充到#files的div里。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;不多说了。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;public function files()
+{
+   $files = $this-&amp;gt;files_model-&amp;gt;get_files();
+   $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;files&amp;rsquo;, array(&amp;lsquo;files&amp;rsquo; =&amp;gt; $files));
+}
+&lt;!-- raw HTML omitted --&gt;
+调用模型的方法取得数据，再加载到files视图里显示。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;public function get_files()
+{
+   return $this-&amp;gt;db-&amp;gt;select()
+         -&amp;gt;from(&amp;lsquo;files&amp;rsquo;)
+         -&amp;gt;get()
+         -&amp;gt;result();
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;视图部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;新建files.php视图
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;      &lt;!-- raw HTML omitted --&gt;
+         &amp;lt;?php
+         foreach ($files as $file)
+         {
+            ?&amp;gt;
+            &lt;!-- raw HTML omitted --&gt;
+               &lt;!-- raw HTML omitted --&gt;Delete&lt;!-- raw HTML omitted --&gt;
+               &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+               &lt;!-- raw HTML omitted --&gt;
+               &lt;!-- raw HTML omitted --&gt;
+            &lt;!-- raw HTML omitted --&gt;
+            &amp;lt;?php
+         }
+         ?&amp;gt;
+      &lt;!-- raw HTML omitted --&gt;
+   &lt;!-- raw HTML omitted --&gt;
+   &amp;lt;?php
+}
+else
+{
+   ?&amp;gt;
+   &lt;!-- raw HTML omitted --&gt;No Files Uploaded&lt;!-- raw HTML omitted --&gt;
+   &amp;lt;?php
+}
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;删除文件&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Javascript部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$(&#39;.delete_file_link&amp;rsquo;).live(&amp;lsquo;click&amp;rsquo;, function(e) {
+   e.preventDefault();
+   if (confirm(&amp;lsquo;Are you sure you want to delete this file?&#39;))
+   {
+      var link = $(this);
+      $.ajax({
+         url         : &amp;lsquo;./upload/delete_file/&amp;rsquo; + link.data(&amp;lsquo;file_id&amp;rsquo;),
+         dataType : &amp;lsquo;json&amp;rsquo;,
+         success     : function (data)
+         {
+            files = $(#files);
+            if (data.status === &amp;ldquo;success&amp;rdquo;)
+            {
+               link.parents(&amp;lsquo;li&amp;rsquo;).fadeOut(&amp;lsquo;fast&amp;rsquo;, function() {
+                  $(this).remove();
+                  if (files.find(&amp;lsquo;li&amp;rsquo;).length == 0)
+                  {
+                     files.html(&amp;lsquo;&lt;!-- raw HTML omitted --&gt;No Files Uploaded&lt;!-- raw HTML omitted --&gt;&amp;rsquo;);
+                  }
+               });
+            }
+            else
+            {
+               alert(data.msg);
+            }
+         }
+      });
+   }
+});
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;public function delete_file($file_id)
+{
+   if ($this-&amp;gt;files_model-&amp;gt;delete_file($file_id))
+   {
+      $status = &amp;lsquo;success&amp;rsquo;;
+      $msg = &amp;lsquo;File successfully deleted&amp;rsquo;;
+   }
+   else
+   {
+      $status = &amp;lsquo;error&amp;rsquo;;
+      $msg = &amp;lsquo;Something went wrong when deleteing the file, please try again&amp;rsquo;;
+   }
+   echo json_encode(array(&amp;lsquo;status&amp;rsquo; =&amp;gt; $status, &amp;lsquo;msg&amp;rsquo; =&amp;gt; $msg));
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;public function delete_file($file_id)
+{
+   $file = $this-&amp;gt;get_file($file_id);
+   if (!$this-&amp;gt;db-&amp;gt;where(&amp;lsquo;id&amp;rsquo;, $file_id)-&amp;gt;delete(&amp;lsquo;files&amp;rsquo;))
+   {
+      return FALSE;
+   }
+   unlink(&amp;rsquo;./files/&amp;rsquo; . $file-&amp;gt;filename);
+   return TRUE;
+}
+ 
+public function get_file($file_id)
+{
+   return $this-&amp;gt;db-&amp;gt;select()
+         -&amp;gt;from(&amp;lsquo;files&amp;rsquo;)
+         -&amp;gt;where(&amp;lsquo;id&amp;rsquo;, $file_id)
+         -&amp;gt;get()
+         -&amp;gt;row();
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;嗯，简单的应用。没有涉及的权限、上传的进度条等。&lt;/p&gt;
+- /posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Mysql的随机读取</title>
+        <link>/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
+        <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
+        
+        <guid>/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
+        <description>清风徐来 /posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ -&lt;p&gt;随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。&lt;/p&gt;
+&lt;p&gt;随机查询5条记录：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在数十万记录的表里，这样的查询要好几秒的时间。下面采用JOIN的方式改进一下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;这样得到连续的5条记录。要不联续的记录，可以连续查询几次，每次limit 1条。这淡水比较推荐，SQL语句比较清晰，效率也不错。&lt;/p&gt;
+&lt;p&gt;还有，可以这样的：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;其他更复杂的实现，淡水无视之。&lt;/p&gt;
+&lt;p&gt;update：2011年8月24日 15:03:26&lt;/p&gt;
+&lt;p&gt;如果随机抓取，并且要分页呢？&lt;/p&gt;
+&lt;p&gt;在表里增加一个sortbyrand字段。要随机排序時只需一个简单的sql。&lt;/p&gt;
+&lt;p&gt;例如记录总数是10000
+&lt;!-- raw HTML omitted --&gt;
+update table_name set sortbyrand=FLOOR(RAND()*10000);
+&lt;!-- raw HTML omitted --&gt;
+抓取只需要order by sortbyrand就可以了，其实这个是最不耗脑子的。&lt;/p&gt;
+- /posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>swfupload在codeigniter中的应用</title>
+        <link>/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+        <pubDate>Wed, 15 Jun 2011 12:48:30 +0000</pubDate>
+        
+        <guid>/posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+        <description>清风徐来 /posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ -&lt;p&gt;应该中需要批量上传，google到了swfupload，期间碰到一点小问题跟大家分享一下。&lt;/p&gt;
+&lt;p&gt;第一个问题是无法上传，参照demo，已经修改了上传字段为Filedata，代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;$this-&amp;gt;upload-&amp;gt;do_upload(&amp;lsquo;Filedata&amp;rsquo;)&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;但是问题依旧。google，baidu一起找，在codeigniter的wiki里找到方案，在config/mimes.php里&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;搞定。&lt;/p&gt;
+&lt;p&gt;后来又碰到了第二个问题，在ie6下，上传后无法保存，一刷新才知道被踢出了，登录失效了。google百度之，在sina的一个blog里找到了方法，而且第一个问题他也碰到了。&lt;/p&gt;
+&lt;p&gt;这个问题，他的原文如下：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;问题2：带有session验证的后台，会导致上传后退出登陆的状况&lt;!-- raw HTML omitted --&gt;
+回答：
+一般方法1:swfuplaod在上传时，会新开一个进程，和原来的进程不一致，要解决这个问题，需要指定session_id，然后在登录页面判断，如果有post过来的session_id，那么就用函数session_id( $_POST[&amp;lsquo;PHP_SESSIONID&amp;rsquo;])指定一下。上传页的JS里面，可以获取当前的SESSION_ID的。（淡水注：适合普通的使用php自带session存储登录状态的情况；codeigniter不一样的。）&lt;/p&gt;
+&lt;p&gt;ci中的状态：一般情况下，因为诸如uploadify,swfupload采用的都是flash客户端，这样它们产生的useragent与用户使用浏览器的user-agent必然不同。所以，虽然用户登录了你的系统产生了一个session，但是当触发上传程序时会产生另一个session（在上述useragent选项开启的情况下）。&lt;/p&gt;
+&lt;p&gt;所以，不是session丢失了，而是当你上传文件时，CI为uploadify另外创建了一个session。&lt;/p&gt;
+&lt;p&gt;解决方法1：将$config[&amp;lsquo;sess_match_useragent&amp;rsquo;]设置成FALSE，重试。
+解决方法2（推荐）：为了安全起见，不建议使用第1条解决方案，而是使用另外的验证方法，比如在每次上传时，在url中附加一个token与服务器端的token比对（比如这个token可以是用户名的hash值）。具体实现方法请参考stblog的上传验证实现（使用的是swfupload）。~~~~~~我尝试了这个方法，重点在于，&lt;!-- raw HTML omitted --&gt;如果你的session类是放在autoload里自动加载的，那么，这样肯定是失败的，解决办法是，新建一个类，例如MY_Controller继承于CI_Controller,用于后台登陆，需要权限判断后台处理，讲upload类继承于CI_Controller这样的话，就不经过session类的验证了，当然上传还是得验证，不过可以用post_params传值进行验证&lt;!-- raw HTML omitted --&gt;：&lt;/p&gt;
+&lt;p&gt;示例:
+&lt;!-- raw HTML omitted --&gt;
+class Upload extends CI_Controller {
+//code&amp;hellip;
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;code lang=&#39;php&#39;&amp;gt;
+class client_photo extends MY_Controller {
+    function __construct() {
+        parent::__construct();
+    }
+ function index() {
+    //code...
+ }
+}
+&amp;lt;/code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+- /posts/swfupload%E5%9C%A8codeigniter%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/ - kissjava.cn</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

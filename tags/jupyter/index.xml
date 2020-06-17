@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jupyter on 清风徐来</title>
+    <link>/tags/jupyter/</link>
+    <description>Recent content in jupyter on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Mon, 04 Sep 2017 16:39:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jupyter Notebook 在 CentOS7 下的安装配置</title>
+      <link>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 04 Sep 2017 16:39:00 +0000</pubDate>
+      
+      <guid>/posts/jupyter-notebook-%E5%9C%A8-centos7-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>使用Jupyter在浏览器上快(ku)乐(bi)的 编码吧 如果手头没有电脑，只有手机和 Pad ，却想用 python 写点东西（也许只是验证一下），这时就需要 Jupyter 了。（当然也可以直接用 Terminal 工具连上服务器搞起，也是一种解决方式，就是稍微繁琐点）。
+好吧，我们开始安装 Jupyter之旅。先到官网版本库看看 https://repo.continuum.io/archive/，找到适合的最新版，复制链接地址（Mike 以 Linux 为例）。
+$ wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh--2017-09-04 09:15:29-- https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.shResolving repo.continuum.io (repo.continuum.io)... 104.16.19.10, 104.16.18.10, 2400:cb00:2048:1::6810:130a, ...Connecting to repo.continuum.io (repo.continuum.io)|104.16.19.10|:443... connected.HTTP request sent, awaiting response... 200 OKLength: 523283080 (499M) [application/x-sh]Saving to: ‘Anaconda3-4.4.0-Linux-x86_64.sh’100%[=================================================================&amp;gt;] 523,283,080 11.3MB/s in 59s 2017-09-04 09:16:29 (8.39 MB/s) - ‘Anaconda3-4.4.0-Linux-x86_64.sh’ saved [523283080/523283080] 下载完成，vps 速度还算及格。
+$ sudo bash Anaconda3-4.4.0-Linux-x86_64.shWelcome to Anaconda3 4.</description>
+    </item>
+    
+  </channel>
+</rss>

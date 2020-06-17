@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PSD on 清风徐来</title>
+    <link>/tags/psd/</link>
+    <description>Recent content in PSD on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Tue, 29 Nov 2011 17:18:46 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/psd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Photoshop教程：一款清新高雅的网页布局</title>
+      <link>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
+      
+      <guid>/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+      <description>&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>用Photoshop设计一个小型、现代的产品主页</title>
+      <link>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</link>
+      <pubDate>Sat, 19 Nov 2011 11:46:04 +0000</pubDate>
+      
+      <guid>/posts/%E7%94%A8photoshop%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E7%8E%B0%E4%BB%A3%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%BB%E9%A1%B5/</guid>
+      <description>这个Photoshop web设计的教程中，我们将学习设计一个整洁的具有现代气息的web站点。这是设计和HTML/CSS模板转换系列教程的第一部分。
+3 使用油漆桶工具（G）用任意颜色填充头部刚才选定区域。点开图层样式对话框，用以下设置来增加一个渐变叠加效果。
+完了，应该出现以下效果：
+5 设定好渐变工具（G）后，从顶部的中间垂直的拖动到画布的4/1大小左右。
+7 重复6的步骤，创建另外一条垂直参考线，不过这次输入1025px(175px + 850px = 1025px)。这样一个850px宽、居中的区域就做好了
+9 在标题文本图层下面创建一个新图层，选定矩形选框工具（M），在头部选取出一个区域。宽度必须填满1200px，高度大概在60px左右。
+10 用白色（#FFFFFF）填充（G）选定区域，然后在图层面板中设置透明度为25%。效果如下。
+12 在每个菜单项之间使用矩形选框工具（M）做一个1px宽的分割线；长度跨越整个头部。用#CECECE颜色填充（G）这1px的线条。效果如下图。
+13 现在，我们在每个菜单项中加入鼠标悬停动态效果（hover）。我已经给其中一个菜单项加入颜色表示鼠标悬停时的效果。使用多边形套索工具（L）按住shift，创建一个三角形，以保证每条线都是直的。
+14 用#00315C这个颜色填充选定的三角形区域
+16 在欢迎文本的右边将插入一个欢迎图片；我这里使用的是Six Revisions网站界面裁图。裁剪你的图片，去掉不需要的部分。图片准备好之后，通过编辑 &amp;gt; 变换 &amp;gt; 透视 改变图片的视角。
+17 选择椭圆选框工具，然后在欢迎图片下方画一个椭圆。
+18 用黑色（#000000）填充（G）椭圆选定区域。
+19 然后设置区域图层透明度为35%。
+20 然后使用滤镜 &amp;gt; 模糊 &amp;gt; 高斯模糊这个椭圆，设定模糊半径为1到2px。
+21 把欢迎图片和下面的阴影再复制一份，然后把它们拖动到原图片的下面。
+22 位置拖动好之后，使用高斯模糊下面的裁图，半径为1px。
+24 分别使用颜色#000D19和#003461填充这两个线条。
+25 选择椭圆选框工具（M）然后在分割线上面画出一个椭圆。
+26 使用黑色（#000000）填充（G）选定区域，加上2到3px的高斯模糊。然后使用矩形选框工具删掉分割线上半部分，这样就剩下了半个椭圆。
+27 将这两个图层合并（Ctrl+E），然后添加一个图层蒙版（点击图层面板上的“添加图层蒙版”按钮）来合并图层。
+28 使用渐变工具（G）,渐变类型为对称渐变，前景色设为白色（#FFFFFF）,背景色设置黑色（#000000）。
+29 拖动对称渐变，从分割线中间向两边拖动，从而产生中间向两边淡入效果。
+31 使用圆角矩形工具（U）在内容文本区域的左边创建一个圆角矩形；半径设为10px（默认情况下背景是10px）。
+32 路径画好之后，选择钢笔工具（P），右击矩形内部，选择建立选区。
+33 设置前景色为#00315C，背景色为#001B32，然后选择渐变工具（G），渐变类型为径向渐变。
+34 从顶部把渐变拖动到中间，和我们绘制背景方法相同。效果如下图。
+35 现在需要给圆角矩形图层加入投影、内阴影和描边的图层样式（双击图层面板上面的图层，打开图层样式对话框）。设置如下。
+36 使用多边形套索工具（L），然后在矩形上面做一个三角形的选区。</description>
+    </item>
+    
+  </channel>
+</rss>

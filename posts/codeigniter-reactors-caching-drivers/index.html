@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html><head>
+<title>CodeIgniter Reactor&#39;s Caching Drivers</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="CodeIgniter Reactor&#39;s Caching Drivers" />
+<meta property="og:description" content="Before Reactordropped, I snuck in some caching drivers(Docs Link) that Pascalhad been tossing back and forth for several months. I&rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.
+At this time, there are drivers available for APC, Memcached, file-based caching, and a dummy cache. If you haven&rsquo;t already, head over to BitBucketand get cloning or forking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/codeigniter-reactors-caching-drivers/" />
+<meta property="article:published_time" content="2011-04-02T17:18:51+00:00" />
+<meta property="article:modified_time" content="2011-04-02T17:18:51+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CodeIgniter Reactor&#39;s Caching Drivers"/>
+<meta name="twitter:description" content="Before Reactordropped, I snuck in some caching drivers(Docs Link) that Pascalhad been tossing back and forth for several months. I&rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.
+At this time, there are drivers available for APC, Memcached, file-based caching, and a dummy cache. If you haven&rsquo;t already, head over to BitBucketand get cloning or forking."/>
+
+
+
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.b13808e7c98cd5aa981a3822fd3421e26f1015876bb15a3fbf8ed5991c382367.css" integrity="sha256-sTgI58mM1aqYGjgi/TQh4m8QFYdrsVo/v47VmRw4I2c=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="/js/toc-collapse.js"></script>
+  
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="">
+    
+        <div class="nav-title">
+            清风徐来
+        </div>
+        
+        <div class="nav-subtitle">
+            Michael&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+
+    </div>
+    
+</div><div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            清风徐来
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">清风徐来</div>
+        
+        <div class="single-column-header-subtitle">Michael&#39;s Blog</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    CodeIgniter Reactor&#39;s Caching Drivers
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2011-04-02 17:18
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[PHP]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/codeigniter">CodeIgniter</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>Before <!-- raw HTML omitted -->Reactor<!-- raw HTML omitted --> dropped, I snuck in some <!-- raw HTML omitted -->caching drivers<!-- raw HTML omitted --> (<!-- raw HTML omitted -->Docs Link<!-- raw HTML omitted -->) that <!-- raw HTML omitted -->Pascal<!-- raw HTML omitted --> had been tossing back and forth for several months. I&rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.</p>
+<p>At this time, there are drivers available for <!-- raw HTML omitted -->APC<!-- raw HTML omitted -->, <!-- raw HTML omitted -->Memcached<!-- raw HTML omitted -->, file-based caching, and a dummy cache. If you haven&rsquo;t already, head over to <!-- raw HTML omitted -->BitBucket<!-- raw HTML omitted --> and get cloning or forking.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>class Tweet extends CI_Controller {</p>
+<pre><code>public function index()
+{
+    $this-&gt;output-&gt;enable_profiler();
+
+    // Load up drivers
+    $this-&gt;load-&gt;library('driver');
+    $this-&gt;load-&gt;driver('cache', array('adapter' =&gt; 'apc'));
+
+    // Get Tweets from Cache
+    $tweets = $this-&gt;cache-&gt;get('my_tweets');
+
+    if ( ! $tweets)
+    {
+        // No tweets in the cache, so get new ones.
+        $url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=gaker&amp;count=5';
+
+        $tweets = json_decode(file_get_contents($url));
+        $this-&gt;cache-&gt;save('my_tweets',$tweets, 300);
+    }
+
+    $data = array(
+        'title'     =&gt; 'tweet tweet',
+        'tweets'    =&gt; $tweets
+    );
+
+    $this-&gt;load-&gt;view('tweets', $data);
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted --></p>
+<p>Then a really super simple view could be:</p>
+<!-- raw HTML omitted -->
+<p>Then let&rsquo;s see what Seige has to say:</p>
+<!-- raw HTML omitted -->
+<p>Lifting the server siege&hellip;      done.
+Transactions:               3216 hits
+Availability:             100.00 %
+Elapsed time:               9.73 secs
+Data transferred:           5.96 MB
+Response time:              0.01 secs
+Transaction rate:         330.52 trans/sec
+Throughput:             0.61 MB/sec
+Concurrency:                2.97
+Successful transactions:        3216
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
+<!-- raw HTML omitted --></p>
+<p>So if you&rsquo;re running a single web server/VPS APC can be fantastic to cache API requests in.</p>
+<!-- raw HTML omitted -->
+<p>In my local development ExpressionEngine database, I have about 1600 members, and round about 4,000 entries. I&rsquo;m going to first select all the member ids, cycle through them doing a query to get the title and a bit more info on the entry. So this is going to be just entirely stupid and inefficient. Here we go:</p>
+<!-- raw HTML omitted -->
+<p>class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&gt;output-&gt;enable_profiler();
+$this-&gt;load-&gt;database();</p>
+<pre><code>    $members = $this-&gt;db-&gt;select('member_id')-&gt;get('exp_members');
+
+    $res = array();
+
+    foreach ($members-&gt;result() as $m)
+    {
+        $qry = $this-&gt;db-&gt;select('ct.entry_id, ct.title, ct.url_title,
+                                  ct.entry_date, m.member_id, m.screen_name, 
+                                  m.group_id')
+                        -&gt;where('ct.author_id', (int) $m-&gt;member_id)
+                        -&gt;where('ct.status', 'open')
+                        -&gt;join('exp_members m', 'm.member_id = ct.author_id')
+                        -&gt;order_by('ct.entry_date', 'ASC')
+                        -&gt;get('exp_channel_titles ct');
+
+        $res[] = $qry-&gt;result();
+    }
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted --></p>
+<p>Based on my dataset, this lunacy produces 1605 queries, and is horribly inefficient. We can get around it some with memcached. That&rsquo;s not to say that just because you can toss caching at it you should do it, but I just want to illustrate how it can help :) So, with this controller, seige gives us:</p>
+<!-- raw HTML omitted -->
+<p>Lifting the server siege&hellip;      done.
+Transactions:                  3 hits
+Availability:             100.00 %
+Elapsed time:               9.02 secs
+Data transferred:           0.33 MB
+Response time:              5.17 secs
+Transaction rate:           0.33 trans/sec
+Throughput:             0.04 MB/sec
+Concurrency:                1.72
+Successful transactions:           3
+Failed transactions:               0
+Longest transaction:            5.27
+Shortest transaction:           4.99
+<!-- raw HTML omitted --></p>
+<p>And it&rsquo;s pretty evident that MySQL is getting the living shit beat out of it. This is no good for your visitors. If we cache this mess with memcached, the controller turns into:</p>
+<!-- raw HTML omitted -->
+<p>class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&gt;output-&gt;enable_profiler();
+$this-&gt;load-&gt;database();</p>
+<pre><code>    // Load Drivers
+    $this-&gt;load-&gt;library('driver');
+    $this-&gt;load-&gt;driver('cache', array('adapter' =&gt; 'memcached'));
+
+    $res = $this-&gt;cache-&gt;get('my_mess', 300);
+
+    if ( ! $res)
+    {
+        $members = $this-&gt;db-&gt;select('member_id')-&gt;get('exp_members');
+
+        $res = array();
+
+        foreach ($members-&gt;result() as $m)
+        {
+            $qry = $this-&gt;db-&gt;select('ct.entry_id, ct.title, ct.url_title,
+                                      ct.entry_date, m.member_id, 
+                                      m.screen_name, m.group_id')
+                            -&gt;where('ct.author_id', (int) $m-&gt;member_id)
+                            -&gt;where('ct.status', 'open')
+                            -&gt;join('exp_members m', 'm.member_id = ct.author_id')
+                            -&gt;order_by('ct.entry_date', 'ASC')
+                            -&gt;get('exp_channel_titles ct');
+
+            $res[] = $qry-&gt;result();
+        }
+
+        $res = json_encode($res);
+        $this-&gt;cache-&gt;save('my_mess', $res, 300);
+    }
+
+    var_dump(json_decode($res));
+}
+</code></pre>
+<p>}
+<!-- raw HTML omitted --></p>
+<p>Results from seige are:</p>
+<!-- raw HTML omitted -->
+<p>Lifting the server siege&hellip;      done.
+Transactions:                432 hits
+Availability:             100.00 %
+Elapsed time:               9.53 secs
+Data transferred:           2.91 MB
+Response time:              0.07 secs
+Transaction rate:          45.33 trans/sec
+Throughput:             0.31 MB/sec
+Concurrency:                2.98
+Successful transactions:         432
+Failed transactions:               0
+Longest transaction:            0.10
+Shortest transaction:           0.05
+<!-- raw HTML omitted --></p>
+<p>So we&rsquo;ve increased our output from 3 hits to 432 in 10 seconds. Not a bad boost, if I do say so myself. In a &lsquo;real&rsquo; application, my query calls would be in the model, but we can also avoid loading the models unless the cache is stale, which saves on an<!-- raw HTML omitted -->include()<!-- raw HTML omitted -->, and helps to keep CI breezing along even faster!</p>
+<p>Have you checked out the new cached drivers in CI Reactor? If so, how do you find them stacking up with your applications needs?</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2011-04-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/">
+			下回<br>CodeIgniter2 Model 支持单例
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/firephp%E7%BB%99%E5%8A%9B%E7%9A%84%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">
+			上回<br>FirePHP,给力的调试工具
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	kissjava.cn
+	
+</div>
+            </div>
+    <script>
+let app;
+
+app = new Vue({
+    el: '#app',
+    data: {
+        scrollY: 0,
+        navOpacity: 0,
+        isDrawerOpen: false,
+        mounted: false,
+        isDarkMode: false
+    },
+    methods: {
+            sgn(t, x) {
+                let k = 1. / (1. - 2 * t);
+                if (x <= t) return 0;
+                else if (x >= 1 - t) return 1;
+                else {
+                    return k * (x - t);
+                }
+            },
+            handleScroll() {
+                this.scrollY = window.scrollY;
+                this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+
+                if (this.navOpacity >= 1) {
+                    navBackground.style.opacity = 1;
+                    navTitle.style.opacity = 1;
+                } else {
+                    navBackground.style.opacity = 0;
+                    navTitle.style.opacity = 0;
+                }
+            },
+            handleResize() {
+                const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            },
+            navBarHeight() {
+                return this.$refs.navBar.offsetHeight;
+            },
+            pageHeadHeight() {
+                return this.$refs.pageHead.offsetHeight;
+            },
+            toggleDrawer() {
+                this.isDrawerOpen = !this.isDrawerOpen;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            closeDrawer() {
+                this.isDrawerOpen = false;
+                document.getElementsByTagName('html')[0].style.overflow = this.isDrawerOpen ? 'hidden' : 'unset';
+            },
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                if (this.isDarkMode==true){
+                    document.cookie = "night=1;path=/";
+                    document.body.classList.add("night");
+                } else {
+                    document.cookie = "night=0;path=/";
+                    document.body.classList.remove("night");
+                }
+            }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('resize', this.handleResize);
+        window._nonDesktop = function () {
+            let check = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+        };
+        
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        if (night==""){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                
+            }
+        }else{
+            
+            if (night=="1") {
+                this.toggleDarkMode();
+            }
+        }
+    },
+    mounted() {
+        this.handleScroll();
+        this.handleResize();
+        this.mounted = true;
+
+        
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
+});
+</script>
+
+<script src="/js/journal.js"></script>
+    </body>
+</html>

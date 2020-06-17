@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ab on 清风徐来</title>
+    <link>/tags/ab/</link>
+    <description>Recent content in ab on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Sun, 07 Mar 2010 16:48:21 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>apache下ab网站压力测试命令的参数、输出结果的中文注解</title>
+      <link>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Sun, 07 Mar 2010 16:48:21 +0000</pubDate>
+      
+      <guid>/posts/apache%E4%B8%8Bab%E7%BD%91%E7%AB%99%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%AD%E6%96%87%E6%B3%A8%E8%A7%A3/</guid>
+      <description>有用，记录一下。from：http://txm3217.blog.163.com/blog/static/21986987200762131027970/ 以前安装好APACHE总是不知道该如何测试APACHE的性能，现在总算找到一个测试工具了。就是APACHE自带的测试工具AB(apache benchmark).在APACHE的bin目录下。 格式： ./ab [options] [http://]hostname[:port]/path 参数： -n requests Number of requests to perform //在测试会话中所执行的请求个数。默认时，仅执行一个请求 -c concurrency Number of multiple requests to make //一次产生的请求个数。默认是一次一个。 -t timelimit Seconds to max. wait for responses //测试所进行的最大秒数。其内部隐含值是-n 50000。它可以使对服务器的测试限制在一个固定的总时间以内。默认时，没有时间限制。 -p postfile File containing data to POST //包含了需要POST的数据的文件. -T content-type Content-type header for POSTing //POST数据所使用的Content-type头信息。 -v verbosity How much troubleshooting info to print //设置显示信息的详细程度 - 4或更大值会显示头信息， 3或更大值可以显示响应代码(404, 200等), 2或更大值可以显示警告和其他信息。 -V 显示版本号并退出。 -w Print out results in HTML tables //以HTML表的格式输出结果。默认时，它是白色背景的两列宽度的一张表。 -i Use HEAD instead of GET // 执行HEAD请求，而不是GET。 -x attributes String to insert as table attributes // -y attributes String to insert as tr attributes // -z attributes String to insert as td or th attributes // -C attribute Add cookie, eg.</description>
+    </item>
+    
+  </channel>
+</rss>

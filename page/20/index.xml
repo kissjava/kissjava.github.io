@@ -6,9 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>徐徐的Zend studio For Eclipse 教程</title>
+        <link>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Mon, 23 Mar 2009 10:01:58 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ -&lt;p&gt;如题，好东西啊
+不说废话，给出地址
+&lt;!-- raw HTML omitted --&gt;zend studio 6.1中文视频教程-快速入门&lt;!-- raw HTML omitted --&gt;
+&lt;a href=&#34;http://www.zendstudio.net/zend_studio-6_1-getting-start/&#34;&gt;http://www.zendstudio.net/zend_studio-6_1-getting-start/&lt;/a&gt;
+感谢&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;的工作，好淫啊 :)&lt;/p&gt;
+- https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -264,93 +280,6 @@ $query = $this-&amp;gt;db-&amp;gt;select()
 &lt;/ol&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;my_model&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/extended-model-for-codeigniter-1.7.x/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>codeigniter的数据库操作</title>
-        <link>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
-        <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ -&lt;h2 id=&#34;code-langphp&#34;&gt;用codeigniter也有一段时间了，一直没有做什么总结。
-昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。
-&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;链接数据库&#34;&gt;链接数据库&lt;/h2&gt;
-&lt;h2 id=&#34;db2--this-load-databasegroup_two-true&#34;&gt;$this-&amp;gt;load-&amp;gt;database();//手动连接数据库
-//连接多数据库
-$DB1 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_one&amp;rsquo;, TRUE);
-$DB2 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_two&amp;rsquo;, TRUE);&lt;/h2&gt;
-&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
-&lt;p&gt;//参数绑定形式
-$sql = &amp;ldquo;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&amp;quot;;
-$this-&amp;gt;db-&amp;gt;query($sql, array(3, &amp;lsquo;live&amp;rsquo;, &amp;lsquo;Rick&amp;rsquo;));&lt;/p&gt;
-&lt;p&gt;//多结果标准查询
-$query = $this-&amp;gt;db-&amp;gt;query($sql); //自定义
-$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;); //便捷形式，相当于:SELECT * FROM tablename
-$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;, 10, 20); // 相当于: SELECT * FROM tablename LIMIT 20, 10&lt;/p&gt;
-&lt;p&gt;$query-&amp;gt;result() //对象形式
-$query-&amp;gt;result_array() //数组形式
-/*
-foreach ($query-&amp;gt;result() as $row)
-{
-echo $row-&amp;gt;title;
-echo $row-&amp;gt;name;
-echo $row-&amp;gt;email;
-}
-*/
-$query-&amp;gt;num_rows() //总条数
-$query-&amp;gt;num_fields() //字段数&lt;/p&gt;
-&lt;p&gt;//单结果标准查询
-$row = $query-&amp;gt;row(); //对象形式
-$row = $query-&amp;gt;row_array(); //数组形式
-/*
-$row = $query-&amp;gt;row_array();
-echo $row[&amp;lsquo;name&amp;rsquo;];
-*/&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;插入&#34;&gt;插入&lt;/h2&gt;
-&lt;p&gt;$data = array(
-&amp;lsquo;title&amp;rsquo; =&amp;gt; $title,
-&amp;lsquo;name&amp;rsquo; =&amp;gt; $name
-);
-$this-&amp;gt;db-&amp;gt;insert(&amp;lsquo;tablename&amp;rsquo;, $data); //便捷插入
-$this-&amp;gt;db-&amp;gt;insert_string(&amp;lsquo;tablename&amp;rsquo;, $data);  //便捷插入&lt;/p&gt;
-&lt;p&gt;$this-&amp;gt;db-&amp;gt;insert_id() //刚插入的id
-$this-&amp;gt;db-&amp;gt;affected_rows() //影响的行数(update,insert)&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
-&lt;h2 id=&#34;this-db-update_stringtablename-data-where&#34;&gt;$data = array(
-&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
-&amp;lsquo;email&amp;rsquo; =&amp;gt; $email
-);
-$where = &amp;ldquo;id = 1&amp;rdquo;;
-$this-&amp;gt;db-&amp;gt;update(&amp;lsquo;tablename&amp;rsquo;, $data);
-$this-&amp;gt;db-&amp;gt;update_string(&amp;lsquo;tablename&amp;rsquo;, $data, $where);&lt;/h2&gt;
-&lt;h2 id=&#34;删除&#34;&gt;删除&lt;/h2&gt;
-&lt;p&gt;$array = array(
-&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
-&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
-);
-$this-&amp;gt;db-&amp;gt;delete(&amp;lsquo;tablename&amp;rsquo;, $array);&lt;/p&gt;
-&lt;p&gt;// Produces:
-// &amp;ldquo;DELETE FROM tablename WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;$this-&amp;gt;db-&amp;gt;truncate(&amp;lsquo;tablename&amp;rsquo;); //清空表
-// Produce: TRUNCATE tablename&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;where&#34;&gt;（where）&lt;/h2&gt;
-&lt;h2 id=&#34;-produces-where-name--name-and-title--title&#34;&gt;$array = array(
-&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
-&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
-);
-$this-&amp;gt;db-&amp;gt;where($array);
-// Produces: &amp;ldquo;WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/h2&gt;
-&lt;h2 id=&#34;this-db-count_alltablename-表中记录总行数&#34;&gt;$this-&amp;gt;db-&amp;gt;count_all(&amp;lsquo;tablename&amp;rsquo;); //表中记录总行数&lt;/h2&gt;
-&lt;p&gt;$query-&amp;gt;free_result() //释放资源
-&lt;!-- raw HTML omitted --&gt;
-出处：http://www.linvo2008.cn/blog/?p=437&lt;/p&gt;
-- https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
         </item>
     
     

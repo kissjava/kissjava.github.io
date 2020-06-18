@@ -6,9 +6,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>php5.3废弃函数</title>
+        <link>https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Sun, 14 Mar 2010 19:58:36 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ -&lt;p&gt;php5.3被放弃的函数有:&lt;/p&gt;
+&lt;p&gt;ereg();//直接用mb_ereg代替，或是preg_match代替，但是匹配规则需要用/包括起来
+eregi();//preg_match代替，在规则后加上i，如：preg_match(&amp;quot;/^(style|style_)(.*)*/i&amp;rdquo;, $file);
+ereg_replace();
+set_magic_quotes_runtime();
+split();
+mysql_close();  // 将不支持全部关闭, 需要改为:mysql_close($link);&lt;/p&gt;
+- https://kissjava.cn/posts/php5.3%E5%BA%9F%E5%BC%83%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -433,21 +451,6 @@ border: 5px solid red;/* ie8 */
 （3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;)
 （4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。&lt;/p&gt;
 - https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Codeigniter里实现get_object_or_404</title>
-        <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</link>
-        <pubDate>Mon, 01 Mar 2010 09:35:08 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ -&lt;p&gt;在Django里有个很好的功能，get_object_or_404。就是取得我们要的对象或是返回404。&lt;/p&gt;
-&lt;p&gt;我们在codeigniter里我们也可以在控制器里用简洁的代码实现。在下面的例子里我们加载一个user模型，并得到一个记录，否则返回404。
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/codeigniter%E9%87%8C%E5%AE%9E%E7%8E%B0get_object_or_404/ - kissjava.cn</description>
         </item>
     
     

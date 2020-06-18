@@ -6,9 +6,75 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>cx_Freeze setup.py</title>
+        <link>https://kissjava.cn/posts/cx_freeze-setup.py/</link>
+        <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/cx_freeze-setup.py/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/cx_freeze-setup.py/ -&lt;pre&gt;&lt;code&gt;from cx_Freeze import setup, Executable
+
+# http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspx
+shortcut_table = [
+    (&amp;quot;DesktopShortcut&amp;quot;,        # Shortcut
+     &amp;quot;DesktopFolder&amp;quot;,          # Directory_
+     &amp;quot;YourAppDetailName&amp;quot;,            # App Name
+     &amp;quot;TARGETDIR&amp;quot;,              # Component_
+     &amp;quot;[TARGETDIR]AppName.exe&amp;quot;,             # Target
+     None,                     # Arguments
+     None,                     # Description
+     None,                     # Hotkey
+     None,                     # Icon
+     None,                     # IconIndex
+     None,                     # ShowCmd
+     &#39;TARGETDIR&#39;               # WkDir
+     )
+    ]
+
+# Now create the table dictionary
+msi_data = {&amp;quot;Shortcut&amp;quot;: shortcut_table}
+
+# Change some default MSI options and specify the use of the above defined tables
+bdist_msi_options = {&#39;data&#39;: msi_data}
+
+# Dependencies are automatically detected, but it might need
+# fine tuning.
+buildOptions = dict(
+    packages = [],
+    excludes = [],
+    include_files=[&#39;tks7.dll&#39;,&#39;Don_API.dll&#39;,&#39;image&#39;,&#39;config.ini&#39;],
+    include_msvcr= True   #skip error msvcr100.dll missing
+)
+
+import sys
+base = &#39;Win32GUI&#39; if sys.platform==&#39;win32&#39; else None
+
+executables = [
+    Executable(
+        &#39;PowerService.py&#39;,
+        base=base,
+        icon=&#39;image\\PowerService.ico&#39;,
+        compress = True,
+        )
+]
+
+setup(name=&#39;PowerService&#39;,#Setup Path
+      version = &#39;1.0.0&#39;,
+      description = &#39;some detail&#39;,
+      maintainer = &amp;quot;MikeYang.Me&amp;quot;,
+      maintainer_email = &amp;quot;kissjava.cn@gmail.com&amp;quot;,
+      url = &#39;http://kissjava.cn&#39;,
+      options = {&amp;quot;build_exe&amp;quot;:buildOptions,&amp;quot;bdist_msi&amp;quot;:bdist_msi_options},
+      executables = executables)
+&lt;/code&gt;&lt;/pre&gt;
+- https://kissjava.cn/posts/cx_freeze-setup.py/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -777,27 +843,6 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     app.MainLoop()
 &lt;/code&gt;&lt;/pre&gt;
 - https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>PyInstaller无法easy_install或pip安装</title>
-        <link>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ -&lt;p&gt;应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。
-只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。
-也就一步，就是解压。淡水解压到d盘根目录
-使用也很简单：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PS C:\Users\Frank&amp;gt; d:
-PS D:\&amp;gt; cd .\PyInstaller-2.1
-PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.ico D:\wms\julinWms.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;和easy_install安装后的使用方法几乎一样。
-嗯，没多少干货。2014了，随便写点，证明一下还在喘气。&lt;/p&gt;
-- https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
         </item>
     
     

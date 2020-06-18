@@ -6,9 +6,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>郁闷的木乃伊3龙帝之墓</title>
+        <link>https://kissjava.cn/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</link>
+        <pubDate>Sun, 19 Oct 2008 13:24:07 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/ -&lt;p&gt;木乃伊3龙帝之墓，看了。不爽，很愤怒。&lt;/p&gt;
+&lt;p&gt;始皇帝变成了出尔反尔的小人，中国龙变成了邪恶的三头恐龙。&lt;/p&gt;
+&lt;p&gt;荷里活的垃圾编剧绝对有反华心理。&lt;/p&gt;
+&lt;p&gt;李连杰，杨紫琼接拍或许可以理解（理由为了吃饭？……）。但是这样内容的片子居然可以在内地上映。&lt;/p&gt;
+&lt;p&gt;虽说商业片可以胡编乱造，但是辱华的坚决抵制。&lt;/p&gt;
+&lt;p&gt;算了，也只是唠叨一下，也无力去改变什么。日子还是一样的过，只能自己牢记自己炎黄根吧。&lt;/p&gt;
+&lt;p&gt;有个网友说得好，一群盗墓贼，可笑。&lt;/p&gt;
+- https://kissjava.cn/posts/%E9%83%81%E9%97%B7%E7%9A%84%E6%9C%A8%E4%B9%83%E4%BC%8A3%E9%BE%99%E5%B8%9D%E4%B9%8B%E5%A2%93/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -553,21 +571,6 @@ redirect(&amp;lsquo;welcome/index&amp;rsquo;,&amp;lsquo;refresh&amp;rsquo;);
 &lt;p&gt;新娘虽然有些胡闹，但是小伙还是比较实在的。飞到湖北找到新娘老家。但是新娘老家人先是说新娘没回来，后来新娘也出现了说给多少多少钱才行……。不用淡水多嘴，这是当下比较典型的例子了。结果，嗯，小伙说了，这人我不要了。&lt;/p&gt;
 &lt;p&gt;淡水不想鄙视哪一个人，只是有些感慨。这是结婚呐，还是做买卖呐？淡水还是很佩服那个小伙子的，佩服他能坚守心底那把尺子。再鄙视一把那些垃圾得不能再垃圾的所谓的青春偶像剧，哪里有那么多的王子和灰姑娘的童话在现实生活里发生！&lt;/p&gt;
 - https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>E-TextEditor试用手记</title>
-        <link>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
-        <pubDate>Tue, 30 Sep 2008 14:14:53 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/ -&lt;p&gt;嗯，这里快长草了。&lt;/p&gt;
-&lt;p&gt;淡水以前看ci的视频，看到mac下的textmate，哈喇子飞流直下-_-。以后的一段日子总是在寻求在windows下类似的编辑器。向google大神请教，给了我两个答案一个是intype，另一个还是intype，玩笑了（想起鲁迅了）。还有一个就是本文的猪脚“E-TextEditor”。但是当时淡水试用以后很是失望，intype没有project manage功能，E-texteditor安装时候就一堆的错误。无法只能用editplus凑合，没几日就无法忍受editplus简陋的目录管理了，换成了Ultraedit。只是他们都没有bundles，用来小修小改还好，用它们做项目，太累了。总会有些笔误产生。&lt;/p&gt;
-&lt;p&gt;故事到了这里，貌似该猪脚出场了。等等，还没到，实际情况是这样的。intype的最新Unstable版,支持project manage了。用了两天，发现BUG太多了。无奈放弃。这个时候猪脚上场了。但是这次淡水不是用的官方的版本，而是所谓的&lt;!-- raw HTML omitted --&gt;绿色特别版&lt;!-- raw HTML omitted --&gt;。下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.xdowns.com/soft/38/39/2008/Soft_40447.html&#34;&gt;http://www.xdowns.com/soft/38/39/2008/Soft_40447.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; 试用一下不错。没有问题，又下了一份E-TextEditor Codeigniter 1.6.3 Bundle。嗯，测试一下，很好。淡水的系统是vista，没有任何问题，在虚拟机的xp上跑也正常。晒个图&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Codeigniter bundles 下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.sellersrank.com/codeigniter-textmate-bundle-download/&#34;&gt;http://www.sellersrank.com/codeigniter-textmate-bundle-download/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/ - kissjava.cn</description>
         </item>
     
     

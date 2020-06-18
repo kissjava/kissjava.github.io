@@ -6,9 +6,92 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Go从Console读取输入</title>
+        <link>https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
+        <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+##一个简单的shell
+一个示例的shell，没啥用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;bufio&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;strings&amp;quot;
+)
+
+func main() {
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println(&amp;quot;Simple Shell&amp;quot;)
+	fmt.Println(&amp;quot;---------------------&amp;quot;)
+
+	for {
+		fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)
+		text, _ := reader.ReadString(&#39;\n&#39;)
+		// 将CRLF转换为LF
+		text = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)
+		// 如果windows，要用下面的
+		// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)
+
+		if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {
+			fmt.Println(&amp;quot;hello, Yourself&amp;quot;)
+		}
+
+		if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {
+			fmt.Println(&amp;quot;Bye.&amp;quot;)
+			break
+		}
+
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入hi，它会打个招呼；输入bye，退出shell。&lt;/p&gt;
+&lt;p&gt;##读取单个UTF-8编码的Unicode字符&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;bufio&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os&amp;quot;
+)
+
+func main() {
+
+	reader := bufio.NewReader(os.Stdin)
+	char, _, err := reader.ReadRune()
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// 打印出unicode值，即 A -&amp;gt; 65, a -&amp;gt; 97, 杨 -&amp;gt; 26472
+	fmt.Println(char)
+
+	switch char {
+	case &#39;A&#39;:
+		fmt.Println(&amp;quot;A Key Pressed&amp;quot;)
+		break
+	case &#39;a&#39;:
+		fmt.Println(&amp;quot;a Key Pressed&amp;quot;)
+		break
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;杨的unicode是26472.&lt;/p&gt;
+&lt;p&gt;##小结
+学习来bufio的一些用法，还穿插了一些流程控制语句，if，for，switch。&lt;/p&gt;
+- https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -796,27 +879,6 @@ net.ipv4.tcp_available_congestion_control = bbr cubic reno
 &lt;pre&gt;&lt;code&gt;tcp_bbr                20480  1  
 &lt;/code&gt;&lt;/pre&gt;
 - https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Mac OS X 设置英文为默认输入法</title>
-        <link>https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</link>
-        <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ -&lt;p&gt;为了方便开发,一般都是把系统语言改成英文.
-但是,中文输入法一直会把自己搞成默认的.网上一搜,老旧的东西都是没法用的,一直没法把输入法调好.
-每次打开 Terminal 总要删除然后切换成英文,再敲命令.很烦人的说.
-上干货,方便像 &lt;a href=&#34;https://kissjava.cn&#34;&gt;Mike&lt;/a&gt; 一样的 coder.适用High Sierra ~ Mojave.&lt;/p&gt;
-&lt;p&gt;1, System Preferences
-2, Language &amp;amp; region
-3, 把 Englis 拖到列表顶部,设为 Primary
-4, (重点,重点,重点)右侧的 List sort order: Chinese(Pinyin Sort Order)&lt;/p&gt;
-&lt;p&gt;看看状态栏, U.S. 是不是跑到中文输入法的上面了.搞定.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/09/2395988471.png&#34; alt=&#34;setDefaultInputSource.png&#34;&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/mac-os-x-%E8%AE%BE%E7%BD%AE%E8%8B%B1%E6%96%87%E4%B8%BA%E9%BB%98%E8%AE%A4%E8%BE%93%E5%85%A5%E6%B3%95/ - kissjava.cn</description>
         </item>
     
     

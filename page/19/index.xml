@@ -6,9 +6,117 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>PHP5的SOAP扩展</title>
+        <link>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</link>
+        <pubDate>Mon, 11 May 2009 17:09:07 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;简介&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;PHP的SOAP扩展可以用来提供和使用Web services。换句话说，PHP开发者可以利用这个PHP扩展来写他们自己的Web services，也可以写一些客户端来使用已有的Web services。&lt;/p&gt;
+&lt;p&gt;PHP5中的这个SOAP扩展目的是为了实现PHP对Web services的支持。与其它实现PHP对Web services的支持的方法不同，SOAP扩展是用C写的，因此它比其它方法（比较出名的Nusoap类）具有速度优势。&lt;/p&gt;
+&lt;p&gt;SOAP扩展支持以下规范。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SOAP 1.1&lt;/li&gt;
+&lt;li&gt;SOAP 1.2&lt;/li&gt;
+&lt;li&gt;WSDL 1.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SOAP扩展主要用来处理RPC形式的Web services。不过，你也可以使用文本形式的WSDL文件配合WSDL模式的服务端和客户端。&lt;/p&gt;
+&lt;p&gt;这个扩展使用 GNOME XML库来处理XML。&lt;/p&gt;
+&lt;p&gt;扩展中的类
+这个扩展实现了6个类。
+其中有三个高级的类，它们的方法很有用，它们是 SoapClient，SoapServer和SoapFault。
+另外三个类除了构造器外没有其它别的方法，这三个是低级的类，它们是SoapHeader，SoapParam和SoapVar。
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapClient类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类用来使用Web services。SoapClient类可以作为给定Web services的客户端。
+它有两种操作形式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WSDL 模式&lt;/li&gt;
+&lt;li&gt;Non-WSDL 模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在WSDL模式中，构造器可以使用WSDL文件名作为参数，并从WSDL中提取服务所使用的信息。&lt;/p&gt;
+&lt;p&gt;non-WSDL模式中使用参数来传递要使用的信息。这个类有许多可以用来使用服务的有用的方法。其中SoapClient::__soapCall()是最重要的。这个方法可以用来调用服务中的某个操作。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapServer类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类可以用来提供Web services。与SoapClient类似，SoapServer也有两种操作模式：WSDL模式和non-WSDL模式。这两种模式的意义跟 SoapClient的两种模式一样。在WSDL模式中，服务实现了WSDL提供的接口；在non-WSDL模式中，参数被用来管理服务的行为。&lt;/p&gt;
+&lt;p&gt;在SoapServer类的众多方法中，有三个方法比较重要。它们是SoapServer::setClass()，SoapServer::addFunction()和SoapServer::handle()。&lt;/p&gt;
+&lt;p&gt;SoapServer::setClass()方法设定用来实现Web Service的类。SoapServer::setClass所设定的类中的所有公共方法将成为Web Services的操作(operation)。&lt;/p&gt;
+&lt;p&gt;SoapServer::addFunction()方法用来添加一个或多个作为Web Services操作(operation)的函数。&lt;/p&gt;
+&lt;p&gt;SoapServer:: handle()方法指示Web Service脚本开始处理进入的请求。Web Service脚本是用PHP脚本写的一个或多个SoapServer对象的实例。尽管你可以有不止一个的SoapServer对象，但通常的习惯是一个脚本只拥有一个SoapServer实例。在调用SoapServer::handle()方法之前，Web Service脚本会使用设置在SoapServer对象实例上的任何信息来处理进入的请求和输出的相应。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapFault类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类从Exception类继承而来，可以用来处理错误。SoapFault实例可以抛出或获取Soap错误的相关信息并按程序员的请求处理。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapHeader类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这个类可以用来描述SOAP headers。它只是一个只包含构造器方法的数据容器。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapParam类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;SoapParam也是一个只包含构造器方法的数据容器。这个方法可以用来描述传递给Web services操作的参数。在non-WSDL模式中这是一个很有用的类，可以用来传递所期望格式的参数信息。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SoapVar类&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;SoapVar也是一个只包含构造器的低级类，与SoapHeader和SoapParam类相似。这个类可以用来给一个Web services操作传递编码参数。这个类对non-WSDL中传递类型信息是非常有用的。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;WSDL VS. non-WSDL模式&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Web Services有两种实现模式：契约先行(Contract first)模式和代码先行(Code first)模式。&lt;/p&gt;
+&lt;p&gt;契约先行模式使用了一个用XML定义的服务接口的WSDL文件。WSDL文件定义了服务必须实现或客户端必须使用的接口。SoapServer和SoapClient的WSDL模式就基于这个概念。&lt;/p&gt;
+&lt;p&gt;在代码先行模式中，首先要先写出实现服务的代码。然后在大多数情况下，代码会产生一个契约，换种说法，一个WSDL。接着客户端在使用服务的时候就可以使用那个WSDL来获得服务的接口。尽管如此，PHP5的扩展并没有从代码输出一个WSDL的规定，考虑到这种情况，可以在non-WSDL模式下使用 SoapServer和SoapClient。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;SOAP扩展与Hello World&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;这一节介绍如何使用WSDL模式和non-WSDL模式来实现服务和客户端。相对而言，使用WSDL模式来实现服务和客户端会比较容易，假定已经有一个定义了接口的WSDL文件。（淡水对WSDL还比较陌生，就只关注non-wsdl模式了。）&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在这个Hello World例子的服务中有一个被命名为greet的操作。这个操作有一个字符串形式的名字并返回一个字符串形式的greeting。所用到的WSDL如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;WSDL模式服务&lt;/p&gt;
+&lt;p&gt;下面是WSDL模式的服务所使用的SOAP扩展API代码：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在这个服务的实现过程中，函数实现了WSDL所定义的服务操作greet，greet操作有一个WSDL指定的参数，按照greet操作的语义，这个参数是一个用户的名字。最后handle调用了触发处理请求的服务对象。&lt;/p&gt;
+&lt;p&gt;WSDL模式客户端&lt;/p&gt;
+&lt;p&gt;客户端代码如下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;客户端代码中，首先创建一个使用WSDL文件作参数的SoapClient实例。接着__soapCall()调用作为参数传入它的操作，也就是greet和传入操作的参数。
+请求和响应&lt;/p&gt;
+&lt;p&gt;当你将上述的PHP脚本放在你web服务器目录下的文档中，并利用WEB浏览器或在PHP解析器的命令行调用脚本，客户端发送一个SOAP请求到服务端脚本，服务端将向客户端发送一个SOAP响应来响应客户端的请求。&lt;/p&gt;
+&lt;p&gt;下面是客户端所发送的SOAP请求：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&amp;lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;rdquo;                    &lt;br&gt;
+xmlns:ns1=&amp;quot;http://wso2.org/wsf/php/helloService&amp;quot;&amp;gt; &lt;br&gt;
+&lt;a href=&#34;SOAP-ENV:Body&#34;&gt;SOAP-ENV:Body&lt;/a&gt;
+&lt;a href=&#34;ns1:greet&#34;&gt;ns1:greet&lt;/a&gt;
+&lt;a href=&#34;ns1:name&#34;&gt;ns1:name&lt;/a&gt;Sam&amp;lt;/ns1:name&amp;gt;
+&amp;lt;/ns1:greet&amp;gt;
+&amp;lt;/SOAP-ENV:Body&amp;gt;
+&amp;lt;/SOAP-ENV:Envelope&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+下面是服务端响应上诉请求而发送的SOAP响应：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&amp;lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;rdquo;
+xmlns:ns1=&amp;quot;http://wso2.org/wsf/php/helloService&amp;quot;&amp;gt;
+&lt;a href=&#34;SOAP-ENV:Body&#34;&gt;SOAP-ENV:Body&lt;/a&gt;
+&lt;a href=&#34;ns1:greetResponse&#34;&gt;ns1:greetResponse&lt;/a&gt;
+&lt;a href=&#34;ns1:greetReturn&#34;&gt;ns1:greetReturn&lt;/a&gt;Hello Sam&amp;lt;/ns1:greetReturn&amp;gt;
+&amp;lt;/ns1:greetResponse&amp;gt;
+&amp;lt;/SOAP-ENV:Body&amp;gt;
+&amp;lt;/SOAP-ENV:Envelope&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+上面的SOAP消息都是利用WSDL模式的服务端和客户端来获取的。也可以利用non-WSDL模式的服务端和客户端来产生与上面相同的SOAP消息。但是，PHP代码必须有一点改变。下一节会说明如何使用non-WSDL模式。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;non-WSDL模式服务端&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$server = new SoapServer(null, array(&amp;lsquo;uri&amp;rsquo; =&amp;gt; &amp;lsquo;&lt;a href=&#34;http://wso2.org/wsf/php/helloService&#39;));&#34;&gt;http://wso2.org/wsf/php/helloService&#39;));&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;$server-&amp;gt;addFunction(&amp;lsquo;greet&amp;rsquo;);
+$server-&amp;gt;handle();
+?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在non -WSDL模式中，想WSDL模式一样首先实现greet函数的功能，但是函数实现的方式跟WSDL模式稍稍有所不同。在non-WSDL模式中，我们必须返回一个SoapParam对象作为响应，而不是一个数组。创建服务时，第一个参数设为null，说明没有提供WSDL；接着传递一个选项作为参数，这个选项参数是服务的URI。最后像WSDL模式一样调用剩下的方法。&lt;/p&gt;
+&lt;p&gt;non-WSDL模式客户端&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在non-WSDL模式中，因为没有使用WSDL，传递了一个包含服务所在位置和服务URI的参数数组作为参数。然后象WSDL模式中一样调用__soapCall()方法，但是使用了SoapParam类用指定格式打包参数。返回的结果将获取greet中的响应。&lt;/p&gt;
+- https://kissjava.cn/posts/php5%E7%9A%84soap%E6%89%A9%E5%B1%95/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -353,22 +461,6 @@ $this-&amp;gt;mp_cache-&amp;gt;delete($filename)
 删除名为$filename的cache.&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>徐徐的Zend studio For Eclipse 教程</title>
-        <link>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</link>
-        <pubDate>Mon, 23 Mar 2009 10:01:58 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ -&lt;p&gt;如题，好东西啊
-不说废话，给出地址
-&lt;!-- raw HTML omitted --&gt;zend studio 6.1中文视频教程-快速入门&lt;!-- raw HTML omitted --&gt;
-&lt;a href=&#34;http://www.zendstudio.net/zend_studio-6_1-getting-start/&#34;&gt;http://www.zendstudio.net/zend_studio-6_1-getting-start/&lt;/a&gt;
-感谢&lt;!-- raw HTML omitted --&gt;徐徐&lt;!-- raw HTML omitted --&gt;的工作，好淫啊 :)&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%BE%90%E5%BE%90%E7%9A%84zend-studio-for-eclipse-%E6%95%99%E7%A8%8B/ - kissjava.cn</description>
         </item>
     
     

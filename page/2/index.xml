@@ -6,9 +6,111 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part12 CORS 跨域资源共享和Request 预检</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
+        <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CORS机制，它使用额外的 HTTP 头来告诉浏览器  让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。
+以下是可用于CORS配置的标头列表&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Access-Control-Allow-Origin
+Access-Control-Allow-Methods
+Access-Control-Allow-Headers
+Access-Control-Allow-Credentials
+Access-Control-Max-Age
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CORS配置位于目标Web应用程序的服务器端。
+例如：我们的应用程序在本地从google.com中提取数据，然后CORS配置位于google.com;如果我们收到CORS错误，则无法完成任何其他操作，因为CORS应用程序目标由google.com上的人员控制。&lt;/p&gt;
+&lt;p&gt;练习时间：
+创建一个新项目。这个简单的应用程序将在&lt;code&gt;http//localhost:9000/&lt;/code&gt;上运行，然后我们将尝试从其他域访问它.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;log&amp;quot;
+    &amp;quot;net/http&amp;quot;
+)
+
+func main() {
+    http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;https://www.google.com&amp;quot;)
+        w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;OPTIONS, GET, POST, PUT&amp;quot;)
+        w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;Content-Type, X-CSRF-Token&amp;quot;)
+
+        if r.Method == &amp;quot;OPTIONS&amp;quot; {
+            w.Write([]byte(&amp;quot;allowed&amp;quot;))
+            return
+        }
+
+        w.Write([]byte(&amp;quot;hello&amp;quot;))
+    })
+
+    log.Println(&amp;quot;Starting app at :9000&amp;quot;)
+    http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的代码表示允许从&lt;code&gt;https://www.google.com&lt;/code&gt;发送的请求进入;我们选择了谷歌域名，因为测试将从那里完成，请求的目标是&lt;code&gt;http://localhost:9000/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们模拟是从google.com 访问 本地主机Web应用&lt;code&gt;localhost:9000&lt;/code&gt;（使用Chrome的开发人员工具从浏览器执行请求）。不是通过&lt;code&gt;localhost:9000&lt;/code&gt;访问&lt;code&gt;google.com&lt;/code&gt;，不要理解为颠倒。&lt;/p&gt;
+&lt;p&gt;再次说明，localhost:9000是受，google.com是攻。够形象了吧。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt;标头确定允许哪些HTTP方法（使用逗号分隔符输入）
+&lt;code&gt;Access-Control-Allow-Headers&lt;/code&gt;标头确定请求中允许哪些标头密钥。&lt;/p&gt;
+&lt;p&gt;好的，我们可以测试了。
+首先，请确保安装了Google Chrome；
+其次，你可以爬墙；
+然后安装jQuery Injector扩展。
+打开&lt;code&gt;https://www.google.com&lt;/code&gt;然后注入jQuery。通过强制注入jQuery然后从谷歌网站我们可以使用jQuery。
+打开Chrome开发者工具，切换到Console标签页。输入以下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$.ajax({
+    url: &amp;quot;http://localhost:9000/index&amp;quot;,
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ok,结果如下图
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2029474600.png&#34; alt=&#34;cors_from_google_to_localhost.png&#34;&gt;
+我切换到hk代理，打开google.com.hk，在执行操作就不能访问。因为&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;我们只设置了&lt;code&gt;www.google.com&lt;/code&gt;.如果我们需要能访问呢？以下就可以搞定允许多个主机来访问：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, 
+        &amp;quot;https://www.google.com, https://www.google.com.hk&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然也可以不设防，赤果果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;)
+w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;*&amp;quot;)
+w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;*&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##第三方CORS库来稍微优雅点解决问题
+&lt;code&gt;$ go get github.com/rs/cors&lt;/code&gt;
+利用中间件，代码优雅&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/rs/cors&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+
+	corsMiddleware := cors.New(cors.Options{
+		AllowedOrigins: []string{&amp;quot;https://www.google.com.hk&amp;quot;, &amp;quot;https://www.google.com&amp;quot;},
+		AllowedMethods: []string{&amp;quot;OPTIONS&amp;quot;, &amp;quot;GET&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PUT&amp;quot;},
+		AllowedHeaders: []string{&amp;quot;Content-Type&amp;quot;, &amp;quot;X-CSRF-Token&amp;quot;},
+		Debug:          true,
+	})
+	e.Use(echo.WrapMiddleware(corsMiddleware.Handler))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &amp;quot;hello&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定。&lt;/p&gt;
+- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1049,56 +1151,6 @@ curl -X POST http://localhost:9000/user \
 # output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Joe&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很神奇，没有定义xml，居然也可以解析出来&lt;/p&gt;
 - https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part2 路由使用及静态文件</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
-        <pubDate>Sat, 17 Aug 2019 10:02:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
-echo的路由处理及静态文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-)
-
-var ActionIndex = func(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(&amp;quot;from action index&amp;quot;))
-}
-
-var ActionHome = http.HandlerFunc(
-	func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(&amp;quot;from action home&amp;quot;))
-	},
-)
-
-var ActionAbout = echo.WrapHandler(
-	http.HandlerFunc(
-		func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte(&amp;quot;from action about&amp;quot;))
-		},
-	),
-)
-
-func main() {
-	r := echo.New()
-
-	r.Static(&amp;quot;/static&amp;quot;, &amp;quot;assets&amp;quot;)
-	r.GET(&amp;quot;/index&amp;quot;, echo.WrapHandler(http.HandlerFunc(ActionIndex)))
-	r.GET(&amp;quot;/home&amp;quot;, echo.WrapHandler(ActionHome))
-	r.GET(&amp;quot;/about&amp;quot;, ActionAbout)
-
-	r.Start(&amp;quot;:9000&amp;quot;)
-}
-
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     

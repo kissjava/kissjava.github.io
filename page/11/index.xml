@@ -6,9 +6,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CodeIgniter Ajax Request</title>
+        <link>https://kissjava.cn/posts/codeigniter-ajax-request/</link>
+        <pubDate>Mon, 28 Nov 2011 23:30:41 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/codeigniter-ajax-request/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-ajax-request/ -&lt;p&gt;先添加一行简单的代码，在ci里定义ajax的请求。&lt;/p&gt;
+&lt;p&gt;在application/config/constants.php 添加如下：
+&lt;!-- raw HTML omitted --&gt;
+// Define Ajax Request
+define(&amp;lsquo;IS_AJAX&amp;rsquo;, isset($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) &amp;amp;&amp;amp; strtolower($_SERVER[&amp;lsquo;HTTP_X_REQUESTED_WITH&amp;rsquo;]) == &amp;lsquo;xmlhttprequest&amp;rsquo;);
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在控制器里就可以判断是否是Ajax的请求，从而决定是否load view。
+&lt;!-- raw HTML omitted --&gt;
+public function test(){
+if(IS_AJAX){
+$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;ajax_test&amp;rsquo;);
+}else{
+echo &amp;lsquo;Direct access not allowed!&#39;;
+// or load other view file.
+//$this-&amp;gt;load-&amp;gt;view(&amp;lsquo;test&amp;rsquo;);
+}
+}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Codeigniter里在登录后使用Ajax的简单方式.如果没有登录，发送401。
+&lt;!-- raw HTML omitted --&gt;
+public function secure(){
+if(! $this-&amp;gt;session-&amp;gt;userdata(&amp;lsquo;logged_in&amp;rsquo;)){
+header(&amp;lsquo;HTTP/1.1 401 Unauthorized);
+}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//other code...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;
+再在js做判断跳转：
+&lt;!-- raw HTML omitted --&gt;
+$().ajaxError(function(xhr,status,err){
+if(status.status == 401){
+window.location.href=&amp;rsquo;/login&amp;rsquo;;
+}
+});
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/codeigniter-ajax-request/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1630,34 +1677,6 @@ public function get_file($file_id)
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;嗯，简单的应用。没有涉及的权限、上传的进度条等。&lt;/p&gt;
 - https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Mysql的随机读取</title>
-        <link>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</link>
-        <pubDate>Sun, 19 Jun 2011 09:56:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ -&lt;p&gt;随机读取数据库记录，搜索发现很多人都使用 order by rand() 来达到该目的，这是mysql提供的功能。但是实际上存在非常严重的性能问题。 如果表里记录不多，偶尔用一下也可以。但是如果数据多的话，就会凸显出查询的性能问题。&lt;/p&gt;
-&lt;p&gt;随机查询5条记录：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;在数十万记录的表里，这样的查询要好几秒的时间。下面采用JOIN的方式改进一下：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;这样得到连续的5条记录。要不联续的记录，可以连续查询几次，每次limit 1条。这淡水比较推荐，SQL语句比较清晰，效率也不错。&lt;/p&gt;
-&lt;p&gt;还有，可以这样的：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;其他更复杂的实现，淡水无视之。&lt;/p&gt;
-&lt;p&gt;update：2011年8月24日 15:03:26&lt;/p&gt;
-&lt;p&gt;如果随机抓取，并且要分页呢？&lt;/p&gt;
-&lt;p&gt;在表里增加一个sortbyrand字段。要随机排序時只需一个简单的sql。&lt;/p&gt;
-&lt;p&gt;例如记录总数是10000
-&lt;!-- raw HTML omitted --&gt;
-update table_name set sortbyrand=FLOOR(RAND()*10000);
-&lt;!-- raw HTML omitted --&gt;
-抓取只需要order by sortbyrand就可以了，其实这个是最不耗脑子的。&lt;/p&gt;
-- https://kissjava.cn/posts/mysql%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/ - kissjava.cn</description>
         </item>
     
     

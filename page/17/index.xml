@@ -6,9 +6,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>mysql的几个函数</title>
+        <link>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</link>
+        <pubDate>Thu, 15 Oct 2009 10:45:42 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ -&lt;p&gt;缘由是数据库里的fax是由“区号+空格+号码”组成的，但是现在需要去掉空格。下图：&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;先说简单点的方法：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+UPDATE customer_copy set fax=REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)   where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;;
+&lt;!-- raw HTML omitted --&gt;
+细说一下：
+REPLACE(fax,&amp;rsquo; &amp;lsquo;,&#39;&#39;)，是替换空格
+REGEXP ，是mysql里的正则
+&amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;，是匹配 以至少有一个数字开头，后面有个空格，后面再跟着至少一个数字的记录。
+&lt;!-- raw HTML omitted --&gt;再来一个另类的：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+UPDATE customer_copy set fax= concat(substring_index(fax,&amp;rsquo; &amp;lsquo;,1), substring_index(fax,&amp;rsquo; &amp;lsquo;,-1))  where fax REGEXP &amp;lsquo;^[0-9]+[[:space:]][0-9]+&amp;rsquo;;
+&lt;!-- raw HTML omitted --&gt;
+这里用到了两个函数:concat(),substring_index()
+concat(p1,p2,p3) 是拼接函数。把他的所有参数连接起来,结果就是p1p2p3
+substring_index(str,delim,count) 返回字符串str中,第count个分隔符delim之前的子串.
+SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysql.com&lt;/a&gt;&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, 2); 返回第2个.之前的字串，也就是www.mysql
+SUBSTRING_INDEX(&amp;lsquo;&lt;a href=&#34;http://www.mysql.com&#34;&gt;www.mysql.com&lt;/a&gt;&amp;rsquo;, &amp;lsquo;.&amp;rsquo;, -2); 返回mysql.com
+解释一下，如果count是负数，就从右边开始计数和截取。
+substring_index(fax,&amp;rsquo; &amp;lsquo;,1), 返回区号部分，substring_index(fax,&amp;rsquo; &amp;lsquo;,-1), 返回空格后的号码，再用concat一组合，也就是去掉空格后的号码了。&lt;/p&gt;
+- https://kissjava.cn/posts/mysql%E7%9A%84%E5%87%A0%E4%B8%AA%E5%87%BD%E6%95%B0/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -228,31 +259,6 @@ echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_al
 仅无法搜索文章的权限：1101111
 非编辑人员所有的权限：1110010&lt;/p&gt;
 - https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>忘记了zend studio for eclipse 怎么调试了</title>
-        <link>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</link>
-        <pubDate>Tue, 21 Jul 2009 10:21:01 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ -&lt;p&gt;老是在netbeans和zend studio for eclipse跳来跳去的。&lt;/p&gt;
-&lt;p&gt;今天突然有段代码需要调试一下。正好用的是zend studio for eclipse。可是折腾来折腾去，别说默认断点在第一行了，就是其他设置的断点也都被直接越过，直接到底跑完程序-_-!!&lt;/p&gt;
-&lt;p&gt;这下淡水愣了，就像陶喆的《小镇姑娘》一样了，“不明白，不明白。。。”。赶紧去翻翻&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;的&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 。可是没啥发现啊，操作差不多啊。又回到他的教程列表，想淘淘看。忽然眼前一道光芒闪过，嗯，是的当时感觉就是如此。“&lt;!-- raw HTML omitted --&gt;服务器调试——Zend Debugger 的安装教程&lt;!-- raw HTML omitted --&gt;”映入我的眼前。原来，原来淡水忘记安装Zend Debugger了。&lt;!-- raw HTML omitted --&gt;Gently&lt;!-- raw HTML omitted --&gt;在&lt;!-- raw HTML omitted --&gt;Zend Studio For Eclipse 6.1 视频教程-调试php程序&lt;!-- raw HTML omitted --&gt; 中并没有特别把安装Zend Debugger，着重提一下。而淡水又没仔细看，就。。。&lt;/p&gt;
-&lt;p&gt;说说怎样安装Zend Debugger吧，比较简单的。Gently的教程里都有写了。这里淡水给自己加深一下印象。&lt;/p&gt;
-&lt;p&gt;第一步：官网下载Zend Debugger，下载URL：
-&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://downloads.zend.com/pdt/server-debugger/ZendDebugger-5.2.14-cygwin_nt-i386.zip&#34;&gt;http://downloads.zend.com/pdt/server-debugger/ZendDebugger-5.2.14-cygwin_nt-i386.zip&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;
-请查zip下面的readme文件，可以看到5_2_x_comp目录为PHP 5.2.x所用的版本，把下面的ZendDebugger.dll copy 到php的扩展库目录${php_home}ext，&lt;!-- raw HTML omitted --&gt;把dummy.php copy到phpBB的部署的根目录下，dummy.php主要用来与浏览器安装的Zend Studio Toolbar通信&lt;!-- raw HTML omitted --&gt;。&lt;/p&gt;
-&lt;p&gt;第二步：配置php.ini文件，加入：
-[zend]
-zend_extension_ts=D:PHPPHP5.2.6extZendDebugger.dll
-zend_debugger.allow_hosts=127.0.0.1/10
-zend_debugger.expose_remotely=always
-;以上配置中的127.0.0.1/10代表127.0.0.1到127.0.0.10的地址段允许调试 &lt;/p&gt;
-&lt;p&gt;以上橙色部分，淡水没有去做，这也不影响zend studio for eclipse的正常调试。&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%BF%98%E8%AE%B0%E4%BA%86zend-studio-for-eclipse-%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     

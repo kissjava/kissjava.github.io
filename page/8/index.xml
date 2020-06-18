@@ -6,9 +6,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>PyInstaller无法easy_install或pip安装</title>
+        <link>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 04 Jan 2014 13:53:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ -&lt;p&gt;应该是由于奇葩的网络环境，总是无法顺利的采用easy_install，pip安装pyinstaller。
+只好打开浏览器，http://www.pyinstaller.org/ 下载 PyInstaller 2.1 (zip) 手动安装。
+也就一步，就是解压。淡水解压到d盘根目录
+使用也很简单：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PS C:\Users\Frank&amp;gt; d:
+PS D:\&amp;gt; cd .\PyInstaller-2.1
+PS D:\PyInstaller-2.1&amp;gt; .\pyinstaller.py --noconsole --icon D:\wms\julin.ico D:\wms\julinWms.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和easy_install安装后的使用方法几乎一样。
+嗯，没多少干货。2014了，随便写点，证明一下还在喘气。&lt;/p&gt;
+- https://kissjava.cn/posts/pyinstaller%E6%97%A0%E6%B3%95easy_install%E6%88%96pip%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -863,36 +884,6 @@ icon,设置exe的图标文件(图标有限制,按128,64,48,32,16的大小排列,
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>How to run a wxPython GUI app in Sublime Text 2</title>
-        <link>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</link>
-        <pubDate>Tue, 27 Aug 2013 10:35:55 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 1:&lt;!-- raw HTML omitted --&gt;
-Preference-&amp;gt;Browse Packages-&amp;gt;python，编辑Python.sublime-build文件，在字典里添加path item，value为python路径，淡水的如下：
-&lt;!-- raw HTML omitted --&gt;
-{
-&amp;ldquo;cmd&amp;rdquo;:[&amp;ldquo;python.exe&amp;rdquo;, &amp;ldquo;-u&amp;rdquo;, &amp;ldquo;$file&amp;rdquo;],
-&amp;ldquo;path&amp;rdquo;:&amp;ldquo;C:/Python27&amp;rdquo;,
-&amp;ldquo;file_regex&amp;rdquo;: &amp;ldquo;^[ ]&lt;em&gt;File &amp;ldquo;(&amp;hellip;&lt;/em&gt;?)&amp;rdquo;, line ([0-9]*)&amp;rdquo;,
-&amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.python&amp;rdquo;
-}
-&lt;!-- raw HTML omitted --&gt;
-这就解决了python的ctrl+b的build（python里算是运行）问题；但是如果使用了wxpython它还是不能跑起来。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Step 2:&lt;!-- raw HTML omitted --&gt;
-Preference-&amp;gt;Browse Packages-&amp;gt;Default，编辑exec.py，31行左右注释掉一行代码，淡水的如下（从代码来看适用windows系统）：
-&lt;!-- raw HTML omitted --&gt;
-if os.name == &amp;ldquo;nt&amp;rdquo;:
-startupinfo = subprocess.STARTUPINFO()
-# startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-&lt;!-- raw HTML omitted --&gt;
-应该就可以直接ctrl+b跑wxpython的程序了。这下调试不用手动在dos和sublime间来回切换了。&lt;/p&gt;
-- https://kissjava.cn/posts/how-to-run-a-wxpython-gui-app-in-sublime-text-2/ - kissjava.cn</description>
         </item>
     
     

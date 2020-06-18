@@ -6,9 +6,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>E-TextEditor试用手记</title>
+        <link>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</link>
+        <pubDate>Tue, 30 Sep 2008 14:14:53 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/ -&lt;p&gt;嗯，这里快长草了。&lt;/p&gt;
+&lt;p&gt;淡水以前看ci的视频，看到mac下的textmate，哈喇子飞流直下-_-。以后的一段日子总是在寻求在windows下类似的编辑器。向google大神请教，给了我两个答案一个是intype，另一个还是intype，玩笑了（想起鲁迅了）。还有一个就是本文的猪脚“E-TextEditor”。但是当时淡水试用以后很是失望，intype没有project manage功能，E-texteditor安装时候就一堆的错误。无法只能用editplus凑合，没几日就无法忍受editplus简陋的目录管理了，换成了Ultraedit。只是他们都没有bundles，用来小修小改还好，用它们做项目，太累了。总会有些笔误产生。&lt;/p&gt;
+&lt;p&gt;故事到了这里，貌似该猪脚出场了。等等，还没到，实际情况是这样的。intype的最新Unstable版,支持project manage了。用了两天，发现BUG太多了。无奈放弃。这个时候猪脚上场了。但是这次淡水不是用的官方的版本，而是所谓的&lt;!-- raw HTML omitted --&gt;绿色特别版&lt;!-- raw HTML omitted --&gt;。下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.xdowns.com/soft/38/39/2008/Soft_40447.html&#34;&gt;http://www.xdowns.com/soft/38/39/2008/Soft_40447.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; 试用一下不错。没有问题，又下了一份E-TextEditor Codeigniter 1.6.3 Bundle。嗯，测试一下，很好。淡水的系统是vista，没有任何问题，在虚拟机的xp上跑也正常。晒个图&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Codeigniter bundles 下载地址：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://www.sellersrank.com/codeigniter-textmate-bundle-download/&#34;&gt;http://www.sellersrank.com/codeigniter-textmate-bundle-download/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/e-texteditor%E8%AF%95%E7%94%A8%E6%89%8B%E8%AE%B0/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -228,71 +243,6 @@ views文件夹下有个专门的admin文件夹，里面都是管理页面（inde
 &lt;!-- raw HTML omitted --&gt;limit Limit the number of returned results&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/codeigniter-mongodb-library/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>CodeIgniter 带简单权限控制的登录实例</title>
-        <link>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</link>
-        <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ -&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;function __construct()
-{
-    parent::__construct();
-    @session_start();
-}
-
-function login()
-{
-    unset($_SESSION[&#39;user&#39;]);
-    $email = $this-&amp;gt;input-&amp;gt;post(&#39;email&#39;);
-    $password = md5($this-&amp;gt;input-&amp;gt;post(&#39;password&#39;));
-    $this-&amp;gt;db-&amp;gt;where(&#39;email&#39;,$email);
-    $this-&amp;gt;db-&amp;gt;where(&#39;password&#39;,$password);
-    $this-&amp;gt;db-&amp;gt;where(&#39;status &amp;lt;&amp;gt;&#39;,0);
-    $query = $this-&amp;gt;db-&amp;gt;get(&#39;users&#39;);
-    if(!$query-&amp;gt;num_rows()!=0)
-        return false;
-    $row = $query-&amp;gt;row_array();
-    $_SESSION[&#39;user&#39;][&#39;id&#39;] = $row[&#39;id&#39;];
-    $_SESSION[&#39;user&#39;][&#39;name&#39;] = $row[&#39;name&#39;];
-    $_SESSION[&#39;user&#39;][&#39;type&#39;] = $row[&#39;type&#39;];
-    return true;
-}
-
-function logout()
-{
-    unset($_SESSION[&#39;user&#39;]);
-}
-
-function isPermitted()
-{
-    $_SESSION[&#39;return&#39;] = $this-&amp;gt;uri-&amp;gt;uri_string();
-
-    if(isset($_SESSION[&#39;user&#39;][&#39;type&#39;])) {
-        $uri = substr($this-&amp;gt;uri-&amp;gt;uri_string(), 1);
-        $permitted = $this-&amp;gt;permitted;
-        $indice = $permitted[$_SESSION[&#39;user&#39;][&#39;type&#39;]][&#39;url&#39;];
-        foreach($indice as $i){
-            if(eregi(&#39;(&#39;. $i .&#39;)&#39;, $uri)){
-                unset($_SESSION[&#39;voltar&#39;]);
-                return true;
-            }
-        }
-        return false;
-    }
-    else {
-        redirect(&#39;access/login&#39;,&#39;refresh&#39;);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}
-?&amp;gt;
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/codeigniter-%E5%B8%A6%E7%AE%80%E5%8D%95%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E7%9A%84%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/ - kissjava.cn</description>
         </item>
     
     

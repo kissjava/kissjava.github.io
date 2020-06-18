@@ -6,9 +6,59 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part2 路由使用及静态文件</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Sat, 17 Aug 2019 10:02:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+echo的路由处理及静态文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+var ActionIndex = func(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(&amp;quot;from action index&amp;quot;))
+}
+
+var ActionHome = http.HandlerFunc(
+	func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(&amp;quot;from action home&amp;quot;))
+	},
+)
+
+var ActionAbout = echo.WrapHandler(
+	http.HandlerFunc(
+		func(w http.ResponseWriter, r *http.Request) {
+			w.Write([]byte(&amp;quot;from action about&amp;quot;))
+		},
+	),
+)
+
+func main() {
+	r := echo.New()
+
+	r.Static(&amp;quot;/static&amp;quot;, &amp;quot;assets&amp;quot;)
+	r.GET(&amp;quot;/index&amp;quot;, echo.WrapHandler(http.HandlerFunc(ActionIndex)))
+	r.GET(&amp;quot;/home&amp;quot;, echo.WrapHandler(ActionHome))
+	r.GET(&amp;quot;/about&amp;quot;, ActionAbout)
+
+	r.Start(&amp;quot;:9000&amp;quot;)
+}
+
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part2-%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1013,89 +1063,6 @@ func main() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8golang%E6%89%A7%E8%A1%8C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Go从Console读取输入</title>
-        <link>https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</link>
-        <pubDate>Mon, 29 Jul 2019 22:24:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
-##一个简单的shell
-一个示例的shell，没啥用：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;bufio&amp;quot;
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;os&amp;quot;
-	&amp;quot;strings&amp;quot;
-)
-
-func main() {
-
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println(&amp;quot;Simple Shell&amp;quot;)
-	fmt.Println(&amp;quot;---------------------&amp;quot;)
-
-	for {
-		fmt.Print(&amp;quot;-&amp;gt; &amp;quot;)
-		text, _ := reader.ReadString(&#39;\n&#39;)
-		// 将CRLF转换为LF
-		text = strings.Replace(text, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;, -1)
-		// 如果windows，要用下面的
-		// text = strings.Replace(text, &amp;quot;\r\n&amp;quot;, &amp;quot;&amp;quot;, -1)
-
-		if strings.Compare(&amp;quot;hi&amp;quot;, text) == 0 {
-			fmt.Println(&amp;quot;hello, Yourself&amp;quot;)
-		}
-
-		if strings.Compare(&amp;quot;bye&amp;quot;, text) == 0 {
-			fmt.Println(&amp;quot;Bye.&amp;quot;)
-			break
-		}
-
-	}
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入hi，它会打个招呼；输入bye，退出shell。&lt;/p&gt;
-&lt;p&gt;##读取单个UTF-8编码的Unicode字符&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;bufio&amp;quot;
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;os&amp;quot;
-)
-
-func main() {
-
-	reader := bufio.NewReader(os.Stdin)
-	char, _, err := reader.ReadRune()
-
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	// 打印出unicode值，即 A -&amp;gt; 65, a -&amp;gt; 97, 杨 -&amp;gt; 26472
-	fmt.Println(char)
-
-	switch char {
-	case &#39;A&#39;:
-		fmt.Println(&amp;quot;A Key Pressed&amp;quot;)
-		break
-	case &#39;a&#39;:
-		fmt.Println(&amp;quot;a Key Pressed&amp;quot;)
-		break
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;杨的unicode是26472.&lt;/p&gt;
-&lt;p&gt;##小结
-学习来bufio的一些用法，还穿插了一些流程控制语句，if，for，switch。&lt;/p&gt;
-- https://kissjava.cn/posts/go%E4%BB%8Econsole%E8%AF%BB%E5%8F%96%E8%BE%93%E5%85%A5/ - kissjava.cn</description>
         </item>
     
     

@@ -6,9 +6,96 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>codeigniter的数据库操作</title>
+        <link>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</link>
+        <pubDate>Thu, 19 Feb 2009 15:08:40 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ -&lt;h2 id=&#34;code-langphp&#34;&gt;用codeigniter也有一段时间了，一直没有做什么总结。
+昨日乱逛，看到有同学总结了一下ci的数据库操作，虽说不全，但是也确实可以帮助那些刚刚上手CI的同学。
+&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;链接数据库&#34;&gt;链接数据库&lt;/h2&gt;
+&lt;h2 id=&#34;db2--this-load-databasegroup_two-true&#34;&gt;$this-&amp;gt;load-&amp;gt;database();//手动连接数据库
+//连接多数据库
+$DB1 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_one&amp;rsquo;, TRUE);
+$DB2 = $this-&amp;gt;load-&amp;gt;database(&amp;lsquo;group_two&amp;rsquo;, TRUE);&lt;/h2&gt;
+&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
+&lt;p&gt;//参数绑定形式
+$sql = &amp;ldquo;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&amp;quot;;
+$this-&amp;gt;db-&amp;gt;query($sql, array(3, &amp;lsquo;live&amp;rsquo;, &amp;lsquo;Rick&amp;rsquo;));&lt;/p&gt;
+&lt;p&gt;//多结果标准查询
+$query = $this-&amp;gt;db-&amp;gt;query($sql); //自定义
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;); //便捷形式，相当于:SELECT * FROM tablename
+$query = $this-&amp;gt;db-&amp;gt;get(&amp;lsquo;tablename&amp;rsquo;, 10, 20); // 相当于: SELECT * FROM tablename LIMIT 20, 10&lt;/p&gt;
+&lt;p&gt;$query-&amp;gt;result() //对象形式
+$query-&amp;gt;result_array() //数组形式
+/*
+foreach ($query-&amp;gt;result() as $row)
+{
+echo $row-&amp;gt;title;
+echo $row-&amp;gt;name;
+echo $row-&amp;gt;email;
+}
+*/
+$query-&amp;gt;num_rows() //总条数
+$query-&amp;gt;num_fields() //字段数&lt;/p&gt;
+&lt;p&gt;//单结果标准查询
+$row = $query-&amp;gt;row(); //对象形式
+$row = $query-&amp;gt;row_array(); //数组形式
+/*
+$row = $query-&amp;gt;row_array();
+echo $row[&amp;lsquo;name&amp;rsquo;];
+*/&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;插入&#34;&gt;插入&lt;/h2&gt;
+&lt;p&gt;$data = array(
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title,
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name
+);
+$this-&amp;gt;db-&amp;gt;insert(&amp;lsquo;tablename&amp;rsquo;, $data); //便捷插入
+$this-&amp;gt;db-&amp;gt;insert_string(&amp;lsquo;tablename&amp;rsquo;, $data);  //便捷插入&lt;/p&gt;
+&lt;p&gt;$this-&amp;gt;db-&amp;gt;insert_id() //刚插入的id
+$this-&amp;gt;db-&amp;gt;affected_rows() //影响的行数(update,insert)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
+&lt;h2 id=&#34;this-db-update_stringtablename-data-where&#34;&gt;$data = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;email&amp;rsquo; =&amp;gt; $email
+);
+$where = &amp;ldquo;id = 1&amp;rdquo;;
+$this-&amp;gt;db-&amp;gt;update(&amp;lsquo;tablename&amp;rsquo;, $data);
+$this-&amp;gt;db-&amp;gt;update_string(&amp;lsquo;tablename&amp;rsquo;, $data, $where);&lt;/h2&gt;
+&lt;h2 id=&#34;删除&#34;&gt;删除&lt;/h2&gt;
+&lt;p&gt;$array = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
+);
+$this-&amp;gt;db-&amp;gt;delete(&amp;lsquo;tablename&amp;rsquo;, $array);&lt;/p&gt;
+&lt;p&gt;// Produces:
+// &amp;ldquo;DELETE FROM tablename WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;$this-&amp;gt;db-&amp;gt;truncate(&amp;lsquo;tablename&amp;rsquo;); //清空表
+// Produce: TRUNCATE tablename&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;where&#34;&gt;（where）&lt;/h2&gt;
+&lt;h2 id=&#34;-produces-where-name--name-and-title--title&#34;&gt;$array = array(
+&amp;lsquo;name&amp;rsquo; =&amp;gt; $name,
+&amp;lsquo;title&amp;rsquo; =&amp;gt; $title
+);
+$this-&amp;gt;db-&amp;gt;where($array);
+// Produces: &amp;ldquo;WHERE name = &amp;lsquo;$name&amp;rsquo; AND title = &amp;lsquo;$title&amp;rsquo;&amp;rdquo;&lt;/h2&gt;
+&lt;h2 id=&#34;this-db-count_alltablename-表中记录总行数&#34;&gt;$this-&amp;gt;db-&amp;gt;count_all(&amp;lsquo;tablename&amp;rsquo;); //表中记录总行数&lt;/h2&gt;
+&lt;p&gt;$query-&amp;gt;free_result() //释放资源
+&lt;!-- raw HTML omitted --&gt;
+出处：http://www.linvo2008.cn/blog/?p=437&lt;/p&gt;
+- https://kissjava.cn/posts/codeigniter%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -593,24 +680,6 @@ include_once(&amp;lsquo;lib.inc.php&amp;rsquo;);
 &lt;p&gt;“气急败坏！”有人笑着回答。&lt;/p&gt;
 &lt;p&gt;“记住，凡是气急败坏的男人都是穷男人。但是另外一家，太太说：’老公啊，快过春节了，老人们都想过来看看咱们，一年没见面了！’先生说：’哦，好啊好啊，应该让他们过来。这样，你让他们坐飞机过来。’这个男人就不气急败坏，他很平静。’还有，你看，咱家的房子，这三层七八间，冷冷清清的，孩子也没有人陪着玩。爷爷奶奶来了，或者姥姥姥爷来了，家里有生气，过年过节的有生气多好！’他为什么这样说？因为这个男人有钱，他不怕，他有地方住，有钱让父母过来。他有办法显示他的孝心，而且这种男人往往不会发脾气。因为他有很大的控制权，有很好的基础，任何事情到他这里都可以化解，可以平静对待。然后，一家人高高兴兴地过了春节。老人走的时候，先生问太太：’爸妈他们有什么要求没有？’’没有没有，他们都很高兴，一点要求都没有。’先生说：’我听见了，他们说老三要结婚，没房子住，他们想空出房子去住老房。这怎么可以呢？这样，在老家花6万块钱，我们出3万，三弟拿3万，盖一栋两层小楼让他们住，爸妈就不用动了。’听了这话，太太抱着丈夫说不出话来，这样的老公哪个太太不爱不感激呢？好，房子盖成了，弟弟说姐夫是好人，全村羡慕，父母开心，一家生活幸福。3万块钱，只是他一个月的工资，他愿意拿出这3万块钱。”&lt;/p&gt;
 &lt;p&gt;周教授最后说：“愿意做哪一个，你们自己选择。但是，要记住：知识不一定会带来金钱，挣钱靠的是能力。”&lt;/p&gt;- https://kissjava.cn/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>解决phpDesigner 2008 6.1.1中文语言包假死问题</title>
-        <link>https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Thu, 13 Nov 2008 12:39:09 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/ -&lt;p&gt;其实要从php视频教程说起。
-&lt;!-- raw HTML omitted --&gt;淡水&lt;!-- raw HTML omitted --&gt;以前也出过php的视频教学误人前程，前些日子看到php100有出php视频教学。去逛了好几圈，嗯，人气不错。站长很用心。还搞了一些工具方便php新人，比如easyclipse中文化，还有phpDesigner的中语言包。淡水试了phpDesigner2008的中文语言包，有些问题，一旦切换到中文就会假死。本来淡水并不用它，但是并不否认她是个杰出的编辑器。
-淡水在试了N多种方法后，终于有了办法。
-&lt;!-- raw HTML omitted --&gt;新建一个project，再切换语言。不行就打开新建的project，再切换到中文。&lt;!-- raw HTML omitted --&gt;搞定。
-哈哈，可以换着用用看了。
-没有project用其他语言就会假死，这个可能是程序的bug。
-语言包：&lt;!-- raw HTML omitted --&gt;chinese-zh&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/ - kissjava.cn</description>
         </item>
     
     

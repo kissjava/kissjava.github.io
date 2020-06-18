@@ -6,9 +6,214 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>PyQt5自定义改变窗口大小信号</title>
+        <link>https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</link>
+        <pubDate>Tue, 12 Sep 2017 11:13:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/ -&lt;p&gt;模式是没有这个信号的，但是我们可以自己创建一个 &lt;code&gt;resized&lt;/code&gt; 信号，并在 &lt;code&gt;resizeEvent&lt;/code&gt; 方法中 &lt;code&gt;emit&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;用 QtDesigner 设计个主窗口，拖了 Horizontal Layout（mainHLayout） 和窗体同一尺寸，三个 pushbutton，分割按钮的4个Horizontal Spacer。就是想改变窗体大小时，可以让按钮可以继续按比例分配空间。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/428092021.png&#34; alt=&#34;PyQt5QtDesignerResizeEvent.PNG&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;ui version=&amp;quot;4.0&amp;quot;&amp;gt;
+ &amp;lt;class&amp;gt;MainWindow&amp;lt;/class&amp;gt;
+ &amp;lt;widget class=&amp;quot;QMainWindow&amp;quot; name=&amp;quot;MainWindow&amp;quot;&amp;gt;
+  &amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;
+   &amp;lt;rect&amp;gt;
+    &amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;
+    &amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;
+    &amp;lt;width&amp;gt;800&amp;lt;/width&amp;gt;
+    &amp;lt;height&amp;gt;600&amp;lt;/height&amp;gt;
+   &amp;lt;/rect&amp;gt;
+  &amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;windowTitle&amp;quot;&amp;gt;
+   &amp;lt;string&amp;gt;MainWindow&amp;lt;/string&amp;gt;
+  &amp;lt;/property&amp;gt;
+  &amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;centralwidget&amp;quot;&amp;gt;
+   &amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;horizontalLayoutWidget&amp;quot;&amp;gt;
+    &amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;
+     &amp;lt;rect&amp;gt;
+      &amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;
+      &amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;
+      &amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;
+      &amp;lt;height&amp;gt;571&amp;lt;/height&amp;gt;
+     &amp;lt;/rect&amp;gt;
+    &amp;lt;/property&amp;gt;
+    &amp;lt;layout class=&amp;quot;QHBoxLayout&amp;quot; name=&amp;quot;mainHLayout&amp;quot;&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;spacer name=&amp;quot;horizontalSpacer&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;
+        &amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;
+       &amp;lt;/property&amp;gt;
+       &amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;
+        &amp;lt;size&amp;gt;
+         &amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;
+         &amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;
+        &amp;lt;/size&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/spacer&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton_3&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
+        &amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/widget&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;spacer name=&amp;quot;horizontalSpacer_2&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;
+        &amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;
+       &amp;lt;/property&amp;gt;
+       &amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;
+        &amp;lt;size&amp;gt;
+         &amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;
+         &amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;
+        &amp;lt;/size&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/spacer&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton_2&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
+        &amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/widget&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;spacer name=&amp;quot;horizontalSpacer_3&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;
+        &amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;
+       &amp;lt;/property&amp;gt;
+       &amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;
+        &amp;lt;size&amp;gt;
+         &amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;
+         &amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;
+        &amp;lt;/size&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/spacer&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;pushButton&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
+        &amp;lt;string&amp;gt;PushButton&amp;lt;/string&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/widget&amp;gt;
+     &amp;lt;/item&amp;gt;
+     &amp;lt;item&amp;gt;
+      &amp;lt;spacer name=&amp;quot;horizontalSpacer_4&amp;quot;&amp;gt;
+       &amp;lt;property name=&amp;quot;orientation&amp;quot;&amp;gt;
+        &amp;lt;enum&amp;gt;Qt::Horizontal&amp;lt;/enum&amp;gt;
+       &amp;lt;/property&amp;gt;
+       &amp;lt;property name=&amp;quot;sizeHint&amp;quot; stdset=&amp;quot;0&amp;quot;&amp;gt;
+        &amp;lt;size&amp;gt;
+         &amp;lt;width&amp;gt;40&amp;lt;/width&amp;gt;
+         &amp;lt;height&amp;gt;20&amp;lt;/height&amp;gt;
+        &amp;lt;/size&amp;gt;
+       &amp;lt;/property&amp;gt;
+      &amp;lt;/spacer&amp;gt;
+     &amp;lt;/item&amp;gt;
+    &amp;lt;/layout&amp;gt;
+   &amp;lt;/widget&amp;gt;
+  &amp;lt;/widget&amp;gt;
+  &amp;lt;widget class=&amp;quot;QStatusBar&amp;quot; name=&amp;quot;statusbar&amp;quot;/&amp;gt;
+ &amp;lt;/widget&amp;gt;
+ &amp;lt;resources/&amp;gt;
+ &amp;lt;connections/&amp;gt;
+&amp;lt;/ui&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;pyuic5 resizeDemo.ui -o resizeDemo.py&lt;/code&gt;生成的 Py 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(&amp;quot;MainWindow&amp;quot;)
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName(&amp;quot;centralwidget&amp;quot;)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 801, 571))
+        self.horizontalLayoutWidget.setObjectName(&amp;quot;horizontalLayoutWidget&amp;quot;)
+        self.mainHLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.mainHLayout.setContentsMargins(0, 0, 0, 0)
+        self.mainHLayout.setObjectName(&amp;quot;mainHLayout&amp;quot;)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.mainHLayout.addItem(spacerItem)
+        self.pushButton_3 = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.pushButton_3.setObjectName(&amp;quot;pushButton_3&amp;quot;)
+        self.mainHLayout.addWidget(self.pushButton_3)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.mainHLayout.addItem(spacerItem1)
+        self.pushButton_2 = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.pushButton_2.setObjectName(&amp;quot;pushButton_2&amp;quot;)
+        self.mainHLayout.addWidget(self.pushButton_2)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.mainHLayout.addItem(spacerItem2)
+        self.pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        self.pushButton.setObjectName(&amp;quot;pushButton&amp;quot;)
+        self.mainHLayout.addWidget(self.pushButton)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.mainHLayout.addItem(spacerItem3)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(&amp;quot;statusbar&amp;quot;)
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;MainWindow&amp;quot;))
+        self.pushButton_3.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;PushButton&amp;quot;))
+        self.pushButton_2.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;PushButton&amp;quot;))
+        self.pushButton.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;PushButton&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建一个入口文件，并引用 resizeDemo.py&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from PyQt5 import QtWidgets, QtCore
+from resizeDemo import Ui_MainWindow
+
+
+class Window(QtWidgets.QMainWindow):
+
+    resized = QtCore.pyqtSignal()
+
+    def __init__(self, parent=None):
+        super(Window, self).__init__(parent=parent)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.resized.connect(self.someFunction)
+
+    def resizeEvent(self, event):
+        self.resized.emit()
+
+    def someFunction(self):
+        windowWidth = self.frameGeometry().width()
+        windowHeight = self.frameGeometry().height()
+        print(&amp;quot;Window width:%d&amp;quot; % windowWidth)
+        print(&amp;quot;Window height:%d&amp;quot; % windowHeight)
+        print(&amp;quot;.....&amp;quot;)
+        # self.ui.horizontalLayoutWidget.resize(windowWidth, windowHeight - 30)
+        self.ui.mainHLayout.parent().resize(windowWidth, windowHeight - 30)
+
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    w = Window()
+    w.show()
+    sys.exit(app.exec_())
+&lt;/code&gt;&lt;/pre&gt;
+- https://kissjava.cn/posts/pyqt5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BF%A1%E5%8F%B7/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -702,72 +907,6 @@ end.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;pip install pyreadline
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上在win8.1下32位python3.4通过&lt;/p&gt;
 - https://kissjava.cn/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>cx_Freeze setup.py</title>
-        <link>https://kissjava.cn/posts/cx_freeze-setup.py/</link>
-        <pubDate>Thu, 29 Oct 2015 16:34:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/cx_freeze-setup.py/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/cx_freeze-setup.py/ -&lt;pre&gt;&lt;code&gt;from cx_Freeze import setup, Executable
-
-# http://msdn.microsoft.com/en-us/library/windows/desktop/aa371847(v=vs.85).aspx
-shortcut_table = [
-    (&amp;quot;DesktopShortcut&amp;quot;,        # Shortcut
-     &amp;quot;DesktopFolder&amp;quot;,          # Directory_
-     &amp;quot;YourAppDetailName&amp;quot;,            # App Name
-     &amp;quot;TARGETDIR&amp;quot;,              # Component_
-     &amp;quot;[TARGETDIR]AppName.exe&amp;quot;,             # Target
-     None,                     # Arguments
-     None,                     # Description
-     None,                     # Hotkey
-     None,                     # Icon
-     None,                     # IconIndex
-     None,                     # ShowCmd
-     &#39;TARGETDIR&#39;               # WkDir
-     )
-    ]
-
-# Now create the table dictionary
-msi_data = {&amp;quot;Shortcut&amp;quot;: shortcut_table}
-
-# Change some default MSI options and specify the use of the above defined tables
-bdist_msi_options = {&#39;data&#39;: msi_data}
-
-# Dependencies are automatically detected, but it might need
-# fine tuning.
-buildOptions = dict(
-    packages = [],
-    excludes = [],
-    include_files=[&#39;tks7.dll&#39;,&#39;Don_API.dll&#39;,&#39;image&#39;,&#39;config.ini&#39;],
-    include_msvcr= True   #skip error msvcr100.dll missing
-)
-
-import sys
-base = &#39;Win32GUI&#39; if sys.platform==&#39;win32&#39; else None
-
-executables = [
-    Executable(
-        &#39;PowerService.py&#39;,
-        base=base,
-        icon=&#39;image\\PowerService.ico&#39;,
-        compress = True,
-        )
-]
-
-setup(name=&#39;PowerService&#39;,#Setup Path
-      version = &#39;1.0.0&#39;,
-      description = &#39;some detail&#39;,
-      maintainer = &amp;quot;MikeYang.Me&amp;quot;,
-      maintainer_email = &amp;quot;kissjava.cn@gmail.com&amp;quot;,
-      url = &#39;http://kissjava.cn&#39;,
-      options = {&amp;quot;build_exe&amp;quot;:buildOptions,&amp;quot;bdist_msi&amp;quot;:bdist_msi_options},
-      executables = executables)
-&lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.cn/posts/cx_freeze-setup.py/ - kissjava.cn</description>
         </item>
     
     

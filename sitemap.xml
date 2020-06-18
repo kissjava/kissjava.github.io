@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kissjava.cn/tags/docker/</loc>
+    <lastmod>2020-06-18T09:31:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/posts/</loc>
+    <lastmod>2020-06-18T09:31:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/tags/</loc>
+    <lastmod>2020-06-18T09:31:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</loc>
+    <lastmod>2020-06-18T09:31:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/</loc>
+    <lastmod>2020-06-18T09:31:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kissjava.cn/about/</loc>
     <lastmod>2020-06-17T15:18:01+08:00</lastmod>
   </url>
@@ -24,21 +49,6 @@
   
   <url>
     <loc>https://kissjava.cn/categories/php/</loc>
-    <lastmod>2019-09-06T16:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/posts/</loc>
-    <lastmod>2019-09-06T16:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/tags/</loc>
-    <lastmod>2019-09-06T16:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/</loc>
     <lastmod>2019-09-06T16:59:00+00:00</lastmod>
   </url>
   

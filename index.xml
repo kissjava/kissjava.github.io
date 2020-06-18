@@ -6,9 +6,167 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>使用 docker 部署 Caddy &#43; V2ray</title>
+        <link>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</link>
+        <pubDate>Thu, 18 Jun 2020 09:31:15 +0800</pubDate>
+        
+        <guid>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/ -&lt;p&gt;以往使用传统的安装部署过于麻烦, 尤其是使用 nginx 时的证书申请.&lt;/p&gt;
+&lt;p&gt;而且一键脚本，容易污染整台主机。&lt;/p&gt;
+&lt;p&gt;为了更好的加速访问一些海外开发者网站，我们需要更加清晰友好的安装v2ray。&lt;/p&gt;
+&lt;p&gt;使用 docker 部署 Caddy + V2ray(VMess + WebSocket + TLS) 其实也非常简单, 而且隔离了主机上的其他服务。&lt;/p&gt;
+&lt;p&gt;非常适用于预算紧张，一机多用。&lt;/p&gt;
+&lt;h2 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h2&gt;
+&lt;p&gt;这个就不多讲了
+Debian系 &lt;code&gt;apt install docker-ce&lt;/code&gt;
+Redhat系 &lt;code&gt;yum install docker-ce&lt;/code&gt;
+可能需要添加源后再去安装，官网step by step都有。&lt;/p&gt;
+&lt;h2 id=&#34;部署-caddy&#34;&gt;部署 Caddy&lt;/h2&gt;
+&lt;p&gt;创建配置文件及目录
+&lt;code&gt;mkdir ~/caddy &amp;amp;&amp;amp; touch ~/caddy/Caddyfile&lt;/code&gt;
+编辑 Caddyfile&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;domain {
+    tls email
+    root /srv
+
+    proxy path 127.0.0.1:port {
+        websocket
+        header_upstream -Origin
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;替换字符&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;说明&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Demo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;domain&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;域名&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;expamle.com&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;邮箱, 用于证书相关的通知&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;mailto:email@gmail.com&#34;&gt;email@gmail.com&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;path&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;分流路径, 与 v@ray config.json 中 path 设置保持一致&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;/helloworld&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ort&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;v@ray 监听的端口&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9527&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;启动-caddy&#34;&gt;启动 Caddy&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -d &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --restart=always &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --network host &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/caddy/Caddyfile:/etc/Caddyfile &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/caddy/.caddy:/root/.caddy &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -e &lt;span style=&#34;color:#00688b&#34;&gt;ACME_AGREE&lt;/span&gt;=&lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --name caddy &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  abiosoft/caddy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;访问测试&#34;&gt;访问测试&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl https://your_domain
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;Caddy&amp;lt;/title&amp;gt;
+&amp;lt;style&amp;gt;
+    body {
+        text-align: center;
+        font-family: Tahoma, Geneva, Verdana, sans-serif;
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;h1&amp;gt;Caddy web server.&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;If you see this page, Caddy container works.&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;More instructions about this image is &amp;lt;a &lt;span style=&#34;color:#00688b&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;//github.com/abiosoft/caddy-docker/blob/master/README.md&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;target&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&amp;gt;here&amp;lt;/a&amp;gt;.&amp;lt;p&amp;gt;
+&amp;lt;p&amp;gt;More instructions about Caddy is &amp;lt;a &lt;span style=&#34;color:#00688b&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;//caddyserver.com/docs&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;target&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&amp;gt;here&amp;lt;/a&amp;gt;.&amp;lt;p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;%    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;已经自动申请证书, 开启了 &lt;code&gt;https&lt;/code&gt;, 也可以直接在浏览器中访问来测试。&lt;/p&gt;
+&lt;h2 id=&#34;部署-v2ray&#34;&gt;部署 V2Ray&lt;/h2&gt;
+&lt;p&gt;创建配置文件及目录, 将配置文件上传到目录下&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mkdir ~/v2ray&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;以下是个config.json的demo，需要对着你的Caddyfile做对应修改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat ./v2ray/config.json 
+{
+  &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;inbounds&amp;#34;&lt;/span&gt;: [
+    {
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: 10000,
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;protocol&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;vmess&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;settings&amp;#34;&lt;/span&gt;: {
+        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;clients&amp;#34;&lt;/span&gt;: [
+          {
+            &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;aabbcc12-bb65-430f-b96d-d6b991710000&amp;#34;&lt;/span&gt;,
+            &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;alterId&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;64&lt;/span&gt;
+          }
+        ]
+      },
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;streamSettings&amp;#34;&lt;/span&gt;: {
+        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;network&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ws&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;wsSettings&amp;#34;&lt;/span&gt;: {
+          &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;/helloworld&amp;#34;&lt;/span&gt;
+        }
+      }
+    }
+  ],
+  &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;outbounds&amp;#34;&lt;/span&gt;: [
+    {
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;protocol&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;freedom&amp;#34;&lt;/span&gt;,
+      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;settings&amp;#34;&lt;/span&gt;: {}
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;启动-v2ray&#34;&gt;启动 v2Ray&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -d &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --restart=always &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --network host &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/v2ray/config-file:/etc/v2ray/config.json &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/v2ray/log:/var/log &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --name v2ray &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  v2ray/official
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;替换字符&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;说明&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Demo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;config-file&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;自己的v2ray的config文件名&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;config.json&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;尾声&#34;&gt;尾声&lt;/h2&gt;
+&lt;p&gt;以上已经可以了。以下是一些控制命令
+&lt;code&gt;docker start|restart|stop caddy|v2ray&lt;/code&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -2593,108 +2751,6 @@ curl -X POST http://localhost:9000/sayhello \
      -d &#39;gender=male&#39;
 {&amp;quot;message&amp;quot;:&amp;quot;invalid csrf token&amp;quot;}
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part12 CORS 跨域资源共享和Request 预检</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</link>
-        <pubDate>Sat, 17 Aug 2019 20:39:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;CORS机制，它使用额外的 HTTP 头来告诉浏览器  让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，资源会发起一个跨域 HTTP 请求。
-以下是可用于CORS配置的标头列表&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Access-Control-Allow-Origin
-Access-Control-Allow-Methods
-Access-Control-Allow-Headers
-Access-Control-Allow-Credentials
-Access-Control-Max-Age
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CORS配置位于目标Web应用程序的服务器端。
-例如：我们的应用程序在本地从google.com中提取数据，然后CORS配置位于google.com;如果我们收到CORS错误，则无法完成任何其他操作，因为CORS应用程序目标由google.com上的人员控制。&lt;/p&gt;
-&lt;p&gt;练习时间：
-创建一个新项目。这个简单的应用程序将在&lt;code&gt;http//localhost:9000/&lt;/code&gt;上运行，然后我们将尝试从其他域访问它.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-    &amp;quot;log&amp;quot;
-    &amp;quot;net/http&amp;quot;
-)
-
-func main() {
-    http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
-        w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;https://www.google.com&amp;quot;)
-        w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;OPTIONS, GET, POST, PUT&amp;quot;)
-        w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;Content-Type, X-CSRF-Token&amp;quot;)
-
-        if r.Method == &amp;quot;OPTIONS&amp;quot; {
-            w.Write([]byte(&amp;quot;allowed&amp;quot;))
-            return
-        }
-
-        w.Write([]byte(&amp;quot;hello&amp;quot;))
-    })
-
-    log.Println(&amp;quot;Starting app at :9000&amp;quot;)
-    http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的代码表示允许从&lt;code&gt;https://www.google.com&lt;/code&gt;发送的请求进入;我们选择了谷歌域名，因为测试将从那里完成，请求的目标是&lt;code&gt;http://localhost:9000/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我们模拟是从google.com 访问 本地主机Web应用&lt;code&gt;localhost:9000&lt;/code&gt;（使用Chrome的开发人员工具从浏览器执行请求）。不是通过&lt;code&gt;localhost:9000&lt;/code&gt;访问&lt;code&gt;google.com&lt;/code&gt;，不要理解为颠倒。&lt;/p&gt;
-&lt;p&gt;再次说明，localhost:9000是受，google.com是攻。够形象了吧。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Access-Control-Allow-Methods&lt;/code&gt;标头确定允许哪些HTTP方法（使用逗号分隔符输入）
-&lt;code&gt;Access-Control-Allow-Headers&lt;/code&gt;标头确定请求中允许哪些标头密钥。&lt;/p&gt;
-&lt;p&gt;好的，我们可以测试了。
-首先，请确保安装了Google Chrome；
-其次，你可以爬墙；
-然后安装jQuery Injector扩展。
-打开&lt;code&gt;https://www.google.com&lt;/code&gt;然后注入jQuery。通过强制注入jQuery然后从谷歌网站我们可以使用jQuery。
-打开Chrome开发者工具，切换到Console标签页。输入以下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$.ajax({
-    url: &amp;quot;http://localhost:9000/index&amp;quot;,
-})
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ok,结果如下图
-&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/2029474600.png&#34; alt=&#34;cors_from_google_to_localhost.png&#34;&gt;
-我切换到hk代理，打开google.com.hk，在执行操作就不能访问。因为&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;我们只设置了&lt;code&gt;www.google.com&lt;/code&gt;.如果我们需要能访问呢？以下就可以搞定允许多个主机来访问：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http.HandleFunc(&amp;quot;/index&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, 
-        &amp;quot;https://www.google.com, https://www.google.com.hk&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然也可以不设防，赤果果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;w.Header().Set(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;)
-w.Header().Set(&amp;quot;Access-Control-Allow-Methods&amp;quot;, &amp;quot;*&amp;quot;)
-w.Header().Set(&amp;quot;Access-Control-Allow-Headers&amp;quot;, &amp;quot;*&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##第三方CORS库来稍微优雅点解决问题
-&lt;code&gt;$ go get github.com/rs/cors&lt;/code&gt;
-利用中间件，代码优雅&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-	&amp;quot;github.com/rs/cors&amp;quot;
-)
-
-func main() {
-	e := echo.New()
-
-	corsMiddleware := cors.New(cors.Options{
-		AllowedOrigins: []string{&amp;quot;https://www.google.com.hk&amp;quot;, &amp;quot;https://www.google.com&amp;quot;},
-		AllowedMethods: []string{&amp;quot;OPTIONS&amp;quot;, &amp;quot;GET&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PUT&amp;quot;},
-		AllowedHeaders: []string{&amp;quot;Content-Type&amp;quot;, &amp;quot;X-CSRF-Token&amp;quot;},
-		Debug:          true,
-	})
-	e.Use(echo.WrapMiddleware(corsMiddleware.Handler))
-
-	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
-		return c.String(http.StatusOK, &amp;quot;hello&amp;quot;)
-	})
-
-	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;搞定。&lt;/p&gt;
-- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part12-cors-%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%92%8Crequest-%E9%A2%84%E6%A3%80/ - kissjava.cn</description>
         </item>
     
     

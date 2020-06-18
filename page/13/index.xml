@@ -6,9 +6,181 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CodeIgniter Reactor&#39;s Caching Drivers</title>
+        <link>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</link>
+        <pubDate>Sat, 02 Apr 2011 17:18:51 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/ -&lt;p&gt;Before &lt;!-- raw HTML omitted --&gt;Reactor&lt;!-- raw HTML omitted --&gt; dropped, I snuck in some &lt;!-- raw HTML omitted --&gt;caching drivers&lt;!-- raw HTML omitted --&gt; (&lt;!-- raw HTML omitted --&gt;Docs Link&lt;!-- raw HTML omitted --&gt;) that &lt;!-- raw HTML omitted --&gt;Pascal&lt;!-- raw HTML omitted --&gt; had been tossing back and forth for several months. I&amp;rsquo;ve seen a few people talk about them, but I think they are still generally unknown so I want to give a brief intro on how to use them.&lt;/p&gt;
+&lt;p&gt;At this time, there are drivers available for &lt;!-- raw HTML omitted --&gt;APC&lt;!-- raw HTML omitted --&gt;, &lt;!-- raw HTML omitted --&gt;Memcached&lt;!-- raw HTML omitted --&gt;, file-based caching, and a dummy cache. If you haven&amp;rsquo;t already, head over to &lt;!-- raw HTML omitted --&gt;BitBucket&lt;!-- raw HTML omitted --&gt; and get cloning or forking.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Tweet extends CI_Controller {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public function index()
+{
+    $this-&amp;gt;output-&amp;gt;enable_profiler();
+
+    // Load up drivers
+    $this-&amp;gt;load-&amp;gt;library(&#39;driver&#39;);
+    $this-&amp;gt;load-&amp;gt;driver(&#39;cache&#39;, array(&#39;adapter&#39; =&amp;gt; &#39;apc&#39;));
+
+    // Get Tweets from Cache
+    $tweets = $this-&amp;gt;cache-&amp;gt;get(&#39;my_tweets&#39;);
+
+    if ( ! $tweets)
+    {
+        // No tweets in the cache, so get new ones.
+        $url = &#39;http://api.twitter.com/1/statuses/user_timeline.json?screen_name=gaker&amp;amp;count=5&#39;;
+
+        $tweets = json_decode(file_get_contents($url));
+        $this-&amp;gt;cache-&amp;gt;save(&#39;my_tweets&#39;,$tweets, 300);
+    }
+
+    $data = array(
+        &#39;title&#39;     =&amp;gt; &#39;tweet tweet&#39;,
+        &#39;tweets&#39;    =&amp;gt; $tweets
+    );
+
+    $this-&amp;gt;load-&amp;gt;view(&#39;tweets&#39;, $data);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Then a really super simple view could be:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Then let&amp;rsquo;s see what Seige has to say:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:               3216 hits
+Availability:             100.00 %
+Elapsed time:               9.73 secs
+Data transferred:           5.96 MB
+Response time:              0.01 secs
+Transaction rate:         330.52 trans/sec
+Throughput:             0.61 MB/sec
+Concurrency:                2.97
+Successful transactions:        3216
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;So if you&amp;rsquo;re running a single web server/VPS APC can be fantastic to cache API requests in.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;In my local development ExpressionEngine database, I have about 1600 members, and round about 4,000 entries. I&amp;rsquo;m going to first select all the member ids, cycle through them doing a query to get the title and a bit more info on the entry. So this is going to be just entirely stupid and inefficient. Here we go:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&amp;gt;output-&amp;gt;enable_profiler();
+$this-&amp;gt;load-&amp;gt;database();&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    $members = $this-&amp;gt;db-&amp;gt;select(&#39;member_id&#39;)-&amp;gt;get(&#39;exp_members&#39;);
+
+    $res = array();
+
+    foreach ($members-&amp;gt;result() as $m)
+    {
+        $qry = $this-&amp;gt;db-&amp;gt;select(&#39;ct.entry_id, ct.title, ct.url_title,
+                                  ct.entry_date, m.member_id, m.screen_name, 
+                                  m.group_id&#39;)
+                        -&amp;gt;where(&#39;ct.author_id&#39;, (int) $m-&amp;gt;member_id)
+                        -&amp;gt;where(&#39;ct.status&#39;, &#39;open&#39;)
+                        -&amp;gt;join(&#39;exp_members m&#39;, &#39;m.member_id = ct.author_id&#39;)
+                        -&amp;gt;order_by(&#39;ct.entry_date&#39;, &#39;ASC&#39;)
+                        -&amp;gt;get(&#39;exp_channel_titles ct&#39;);
+
+        $res[] = $qry-&amp;gt;result();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Based on my dataset, this lunacy produces 1605 queries, and is horribly inefficient. We can get around it some with memcached. That&amp;rsquo;s not to say that just because you can toss caching at it you should do it, but I just want to illustrate how it can help :) So, with this controller, seige gives us:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:                  3 hits
+Availability:             100.00 %
+Elapsed time:               9.02 secs
+Data transferred:           0.33 MB
+Response time:              5.17 secs
+Transaction rate:           0.33 trans/sec
+Throughput:             0.04 MB/sec
+Concurrency:                1.72
+Successful transactions:           3
+Failed transactions:               0
+Longest transaction:            5.27
+Shortest transaction:           4.99
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;And it&amp;rsquo;s pretty evident that MySQL is getting the living shit beat out of it. This is no good for your visitors. If we cache this mess with memcached, the controller turns into:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;class Queries extends CI_Controller
+{
+public function index()
+{
+$this-&amp;gt;output-&amp;gt;enable_profiler();
+$this-&amp;gt;load-&amp;gt;database();&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    // Load Drivers
+    $this-&amp;gt;load-&amp;gt;library(&#39;driver&#39;);
+    $this-&amp;gt;load-&amp;gt;driver(&#39;cache&#39;, array(&#39;adapter&#39; =&amp;gt; &#39;memcached&#39;));
+
+    $res = $this-&amp;gt;cache-&amp;gt;get(&#39;my_mess&#39;, 300);
+
+    if ( ! $res)
+    {
+        $members = $this-&amp;gt;db-&amp;gt;select(&#39;member_id&#39;)-&amp;gt;get(&#39;exp_members&#39;);
+
+        $res = array();
+
+        foreach ($members-&amp;gt;result() as $m)
+        {
+            $qry = $this-&amp;gt;db-&amp;gt;select(&#39;ct.entry_id, ct.title, ct.url_title,
+                                      ct.entry_date, m.member_id, 
+                                      m.screen_name, m.group_id&#39;)
+                            -&amp;gt;where(&#39;ct.author_id&#39;, (int) $m-&amp;gt;member_id)
+                            -&amp;gt;where(&#39;ct.status&#39;, &#39;open&#39;)
+                            -&amp;gt;join(&#39;exp_members m&#39;, &#39;m.member_id = ct.author_id&#39;)
+                            -&amp;gt;order_by(&#39;ct.entry_date&#39;, &#39;ASC&#39;)
+                            -&amp;gt;get(&#39;exp_channel_titles ct&#39;);
+
+            $res[] = $qry-&amp;gt;result();
+        }
+
+        $res = json_encode($res);
+        $this-&amp;gt;cache-&amp;gt;save(&#39;my_mess&#39;, $res, 300);
+    }
+
+    var_dump(json_decode($res));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;}
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Results from seige are:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Lifting the server siege&amp;hellip;      done.
+Transactions:                432 hits
+Availability:             100.00 %
+Elapsed time:               9.53 secs
+Data transferred:           2.91 MB
+Response time:              0.07 secs
+Transaction rate:          45.33 trans/sec
+Throughput:             0.31 MB/sec
+Concurrency:                2.98
+Successful transactions:         432
+Failed transactions:               0
+Longest transaction:            0.10
+Shortest transaction:           0.05
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;So we&amp;rsquo;ve increased our output from 3 hits to 432 in 10 seconds. Not a bad boost, if I do say so myself. In a &amp;lsquo;real&amp;rsquo; application, my query calls would be in the model, but we can also avoid loading the models unless the cache is stale, which saves on an&lt;!-- raw HTML omitted --&gt;include()&lt;!-- raw HTML omitted --&gt;, and helps to keep CI breezing along even faster!&lt;/p&gt;
+&lt;p&gt;Have you checked out the new cached drivers in CI Reactor? If so, how do you find them stacking up with your applications needs?&lt;/p&gt;
+- https://kissjava.cn/posts/codeigniter-reactors-caching-drivers/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -314,20 +486,6 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
         <guid>https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
         <description>清风徐来 https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ -&lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>AVG free edition 2011</title>
-        <link>https://kissjava.cn/posts/avg-free-edition-2011/</link>
-        <pubDate>Thu, 14 Oct 2010 09:45:37 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/avg-free-edition-2011/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/avg-free-edition-2011/ -&lt;p&gt;装上了AVG free edition 2011，好些比9漂亮了一些。上图：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;去除安装文件夹下的 avgfree_zh.mht , avgmwdef_zh.mht , avgresf.dll;这样就更好用了，其他非中文系统，注意选择自己对应的语言版本。嗯，不解释。&lt;/p&gt;
-- https://kissjava.cn/posts/avg-free-edition-2011/ - kissjava.cn</description>
         </item>
     
     

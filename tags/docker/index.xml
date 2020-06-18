@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 清风徐来</title>
+    <link>https://kissjava.cn/tags/docker/</link>
+    <description>Recent content in docker on 清风徐来</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>kissjava.cn</copyright>
+    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://kissjava.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 docker 部署 Caddy &#43; V2ray</title>
+      <link>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</link>
+      <pubDate>Thu, 18 Jun 2020 09:31:15 +0800</pubDate>
+      
+      <guid>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</guid>
+      <description>以往使用传统的安装部署过于麻烦, 尤其是使用 nginx 时的证书申请.
+而且一键脚本，容易污染整台主机。
+为了更好的加速访问一些海外开发者网站，我们需要更加清晰友好的安装v2ray。
+使用 docker 部署 Caddy + V2ray(VMess + WebSocket + TLS) 其实也非常简单, 而且隔离了主机上的其他服务。
+非常适用于预算紧张，一机多用。
+安装 Docker 这个就不多讲了 Debian系 apt install docker-ce Redhat系 yum install docker-ce 可能需要添加源后再去安装，官网step by step都有。
+部署 Caddy 创建配置文件及目录 mkdir ~/caddy &amp;amp;&amp;amp; touch ~/caddy/Caddyfile 编辑 Caddyfile
+domain { tls email root /srv proxy path 127.0.0.1:port { websocket header_upstream -Origin } }    替换字符 说明 Demo     domain 域名 expamle.</description>
+    </item>
+    
+  </channel>
+</rss>

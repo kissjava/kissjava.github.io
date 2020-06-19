@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 06 Sep 2019 16:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
     
 	<atom:link href="https://kissjava.cn/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>macOS安装Ngnix php MySQL</title>
       <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
-      <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
+      <pubDate>Fri, 19 Jun 2020 09:31:15 +0800</pubDate>
       
       <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
       <description>Nginx 虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。

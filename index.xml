@@ -6,9 +6,94 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>macOS安装Ngnix php MySQL</title>
+        <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
+        <pubDate>Fri, 19 Jun 2020 09:31:15 +0800</pubDate>
+        
+        <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/09/1638460549.png&#34; alt=&#34;php.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nginx&#34;&gt;Nginx&lt;/h2&gt;
+&lt;p&gt;虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+&lt;p&gt;安装和启动Nginx，我们使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install nginx
+sudo brew services start nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx&lt;/p&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
+&lt;p&gt;编辑配置文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;首先，我们必须向Nginx授予访问我们文件的权限，并避免令人讨厌的&lt;code&gt;403 Forbidden&lt;/code&gt;错误。为此，我们更改第一行，其中&lt;code&gt;&amp;lt;user&amp;gt;&lt;/code&gt;是您的用户名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user &amp;lt;user&amp;gt; staff;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后，我们将在&lt;code&gt;http&lt;/code&gt;指令中添加一个新的部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+  listen 80;
+  server_name localhost;
+  root /Users/&amp;lt;user&amp;gt;/Documents/path/to/your/website;
+  index index.html index.htm;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后我们重新启动Nginx&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
+&lt;p&gt;为了将PHP与Nginx一起使用，我们将使用PHP-FPM。在这里，我们将使用PHP 7.2，但您可以轻松选择任何其他版本:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install php72
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着编辑配置文件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以index开头的行:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;index index.php index.html;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，在部分服务器中添加以下行，以运行PHP:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;location ~ \.php {
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_buffers 16 16k;
+    fastcgi_buffer_size 32k;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了解决&lt;code&gt;File not found.&lt;/code&gt;我们还需要为PHP提供正确的权限。在以下文件中:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/php/7.2/php-fpm.d/www.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以下参数:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user = &amp;lt;user&amp;gt;
+group = staff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，我们重新启动Nginx以激活更改，不要忘记启动PHP，以避免&lt;code&gt;502 Bad Gateway&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
+sudo brew services start php72
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;mysql&#34;&gt;MySQL&lt;/h2&gt;
+&lt;p&gt;安装并启动：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install mariadb
+brew services start mariadb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还要修改MySQL的密码:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;update:
+最新版本，安装后启动，使用本机账号登陆后设置密码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mariadb -u michael
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 19
+Server version: 10.4.13-MariaDB Homebrew
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&amp;gt; use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [mysql]&amp;gt; ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD(&amp;quot;root&amp;quot;);
+Query OK, 0 rows affected (0.004 sec)
+
+MariaDB [mysql]&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自己完成完美的MAMP安装:)&lt;/p&gt;
+- https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -196,70 +281,6 @@ Redhat系 &lt;code&gt;yum install docker-ce&lt;/code&gt;
 &lt;p&gt;可以请我喝杯可乐&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://kissjava.cn/images/wechatpay.jpg&#34; alt=&#34;微信打赏&#34;&gt;&lt;/p&gt;
 - https://kissjava.cn/about/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>macOS安装Ngnix php MySQL</title>
-        <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
-        <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/09/1638460549.png&#34; alt=&#34;php.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;nginx&#34;&gt;Nginx&lt;/h2&gt;
-&lt;p&gt;虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。&lt;/p&gt;
-&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-&lt;p&gt;安装和启动Nginx，我们使用&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew install nginx
-sudo brew services start nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx&lt;/p&gt;
-&lt;h3 id=&#34;configuration&#34;&gt;Configuration&lt;/h3&gt;
-&lt;p&gt;编辑配置文件:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;首先，我们必须向Nginx授予访问我们文件的权限，并避免令人讨厌的&lt;code&gt;403 Forbidden&lt;/code&gt;错误。为此，我们更改第一行，其中&lt;code&gt;&amp;lt;user&amp;gt;&lt;/code&gt;是您的用户名：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;user &amp;lt;user&amp;gt; staff;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后，我们将在&lt;code&gt;http&lt;/code&gt;指令中添加一个新的部分：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;server {
-  listen 80;
-  server_name localhost;
-  root /Users/&amp;lt;user&amp;gt;/Documents/path/to/your/website;
-  index index.html index.htm;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后我们重新启动Nginx&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;php&#34;&gt;PHP&lt;/h2&gt;
-&lt;p&gt;为了将PHP与Nginx一起使用，我们将使用PHP-FPM。在这里，我们将使用PHP 7.2，但您可以轻松选择任何其他版本:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew install php72
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着编辑配置文件:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/nginx/nginx.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以index开头的行:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;index index.php index.html;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，在部分服务器中添加以下行，以运行PHP:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;location ~ \.php {
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    include fastcgi_params;
-    fastcgi_pass 127.0.0.1:9000;
-    fastcgi_split_path_info ^(.+\.php)(/.+)$;
-    fastcgi_buffers 16 16k;
-    fastcgi_buffer_size 32k;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了解决&lt;code&gt;File not found.&lt;/code&gt;我们还需要为PHP提供正确的权限。在以下文件中:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;vi /usr/local/etc/php/7.2/php-fpm.d/www.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改以下参数:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;user = &amp;lt;user&amp;gt;
-group = staff
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，我们重新启动Nginx以激活更改，不要忘记启动PHP，以避免&lt;code&gt;502 Bad Gateway&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo brew services restart nginx
-sudo brew services start php72
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;mysql&#34;&gt;MySQL&lt;/h2&gt;
-&lt;p&gt;安装并启动：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew install mariadb
-brew services start mariadb
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还要修改MySQL的密码:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mysql_secure_installation
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自己完成完美的MAMP安装:)&lt;/p&gt;
-- https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ - kissjava.cn</description>
         </item>
     
     

@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Thu, 18 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
     
 	<atom:link href="https://kissjava.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>macOS安装Ngnix php MySQL</title>
+      <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
+      <pubDate>Fri, 19 Jun 2020 09:31:15 +0800</pubDate>
+      
+      <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
+      <description>Nginx 虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。
+Installation 安装和启动Nginx，我们使用
+brew install nginxsudo brew services start nginx虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx
+Configuration 编辑配置文件:
+vi /usr/local/etc/nginx/nginx.conf首先，我们必须向Nginx授予访问我们文件的权限，并避免令人讨厌的403 Forbidden错误。为此，我们更改第一行，其中&amp;lt;user&amp;gt;是您的用户名：
+user &amp;lt;user&amp;gt; staff;然后，我们将在http指令中添加一个新的部分：
+server {listen 80;server_name localhost;root /Users/&amp;lt;user&amp;gt;/Documents/path/to/your/website;index index.html index.htm;}然后我们重新启动Nginx
+sudo brew services restart nginxPHP 为了将PHP与Nginx一起使用，我们将使用PHP-FPM。在这里，我们将使用PHP 7.2，但您可以轻松选择任何其他版本:
+brew install php72接着编辑配置文件:
+vi /usr/local/etc/nginx/nginx.conf修改以index开头的行:
+index index.php index.html;最后，在部分服务器中添加以下行，以运行PHP:
+location ~ \.php {fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;include fastcgi_params;fastcgi_pass 127.0.0.1:9000;fastcgi_split_path_info ^(.+\.php)(/.+)$;fastcgi_buffers 16 16k;fastcgi_buffer_size 32k;}为了解决File not found.</description>
+    </item>
     
     <item>
       <title>使用 docker 部署 Caddy &#43; V2ray</title>
@@ -26,26 +46,6 @@
 安装 Docker 这个就不多讲了 Debian系 apt install docker-ce Redhat系 yum install docker-ce 可能需要添加源后再去安装，官网step by step都有。
 部署 Caddy 创建配置文件及目录 mkdir ~/caddy &amp;amp;&amp;amp; touch ~/caddy/Caddyfile 编辑 Caddyfile
 domain { tls email root /srv proxy path 127.0.0.1:port { websocket header_upstream -Origin } }    替换字符 说明 Demo     domain 域名 expamle.</description>
-    </item>
-    
-    <item>
-      <title>macOS安装Ngnix php MySQL</title>
-      <link>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</link>
-      <pubDate>Fri, 06 Sep 2019 16:59:00 +0000</pubDate>
-      
-      <guid>https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/</guid>
-      <description>Nginx 虽然Apache本身包含在macOS中，但我们建议安装Nginx，特别是轻量级且易于配置。
-Installation 安装和启动Nginx，我们使用
-brew install nginxsudo brew services start nginx虽然我们没有在brew安装中使用sudo，但如果我们想使用默认端口80，则必须使用它来启动Nginx
-Configuration 编辑配置文件:
-vi /usr/local/etc/nginx/nginx.conf首先，我们必须向Nginx授予访问我们文件的权限，并避免令人讨厌的403 Forbidden错误。为此，我们更改第一行，其中&amp;lt;user&amp;gt;是您的用户名：
-user &amp;lt;user&amp;gt; staff;然后，我们将在http指令中添加一个新的部分：
-server {listen 80;server_name localhost;root /Users/&amp;lt;user&amp;gt;/Documents/path/to/your/website;index index.html index.htm;}然后我们重新启动Nginx
-sudo brew services restart nginxPHP 为了将PHP与Nginx一起使用，我们将使用PHP-FPM。在这里，我们将使用PHP 7.2，但您可以轻松选择任何其他版本:
-brew install php72接着编辑配置文件:
-vi /usr/local/etc/nginx/nginx.conf修改以index开头的行:
-index index.php index.html;最后，在部分服务器中添加以下行，以运行PHP:
-location ~ \.php {fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;include fastcgi_params;fastcgi_pass 127.0.0.1:9000;fastcgi_split_path_info ^(.+\.php)(/.+)$;fastcgi_buffers 16 16k;fastcgi_buffer_size 32k;}为了解决File not found.</description>
     </item>
     
     <item>

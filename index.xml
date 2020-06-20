@@ -107,7 +107,7 @@ netcard = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/proc/net/dev&amp;#
         &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;pass&lt;/span&gt;
     &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;:
         f = &lt;span style=&#34;color:#658b00&#34;&gt;open&lt;/span&gt;(filename, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;)
-        f.write(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;0&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;&lt;/span&gt;)
+        f.write(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
         f.close()
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;get_net_data&lt;/span&gt;():
     nc = netcard &lt;span style=&#34;color:#8b008b&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/proc/net/dev&amp;#39;&lt;/span&gt;

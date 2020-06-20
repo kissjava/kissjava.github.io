@@ -657,7 +657,7 @@ netcard = <span style="color:#cd5555">&#39;/proc/net/dev&#39;</span>
         <span style="color:#8b008b;font-weight:bold">pass</span>
     <span style="color:#8b008b;font-weight:bold">else</span>:
         f = <span style="color:#658b00">open</span>(filename, <span style="color:#cd5555">&#39;w&#39;</span>)
-        f.write(<span style="color:#cd5555">&#39;0</span><span style="color:#cd5555">\n</span><span style="color:#cd5555">0</span><span style="color:#cd5555">\n</span><span style="color:#cd5555">&#39;</span>)
+        f.write(<span style="color:#cd5555">&#39;0&#39;</span>)
         f.close()
 <span style="color:#8b008b;font-weight:bold">def</span> <span style="color:#008b45">get_net_data</span>():
     nc = netcard <span style="color:#8b008b">or</span> <span style="color:#cd5555">&#39;/proc/net/dev&#39;</span>

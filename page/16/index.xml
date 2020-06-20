@@ -6,9 +6,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
+        <link>https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
+        <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ -&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;实现原理：&lt;/p&gt;
+&lt;p&gt;（1）指定宽度：width:300px;
+（2）overflow:hidden;  将超出内容隐藏
+（3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;)
+（4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。&lt;/p&gt;
+- https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -751,21 +768,6 @@ set fileencodings=utf-8,gbk&lt;/p&gt;
 &lt;p&gt;$:wq
 再次打开vi、vim，中文显示就正常了。&lt;/p&gt;
 - https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>淡水的2009</title>
-        <link>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
-        <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ -&lt;p&gt;终于肯花一点点时间，做个小小的回望了。
-淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip;
-robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip;
-2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。&lt;/p&gt;
-- https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ - kissjava.cn</description>
         </item>
     
     

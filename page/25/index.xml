@@ -6,9 +6,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CodeIgniter MongoDB Library</title>
+        <link>https://kissjava.cn/posts/codeigniter-mongodb-library/</link>
+        <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/codeigniter-mongodb-library/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter-mongodb-library/ -&lt;p&gt;它能使你的应用在操作MongoDB时保证和active record一致的风格。&lt;/p&gt;
+&lt;p&gt;1，添加Mongo_db.php 到你的 /application/libraries 文件夹
+2，添加mongodb.php 到你的 /application/config 文件夹
+3，更你的配置文件&lt;/p&gt;
+&lt;p&gt;你可以把它设置为autoload，也可以在你的控制器里加载它。&lt;/p&gt;
+&lt;p&gt;你可以使用codeigniter的active record的方式来操作数据库。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;结果会返回相匹配的文档。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;select 方法&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;where_lt Where something is less than something&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;where_lte Where something is less than or equal to something&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;where_not_equal Where something is not equal to something&amp;lt;/li&amp;gt;
+
+&amp;lt;li&amp;gt;where_near` Where something is near to something (2d geospatial search)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;order_by Order the results&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;limit Limit the number of returned results&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/codeigniter-mongodb-library/ - kissjava.cn</description>
+        </item>
     
     
     

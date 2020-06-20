@@ -6,9 +6,86 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>windows下基于apache的subversion（svn）的安装</title>
+        <link>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ -&lt;p&gt;上午折腾了一下，可以写个详细步骤出来了。
+&lt;!-- raw HTML omitted --&gt;预期目标：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;搭建一个apache下的svn服务，服务地址 http://localhost/svn&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;本地环境：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;已经装有xampplite集成环境。
+svn的服务目录为D:svnroot
+已经安装好了小乌龟（TortoiseSVN）&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;安装步骤：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi
+这里注意要和apache的版本对应，我是apache2.2的。
+双击安装它，这个没说头。
+2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中
+有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so
+（淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下）
+3，配置apache的httpd.conf文件
+这个是个容易出差错的地方
+把下两行的注释去掉：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;所有人可以读管理员可以写&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
+&lt;p&gt;[svn:/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/机密文件]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/公告文件]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[svn:/测试组]
+@g_admin = rw
+@g_test = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;如果是多个库，则权限文件类似以下&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;所有人可以读管理员可以写-1&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
+&lt;p&gt;[/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[khn:/]
+@g_admin = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[ci170:/]
+@g_admin = rw
+@g_test = rw&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;= r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;6，在d:svnroot下，用tortoiseSVN创建版本库。
+7，重启apache。搞定了。
+&lt;!-- raw HTML omitted --&gt;注意点：&lt;!-- raw HTML omitted --&gt;
+先不要启用权限控制。用tortoiseSVN登录进入以后，创建文件夹后，再启用权限控制。
+如果想要把地址改成http://localhost/kisssvn，两步：apache的httpd.conf 里 改为&amp;lt;Location /kisssvn&amp;gt;，再把权限文档里的[svn:/]等改成[kisssvn:/]。ok&lt;/p&gt;
+- https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -420,47 +497,6 @@ $data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;l
 $str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。
 &lt;!-- raw HTML omitted --&gt;utf8pinyin&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Simple flexible Caching of parts of code - MP_Cache</title>
-        <link>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</link>
-        <pubDate>Sat, 28 Mar 2009 23:30:48 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/ -&lt;p&gt;如标题所言，确实是简单灵活。看来想要摆脱Codeigniter越来越难了。
-看看怎样使用吧
-首先，在config.php中设置一下缓存目录，这个目录要存在且可写入
-&lt;!-- raw HTML omitted --&gt;
-$config[&amp;lsquo;mp_cache_dir&amp;rsquo;] = &amp;lsquo;application/mp_cache/&#39;;
-&lt;!-- raw HTML omitted --&gt;
-好了，现在看看代码
-&lt;!-- raw HTML omitted --&gt;
-/&lt;em&gt;加载library，可以放在构造函数中&lt;/em&gt;/
-$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;MP_Cache&amp;rsquo;);
-/&lt;em&gt;抓取名为listNews的缓存&lt;/em&gt;/
-$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;listNews&amp;rsquo;);
-if($listNews===false){
-//没有缓存数据，则查询数据库
-$listNews = $this-&amp;gt;News_model-&amp;gt;getNewslist(&amp;lsquo;guest&amp;rsquo;)-&amp;gt;result();
-//创建缓存，命名为listNews。在mp_cache目录下就生成了listNews.cache文件，内容是序列化的数据
-$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;listNews&amp;rsquo;);
-}
-$data[&amp;lsquo;listNews&amp;rsquo;]= $listNews;
-$this-&amp;gt;layout-&amp;gt;view(&amp;lsquo;news&amp;rsquo;, $data);
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;两个注意点：&lt;!-- raw HTML omitted --&gt;
-1，缓存数据，必须是data，而不是resource id。如，在使用AR后用result(),result_array()等返回的数据
-2，缓存名不要重复。可以使用子文件夹分隔。如，$listNews = $this-&amp;gt;mp_cache-&amp;gt;get(&amp;lsquo;news/listNews&amp;rsquo;);同样创建缓存数据片段用$this-&amp;gt;mp_cache-&amp;gt;write($listNews, &amp;lsquo;news/listNews&amp;rsquo;);（php5下news文件夹会自动创建）
-其他方法：
-&lt;!-- raw HTML omitted --&gt;
-$this-&amp;gt;mp_cache-&amp;gt;delete($filename)
-&lt;!-- raw HTML omitted --&gt;
-删除名为$filename的cache.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/simple-flexible-caching-of-parts-of-code-mp_cache/ - kissjava.cn</description>
         </item>
     
     

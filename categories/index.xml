@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
 	<atom:link href="https://kissjava.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>https://kissjava.cn/categories/python/</link>
+      <pubDate>Sat, 20 Jun 2020 16:57:25 +0800</pubDate>
+      
+      <guid>https://kissjava.cn/categories/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PHP</title>
@@ -45,15 +54,6 @@
       <pubDate>Tue, 18 Sep 2018 15:09:00 +0000</pubDate>
       
       <guid>https://kissjava.cn/categories/work/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://kissjava.cn/categories/python/</link>
-      <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
-      
-      <guid>https://kissjava.cn/categories/python/</guid>
       <description></description>
     </item>
     

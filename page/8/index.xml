@@ -6,9 +6,59 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>wxpython设置背景</title>
+        <link>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
+        <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ -&lt;p&gt;用wxformbuilder+一点代码来实现。&lt;/p&gt;
+&lt;p&gt;首先用wxformbuilder来做出界面，并生成代码。运行结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/1144182459.bmp&#34; alt=&#34;默认效果图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使其有背景图片效果：
+&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/83875334.bmp&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;实现代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#coding:utf-8
+
+import wx
+#导入wxformbuilder生成的代码
+import BgDemo
+
+class Main(wx.App):
+    def __init__(self, redirect=False, filename=None):
+        wx.App.__init__(self, redirect, filename)
+        dlg = BgDemo.MyFrame(None)
+
+        #这里设置哪个控件需要设置背景
+        dlg.m_panel1.Bind(wx.EVT_ERASE_BACKGROUND, self.OnEraseBackground)
+
+        dlg.Show()
+
+    def OnEraseBackground(self, evt):
+        &amp;quot;&amp;quot;&amp;quot;
+        设置背景的方法
+        &amp;quot;&amp;quot;&amp;quot;
+        dc = evt.GetDC()
+        if not dc:
+            dc = wx.ClientDC(self)
+            rect = self.GetUpdateRegion().GetBox()
+            dc.SetClippingRect(rect)
+        dc.Clear()
+        bmp = wx.Bitmap(&amp;quot;Sunset.jpg&amp;quot;)
+        dc.DrawBitmap(bmp, 0, 0)
+ 
+if __name__ == &amp;quot;__main__&amp;quot;:
+    app = Main()
+    app.MainLoop()
+&lt;/code&gt;&lt;/pre&gt;
+- https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -868,22 +918,6 @@ icon,设置exe的图标文件(图标有限制,按128,64,48,32,16的大小排列,
 &lt;p&gt;C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;Package Settings和Package Control选项，就说明安装Package Control成功了。&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>搬家到SAE</title>
-        <link>https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</link>
-        <pubDate>Tue, 17 Sep 2013 15:53:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ -&lt;p&gt;搬家到SAE。&lt;!-- raw HTML omitted --&gt;友链及部分文章丢失，有劳各位友链博主留言，我会一一补上。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;从搜索引擎过来的朋友，链接和内容无法对上，请搜索。&lt;/p&gt;
-&lt;p&gt;为了找到备案号，搜快照，居然找到2005年在opera上写的东西，还有一张老照片啊。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ - kissjava.cn</description>
         </item>
     
     

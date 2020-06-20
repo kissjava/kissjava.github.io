@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://kissjava.cn/categories/</loc>
-    <lastmod>2020-06-19T09:31:15+08:00</lastmod>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/posts/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/categories/python/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/tags/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/tags/vps/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/posts/server-auto-shutdown-script-after-certain-bandwidth-usage/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/</loc>
+    <lastmod>2020-06-20T16:57:25+08:00</lastmod>
   </url>
   
   <url>
@@ -19,21 +49,6 @@
   
   <url>
     <loc>https://kissjava.cn/categories/php/</loc>
-    <lastmod>2020-06-19T09:31:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/posts/</loc>
-    <lastmod>2020-06-19T09:31:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/tags/</loc>
-    <lastmod>2020-06-19T09:31:15+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/</loc>
     <lastmod>2020-06-19T09:31:15+08:00</lastmod>
   </url>
   
@@ -578,11 +593,6 @@
   </url>
   
   <url>
-    <loc>https://kissjava.cn/categories/python/</loc>
-    <lastmod>2017-09-13T14:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://kissjava.cn/tags/tablewidget/</loc>
     <lastmod>2017-09-13T14:38:00+00:00</lastmod>
   </url>
@@ -644,11 +654,6 @@
   
   <url>
     <loc>https://kissjava.cn/posts/somagu-nat-%E5%B0%8F%E9%B8%A1%E7%9A%84%E6%8C%82%E8%BD%BD%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2017-09-02T13:33:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/tags/vps/</loc>
     <lastmod>2017-09-02T13:33:00+00:00</lastmod>
   </url>
   

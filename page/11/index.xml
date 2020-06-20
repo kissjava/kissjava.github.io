@@ -6,9 +6,100 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Photoshop教程：一款清新高雅的网页布局</title>
+        <link>https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</link>
+        <pubDate>Tue, 29 Nov 2011 17:18:46 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/ -&lt;p&gt;本教程中，你将学习如何设计优雅并专业的网页布局，我们将运用各种photoshop技巧，依靠图形工具和图层样式等基本操作来实现此布局。作为奖励，在教程结束后附有HTML/CSS/JavaScript的网站模板，完全免费下载。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;复制（cmd/ctrl+J）刚新建的导航图层，并对其添加杂色滤镜（滤镜&amp;gt;杂色&amp;gt;添加杂色），如下设置：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后更改图层混合模式为&amp;quot;叠加&amp;rdquo;，透明度下降到大约23%。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了让激活状态下的菜单更加醒目，选取圆角矩形工具（T）创建一个圆角矩形（圆角半径为5px，前景色为#464646）放置在菜单图层下方，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后设置如下图层样式：&amp;lsquo;内阴影&amp;rsquo;/&amp;lsquo;描边&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下一步，下载凌乱、自然灰褐色图案（或其它图案）拖放到文档中，放在矩形图层上方。接下来我们要遮住一些不需要的纹理，在图层面板选中矩形图层，按住cmd/ctrl键，点击缩略图，创建一个自动选区，然后选中纹理图层，在下拉菜单中点击&amp;quot;添加图层蒙版&amp;rdquo;，这样遮住了除选区外的所有区域，最后，撤消选区（ctrl+D），把纹理图层的透明度下降到35%。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了使标题更加炫目，按如下设置添加图层样式：&amp;lsquo;阴影&amp;rsquo;/&amp;lsquo;渐变叠加&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来，创建&amp;quot;About us&amp;quot;的圆角按钮。再一次选取圆角矩形工具（U），设置半径5PX，文本颜色为&lt;!-- raw HTML omitted --&gt;#404040&lt;!-- raw HTML omitted --&gt;，同时在右边有一个箭头图标（Mono图标集中的&lt;!-- raw HTML omitted --&gt;circleright32&lt;!-- raw HTML omitted --&gt;），重设它的大小以匹配按钮。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;在矩形图层上添加以下样式：&amp;lsquo;外发光&amp;rsquo;/&amp;lsquo;渐变叠加&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最后一步是在按钮右边添加花纹，就是这微妙的设计元素增加了此设计的优雅度。下载并安装花纹笔刷（资源区的上方），先设置前景色为&lt;!-- raw HTML omitted --&gt;#343434&lt;!-- raw HTML omitted --&gt;，选取画笔工具（B），找到花纹笔刷，在画布上进行一次点击，然后把图层混合模式改为“强光”。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;设置此图层的透明度为15%，以显示背景图案，接着添加&amp;rsquo;阴影&amp;rsquo;的图层样式：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;此刻，我们需要在幻灯片区域添加图片缩略图，你可以找一个网站截图或其它图片，放在白色圆角矩形上方。我们得把图片四角变成圆角，在图层面板，按住cmd/ctrl，点击白色圆角矩形的缩略图，创建一个自动选区，接着选择放图片的图层，去往菜单&amp;quot;选择&amp;gt;修改&amp;gt;收缩&amp;rdquo;，收缩10px，然后执行&amp;quot;选择&amp;gt;反选&amp;rdquo;（cmd/ctrl+shift+I）反选选区，最后执行&amp;quot;编辑&amp;gt;清除&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加图片描述，在图层面板，按住cmd/ctrl，点击图片图层的缩略图，创建一个自动选区，新建图层，并以黑色填充选区，然后使用圆角矩形选框工具（M），选取新建的黑色矩形的上部分并删除。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;降低图层透明度到75%，添加简单的文字说明&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;设计的主内容区的时间到了！&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;主内容区的设计其实相当简单，但是要让人看出很简单也要花一定时间完成。我们将从左边开始，放置服务列表。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;为了给路径描边，设置前景色为文本颜色（&lt;!-- raw HTML omitted --&gt;#323232&lt;!-- raw HTML omitted --&gt;），然后选择一个较硬的画笔工具，大小大约为3px。接着打开&amp;quot;路径&amp;quot;面板（窗口&amp;gt;路径），点击面板下方的&amp;quot;用画笔给路径描边&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;下面为曲线添加一点渐变，设置&amp;quot;渐变叠加&amp;quot;的图层样式：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;复制曲线图层，离原图层下方4或5px处，降低透明度到24%。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;着为圆角矩形设置图层样式：&amp;lsquo;外发光&amp;rsquo;/&amp;lsquo;描边&amp;rsquo;：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后，在圆角矩形内添加与描述相配的图片。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;使用字体&lt;!-- raw HTML omitted --&gt;Georgia Italic&lt;!-- raw HTML omitted --&gt;编辑标题，从Mono图标中选择一个信封的图标，给此图标设置了颜色（&lt;!-- raw HTML omitted --&gt;#F7E5C4&lt;!-- raw HTML omitted --&gt;）叠加，创建了一个圆角矩形选框，用来输入用户邮箱，以白色填充。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;接下来创建一些链接，选取圆角矩形选框工具（M），生成如下图一样的选框，以深灰色(&lt;!-- raw HTML omitted --&gt;#323232&lt;!-- raw HTML omitted --&gt;)进行填充，里面用白色文字填充。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;然后把混合模式改成&amp;quot;弱光&amp;rdquo;，透明度降低到63%，以突出背景颜色。重复此流程，创建其它链接。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;最后一件事，选择一些社区媒体图标添加到链接上方，选择站点logo和copyright放在footer右侧。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;clean_classy_webdesign_template&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- https://kissjava.cn/posts/photoshop%E6%95%99%E7%A8%8B%E4%B8%80%E6%AC%BE%E6%B8%85%E6%96%B0%E9%AB%98%E9%9B%85%E7%9A%84%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1367,316 +1458,6 @@ alt + &amp;lt;                光标左移一个单词&lt;/p&gt;
 &lt;p&gt;F1                    开关当前方法块&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/textmate-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Codeigniter里的无刷新上传</title>
-        <link>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</link>
-        <pubDate>Thu, 15 Sep 2011 14:31:47 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ -&lt;p&gt;好久没有更新了，写点吧算是翻译吧，纯原创没空啊XD
-Codeigniter还是很好用的，淡水一直很推崇。说是codeigniter里的无刷新上传吧，fashion 一点的说法就是利用AJAX技术上传。其中用到了Jquery和 AjaxFileUpload 。&lt;/p&gt;
-&lt;p&gt;先建个表
-&lt;!-- raw HTML omitted --&gt;
-CREATE TABLE &lt;code&gt;files&lt;/code&gt; (
-  &lt;code&gt;id&lt;/code&gt; int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  &lt;code&gt;filename&lt;/code&gt; varchar(255) NOT NULL,
-  &lt;code&gt;title&lt;/code&gt; varchar(100) NOT NULL
-);
-&lt;!-- raw HTML omitted --&gt;
-文件的目录结构如下：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第一步，建立表单&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;看上去就一个title文本字段，一个文件框，一个提交按钮，还有一个files的div。
-控制器部分
-首先，我们要建一个上传的表单和一个upload的Controller。在index方法里渲出upload的视图。如下：
-&lt;!-- raw HTML omitted --&gt;
-class Upload extends CI_Controller
-{
-   public function __construct()
-   {
-      parent::__construct();
-      $this-&amp;gt;load-&amp;gt;model(&amp;lsquo;files_model&amp;rsquo;);
-      $this-&amp;gt;load-&amp;gt;database();
-      $this-&amp;gt;load-&amp;gt;helper(&amp;lsquo;url&amp;rsquo;);
-   }
- 
-   public function index()
-   {
-      $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;upload&amp;rsquo;);
-   }
-}
-&lt;!-- raw HTML omitted --&gt;
-我们已经在构造里加载了files_model，所以可以使用files_model里的方法。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;建立表单视图&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;视图文件upload.php,包含了我们的上传表单。
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;!doctype html&amp;gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;一些简单的css&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;在css下建立style.css
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;h1, h2 { font-family: Arial, sans-serif; font-size: 25px; }
-h2 { font-size: 20px; }
- 
-label { font-family: Verdana, sans-serif; font-size: 12px; display: block; }
-input { padding: 3px 5px; width: 250px; margin: 0 0 10px; }
-input[type=&amp;quot;file&amp;rdquo;] { padding-left: 0; }
-input[type=&amp;quot;submit&amp;rdquo;] { width: auto; }
- 
-#files { font-family: Verdana, sans-serif; font-size: 11px; }
-#files strong { font-size: 13px; }
-#files a { float: right; margin: 0 0 5px 10px; }
-#files ul { list-style: none; padding-left: 0; }
-#files li { width: 280px; font-size: 12px; padding: 5px 0; border-bottom: 1px solid #CCC; }
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第二步，Javascript&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;在js下建立site.js
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;$(function() {
-   $(&#39;#upload_file&amp;rsquo;).submit(function(e) {
-      e.preventDefault();
-      $.ajaxFileUpload({
-         url         :&amp;rsquo;./upload/upload_file/&amp;rsquo;,
-         secureuri      :false,
-         fileElementId  :&amp;lsquo;userfile&amp;rsquo;,
-         dataType    : &amp;lsquo;json&amp;rsquo;,
-         data        : {
-            &amp;lsquo;title&amp;rsquo;           : $(&#39;#title&amp;rsquo;).val()
-         },
-         success  : function (data, status)
-         {
-            if(data.status != &amp;lsquo;error&amp;rsquo;)
-            {
-               $(&#39;#files&amp;rsquo;).html(&amp;lsquo;&lt;!-- raw HTML omitted --&gt;Reloading files&amp;hellip;&lt;!-- raw HTML omitted --&gt;&amp;rsquo;);
-               refresh_files();
-               $(&#39;#title&amp;rsquo;).val(&#39;&#39;);
-            }
-            alert(data.msg);
-         }
-      });
-      return false;
-   });
-});
-&lt;!-- raw HTML omitted --&gt;
-Javascript劫持了表单的提交，并由ajaxfileupload接管。其实是在后台创建了一个iframe并提交了数据。
-我只是ajax提交了#title的值，可以通过参数提交更多的字段。
-检查返回的json数据，如果没有错误，就刷新文件列表（下文有），清除title字段。不管怎样，都alert出返回的数据。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第三步，上传文件&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;现在开始上传文件了。我们的URL是这样的 /uplaod/upload_file/，所以，我们在uoload的控制器里建立upload_file方法。
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;public function upload_file()
-{
-   $status = &amp;ldquo;&amp;quot;;
-   $msg = &amp;ldquo;&amp;quot;;
-   $file_element_name = &amp;lsquo;userfile&amp;rsquo;;
- 
-   if (empty($_POST[&amp;lsquo;title&amp;rsquo;]))
-   {
-      $status = &amp;ldquo;error&amp;rdquo;;
-      $msg = &amp;ldquo;Please enter a title&amp;rdquo;;
-   }
- 
-   if ($status != &amp;ldquo;error&amp;rdquo;)
-   {
-      $config[&amp;lsquo;upload_path&amp;rsquo;] = &amp;lsquo;./files/&#39;;
-      $config[&amp;lsquo;allowed_types&amp;rsquo;] = &amp;lsquo;gif|jpg|png|doc|txt&amp;rsquo;;
-      $config[&amp;lsquo;max_size&amp;rsquo;]  = 1024 * 8;
-      $config[&amp;lsquo;encrypt_name&amp;rsquo;] = TRUE;
- 
-      $this-&amp;gt;load-&amp;gt;library(&amp;lsquo;upload&amp;rsquo;, $config);
- 
-      if (!$this-&amp;gt;upload-&amp;gt;do_upload($file_element_name))
-      {
-         $status = &amp;lsquo;error&amp;rsquo;;
-         $msg = $this-&amp;gt;upload-&amp;gt;display_errors(&#39;&amp;rsquo;, &amp;lsquo;&#39;);
-      }
-      else
-      {
-         $data = $this-&amp;gt;upload-&amp;gt;data();
-         $file_id = $this-&amp;gt;files_model-&amp;gt;insert_file($data[&amp;lsquo;file_name&amp;rsquo;], $_POST[&amp;lsquo;title&amp;rsquo;]);
-         if($file_id)
-         {
-            $status = &amp;ldquo;success&amp;rdquo;;
-            $msg = &amp;ldquo;File successfully uploaded&amp;rdquo;;
-         }
-         else
-         {
-            unlink($data[&amp;lsquo;full_path&amp;rsquo;]);
-            $status = &amp;ldquo;error&amp;rdquo;;
-            $msg = &amp;ldquo;Something went wrong when saving the file, please try again.&amp;quot;;
-         }
-      }
-      @unlink($_FILES[$file_element_name]);
-   }
-   echo json_encode(array(&amp;lsquo;status&amp;rsquo; =&amp;gt; $status, &amp;lsquo;msg&amp;rsquo; =&amp;gt; $msg));
-}
-&lt;!-- raw HTML omitted --&gt;
-我们对title字段做了个简单的数据检查，看看他是否为空。不为空就加载codeigniter的upload库。这个类库为我们处理了很多的数据验证。
-接着，我们上传文件了。如果成功我们保存title和file_name。然后我们删除了临时文件，最后，json方法返回了状态和信息，来告诉我们结果。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;按大多数人的MVC模式理念，我们应该在模型里处理数据库交换。
-建立files_model.php
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;class Files_Model extends CI_Model {
- 
-   public function insert_file($filename, $title)
-   {
-      $data = array(
-         &amp;lsquo;filename&amp;rsquo;     =&amp;gt; $filename,
-         &amp;lsquo;title&amp;rsquo;        =&amp;gt; $title
-      );
-      $this-&amp;gt;db-&amp;gt;insert(&amp;lsquo;files&amp;rsquo;, $data);
-      return $this-&amp;gt;db-&amp;gt;insert_id();
-   }
- 
-}
-&lt;!-- raw HTML omitted --&gt;
-保存上传文件的文件夹
-不要忘记在根目录建立个files文件夹，并给他写入权限。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;第四步，文件列表&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;成功上传后，我们需要更新文件列表，方便修改。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Javascript部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;打开site.js，在后面追加：
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;function refresh_files()
-{
-   $.get(&amp;rsquo;./upload/files/&#39;)
-   .success(function (data){
-      $(&#39;#files&amp;rsquo;).html(data);
-   });
-}
-&lt;!-- raw HTML omitted --&gt;
-Jquery的简单应用。Ajax取得指定url的内容，填充到#files的div里。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;不多说了。
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;public function files()
-{
-   $files = $this-&amp;gt;files_model-&amp;gt;get_files();
-   $this-&amp;gt;load-&amp;gt;view(&amp;lsquo;files&amp;rsquo;, array(&amp;lsquo;files&amp;rsquo; =&amp;gt; $files));
-}
-&lt;!-- raw HTML omitted --&gt;
-调用模型的方法取得数据，再加载到files视图里显示。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;public function get_files()
-{
-   return $this-&amp;gt;db-&amp;gt;select()
-         -&amp;gt;from(&amp;lsquo;files&amp;rsquo;)
-         -&amp;gt;get()
-         -&amp;gt;result();
-}
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;视图部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;新建files.php视图
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;      &lt;!-- raw HTML omitted --&gt;
-         &amp;lt;?php
-         foreach ($files as $file)
-         {
-            ?&amp;gt;
-            &lt;!-- raw HTML omitted --&gt;
-               &lt;!-- raw HTML omitted --&gt;Delete&lt;!-- raw HTML omitted --&gt;
-               &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-               &lt;!-- raw HTML omitted --&gt;
-               &lt;!-- raw HTML omitted --&gt;
-            &lt;!-- raw HTML omitted --&gt;
-            &amp;lt;?php
-         }
-         ?&amp;gt;
-      &lt;!-- raw HTML omitted --&gt;
-   &lt;!-- raw HTML omitted --&gt;
-   &amp;lt;?php
-}
-else
-{
-   ?&amp;gt;
-   &lt;!-- raw HTML omitted --&gt;No Files Uploaded&lt;!-- raw HTML omitted --&gt;
-   &amp;lt;?php
-}
-?&amp;gt;
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;删除文件&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Javascript部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;$(&#39;.delete_file_link&amp;rsquo;).live(&amp;lsquo;click&amp;rsquo;, function(e) {
-   e.preventDefault();
-   if (confirm(&amp;lsquo;Are you sure you want to delete this file?&#39;))
-   {
-      var link = $(this);
-      $.ajax({
-         url         : &amp;lsquo;./upload/delete_file/&amp;rsquo; + link.data(&amp;lsquo;file_id&amp;rsquo;),
-         dataType : &amp;lsquo;json&amp;rsquo;,
-         success     : function (data)
-         {
-            files = $(#files);
-            if (data.status === &amp;ldquo;success&amp;rdquo;)
-            {
-               link.parents(&amp;lsquo;li&amp;rsquo;).fadeOut(&amp;lsquo;fast&amp;rsquo;, function() {
-                  $(this).remove();
-                  if (files.find(&amp;lsquo;li&amp;rsquo;).length == 0)
-                  {
-                     files.html(&amp;lsquo;&lt;!-- raw HTML omitted --&gt;No Files Uploaded&lt;!-- raw HTML omitted --&gt;&amp;rsquo;);
-                  }
-               });
-            }
-            else
-            {
-               alert(data.msg);
-            }
-         }
-      });
-   }
-});
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;控制器部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;public function delete_file($file_id)
-{
-   if ($this-&amp;gt;files_model-&amp;gt;delete_file($file_id))
-   {
-      $status = &amp;lsquo;success&amp;rsquo;;
-      $msg = &amp;lsquo;File successfully deleted&amp;rsquo;;
-   }
-   else
-   {
-      $status = &amp;lsquo;error&amp;rsquo;;
-      $msg = &amp;lsquo;Something went wrong when deleteing the file, please try again&amp;rsquo;;
-   }
-   echo json_encode(array(&amp;lsquo;status&amp;rsquo; =&amp;gt; $status, &amp;lsquo;msg&amp;rsquo; =&amp;gt; $msg));
-}
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;模型部分&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;public function delete_file($file_id)
-{
-   $file = $this-&amp;gt;get_file($file_id);
-   if (!$this-&amp;gt;db-&amp;gt;where(&amp;lsquo;id&amp;rsquo;, $file_id)-&amp;gt;delete(&amp;lsquo;files&amp;rsquo;))
-   {
-      return FALSE;
-   }
-   unlink(&amp;rsquo;./files/&amp;rsquo; . $file-&amp;gt;filename);
-   return TRUE;
-}
- 
-public function get_file($file_id)
-{
-   return $this-&amp;gt;db-&amp;gt;select()
-         -&amp;gt;from(&amp;lsquo;files&amp;rsquo;)
-         -&amp;gt;where(&amp;lsquo;id&amp;rsquo;, $file_id)
-         -&amp;gt;get()
-         -&amp;gt;row();
-}
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;嗯，简单的应用。没有涉及的权限、上传的进度条等。&lt;/p&gt;
-- https://kissjava.cn/posts/codeigniter%E9%87%8C%E7%9A%84%E6%97%A0%E5%88%B7%E6%96%B0%E4%B8%8A%E4%BC%A0/ - kissjava.cn</description>
         </item>
     
     

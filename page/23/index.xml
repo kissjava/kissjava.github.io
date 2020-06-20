@@ -6,9 +6,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>扩展 CodeIgniter 1.6.3 的 Model </title>
+        <link>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</link>
+        <pubDate>Tue, 21 Oct 2008 15:16:09 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/ -&lt;p&gt;第一步，用下载的文件替换system/libraries/Model.php
+第二步，对于你的每个数据表，都要在system/application/models 下建立一个模型
+第三步，建立一个“products”表，如下所示：
+&lt;!-- raw HTML omitted --&gt;
+CREATE TABLE &lt;code&gt;products&lt;/code&gt; (
+&lt;code&gt;id&lt;/code&gt; int(11) NOT NULL auto_increment,
+&lt;code&gt;title&lt;/code&gt; varchar(50) NOT NULL,
+&lt;code&gt;description&lt;/code&gt; text NOT NULL,
+&lt;code&gt;color&lt;/code&gt; varchar(20) NOT NULL,
+&lt;code&gt;price&lt;/code&gt; float NOT NULL,
+&lt;code&gt;category_id&lt;/code&gt; int(11) NOT NULL,
+&lt;code&gt;featured&lt;/code&gt; char(1) NOT NULL,
+&lt;code&gt;enabled&lt;/code&gt; char(1) NOT NULL,
+&lt;code&gt;visits&lt;/code&gt; int(1) NOT NULL,
+&lt;code&gt;created&lt;/code&gt; int(11) NOT NULL,
+&lt;code&gt;modified&lt;/code&gt; int(11) NOT NULL,
+PRIMARY KEY  (&lt;code&gt;id&lt;/code&gt;)
+) ENGINE=MyISAM;
+&lt;!-- raw HTML omitted --&gt;
+第四步，建立一个模型 system/application/models/product.php
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/%E6%89%A9%E5%B1%95-codeigniter-1.6.3-%E7%9A%84-model-/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -555,22 +588,6 @@ redirect(&amp;lsquo;welcome/index&amp;rsquo;,&amp;lsquo;refresh&amp;rsquo;);
 &lt;p&gt;通过参与 developerWorks blogs 加入 developerWorks 社区。&lt;/p&gt;
 &lt;p&gt;Thomas Myer 是一名技术书籍作者、顾问和 Web 开发人员。在 2001 年，他在德克萨斯州奥斯汀创立了 Triple Dog Dare Media。Triple Dog Dare Media 帮助公司创建基于 CodeIgniter 的发布应用程序，比如内容管理、门户网站和电子商务系统。Myer 是 No Nonsense XML Web Development with PHP（Sitepoint，2004）和 Lead Generation on the Web（O&amp;rsquo;Reilly 2007）的作者。他的新书，WROX 的 Professional CodeIgniter 在 2008 年 7 月在书店上架。他还为 IBM developerWorks、Amazon Web Services、AOL、Darwin Magazine 等撰写了数十篇技术和商业文章。&lt;/p&gt;
 &lt;p&gt;原文地址：http://www.ibm.com/developerworks/cn/web/wa-codeigniter/index.html&lt;/p&gt;- https://kissjava.cn/posts/codeigniter-%E5%85%A5%E9%97%A8-%E5%BF%AB%E9%80%9F%E7%AE%80%E5%8D%95%E5%9C%B0%E5%88%9B%E5%BB%BA-mvc-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>国庆，唠叨几句吧</title>
-        <link>https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</link>
-        <pubDate>Fri, 03 Oct 2008 15:40:12 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/ -&lt;p&gt;国庆有七天长假，不写些什么好像有些愧对这一亩三分地了。&lt;/p&gt;
-&lt;p&gt;刚刚听到的一个故事，真实的。&lt;/p&gt;
-&lt;p&gt;一个南京小伙和一个湖北姑娘本来计划是今天结婚的。请柬上写的就是今天。请柬也发了，酒店也定了，押金也交了，不过这婚礼却没能办成。为啥？新娘跑了。&lt;/p&gt;
-&lt;p&gt;新娘虽然有些胡闹，但是小伙还是比较实在的。飞到湖北找到新娘老家。但是新娘老家人先是说新娘没回来，后来新娘也出现了说给多少多少钱才行……。不用淡水多嘴，这是当下比较典型的例子了。结果，嗯，小伙说了，这人我不要了。&lt;/p&gt;
-&lt;p&gt;淡水不想鄙视哪一个人，只是有些感慨。这是结婚呐，还是做买卖呐？淡水还是很佩服那个小伙子的，佩服他能坚守心底那把尺子。再鄙视一把那些垃圾得不能再垃圾的所谓的青春偶像剧，哪里有那么多的王子和灰姑娘的童话在现实生活里发生！&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/ - kissjava.cn</description>
         </item>
     
     

@@ -6,9 +6,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>PHP中使用位运算实现简单的权限管理</title>
+        <link>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
+        <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ -&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;//所有的权限    
+$final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE  
+             | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; 
+//增加权限使用 |  
+
+echo &amp;quot;管理者拥有的全部权限：&amp;quot; .decbin($final_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
+
+$no_shearch_allow = $final_allow ^ SHARCH_ARTICLE; 
+//删除权限使用 ^ 或 &amp;amp; ~
+echo &amp;quot;仅无法搜索文章的权限：&amp;quot; .decbin($no_shearch_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
+
+//编辑人员独有的权限    
+$editor_allow = PUBLIC_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE;    
+$no_editor_allow = $final_allow &amp;amp; ~$editor_allow;    
+echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
+
+//判断权限使用 &amp;amp; ( 是, 返回非0; 不是, 返回0) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;?&amp;gt;
+&lt;!-- raw HTML omitted --&gt;
+输出为：&lt;/p&gt;
+&lt;p&gt;管理者拥有的全部权限：1111111
+仅无法搜索文章的权限：1101111
+非编辑人员所有的权限：1110010&lt;/p&gt;
+- https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -419,83 +455,6 @@ sum.php&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/%E5%AD%A6%E4%B9%A0php%E4%B8%AD%E7%9A%84soap/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>windows下基于apache的subversion（svn）的安装</title>
-        <link>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</link>
-        <pubDate>Wed, 13 May 2009 10:15:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ -&lt;p&gt;上午折腾了一下，可以写个详细步骤出来了。
-&lt;!-- raw HTML omitted --&gt;预期目标：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;搭建一个apache下的svn服务，服务地址 http://localhost/svn&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;本地环境：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;已经装有xampplite集成环境。
-svn的服务目录为D:svnroot
-已经安装好了小乌龟（TortoiseSVN）&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;安装步骤：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;1，下载的适用于windows的Subversion，我下载的是Setup-Subversion-1.5.3.msi
-这里注意要和apache的版本对应，我是apache2.2的。
-双击安装它，这个没说头。
-2，从subversion的安装目录Subversionbin下复制相应的文件到apache的modules目录中
-有三个，libdb44.dll mod_authz_svn.so mod_dav_svn.so
-（淡水还把Subversionbin下所有的dll文件都复制到了apache的bin下）
-3，配置apache的httpd.conf文件
-这个是个容易出差错的地方
-把下两行的注释去掉：&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;h1 id=&#34;所有人可以读管理员可以写&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
-&lt;p&gt;[svn:/]
-@g_admin = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;= r&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[svn:/机密文件]
-@g_admin = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;=&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[svn:/公告文件]
-@g_admin = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;= r&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[svn:/测试组]
-@g_admin = rw
-@g_test = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;=&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;如果是多个库，则权限文件类似以下&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;h1 id=&#34;所有人可以读管理员可以写-1&#34;&gt;所有人可以读，管理员可以写&lt;/h1&gt;
-&lt;p&gt;[/]
-@g_admin = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;= r&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[khn:/]
-@g_admin = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;=&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[ci170:/]
-@g_admin = rw
-@g_test = rw&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;= r&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;6，在d:svnroot下，用tortoiseSVN创建版本库。
-7，重启apache。搞定了。
-&lt;!-- raw HTML omitted --&gt;注意点：&lt;!-- raw HTML omitted --&gt;
-先不要启用权限控制。用tortoiseSVN登录进入以后，创建文件夹后，再启用权限控制。
-如果想要把地址改成http://localhost/kisssvn，两步：apache的httpd.conf 里 改为&amp;lt;Location /kisssvn&amp;gt;，再把权限文档里的[svn:/]等改成[kisssvn:/]。ok&lt;/p&gt;
-- https://kissjava.cn/posts/windows%E4%B8%8B%E5%9F%BA%E4%BA%8Eapache%E7%9A%84subversionsvn%E7%9A%84%E5%AE%89%E8%A3%85/ - kissjava.cn</description>
         </item>
     
     

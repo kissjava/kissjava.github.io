@@ -6,9 +6,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>socks5 proxy 折腾记</title>
+        <link>https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
+        <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ -&lt;p&gt;需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。
+google之。
+找到了socks5-v1.0r11编译报错:(
+再google之。。。
+又转找到ss5-3.6.4-3, 编译,又报错:(
+时间有限，精力有限，关键是能力有限。。
+最后google之。。。。。。
+找到Antinat。看似很方便的样子。官网：http://antinat.sourceforge.net/
+下载：
+antinat-0.90-1.i386.rpm
+antinat-libs-0.90-1.i386.rpm
+先rpm -ivh antinat-libs-0.90-1.i386.rpm
+再rpm -ivh antinat-0.90-1.i386.rpm
+搞定。
+也可以下载：antinat-0.90.tar.bz2 编译安装。
+tar jvxf antinat-0.90.tar.bz2
+cd antinat-0.90
+./configure
+make install
+cp etc/antinat.xml.allopen /usr/local/etc/antinat.xml
+配置端口：
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;port value=&#39;1080&#39;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -434,23 +471,6 @@ border: 5px solid red;/* ie8 */
 4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。
 5.对于ie8 chrome hack的请 GOOGLE or BAIDU …&lt;/p&gt;
 - https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
-        <link>https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
-        <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ -&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;实现原理：&lt;/p&gt;
-&lt;p&gt;（1）指定宽度：width:300px;
-（2）overflow:hidden;  将超出内容隐藏
-（3）text-overflow:ellipsis; IE 专有属性，当对象内文本溢出时显示省略标记(&amp;hellip;)
-（4）white-space:nowrap; 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。&lt;/p&gt;
-- https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/ - kissjava.cn</description>
         </item>
     
     

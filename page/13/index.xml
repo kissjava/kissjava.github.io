@@ -6,9 +6,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>CodeIgniter2 Model 支持单例</title>
+        <link>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</link>
+        <pubDate>Sat, 02 Apr 2011 17:30:35 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ -&lt;p&gt;CodeIgniter 2真的很给力啊。现在模型支持load其他模型了。方便很多。代码说话：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/codeigniter2-model-%E6%94%AF%E6%8C%81%E5%8D%95%E4%BE%8B/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -474,18 +488,6 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
         <guid>https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
         <description>清风徐来 https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ -&lt;!-- raw HTML omitted --&gt;
 - https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>宁海，浙东大峡谷2日游</title>
-        <link>https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</link>
-        <pubDate>Wed, 27 Oct 2010 09:55:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ - kissjava.cn</description>
         </item>
     
     

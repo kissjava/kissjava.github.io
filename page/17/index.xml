@@ -6,9 +6,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>淡水的2009</title>
+        <link>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</link>
+        <pubDate>Wed, 06 Jan 2010 09:49:30 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ -&lt;p&gt;终于肯花一点点时间，做个小小的回望了。
+淡水2009年过得波澜不惊。年初结婚了，随后换了份工作，然后杭州出差3个月，然后买了房子成为房奴一族。再然后2009就过去了。想换个笔记本没有实现，只是在网上过过眼瘾；想把kohana梳理一遍没有实现，只是用它重写了一下以前用codeigniter做过的企业站；想好好折腾一下linux没能坚持，只是在虚拟机上装了几次又遗忘了；还想&amp;hellip;&amp;hellip;
+robin去做手机站了，所以dophp没了；pat失踪了，所以bsdcn也没了。还好hex的codeigniter.org.cn还在，还好icyleaf的kohana.cn还在&amp;hellip;&amp;hellip;
+2010到了，淡水的2009过了，大家继续努力吧，淡水说完了。&lt;/p&gt;
+- https://kissjava.cn/posts/%E6%B7%A1%E6%B0%B4%E7%9A%842009/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -223,42 +238,6 @@ http://username:password@domain/test/service.php?wsdl
 &lt;p&gt;好了,我遇到的问题就这些了, 希望能对各位也用nusoap的朋友有点帮助, 如果还有不清楚的, 请留言提问, 谢谢 ;)&lt;/p&gt;
 &lt;p&gt;from：http://blog.csdn.net/mynamesucks/archive/2006/05/26/756480.aspx&lt;/p&gt;
 - https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>PHP中使用位运算实现简单的权限管理</title>
-        <link>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</link>
-        <pubDate>Thu, 23 Jul 2009 12:02:24 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ -&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;//所有的权限    
-$final_allow = PUBLIC_ARTICLE | CREATE_ARTICLE | MODIFY_ARTICLE  
-             | DELETE_ARTICLE | SHARCH_ARTICLE | CREATE_COMMENT | DELETE_COMMENT; 
-//增加权限使用 |  
-
-echo &amp;quot;管理者拥有的全部权限：&amp;quot; .decbin($final_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
-
-$no_shearch_allow = $final_allow ^ SHARCH_ARTICLE; 
-//删除权限使用 ^ 或 &amp;amp; ~
-echo &amp;quot;仅无法搜索文章的权限：&amp;quot; .decbin($no_shearch_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;    
-
-//编辑人员独有的权限    
-$editor_allow = PUBLIC_ARTICLE | MODIFY_ARTICLE | DELETE_ARTICLE;    
-$no_editor_allow = $final_allow &amp;amp; ~$editor_allow;    
-echo &amp;quot;非编辑人员所有的权限：&amp;quot; .decbin($no_editor_allow). &amp;quot;&amp;lt;br&amp;gt;&amp;quot;; 
-
-//判断权限使用 &amp;amp; ( 是, 返回非0; 不是, 返回0) 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;?&amp;gt;
-&lt;!-- raw HTML omitted --&gt;
-输出为：&lt;/p&gt;
-&lt;p&gt;管理者拥有的全部权限：1111111
-仅无法搜索文章的权限：1101111
-非编辑人员所有的权限：1110010&lt;/p&gt;
-- https://kissjava.cn/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/ - kissjava.cn</description>
         </item>
     
     

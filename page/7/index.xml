@@ -6,9 +6,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>ipython tab键无法提示补全</title>
+        <link>https://kissjava.cn/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</link>
+        <pubDate>Sat, 07 Nov 2015 08:39:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ -&lt;p&gt;python3.4下pip安装了ipython&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install ipython
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;cmd运行ipython貌似正常，但是无法tab补全、提示
+需要pip 安装 pyreadline&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install pyreadline
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上在win8.1下32位python3.4通过&lt;/p&gt;
+- https://kissjava.cn/posts/ipython-tab%E9%94%AE%E6%97%A0%E6%B3%95%E6%8F%90%E7%A4%BA%E8%A1%A5%E5%85%A8/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -793,56 +810,6 @@ sudo chmod +x Sublime\ Text
 &lt;p&gt;End&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1sjjQGY5&#34;&gt;你懂得附件&lt;/a&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>wxpython设置背景</title>
-        <link>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</link>
-        <pubDate>Thu, 13 Mar 2014 22:30:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ -&lt;p&gt;用wxformbuilder+一点代码来实现。&lt;/p&gt;
-&lt;p&gt;首先用wxformbuilder来做出界面，并生成代码。运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/1144182459.bmp&#34; alt=&#34;默认效果图&#34;&gt;&lt;/p&gt;
-&lt;p&gt;使其有背景图片效果：
-&lt;img src=&#34;http://kissjava-typechoupload.stor.sinaapp.com/83875334.bmp&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;实现代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#coding:utf-8
-
-import wx
-#导入wxformbuilder生成的代码
-import BgDemo
-
-class Main(wx.App):
-    def __init__(self, redirect=False, filename=None):
-        wx.App.__init__(self, redirect, filename)
-        dlg = BgDemo.MyFrame(None)
-
-        #这里设置哪个控件需要设置背景
-        dlg.m_panel1.Bind(wx.EVT_ERASE_BACKGROUND, self.OnEraseBackground)
-
-        dlg.Show()
-
-    def OnEraseBackground(self, evt):
-        &amp;quot;&amp;quot;&amp;quot;
-        设置背景的方法
-        &amp;quot;&amp;quot;&amp;quot;
-        dc = evt.GetDC()
-        if not dc:
-            dc = wx.ClientDC(self)
-            rect = self.GetUpdateRegion().GetBox()
-            dc.SetClippingRect(rect)
-        dc.Clear()
-        bmp = wx.Bitmap(&amp;quot;Sunset.jpg&amp;quot;)
-        dc.DrawBitmap(bmp, 0, 0)
- 
-if __name__ == &amp;quot;__main__&amp;quot;:
-    app = Main()
-    app.MainLoop()
-&lt;/code&gt;&lt;/pre&gt;
-- https://kissjava.cn/posts/wxpython%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF/ - kissjava.cn</description>
         </item>
     
     

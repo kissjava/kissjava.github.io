@@ -6,9 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>国庆，唠叨几句吧</title>
+        <link>https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</link>
+        <pubDate>Fri, 03 Oct 2008 15:40:12 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/ -&lt;p&gt;国庆有七天长假，不写些什么好像有些愧对这一亩三分地了。&lt;/p&gt;
+&lt;p&gt;刚刚听到的一个故事，真实的。&lt;/p&gt;
+&lt;p&gt;一个南京小伙和一个湖北姑娘本来计划是今天结婚的。请柬上写的就是今天。请柬也发了，酒店也定了，押金也交了，不过这婚礼却没能办成。为啥？新娘跑了。&lt;/p&gt;
+&lt;p&gt;新娘虽然有些胡闹，但是小伙还是比较实在的。飞到湖北找到新娘老家。但是新娘老家人先是说新娘没回来，后来新娘也出现了说给多少多少钱才行……。不用淡水多嘴，这是当下比较典型的例子了。结果，嗯，小伙说了，这人我不要了。&lt;/p&gt;
+&lt;p&gt;淡水不想鄙视哪一个人，只是有些感慨。这是结婚呐，还是做买卖呐？淡水还是很佩服那个小伙子的，佩服他能坚守心底那把尺子。再鄙视一把那些垃圾得不能再垃圾的所谓的青春偶像剧，哪里有那么多的王子和灰姑娘的童话在现实生活里发生！&lt;/p&gt;
+- https://kissjava.cn/posts/%E5%9B%BD%E5%BA%86%E5%94%A0%E5%8F%A8%E5%87%A0%E5%8F%A5%E5%90%A7/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -213,36 +229,6 @@ views文件夹下有个专门的admin文件夹，里面都是管理页面（inde
 &lt;p&gt;本来数据可以找回的，但是比较麻烦，所以干脆重新搞个独立IP的空间好了，不贵才100块RMB.200M的web空间+50M的mysql。软件环境： Apache  2.2.3  ＋ PHP  5.2.4  + MySQL  5.0.22  架构 ，支持  PHP 5.2.4  / PHP4(文件名须为*.php4或开通共享IP主机) / SHTML / HTML。试试看PHP5到底爽不爽XD.&lt;/p&gt;
 &lt;p&gt;链接丢失了，希望看到的童鞋联系一下淡水&amp;gt;_&amp;lt;&lt;/p&gt;
 - https://kissjava.cn/posts/%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>CodeIgniter MongoDB Library</title>
-        <link>https://kissjava.cn/posts/codeigniter-mongodb-library/</link>
-        <pubDate>Thu, 01 Jan 1970 08:00:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/codeigniter-mongodb-library/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/codeigniter-mongodb-library/ -&lt;p&gt;它能使你的应用在操作MongoDB时保证和active record一致的风格。&lt;/p&gt;
-&lt;p&gt;1，添加Mongo_db.php 到你的 /application/libraries 文件夹
-2，添加mongodb.php 到你的 /application/config 文件夹
-3，更你的配置文件&lt;/p&gt;
-&lt;p&gt;你可以把它设置为autoload，也可以在你的控制器里加载它。&lt;/p&gt;
-&lt;p&gt;你可以使用codeigniter的active record的方式来操作数据库。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;结果会返回相匹配的文档。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;select 方法&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;where_lt Where something is less than something&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;where_lte Where something is less than or equal to something&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;where_not_equal Where something is not equal to something&amp;lt;/li&amp;gt;
-
-&amp;lt;li&amp;gt;where_near` Where something is near to something (2d geospatial search)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;order_by Order the results&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;limit Limit the number of returned results&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/codeigniter-mongodb-library/ - kissjava.cn</description>
         </item>
     
     

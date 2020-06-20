@@ -6,9 +6,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>搬家到SAE</title>
+        <link>https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</link>
+        <pubDate>Tue, 17 Sep 2013 15:53:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ -&lt;p&gt;搬家到SAE。&lt;!-- raw HTML omitted --&gt;友链及部分文章丢失，有劳各位友链博主留言，我会一一补上。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;从搜索引擎过来的朋友，链接和内容无法对上，请搜索。&lt;/p&gt;
+&lt;p&gt;为了找到备案号，搜快照，居然找到2005年在opera上写的东西，还有一张老照片啊。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/%E6%90%AC%E5%AE%B6%E5%88%B0sae/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -503,29 +519,6 @@ $test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;-
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;快小半年没更新了，这里都快荒废了，有木有！&lt;/p&gt;
 - https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Lazy Load Plugin for jQuery</title>
-        <link>https://kissjava.cn/posts/lazy-load-plugin-for-jquery/</link>
-        <pubDate>Mon, 06 Feb 2012 20:37:18 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/lazy-load-plugin-for-jquery/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/lazy-load-plugin-for-jquery/ -&lt;p&gt;lazy load 就是 懒惰加载。要告诉它，我需要你啦，它才跑出来。&lt;/p&gt;
-&lt;p&gt;这个插件，就是浏览器还没有浏览到的图片，都不加载；等滚动条下拉，下面的页面显示了，原来下面页面包含的图片才会被触发加载。&lt;/p&gt;
-&lt;p&gt;已经有些站用这样的技术了。淡水一直不致力于前端研究，正好晃荡到这个插件的站点。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.appelsiini.net/projects/lazyload&#34;&gt;http://www.appelsiini.net/projects/lazyload&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;就不翻译了。简单的用用。图片源给个1*1像素的空图，真正的图片路径放到data-original属性里。底部加载jquery和插件js还有简单的插件函数调用。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;其他还有一些乱七八糟的用法就不多说了。上边的代码足矣。&lt;/p&gt;
-- https://kissjava.cn/posts/lazy-load-plugin-for-jquery/ - kissjava.cn</description>
         </item>
     
     

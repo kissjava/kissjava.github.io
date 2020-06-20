@@ -6,9 +6,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>宁海，浙东大峡谷2日游</title>
+        <link>https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</link>
+        <pubDate>Wed, 27 Oct 2010 09:55:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/%E5%AE%81%E6%B5%B7%E6%B5%99%E4%B8%9C%E5%A4%A7%E5%B3%A1%E8%B0%B72%E6%97%A5%E6%B8%B8/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -284,43 +296,6 @@ svn merge -r 33:HEAD &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/
 svn merge &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/svn/trunk/simpletag@HEAD&#34;&gt;https://easymorse-simpletag.googlecode.com/svn/trunk/simpletag@HEAD&lt;/a&gt; &lt;a href=&#34;https://easymorse-simpletag.googlecode.com/svn/branches/simpletag_select_1@HEAD&#34;&gt;https://easymorse-simpletag.googlecode.com/svn/branches/simpletag_select_1@HEAD&lt;/a&gt;
 提交。&lt;/p&gt;
 - https://kissjava.cn/posts/svn%E5%B0%8F%E8%AE%B0/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>socks5 proxy 折腾记</title>
-        <link>https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</link>
-        <pubDate>Sat, 27 Mar 2010 09:53:02 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ -&lt;p&gt;需要在服务器上装sock5 proxy，服务器平台是Redhat enterprise linux5,淡水要在有限的时间里去折腾它。
-google之。
-找到了socks5-v1.0r11编译报错:(
-再google之。。。
-又转找到ss5-3.6.4-3, 编译,又报错:(
-时间有限，精力有限，关键是能力有限。。
-最后google之。。。。。。
-找到Antinat。看似很方便的样子。官网：http://antinat.sourceforge.net/
-下载：
-antinat-0.90-1.i386.rpm
-antinat-libs-0.90-1.i386.rpm
-先rpm -ivh antinat-libs-0.90-1.i386.rpm
-再rpm -ivh antinat-0.90-1.i386.rpm
-搞定。
-也可以下载：antinat-0.90.tar.bz2 编译安装。
-tar jvxf antinat-0.90.tar.bz2
-cd antinat-0.90
-./configure
-make install
-cp etc/antinat.xml.allopen /usr/local/etc/antinat.xml
-配置端口：
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;pre&gt;&lt;code&gt;    &amp;lt;port value=&#39;1080&#39;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/socks5-proxy-%E6%8A%98%E8%85%BE%E8%AE%B0/ - kissjava.cn</description>
         </item>
     
     

@@ -6,9 +6,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Debian9 快速开启 TCP BBR </title>
+        <link>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
+        <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2018/10/2233004097.png&#34; alt=&#34;1100px-Comic_strips_Linux_BBR.svg.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Debian9 默认的内核是 4.9 的内核而且编译了 TCP BBR，所以可以直接通过参数开启, 不仅方便而且很快, 反正也不花多少时间, 还是开启吧。&lt;/p&gt;
+&lt;p&gt;干货如下
+1,修改系统变量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf
+echo &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存修改的配置使之生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2,执行以下命令开启 BBR&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl net.ipv4.tcp_available_congestion_control
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一般回显如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就是开启成功了。&lt;/p&gt;
+&lt;p&gt;3,可以执行以下命令以检测 BBR 是否开启。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lsmod | grep bbr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;回显&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tcp_bbr                20480  1  
+&lt;/code&gt;&lt;/pre&gt;
+- https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -223,281 +258,6 @@ System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;TimeSpan&lt;/code&gt; 还可以计算出&lt;code&gt;TotalHours&lt;/code&gt;，&lt;code&gt;TotalMinutes&lt;/code&gt;， &lt;code&gt;TotalSeconds&lt;/code&gt;。&lt;/p&gt;
 - https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>PyQt5表格应用的详细Demo</title>
-        <link>https://kissjava.cn/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</link>
-        <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/ -&lt;p&gt;PyQt5实现的一个表格应用的 demo。涉及的知识点：tableWidget 的基本使用，cell 内放置 widget，设置 cell 模式，分页，获取选中项目。
-&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2207092668.png&#34; alt=&#34;PyQt5TableWidgetDemo.PNG&#34;&gt;&lt;/p&gt;
-&lt;p&gt;首先是 QtDesigner 设计, 一个 tablewidget，4个 pushbuttno：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
-&amp;lt;ui version=&amp;quot;4.0&amp;quot;&amp;gt;
- &amp;lt;class&amp;gt;MainWindow&amp;lt;/class&amp;gt;
- &amp;lt;widget class=&amp;quot;QMainWindow&amp;quot; name=&amp;quot;MainWindow&amp;quot;&amp;gt;
-  &amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;
-   &amp;lt;rect&amp;gt;
-    &amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;
-    &amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;
-    &amp;lt;width&amp;gt;800&amp;lt;/width&amp;gt;
-    &amp;lt;height&amp;gt;600&amp;lt;/height&amp;gt;
-   &amp;lt;/rect&amp;gt;
-  &amp;lt;/property&amp;gt;
-  &amp;lt;property name=&amp;quot;windowTitle&amp;quot;&amp;gt;
-   &amp;lt;string&amp;gt;MainWindow&amp;lt;/string&amp;gt;
-  &amp;lt;/property&amp;gt;
-  &amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;centralwidget&amp;quot;&amp;gt;
-   &amp;lt;widget class=&amp;quot;QTableWidget&amp;quot; name=&amp;quot;tableWidget&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;
-     &amp;lt;rect&amp;gt;
-      &amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;
-      &amp;lt;y&amp;gt;0&amp;lt;/y&amp;gt;
-      &amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;
-      &amp;lt;height&amp;gt;541&amp;lt;/height&amp;gt;
-     &amp;lt;/rect&amp;gt;
-    &amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;rowCount&amp;quot;&amp;gt;
-     &amp;lt;number&amp;gt;5&amp;lt;/number&amp;gt;
-    &amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;columnCount&amp;quot;&amp;gt;
-     &amp;lt;number&amp;gt;11&amp;lt;/number&amp;gt;
-    &amp;lt;/property&amp;gt;
-    &amp;lt;row/&amp;gt;
-    &amp;lt;row/&amp;gt;
-    &amp;lt;row/&amp;gt;
-    &amp;lt;row/&amp;gt;
-    &amp;lt;row/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-    &amp;lt;column/&amp;gt;
-   &amp;lt;/widget&amp;gt;
-   &amp;lt;widget class=&amp;quot;QWidget&amp;quot; name=&amp;quot;horizontalLayoutWidget&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;geometry&amp;quot;&amp;gt;
-     &amp;lt;rect&amp;gt;
-      &amp;lt;x&amp;gt;0&amp;lt;/x&amp;gt;
-      &amp;lt;y&amp;gt;540&amp;lt;/y&amp;gt;
-      &amp;lt;width&amp;gt;801&amp;lt;/width&amp;gt;
-      &amp;lt;height&amp;gt;31&amp;lt;/height&amp;gt;
-     &amp;lt;/rect&amp;gt;
-    &amp;lt;/property&amp;gt;
-    &amp;lt;layout class=&amp;quot;QHBoxLayout&amp;quot; name=&amp;quot;horizontalLayout&amp;quot;&amp;gt;
-     &amp;lt;item&amp;gt;
-      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnLoad&amp;quot;&amp;gt;
-       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
-        &amp;lt;string&amp;gt;Load&amp;lt;/string&amp;gt;
-       &amp;lt;/property&amp;gt;
-      &amp;lt;/widget&amp;gt;
-     &amp;lt;/item&amp;gt;
-     &amp;lt;item&amp;gt;
-      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnPre&amp;quot;&amp;gt;
-       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
-        &amp;lt;string&amp;gt;《Pre&amp;lt;/string&amp;gt;
-       &amp;lt;/property&amp;gt;
-      &amp;lt;/widget&amp;gt;
-     &amp;lt;/item&amp;gt;
-     &amp;lt;item&amp;gt;
-      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnNext&amp;quot;&amp;gt;
-       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
-        &amp;lt;string&amp;gt;Next》&amp;lt;/string&amp;gt;
-       &amp;lt;/property&amp;gt;
-      &amp;lt;/widget&amp;gt;
-     &amp;lt;/item&amp;gt;
-     &amp;lt;item&amp;gt;
-      &amp;lt;widget class=&amp;quot;QPushButton&amp;quot; name=&amp;quot;btnDetail&amp;quot;&amp;gt;
-       &amp;lt;property name=&amp;quot;text&amp;quot;&amp;gt;
-        &amp;lt;string&amp;gt;Detail&amp;lt;/string&amp;gt;
-       &amp;lt;/property&amp;gt;
-      &amp;lt;/widget&amp;gt;
-     &amp;lt;/item&amp;gt;
-    &amp;lt;/layout&amp;gt;
-   &amp;lt;/widget&amp;gt;
-  &amp;lt;/widget&amp;gt;
-  &amp;lt;widget class=&amp;quot;QStatusBar&amp;quot; name=&amp;quot;statusbar&amp;quot;/&amp;gt;
- &amp;lt;/widget&amp;gt;
- &amp;lt;resources/&amp;gt;
- &amp;lt;connections/&amp;gt;
-&amp;lt;/ui&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;生成的 ui 代码 tableWidgetDemo.py：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file &#39;tableWidgetDemo.ui&#39;
-#
-# Created by: PyQt5 UI code generator 5.6
-#
-# WARNING! All changes made in this file will be lost!
-
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName(&amp;quot;MainWindow&amp;quot;)
-        MainWindow.resize(800, 600)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName(&amp;quot;centralwidget&amp;quot;)
-        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(0, 0, 801, 541))
-        self.tableWidget.setRowCount(5)
-        self.tableWidget.setColumnCount(11)
-        self.tableWidget.setObjectName(&amp;quot;tableWidget&amp;quot;)
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 540, 801, 31))
-        self.horizontalLayoutWidget.setObjectName(&amp;quot;horizontalLayoutWidget&amp;quot;)
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName(&amp;quot;horizontalLayout&amp;quot;)
-        self.btnLoad = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.btnLoad.setObjectName(&amp;quot;btnLoad&amp;quot;)
-        self.horizontalLayout.addWidget(self.btnLoad)
-        self.btnPre = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.btnPre.setObjectName(&amp;quot;btnPre&amp;quot;)
-        self.horizontalLayout.addWidget(self.btnPre)
-        self.btnNext = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.btnNext.setObjectName(&amp;quot;btnNext&amp;quot;)
-        self.horizontalLayout.addWidget(self.btnNext)
-        self.btnDetail = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.btnDetail.setObjectName(&amp;quot;btnDetail&amp;quot;)
-        self.horizontalLayout.addWidget(self.btnDetail)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName(&amp;quot;statusbar&amp;quot;)
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;MainWindow&amp;quot;))
-        self.btnLoad.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;Load&amp;quot;))
-        self.btnPre.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;《Pre&amp;quot;))
-        self.btnNext.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;Next》&amp;quot;))
-        self.btnDetail.setText(_translate(&amp;quot;MainWindow&amp;quot;, &amp;quot;Detail&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最后上实现代码：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from PyQt5 import QtWidgets, QtCore
-import sqlite3
-
-from tableWidgetDemo import Ui_MainWindow
-
-class Window(QtWidgets.QMainWindow):
-    def  __init__(self, parent=None):
-        super(Window, self).__init__(parent=parent)
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        self.initStyle()
-        self.initConn()
-
-        self.currentPage = 1
-
-        self.ui.btnLoad.clicked.connect(lambda :self.loadData(1))
-        self.ui.btnDetail.clicked.connect(self.showDetail)
-        self.ui.btnPre.clicked.connect(lambda : self.loadData(self.currentPage - 1))
-        self.ui.btnNext.clicked.connect(lambda : self.loadData(self.currentPage + 1))
-
-    def closeEvent(self, event):
-        self.connection.close()
-        event.accept()
-
-    def initStyle(self):
-        horizontalHeader = [&#39;CustomerID&#39;,&#39;FirstName&#39;,&#39;LastName&#39;,&#39;Company&#39;,&#39;Address&#39;,&#39;City&#39;,&#39;State&#39;,&#39;国籍&#39;,&#39;邮编&#39;,&#39;电话&#39;,&amp;quot;Action&amp;quot;]
-        self.ui.tableWidget.setHorizontalHeaderLabels(horizontalHeader)
-
-    def initConn(self):
-        self.connection = sqlite3.connect(&amp;quot;mydb.db&amp;quot;)
-        self.cur = self.connection.cursor()
-
-    def saveLine(self,id):
-        print(&amp;quot;saveLine id %d&amp;quot; % id)
-
-    def delLine(self,id):
-        print(&amp;quot;delLine id %d&amp;quot; % id)
-
-    def createInnerButton(self,id):
-        widget = QtWidgets.QWidget()
-        saveBtn = QtWidgets.QPushButton(&amp;quot;Save&amp;quot;)
-        saveBtn.setStyleSheet(&amp;quot;background-color:DarkSeaGreen;border-style:outset;border-radius:3px&amp;quot;)
-        saveBtn.setFixedSize(40,14)
-        saveBtn.clicked.connect(lambda: self.saveLine(id))
-
-        delBtn = QtWidgets.QPushButton(&amp;quot;Del&amp;quot;)
-        delBtn.setStyleSheet(&amp;quot;background-color:LightCoral;border-style:outset;border-radius:3px&amp;quot;)
-        delBtn.setFixedSize(40,14)
-        delBtn.clicked.connect(lambda: self.delLine(id))
-
-        layout = QtWidgets.QHBoxLayout()
-        layout.addWidget(saveBtn)
-        layout.addWidget(delBtn)
-        widget.setLayout(layout)
-        return widget
-
-    def showDetail(self):
-        select = self.ui.tableWidget.selectedItems()
-        if select:
-            print(select)
-            try:
-                print(select[0].text())
-                rs = &amp;quot;,&amp;quot;.join([i.text() for i in select])
-                QtWidgets.QMessageBox.about(self, &#39;你选择的项目&#39;, rs)
-            except Exception as e:
-                print(e)
-        else:
-            print(&amp;quot;Nothing.&amp;quot;)
-
-
-    def loadData(self, page = 1):
-
-        if page &amp;lt; 1:
-            QtWidgets.QMessageBox.about(self, &#39;提示&#39;, &amp;quot;提示：已经到第一页了\t&amp;quot;)
-            return
-
-        pageSize = 16
-        offset = (page - 1) * pageSize
-        query = &amp;quot;SELECT CustomerID,FirstName,LastName,Company,Address,City,State,Country,PostalCode,Phone FROM customers&amp;quot;
-        query += &amp;quot; limit %d offset %d&amp;quot; % (pageSize, offset)
-        self.cur.execute(query)
-
-        result = self.cur.fetchall()
-
-        if len(result) == 0:
-            QtWidgets.QMessageBox.about(self, &#39;提示&#39;, &amp;quot;提示：没有下一页了\t&amp;quot;)
-            return
-
-        self.currentPage = page
-
-        self.ui.tableWidget.setRowCount(0)
-        for row_number, row_data in enumerate(result):
-            self.ui.tableWidget.insertRow(row_number)
-            for colum_number, data in enumerate(row_data):
-                self.ui.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
-
-            temp = QtWidgets.QTableWidgetItem()
-            temp.setFlags(QtCore.Qt.ItemIsEnabled)
-            self.ui.tableWidget.setItem(row_number,10,temp)
-
-            actionItem = self.createInnerButton(row_data[0])
-            self.ui.tableWidget.setCellWidget(row_number,10,actionItem)
-
-
-if __name__ == &amp;quot;__main__&amp;quot;:
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    w = Window()
-    w.show()
-    sys.exit(app.exec_())
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最后，给出源码：
-&lt;a href=&#34;https://kissjava.cn/usr/uploads/2017/09/3996694642.zip&#34;&gt;PyQt5TableWidgetDemo.zip&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/ - kissjava.cn</description>
         </item>
     
     

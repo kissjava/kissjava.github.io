@@ -6,9 +6,151 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Fri, 19 Jun 2020 09:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part13 跨站点请求伪造（CSRF）</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</link>
+        <pubDate>Sat, 17 Aug 2019 21:33:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;跨站点请求伪造（CSRF）攻击以及如何预测它们&lt;/p&gt;
+&lt;p&gt;此类攻击的示例：尝试通过Web浏览器以外的媒体登录，例如使用CURL等&lt;/p&gt;
+&lt;p&gt;通常的防御方法是使用csrf令牌。在有表单的每个页面上，都会生成csrf令牌。提交表单时，会在请求中插入CSRF，然后后端检查发送的CSRF是否有效&lt;/p&gt;
+&lt;p&gt;csrf令牌本身是每次表单页面出现时生成的随机字符串。通常在每个POST请求中，令牌都作为标头，数据表单或查询字符串插入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;html/template&amp;quot;
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+type M map[string]interface{}
+
+func main() {
+	tmpl := template.Must(template.ParseGlob(&amp;quot;./*.html&amp;quot;))
+
+	e := echo.New()
+
+	const CSRF_TOKEN_HEADER = &amp;quot;X-Csrf-Token&amp;quot;
+	const CSRF_KEY = &amp;quot;csrf_token&amp;quot;
+
+	e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
+		TokenLookup: &amp;quot;header:&amp;quot; + CSRF_TOKEN_HEADER,
+		ContextKey:  CSRF_KEY,
+	}))
+
+	e.GET(&amp;quot;/index&amp;quot;, func(c echo.Context) error {
+		data := make(M)
+		data[CSRF_KEY] = c.Get(CSRF_KEY)
+		return tmpl.ExecuteTemplate(c.Response(), &amp;quot;view.html&amp;quot;, data)
+	})
+
+	//sayhello处理程序中没有csrf标记检查，因为它已被中间件隐式处理
+	e.POST(&amp;quot;/sayhello&amp;quot;, func(c echo.Context) error {
+		data := make(M)
+		if err := c.Bind(&amp;amp;data); err != nil {
+			return err
+		}
+
+		message := fmt.Sprintf(&amp;quot;hello %s&amp;quot;, data[&amp;quot;name&amp;quot;])
+		return c.JSON(http.StatusOK, message)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;view.html&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;form id=&amp;quot;form&amp;quot; action=&amp;quot;/sayhello&amp;quot; method=&amp;quot;POST&amp;quot;&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;label&amp;gt;Name&amp;lt;/label&amp;gt;
+            &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot; placeholder=&amp;quot;Type your name here&amp;quot;&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;label&amp;gt;Gender&amp;lt;/label&amp;gt;
+            &amp;lt;select name=&amp;quot;gender&amp;quot;&amp;gt;
+                &amp;lt;option value=&amp;quot;&amp;quot;&amp;gt;Select one&amp;lt;/option&amp;gt;
+                &amp;lt;option value=&amp;quot;male&amp;quot;&amp;gt;Male&amp;lt;/option&amp;gt;
+                &amp;lt;option value=&amp;quot;female&amp;quot;&amp;gt;Female&amp;lt;/option&amp;gt;
+            &amp;lt;/select&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div&amp;gt;
+            &amp;lt;input type=&amp;quot;hidden&amp;quot; name=&amp;quot;csrf_token&amp;quot; value=&amp;quot;{{ .csrf_token }}&amp;quot;&amp;gt;
+            &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Submit&amp;lt;/button&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/form&amp;gt;
+
+    &amp;lt;script src=&amp;quot;https://code.jquery.com/jquery-3.3.1.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+        $(function () {
+            $(&#39;form&#39;).on(&#39;submit&#39;, function (e) {
+                e.preventDefault()
+        
+                var self = $(this)
+        
+                var formData = {
+                    name: self.find(&#39;[name=&amp;quot;name&amp;quot;]&#39;).val(),
+                    gender: self.find(&#39;[name=&amp;quot;gender&amp;quot;]&#39;).val(),
+                }
+        
+                var url = self.attr(&#39;action&#39;)
+                var method = self.attr(&#39;method&#39;)
+                var payload = JSON.stringify(formData)
+        
+                $.ajax({
+                    url: url,
+                    type: method,
+                    contentType: &#39;application/json&#39;,
+                    data: payload,
+                    beforeSend: function(req) {
+                        var csrfToken = self.find(&#39;[name=csrf_token]&#39;).val()
+                        req.setRequestHeader(&amp;quot;X-Csrf-Token&amp;quot;, csrfToken)
+                    },
+                }).then(function (res) {
+                    alert(res)
+                }).catch(function (err) {
+                    alert(&#39;ERROR: &#39; + err.responseText)
+                    console.log(&#39;err&#39;, err)
+                })
+            })
+        })
+    &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器访问，提交数据，一切正常：
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/1911725900.png&#34; alt=&#34;csrf.png&#34;&gt;
+如果把JavaScript中的以下去掉，会验证不过的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;beforeSend: function(req) {
+                        var csrfToken = self.find(&#39;[name=csrf_token]&#39;).val()
+                        req.setRequestHeader(&amp;quot;X-Csrf-Token&amp;quot;, csrfToken)
+                    },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;尝试直接CURL访问，验证肯定不过&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/sayhello \
+     -H &#39;Content-Type: application/json&#39; \
+     -d &#39;{&amp;quot;name&amp;quot;:&amp;quot;noval&amp;quot;,&amp;quot;gender&amp;quot;:&amp;quot;male&amp;quot;}&#39;
+{&amp;quot;message&amp;quot;:&amp;quot;invalid csrf token&amp;quot;}
+
+curl -X POST http://localhost:9000/sayhello \
+     -d &#39;name=Joe&#39; \
+     -d &#39;gender=male&#39;
+{&amp;quot;message&amp;quot;:&amp;quot;invalid csrf token&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part13-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0csrf/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1086,71 +1228,6 @@ curl -X POST http://localhost:9000/users \
      -d &#39;age=10&#39;  
 #output =&amp;gt; true
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part3 解析HTTP请求</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
-        <pubDate>Sat, 17 Aug 2019 10:13:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
-解析HTTP请求&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-)
-
-type User struct {
-	Name  string `json:&amp;quot;name&amp;quot; form:&amp;quot;name&amp;quot; query:&amp;quot;name&amp;quot;`
-	Email string `json:&amp;quot;email&amp;quot; form:&amp;quot;email&amp;quot; query:&amp;quot;email&amp;quot;`
-}
-
-func main() {
-	r := echo.New()
-
-	r.Any(&amp;quot;/user&amp;quot;, func(c echo.Context) (err error) {
-		u := new(User)
-		if err = c.Bind(u); err != nil {
-			return
-		}
-
-		return c.JSON(http.StatusOK, u)
-	})
-
-	fmt.Println(&amp;quot;server started at :9000&amp;quot;)
-	r.Start(&amp;quot;:9000&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试验证&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/user \
-     -d &#39;name=Joe&#39; \
-     -d &#39;email=nope@novalagung.com&#39;
-
-# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
-
-curl -X POST http://localhost:9000/user \
-     -H &#39;Content-Type: application/json&#39; \
-     -d &#39;{&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}&#39;
-
-# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Nope&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
-
-curl -X POST http://localhost:9000/user \
-     -H &#39;Content-Type: application/xml&#39; \
-     -d &#39;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;\
-        &amp;lt;Data&amp;gt;\
-            &amp;lt;Name&amp;gt;Joe&amp;lt;/Name&amp;gt;\
-            &amp;lt;Email&amp;gt;nope@novalagung.com&amp;lt;/Email&amp;gt;\
-        &amp;lt;/Data&amp;gt;&#39;
-
-# output =&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;Joe&amp;quot;,&amp;quot;email&amp;quot;:&amp;quot;nope@novalagung.com&amp;quot;}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;很神奇，没有定义xml，居然也可以解析出来&lt;/p&gt;
-- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/ - kissjava.cn</description>
         </item>
     
     

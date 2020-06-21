@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Posts</title>
+<title>另一个VPS流量超过后自动关机脚本</title>
 
 
 
@@ -16,19 +16,28 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="清风徐来 Michael&#39;s Blog." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://kissjava.cn/posts/" />
-<meta property="og:updated_time" content="2020-06-21T08:44:17+08:00" /><meta property="og:site_name" content="清风徐来" />
+<meta property="og:title" content="另一个VPS流量超过后自动关机脚本" />
+<meta property="og:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
+如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
+值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kissjava.cn/posts/another-auto-shutdown-script-after-certain-bandwith-usage/" />
+<meta property="article:published_time" content="2020-06-21T08:44:17+08:00" />
+<meta property="article:modified_time" content="2020-06-21T08:44:17+08:00" /><meta property="og:site_name" content="清风徐来" />
 
 
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="清风徐来 Michael&#39;s Blog."/>
+<meta name="twitter:title" content="另一个VPS流量超过后自动关机脚本"/>
+<meta name="twitter:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
+如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
+值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check."/>
 
 
 
@@ -63,11 +72,17 @@
 
 
 
+  
+    <script src="https://kissjava.cn/js/toc-collapse.js"></script>
+  
 
 
 
 
 
+
+
+<script src='https://unpkg.com/valine@1.4.14/dist/Valine.min.js'></script>
 
 
 
@@ -163,6 +178,172 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%af%b4%e6%98%8e" onclick="collapseOthers(`#说明-nav`)" id="说明-nav">
+									说明
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85vnstatcentos" onclick="collapseOthers(`#安装vnstatcentos-nav`)" id="安装vnstatcentos-nav">
+									安装vnstat(centos)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85debian" onclick="collapseOthers(`#安装debian-nav`)" id="安装debian-nav">
+									安装（debian）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="collapseOthers(`#修改配置文件-nav`)" id="修改配置文件-nav">
+									修改配置文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6checksh" onclick="collapseOthers(`#创建脚本文件checksh-nav`)" id="创建脚本文件checksh-nav">
+									创建脚本文件check.sh
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%99checksh%e6%8e%88%e4%ba%8e%e6%9d%83%e9%99%90" onclick="collapseOthers(`#给checksh授于权限-nav`)" id="给checksh授于权限-nav">
+									给check.sh授于权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%be%e7%bd%ae%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="collapseOthers(`#设置定时执行-nav`)" id="设置定时执行-nav">
+									设置定时执行
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
+									常用命令：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -178,30 +359,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 brightness_7
             </i>
         </a>
-        
-        
-        
-            <div class="pagination-indicator">
-                <span style="text-align: center">
-                    22<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>25
-                </span>
-            </div>
-            
-            
-            <a class="pagination-action" href="/posts/page/21/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_left
-                </i>
-            </a>
-            
-
-            
-            <a class="pagination-action" href="/posts/page/23/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-            
         
         
     </div>
@@ -265,6 +422,172 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             
             
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#%e8%af%b4%e6%98%8e" onclick="collapseOthers(`#说明-nav`)" id="说明-nav">
+									说明
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85vnstatcentos" onclick="collapseOthers(`#安装vnstatcentos-nav`)" id="安装vnstatcentos-nav">
+									安装vnstat(centos)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85debian" onclick="collapseOthers(`#安装debian-nav`)" id="安装debian-nav">
+									安装（debian）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="collapseOthers(`#修改配置文件-nav`)" id="修改配置文件-nav">
+									修改配置文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6checksh" onclick="collapseOthers(`#创建脚本文件checksh-nav`)" id="创建脚本文件checksh-nav">
+									创建脚本文件check.sh
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%99checksh%e6%8e%88%e4%ba%8e%e6%9d%83%e9%99%90" onclick="collapseOthers(`#给checksh授于权限-nav`)" id="给checksh授于权限-nav">
+									给check.sh授于权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%ae%be%e7%bd%ae%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="collapseOthers(`#设置定时执行-nav`)" id="设置定时执行-nav">
+									设置定时执行
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
+									常用命令：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
         </div>
     </div>
 </div>
@@ -307,271 +630,130 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2008
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="post">
             
-            <a href="/posts/%E9%9C%87%E6%92%BC%E4%BD%9C%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%B7%E4%BA%BA/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                (震撼)作个真正的男人
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-17
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/%E8%A7%A3%E5%86%B3phpdesigner-2008-6.1.1%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%E5%81%87%E6%AD%BB%E9%97%AE%E9%A2%98/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                解决phpDesigner 2008 6.1.1中文语言包假死问题
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-13
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    另一个VPS流量超过后自动关机脚本
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2020-06-21 08:44
+                        </time>
+                        
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/%E9%80%82%E5%90%88programmer%E7%9A%84%E5%AD%97%E4%BD%93monaco/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                适合Programmer的字体Monaco
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-13
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Other]</a>
+                                &nbsp;
+                        
 
-                        </div>
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/vps">vps</a>
+                                &nbsp;
+                            
+                        
+                        
                     </div>
                 </div>
-            </a>
+            </div>
             
-            <a href="/posts/%E7%BB%99gpsnet.cc%E5%8A%A0%E4%B8%8A%E4%BA%86%E4%B8%8A%E4%BC%A0%E9%99%84%E4%BB%B6%E5%8A%9F%E8%83%BD%E5%BA%94%E7%94%A8%E4%BA%86ajax%E7%AE%A1%E7%90%86%E7%AD%89/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                给gpsnet.cc加上了上传附件功能，应用了AJAX管理等
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-07
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="说明">说明</h2>
+<p>本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。</p>
+<p>如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。</p>
+<p>值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。</p>
+<h2 id="安装vnstatcentos">安装vnstat(centos)</h2>
+<pre><code>yum -y install epel-release
+yum install -y vnstat
+service vnstat start
+chkconfig vnstat on
+</code></pre><h2 id="安装debian">安装（debian）</h2>
+<pre><code>apt-get install vnstat
+</code></pre><h2 id="修改配置文件">修改配置文件</h2>
+<pre><code>vi /etc/vnstat.conf
+</code></pre><p>找到UnitMode 0 修改为：UnitMode 1</p>
+<h2 id="创建脚本文件checksh">创建脚本文件check.sh</h2>
+<pre><code>vi check.sh
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/tinymce%E5%92%8Ccodeigniter1.7.0/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                tinyMCE和CodeIgniter1.7.0
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-06
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+#!/bin/bash
+vnstat -u -i eth0                                              #更新网卡记录
+ax=`vnstat --oneline | awk -F &quot;;&quot; '{print $10}'`               #获取每月用量 $11:进站+出站;$10是:出站;$9是:进站
+if [[ &quot;$ax&quot; == *GB* ]];                                        #如果每月用量单位是GB则进入
+then
+if [ $(echo &quot;$(echo &quot;$ax&quot; | sed 's/ GB//g') / 99&quot;|bc) -eq 1 ]  #每月实际流量数除以99，大于或等于1，则执行关机命令
+then
+    /usr/sbin/shutdown -h now
+fi
+fi
+</code></pre><h2 id="给checksh授于权限">给check.sh授于权限</h2>
+<p><code>chmod +x check.sh</code></p>
+<h2 id="设置定时执行">设置定时执行</h2>
+<p>每5分钟执行一次（可能会降低准确度，防止VPS开机就自动关机）</p>
+<pre><code>crontab -e
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/codeigniter-1.6.3-to-1.7.0/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                CodeIgniter 1.6.3 to 1.7.0
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-06
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+*/5 * * * * /bin/bash /root/check.sh
+</code></pre><h2 id="常用命令">常用命令：</h2>
+<pre><code>vnstat --iflist #列出当前可用网卡
+vnstat      #默认查看内容
+vnstat -h   #按小时统计显示
+vnstat -d   #按天统计显示
+vnstat -m   #按月统计显示
+vnstat -w   #按星期统计显示
+vnstat -t   #显示流量消耗最大的前10天
+</code></pre><p>清风在阿里国际香港centos下测试通过</p>
 
-                        </div>
-                    </div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2020-06-21</p>
+                    
                 </div>
-            </a>
+            </div>
             
-            <a href="/posts/%E5%9F%BA%E7%A1%80%E8%BF%98%E6%98%AF%E7%89%A2%E9%9D%A0%E4%B8%80%E4%BA%9B%E6%AF%94%E8%BE%83%E5%A5%BD/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                基础还是牢靠一些比较好
-                            </div>
-                            <div class="post-item-meta">
-    2008-11-03
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            <nav class="post-pagination">
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/codeigniter-1.7.0-%E7%89%88%E5%8F%91%E5%B8%83%E4%BA%86%E6%9C%89%E6%96%99/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                CodeIgniter 1.7.0 版发布了，有料
-                            </div>
-                            <div class="post-item-meta">
-    2008-10-25
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://kissjava.cn/posts/server-auto-shutdown-script-after-certain-bandwidth-usage/">
+			上回<br>VPS流量超过一定数量后自动关机脚本
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/codeigniter%E4%BD%BF%E7%94%A8-layout-library-%E7%AE%80%E5%8C%96%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                CodeIgniter使用 layout library 简化视图布局
-                            </div>
-                            <div class="post-item-meta">
-    2008-10-22
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/posts/simple-flashnotice-helper-for-codeigniter/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Simple FlashNotice helper for CodeIgniter
-                            </div>
-                            <div class="post-item-meta">
-    2008-10-22
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        
-    </div>
-</div>
+
+<div id="vcomments"></div>
+
+
+
 
 
             </div>
-
-<div class="pagination">
-    
-    <a class="pagination-action" href="/posts/page/21/" style="opacity:1">
-    
-        <i class="material-icons pagination-action-icon">
-            chevron_left
-        </i>
-    </a>
-
-        <div class="pagination-indicator">
-            <span>22/25</span>
         </div>
-
-        
-        <a class="pagination-action" href="/posts/page/23/"
-           style="opacity:1">
-        
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
+    </div>
 </div>
 
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
@@ -674,6 +856,15 @@ app = new Vue({
         this.handleResize();
         this.mounted = true;
 
+        
+            new Valine({
+                el: '#vcomments',
+                appId: "DWYhDPKrCXEQNTjjgs8ajjnI-gzGzoHsz",
+                appKey: "SUOmHvwzUQw1nIqK4UucwkS0",
+                requiredFields: ['nick','mail'],
+                enableQQ: true,
+                recordIP: true,
+            })
         
     },
     destroyed() {

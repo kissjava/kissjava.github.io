@@ -6,9 +6,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Sublime text 3059 for MAC</title>
+        <link>https://kissjava.cn/posts/sublime-text-3059-for-mac/</link>
+        <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/sublime-text-3059-for-mac/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/sublime-text-3059-for-mac/ -&lt;p&gt;1、去Sublime 官网下载最新的3059并安装。&lt;/p&gt;
+&lt;p&gt;2、执行并退出Sublime主程序。&lt;/p&gt;
+&lt;p&gt;3、下载本文附件，并解压。&lt;/p&gt;
+&lt;p&gt;4、Finder 打开 Applications 目录， 找到Sublime，右键“显示包内容”，找到 macOS 目录，把上一步解压出来的文件，拷贝到这里来，会提示“你是否要替换该文件”，选择替换。&lt;/p&gt;
+&lt;p&gt;5、打开终端，输入命令：
+cd /Applications/Sublime\ Text.app/Contents/macOS/ 
+sudo chmod +x Sublime\ Text 
+根据提示，输入密码，因为要临时获取root权限。&lt;/p&gt;
+&lt;p&gt;6、运行Sublime，“关于 Sublime Text”，已经注册了。&lt;/p&gt;
+&lt;p&gt;End&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1sjjQGY5&#34;&gt;你懂得附件&lt;/a&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -894,30 +916,6 @@ noconsole,设置不要出现控制台窗口(就是doc窗口)
 icon,设置exe的图标文件(图标有限制,按128,64,48,32,16的大小排列,否则win7下可能看不到图标)&lt;/p&gt;
 &lt;p&gt;The end.&lt;/p&gt;
 - https://kissjava.cn/posts/pyinstaller%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>[转]sublime text 3 插件：package control</title>
-        <link>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
-        <pubDate>Thu, 10 Oct 2013 15:03:12 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;来源：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://qianduanblog.com/1900.html&#34;&gt;http://qianduanblog.com/1900.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;和sublime text 2不同的是，sublime text 3无法使用命令直接来安装package control，一直不明白，这么一个很好的工具，为什么不直接集成在软件里呢，还要这么麻烦的安装呢？相比sublime text 2来说，sublime text 3的安装过程相对要麻烦很多。&lt;/p&gt;
-&lt;p&gt;在搜索引擎中搜索后，有很多的安装方法，权衡各种方法，这里描述的方法应该是最简单的了。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;打开页面，右下角，点击下载：&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt; &lt;/p&gt;
-&lt;p&gt;下载之后，修改该文件夹名称为&lt;!-- raw HTML omitted --&gt;Package Control&lt;!-- raw HTML omitted --&gt;，注意大小写。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;B、复制刚才的“package control”文件到该目录下面。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;Package Settings和Package Control选项，就说明安装Package Control成功了。&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ - kissjava.cn</description>
         </item>
     
     

@@ -6,9 +6,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
+        <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果不采用Echo时，可以使用第三方库&lt;code&gt;gziphandler&lt;/code&gt;，Echo直接用Gzip中间件。
+HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。
+只要Rquest header中有&lt;code&gt;Accept-Encoding: gzip, deflate&lt;/code&gt;就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入&lt;code&gt;Content-Encoding: gzip&lt;/code&gt;才行。
+么有采用HTTP Gzip看看传输大小：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;io&amp;quot;
+    &amp;quot;net/http&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+    mux := new(http.ServeMux)
+
+    mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+        f, err := os.Open(&amp;quot;sample.png&amp;quot;)
+        if f != nil {
+            defer f.Close()
+        }
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+            return
+        }
+
+        _, err = io.Copy(w, f)
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+        }
+    })
+
+    server := new(http.Server)
+    server.Addr = &amp;quot;:9000&amp;quot;
+    server.Handler = mux
+
+    server.ListenAndServe()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/735410252.png&#34; alt=&#34;before.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;用上Gzip&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.Use(middleware.Gzip())
+
+	e.Static(&amp;quot;/assets&amp;quot;, &amp;quot;./assets&amp;quot;)
+
+	e.GET(&amp;quot;/image&amp;quot;, func(c echo.Context) error {
+		return c.HTML(http.StatusOK, &amp;quot;&amp;lt;img src=&#39;assets/terminal.png&#39;&amp;gt;&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果：
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4174351952.png&#34; alt=&#34;after.png&#34;&gt;
+图片实际是43K，压缩成了33.9K了。&lt;/p&gt;
+- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -1161,73 +1237,6 @@ func main() {
 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时有对应code.html时会show出来，否则就出&lt;code&gt;Errrrooooorrrrr&lt;/code&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part5-http-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part4 HTTP 请求的验证</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
-        <pubDate>Sat, 17 Aug 2019 10:52:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
-HTTP请求的验证，采用了validator.v9&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
-)
-
-type User struct {
-	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
-	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
-	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
-}
-
-type CustomValidator struct {
-	validator *validator.Validate
-}
-
-func (cv *CustomValidator) Validate(i interface{}) error {
-	return cv.validator.Struct(i)
-}
-
-func main() {
-	e := echo.New()
-	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
-
-	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
-		u := new(User)
-		if err := c.Bind(u); err != nil {
-			return err
-		}
-		if err := c.Validate(u); err != nil {
-			return err
-		}
-
-		return c.JSON(http.StatusOK, true)
-	})
-
-	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;规则比较简单，name和email为必要项目，email还需要符合email规则；年龄&amp;gt;=0且&amp;lt;=80。
-测试一下,能过返回true，否则返回&lt;code&gt;{&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}&lt;/code&gt;且响应500.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/users \
-     -d &#39;name=Joe&#39; \
-     -d &#39;email=nope@novalagung.com&#39; \
-     -d &#39;age=100&#39;
-# output =&amp;gt; {&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}
-
-curl -X POST http://localhost:9000/users \
-     -d &#39;name=Joe&#39; \
-     -d &#39;email=nope@novalagung.com&#39; \
-     -d &#39;age=10&#39;  
-#output =&amp;gt; true
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
         </item>
     
     

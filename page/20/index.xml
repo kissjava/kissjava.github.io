@@ -6,9 +6,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>ci中文转拼音的library</title>
+        <link>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</link>
+        <pubDate>Tue, 31 Mar 2009 12:28:15 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/ -&lt;p&gt;拼装了一个codeigniter的中文转拼音的library。
+使用方法：
+&lt;!-- raw HTML omitted --&gt;
+$this-&amp;gt;load-&amp;gt;library(&amp;lsquo;utf8pinyin&amp;rsquo;,&#39;&amp;rsquo;,&amp;lsquo;py&amp;rsquo;);
+$data[&amp;ldquo;page_title&amp;rdquo;] = $this-&amp;gt;py-&amp;gt;str2py(&amp;lsquo;昆山风神贸易有限公司成立于2007年&amp;rsquo;);
+//KunShanFengShenMaoYiYouXianGongSiChengLiYu2007Nian
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;str2py($str,$boolquanpin=true,$booldaxie=true)&lt;!-- raw HTML omitted --&gt;
+$str是要转的中文；$boolquanpin是否全拼，默认全拼；$booldaxie首字母是否大写，默认大写。
+&lt;!-- raw HTML omitted --&gt;utf8pinyin&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/ci%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3%E7%9A%84library/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -290,18 +311,6 @@ $query = $this-&amp;gt;db-&amp;gt;select()
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;貌似发送mail时需要PEAR，否则出错:(,怀念Codeigniter的email类了。&lt;/p&gt;
 - https://kissjava.cn/posts/kohana-%E8%B5%B7%E6%AD%A5%E4%BA%86/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>jQuery AJAX方法提交数据</title>
-        <link>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</link>
-        <pubDate>Sat, 28 Feb 2009 20:23:04 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E6%B3%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE/ - kissjava.cn</description>
         </item>
     
     

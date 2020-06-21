@@ -6,9 +6,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>jquery ui tabs详解(中文)转</title>
+        <link>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</link>
+        <pubDate>Wed, 06 Apr 2011 15:01:42 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ -&lt;!-- raw HTML omitted --&gt;
+- https://kissjava.cn/posts/jquery-ui-tabs%E8%AF%A6%E8%A7%A3%E4%B8%AD%E6%96%87%E8%BD%AC/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -476,18 +488,6 @@ Doctrine網站的下載區有貼心的打包了免設定的方便套件，直接
 &lt;p&gt;点Yes继续,这时会出现进度条。100%后会询问：是否更新X配置文件，选择更新，或手动编辑X配置文件以采用NVIDIA X驱动程序，或者运行 nvidia-xconfig&lt;/p&gt;
 &lt;p&gt;这里推荐点Yes，不然需要自己编辑配置文件，到这里安装就完成。startx或是按Ctrl+Alt+Del重启电脑就可以了。&lt;/p&gt;
 - https://kissjava.cn/posts/ubuntu10.10%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>破解被保护的Excel文档</title>
-        <link>https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</link>
-        <pubDate>Wed, 01 Dec 2010 20:23:02 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ -&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/%E7%A0%B4%E8%A7%A3%E8%A2%AB%E4%BF%9D%E6%8A%A4%E7%9A%84excel%E6%96%87%E6%A1%A3/ - kissjava.cn</description>
         </item>
     
     

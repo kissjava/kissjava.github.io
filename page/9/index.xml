@@ -6,9 +6,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 16:57:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>[转]sublime text 3 插件：package control</title>
+        <link>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</link>
+        <pubDate>Thu, 10 Oct 2013 15:03:12 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ -&lt;p&gt;&lt;!-- raw HTML omitted --&gt;来源：&lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;http://qianduanblog.com/1900.html&#34;&gt;http://qianduanblog.com/1900.html&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;和sublime text 2不同的是，sublime text 3无法使用命令直接来安装package control，一直不明白，这么一个很好的工具，为什么不直接集成在软件里呢，还要这么麻烦的安装呢？相比sublime text 2来说，sublime text 3的安装过程相对要麻烦很多。&lt;/p&gt;
+&lt;p&gt;在搜索引擎中搜索后，有很多的安装方法，权衡各种方法，这里描述的方法应该是最简单的了。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;打开页面，右下角，点击下载：&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;下载之后，修改该文件夹名称为&lt;!-- raw HTML omitted --&gt;Package Control&lt;!-- raw HTML omitted --&gt;，注意大小写。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;B、复制刚才的“package control”文件到该目录下面。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;C、重新打开sublime text 3编辑器，在菜单-&amp;gt;preferences-&amp;gt;Package Settings和Package Control选项，就说明安装Package Control成功了。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+- https://kissjava.cn/posts/%E8%BD%ACsublime-text-3-%E6%8F%92%E4%BB%B6package-control/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -497,28 +521,6 @@ public function testAssertNoPattern() {
 &lt;p&gt;}&lt;/p&gt;
 &lt;p&gt;$test = new DbTest();
 $test-&amp;gt;run(new HtmlReporter());&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;- https://kissjava.cn/posts/simple-test-%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>xampp下安装 PhpDocumenter</title>
-        <link>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
-        <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ -&lt;p&gt;没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。
-淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。
-下载PhpDocumentor-1.4.4.tgz 
-解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径）
-然后修改该目录里的 phpdoc.bat 这个批处理文件，将16行 “SET phpCli=”修改成你的PHP路径：
-&lt;!-- raw HTML omitted --&gt;SET phpCli=D:xamppphpphp.exe &lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;集成到eclipse PDT里（zend studio for eclipse里已经自带了，pdt要自己动手）：&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;参数说明：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;快小半年没更新了，这里都快荒废了，有木有！&lt;/p&gt;
-- https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
         </item>
     
     

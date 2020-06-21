@@ -25,7 +25,7 @@
 . 赋予执行权限chmod +x safe.sh
 . 利用crontab开机启动safe.sh
 crontab -e @reboot /path/to/safe.sh . 重启即可
-双向（流入+流出）计费方式 #!/usr/bin/python3 #coding=utf-8 import sys,re,time,os maxdata = 100 * 1024 * 1024 * 1024 #流量上限，单位是Byte, 100G memfilename = &amp;#39;/root/data.txt&amp;#39; netcard = &amp;#39;/proc/net/dev&amp;#39; def checkfile(filename): if os.path.isfile(filename): pass else: f = open(filename, &amp;#39;w&amp;#39;) f.write(&amp;#39;0&amp;#39;) f.close() def get_net_data(): nc = netcard or &amp;#39;/proc/net/dev&amp;#39; fd = open(nc, &amp;#34;r&amp;#34;) netcardstatus = False for line in fd.</description>
+注意！小心！免责！  脚本请看看源码的注释，有需要自己修改的地方，比如流量，比如网卡名 请测试，请测试，请测试；不一定能在你的主机上允许，请测试后再使用，避免天价账单 脚本源自网络收集，种种缘由万一脚本未实现关机，造成的流量账单，绝不负责  双向（流入+流出）计费方式 #!/usr/bin/python3 #coding=utf-8 import sys,re,time,os maxdata = 100 * 1024 * 1024 * 1024 #流量上限，单位是Byte, 100G memfilename = &amp;#39;/root/data.txt&amp;#39; netcard = &amp;#39;/proc/net/dev&amp;#39; def checkfile(filename): if os.path.isfile(filename): pass else: f = open(filename, &amp;#39;w&amp;#39;) f.write(&amp;#39;0&amp;#39;) f.close() def get_net_data(): nc = netcard or &amp;#39;/proc/net/dev&amp;#39; fd = open(nc, &amp;#34;r&amp;#34;) netcardstatus = False for line in fd.</description>
     </item>
     
     <item>

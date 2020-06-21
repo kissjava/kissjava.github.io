@@ -29,6 +29,12 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;crontab -e
 @reboot /path/to/safe.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;. 重启即可&lt;/p&gt;
+&lt;h2 id=&#34;注意小心免责&#34;&gt;注意！小心！免责！&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本请看看源码的注释，有需要自己修改的地方，比如流量，比如网卡名&lt;/li&gt;
+&lt;li&gt;请测试，请测试，请测试；不一定能在你的主机上允许，请测试后再使用，避免天价账单&lt;/li&gt;
+&lt;li&gt;脚本源自网络收集，种种缘由万一脚本未实现关机，造成的流量账单，绝不负责&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;双向流入流出计费方式&#34;&gt;双向（流入+流出）计费方式&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#228b22&#34;&gt;#!/usr/bin/python3&lt;/span&gt;
 &lt;span style=&#34;color:#228b22&#34;&gt;#coding=utf-8&lt;/span&gt;
@@ -107,14 +113,14 @@ netcard = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/proc/net/dev&amp;#
         &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;pass&lt;/span&gt;
     &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;:
         f = &lt;span style=&#34;color:#658b00&#34;&gt;open&lt;/span&gt;(filename, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;)
-        f.write(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
+        f.write(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;0&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;&lt;/span&gt;)
         f.close()
 &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;get_net_data&lt;/span&gt;():
     nc = netcard &lt;span style=&#34;color:#8b008b&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;/proc/net/dev&amp;#39;&lt;/span&gt;
     fd = &lt;span style=&#34;color:#658b00&#34;&gt;open&lt;/span&gt;(nc, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;)
     netcardstatus = False
     &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#8b008b&#34;&gt;in&lt;/span&gt; fd.readlines():
-        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; line.find(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ens3&amp;#34;&lt;/span&gt;) &amp;gt; &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;:
+        &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; line.find(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ens3&amp;#34;&lt;/span&gt;) &amp;gt; &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;: &lt;span style=&#34;color:#228b22&#34;&gt;# 需要cat /proc/net/dev 看看自己的网卡名字，阿里国际是eth0&lt;/span&gt;
             netcardstatus = True
             field = line.split()
             recv = field[&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;].split(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt;)[&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;]

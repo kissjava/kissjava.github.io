@@ -21,7 +21,7 @@
       <description>说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
 如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
 值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
 创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &amp;quot;;&amp;quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站+出站;$10是:出站;$9是:进站 if [[ &amp;quot;$ax&amp;quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &amp;quot;$(echo &amp;quot;$ax&amp;quot; | sed &#39;s/ GB//g&#39;) / 99&amp;quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check.</description>
     </item>
     
@@ -59,22 +59,6 @@ brew install php72接着编辑配置文件:
 vi /usr/local/etc/nginx/nginx.conf修改以index开头的行:
 index index.php index.html;最后，在部分服务器中添加以下行，以运行PHP:
 location ~ \.php {fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;include fastcgi_params;fastcgi_pass 127.0.0.1:9000;fastcgi_split_path_info ^(.+\.php)(/.+)$;fastcgi_buffers 16 16k;fastcgi_buffer_size 32k;}为了解决File not found.</description>
-    </item>
-    
-    <item>
-      <title>使用 docker 部署 Caddy &#43; V2ray</title>
-      <link>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</link>
-      <pubDate>Thu, 18 Jun 2020 09:31:15 +0800</pubDate>
-      
-      <guid>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</guid>
-      <description>以往使用传统的安装部署过于麻烦, 尤其是使用 nginx 时的证书申请.
-而且一键脚本，容易污染整台主机。
-为了更好的加速访问一些海外开发者网站，我们需要更加清晰友好的安装v2ray。
-使用 docker 部署 Caddy + V2ray(VMess + WebSocket + TLS) 其实也非常简单, 而且隔离了主机上的其他服务。
-非常适用于预算紧张，一机多用。
-安装 Docker 这个就不多讲了 Debian系 apt install docker-ce Redhat系 yum install docker-ce 可能需要添加源后再去安装，官网step by step都有。
-部署 Caddy 创建配置文件及目录 mkdir ~/caddy &amp;amp;&amp;amp; touch ~/caddy/Caddyfile 编辑 Caddyfile
-domain { tls email root /srv proxy path 127.0.0.1:port { websocket header_upstream -Origin } }    替换字符 说明 Demo     domain 域名 expamle.</description>
     </item>
     
     <item>

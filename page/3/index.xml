@@ -13,73 +13,6 @@
     
     
         <item>
-        <title>Demo 学 Echo Part4 HTTP 请求的验证</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</link>
-        <pubDate>Sat, 17 Aug 2019 10:52:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;
-HTTP请求的验证，采用了validator.v9&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-	&amp;quot;gopkg.in/go-playground/validator.v9&amp;quot;
-)
-
-type User struct {
-	Name  string `json:&amp;quot;name&amp;quot;  validate:&amp;quot;required&amp;quot;`
-	Email string `json:&amp;quot;email&amp;quot; validate:&amp;quot;required,email&amp;quot;`
-	Age   int    `json:&amp;quot;age&amp;quot;   validate:&amp;quot;gte=0,lte=80&amp;quot;`
-}
-
-type CustomValidator struct {
-	validator *validator.Validate
-}
-
-func (cv *CustomValidator) Validate(i interface{}) error {
-	return cv.validator.Struct(i)
-}
-
-func main() {
-	e := echo.New()
-	e.Validator = &amp;amp;CustomValidator{validator: validator.New()}
-
-	e.POST(&amp;quot;/users&amp;quot;, func(c echo.Context) error {
-		u := new(User)
-		if err := c.Bind(u); err != nil {
-			return err
-		}
-		if err := c.Validate(u); err != nil {
-			return err
-		}
-
-		return c.JSON(http.StatusOK, true)
-	})
-
-	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;规则比较简单，name和email为必要项目，email还需要符合email规则；年龄&amp;gt;=0且&amp;lt;=80。
-测试一下,能过返回true，否则返回&lt;code&gt;{&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}&lt;/code&gt;且响应500.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -X POST http://localhost:9000/users \
-     -d &#39;name=Joe&#39; \
-     -d &#39;email=nope@novalagung.com&#39; \
-     -d &#39;age=100&#39;
-# output =&amp;gt; {&amp;quot;message&amp;quot;:&amp;quot;Internal Server Error&amp;quot;}
-
-curl -X POST http://localhost:9000/users \
-     -d &#39;name=Joe&#39; \
-     -d &#39;email=nope@novalagung.com&#39; \
-     -d &#39;age=10&#39;  
-#output =&amp;gt; true
-&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part4-http-%E8%AF%B7%E6%B1%82%E7%9A%84%E9%AA%8C%E8%AF%81/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
         <title>Demo 学 Echo Part3 解析HTTP请求</title>
         <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part3-%E8%A7%A3%E6%9E%90http%E8%AF%B7%E6%B1%82/</link>
         <pubDate>Sat, 17 Aug 2019 10:13:00 +0000</pubDate>
@@ -831,6 +764,200 @@ User Type: reader
 User Name: Fraser
 Facebook Url: https://facebook.com
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90xml%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Go解析JSON文件</title>
+        <link>https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</link>
+        <pubDate>Tue, 30 Jul 2019 08:49:10 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ -&lt;p&gt;在本教程中，我们将了解如何读取JSON文件或JSON HTTP响应并根据需要解析它们。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/07/801648324.png&#34; alt=&#34;请输入图片描述&#34;&gt;
+我们可以使用XML或JSON表示相同的信息，但JSON提供了一个优势，它更紧凑，并且在我的个人经验中，更具可读性。&lt;/p&gt;
+&lt;p&gt;JSON现在是最流行的数据格式，大多数RESTful API都会提供JSON响应。因此本文非常有用！&lt;/p&gt;
+&lt;p&gt;##Encoding/Json Package&lt;/p&gt;
+&lt;p&gt;我们将利用&lt;code&gt;encoding / json&lt;/code&gt;标准库包来启动和运行。我强烈建议你在这里查看官方文档：&lt;a href=&#34;https://golang.org/pkg/encoding/json/&#34;&gt;Encoding / Json&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;##读取和解析JSON文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;user.json&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;users&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Elliot&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;Reader&amp;quot;,
+      &amp;quot;age&amp;quot;: 23,
+      &amp;quot;social&amp;quot;: {
+        &amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,
+        &amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;
+      }
+    },
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Fraser&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;Author&amp;quot;,
+      &amp;quot;age&amp;quot;: 17,
+      &amp;quot;social&amp;quot;: {
+        &amp;quot;facebook&amp;quot;: &amp;quot;https://facebook.com&amp;quot;,
+        &amp;quot;twitter&amp;quot;: &amp;quot;https://twitter.com&amp;quot;
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###读取JSON文件
+使用os包来从我们的文件系统中打开users.json文件。打开文件后，我们将关闭文件（函数结束时执行defer后的关闭）。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+if err != nil {
+    fmt.Println(err)
+}
+fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+// 推迟关闭我们的jsonFile，以便稍后解析它
+defer jsonFile.Close()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###用结构解析&lt;/p&gt;
+&lt;p&gt;我们可以用结构或是&lt;code&gt;map[string]interface{}&lt;/code&gt;来解析&lt;code&gt;users.json&lt;/code&gt;。我们用结构，上代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;encoding/json&amp;quot;
+)
+
+// Users 结构
+// 一个User数组
+type Users struct {
+    Users []User `json:&amp;quot;users&amp;quot;`
+}
+
+// User 结构，包含来Social结构
+type User struct {
+    Name   string `json:&amp;quot;name&amp;quot;`
+    Type   string `json:&amp;quot;type&amp;quot;`
+    Age    int    `json:&amp;quot;Age&amp;quot;`
+    Social Social `json:&amp;quot;social&amp;quot;`
+}
+
+// Social 结构
+type Social struct {
+    Facebook string `json:&amp;quot;facebook&amp;quot;`
+    Twitter  string `json:&amp;quot;twitter&amp;quot;`
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##处理JSON（解组Unmarshal）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 将我们打开的json文件作为字节数组读取.
+byteValue, _ := ioutil.ReadAll(jsonFile)
+
+// 初始化我们的Users数组
+var users Users
+
+// 将json的内容，byte Array解组为上面定义的&#39;users&#39;
+json.Unmarshal(byteValue, &amp;amp;users)
+
+// 遍历数组中的每个用户，输出user的Type, name和脸书的url
+for i := 0; i &amp;lt; len(users.Users); i++ {
+    fmt.Println(&amp;quot;User Type: &amp;quot; + users.Users[i].Type)
+    fmt.Println(&amp;quot;User Age: &amp;quot; + strconv.Itoa(users.Users[i].Age))
+    fmt.Println(&amp;quot;User Name: &amp;quot; + users.Users[i].Name)
+    fmt.Println(&amp;quot;Facebook Url: &amp;quot; + users.Users[i].Social.Facebook)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##使用非结构化数据
+我们也可以用&lt;code&gt;interface{}&lt;/code&gt;来读取JSON数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;encoding/json&amp;quot;
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;io/ioutil&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+    jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+    defer jsonFile.Close()
+
+    byteValue, _ := ioutil.ReadAll(jsonFile)
+
+    var result map[string]interface{}
+    json.Unmarshal([]byte(byteValue), &amp;amp;result)
+
+    fmt.Println(result[&amp;quot;users&amp;quot;])
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果是输出map的格式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+成功打开 users.json
+[map[age:23 name:Elliot social:map[facebook:https://facebook.com twitter:https://twitter.com] type:Reader] map[age:17 name:Fraser social:map[facebook:https://facebook.com twitter:https://twitter.com] type:Author]]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ps:通常都是知道返回的数据的结构的，所以一般建议尝试定义结构去解组。&lt;/p&gt;
+&lt;p&gt;##小结用结构解组的全部代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;encoding/json&amp;quot;
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;io/ioutil&amp;quot;
+	&amp;quot;os&amp;quot;
+	&amp;quot;strconv&amp;quot;
+)
+
+// Users 结构
+// 一个User数组
+type Users struct {
+	Users []User `json:&amp;quot;users&amp;quot;`
+}
+
+// User 结构，包含来Social结构
+type User struct {
+	Name   string `json:&amp;quot;name&amp;quot;`
+	Type   string `json:&amp;quot;type&amp;quot;`
+	Age    int    `json:&amp;quot;Age&amp;quot;`
+	Social Social `json:&amp;quot;social&amp;quot;`
+}
+
+// Social 结构
+type Social struct {
+	Facebook string `json:&amp;quot;facebook&amp;quot;`
+	Twitter  string `json:&amp;quot;twitter&amp;quot;`
+}
+
+func main() {
+	jsonFile, err := os.Open(&amp;quot;users.json&amp;quot;)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(&amp;quot;成功打开 users.json&amp;quot;)
+	defer jsonFile.Close()
+
+	// 将我们打开的json文件作为字节数组读取.
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	// 初始化我们的Users数组
+	var users Users
+
+	// 将json的内容，byte Array解组为上面定义的&#39;users&#39;
+	json.Unmarshal(byteValue, &amp;amp;users)
+
+	// 遍历数组中的每个用户，输出user的Type, name和脸书的url
+	for i := 0; i &amp;lt; len(users.Users); i++ {
+		fmt.Println(&amp;quot;User Type: &amp;quot; + users.Users[i].Type)
+		fmt.Println(&amp;quot;User Age: &amp;quot; + strconv.Itoa(users.Users[i].Age))
+		fmt.Println(&amp;quot;User Name: &amp;quot; + users.Users[i].Name)
+		fmt.Println(&amp;quot;Facebook Url: &amp;quot; + users.Users[i].Social.Facebook)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ go run main.go
+成功打开 users.json
+User Type: Reader
+User Age: 23
+User Name: Elliot
+Facebook Url: https://facebook.com
+User Type: Author
+User Age: 17
+User Name: Fraser
+Facebook Url: https://facebook.com
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/go%E8%A7%A3%E6%9E%90json%E6%96%87%E4%BB%B6/ - kissjava.cn</description>
         </item>
     
     

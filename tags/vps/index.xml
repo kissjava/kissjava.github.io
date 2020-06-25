@@ -21,7 +21,7 @@
       <description>说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
 如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
 值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
 创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &amp;quot;;&amp;quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站+出站;$10是:出站;$9是:进站 if [[ &amp;quot;$ax&amp;quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &amp;quot;$(echo &amp;quot;$ax&amp;quot; | sed &#39;s/ GB//g&#39;) / 99&amp;quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check.</description>
     </item>
     

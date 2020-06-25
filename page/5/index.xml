@@ -13,20 +13,6 @@
     
     
         <item>
-        <title>双十一黑五接连而来还是 bwh 的 CN2 GIA 稳定</title>
-        <link>https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</link>
-        <pubDate>Mon, 26 Nov 2018 10:44:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ -&lt;p&gt;都被 virmach 的抢购刷屏了，实际体验对比还是 bwh（搬瓦工）的 CN2 GIA 最是稳定。
-如果，只是建个小博客，测试点代码，个人爬墙 bwh 的 CN2 GIA 还是比较推荐的，够用且稳定。
-推荐一下：&lt;a href=&#34;https://bwh8.net/aff.php?aff=15657&amp;amp;pid=83&#34;&gt;直达链接&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/%E5%8F%8C%E5%8D%81%E4%B8%80%E9%BB%91%E4%BA%94%E6%8E%A5%E8%BF%9E%E8%80%8C%E6%9D%A5%E8%BF%98%E6%98%AF-bwh-%E7%9A%84-cn2-gia-%E7%A8%B3%E5%AE%9A/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
         <title>Debian9 快速开启 TCP BBR </title>
         <link>https://kissjava.cn/posts/debian9-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%90%AF-tcp-bbr-/</link>
         <pubDate>Mon, 08 Oct 2018 11:14:00 +0000</pubDate>
@@ -250,6 +236,28 @@ ssl 去掉了，ip 被误伤了吧.
 &amp;lt;/Window&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 - https://kissjava.cn/posts/enabling-scrollbar-in-wpf/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>C sharp 测试代码的运行时间</title>
+        <link>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+        <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ -&lt;p&gt;计算C#代码运行的耗时，方便测试出效率。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
+watch.Start();  //开始监视代码运行时间
+// 添加需要测试的代码
+// ...
+watch.Stop();  //停止
+TimeSpan timespan = watch.Elapsed;  //获取当前实例测量得出的总时间
+System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds)); 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;TimeSpan&lt;/code&gt; 还可以计算出&lt;code&gt;TotalHours&lt;/code&gt;，&lt;code&gt;TotalMinutes&lt;/code&gt;， &lt;code&gt;TotalSeconds&lt;/code&gt;。&lt;/p&gt;
+- https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ - kissjava.cn</description>
         </item>
     
     

@@ -13,28 +13,6 @@
     
     
         <item>
-        <title>C sharp 测试代码的运行时间</title>
-        <link>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
-        <pubDate>Wed, 20 Sep 2017 17:27:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ -&lt;p&gt;计算C#代码运行的耗时，方便测试出效率。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/09/2865825617.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-watch.Start();  //开始监视代码运行时间
-// 添加需要测试的代码
-// ...
-watch.Stop();  //停止
-TimeSpan timespan = watch.Elapsed;  //获取当前实例测量得出的总时间
-System.Diagnostics.Debug.WriteLine(string.Format(&amp;quot;代码执行时间：{0}(毫秒)&amp;quot;, timespan.TotalMilliseconds)); 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;TimeSpan&lt;/code&gt; 还可以计算出&lt;code&gt;TotalHours&lt;/code&gt;，&lt;code&gt;TotalMinutes&lt;/code&gt;， &lt;code&gt;TotalSeconds&lt;/code&gt;。&lt;/p&gt;
-- https://kissjava.cn/posts/c-sharp-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
         <title>PyQt5表格应用的详细Demo</title>
         <link>https://kissjava.cn/posts/pyqt5%E8%A1%A8%E6%A0%BC%E5%BA%94%E7%94%A8%E7%9A%84%E8%AF%A6%E7%BB%86demo/</link>
         <pubDate>Wed, 13 Sep 2017 14:38:00 +0000</pubDate>
@@ -1168,6 +1146,25 @@ end.&lt;/p&gt;
 &lt;p&gt;博主亲身体验，阿里云国际真心不错。绝对是目前的&lt;strong&gt;首选推荐&lt;/strong&gt;。&lt;a href=&#34;https://account-intl.aliyun.com/register/intl_register.htm?biz_params=%7B%22intl%22%3A%22%7B%5C%22referralCode%5C%22%3A%5C%221kkkrt%5C%22%7D%22%7D&#34;&gt;地址传送&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;如果要更加便宜还要靠谱的 vps，建议搬瓦工，8机房任你切换。其中两个 LA 机房都是亚洲直连，速度还行。&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;年付19$搬瓦工直连VPS传送&lt;/a&gt;。&lt;/p&gt;
 - https://kissjava.cn/posts/%E8%BD%AC%E6%88%98%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>搬出搬瓦工了</title>
+        <link>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+        <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ -&lt;p&gt;剁了个新加坡vps，于是乎搬出搬瓦工。
+搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。
+还是说明了，世界加钱可达！
+当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/2966590504.png&#34; alt=&#34;bwh.png&#34;&gt;
+推荐年付19$搬瓦工KVM直连VPS，&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;传输机在此&lt;/a&gt;！
+忽然发现，这2016年的第一篇博文。
+今年还有半个月就完了！估计很可能也是今年的最后一篇吧。&lt;/p&gt;
+- https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ - kissjava.cn</description>
         </item>
     
     

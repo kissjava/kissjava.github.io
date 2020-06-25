@@ -27,7 +27,7 @@
 yum install -y vnstat
 service vnstat start
 chkconfig vnstat on
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;安装debian&#34;&gt;安装（debian）&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;安装vnstatdebian&#34;&gt;安装vnstat(debian)&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;apt-get install vnstat
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;vi /etc/vnstat.conf
@@ -52,7 +52,7 @@ fi
 &lt;pre&gt;&lt;code&gt;crontab -e
 
 */5 * * * * /bin/bash /root/check.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;常用命令&#34;&gt;常用命令：&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;vnstat --iflist #列出当前可用网卡
 vnstat      #默认查看内容
 vnstat -h   #按小时统计显示
@@ -306,164 +306,6 @@ Query OK, 0 rows affected (0.004 sec)
 MariaDB [mysql]&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;自己完成完美的MAMP安装:)&lt;/p&gt;
 - https://kissjava.cn/posts/macos%E5%AE%89%E8%A3%85ngnix-php-mysql/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>使用 docker 部署 Caddy &#43; V2ray</title>
-        <link>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</link>
-        <pubDate>Thu, 18 Jun 2020 09:31:15 +0800</pubDate>
-        
-        <guid>https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/ -&lt;p&gt;以往使用传统的安装部署过于麻烦, 尤其是使用 nginx 时的证书申请.&lt;/p&gt;
-&lt;p&gt;而且一键脚本，容易污染整台主机。&lt;/p&gt;
-&lt;p&gt;为了更好的加速访问一些海外开发者网站，我们需要更加清晰友好的安装v2ray。&lt;/p&gt;
-&lt;p&gt;使用 docker 部署 Caddy + V2ray(VMess + WebSocket + TLS) 其实也非常简单, 而且隔离了主机上的其他服务。&lt;/p&gt;
-&lt;p&gt;非常适用于预算紧张，一机多用。&lt;/p&gt;
-&lt;h2 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h2&gt;
-&lt;p&gt;这个就不多讲了
-Debian系 &lt;code&gt;apt install docker-ce&lt;/code&gt;
-Redhat系 &lt;code&gt;yum install docker-ce&lt;/code&gt;
-可能需要添加源后再去安装，官网step by step都有。&lt;/p&gt;
-&lt;h2 id=&#34;部署-caddy&#34;&gt;部署 Caddy&lt;/h2&gt;
-&lt;p&gt;创建配置文件及目录
-&lt;code&gt;mkdir ~/caddy &amp;amp;&amp;amp; touch ~/caddy/Caddyfile&lt;/code&gt;
-编辑 Caddyfile&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;domain {
-    tls email
-    root /srv
-
-    proxy path 127.0.0.1:port {
-        websocket
-        header_upstream -Origin
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;替换字符&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;说明&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Demo&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;domain&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;域名&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;expamle.com&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;email&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;邮箱, 用于证书相关的通知&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;a href=&#34;mailto:email@gmail.com&#34;&gt;email@gmail.com&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;path&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;分流路径, 与 v@ray config.json 中 path 设置保持一致&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;/helloworld&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ort&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;v@ray 监听的端口&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;9527&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;启动-caddy&#34;&gt;启动 Caddy&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -d &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --restart=always &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --network host &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/caddy/Caddyfile:/etc/Caddyfile &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/caddy/.caddy:/root/.caddy &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -e &lt;span style=&#34;color:#00688b&#34;&gt;ACME_AGREE&lt;/span&gt;=&lt;span style=&#34;color:#658b00&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --name caddy &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  abiosoft/caddy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;访问测试&#34;&gt;访问测试&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl https://your_domain
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;Caddy&amp;lt;/title&amp;gt;
-&amp;lt;style&amp;gt;
-    body {
-        text-align: center;
-        font-family: Tahoma, Geneva, Verdana, sans-serif;
-    }
-&amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;h1&amp;gt;Caddy web server.&amp;lt;/h1&amp;gt;
-&amp;lt;p&amp;gt;If you see this page, Caddy container works.&amp;lt;/p&amp;gt;
-
-&amp;lt;p&amp;gt;More instructions about this image is &amp;lt;a &lt;span style=&#34;color:#00688b&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;//github.com/abiosoft/caddy-docker/blob/master/README.md&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;target&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&amp;gt;here&amp;lt;/a&amp;gt;.&amp;lt;p&amp;gt;
-&amp;lt;p&amp;gt;More instructions about Caddy is &amp;lt;a &lt;span style=&#34;color:#00688b&#34;&gt;href&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;//caddyserver.com/docs&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#00688b&#34;&gt;target&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&amp;gt;here&amp;lt;/a&amp;gt;.&amp;lt;p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;%    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;已经自动申请证书, 开启了 &lt;code&gt;https&lt;/code&gt;, 也可以直接在浏览器中访问来测试。&lt;/p&gt;
-&lt;h2 id=&#34;部署-v2ray&#34;&gt;部署 V2Ray&lt;/h2&gt;
-&lt;p&gt;创建配置文件及目录, 将配置文件上传到目录下&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;mkdir ~/v2ray&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;以下是个config.json的demo，需要对着你的Caddyfile做对应修改&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat ./v2ray/config.json 
-{
-  &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;inbounds&amp;#34;&lt;/span&gt;: [
-    {
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: 10000,
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;protocol&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;vmess&amp;#34;&lt;/span&gt;,
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;settings&amp;#34;&lt;/span&gt;: {
-        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;clients&amp;#34;&lt;/span&gt;: [
-          {
-            &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;aabbcc12-bb65-430f-b96d-d6b991710000&amp;#34;&lt;/span&gt;,
-            &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;alterId&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#b452cd&#34;&gt;64&lt;/span&gt;
-          }
-        ]
-      },
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;streamSettings&amp;#34;&lt;/span&gt;: {
-        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;network&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;ws&amp;#34;&lt;/span&gt;,
-        &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;wsSettings&amp;#34;&lt;/span&gt;: {
-          &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;/helloworld&amp;#34;&lt;/span&gt;
-        }
-      }
-    }
-  ],
-  &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;outbounds&amp;#34;&lt;/span&gt;: [
-    {
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;protocol&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;freedom&amp;#34;&lt;/span&gt;,
-      &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;settings&amp;#34;&lt;/span&gt;: {}
-    }
-  ]
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;启动-v2ray&#34;&gt;启动 v2Ray&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -d &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --restart=always &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --network host &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/v2ray/config-file:/etc/v2ray/config.json &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  -v ~/v2ray/log:/var/log &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  --name v2ray &lt;span style=&#34;color:#cd5555&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;  v2ray/official
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;替换字符&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;说明&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Demo&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;config-file&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;自己的v2ray的config文件名&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;config.json&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;尾声&#34;&gt;尾声&lt;/h2&gt;
-&lt;p&gt;以上已经可以了。以下是一些控制命令
-&lt;code&gt;docker start|restart|stop caddy|v2ray&lt;/code&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/docker-deploy-caddy-and-v2ray/ - kissjava.cn</description>
         </item>
     
     
@@ -2767,6 +2609,82 @@ func main() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
+        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
+        <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果不采用Echo时，可以使用第三方库&lt;code&gt;gziphandler&lt;/code&gt;，Echo直接用Gzip中间件。
+HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。
+只要Rquest header中有&lt;code&gt;Accept-Encoding: gzip, deflate&lt;/code&gt;就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入&lt;code&gt;Content-Encoding: gzip&lt;/code&gt;才行。
+么有采用HTTP Gzip看看传输大小：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;io&amp;quot;
+    &amp;quot;net/http&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+func main() {
+    mux := new(http.ServeMux)
+
+    mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
+        f, err := os.Open(&amp;quot;sample.png&amp;quot;)
+        if f != nil {
+            defer f.Close()
+        }
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+            return
+        }
+
+        _, err = io.Copy(w, f)
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+        }
+    })
+
+    server := new(http.Server)
+    server.Addr = &amp;quot;:9000&amp;quot;
+    server.Handler = mux
+
+    server.ListenAndServe()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/735410252.png&#34; alt=&#34;before.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;用上Gzip&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.Use(middleware.Gzip())
+
+	e.Static(&amp;quot;/assets&amp;quot;, &amp;quot;./assets&amp;quot;)
+
+	e.GET(&amp;quot;/image&amp;quot;, func(c echo.Context) error {
+		return c.HTML(http.StatusOK, &amp;quot;&amp;lt;img src=&#39;assets/terminal.png&#39;&amp;gt;&amp;quot;)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果：
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4174351952.png&#34; alt=&#34;after.png&#34;&gt;
+图片实际是43K，压缩成了33.9K了。&lt;/p&gt;
+- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ - kissjava.cn</description>
         </item>
     
     

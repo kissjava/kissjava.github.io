@@ -20,7 +20,7 @@
 <meta property="og:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
 如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
 值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
 创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kissjava.cn/posts/another-auto-shutdown-script-after-certain-bandwith-usage/" />
@@ -36,7 +36,7 @@
 <meta name="twitter:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
 如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
 值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装（debian） apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
+安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
 创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check."/>
 
 
@@ -240,8 +240,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85debian" onclick="collapseOthers(`#安装debian-nav`)" id="安装debian-nav">
-									安装（debian）
+								<a href="#%e5%ae%89%e8%a3%85vnstatdebian" onclick="collapseOthers(`#安装vnstatdebian-nav`)" id="安装vnstatdebian-nav">
+									安装vnstat(debian)
 								</a>
 							</li>
 						
@@ -331,7 +331,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 							<li>
 								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
-									常用命令：
+									常用命令
 								</a>
 							</li>
 						
@@ -484,8 +484,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85debian" onclick="collapseOthers(`#安装debian-nav`)" id="安装debian-nav">
-									安装（debian）
+								<a href="#%e5%ae%89%e8%a3%85vnstatdebian" onclick="collapseOthers(`#安装vnstatdebian-nav`)" id="安装vnstatdebian-nav">
+									安装vnstat(debian)
 								</a>
 							</li>
 						
@@ -575,7 +575,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 							<li>
 								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
-									常用命令：
+									常用命令
 								</a>
 							</li>
 						
@@ -679,7 +679,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 yum install -y vnstat
 service vnstat start
 chkconfig vnstat on
-</code></pre><h2 id="安装debian">安装（debian）</h2>
+</code></pre><h2 id="安装vnstatdebian">安装vnstat(debian)</h2>
 <pre><code>apt-get install vnstat
 </code></pre><h2 id="修改配置文件">修改配置文件</h2>
 <pre><code>vi /etc/vnstat.conf
@@ -704,7 +704,7 @@ fi
 <pre><code>crontab -e
 
 */5 * * * * /bin/bash /root/check.sh
-</code></pre><h2 id="常用命令">常用命令：</h2>
+</code></pre><h2 id="常用命令">常用命令</h2>
 <pre><code>vnstat --iflist #列出当前可用网卡
 vnstat      #默认查看内容
 vnstat -h   #按小时统计显示

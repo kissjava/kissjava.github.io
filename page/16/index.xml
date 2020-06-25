@@ -13,34 +13,6 @@
     
     
         <item>
-        <title>flash,css hack,等等。。</title>
-        <link>https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/</link>
-        <pubDate>Mon, 01 Mar 2010 09:35:34 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/ -&lt;p&gt;1，插入flash，不追求web标准，可以这样简短：
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-2，同一选择器针对不同浏览器的css hack
-select {
-background-color: black;/* firefox, opera, ie8 */
-[;background-color: green;]/* safari, chrome */
-*background-color: blue;/* ie7 */
-_background-color: red;/* ie6 */
-}
-html*~/**/body select {
-border: 5px solid red;/* ie8 */
-}以上只是一个例子说明混合写法.以下是对例子的补充
-1.IE都能识别*;标准浏览器(如FF)不能识别*;
-2.IE7,FF能识别!important,IE6不能.
-3.只有IE6能识别_
-4.不管是什么方法，书写的顺序都应该是firefox的写在前面，IE7的写在中间，IE6的写在最后面。
-5.对于ie8 chrome hack的请 GOOGLE or BAIDU …&lt;/p&gt;
-- https://kissjava.cn/posts/flashcss-hack%E7%AD%89%E7%AD%89/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
         <title>用 CSS 将超出显示宽度的内容隐藏起来 </title>
         <link>https://kissjava.cn/posts/%E7%94%A8-css-%E5%B0%86%E8%B6%85%E5%87%BA%E6%98%BE%E7%A4%BA%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%86%85%E5%AE%B9%E9%9A%90%E8%97%8F%E8%B5%B7%E6%9D%A5-/</link>
         <pubDate>Mon, 01 Mar 2010 09:35:25 +0000</pubDate>
@@ -778,6 +750,24 @@ tar 打包压缩后，rm 删除原sql文件
 然后添加到计划任务，每天3点05分自动执行：
 &lt;!-- raw HTML omitted --&gt;#echo &amp;ldquo;05 3 * * * root /usr/back/shell/mysqlback.sh &amp;amp;&amp;gt;/dev/null&amp;rdquo; &amp;raquo;/etc/crontab&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/ - kissjava.cn</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>vi/vim 中文乱码</title>
+        <link>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+        <pubDate>Tue, 12 Jan 2010 10:43:46 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ -&lt;p&gt;linux下，用vi、vim编辑文件时，可能会碰到中文乱码。
+由于在windows下默认是gb编码，而vim默认是utf-8（gedit默认也是utf-8），所以打开会成乱码。修改了一下配置文件，使vi、vim支持gb编码就好了。
+$vi ~/.vimrc&lt;/p&gt;
+&lt;p&gt;let &amp;amp;termencoding=&amp;amp;encoding
+set fileencodings=utf-8,gbk&lt;/p&gt;
+&lt;p&gt;$:wq
+再次打开vi、vim，中文显示就正常了。&lt;/p&gt;
+- https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
         </item>
     
     

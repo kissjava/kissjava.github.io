@@ -6,9 +6,277 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 09:51:55 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Echo模版嵌套</title>
+        <link>https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/</link>
+        <pubDate>Sat, 27 Jun 2020 09:51:55 +0800</pubDate>
+        
+        <guid>https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/ -&lt;h2 id=&#34;一个基本的echo项目&#34;&gt;一个基本的Echo项目&lt;/h2&gt;
+&lt;p&gt;main.go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+	})
+	e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;返回一个json响应&#34;&gt;返回一个JSON响应&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+	})
+
+	e.GET(&amp;quot;/json&amp;quot;, func(c echo.Context) error {
+		return c.JSONBlob(
+			http.StatusOK,
+			[]byte(`{&amp;quot;id&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;msg&amp;quot;: &amp;quot;Hello, China!&amp;quot;}`),
+		)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;返回html&#34;&gt;返回HTML&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+func main() {
+	e := echo.New()
+	e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;)
+	})
+
+	e.GET(&amp;quot;/json&amp;quot;, func(c echo.Context) error {
+		return c.JSONBlob(
+			http.StatusOK,
+			[]byte(`{&amp;quot;id&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;msg&amp;quot;: &amp;quot;Hello, China!&amp;quot;}`),
+		)
+	})
+
+	e.GET(&amp;quot;/html&amp;quot;, func(c echo.Context) error {
+		return c.HTML(
+			http.StatusOK,
+			&amp;quot;&amp;lt;h1&amp;gt;Hello, Suzhou!&amp;lt;/h1&amp;gt;&amp;quot;,
+		)
+	})
+
+	e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;使用模板引擎呈现html&#34;&gt;使用模板引擎呈现HTML&lt;/h2&gt;
+&lt;p&gt;这次有点不一样，多个文件了，目录结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  golang-echo-template-example tree
+.
+├── handler
+│   └── home_handler.go
+├── main.go
+└── view
+    └── home.html
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;maingo&#34;&gt;main.go&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;io&amp;quot;
+	&amp;quot;html/template&amp;quot;
+
+	&amp;quot;github.com/kissjava/golang-echo-template-example/handler&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+// TemplateRegistry 定义模板注册表结构
+type TemplateRegistry struct {
+	templates *template.Template
+}
+
+// Render 实现 e.Renderer接口
+func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+func main() {
+	e := echo.New()
+
+	// 实例化一个模板注册表并在视图文件夹中注册所有html文件
+	e.Renderer = &amp;amp;TemplateRegistry{
+		templates: template.Must(template.ParseGlob(&amp;quot;view/*.html&amp;quot;)),
+	}
+
+	e.GET(&amp;quot;/&amp;quot;, handler.HomeHandler)
+
+	e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handlerhome_handlergo&#34;&gt;handler/home_handler.go&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+// HomeHandler 根路径处理器函数
+func HomeHandler(c echo.Context) error {
+	// 第二个参数 home.html 是view/home.html中{{ define }}定义的名称
+	return c.Render(http.StatusOK, &amp;quot;home.html&amp;quot;, map[string]interface{}{
+		&amp;quot;name&amp;quot;: &amp;quot;HOME&amp;quot;,
+		&amp;quot;msg&amp;quot;:  &amp;quot;Hello, World!&amp;quot;,
+	})
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;viewhomehtml&#34;&gt;view/home.html&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;{{define &amp;quot;home.html&amp;quot;}}
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+    &amp;lt;title&amp;gt;Kissjava Blog | {{index . &amp;quot;name&amp;quot;}}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;{{index . &amp;quot;msg&amp;quot;}}&amp;lt;/h1&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;模版嵌套&#34;&gt;模版嵌套&lt;/h2&gt;
+&lt;p&gt;在上面的设置中，HTML模板是一组完整的HTML代码。&lt;/p&gt;
+&lt;p&gt;如果是整个站点来使用，其中许多代码就是重复的。&lt;/p&gt;
+&lt;p&gt;使用嵌套模板使项目维护更加容易。&lt;/p&gt;
+&lt;p&gt;最初&lt;code&gt;TemplateRegistry&lt;/code&gt;中的&lt;code&gt;templates&lt;/code&gt;字段包含所有模板文件。&lt;/p&gt;
+&lt;p&gt;在新的设置中，我们将其设置为一个&lt;code&gt;map&lt;/code&gt;字段，每一项都是针对特定HTML页面的一组模板文件。&lt;/p&gt;
+&lt;p&gt;新的项目结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;➜  golang-echo-template-example tree
+.
+├── handler
+│   ├── about__handler.go
+│   └── home_handler.go
+├── main.go
+└── view
+    ├── about.html
+    ├── base.html
+    └── home.html
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;maingo-如下&#34;&gt;main.go 如下：&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;errors&amp;quot;
+	&amp;quot;io&amp;quot;
+	&amp;quot;html/template&amp;quot;
+
+	&amp;quot;github.com/kissjava/golang-echo-template-example/handler&amp;quot;
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+// TemplateRegistry 定义模板注册表结构
+type TemplateRegistry struct {
+	templates map[string]*template.Template
+}
+
+// Render 实现 e.Renderer接口
+func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	tmpl, ok := t.templates[name]
+	if !ok {
+		err := errors.New(&amp;quot;没有找到模版 -&amp;gt; &amp;quot; + name)
+		return err
+	}
+	return tmpl.ExecuteTemplate(w, &amp;quot;base.html&amp;quot;, data)
+}
+
+func main() {
+	e := echo.New()
+
+	//用模板集数组实例化一个模板注册表
+	templates := make(map[string]*template.Template)
+	templates[&amp;quot;home.html&amp;quot;] = template.Must(template.ParseFiles(&amp;quot;view/home.html&amp;quot;, &amp;quot;view/base.html&amp;quot;))
+	templates[&amp;quot;about.html&amp;quot;] = template.Must(template.ParseFiles(&amp;quot;view/about.html&amp;quot;, &amp;quot;view/base.html&amp;quot;))
+	e.Renderer = &amp;amp;TemplateRegistry{
+		templates: templates,
+	}
+
+	e.GET(&amp;quot;/&amp;quot;, handler.HomeHandler)
+	e.GET(&amp;quot;/about&amp;quot;, handler.AboutHandler)
+
+	e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;viewbasehtml&#34;&gt;view/base.html&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;{{define &amp;quot;base.html&amp;quot;}}
+  &amp;lt;!DOCTYPE html&amp;gt;
+  &amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+      &amp;lt;title&amp;gt;{{template &amp;quot;title&amp;quot; .}}&amp;lt;/title&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+      {{template &amp;quot;body&amp;quot; .}}
+    &amp;lt;/body&amp;gt;
+  &amp;lt;/html&amp;gt;
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;viewabouthtml&#34;&gt;view/about.html&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;{{define &amp;quot;title&amp;quot;}}
+  Kissjava Blog | {{index . &amp;quot;name&amp;quot;}}
+{{end}}
+
+{{define &amp;quot;body&amp;quot;}}
+  &amp;lt;h1&amp;gt;{{index . &amp;quot;msg&amp;quot;}}&amp;lt;/h1&amp;gt;
+  &amp;lt;h2&amp;gt;This is the about page.&amp;lt;/h2&amp;gt;
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;handlerabout_handlergo&#34;&gt;handler/about_handler.go&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package handler
+
+import (
+	&amp;quot;net/http&amp;quot;
+
+	&amp;quot;github.com/labstack/echo&amp;quot;
+)
+
+// AboutHandler /about处理器
+func AboutHandler(c echo.Context) error {
+
+	// 请注意第二个参数“about.html”是模板名
+	// 等于main.go中定义的TemplateRegistry数组中的一个键
+	return c.Render(http.StatusOK, &amp;quot;about.html&amp;quot;, map[string]interface{}{
+		&amp;quot;name&amp;quot;: &amp;quot;About&amp;quot;,
+		&amp;quot;msg&amp;quot;:  &amp;quot;All about kissjava!&amp;quot;,
+	})
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;结束&#34;&gt;结束&lt;/h2&gt;
+&lt;p&gt;前面故意没有去改动&lt;code&gt;home.html&lt;/code&gt;，可以参考 &lt;code&gt;about.hmtl&lt;/code&gt;去比较实现。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{define &amp;quot;title&amp;quot;}}
+  Kissjava Blog | {{index . &amp;quot;name&amp;quot;}}
+{{end}}
+
+{{define &amp;quot;body&amp;quot;}}
+  &amp;lt;h1&amp;gt;{{index . &amp;quot;msg&amp;quot;}}&amp;lt;/h1&amp;gt;
+  &amp;lt;h2&amp;gt;This is the home page.&amp;lt;/h2&amp;gt;
+{{end}}
+
+&lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -2609,82 +2877,6 @@ func main() {
 }
 
 &lt;/code&gt;&lt;/pre&gt;- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part15-%E5%8F%91%E9%80%81mail/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Demo 学 Echo Part14  HTTP Gzip压缩</title>
-        <link>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</link>
-        <pubDate>Sat, 17 Aug 2019 23:05:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ -&lt;p&gt;&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4294093216.png&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
-&lt;p&gt;如果不采用Echo时，可以使用第三方库&lt;code&gt;gziphandler&lt;/code&gt;，Echo直接用Gzip中间件。
-HTTP Gzip 就是耗费一丢丢cpu，但是减少了网络传输的大小，从而提升传输速度也减少了带宽投入。
-只要Rquest header中有&lt;code&gt;Accept-Encoding: gzip, deflate&lt;/code&gt;就说明浏览器支持HTTP Gzip，现代浏览器估计没有不支持的。当然后端处理也需要响应头也要插入&lt;code&gt;Content-Encoding: gzip&lt;/code&gt;才行。
-么有采用HTTP Gzip看看传输大小：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-    &amp;quot;io&amp;quot;
-    &amp;quot;net/http&amp;quot;
-    &amp;quot;os&amp;quot;
-)
-
-func main() {
-    mux := new(http.ServeMux)
-
-    mux.HandleFunc(&amp;quot;/image&amp;quot;, func(w http.ResponseWriter, r *http.Request) {
-        f, err := os.Open(&amp;quot;sample.png&amp;quot;)
-        if f != nil {
-            defer f.Close()
-        }
-        if err != nil {
-            http.Error(w, err.Error(), http.StatusInternalServerError)
-            return
-        }
-
-        _, err = io.Copy(w, f)
-        if err != nil {
-            http.Error(w, err.Error(), http.StatusInternalServerError)
-        }
-    })
-
-    server := new(http.Server)
-    server.Addr = &amp;quot;:9000&amp;quot;
-    server.Handler = mux
-
-    server.ListenAndServe()
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果
-&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/735410252.png&#34; alt=&#34;before.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;用上Gzip&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;net/http&amp;quot;
-
-	&amp;quot;github.com/labstack/echo&amp;quot;
-	&amp;quot;github.com/labstack/echo/middleware&amp;quot;
-)
-
-func main() {
-	e := echo.New()
-	e.Use(middleware.Gzip())
-
-	e.Static(&amp;quot;/assets&amp;quot;, &amp;quot;./assets&amp;quot;)
-
-	e.GET(&amp;quot;/image&amp;quot;, func(c echo.Context) error {
-		return c.HTML(http.StatusOK, &amp;quot;&amp;lt;img src=&#39;assets/terminal.png&#39;&amp;gt;&amp;quot;)
-	})
-
-	e.Logger.Fatal(e.Start(&amp;quot;:9000&amp;quot;))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果：
-&lt;img src=&#34;https://kissjava.cn/usr/uploads/2019/08/4174351952.png&#34; alt=&#34;after.png&#34;&gt;
-图片实际是43K，压缩成了33.9K了。&lt;/p&gt;
-- https://kissjava.cn/posts/demo-%E5%AD%A6-echo-part14-http-gzip%E5%8E%8B%E7%BC%A9/ - kissjava.cn</description>
         </item>
     
     

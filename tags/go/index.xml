@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Tue, 03 Sep 2019 15:56:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 09:51:55 +0800</lastBuildDate>
     
 	<atom:link href="https://kissjava.cn/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Echo模版嵌套</title>
+      <link>https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/</link>
+      <pubDate>Sat, 27 Jun 2020 09:51:55 +0800</pubDate>
+      
+      <guid>https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/</guid>
+      <description>一个基本的Echo项目 main.go
+package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.com/labstack/echo&amp;quot; ) func main() { e := echo.New() e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error { return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;) }) e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;)) } 返回一个JSON响应 package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.com/labstack/echo&amp;quot; ) func main() { e := echo.New() e.GET(&amp;quot;/&amp;quot;, func(c echo.Context) error { return c.String(http.StatusOK, &amp;quot;Hello, World!&amp;quot;) }) e.GET(&amp;quot;/json&amp;quot;, func(c echo.Context) error { return c.JSONBlob( http.StatusOK, []byte(`{&amp;quot;id&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;msg&amp;quot;: &amp;quot;Hello, China!&amp;quot;}`), ) }) e.Logger.Fatal(e.Start(&amp;quot;:1323&amp;quot;)) } 返回HTML package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.</description>
+    </item>
     
     <item>
       <title>拆分echo示例项目的crud模块</title>

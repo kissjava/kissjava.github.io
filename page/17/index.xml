@@ -6,9 +6,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 09:51:55 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>vi/vim 中文乱码</title>
+        <link>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+        <pubDate>Tue, 12 Jan 2010 10:43:46 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ -&lt;p&gt;linux下，用vi、vim编辑文件时，可能会碰到中文乱码。
+由于在windows下默认是gb编码，而vim默认是utf-8（gedit默认也是utf-8），所以打开会成乱码。修改了一下配置文件，使vi、vim支持gb编码就好了。
+$vi ~/.vimrc&lt;/p&gt;
+&lt;p&gt;let &amp;amp;termencoding=&amp;amp;encoding
+set fileencodings=utf-8,gbk&lt;/p&gt;
+&lt;p&gt;$:wq
+再次打开vi、vim，中文显示就正常了。&lt;/p&gt;
+- https://kissjava.cn/posts/vi-vim-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -199,45 +217,6 @@ echo &amp;ldquo;Sorry!I&amp;rsquo;m Sick&amp;hellip;&amp;quot;;
 &lt;p&gt;connectToDatabase();
 ?&amp;gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 - https://kissjava.cn/posts/php%E4%B8%AD%E6%8A%8Aexception%E5%86%99%E5%85%A5%E5%88%B0%E6%97%A5%E5%BF%97/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>使用nusoap时需要注意的地方, 说不定你正被这些问题困扰着</title>
-        <link>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</link>
-        <pubDate>Fri, 24 Jul 2009 21:55:45 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ -&lt;p&gt;公司的项目用到了nusoap。也确实碰到了timeout的问题。正好search到这篇文章，于是转了。。。&lt;/p&gt;
-&lt;p&gt;原来做web service用的是pear的soap包, 最近换了公司后改成用nusoap了, 所以对nusoap也算比较熟悉了. 在用的过程中发现有些地方需要注意一下, 所以本文不说nusoap的使用方法, 只说一些需要注意的地方.&lt;/p&gt;
-&lt;p&gt;nusoap这个类变态的长, 所以一般鲜有人会先把他看一遍再开始用, 大多直接参照例子就开始用了. 我也是这样的, 当然刚开始是没问题的, 程序运行的很好, 但是到从试验性的使用到真正的和别的公司web service传输数据的时候就有问题了, 然后传输大量数据的时候又出现了新的问题.&lt;/p&gt;
-&lt;p&gt;下面就来说说.&lt;/p&gt;
-&lt;p&gt;首先在传输少量数据的时候,  用如下语句生成对象
-&lt;!-- raw HTML omitted --&gt;$client = new soapclient($service_address, true);&lt;!-- raw HTML omitted --&gt;
-然后用如下语句调用对方web service的方法就行了
-&lt;!-- raw HTML omitted --&gt;$result = $client-&amp;gt;call(&amp;lsquo;methodName&amp;rsquo;, $par);&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;当然这个在我本机测试时是好的, 也就是我自己写的client端调用自己写的service端是好的. 但是当我用这个调用对方.NET的service端时就出问题了. 数据传不过去. 后来发现原来要用proxy.
-在生成$client对象后调用如下方法
-&lt;!-- raw HTML omitted --&gt;$proxy = $client-&amp;gt;getProxy();&lt;!-- raw HTML omitted --&gt;
-然后调用对方web service的语句改成
-&lt;!-- raw HTML omitted --&gt;$result = $proxy-&amp;gt;methodName($par);&lt;!-- raw HTML omitted --&gt;
-就可以了.&lt;/p&gt;
-&lt;p&gt;下面那个使用proxy的方法我后来自己请求自己也测试通过, 就是说用proxy比较好, 至少都能用.&lt;/p&gt;
-&lt;p&gt;这个问题解决后, 测试了几天, 然后需要做load testing了, 几千条的数据一起测, 结果数据传输就掉了很多, 一查, 原来web service中途停了. 所以把php.ini的max_execution_time调长, memory_limit调大, 为了保险, 把max_input_time也调长了. 结果执行结果还是老样子. 所以只好回头研究nusoap类里的东西, 然后发现了&lt;!-- raw HTML omitted --&gt;$response_timeout&lt;!-- raw HTML omitted --&gt;这个东西, 默认是30, 我把他改成了900, 估计是900秒, 然后再次执行, OK了. 当然为了保险, 我把nusoap里的所有$response_timeout的值都改为了900 ^^&lt;/p&gt;
-&lt;p&gt;然后和$response_timeout类似的, 还有一个问题, 就是中文字符的问题. 其实这个很简单, 只要把nusoap里的三个$decode_utf8的值都改成false就可以了. 原来是true, nusoap会自己把utf-8编码的字符转换成iso-8859-1, 所以中文的就变成问号了.&lt;/p&gt;
-&lt;p&gt;还有一个问题, 如果我为了安全, 把放有web service的目录用htaccess保护起来的话, client端当然也就访问不到service端了. 所以我做了下research, 又发现nusoap里有一个现成的方法. 所以说有时间还是要把nusoap这个类里的东西熟悉熟悉啊, 虽然长了点.
-就是下面这个方法,
-&lt;!-- raw HTML omitted --&gt;$client -&amp;gt; setCredentials(&amp;lsquo;username&amp;rsquo;, &amp;lsquo;password&amp;rsquo;);&lt;!-- raw HTML omitted --&gt;
-另外请求的service端的地址也要稍作修改
-比如原来的地址是
-http://domain/test/service.php?wsdl
-现在也要改成
-http://username:password@domain/test/service.php?wsdl
-必须要这两步都做了才能请求被htaccess保护起来的service地址, 缺一不可.&lt;/p&gt;
-&lt;p&gt;好了,我遇到的问题就这些了, 希望能对各位也用nusoap的朋友有点帮助, 如果还有不清楚的, 请留言提问, 谢谢 ;)&lt;/p&gt;
-&lt;p&gt;from：http://blog.csdn.net/mynamesucks/archive/2006/05/26/756480.aspx&lt;/p&gt;
-- https://kissjava.cn/posts/%E4%BD%BF%E7%94%A8nusoap%E6%97%B6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9-%E8%AF%B4%E4%B8%8D%E5%AE%9A%E4%BD%A0%E6%AD%A3%E8%A2%AB%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%9B%B0%E6%89%B0%E7%9D%80/ - kissjava.cn</description>
         </item>
     
     

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>另一个VPS流量超过后自动关机脚本</title>
+<title>Echo模版嵌套</title>
 
 
 
@@ -16,28 +16,22 @@
 
 
 
-<meta property="og:title" content="另一个VPS流量超过后自动关机脚本" />
-<meta property="og:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
-如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
-值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
-创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check." />
+<meta property="og:title" content="Echo模版嵌套" />
+<meta property="og:description" content="一个基本的Echo项目 main.go
+package main import ( &quot;net/http&quot; &quot;github.com/labstack/echo&quot; ) func main() { e := echo.New() e.GET(&quot;/&quot;, func(c echo.Context) error { return c.String(http.StatusOK, &quot;Hello, World!&quot;) }) e.Logger.Fatal(e.Start(&quot;:1323&quot;)) } 返回一个JSON响应 package main import ( &quot;net/http&quot; &quot;github.com/labstack/echo&quot; ) func main() { e := echo.New() e.GET(&quot;/&quot;, func(c echo.Context) error { return c.String(http.StatusOK, &quot;Hello, World!&quot;) }) e.GET(&quot;/json&quot;, func(c echo.Context) error { return c.JSONBlob( http.StatusOK, []byte(`{&quot;id&quot;: &quot;1&quot;, &quot;msg&quot;: &quot;Hello, China!&quot;}`), ) }) e.Logger.Fatal(e.Start(&quot;:1323&quot;)) } 返回HTML package main import ( &quot;net/http&quot; &quot;github." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kissjava.cn/posts/another-auto-shutdown-script-after-certain-bandwith-usage/" />
-<meta property="article:published_time" content="2020-06-21T08:44:17+08:00" />
-<meta property="article:modified_time" content="2020-06-21T08:44:17+08:00" /><meta property="og:site_name" content="清风徐来" />
+<meta property="og:url" content="https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/" />
+<meta property="article:published_time" content="2020-06-27T09:51:55+08:00" />
+<meta property="article:modified_time" content="2020-06-27T09:51:55+08:00" /><meta property="og:site_name" content="清风徐来" />
 
 
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="另一个VPS流量超过后自动关机脚本"/>
-<meta name="twitter:description" content="说明 本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。
-如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。
-值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。
-安装vnstat(centos) yum -y install epel-release yum install -y vnstat service vnstat start chkconfig vnstat on 安装vnstat(debian) apt-get install vnstat 修改配置文件 vi /etc/vnstat.conf 找到UnitMode 0 修改为：UnitMode 1
-创建脚本文件check.sh vi check.sh #!/bin/bash vnstat -u -i eth0 #更新网卡记录 ax=`vnstat --oneline | awk -F &quot;;&quot; &#39;{print $10}&#39;` #获取每月用量 $11:进站&#43;出站;$10是:出站;$9是:进站 if [[ &quot;$ax&quot; == *GB* ]]; #如果每月用量单位是GB则进入 then if [ $(echo &quot;$(echo &quot;$ax&quot; | sed &#39;s/ GB//g&#39;) / 99&quot;|bc) -eq 1 ] #每月实际流量数除以99，大于或等于1，则执行关机命令 then /usr/sbin/shutdown -h now fi fi 给check."/>
+<meta name="twitter:title" content="Echo模版嵌套"/>
+<meta name="twitter:description" content="一个基本的Echo项目 main.go
+package main import ( &quot;net/http&quot; &quot;github.com/labstack/echo&quot; ) func main() { e := echo.New() e.GET(&quot;/&quot;, func(c echo.Context) error { return c.String(http.StatusOK, &quot;Hello, World!&quot;) }) e.Logger.Fatal(e.Start(&quot;:1323&quot;)) } 返回一个JSON响应 package main import ( &quot;net/http&quot; &quot;github.com/labstack/echo&quot; ) func main() { e := echo.New() e.GET(&quot;/&quot;, func(c echo.Context) error { return c.String(http.StatusOK, &quot;Hello, World!&quot;) }) e.GET(&quot;/json&quot;, func(c echo.Context) error { return c.JSONBlob( http.StatusOK, []byte(`{&quot;id&quot;: &quot;1&quot;, &quot;msg&quot;: &quot;Hello, China!&quot;}`), ) }) e.Logger.Fatal(e.Start(&quot;:1323&quot;)) } 返回HTML package main import ( &quot;net/http&quot; &quot;github."/>
 
 
 
@@ -204,8 +198,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%af%b4%e6%98%8e" onclick="collapseOthers(`#说明-nav`)" id="说明-nav">
-									说明
+								<a href="#%e4%b8%80%e4%b8%aa%e5%9f%ba%e6%9c%ac%e7%9a%84echo%e9%a1%b9%e7%9b%ae" onclick="collapseOthers(`#一个基本的echo项目-nav`)" id="一个基本的echo项目-nav">
+									一个基本的Echo项目
 								</a>
 							</li>
 						
@@ -222,8 +216,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85vnstatcentos" onclick="collapseOthers(`#安装vnstatcentos-nav`)" id="安装vnstatcentos-nav">
-									安装vnstat(centos)
+								<a href="#%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aajson%e5%93%8d%e5%ba%94" onclick="collapseOthers(`#返回一个json响应-nav`)" id="返回一个json响应-nav">
+									返回一个JSON响应
 								</a>
 							</li>
 						
@@ -240,8 +234,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85vnstatdebian" onclick="collapseOthers(`#安装vnstatdebian-nav`)" id="安装vnstatdebian-nav">
-									安装vnstat(debian)
+								<a href="#%e8%bf%94%e5%9b%9ehtml" onclick="collapseOthers(`#返回html-nav`)" id="返回html-nav">
+									返回HTML
 								</a>
 							</li>
 						
@@ -258,8 +252,30 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="collapseOthers(`#修改配置文件-nav`)" id="修改配置文件-nav">
-									修改配置文件
+								<a href="#%e4%bd%bf%e7%94%a8%e6%a8%a1%e6%9d%bf%e5%bc%95%e6%93%8e%e5%91%88%e7%8e%b0html" onclick="collapseOthers(`#使用模板引擎呈现html-nav`)" id="使用模板引擎呈现html-nav">
+									使用模板引擎呈现HTML
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#maingo" onclick="collapseOthers(`#maingo-nav`)" id="maingo-nav">
+									main.go
 								</a>
 							</li>
 						
@@ -276,8 +292,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%88%9b%e5%bb%ba%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6checksh" onclick="collapseOthers(`#创建脚本文件checksh-nav`)" id="创建脚本文件checksh-nav">
-									创建脚本文件check.sh
+								<a href="#handlerhome_handlergo" onclick="collapseOthers(`#handlerhome_handlergo-nav`)" id="handlerhome_handlergo-nav">
+									handler/home_handler.go
 								</a>
 							</li>
 						
@@ -294,8 +310,52 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e7%bb%99checksh%e6%8e%88%e4%ba%8e%e6%9d%83%e9%99%90" onclick="collapseOthers(`#给checksh授于权限-nav`)" id="给checksh授于权限-nav">
-									给check.sh授于权限
+								<a href="#viewhomehtml" onclick="collapseOthers(`#viewhomehtml-nav`)" id="viewhomehtml-nav">
+									view/home.html
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%a8%a1%e7%89%88%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#模版嵌套-nav`)" id="模版嵌套-nav">
+									模版嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#maingo-%e5%a6%82%e4%b8%8b" onclick="collapseOthers(`#maingo-如下-nav`)" id="maingo-如下-nav">
+									main.go 如下：
 								</a>
 							</li>
 						
@@ -312,8 +372,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%ae%be%e7%bd%ae%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="collapseOthers(`#设置定时执行-nav`)" id="设置定时执行-nav">
-									设置定时执行
+								<a href="#viewbasehtml" onclick="collapseOthers(`#viewbasehtml-nav`)" id="viewbasehtml-nav">
+									view/base.html
 								</a>
 							</li>
 						
@@ -330,8 +390,48 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
-									常用命令
+								<a href="#viewabouthtml" onclick="collapseOthers(`#viewabouthtml-nav`)" id="viewabouthtml-nav">
+									view/about.html
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#handlerabout_handlergo" onclick="collapseOthers(`#handlerabout_handlergo-nav`)" id="handlerabout_handlergo-nav">
+									handler/about_handler.go
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9d%9f" onclick="collapseOthers(`#结束-nav`)" id="结束-nav">
+									结束
 								</a>
 							</li>
 						
@@ -448,8 +548,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%af%b4%e6%98%8e" onclick="collapseOthers(`#说明-nav`)" id="说明-nav">
-									说明
+								<a href="#%e4%b8%80%e4%b8%aa%e5%9f%ba%e6%9c%ac%e7%9a%84echo%e9%a1%b9%e7%9b%ae" onclick="collapseOthers(`#一个基本的echo项目-nav`)" id="一个基本的echo项目-nav">
+									一个基本的Echo项目
 								</a>
 							</li>
 						
@@ -466,8 +566,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85vnstatcentos" onclick="collapseOthers(`#安装vnstatcentos-nav`)" id="安装vnstatcentos-nav">
-									安装vnstat(centos)
+								<a href="#%e8%bf%94%e5%9b%9e%e4%b8%80%e4%b8%aajson%e5%93%8d%e5%ba%94" onclick="collapseOthers(`#返回一个json响应-nav`)" id="返回一个json响应-nav">
+									返回一个JSON响应
 								</a>
 							</li>
 						
@@ -484,8 +584,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85vnstatdebian" onclick="collapseOthers(`#安装vnstatdebian-nav`)" id="安装vnstatdebian-nav">
-									安装vnstat(debian)
+								<a href="#%e8%bf%94%e5%9b%9ehtml" onclick="collapseOthers(`#返回html-nav`)" id="返回html-nav">
+									返回HTML
 								</a>
 							</li>
 						
@@ -502,8 +602,30 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="collapseOthers(`#修改配置文件-nav`)" id="修改配置文件-nav">
-									修改配置文件
+								<a href="#%e4%bd%bf%e7%94%a8%e6%a8%a1%e6%9d%bf%e5%bc%95%e6%93%8e%e5%91%88%e7%8e%b0html" onclick="collapseOthers(`#使用模板引擎呈现html-nav`)" id="使用模板引擎呈现html-nav">
+									使用模板引擎呈现HTML
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#maingo" onclick="collapseOthers(`#maingo-nav`)" id="maingo-nav">
+									main.go
 								</a>
 							</li>
 						
@@ -520,8 +642,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%88%9b%e5%bb%ba%e8%84%9a%e6%9c%ac%e6%96%87%e4%bb%b6checksh" onclick="collapseOthers(`#创建脚本文件checksh-nav`)" id="创建脚本文件checksh-nav">
-									创建脚本文件check.sh
+								<a href="#handlerhome_handlergo" onclick="collapseOthers(`#handlerhome_handlergo-nav`)" id="handlerhome_handlergo-nav">
+									handler/home_handler.go
 								</a>
 							</li>
 						
@@ -538,8 +660,52 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e7%bb%99checksh%e6%8e%88%e4%ba%8e%e6%9d%83%e9%99%90" onclick="collapseOthers(`#给checksh授于权限-nav`)" id="给checksh授于权限-nav">
-									给check.sh授于权限
+								<a href="#viewhomehtml" onclick="collapseOthers(`#viewhomehtml-nav`)" id="viewhomehtml-nav">
+									view/home.html
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%a8%a1%e7%89%88%e5%b5%8c%e5%a5%97" onclick="collapseOthers(`#模版嵌套-nav`)" id="模版嵌套-nav">
+									模版嵌套
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								<ul class="collapse" data-toggle="collapse">
+							
+						
+						
+							<li>
+								<a href="#maingo-%e5%a6%82%e4%b8%8b" onclick="collapseOthers(`#maingo-如下-nav`)" id="maingo-如下-nav">
+									main.go 如下：
 								</a>
 							</li>
 						
@@ -556,8 +722,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%ae%be%e7%bd%ae%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="collapseOthers(`#设置定时执行-nav`)" id="设置定时执行-nav">
-									设置定时执行
+								<a href="#viewbasehtml" onclick="collapseOthers(`#viewbasehtml-nav`)" id="viewbasehtml-nav">
+									view/base.html
 								</a>
 							</li>
 						
@@ -574,8 +740,48 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" onclick="collapseOthers(`#常用命令-nav`)" id="常用命令-nav">
-									常用命令
+								<a href="#viewabouthtml" onclick="collapseOthers(`#viewabouthtml-nav`)" id="viewabouthtml-nav">
+									view/about.html
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#handlerabout_handlergo" onclick="collapseOthers(`#handlerabout_handlergo-nav`)" id="handlerabout_handlergo-nav">
+									handler/about_handler.go
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bb%93%e6%9d%9f" onclick="collapseOthers(`#结束-nav`)" id="结束-nav">
+									结束
 								</a>
 							</li>
 						
@@ -639,25 +845,28 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    另一个VPS流量超过后自动关机脚本
+                    Echo模版嵌套
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2020-06-21 08:44
+                            2020-06-27 09:51
                         </time>
                         
 
                         
                             <i class="material-icons" style="">folder</i>
-                                <a href="/categories/">[Other]</a>
+                                <a href="/categories/">[Go]</a>
                                 &nbsp;
                         
 
                         
                             <i class="material-icons" style="">label</i>
                             
-                                <a href="/tags/vps">vps</a>
+                                <a href="/tags/go">Go</a>
+                                &nbsp;
+                            
+                                <a href="/tags/echo">echo</a>
                                 &nbsp;
                             
                         
@@ -670,53 +879,267 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h2 id="说明">说明</h2>
-<p>本脚本单位以GB计算非Gib；Gib是1024进位，GB是1000进位。</p>
-<p>如果用了Gib会误差93.132%，也就是说你的VPS有1024GB/月流量，写成Gib就是953.6Gib，误差还是挺大的，所以单位别搞混了。</p>
-<p>值得注意的是阿里云国际是只计算出站流量的，入站流量免费（以VPS为中心思考）。</p>
-<h2 id="安装vnstatcentos">安装vnstat(centos)</h2>
-<pre><code>yum -y install epel-release
-yum install -y vnstat
-service vnstat start
-chkconfig vnstat on
-</code></pre><h2 id="安装vnstatdebian">安装vnstat(debian)</h2>
-<pre><code>apt-get install vnstat
-</code></pre><h2 id="修改配置文件">修改配置文件</h2>
-<pre><code>vi /etc/vnstat.conf
-</code></pre><p>找到UnitMode 0 修改为：UnitMode 1</p>
-<h2 id="创建脚本文件checksh">创建脚本文件check.sh</h2>
-<pre><code>vi check.sh
+                    <h2 id="一个基本的echo项目">一个基本的Echo项目</h2>
+<p>main.go</p>
+<pre><code>package main
 
-#!/bin/bash
-vnstat -u -i eth0                                              #更新网卡记录
-ax=`vnstat --oneline | awk -F &quot;;&quot; '{print $10}'`               #获取每月用量 $11:进站+出站;$10是:出站;$9是:进站
-if [[ &quot;$ax&quot; == *GB* ]];                                        #如果每月用量单位是GB则进入
-then
-if [ $(echo &quot;$(echo &quot;$ax&quot; | sed 's/ GB//g') / 99&quot;|bc) -eq 1 ]  #每月实际流量数除以99，大于或等于1，则执行关机命令
-then
-    /usr/sbin/shutdown -h now
-fi
-fi
-</code></pre><h2 id="给checksh授于权限">给check.sh授于权限</h2>
-<p><code>chmod +x check.sh</code></p>
-<h2 id="设置定时执行">设置定时执行</h2>
-<p>每5分钟执行一次（可能会降低准确度，防止VPS开机就自动关机）</p>
-<pre><code>crontab -e
+import (
+	&quot;net/http&quot;
 
-*/5 * * * * /bin/bash /root/check.sh
-</code></pre><h2 id="常用命令">常用命令</h2>
-<pre><code>vnstat --iflist #列出当前可用网卡
-vnstat      #默认查看内容
-vnstat -h   #按小时统计显示
-vnstat -d   #按天统计显示
-vnstat -m   #按月统计显示
-vnstat -w   #按星期统计显示
-vnstat -t   #显示流量消耗最大的前10天
-</code></pre><p>清风在阿里国际香港centos下测试通过</p>
+	&quot;github.com/labstack/echo&quot;
+)
 
+func main() {
+	e := echo.New()
+	e.GET(&quot;/&quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &quot;Hello, World!&quot;)
+	})
+	e.Logger.Fatal(e.Start(&quot;:1323&quot;))
+}
+
+</code></pre><h2 id="返回一个json响应">返回一个JSON响应</h2>
+<pre><code>package main
+
+import (
+	&quot;net/http&quot;
+
+	&quot;github.com/labstack/echo&quot;
+)
+
+func main() {
+	e := echo.New()
+	e.GET(&quot;/&quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &quot;Hello, World!&quot;)
+	})
+
+	e.GET(&quot;/json&quot;, func(c echo.Context) error {
+		return c.JSONBlob(
+			http.StatusOK,
+			[]byte(`{&quot;id&quot;: &quot;1&quot;, &quot;msg&quot;: &quot;Hello, China!&quot;}`),
+		)
+	})
+
+	e.Logger.Fatal(e.Start(&quot;:1323&quot;))
+}
+</code></pre><h2 id="返回html">返回HTML</h2>
+<pre><code>package main
+
+import (
+	&quot;net/http&quot;
+
+	&quot;github.com/labstack/echo&quot;
+)
+
+func main() {
+	e := echo.New()
+	e.GET(&quot;/&quot;, func(c echo.Context) error {
+		return c.String(http.StatusOK, &quot;Hello, World!&quot;)
+	})
+
+	e.GET(&quot;/json&quot;, func(c echo.Context) error {
+		return c.JSONBlob(
+			http.StatusOK,
+			[]byte(`{&quot;id&quot;: &quot;1&quot;, &quot;msg&quot;: &quot;Hello, China!&quot;}`),
+		)
+	})
+
+	e.GET(&quot;/html&quot;, func(c echo.Context) error {
+		return c.HTML(
+			http.StatusOK,
+			&quot;&lt;h1&gt;Hello, Suzhou!&lt;/h1&gt;&quot;,
+		)
+	})
+
+	e.Logger.Fatal(e.Start(&quot;:1323&quot;))
+}
+</code></pre><h2 id="使用模板引擎呈现html">使用模板引擎呈现HTML</h2>
+<p>这次有点不一样，多个文件了，目录结构如下：</p>
+<pre><code>➜  golang-echo-template-example tree
+.
+├── handler
+│   └── home_handler.go
+├── main.go
+└── view
+    └── home.html
+</code></pre><h3 id="maingo">main.go</h3>
+<pre><code>package main
+
+import (
+	&quot;io&quot;
+	&quot;html/template&quot;
+
+	&quot;github.com/kissjava/golang-echo-template-example/handler&quot;
+	&quot;github.com/labstack/echo&quot;
+)
+
+// TemplateRegistry 定义模板注册表结构
+type TemplateRegistry struct {
+	templates *template.Template
+}
+
+// Render 实现 e.Renderer接口
+func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+func main() {
+	e := echo.New()
+
+	// 实例化一个模板注册表并在视图文件夹中注册所有html文件
+	e.Renderer = &amp;TemplateRegistry{
+		templates: template.Must(template.ParseGlob(&quot;view/*.html&quot;)),
+	}
+
+	e.GET(&quot;/&quot;, handler.HomeHandler)
+
+	e.Logger.Fatal(e.Start(&quot;:1323&quot;))
+}
+</code></pre><h3 id="handlerhome_handlergo">handler/home_handler.go</h3>
+<pre><code>package handler
+
+import (
+	&quot;net/http&quot;
+
+	&quot;github.com/labstack/echo&quot;
+)
+
+// HomeHandler 根路径处理器函数
+func HomeHandler(c echo.Context) error {
+	// 第二个参数 home.html 是view/home.html中{{ define }}定义的名称
+	return c.Render(http.StatusOK, &quot;home.html&quot;, map[string]interface{}{
+		&quot;name&quot;: &quot;HOME&quot;,
+		&quot;msg&quot;:  &quot;Hello, World!&quot;,
+	})
+}
+</code></pre><h3 id="viewhomehtml">view/home.html</h3>
+<pre><code>{{define &quot;home.html&quot;}}
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Kissjava Blog | {{index . &quot;name&quot;}}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;{{index . &quot;msg&quot;}}&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+{{end}}
+</code></pre><h2 id="模版嵌套">模版嵌套</h2>
+<p>在上面的设置中，HTML模板是一组完整的HTML代码。</p>
+<p>如果是整个站点来使用，其中许多代码就是重复的。</p>
+<p>使用嵌套模板使项目维护更加容易。</p>
+<p>最初<code>TemplateRegistry</code>中的<code>templates</code>字段包含所有模板文件。</p>
+<p>在新的设置中，我们将其设置为一个<code>map</code>字段，每一项都是针对特定HTML页面的一组模板文件。</p>
+<p>新的项目结构如下：</p>
+<pre><code>➜  golang-echo-template-example tree
+.
+├── handler
+│   ├── about__handler.go
+│   └── home_handler.go
+├── main.go
+└── view
+    ├── about.html
+    ├── base.html
+    └── home.html
+</code></pre><h3 id="maingo-如下">main.go 如下：</h3>
+<pre><code>package main
+
+import (
+	&quot;errors&quot;
+	&quot;io&quot;
+	&quot;html/template&quot;
+
+	&quot;github.com/kissjava/golang-echo-template-example/handler&quot;
+	&quot;github.com/labstack/echo&quot;
+)
+
+// TemplateRegistry 定义模板注册表结构
+type TemplateRegistry struct {
+	templates map[string]*template.Template
+}
+
+// Render 实现 e.Renderer接口
+func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	tmpl, ok := t.templates[name]
+	if !ok {
+		err := errors.New(&quot;没有找到模版 -&gt; &quot; + name)
+		return err
+	}
+	return tmpl.ExecuteTemplate(w, &quot;base.html&quot;, data)
+}
+
+func main() {
+	e := echo.New()
+
+	//用模板集数组实例化一个模板注册表
+	templates := make(map[string]*template.Template)
+	templates[&quot;home.html&quot;] = template.Must(template.ParseFiles(&quot;view/home.html&quot;, &quot;view/base.html&quot;))
+	templates[&quot;about.html&quot;] = template.Must(template.ParseFiles(&quot;view/about.html&quot;, &quot;view/base.html&quot;))
+	e.Renderer = &amp;TemplateRegistry{
+		templates: templates,
+	}
+
+	e.GET(&quot;/&quot;, handler.HomeHandler)
+	e.GET(&quot;/about&quot;, handler.AboutHandler)
+
+	e.Logger.Fatal(e.Start(&quot;:1323&quot;))
+}
+</code></pre><h3 id="viewbasehtml">view/base.html</h3>
+<pre><code>{{define &quot;base.html&quot;}}
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;{{template &quot;title&quot; .}}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      {{template &quot;body&quot; .}}
+    &lt;/body&gt;
+  &lt;/html&gt;
+{{end}}
+</code></pre><h3 id="viewabouthtml">view/about.html</h3>
+<pre><code>{{define &quot;title&quot;}}
+  Kissjava Blog | {{index . &quot;name&quot;}}
+{{end}}
+
+{{define &quot;body&quot;}}
+  &lt;h1&gt;{{index . &quot;msg&quot;}}&lt;/h1&gt;
+  &lt;h2&gt;This is the about page.&lt;/h2&gt;
+{{end}}
+</code></pre><h3 id="handlerabout_handlergo">handler/about_handler.go</h3>
+<pre><code>package handler
+
+import (
+	&quot;net/http&quot;
+
+	&quot;github.com/labstack/echo&quot;
+)
+
+// AboutHandler /about处理器
+func AboutHandler(c echo.Context) error {
+
+	// 请注意第二个参数“about.html”是模板名
+	// 等于main.go中定义的TemplateRegistry数组中的一个键
+	return c.Render(http.StatusOK, &quot;about.html&quot;, map[string]interface{}{
+		&quot;name&quot;: &quot;About&quot;,
+		&quot;msg&quot;:  &quot;All about kissjava!&quot;,
+	})
+}
+</code></pre><h2 id="结束">结束</h2>
+<p>前面故意没有去改动<code>home.html</code>，可以参考 <code>about.hmtl</code>去比较实现。</p>
+<pre><code>{{define &quot;title&quot;}}
+  Kissjava Blog | {{index . &quot;name&quot;}}
+{{end}}
+
+{{define &quot;body&quot;}}
+  &lt;h1&gt;{{index . &quot;msg&quot;}}&lt;/h1&gt;
+  &lt;h2&gt;This is the home page.&lt;/h2&gt;
+{{end}}
+
+</code></pre>
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2020-06-21</p>
+		    <p style="color:#777;">最后修改于 2020-06-27</p>
                     
                 </div>
             </div>
@@ -725,14 +1148,14 @@ vnstat -t   #显示流量消耗最大的前10天
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/">
-			下回<br>Echo模版嵌套
+                <a class="newer-posts">
+			下回<br>已经到头啦。
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://kissjava.cn/posts/server-auto-shutdown-script-after-certain-bandwidth-usage/">
-			上回<br>VPS流量超过一定数量后自动关机脚本
+                <a class="older-posts" href="https://kissjava.cn/posts/another-auto-shutdown-script-after-certain-bandwith-usage/">
+			上回<br>另一个VPS流量超过后自动关机脚本
                 </a>
                 
             </nav>

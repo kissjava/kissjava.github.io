@@ -6,9 +6,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 09:51:55 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>搬出搬瓦工了</title>
+        <link>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</link>
+        <pubDate>Thu, 15 Dec 2016 12:15:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ -&lt;p&gt;剁了个新加坡vps，于是乎搬出搬瓦工。
+搬瓦工速度还行，但是新加坡速度飞起（价格也感人）。
+还是说明了，世界加钱可达！
+当然，搬瓦工性价比还是很高的，技术确实牛逼很稳定。
+&lt;img src=&#34;https://kissjava.cn/usr/uploads/2017/08/2966590504.png&#34; alt=&#34;bwh.png&#34;&gt;
+推荐年付19$搬瓦工KVM直连VPS，&lt;a href=&#34;https://bwh1.net/aff.php?aff=15657&amp;amp;pid=43&#34;&gt;传输机在此&lt;/a&gt;！
+忽然发现，这2016年的第一篇博文。
+今年还有半个月就完了！估计很可能也是今年的最后一篇吧。&lt;/p&gt;
+- https://kissjava.cn/posts/%E6%90%AC%E5%87%BA%E6%90%AC%E7%93%A6%E5%B7%A5%E4%BA%86/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -788,28 +807,6 @@ export VERSIONER_PYTHON_PREFER_32_BIT=yes
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;安装MySQL-python（sudo easy_install MySQL-python）&lt;/p&gt;
 - https://kissjava.cn/posts/%E6%90%9E%E5%AE%9A%E5%9C%A8-mac-%E5%AE%89%E8%A3%85-mysqldbmysql-python/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Sublime text 3059 for MAC</title>
-        <link>https://kissjava.cn/posts/sublime-text-3059-for-mac/</link>
-        <pubDate>Wed, 23 Apr 2014 10:39:00 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/sublime-text-3059-for-mac/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/sublime-text-3059-for-mac/ -&lt;p&gt;1、去Sublime 官网下载最新的3059并安装。&lt;/p&gt;
-&lt;p&gt;2、执行并退出Sublime主程序。&lt;/p&gt;
-&lt;p&gt;3、下载本文附件，并解压。&lt;/p&gt;
-&lt;p&gt;4、Finder 打开 Applications 目录， 找到Sublime，右键“显示包内容”，找到 macOS 目录，把上一步解压出来的文件，拷贝到这里来，会提示“你是否要替换该文件”，选择替换。&lt;/p&gt;
-&lt;p&gt;5、打开终端，输入命令：
-cd /Applications/Sublime\ Text.app/Contents/macOS/ 
-sudo chmod +x Sublime\ Text 
-根据提示，输入密码，因为要临时获取root权限。&lt;/p&gt;
-&lt;p&gt;6、运行Sublime，“关于 Sublime Text”，已经注册了。&lt;/p&gt;
-&lt;p&gt;End&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1sjjQGY5&#34;&gt;你懂得附件&lt;/a&gt;&lt;/p&gt;
-- https://kissjava.cn/posts/sublime-text-3059-for-mac/ - kissjava.cn</description>
         </item>
     
     

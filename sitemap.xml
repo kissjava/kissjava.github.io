@@ -4,21 +4,46 @@
   
   <url>
     <loc>https://kissjava.cn/categories/</loc>
-    <lastmod>2020-06-21T08:44:17+08:00</lastmod>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kissjava.cn/categories/other/</loc>
-    <lastmod>2020-06-21T08:44:17+08:00</lastmod>
+    <loc>https://kissjava.cn/tags/echo/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/posts/echo%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/tags/go/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/categories/go/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://kissjava.cn/posts/</loc>
-    <lastmod>2020-06-21T08:44:17+08:00</lastmod>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://kissjava.cn/tags/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/</loc>
+    <lastmod>2020-06-27T09:51:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kissjava.cn/categories/other/</loc>
     <lastmod>2020-06-21T08:44:17+08:00</lastmod>
   </url>
   
@@ -29,11 +54,6 @@
   
   <url>
     <loc>https://kissjava.cn/posts/another-auto-shutdown-script-after-certain-bandwith-usage/</loc>
-    <lastmod>2020-06-21T08:44:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/</loc>
     <lastmod>2020-06-21T08:44:17+08:00</lastmod>
   </url>
   
@@ -65,21 +85,6 @@
   <url>
     <loc>https://kissjava.cn/about/</loc>
     <lastmod>2020-06-17T15:18:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/tags/echo/</loc>
-    <lastmod>2019-09-03T15:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/tags/go/</loc>
-    <lastmod>2019-09-03T15:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kissjava.cn/categories/go/</loc>
-    <lastmod>2019-09-03T15:56:00+00:00</lastmod>
   </url>
   
   <url>

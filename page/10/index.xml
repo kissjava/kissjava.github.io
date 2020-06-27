@@ -6,9 +6,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>kissjava.cn</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 08:44:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 09:51:55 +0800</lastBuildDate>
     
         <atom:link href="https://kissjava.cn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>xampp下安装 PhpDocumenter</title>
+        <link>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</link>
+        <pubDate>Tue, 29 May 2012 12:04:00 +0000</pubDate>
+        
+        <guid>https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/</guid>
+        <description>清风徐来 https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ -&lt;p&gt;没有长篇大论，也不用pear安装PhpDocumentor。比较简洁。
+淡水在win7下采用的是xampp lite版。貌似pear install phpdocumentor不顶用。而且淡水不喜欢用集成了phpdocumentor的ZSE，所以有了本文。
+下载PhpDocumentor-1.4.4.tgz 
+解压到D:xampphpPhpDocumentor目录下（这里淡水的php目录，需要修改为自己的路径）
+然后修改该目录里的 phpdoc.bat 这个批处理文件，将16行 “SET phpCli=”修改成你的PHP路径：
+&lt;!-- raw HTML omitted --&gt;SET phpCli=D:xamppphpphp.exe &lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;集成到eclipse PDT里（zend studio for eclipse里已经自带了，pdt要自己动手）：&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;参数说明：&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;快小半年没更新了，这里都快荒废了，有木有！&lt;/p&gt;
+- https://kissjava.cn/posts/xampp%E4%B8%8B%E5%AE%89%E8%A3%85-phpdocumenter/ - kissjava.cn</description>
+        </item>
     
     
     
@@ -264,22 +286,6 @@ function editItem(){
 &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;这里也有个例子供参考：http://www.crazyphper.com/?p=1167&lt;/p&gt;
 - https://kissjava.cn/posts/jquery-ajax%E6%96%B9%E5%BC%8F%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E5%90%8E%E8%A2%AB%E5%8A%A0%E8%BD%BD%E9%A1%B5%E9%9D%A2%E7%9A%84js%E4%B8%8D%E8%83%BD%E6%89%A7%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/ - kissjava.cn</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>MAMP环境下，在zend studio 9 里使用xdebug调试</title>
-        <link>https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</link>
-        <pubDate>Sat, 03 Dec 2011 08:40:07 +0000</pubDate>
-        
-        <guid>https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/</guid>
-        <description>清风徐来 https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/ -&lt;p&gt;没有技术含量。
-MAMP下面有两个版本（MAMP/bin/php），他们都有各自的php.ini
-在其文件最后，都提供了xdebug块，仅有一行，“；zend_extension=&amp;hellip;”貌似去掉zend_extension前的注释就能使用了。
-实际上还需要添加一些配置才能进行断点调试的。否则只是在页面上var_dump变量提供更详情的信息而已。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-- https://kissjava.cn/posts/mamp%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%9C%A8zend-studio-9-%E9%87%8C%E4%BD%BF%E7%94%A8xdebug%E8%B0%83%E8%AF%95/ - kissjava.cn</description>
         </item>
     
     
